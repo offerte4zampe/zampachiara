@@ -1,0 +1,26 @@
+name: ZampaChiara daily news links
+on:
+  schedule:
+    - cron: '35 5 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  update-news:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Refresh news links
+        run: python automation/update_news.py
+      - name: Commit changes
+        run: |
+          if ! git diff --quiet -- site/data/news.json; then
+            git config user.name "ZampaChiara news bot"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add site/data/news.json
+            git commit -m "chore: refresh external news links"
+            git push
+          fi
