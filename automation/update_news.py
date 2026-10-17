@@ -47,7 +47,7 @@ def parse(xml, now=None):
     return items[:9]
 
 def main():
-    req=Request(FEED,headers={"User-Agent":"ZampaChiaraNewsLinkReader/1.0"})
+    req=Request(FEED,headers={"User-Agent":"Offerte4ZampeNewsLinkReader/1.0"})
     try:
         with urlopen(req,timeout=20) as response: rss=response.read(400000)
         items=parse(rss)

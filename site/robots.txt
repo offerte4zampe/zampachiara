@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://zampachiara.offerte4zampe.workers.dev/sitemap.xml
+Sitemap: https://offerte4zampe.it/sitemap.xml
