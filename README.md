@@ -39,3 +39,11 @@ Questo repository è indipendente da ExtraVoce e Smart Coaching Engine.
 Il confronto non raggruppa per somiglianza del nome: equivalenza automatica solo con GTIN e formato identici. Se il catalogo pubblico non fornisce un GTIN, l'utente può confrontare le offerte selezionate ma deve verificarne l'equivalenza. Nessun link affiliato è attivo. Il feed zooplus è ancora in attesa di accesso Awin.
 
 Verifica: `python -m unittest discover -s tests`, `node --check site/assets/catalog.js`.
+
+## Banner e sponsorizzazioni
+
+`site/assets/advertising.js` gestisce banner diretti in home, catalogo, guide e notizie. La configurazione è in `site/data/advertising.json`: nessuna campagna pagata è attiva. In assenza di campagna viene mostrato un invito alla pagina `pubblicita.html`. Il modulo non carica script di reti pubblicitarie, non crea cookie e non traccia impression/clic.
+
+Una campagna diretta richiede `active: true`, `title`, `text`, `url` HTTPS, `placements` (tra `home-between-sections`, `catalog-above-results`, `guides-footer`, `news-footer`), `startsAt` e `endsAt` ISO 8601. Opzionali: `image`, `imageAlt`, `cta`. Ogni banner è etichettato Pubblicità · sponsor e ha link rel=sponsored. Nessun inserzionista inventato o ranking a pagamento.
+
+Per attivare un circuito display (ad esempio AdSense) mancano un account/site approvato, i codici reali delle unità e la configurazione del consenso richiesta dal circuito. Non pubblicare ID dimostrativi né righe ads.txt inventate.
