@@ -31,3 +31,11 @@ Contatto: offerte4zampe@gmail.com.
 ## Separazione dei progetti
 
 Questo repository è indipendente da ExtraVoce e Smart Coaching Engine.
+
+## Catalogo prodotti automatico
+
+`automation/update_catalog.py` importa i cataloghi JSON pubblici di Bauzaar, WebPet e Animaliapet con controllo robots.txt, paginazione e validazione dei prezzi. Il workflow `catalog.yml` aggiorna il catalogo ogni 6 ore. In caso di errore conserva i dati precedenti per quel negozio, segnala la fonte non aggiornata e non inventa prezzi. Le offerte includono variante, disponibilità e data di rilevamento. Il prezzo/kg usa esclusivamente pesi espliciti nei formati, non il peso di spedizione. Spedizione esclusa.
+
+Il confronto non raggruppa per somiglianza del nome: equivalenza automatica solo con GTIN e formato identici. Se il catalogo pubblico non fornisce un GTIN, l'utente può confrontare le offerte selezionate ma deve verificarne l'equivalenza. Nessun link affiliato è attivo. Il feed zooplus è ancora in attesa di accesso Awin.
+
+Verifica: `python -m unittest discover -s tests`, `node --check site/assets/catalog.js`.

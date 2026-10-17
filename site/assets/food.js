@@ -1,6 +1,6 @@
 (function(){'use strict';
  const ids=['ap','ak','ag','as','bp','bk','bg','bs'];
- const defaults={ap:49.9,ak:10,ag:250,as:0,bp:42.9,bk:7,bg:210,bs:0};
+ const defaults=Object.fromEntries(ids.map(id=>[id,'']));
  const euro=new Intl.NumberFormat('it-IT',{style:'currency',currency:'EUR',maximumFractionDigits:2});
  const num=new Intl.NumberFormat('it-IT',{maximumFractionDigits:1});
  const $=id=>document.getElementById(id);
