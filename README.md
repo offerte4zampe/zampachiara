@@ -20,7 +20,7 @@ GitHub Actions `.github/workflows/daily-news.yml` cerca collegamenti RSS una vol
 
 ## Monetizzazione
 
-Nessun programma di affiliazione o pubblicitario è attivo. Nessuna commissione è stata acquisita. I link non vengono presentati come affiliati fino ad approvazione. I calcolatori usano ipotesi modificabili e non garantiscono prezzi reali. Il simulatore delle polizze non è un confronto commerciale personalizzato e non svolge distribuzione assicurativa.
+Nessun programma di affiliazione o pubblicitario è attivo. Nessuna commissione è stata acquisita. I link non vengono presentati come affiliati fino ad approvazione. Il catalogo importa prezzi reali dei negozi; il calcolatore giornaliero usa la razione inserita dall’utente. I prezzi possono variare dopo il rilevamento. Il simulatore delle polizze non è un confronto commerciale personalizzato e non svolge distribuzione assicurativa.
 
 ## Privacy
 

@@ -18,6 +18,8 @@ def amount(v):
 def weight(label):
     # Only explicitly labelled package weights. Shipping grams are NOT net weight.
     s=label.lower().replace(',','.')
+    if '+' in s: return None
+    if re.search(r'\d+\s*(?:pz|pezzi|lattine|buste|bustine|confezioni)\b',s) and not re.search(r'\d+\s*[x×]',s): return None
     pack=re.search(r'(\d+)\s*[x×]\s*(\d+(?:\.\d+)?)\s*(kg|g)\b',s)
     if pack: return round(int(pack[1])*float(pack[2])/(1000 if pack[3]=='g' else 1),6)
     matches=list(re.finditer(r'(?<![\d.])(\d+(?:\.\d+)?)\s*(kg|g)\b',s))
@@ -39,7 +41,7 @@ def collect(source):
                     price=amount(v.get('price'))
                     if not price:continue
                     variant=v.get('title',''); variant='' if variant=='Default Title' else variant
-                    title=str(p['title']);kg=weight(variant) or weight(title)
+                    title=str(p['title']);kg=weight(variant) if re.search(r'\d\s*(?:kg|g)\b',variant.lower()) else weight(title)
                     before=amount(v.get('compare_at_price'))
                     rows.append({'id':f'{sid}:{v["id"]}','merchant':name,'merchant_id':sid,'title':title,'variant':variant,'brand':p.get('vendor',''),'category':p.get('product_type',''),'price':price,'previous_price':before if before and before>price else None,'available':bool(v.get('available')),'url':base+'/products/'+p['handle']+'?variant='+str(v['id']),'image':(p.get('images') or [{}])[0].get('src',''),'sku':str(v.get('sku') or ''),'gtin':str(v.get('barcode') or ''),'weight_kg':kg,'checked_at':now})
             if len(products)<250:complete=True;break
