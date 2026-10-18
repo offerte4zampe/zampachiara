@@ -43,7 +43,7 @@ def collect(source):
                     variant=v.get('title',''); variant='' if variant=='Default Title' else variant
                     title=str(p['title']);kg=weight(variant) if re.search(r'\d\s*(?:kg|g)\b',variant.lower()) else weight(title)
                     before=amount(v.get('compare_at_price'))
-                    rows.append({'id':f'{sid}:{v["id"]}','merchant':name,'merchant_id':sid,'title':title,'variant':variant,'brand':p.get('vendor',''),'category':p.get('product_type',''),'price':price,'previous_price':before if before and before>price else None,'available':bool(v.get('available')),'url':base+'/products/'+p['handle']+'?variant='+str(v['id']),'image':(p.get('images') or [{}])[0].get('src',''),'sku':str(v.get('sku') or ''),'gtin':str(v.get('barcode') or ''),'weight_kg':kg,'checked_at':now})
+                    rows.append({'id':f'{sid}:{v["id"]}','merchant':name,'merchant_id':sid,'title':title,'variant':variant,'brand':p.get('vendor',''),'category':p.get('product_type',''),'price':price,'previous_price':before if before and before>price else None,'available':bool(v.get('available')),'url':base+'/products/'+p['handle']+'?variant='+str(v['id']),'image':(p.get('images') or [{}])[0].get('src',''),'sku':str(v.get('sku') or ''),'gtin':str(v.get('barcode') or ''),'weight_kg':kg,'shipping_weight_kg':(amount(v.get('grams'))/1000 if amount(v.get('grams')) else None),'checked_at':now})
             if len(products)<250:complete=True;break
             time.sleep(.3)
         if not complete:raise ValueError('Catalog exceeded pagination safety limit')
