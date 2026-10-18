@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - 'automation/update_catalog.py'
+      - 'automation/build_category_pages.py'
       - '.github/workflows/catalog.yml'
   workflow_dispatch:
 permissions:
@@ -24,12 +25,13 @@ jobs:
           python-version: '3.12'
       - run: python -m unittest discover -s tests
       - run: python automation/update_catalog.py
+      - run: python automation/build_category_pages.py
       - name: Publish refreshed catalog
         run: |
-          if ! git diff --quiet -- site/data/catalog.json.gz; then
+          if ! git diff --quiet -- site/data/catalog.json.gz site/crocchette-cani.html site/crocchette-gatti.html site/lettiere-gatti.html site/sitemap.xml; then
             git config user.name "Offerte4Zampe catalog bot"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add site/data/catalog.json.gz
+            git add site/data/catalog.json.gz site/crocchette-cani.html site/crocchette-gatti.html site/lettiere-gatti.html site/sitemap.xml
             git commit -m "chore: refresh real merchant prices"
             git pull --rebase origin main
             git push
