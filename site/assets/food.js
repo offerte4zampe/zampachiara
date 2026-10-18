@@ -30,7 +30,7 @@
    if(!$('fooderror').hidden){$('sharestatus').textContent='Correggi prima i valori.';return;}
    const p=new URLSearchParams({v:'1'});ids.forEach(id=>p.set(id,$(id).value));
    const url=location.href.split('#')[0]+'#'+p.toString();
-   try{if(navigator.share)await navigator.share({title:'Confronto costo cibo · Offerte4Zampe',url});
+   try{if(navigator.share)await navigator.share({title:'Confronto costo cibo · Offerte a 4 Zampe',url});
      else if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(url);$('sharestatus').textContent='Link copiato. Le cifre sono visibili a chi lo riceve.'}
      else{$('sharestatus').textContent='Link da copiare: '+url}
    }catch(e){if(e.name!=='AbortError')$('sharestatus').textContent='Copia manualmente il link: '+url}

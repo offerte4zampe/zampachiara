@@ -5,7 +5,7 @@ from decimal import Decimal, InvalidOperation
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 SOURCES=[('bauzaar','Bauzaar','https://www.bauzaar.it'),('webpet','WebPet','https://www.webpet.it'),('animaliapet','Animaliapet','https://www.animaliapet.eu')]
-UA='Offerte4ZampeCatalog/1.0 (+https://offerte4zampe.it/contatti.html)'
+UA='Offerte a 4 ZampeCatalog/1.0 (+https://offerte4zampe.it/contatti.html)'
 def get(url):
     req=urllib.request.Request(url,headers={'User-Agent':UA,'Accept':'application/json,text/plain'})
     with urllib.request.urlopen(req,timeout=35) as r:

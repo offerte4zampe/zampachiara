@@ -34,9 +34,9 @@ def build():
         links=' · '.join(f'<a href="{s}.html">{h(t)}</a>' for s,t,*_ in CATEGORIES if s!=slug)
         body=f'<main id="main"><section class="pagehero"><div class="wrap"><span class="eyebrow">Cataloghi reali · aggiornamento automatico</span><h1>{h(title)}</h1><p>{h(guide)}</p><a class="btn" href="confronta-cibo.html?q={quote(query)}">Cerca nel comparatore →</a></div></section><section class="section"><div class="wrap"><p>Catalogo aggiornato il {date}. {len(candidates)} offerte disponibili in questa categoria tra i negozi importati. Qui mostriamo fino a 24 offerte, alternate per negozio e ordinate per nome: non è una classifica di convenienza.</p><p class="notice">Prezzi e disponibilità possono cambiare. Verifica ricetta, formato, spedizione e prezzo finale nel negozio. Non confrontiamo tutto il mercato.</p><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:20px">{"".join(cards) or "<p>Nessuna offerta disponibile in questa rilevazione. Usa il comparatore per controllare il catalogo.</p>"}</div><h2>Altre categorie</h2><p>{links}</p><h2>Come leggiamo i prezzi</h2><p>Usiamo i cataloghi pubblici dei negozi. Non presumiamo che due nomi simili indichino lo stesso prodotto e non inventiamo pesi mancanti. La selezione viene rigenerata insieme al catalogo ogni sei ore. <a href="chi-siamo.html">Leggi il metodo</a>.</p></div></section></main>'
         page=re.sub(r'<main\b.*?</main>',lambda _:body,template,flags=re.S)
-        page=re.sub(r'<title>.*?</title>',f'<title>{h(title)} | Offerte4Zampe</title>',page)
+        page=re.sub(r'<title>.*?</title>',f'<title>{h(title)} | Offerte a 4 Zampe</title>',page)
         page=re.sub(r'(<meta (?:name="description"|property="og:description") content=")[^"]*',lambda m:m[1]+h(guide,quote=True),page)
-        page=re.sub(r'(<meta property="og:title" content=")[^"]*',lambda m:m[1]+h(title+' | Offerte4Zampe',quote=True),page)
+        page=re.sub(r'(<meta property="og:title" content=")[^"]*',lambda m:m[1]+h(title+' | Offerte a 4 Zampe',quote=True),page)
         page=page.replace('https://offerte4zampe.it/chi-siamo',f'https://offerte4zampe.it/{slug}')
         page=page.replace(' aria-current="page"','')
         (ROOT/f'site/{slug}.html').write_text(page)

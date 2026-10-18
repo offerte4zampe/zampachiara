@@ -20,7 +20,7 @@ def same_product(a,b):
 
 def page(template,slug,title,description,body):
     out=re.sub(r'<main\b.*?</main>',lambda _:f'<main id="main" data-product-page>{body}</main>',template,flags=re.S)
-    out=re.sub(r'<title>.*?</title>',lambda _:f'<title>{h(title)} | Offerte4Zampe</title>',out)
+    out=re.sub(r'<title>.*?</title>',lambda _:f'<title>{h(title)} | Offerte a 4 Zampe</title>',out)
     for key in ['name="description"','property="og:description"']:
         out=re.sub('(<meta '+key+' content=")[^"]*',lambda m:m[1]+h(description,quote=True),out)
     out=re.sub(r'(<meta property="og:title" content=")[^"]*',lambda m:m[1]+h(title,quote=True),out)
