@@ -5,6 +5,8 @@ on:
   push:
     branches: [main]
     paths:
+      - 'automation/import_partner_feed.py'
+      - 'tests/test_partner_feed.py'
       - 'automation/update_catalog.py'
       - 'automation/enrich_catalog.py'
       - 'automation/update_history.py'

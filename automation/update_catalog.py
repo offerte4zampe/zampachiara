@@ -58,6 +58,12 @@ def main():
             if status['status']=='error':
                 rows=[r for r in old.get('offers',[]) if r['merchant_id']==status['id']];status['offers']=len(rows);status['status']='stale' if rows else 'error'
             offers.extend(rows);sources.append(status)
+    # Preserve official partner snapshots; stale dates remain visible to the UI.
+    public_ids={s[0] for s in SOURCES}
+    for partner in old.get('sources',[]):
+        if partner['id'] not in public_ids and partner.get('method')=='Feed ufficiale normalizzato':
+            rows=[r for r in old['offers'] if r['merchant_id']==partner['id']]
+            offers.extend(rows);sources.append(partner)
     payload={'generated_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'refresh_hours':6,'tracking_enabled':False,'sources':sources,'offers':offers}
     if not offers: raise SystemExit('No verified offers available; previous catalog unchanged')
     path.parent.mkdir(exist_ok=True);tmp=path.with_suffix('.tmp');tmp.write_text(json.dumps(payload,ensure_ascii=False,separators=(',',':')));tmp.replace(path)

@@ -18,6 +18,7 @@ def build():
  for o in d['offers']:
   if o['available'] and o.get('weight_kg') and o.get('brand'):brands.setdefault(o['brand'].casefold(),set()).add(o['merchant_id'])
  for o in d['offers']:
+  if o['merchant_id'] not in ('bauzaar','webpet','animaliapet'):continue
   url=o['url'].split('?')[0]+'.js';key=o['id'];entry=cache.get(key)
   if entry and (now-datetime.datetime.fromisoformat(entry['checked_at'])).days<7:continue
   if len(brands.get(o['brand'].casefold(),set()))<2 or not o['available'] or not o.get('weight_kg'):continue
