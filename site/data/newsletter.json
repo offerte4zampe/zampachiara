@@ -1,0 +1,6 @@
+{
+  "provider": "Brevo",
+  "signup_url": null,
+  "double_opt_in_verified": false,
+  "unsubscribe_verified": false
+}
