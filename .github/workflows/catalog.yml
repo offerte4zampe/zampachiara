@@ -6,6 +6,8 @@ on:
     branches: [main]
     paths:
       - 'automation/import_partner_feed.py'
+      - 'automation/bauzaar_feed.py'
+      - 'tests/test_bauzaar_feed.py'
       - 'tests/test_partner_feed.py'
       - 'automation/update_catalog.py'
       - 'automation/enrich_catalog.py'

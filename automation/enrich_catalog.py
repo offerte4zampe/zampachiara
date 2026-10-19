@@ -18,7 +18,7 @@ def build():
  for o in d['offers']:
   if o['available'] and o.get('weight_kg') and o.get('brand'):brands.setdefault(o['brand'].casefold(),set()).add(o['merchant_id'])
  for o in d['offers']:
-  if o['merchant_id'] not in ('bauzaar','webpet','animaliapet'):continue
+  if o.get('source_type')=='official_feed' or o['merchant_id'] not in ('bauzaar','webpet','animaliapet'):continue
   url=o['url'].split('?')[0]+'.js';key=o['id'];entry=cache.get(key)
   if entry and (now-datetime.datetime.fromisoformat(entry['checked_at'])).days<7:continue
   if len(brands.get(o['brand'].casefold(),set()))<2 or not o['available'] or not o.get('weight_kg'):continue
@@ -60,7 +60,7 @@ def build():
  for o in d['offers']:
   o['gtin']=gtin(o.get('gtin'));o['gtin_source']='catalog' if o['gtin'] else ''
   e=cache.get(o['id'])
-  if e and (now-datetime.datetime.fromisoformat(e['checked_at'])).days<30:
+  if o.get('source_type')!='official_feed' and e and (now-datetime.datetime.fromisoformat(e['checked_at'])).days<30:
    if e['gtin']:o.update(gtin=e['gtin'],gtin_source=e['source'],gtin_checked_at=e['checked_at'])
    if e.get('shipping_weight_kg'):o['shipping_weight_kg']=e['shipping_weight_kg']
  cachepath.write_text(json.dumps(cache,separators=(',',':')))

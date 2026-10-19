@@ -1,4 +1,4 @@
-"""Import public merchant catalogs; never generate affiliate links or invented prices."""
+"""Import public merchant catalogs; use approved official feeds where available; never invent prices."""
 import gzip
 import concurrent.futures, datetime, json, os, re, time, urllib.request, urllib.robotparser
 from decimal import Decimal, InvalidOperation
@@ -28,6 +28,9 @@ def weight(label):
 def collect(source):
     sid,name,base=source; now=datetime.datetime.now(datetime.timezone.utc).isoformat(); rows=[]
     try:
+        if sid=='bauzaar':
+            from bauzaar_feed import collect as official_collect
+            return official_collect()
         rp=urllib.robotparser.RobotFileParser();rp.parse(get(base+'/robots.txt').decode().splitlines())
         if not rp.can_fetch(UA,base+'/products.json'):raise ValueError('Catalog access disallowed by robots')
         seen=set(); complete=False
@@ -64,7 +67,7 @@ def main():
         if partner['id'] not in public_ids and partner.get('method')=='Feed ufficiale normalizzato':
             rows=[r for r in old['offers'] if r['merchant_id']==partner['id']]
             offers.extend(rows);sources.append(partner)
-    payload={'generated_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'refresh_hours':6,'tracking_enabled':False,'sources':sources,'offers':offers}
+    payload={'generated_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'refresh_hours':6,'tracking_enabled':any(o.get('affiliate_url') for o in offers),'sources':sources,'offers':offers}
     if not offers: raise SystemExit('No verified offers available; previous catalog unchanged')
     path.parent.mkdir(exist_ok=True);tmp=path.with_suffix('.tmp');tmp.write_text(json.dumps(payload,ensure_ascii=False,separators=(',',':')));tmp.replace(path)
     path.with_suffix('.json.gz').write_bytes(gzip.compress(path.read_bytes(),mtime=0))
