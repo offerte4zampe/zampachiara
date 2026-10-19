@@ -1,0 +1,1278 @@
+{
+  "costo-crocchette-cane": {
+    "color-contrast": {
+      "type": "table",
+      "headings": [
+        {
+          "key": "node",
+          "valueType": "node",
+          "subItemsHeading": {
+            "key": "relatedNode",
+            "valueType": "node"
+          },
+          "label": "Failing Elements"
+        }
+      ],
+      "items": [
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-0-SPAN",
+            "path": "1,HTML,1,BODY,2,MAIN,2,SECTION,0,DIV,0,DIV,0,SPAN",
+            "selector": "section.shopping-return > div.wrap > div > span.kicker",
+            "boundingRect": {
+              "top": 4063,
+              "bottom": 4076,
+              "left": 19,
+              "right": 189,
+              "width": 170,
+              "height": 13
+            },
+            "snippet": "<span class=\"kicker\">",
+            "nodeLabel": "CONFRONTO GRATUITO",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.23 (foreground color: #ad563b, background color: #ffe8cb, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-1-SECTION",
+                  "path": "1,HTML,1,BODY,2,MAIN,2,SECTION",
+                  "selector": "body > main#main > section.shopping-return",
+                  "boundingRect": {
+                    "top": 4016,
+                    "bottom": 4330,
+                    "left": 0,
+                    "right": 412,
+                    "width": 412,
+                    "height": 314
+                  },
+                  "snippet": "<section class=\"shopping-return\">",
+                  "nodeLabel": "CONFRONTO GRATUITO\nDal costo teorico ai prezzi rilevati.\n\nConfronta formati e n…"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-2-P",
+            "path": "1,HTML,1,BODY,2,MAIN,2,SECTION,0,DIV,0,DIV,2,P",
+            "selector": "section.shopping-return > div.wrap > div > p",
+            "boundingRect": {
+              "top": 4164,
+              "bottom": 4215,
+              "left": 19,
+              "right": 393,
+              "width": 374,
+              "height": 51
+            },
+            "snippet": "<p>",
+            "nodeLabel": "Confronta formati e negozi disponibili, senza registrazione.",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.06 (foreground color: #637577, background color: #ffe8cb, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-1-SECTION",
+                  "path": "1,HTML,1,BODY,2,MAIN,2,SECTION",
+                  "selector": "body > main#main > section.shopping-return",
+                  "boundingRect": {
+                    "top": 4016,
+                    "bottom": 4330,
+                    "left": 0,
+                    "right": 412,
+                    "width": 412,
+                    "height": 314
+                  },
+                  "snippet": "<section class=\"shopping-return\">",
+                  "nodeLabel": "CONFRONTO GRATUITO\nDal costo teorico ai prezzi rilevati.\n\nConfronta formati e n…"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "debugData": {
+        "type": "debugdata",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ]
+      }
+    },
+    "heading-order": {
+      "type": "table",
+      "headings": [
+        {
+          "key": "node",
+          "valueType": "node",
+          "subItemsHeading": {
+            "key": "relatedNode",
+            "valueType": "node"
+          },
+          "label": "Failing Elements"
+        }
+      ],
+      "items": []
+    },
+    "layout-shifts": {
+      "type": "table",
+      "headings": [
+        {
+          "key": "node",
+          "valueType": "node",
+          "subItemsHeading": {
+            "key": "extra"
+          },
+          "label": "Element"
+        },
+        {
+          "key": "score",
+          "valueType": "numeric",
+          "subItemsHeading": {
+            "key": "cause",
+            "valueType": "text"
+          },
+          "granularity": 0.001,
+          "label": "Layout shift score"
+        }
+      ],
+      "items": []
+    },
+    "cls-culprits-insight": {
+      "type": "list",
+      "items": []
+    },
+    "lcp-discovery-insight": null,
+    "third-party-cookies": {
+      "type": "table",
+      "headings": [
+        {
+          "key": "name",
+          "valueType": "text",
+          "label": "Name"
+        },
+        {
+          "key": "url",
+          "valueType": "url",
+          "label": "URL"
+        }
+      ],
+      "items": []
+    },
+    "configSettings": {
+      "output": [
+        "json",
+        "html"
+      ],
+      "maxWaitForFcp": 30000,
+      "maxWaitForLoad": 45000,
+      "pauseAfterFcpMs": 1000,
+      "pauseAfterLoadMs": 1000,
+      "networkQuietThresholdMs": 1000,
+      "cpuQuietThresholdMs": 1000,
+      "formFactor": "mobile",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      },
+      "throttlingMethod": "simulate",
+      "screenEmulation": {
+        "mobile": true,
+        "width": 412,
+        "height": 823,
+        "deviceScaleFactor": 1.75,
+        "disabled": false
+      },
+      "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+      "auditMode": false,
+      "gatherMode": false,
+      "clearStorageTypes": [
+        "file_systems",
+        "shader_cache",
+        "service_workers",
+        "cache_storage"
+      ],
+      "disableStorageReset": false,
+      "debugNavigation": false,
+      "channel": "cli",
+      "usePassiveGathering": false,
+      "disableFullPageScreenshot": false,
+      "skipAboutBlank": false,
+      "blankPage": "about:blank",
+      "ignoreStatusCode": false,
+      "locale": "en-US",
+      "blockedUrlPatterns": null,
+      "additionalTraceCategories": null,
+      "extraHeaders": null,
+      "precomputedLanternData": null,
+      "onlyAudits": null,
+      "onlyCategories": [
+        "performance",
+        "accessibility",
+        "best-practices",
+        "seo"
+      ],
+      "skipAudits": null
+    },
+    "environment": {
+      "networkUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Mobile Safari/537.36",
+      "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "benchmarkIndex": 2359.5,
+      "credits": {
+        "axe-core": "4.14.0"
+      }
+    },
+    "lcp-breakdown-insight": {
+      "type": "list",
+      "items": [
+        {
+          "type": "table",
+          "headings": [
+            {
+              "key": "label",
+              "valueType": "text",
+              "label": "Subpart"
+            },
+            {
+              "key": "duration",
+              "valueType": "ms",
+              "label": "Duration"
+            }
+          ],
+          "items": [
+            {
+              "subpart": "timeToFirstByte",
+              "label": "Time to first byte",
+              "duration": 122.657
+            },
+            {
+              "subpart": "elementRenderDelay",
+              "label": "Element render delay",
+              "duration": 80.745
+            }
+          ]
+        },
+        {
+          "type": "node",
+          "lhId": "page-0-H1",
+          "path": "1,HTML,1,BODY,2,MAIN,0,SECTION,0,DIV,1,H1",
+          "selector": "main#main > section.pagehero > div.wrap > h1",
+          "boundingRect": {
+            "top": 169,
+            "bottom": 330,
+            "left": 19,
+            "right": 393,
+            "width": 374,
+            "height": 161
+          },
+          "snippet": "<h1>",
+          "nodeLabel": "Quanto costano le crocchette\nper un cane al mese?"
+        }
+      ]
+    },
+    "render-blocking-insight": {
+      "type": "table",
+      "headings": [
+        {
+          "key": "url",
+          "valueType": "url",
+          "label": "URL"
+        },
+        {
+          "key": "totalBytes",
+          "valueType": "bytes",
+          "label": "Transfer Size"
+        },
+        {
+          "key": "wastedMs",
+          "valueType": "timespanMs",
+          "label": "Duration"
+        }
+      ],
+      "items": [
+        {
+          "url": "https://offerte4zampe.it/assets/style.css",
+          "totalBytes": 9551,
+          "wastedMs": 181
+        }
+      ]
+    }
+  },
+  "home": {
+    "color-contrast": {
+      "type": "table",
+      "headings": [
+        {
+          "key": "node",
+          "valueType": "node",
+          "subItemsHeading": {
+            "key": "relatedNode",
+            "valueType": "node"
+          },
+          "label": "Failing Elements"
+        }
+      ],
+      "items": [
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-0-SPAN",
+            "path": "1,HTML,1,BODY,2,MAIN,4,SECTION,0,DIV,0,DIV,0,DIV,0,SPAN",
+            "selector": "div.wrap > div.section-heading > div > span.kicker",
+            "boundingRect": {
+              "top": 2456,
+              "bottom": 2469,
+              "left": 19,
+              "right": 221,
+              "width": 202,
+              "height": 13
+            },
+            "snippet": "<span class=\"kicker\">",
+            "nodeLabel": "DAL CATALOGO DEI NEGOZI",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.44 (foreground color: #ad563b, background color: #eaf3ed, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-1-SECTION",
+                  "path": "1,HTML,1,BODY,2,MAIN,4,SECTION",
+                  "selector": "body > main#main > section#offerte",
+                  "boundingRect": {
+                    "top": 2410,
+                    "bottom": 5416,
+                    "left": 0,
+                    "right": 412,
+                    "width": 412,
+                    "height": 3005
+                  },
+                  "snippet": "<section class=\"section alt\" id=\"offerte\">",
+                  "nodeLabel": "DAL CATALOGO DEI NEGOZI\nOfferte da tenere d’occhio.\n\nPrezzi reali e formati vis…"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-2-P",
+            "path": "1,HTML,1,BODY,2,MAIN,4,SECTION,0,DIV,0,DIV,0,DIV,2,P",
+            "selector": "div.wrap > div.section-heading > div > p.section-desc",
+            "boundingRect": {
+              "top": 2568,
+              "bottom": 2645,
+              "left": 19,
+              "right": 393,
+              "width": 374,
+              "height": 77
+            },
+            "snippet": "<p class=\"section-desc\">",
+            "nodeLabel": "Prezzi reali e formati visibili. Lo sconto è rispetto al prezzo di confronto de…",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.27 (foreground color: #637577, background color: #eaf3ed, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-1-SECTION",
+                  "path": "1,HTML,1,BODY,2,MAIN,4,SECTION",
+                  "selector": "body > main#main > section#offerte",
+                  "boundingRect": {
+                    "top": 2410,
+                    "bottom": 5416,
+                    "left": 0,
+                    "right": 412,
+                    "width": 412,
+                    "height": 3005
+                  },
+                  "snippet": "<section class=\"section alt\" id=\"offerte\">",
+                  "nodeLabel": "DAL CATALOGO DEI NEGOZI\nOfferte da tenere d’occhio.\n\nPrezzi reali e formati vis…"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-3-P",
+            "path": "1,HTML,1,BODY,2,MAIN,4,SECTION,0,DIV,1,P",
+            "selector": "main#main > section#offerte > div.wrap > p#home-deals-status",
+            "boundingRect": {
+              "top": 2746,
+              "bottom": 2808,
+              "left": 19,
+              "right": 393,
+              "width": 374,
+              "height": 62
+            },
+            "snippet": "<p id=\"home-deals-status\" class=\"micro\" role=\"status\">",
+            "nodeLabel": "Ultimo aggiornamento catalogo: 19/10/2026, 20:02:55. Una selezione di offerte, …",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.27 (foreground color: #637577, background color: #eaf3ed, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-1-SECTION",
+                  "path": "1,HTML,1,BODY,2,MAIN,4,SECTION",
+                  "selector": "body > main#main > section#offerte",
+                  "boundingRect": {
+                    "top": 2410,
+                    "bottom": 5416,
+                    "left": 0,
+                    "right": 412,
+                    "width": 412,
+                    "height": 3005
+                  },
+                  "snippet": "<section class=\"section alt\" id=\"offerte\">",
+                  "nodeLabel": "DAL CATALOGO DEI NEGOZI\nOfferte da tenere d’occhio.\n\nPrezzi reali e formati vis…"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-4-SPAN",
+            "path": "1,HTML,1,BODY,2,MAIN,6,SECTION,0,DIV,0,SPAN",
+            "selector": "main#main > section.section > div.wrap > span.kicker",
+            "boundingRect": {
+              "top": 6026,
+              "bottom": 6039,
+              "left": 19,
+              "right": 142,
+              "width": 123,
+              "height": 13
+            },
+            "snippet": "<span class=\"kicker\">",
+            "nodeLabel": "COME FUNZIONA",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.44 (foreground color: #ad563b, background color: #eaf3ed, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-5-SECTION",
+                  "path": "1,HTML,1,BODY,2,MAIN,6,SECTION",
+                  "selector": "body > main#main > section.section",
+                  "boundingRect": {
+                    "top": 5980,
+                    "bottom": 7033,
+                    "left": 0,
+                    "right": 412,
+                    "width": 412,
+                    "height": 1053
+                  },
+                  "snippet": "<section class=\"section alt\">",
+                  "nodeLabel": "COME FUNZIONA\nConfronta qui. Compra nel negozio.\n01\nCerca il prodotto\n\nScrivi m…"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-6-P",
+            "path": "1,HTML,1,BODY,2,MAIN,6,SECTION,0,DIV,3,P",
+            "selector": "main#main > section.section > div.wrap > p.micro",
+            "boundingRect": {
+              "top": 6920,
+              "bottom": 6982,
+              "left": 19,
+              "right": 393,
+              "width": 374,
+              "height": 62
+            },
+            "snippet": "<p class=\"micro\">",
+            "nodeLabel": "Confrontiamo le fonti presenti nel catalogo, non tutto il mercato. Prodotti sim…",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.27 (foreground color: #637577, background color: #eaf3ed, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-5-SECTION",
+                  "path": "1,HTML,1,BODY,2,MAIN,6,SECTION",
+                  "selector": "body > main#main > section.section",
+                  "boundingRect": {
+                    "top": 5980,
+                    "bottom": 7033,
+                    "left": 0,
+                    "right": 412,
+                    "width": 412,
+                    "height": 1053
+                  },
+                  "snippet": "<section class=\"section alt\">",
+                  "nodeLabel": "COME FUNZIONA\nConfronta qui. Compra nel negozio.\n01\nCerca il prodotto\n\nScrivi m…"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-7-SPAN",
+            "path": "1,HTML,1,BODY,2,MAIN,8,SECTION,0,DIV,0,DIV,0,DIV,0,SPAN",
+            "selector": "div.wrap > div.section-heading > div > span.kicker",
+            "boundingRect": {
+              "top": 7639,
+              "bottom": 7652,
+              "left": 19,
+              "right": 228,
+              "width": 209,
+              "height": 13
+            },
+            "snippet": "<span class=\"kicker\">",
+            "nodeLabel": "ACQUISTI PIÙ CONSAPEVOLI",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.44 (foreground color: #ad563b, background color: #eaf3ed, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-8-SECTION",
+                  "path": "1,HTML,1,BODY,2,MAIN,8,SECTION",
+                  "selector": "body > main#main > section.section",
+                  "boundingRect": {
+                    "top": 7593,
+                    "bottom": 8447,
+                    "left": 0,
+                    "right": 412,
+                    "width": 412,
+                    "height": 854
+                  },
+                  "snippet": "<section class=\"section alt\">",
+                  "nodeLabel": "ACQUISTI PIÙ CONSAPEVOLI\nOltre il prezzo sul sacco.\nQuanto dura una confezione?…"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-9-P",
+            "path": "1,HTML,1,BODY,2,MAIN,9,SECTION,0,DIV,0,DIV,0,DIV,2,P",
+            "selector": "div.wrap > div.newsletter-banner > div > p",
+            "boundingRect": {
+              "top": 8740,
+              "bottom": 8868,
+              "left": 48,
+              "right": 364,
+              "width": 316,
+              "height": 128
+            },
+            "snippet": "<p>",
+            "nodeLabel": "Una selezione settimanale di offerte per i tuoi animali e, quando disponibili, …",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.41 (foreground color: #5f716b, background color: #ffead0, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-10-DIV",
+                  "path": "1,HTML,1,BODY,2,MAIN,9,SECTION,0,DIV,0,DIV",
+                  "selector": "main#main > section.section > div.wrap > div.newsletter-banner",
+                  "boundingRect": {
+                    "top": 8485,
+                    "bottom": 9275,
+                    "left": 19,
+                    "right": 393,
+                    "width": 374,
+                    "height": 790
+                  },
+                  "snippet": "<div class=\"newsletter-banner\">",
+                  "nodeLabel": "LA NEWSLETTER · IN PREPARAZIONE\nOfferte da fiutare.\nCoccole da risparmiare.\n\nUn…"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "debugData": {
+        "type": "debugdata",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ]
+      }
+    },
+    "heading-order": {
+      "type": "table",
+      "headings": [
+        {
+          "key": "node",
+          "valueType": "node",
+          "subItemsHeading": {
+            "key": "relatedNode",
+            "valueType": "node"
+          },
+          "label": "Failing Elements"
+        }
+      ],
+      "items": [
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-11-H3",
+            "path": "1,HTML,1,BODY,2,MAIN,1,SECTION,0,DIV,0,ASIDE,1,DIV,0,ARTICLE,2,H3",
+            "selector": "aside.home-spotlight > div#home-spotlight > article.spotlight-product > h3",
+            "boundingRect": {
+              "top": 1342,
+              "bottom": 1379,
+              "left": 36,
+              "right": 360,
+              "width": 324,
+              "height": 38
+            },
+            "snippet": "<h3>",
+            "nodeLabel": "Royal Canin Gastrointestinal Low Fat 1,5Kg Crocchette Cani Small",
+            "explanation": "Fix any of the following:\n  Heading order invalid"
+          }
+        }
+      ],
+      "debugData": {
+        "type": "debugdata",
+        "impact": "moderate",
+        "tags": [
+          "cat.semantics",
+          "best-practice"
+        ]
+      }
+    },
+    "layout-shifts": {
+      "type": "table",
+      "headings": [
+        {
+          "key": "node",
+          "valueType": "node",
+          "subItemsHeading": {
+            "key": "extra"
+          },
+          "label": "Element"
+        },
+        {
+          "key": "score",
+          "valueType": "numeric",
+          "subItemsHeading": {
+            "key": "cause",
+            "valueType": "text"
+          },
+          "granularity": 0.001,
+          "label": "Layout shift score"
+        }
+      ],
+      "items": []
+    },
+    "cls-culprits-insight": {
+      "type": "list",
+      "items": []
+    },
+    "lcp-discovery-insight": null,
+    "third-party-cookies": {
+      "type": "table",
+      "headings": [
+        {
+          "key": "name",
+          "valueType": "text",
+          "label": "Name"
+        },
+        {
+          "key": "url",
+          "valueType": "url",
+          "label": "URL"
+        }
+      ],
+      "items": [
+        {
+          "name": "test_cookie",
+          "url": "https://googleads.g.doubleclick.net/pagead/ads"
+        }
+      ]
+    },
+    "configSettings": {
+      "output": [
+        "json",
+        "html"
+      ],
+      "maxWaitForFcp": 30000,
+      "maxWaitForLoad": 45000,
+      "pauseAfterFcpMs": 1000,
+      "pauseAfterLoadMs": 1000,
+      "networkQuietThresholdMs": 1000,
+      "cpuQuietThresholdMs": 1000,
+      "formFactor": "mobile",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      },
+      "throttlingMethod": "simulate",
+      "screenEmulation": {
+        "mobile": true,
+        "width": 412,
+        "height": 823,
+        "deviceScaleFactor": 1.75,
+        "disabled": false
+      },
+      "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+      "auditMode": false,
+      "gatherMode": false,
+      "clearStorageTypes": [
+        "file_systems",
+        "shader_cache",
+        "service_workers",
+        "cache_storage"
+      ],
+      "disableStorageReset": false,
+      "debugNavigation": false,
+      "channel": "cli",
+      "usePassiveGathering": false,
+      "disableFullPageScreenshot": false,
+      "skipAboutBlank": false,
+      "blankPage": "about:blank",
+      "ignoreStatusCode": false,
+      "locale": "en-US",
+      "blockedUrlPatterns": null,
+      "additionalTraceCategories": null,
+      "extraHeaders": null,
+      "precomputedLanternData": null,
+      "onlyAudits": null,
+      "onlyCategories": [
+        "performance",
+        "accessibility",
+        "best-practices",
+        "seo"
+      ],
+      "skipAudits": null
+    },
+    "environment": {
+      "networkUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Mobile Safari/537.36",
+      "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "benchmarkIndex": 2474,
+      "credits": {
+        "axe-core": "4.14.0"
+      }
+    },
+    "lcp-breakdown-insight": {
+      "type": "list",
+      "items": [
+        {
+          "type": "table",
+          "headings": [
+            {
+              "key": "label",
+              "valueType": "text",
+              "label": "Subpart"
+            },
+            {
+              "key": "duration",
+              "valueType": "ms",
+              "label": "Duration"
+            }
+          ],
+          "items": [
+            {
+              "subpart": "timeToFirstByte",
+              "label": "Time to first byte",
+              "duration": 287.6459999999851
+            },
+            {
+              "subpart": "elementRenderDelay",
+              "label": "Element render delay",
+              "duration": 2191.3690000000147
+            }
+          ]
+        },
+        {
+          "type": "node",
+          "lhId": "page-0-H1",
+          "path": "1,HTML,1,BODY,2,MAIN,0,SECTION,0,DIV,0,DIV,0,DIV,1,H1",
+          "selector": "div.wrap > div.hero-grid > div > h1",
+          "boundingRect": {
+            "top": 165,
+            "bottom": 355,
+            "left": 19,
+            "right": 393,
+            "width": 374,
+            "height": 190
+          },
+          "snippet": "<h1>",
+          "nodeLabel": "Confronta prezzi.\nRisparmia a 4 zampe."
+        }
+      ]
+    },
+    "render-blocking-insight": {
+      "type": "table",
+      "headings": [
+        {
+          "key": "url",
+          "valueType": "url",
+          "label": "URL"
+        },
+        {
+          "key": "totalBytes",
+          "valueType": "bytes",
+          "label": "Transfer Size"
+        },
+        {
+          "key": "wastedMs",
+          "valueType": "timespanMs",
+          "label": "Duration"
+        }
+      ],
+      "items": [
+        {
+          "url": "https://offerte4zampe.it/assets/style.css",
+          "totalBytes": 9498,
+          "wastedMs": 413
+        }
+      ]
+    }
+  },
+  "confronta-cibo": {
+    "color-contrast": {
+      "type": "table",
+      "headings": [
+        {
+          "key": "node",
+          "valueType": "node",
+          "subItemsHeading": {
+            "key": "relatedNode",
+            "valueType": "node"
+          },
+          "label": "Failing Elements"
+        }
+      ],
+      "items": [
+        {
+          "node": {
+            "type": "node",
+            "lhId": "1-0-SPAN",
+            "path": "1,HTML,1,BODY,2,MAIN,3,SECTION,0,DIV,0,SPAN",
+            "selector": "main#main > section.section > div.wrap > span.kicker",
+            "boundingRect": {
+              "top": 27262,
+              "bottom": 27275,
+              "left": 19,
+              "right": 185,
+              "width": 166,
+              "height": 13
+            },
+            "snippet": "<span class=\"kicker\">",
+            "nodeLabel": "PRIMA DI ACQUISTARE",
+            "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 4.44 (foreground color: #ad563b, background color: #eaf3ed, font size: 8.3pt (11px), font weight: bold). Expected contrast ratio of 4.5:1"
+          },
+          "subItems": {
+            "type": "subitems",
+            "items": [
+              {
+                "relatedNode": {
+                  "type": "node",
+                  "lhId": "1-1-SECTION",
+                  "path": "1,HTML,1,BODY,2,MAIN,3,SECTION",
+                  "selector": "body > main#main > section.section",
+                  "boundingRect": {
+                    "top": 27216,
+                    "bottom": 28396,
+                    "left": 0,
+                    "right": 412,
+                    "width": 412,
+                    "height": 1180
+                  },
+                  "snippet": "<section class=\"section alt\">",
+                  "nodeLabel": "PRIMA DI ACQUISTARE\nIl prezzo al kg da solo può ingannare\n\nSe il prodotto A cos…"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "debugData": {
+        "type": "debugdata",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ]
+      }
+    },
+    "heading-order": {
+      "type": "table",
+      "headings": [
+        {
+          "key": "node",
+          "valueType": "node",
+          "subItemsHeading": {
+            "key": "relatedNode",
+            "valueType": "node"
+          },
+          "label": "Failing Elements"
+        }
+      ],
+      "items": []
+    },
+    "layout-shifts": {
+      "type": "table",
+      "headings": [
+        {
+          "key": "node",
+          "valueType": "node",
+          "subItemsHeading": {
+            "key": "extra"
+          },
+          "label": "Element"
+        },
+        {
+          "key": "score",
+          "valueType": "numeric",
+          "subItemsHeading": {
+            "key": "cause",
+            "valueType": "text"
+          },
+          "granularity": 0.001,
+          "label": "Layout shift score"
+        }
+      ],
+      "items": [
+        {
+          "node": {
+            "type": "node",
+            "lhId": "page-1-BODY",
+            "path": "1,HTML,1,BODY",
+            "selector": "body",
+            "boundingRect": {
+              "top": 0,
+              "bottom": 29651,
+              "left": 0,
+              "right": 412,
+              "width": 412,
+              "height": 29651
+            },
+            "snippet": "<body>",
+            "nodeLabel": "body"
+          },
+          "score": 1
+        },
+        {
+          "node": {
+            "type": "node",
+            "lhId": "page-2-DIV",
+            "path": "1,HTML,1,BODY,2,MAIN,1,SECTION,0,DIV,2,DIV",
+            "selector": "main#main > section.section > div.wrap > div#catalog-filters",
+            "boundingRect": {
+              "top": 869,
+              "bottom": 1389,
+              "left": 19,
+              "right": 393,
+              "width": 374,
+              "height": 521
+            },
+            "snippet": "<div id=\"catalog-filters\" class=\"panel catalog-filters\">",
+            "nodeLabel": "Cerca prodotto, marca, ricetta o codice\nNegozio\nTutti i negozi disponibili\nAnim…"
+          },
+          "score": 0.007820661452515502
+        }
+      ]
+    },
+    "cls-culprits-insight": {
+      "type": "list",
+      "items": [
+        {
+          "type": "table",
+          "headings": [
+            {
+              "key": "node",
+              "valueType": "node",
+              "subItemsHeading": {
+                "key": "extra"
+              },
+              "label": "Element"
+            },
+            {
+              "key": "score",
+              "valueType": "numeric",
+              "subItemsHeading": {
+                "key": "cause",
+                "valueType": "text"
+              },
+              "granularity": 0.001,
+              "label": "Layout shift score"
+            }
+          ],
+          "items": [
+            {
+              "node": {
+                "type": "text",
+                "value": "Total"
+              },
+              "score": 1.0078206614525156
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "page-1-BODY",
+                "path": "1,HTML,1,BODY",
+                "selector": "body",
+                "boundingRect": {
+                  "top": 0,
+                  "bottom": 29651,
+                  "left": 0,
+                  "right": 412,
+                  "width": 412,
+                  "height": 29651
+                },
+                "snippet": "<body>",
+                "nodeLabel": "body"
+              },
+              "score": 1
+            },
+            {
+              "node": {
+                "type": "node",
+                "lhId": "page-2-DIV",
+                "path": "1,HTML,1,BODY,2,MAIN,1,SECTION,0,DIV,2,DIV",
+                "selector": "main#main > section.section > div.wrap > div#catalog-filters",
+                "boundingRect": {
+                  "top": 869,
+                  "bottom": 1389,
+                  "left": 19,
+                  "right": 393,
+                  "width": 374,
+                  "height": 521
+                },
+                "snippet": "<div id=\"catalog-filters\" class=\"panel catalog-filters\">",
+                "nodeLabel": "Cerca prodotto, marca, ricetta o codice\nNegozio\nTutti i negozi disponibili\nAnim…"
+              },
+              "score": 0.007820661452515502
+            }
+          ]
+        }
+      ]
+    },
+    "lcp-discovery-insight": null,
+    "third-party-cookies": {
+      "type": "table",
+      "headings": [
+        {
+          "key": "name",
+          "valueType": "text",
+          "label": "Name"
+        },
+        {
+          "key": "url",
+          "valueType": "url",
+          "label": "URL"
+        }
+      ],
+      "items": [
+        {
+          "name": "test_cookie",
+          "url": "https://googleads.g.doubleclick.net/pagead/ads"
+        }
+      ]
+    },
+    "configSettings": {
+      "output": [
+        "json",
+        "html"
+      ],
+      "maxWaitForFcp": 30000,
+      "maxWaitForLoad": 45000,
+      "pauseAfterFcpMs": 1000,
+      "pauseAfterLoadMs": 1000,
+      "networkQuietThresholdMs": 1000,
+      "cpuQuietThresholdMs": 1000,
+      "formFactor": "mobile",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.5600000000002,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      },
+      "throttlingMethod": "simulate",
+      "screenEmulation": {
+        "mobile": true,
+        "width": 412,
+        "height": 823,
+        "deviceScaleFactor": 1.75,
+        "disabled": false
+      },
+      "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+      "auditMode": false,
+      "gatherMode": false,
+      "clearStorageTypes": [
+        "file_systems",
+        "shader_cache",
+        "service_workers",
+        "cache_storage"
+      ],
+      "disableStorageReset": false,
+      "debugNavigation": false,
+      "channel": "cli",
+      "usePassiveGathering": false,
+      "disableFullPageScreenshot": false,
+      "skipAboutBlank": false,
+      "blankPage": "about:blank",
+      "ignoreStatusCode": false,
+      "locale": "en-US",
+      "blockedUrlPatterns": null,
+      "additionalTraceCategories": null,
+      "extraHeaders": null,
+      "precomputedLanternData": null,
+      "onlyAudits": null,
+      "onlyCategories": [
+        "performance",
+        "accessibility",
+        "best-practices",
+        "seo"
+      ],
+      "skipAudits": null
+    },
+    "environment": {
+      "networkUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Mobile Safari/537.36",
+      "hostUserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+      "benchmarkIndex": 2489,
+      "credits": {
+        "axe-core": "4.14.0"
+      }
+    },
+    "lcp-breakdown-insight": {
+      "type": "list",
+      "items": [
+        {
+          "type": "table",
+          "headings": [
+            {
+              "key": "label",
+              "valueType": "text",
+              "label": "Subpart"
+            },
+            {
+              "key": "duration",
+              "valueType": "ms",
+              "label": "Duration"
+            }
+          ],
+          "items": [
+            {
+              "subpart": "timeToFirstByte",
+              "label": "Time to first byte",
+              "duration": 376.318
+            },
+            {
+              "subpart": "elementRenderDelay",
+              "label": "Element render delay",
+              "duration": 1171.501
+            }
+          ]
+        },
+        {
+          "type": "node",
+          "lhId": "page-0-P",
+          "path": "1,HTML,1,BODY,2,MAIN,0,SECTION,0,DIV,2,P",
+          "selector": "main#main > section.pagehero > div.wrap > p",
+          "boundingRect": {
+            "top": 324,
+            "bottom": 460,
+            "left": 19,
+            "right": 393,
+            "width": 374,
+            "height": 136
+          },
+          "snippet": "<p>",
+          "nodeLabel": "Cerca tra le offerte importate dai negozi, filtra per marca e confronta fino a …"
+        }
+      ]
+    },
+    "render-blocking-insight": {
+      "type": "table",
+      "headings": [
+        {
+          "key": "url",
+          "valueType": "url",
+          "label": "URL"
+        },
+        {
+          "key": "totalBytes",
+          "valueType": "bytes",
+          "label": "Transfer Size"
+        },
+        {
+          "key": "wastedMs",
+          "valueType": "timespanMs",
+          "label": "Duration"
+        }
+      ],
+      "items": [
+        {
+          "url": "https://offerte4zampe.it/assets/style.css",
+          "totalBytes": 9552,
+          "wastedMs": 674
+        }
+      ]
+    }
+  }
+}

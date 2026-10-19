@@ -1,0 +1,267 @@
+[
+  {
+    "url": "https://offerte4zampe.it/",
+    "status": 200,
+    "final_url": "https://offerte4zampe.it/",
+    "redirects": [],
+    "bytes": 13616,
+    "canonical": "https://offerte4zampe.it/",
+    "robots": "index,follow",
+    "headers": {
+      "Content-Type": "text/html",
+      "Content-Encoding": null,
+      "Cache-Control": "public, max-age=0, must-revalidate",
+      "ETag": null,
+      "Strict-Transport-Security": null,
+      "X-Robots-Tag": null
+    }
+  },
+  {
+    "url": "https://offerte4zampe.it/index.html",
+    "status": 200,
+    "final_url": "https://offerte4zampe.it/",
+    "redirects": [
+      {
+        "status": 307,
+        "to": "https://offerte4zampe.it/"
+      }
+    ],
+    "bytes": 13616,
+    "canonical": "https://offerte4zampe.it/",
+    "robots": "index,follow",
+    "headers": {
+      "Content-Type": "text/html",
+      "Content-Encoding": null,
+      "Cache-Control": "public, max-age=0, must-revalidate",
+      "ETag": null,
+      "Strict-Transport-Security": null,
+      "X-Robots-Tag": null
+    }
+  },
+  {
+    "url": "https://offerte4zampe.it/confronta-cibo",
+    "status": 200,
+    "final_url": "https://offerte4zampe.it/confronta-cibo",
+    "redirects": [],
+    "bytes": 14580,
+    "canonical": "https://offerte4zampe.it/confronta-cibo",
+    "robots": "index,follow",
+    "headers": {
+      "Content-Type": "text/html",
+      "Content-Encoding": null,
+      "Cache-Control": "public, max-age=0, must-revalidate",
+      "ETag": null,
+      "Strict-Transport-Security": null,
+      "X-Robots-Tag": null
+    }
+  },
+  {
+    "url": "https://offerte4zampe.it/confronta-cibo.html",
+    "status": 200,
+    "final_url": "https://offerte4zampe.it/confronta-cibo",
+    "redirects": [
+      {
+        "status": 307,
+        "to": "https://offerte4zampe.it/confronta-cibo"
+      }
+    ],
+    "bytes": 14580,
+    "canonical": "https://offerte4zampe.it/confronta-cibo",
+    "robots": "index,follow",
+    "headers": {
+      "Content-Type": "text/html",
+      "Content-Encoding": null,
+      "Cache-Control": "public, max-age=0, must-revalidate",
+      "ETag": null,
+      "Strict-Transport-Security": null,
+      "X-Robots-Tag": null
+    }
+  },
+  {
+    "url": "https://offerte4zampe.it/confronta-cibo?q=nessun-risultato-audit-20261019",
+    "status": 200,
+    "final_url": "https://offerte4zampe.it/confronta-cibo?q=nessun-risultato-audit-20261019",
+    "redirects": [],
+    "bytes": 14580,
+    "canonical": "https://offerte4zampe.it/confronta-cibo",
+    "robots": "index,follow",
+    "headers": {
+      "Content-Type": "text/html",
+      "Content-Encoding": null,
+      "Cache-Control": "public, max-age=0, must-revalidate",
+      "ETag": null,
+      "Strict-Transport-Security": null,
+      "X-Robots-Tag": null
+    }
+  },
+  {
+    "url": "https://offerte4zampe.it/confronta-cibo?sale=1",
+    "status": 200,
+    "final_url": "https://offerte4zampe.it/confronta-cibo?sale=1",
+    "redirects": [],
+    "bytes": 14580,
+    "canonical": "https://offerte4zampe.it/confronta-cibo",
+    "robots": "index,follow",
+    "headers": {
+      "Content-Type": "text/html",
+      "Content-Encoding": null,
+      "Cache-Control": "public, max-age=0, must-revalidate",
+      "ETag": null,
+      "Strict-Transport-Security": null,
+      "X-Robots-Tag": null
+    }
+  },
+  {
+    "url": "https://offerte4zampe.it/confronta-cibo?shop=Bauzaar",
+    "status": 200,
+    "final_url": "https://offerte4zampe.it/confronta-cibo?shop=Bauzaar",
+    "redirects": [],
+    "bytes": 14580,
+    "canonical": "https://offerte4zampe.it/confronta-cibo",
+    "robots": "index,follow",
+    "headers": {
+      "Content-Type": "text/html",
+      "Content-Encoding": null,
+      "Cache-Control": "public, max-age=0, must-revalidate",
+      "ETag": null,
+      "Strict-Transport-Security": null,
+      "X-Robots-Tag": null
+    }
+  },
+  {
+    "url": "https://offerte4zampe.it/confronta-cibo?matched=1",
+    "status": 200,
+    "final_url": "https://offerte4zampe.it/confronta-cibo?matched=1",
+    "redirects": [],
+    "bytes": 14580,
+    "canonical": "https://offerte4zampe.it/confronta-cibo",
+    "robots": "index,follow",
+    "headers": {
+      "Content-Type": "text/html",
+      "Content-Encoding": null,
+      "Cache-Control": "public, max-age=0, must-revalidate",
+      "ETag": null,
+      "Strict-Transport-Security": null,
+      "X-Robots-Tag": null
+    }
+  },
+  {
+    "url": "https://offerte4zampe.it/royal-canin-medium-adult",
+    "status": 200,
+    "final_url": "https://offerte4zampe.it/royal-canin-medium-adult",
+    "redirects": [],
+    "bytes": 7189,
+    "canonical": "https://offerte4zampe.it/royal-canin-medium-adult",
+    "robots": "index,follow",
+    "headers": {
+      "Content-Type": "text/html",
+      "Content-Encoding": null,
+      "Cache-Control": "public, max-age=0, must-revalidate",
+      "ETag": null,
+      "Strict-Transport-Security": null,
+      "X-Robots-Tag": null
+    }
+  },
+  {
+    "url": "https://offerte4zampe.it/crocchette-cani",
+    "status": 200,
+    "final_url": "https://offerte4zampe.it/crocchette-cani",
+    "redirects": [],
+    "bytes": 22057,
+    "canonical": "https://offerte4zampe.it/crocchette-cani",
+    "robots": "index,follow",
+    "headers": {
+      "Content-Type": "text/html",
+      "Content-Encoding": null,
+      "Cache-Control": "public, max-age=0, must-revalidate",
+      "ETag": null,
+      "Strict-Transport-Security": null,
+      "X-Robots-Tag": null
+    }
+  },
+  {
+    "url": "https://offerte4zampe.it/costo-crocchette-cane",
+    "status": 200,
+    "final_url": "https://offerte4zampe.it/costo-crocchette-cane",
+    "redirects": [],
+    "bytes": 7996,
+    "canonical": "https://offerte4zampe.it/costo-crocchette-cane",
+    "robots": "index,follow",
+    "headers": {
+      "Content-Type": "text/html",
+      "Content-Encoding": null,
+      "Cache-Control": "public, max-age=0, must-revalidate",
+      "ETag": null,
+      "Strict-Transport-Security": null,
+      "X-Robots-Tag": null
+    }
+  },
+  {
+    "url": "https://offerte4zampe.it/monge-adult-cat-pollo",
+    "status": 200,
+    "final_url": "https://offerte4zampe.it/monge-adult-cat-pollo",
+    "redirects": [],
+    "bytes": 4734,
+    "canonical": "https://offerte4zampe.it/monge-adult-cat-pollo",
+    "robots": "noindex,follow",
+    "headers": {
+      "Content-Type": "text/html",
+      "Content-Encoding": null,
+      "Cache-Control": "public, max-age=0, must-revalidate",
+      "ETag": null,
+      "Strict-Transport-Security": null,
+      "X-Robots-Tag": null
+    }
+  },
+  {
+    "url": "https://offerte4zampe.it/pagina-inesistente-audit-20261019",
+    "status": 404,
+    "final_url": "https://offerte4zampe.it/pagina-inesistente-audit-20261019",
+    "redirects": [],
+    "bytes": 0,
+    "canonical": "",
+    "robots": null,
+    "headers": {
+      "Content-Type": null,
+      "Content-Encoding": null,
+      "Cache-Control": null,
+      "ETag": null,
+      "Strict-Transport-Security": null,
+      "X-Robots-Tag": null
+    }
+  },
+  {
+    "url": "https://offerte4zampe.it/robots.txt",
+    "status": 200,
+    "final_url": "https://offerte4zampe.it/robots.txt",
+    "redirects": [],
+    "bytes": 70,
+    "canonical": "",
+    "robots": null,
+    "headers": {
+      "Content-Type": "text/plain",
+      "Content-Encoding": null,
+      "Cache-Control": "public, max-age=0, must-revalidate",
+      "ETag": "\"160466bd41b8b9075badaaf3e2067e88\"",
+      "Strict-Transport-Security": null,
+      "X-Robots-Tag": null
+    }
+  },
+  {
+    "url": "https://offerte4zampe.it/sitemap.xml",
+    "status": 200,
+    "final_url": "https://offerte4zampe.it/sitemap.xml",
+    "redirects": [],
+    "bytes": 2403,
+    "canonical": "",
+    "robots": null,
+    "headers": {
+      "Content-Type": "application/xml",
+      "Content-Encoding": null,
+      "Cache-Control": "public, max-age=0, must-revalidate",
+      "ETag": "\"62ac666694b213917c8a35698375a019\"",
+      "Strict-Transport-Security": null,
+      "X-Robots-Tag": null
+    }
+  }
+]
