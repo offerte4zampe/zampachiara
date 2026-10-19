@@ -25,12 +25,15 @@ def weight(label):
     matches=list(re.finditer(r'(?<![\d.])(\d+(?:\.\d+)?)\s*(kg|g)\b',s))
     if len(matches)==1:return float(matches[0][1])/(1000 if matches[0][2]=='g' else 1)
     return None
-def collect(source):
+def collect(source, shipping_only=False):
     sid,name,base=source; now=datetime.datetime.now(datetime.timezone.utc).isoformat(); rows=[]
     try:
-        if sid=='bauzaar':
+        if sid=='bauzaar' and not shipping_only:
             from bauzaar_feed import collect as official_collect
-            return official_collect()
+            from shipping_metadata import supplement
+            rows,status=official_collect()
+            supplement(rows,lambda:collect(source,True),ROOT/'automation/shipping-cache.json')
+            return rows,status
         rp=urllib.robotparser.RobotFileParser();rp.parse(get(base+'/robots.txt').decode().splitlines())
         if not rp.can_fetch(UA,base+'/products.json'):raise ValueError('Catalog access disallowed by robots')
         seen=set(); complete=False

@@ -8,10 +8,23 @@ function shipping(o,rules,quantity=1,territory='standard',now=Date.now()){
  if(now-Date.parse(o.checked_at)>36*3600000||!Number.isFinite(Date.parse(o.checked_at)))return {reason:'Prezzo non recente: totale non calcolato',rule:r};
  const subtotal=Math.round(o.price*quantity*100)/100;
  if(r.boundary_unknown===subtotal)return {reason:'Soglia esatta da verificare nel negozio',rule:r};
+ if(o.shipping_weight_checked_at&&(!Number.isFinite(Date.parse(o.shipping_weight_checked_at))||now-Date.parse(o.shipping_weight_checked_at)>7*86400000))return {reason:'Peso di spedizione da aggiornare',rule:r};
  if(r.max_shipping_weight_kg&&(!(o.shipping_weight_kg>0)||o.shipping_weight_kg*quantity>r.max_shipping_weight_kg))return {reason:'Peso di spedizione mancante o supplementi possibili',rule:r};
  const fee=(r.free_from!==undefined&&subtotal>=r.free_from)||(r.free_above!==undefined&&subtotal>r.free_above)?0:r.fee;
  return {subtotal,fee,total:Math.round((subtotal+fee)*100)/100,rule:r};
 }
 function discount(o){return o.previous_price>o.price&&o.price/o.previous_price>=.4;}
-const api={shipping,discount};if(typeof module!=='undefined')module.exports=api;else root.O4ZTrade=api;
+function merchant(url){
+ try{const u=new URL(url);if(u.protocol!=='https:')return '';const shops={'www.bauzaar.it':'Bauzaar','bauzaar.it':'Bauzaar','webpet.it':'WebPet','www.webpet.it':'WebPet','animaliapet.eu':'Animaliapet','www.animaliapet.eu':'Animaliapet'};if(shops[u.hostname])return shops[u.hostname];if(u.hostname==='tc.tradetracker.net'&&u.searchParams.get('c')==='16143'&&u.searchParams.get('a')==='518044')return 'Bauzaar';return ''}catch{return ''}
+}
+function matchKey(o,now=Date.now()){
+ const code=String(o.gtin||''),stamp=Date.parse(o.checked_at);if(![8,12,13,14].includes(code.length)||!/^\d+$/.test(code)||new Set(code).size===1||!Number.isFinite(stamp)||now-stamp>36*3600000||stamp>now+300000||!(o.weight_kg>0)||!o.brand?.trim())return '';
+ const digits=[...code.slice(0,-1)].reverse();const check=(10-digits.reduce((n,d,i)=>n+Number(d)*(i%2?1:3),0)%10)%10;if(check!==Number(code.at(-1)))return '';
+ return JSON.stringify([code.padStart(14,'0'),o.weight_kg,o.brand.trim().toLowerCase()]);
+}
+function groupOffers(rows,now=Date.now()){
+ const index=new Map();for(const o of rows){const k=matchKey(o,now);if(k){if(!index.has(k))index.set(k,[]);index.get(k).push(o)}}
+ const used=new Set();return rows.flatMap(o=>{const k=matchKey(o,now),g=index.get(k);if(!g||new Set(g.map(x=>x.merchant_id)).size<2)return [[o]];if(used.has(k))return [];used.add(k);return [g]});
+}
+const api={shipping,discount,merchant,matchKey,groupOffers};if(typeof module!=='undefined')module.exports=api;else root.O4ZTrade=api;
 })(typeof window!=='undefined'?window:this);
