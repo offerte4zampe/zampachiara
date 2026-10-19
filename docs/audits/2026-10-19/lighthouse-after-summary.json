@@ -1,0 +1,543 @@
+{
+  "run_url": "https://github.com/offerte4zampe/zampachiara/actions/runs/39320468707",
+  "artifact_expires": "2026-11-02",
+  "runs": [
+    {
+      "file": "confronta-cibo-1.report.json",
+      "url": "https://offerte4zampe.it/confronta-cibo",
+      "fetch_time": "2026-10-19T20:35:26.904Z",
+      "lighthouse_version": "13.5.0",
+      "scores": {
+        "performance": 81,
+        "accessibility": 100,
+        "best-practices": 58,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 1603.8860000000004,
+        "largest-contentful-paint": 2332.7955,
+        "total-blocking-time": 643.9999999999995,
+        "cumulative-layout-shift": 0,
+        "speed-index": 1603.8860000000004,
+        "total-byte-weight": 1625189
+      },
+      "runtime_error": null,
+      "failed_audits": [
+        {
+          "id": "first-contentful-paint",
+          "title": "First Contentful Paint",
+          "score": 0.94
+        },
+        {
+          "id": "largest-contentful-paint",
+          "title": "Largest Contentful Paint",
+          "score": 0.93
+        },
+        {
+          "id": "total-blocking-time",
+          "title": "Total Blocking Time",
+          "score": 0.46
+        },
+        {
+          "id": "max-potential-fid",
+          "title": "Max Potential First Input Delay",
+          "score": 0.04
+        },
+        {
+          "id": "interactive",
+          "title": "Time to Interactive",
+          "score": 0.78
+        },
+        {
+          "id": "deprecations",
+          "title": "Uses deprecated APIs",
+          "score": 0
+        },
+        {
+          "id": "third-party-cookies",
+          "title": "Uses third-party cookies",
+          "score": 0
+        },
+        {
+          "id": "inspector-issues",
+          "title": "Issues were logged in the `Issues` panel in Chrome Devtools",
+          "score": 0
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "score": 0
+        }
+      ]
+    },
+    {
+      "file": "confronta-cibo-2.report.json",
+      "url": "https://offerte4zampe.it/confronta-cibo",
+      "fetch_time": "2026-10-19T20:36:07.762Z",
+      "lighthouse_version": "13.5.0",
+      "scores": {
+        "performance": 86,
+        "accessibility": 100,
+        "best-practices": 58,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 1627.754,
+        "largest-contentful-paint": 2375.5299999999993,
+        "total-blocking-time": 468.4229999999998,
+        "cumulative-layout-shift": 0,
+        "speed-index": 1627.754,
+        "total-byte-weight": 1402361
+      },
+      "runtime_error": null,
+      "failed_audits": [
+        {
+          "id": "first-contentful-paint",
+          "title": "First Contentful Paint",
+          "score": 0.93
+        },
+        {
+          "id": "largest-contentful-paint",
+          "title": "Largest Contentful Paint",
+          "score": 0.92
+        },
+        {
+          "id": "total-blocking-time",
+          "title": "Total Blocking Time",
+          "score": 0.61
+        },
+        {
+          "id": "max-potential-fid",
+          "title": "Max Potential First Input Delay",
+          "score": 0.24
+        },
+        {
+          "id": "interactive",
+          "title": "Time to Interactive",
+          "score": 0.79
+        },
+        {
+          "id": "deprecations",
+          "title": "Uses deprecated APIs",
+          "score": 0
+        },
+        {
+          "id": "third-party-cookies",
+          "title": "Uses third-party cookies",
+          "score": 0
+        },
+        {
+          "id": "inspector-issues",
+          "title": "Issues were logged in the `Issues` panel in Chrome Devtools",
+          "score": 0
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "score": 0
+        }
+      ]
+    },
+    {
+      "file": "confronta-cibo-3.report.json",
+      "url": "https://offerte4zampe.it/confronta-cibo",
+      "fetch_time": "2026-10-19T20:36:52.791Z",
+      "lighthouse_version": "13.5.0",
+      "scores": {
+        "performance": 88,
+        "accessibility": 100,
+        "best-practices": 58,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 1618.355,
+        "largest-contentful-paint": 2334.5825,
+        "total-blocking-time": 394.672,
+        "cumulative-layout-shift": 0,
+        "speed-index": 1618.355,
+        "total-byte-weight": 1400714
+      },
+      "runtime_error": null,
+      "failed_audits": [
+        {
+          "id": "first-contentful-paint",
+          "title": "First Contentful Paint",
+          "score": 0.94
+        },
+        {
+          "id": "largest-contentful-paint",
+          "title": "Largest Contentful Paint",
+          "score": 0.93
+        },
+        {
+          "id": "total-blocking-time",
+          "title": "Total Blocking Time",
+          "score": 0.68
+        },
+        {
+          "id": "max-potential-fid",
+          "title": "Max Potential First Input Delay",
+          "score": 0.26
+        },
+        {
+          "id": "interactive",
+          "title": "Time to Interactive",
+          "score": 0.8
+        },
+        {
+          "id": "deprecations",
+          "title": "Uses deprecated APIs",
+          "score": 0
+        },
+        {
+          "id": "third-party-cookies",
+          "title": "Uses third-party cookies",
+          "score": 0
+        },
+        {
+          "id": "inspector-issues",
+          "title": "Issues were logged in the `Issues` panel in Chrome Devtools",
+          "score": 0
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "score": 0
+        }
+      ]
+    },
+    {
+      "file": "costo-crocchette-cane-1.report.json",
+      "url": "https://offerte4zampe.it/costo-crocchette-cane",
+      "fetch_time": "2026-10-19T20:35:44.428Z",
+      "lighthouse_version": "13.5.0",
+      "scores": {
+        "performance": 99,
+        "accessibility": 100,
+        "best-practices": 81,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 1568.8345000000002,
+        "largest-contentful-paint": 1718.8345000000002,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0,
+        "speed-index": 1568.8345000000002,
+        "total-byte-weight": 46866
+      },
+      "runtime_error": null,
+      "failed_audits": [
+        {
+          "id": "first-contentful-paint",
+          "title": "First Contentful Paint",
+          "score": 0.95
+        },
+        {
+          "id": "largest-contentful-paint",
+          "title": "Largest Contentful Paint",
+          "score": 0.99
+        },
+        {
+          "id": "deprecations",
+          "title": "Uses deprecated APIs",
+          "score": 0
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "score": 0
+        }
+      ]
+    },
+    {
+      "file": "costo-crocchette-cane-2.report.json",
+      "url": "https://offerte4zampe.it/costo-crocchette-cane",
+      "fetch_time": "2026-10-19T20:36:24.966Z",
+      "lighthouse_version": "13.5.0",
+      "scores": {
+        "performance": 99,
+        "accessibility": 100,
+        "best-practices": 81,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 1554.6885,
+        "largest-contentful-paint": 1705.2595000000001,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0,
+        "speed-index": 1554.6885,
+        "total-byte-weight": 47080
+      },
+      "runtime_error": null,
+      "failed_audits": [
+        {
+          "id": "first-contentful-paint",
+          "title": "First Contentful Paint",
+          "score": 0.95
+        },
+        {
+          "id": "largest-contentful-paint",
+          "title": "Largest Contentful Paint",
+          "score": 0.99
+        },
+        {
+          "id": "deprecations",
+          "title": "Uses deprecated APIs",
+          "score": 0
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "score": 0
+        }
+      ]
+    },
+    {
+      "file": "costo-crocchette-cane-3.report.json",
+      "url": "https://offerte4zampe.it/costo-crocchette-cane",
+      "fetch_time": "2026-10-19T20:37:10.150Z",
+      "lighthouse_version": "13.5.0",
+      "scores": {
+        "performance": 99,
+        "accessibility": 100,
+        "best-practices": 81,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 1564.7534999999998,
+        "largest-contentful-paint": 1714.7534999999998,
+        "total-blocking-time": 0,
+        "cumulative-layout-shift": 0,
+        "speed-index": 1564.7534999999998,
+        "total-byte-weight": 47441
+      },
+      "runtime_error": null,
+      "failed_audits": [
+        {
+          "id": "first-contentful-paint",
+          "title": "First Contentful Paint",
+          "score": 0.95
+        },
+        {
+          "id": "largest-contentful-paint",
+          "title": "Largest Contentful Paint",
+          "score": 0.99
+        },
+        {
+          "id": "deprecations",
+          "title": "Uses deprecated APIs",
+          "score": 0
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "score": 0
+        }
+      ]
+    },
+    {
+      "file": "home-1.report.json",
+      "url": "https://offerte4zampe.it/",
+      "fetch_time": "2026-10-19T20:35:12.575Z",
+      "lighthouse_version": "13.5.0",
+      "scores": {
+        "performance": 66,
+        "accessibility": 100,
+        "best-practices": 58,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 2036.0119999999997,
+        "largest-contentful-paint": 2676.83,
+        "total-blocking-time": 2576.0790000000006,
+        "cumulative-layout-shift": 0,
+        "speed-index": 2395.235762975511,
+        "total-byte-weight": 550559
+      },
+      "runtime_error": null,
+      "failed_audits": [
+        {
+          "id": "first-contentful-paint",
+          "title": "First Contentful Paint",
+          "score": 0.83
+        },
+        {
+          "id": "largest-contentful-paint",
+          "title": "Largest Contentful Paint",
+          "score": 0.86
+        },
+        {
+          "id": "speed-index",
+          "title": "Speed Index",
+          "score": 0.98
+        },
+        {
+          "id": "total-blocking-time",
+          "title": "Total Blocking Time",
+          "score": 0.04
+        },
+        {
+          "id": "max-potential-fid",
+          "title": "Max Potential First Input Delay",
+          "score": 0
+        },
+        {
+          "id": "interactive",
+          "title": "Time to Interactive",
+          "score": 0.75
+        },
+        {
+          "id": "deprecations",
+          "title": "Uses deprecated APIs",
+          "score": 0
+        },
+        {
+          "id": "third-party-cookies",
+          "title": "Uses third-party cookies",
+          "score": 0
+        },
+        {
+          "id": "inspector-issues",
+          "title": "Issues were logged in the `Issues` panel in Chrome Devtools",
+          "score": 0
+        },
+        {
+          "id": "forced-reflow-insight",
+          "title": "Forced reflow",
+          "score": 0
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "score": 0
+        }
+      ]
+    },
+    {
+      "file": "home-2.report.json",
+      "url": "https://offerte4zampe.it/",
+      "fetch_time": "2026-10-19T20:35:55.314Z",
+      "lighthouse_version": "13.5.0",
+      "scores": {
+        "performance": 97,
+        "accessibility": 100,
+        "best-practices": 58,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 1647.5105000000003,
+        "largest-contentful-paint": 2353.6955000000003,
+        "total-blocking-time": 43.5,
+        "cumulative-layout-shift": 0,
+        "speed-index": 1647.5105000000003,
+        "total-byte-weight": 551819
+      },
+      "runtime_error": null,
+      "failed_audits": [
+        {
+          "id": "first-contentful-paint",
+          "title": "First Contentful Paint",
+          "score": 0.93
+        },
+        {
+          "id": "largest-contentful-paint",
+          "title": "Largest Contentful Paint",
+          "score": 0.92
+        },
+        {
+          "id": "max-potential-fid",
+          "title": "Max Potential First Input Delay",
+          "score": 0.92
+        },
+        {
+          "id": "interactive",
+          "title": "Time to Interactive",
+          "score": 0.86
+        },
+        {
+          "id": "deprecations",
+          "title": "Uses deprecated APIs",
+          "score": 0
+        },
+        {
+          "id": "third-party-cookies",
+          "title": "Uses third-party cookies",
+          "score": 0
+        },
+        {
+          "id": "inspector-issues",
+          "title": "Issues were logged in the `Issues` panel in Chrome Devtools",
+          "score": 0
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "score": 0
+        }
+      ]
+    },
+    {
+      "file": "home-3.report.json",
+      "url": "https://offerte4zampe.it/",
+      "fetch_time": "2026-10-19T20:36:35.966Z",
+      "lighthouse_version": "13.5.0",
+      "scores": {
+        "performance": 99,
+        "accessibility": 100,
+        "best-practices": 58,
+        "seo": 100
+      },
+      "metrics": {
+        "first-contentful-paint": 1571.6605000000004,
+        "largest-contentful-paint": 1723.6295000000002,
+        "total-blocking-time": 36,
+        "cumulative-layout-shift": 0,
+        "speed-index": 1571.6605000000004,
+        "total-byte-weight": 551964
+      },
+      "runtime_error": null,
+      "failed_audits": [
+        {
+          "id": "first-contentful-paint",
+          "title": "First Contentful Paint",
+          "score": 0.94
+        },
+        {
+          "id": "largest-contentful-paint",
+          "title": "Largest Contentful Paint",
+          "score": 0.99
+        },
+        {
+          "id": "max-potential-fid",
+          "title": "Max Potential First Input Delay",
+          "score": 0.98
+        },
+        {
+          "id": "interactive",
+          "title": "Time to Interactive",
+          "score": 0.87
+        },
+        {
+          "id": "deprecations",
+          "title": "Uses deprecated APIs",
+          "score": 0
+        },
+        {
+          "id": "third-party-cookies",
+          "title": "Uses third-party cookies",
+          "score": 0
+        },
+        {
+          "id": "inspector-issues",
+          "title": "Issues were logged in the `Issues` panel in Chrome Devtools",
+          "score": 0
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "score": 0
+        }
+      ]
+    }
+  ]
+}
