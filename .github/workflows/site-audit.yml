@@ -16,14 +16,23 @@ jobs:
           node-version: '22'
       - name: Install pinned Lighthouse
         run: npm install --prefix "$RUNNER_TEMP/site-audit" lighthouse@13.5.0
+      - name: Wait for the compact home deployment
+        run: |
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent https://offerte4zampe.it/assets/home.js | grep -q 'data/home.json'; then exit 0; fi
+            sleep 10
+          done
+          exit 1
       - name: Audit three public pages on mobile
         run: |
           mkdir -p reports
           export CHROME_PATH="$(command -v google-chrome)"
+          for iteration in 1 2 3; do
           for slug in home confronta-cibo costo-crocchette-cane; do
             url="https://offerte4zampe.it/$slug"
             if [ "$slug" = "home" ]; then url="https://offerte4zampe.it/"; fi
-            node "$RUNNER_TEMP/site-audit/node_modules/lighthouse/cli/index.js" "$url" --chrome-flags="--headless --disable-dev-shm-usage" --only-categories=performance,accessibility,best-practices,seo --output=json --output=html --output-path="reports/$slug" --quiet || true
+            node "$RUNNER_TEMP/site-audit/node_modules/lighthouse/cli/index.js" "$url" --chrome-flags="--headless --disable-dev-shm-usage" --only-categories=performance,accessibility,best-practices,seo --output=json --output=html --output-path="reports/$slug-$iteration" --quiet
+          done
           done
       - uses: actions/upload-artifact@v4
         if: always()
