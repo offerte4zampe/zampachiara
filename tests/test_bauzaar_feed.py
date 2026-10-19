@@ -17,6 +17,9 @@ class FeedTests(unittest.TestCase):
     def test_exact_variant_tracking_and_pack_title(self):
         o=self.row();self.assertEqual(o['id'],'bauzaar:123');self.assertTrue(o['url'].endswith('?variant=123'))
         self.assertIn('24 pezzi',o['title']);self.assertNotIn('CODICE',o['title']);self.assertIsNone(o['weight_kg'])
+    def test_generic_syndication_suffix_is_not_product_identity(self):
+        self.p['name']='Acana Wild Coast 2 kg - Croccantini per cani - Croccantini per gatti - 1° ORDINE? CODICE'
+        self.assertEqual(self.row()['title'],'Acana Wild Coast 2 kg')
     def test_explicit_net_weight_only(self):
         self.p['properties']['unit_pricing_measure']=['1,5kg'];self.assertEqual(self.row()['weight_kg'],1.5)
         self.p['properties']['unit_pricing_measure']=['10l'];self.assertIsNone(self.row()['weight_kg'])

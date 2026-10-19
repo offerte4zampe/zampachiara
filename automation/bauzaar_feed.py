@@ -52,6 +52,7 @@ def normalize(payload, now=None):
         if kg is not None and not 0 < kg <= 1000: kg = None
         # Do not syndicate coupon claims or unrelated category suffixes in feed titles.
         title = p['name'].split(' - 1° ORDINE?')[0].strip()
+        title = title.replace(' - Croccantini per cani - Croccantini per gatti', '')
         if not title: raise ValueError('Missing title')
         images = p.get('images', [])
         rows.append(dict(id='bauzaar:'+variant, merchant='Bauzaar', merchant_id='bauzaar',
