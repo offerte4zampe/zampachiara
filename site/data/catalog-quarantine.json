@@ -1,8 +1,20 @@
 {
-  "checked_at": "2026-10-20T08:37:57.164680+00:00",
-  "input_offers": 13168,
-  "published_offers": 13168,
-  "quarantined": [],
+  "checked_at": "2026-10-20T10:21:13.657833+00:00",
+  "input_offers": 17644,
+  "published_offers": 17643,
+  "quarantined": [
+    {
+      "id": "animaliapet:46976592642391",
+      "title": "BioKat's Bianco Extra Classic Lettiera 10kg per Gatti",
+      "variant": "",
+      "merchant": "Animaliapet",
+      "merchant_id": "animaliapet",
+      "checked_at": "2026-10-20T10:20:30.203918+00:00",
+      "reasons": [
+        "exact_product_peer_outlier_pending_review"
+      ]
+    }
+  ],
   "repaired": [],
   "method": "Validazione sintattica e temporale. Anomalie oltre ±50% solo con GTIN, marca e peso netto identici e almeno due altri negozi concordanti entro il 20%. Una sospensione non prova un errore del negozio; nessuna modifica dei prezzi."
 }
