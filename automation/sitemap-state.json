@@ -1,7 +1,7 @@
 {
   "https://offerte4zampe.it/": {
-    "content_hash": "f60363b31df125039a8be15003d4bff460b7943300ccab16df667c92362b74a0",
-    "lastmod": null
+    "content_hash": "9eeb266282d259312178af6813c11fb3404ebcfbe4aef8d5e44f65c0752d8f79",
+    "lastmod": "2026-10-20T01:41:45+00:00"
   },
   "https://offerte4zampe.it/calcolatore": {
     "content_hash": "c5b1807a083798fb16b1cf4377187910470757d166e1cc5f86fecdae04f065d6",
@@ -16,8 +16,8 @@
     "lastmod": null
   },
   "https://offerte4zampe.it/confronti-prodotti": {
-    "content_hash": "d0a31b2c17b09ae70f80a51abba7d12e1519ee32a927fa0e50116d897d6cf2f9",
-    "lastmod": null
+    "content_hash": "b264fa9824fd8445c1fd467e0ced202d65897f685659bfab865813a7e17cf452",
+    "lastmod": "2026-10-20T01:41:45+00:00"
   },
   "https://offerte4zampe.it/contatti": {
     "content_hash": "fbafaf1c97ff2d48914e71b48751fa16a69d778013e39529a50832e411430c29",
@@ -37,6 +37,30 @@
   },
   "https://offerte4zampe.it/lettiere-gatti": {
     "content_hash": "38207bf3b3c393a91ebb494bd533dfef8f362cafd76551d54908be882658f28e",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-farmina": {
+    "content_hash": "d7c284f952f1840407377a3bfb49ce8be99a7883e7cb41b7376fc752afa0921e",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-monge": {
+    "content_hash": "d3634da812c1242227cd8a5ef2738d6e19f536d596cd8d1f2a75b8be12755e17",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-natural-trainer": {
+    "content_hash": "c1b66eb0ce60488970ce2217d976a5208e2df854b9c7c7da67a13883b3b569f8",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-purina-pro-plan": {
+    "content_hash": "41137a02816c1c0e689a2f9bee6d24ab39685e45eed7812079b50a7660693cd0",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-royal-canin": {
+    "content_hash": "a1a97d4d8b395bd115fb2f6e2d6d5da6c605ecda8d680b46b3f4dff016d0aeeb",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marche": {
+    "content_hash": "c02c707df99c273256b47b647d2e45cbb0f06916fce490d9644398b030eafeb4",
     "lastmod": null
   },
   "https://offerte4zampe.it/monge-adult-cat-pollo": {
@@ -277,6 +301,10 @@
   },
   "https://offerte4zampe.it/prezzi-08009470005111-5f4128b1fc": {
     "content_hash": "bdcc0708a5015ee195643ab33e1444088793bb3271e53b6f3dc978dd5bf9bc6c",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/prezzi-08009470005227-495c5ff120": {
+    "content_hash": "12a45b6075400ece9c67d8e914165006c5aaf831634a65d8ec4e745689ee171e",
     "lastmod": null
   },
   "https://offerte4zampe.it/prezzi-08009470005234-cc12d0c377": {
