@@ -10,7 +10,7 @@ function estimate(offer,grams,now=Date.now()){
  return {daily,month30:daily*30,days:kg*1000/g};
 }
 function mount(offer){
- if(!isFood(offer)){const note=document.createElement('p');note.className='micro';note.textContent='Costo della razione non disponibile: categoria alimentare non verificata.';return note;}
+ if(!isFood(offer)||!Number.isFinite(offer.weight_kg)||offer.weight_kg<=0){const note=document.createElement('p');note.className='micro';note.textContent='Costo della razione non disponibile: categoria alimentare o peso netto non verificati.';return note;}
  const details=document.createElement('details'),summary=document.createElement('summary');summary.textContent='Quanto costa al giorno?';details.className='daily-cost';details.append(summary);
  const note=document.createElement('p');note.className='micro';note.textContent='Inserisci la razione totale giornaliera indicata sulla confezione o concordata con il veterinario. Non stimiamo il fabbisogno del tuo animale.';
  const label=document.createElement('label');label.textContent='Razione giornaliera (g) ';
