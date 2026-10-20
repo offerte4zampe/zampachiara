@@ -4,7 +4,7 @@ import concurrent.futures, datetime, json, os, re, time, urllib.request, urllib.
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
-SOURCES=[('bauzaar','Bauzaar','https://www.bauzaar.it'),('webpet','WebPet','https://www.webpet.it'),('animaliapet','Animaliapet','https://www.animaliapet.eu')]
+SOURCES=[('bauzaar','Bauzaar','https://www.bauzaar.it'),('webpet','WebPet','https://www.webpet.it'),('animaliapet','Animaliapet','https://www.animaliapet.eu'),('isola-dei-tesori','Isola dei Tesori','https://www.isoladeitesori.it')]
 UA='Offerte a 4 ZampeCatalog/1.0 (+https://offerte4zampe.it/contatti.html)'
 def get(url):
     req=urllib.request.Request(url,headers={'User-Agent':UA,'Accept':'application/json,text/plain'})
@@ -28,6 +28,9 @@ def weight(label):
 def collect(source, shipping_only=False):
     sid,name,base=source; now=datetime.datetime.now(datetime.timezone.utc).isoformat(); rows=[]
     try:
+        if sid=='isola-dei-tesori':
+            from isola_feed import collect as isola_collect
+            return isola_collect()
         if sid=='bauzaar' and not shipping_only:
             from bauzaar_feed import collect as official_collect
             from shipping_metadata import supplement

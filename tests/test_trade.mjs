@@ -8,6 +8,9 @@ const {merchant,matchKey,groupOffers}=require('../site/assets/trade.js');
 test('direct and approved affiliate clicks resolve to a merchant without sending URLs',()=>{
  assert.equal(merchant('https://tc.tradetracker.net/?c=16143&a=518044&u=%2Fproducts%2Ffoo'),'Bauzaar');
  assert.equal(merchant('https://www.bauzaar.it/products/foo'),'Bauzaar');
+ assert.equal(merchant('https://tc.tradetracker.net/?c=31221&a=518044'),'Isola dei Tesori');
+ assert.equal(merchant('https://www.isoladeitesori.it/prodotto/foo/123.html'),'Isola dei Tesori');
+ assert.equal(merchant('https://tc.tradetracker.net/?c=31221&a=999'),'');
  for(const u of ['https://tc.tradetracker.net/?c=999&a=518044','https://evil.test/?c=16143&a=518044','http://www.bauzaar.it/'])assert.equal(merchant(u),'');
 });
 test('group only fresh same-code same-brand same-weight offers across different shops',()=>{
