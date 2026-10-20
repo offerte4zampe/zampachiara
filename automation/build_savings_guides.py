@@ -1,6 +1,7 @@
 """Editorial guides with reproducible current catalog examples, never invented prices."""
 import datetime as dt
 import gzip
+import hashlib
 import json
 import math
 import re
@@ -130,6 +131,60 @@ def shipping_content(offers, now, rules=None):
 
 
 GUIDES.append(('spedizione-gratuita-conviene','Spedizione gratuita: conviene raggiungere la soglia?','Confronta l’esborso della lista con e senza articoli aggiunti, usando soglie, limiti di peso e condizioni ufficiali datate.',shipping_content))
+
+
+
+def observed_examples(offers, now, history):
+    examples=[]
+    cutoff=now.date()-dt.timedelta(days=179)
+    for o in food_examples(offers, now):
+        identity=hashlib.sha256(json.dumps([o.get(k) for k in ('merchant_id','title','variant','brand','gtin','weight_kg')],ensure_ascii=False,separators=(',',':')).encode()).hexdigest()
+        if history.get('identities',{}).get(o['id'])!=identity:
+            continue
+        days={}
+        for item in history.get('offers',{}).get(o['id'],[]):
+            try:
+                day=dt.date.fromisoformat(item['day'])
+                values=[item[k] for k in ('low','last','high')]
+                if not cutoff<=day<=now.date() or any(isinstance(v,bool) or not isinstance(v,(int,float)) or not math.isfinite(v) or v<=0 for v in values):
+                    continue
+                if not values[0]<=values[1]<=values[2]:
+                    continue
+                if day in days:
+                    days[day]=(min(days[day][0],values[0]),max(days[day][1],values[2]))
+                else:
+                    days[day]=(values[0],values[2])
+            except (ValueError,KeyError,TypeError):
+                continue
+        if days:
+            examples.append((o,{'days':len(days),'first':min(days).isoformat(),'last':max(days).isoformat(),'low':min(v[0] for v in days.values()),'high':max(v[1] for v in days.values())}))
+    return examples
+
+
+def history_content(offers, now, history=None):
+    if history is None:
+        path=ROOT/'site/data/price-history.json.gz'
+        try:
+            history=json.loads(gzip.decompress(path.read_bytes())) if path.exists() else {}
+        except (OSError,ValueError,EOFError):
+            history={}
+    rows=[]
+    for o,stats in observed_examples(offers,now,history):
+        rows.append(f'<tr><td>{source_link(o)}<br>{h(o["merchant"])}</td><td>{o["weight_kg"]:g} kg</td><td>{stats["days"]}</td><td>{h(stats["first"])} – {h(stats["last"])}</td><td>{money(stats["low"])}</td><td>{money(stats["high"])}</td></tr>')
+    table='<p>Non ci sono ancora osservazioni con identità verificata da usare come esempio. Nessun prezzo minimo viene ricostruito.</p>'
+    if rows:
+        table='<div class="guide-table" tabindex="0" role="region" aria-label="Esempi di prezzi realmente osservati"><table><caption>Finestra massima 180 giorni, solo date raccolte e prezzi della confezione; spedizione esclusa</caption><thead><tr><th>Prodotto e fonte</th><th>Formato</th><th>Giorni osservati</th><th>Prima e ultima data UTC</th><th>Minimo osservato</th><th>Massimo osservato</th></tr></thead><tbody>'+''.join(rows)+'</tbody></table></div>'
+    return ('<h2>Un minimo ha senso insieme al periodo osservato</h2><p>Vedere un prezzo vicino al minimo può aiutare a valutare un acquisto, ma prima chiediti da quanti giorni quel prodotto viene seguito. Una sola giornata può produrre un minimo e un massimo identici: descrive ciò che abbiamo raccolto, senza dimostrare che il prezzo sia rimasto stabile nei mesi precedenti. Il nostro storico conserva soltanto rilevazioni effettive e non ricostruisce il passato.</p>'
+        '<h2>Che cosa mostrano questi esempi</h2><p>La tabella riporta prodotti del catalogo recente con identità storica verificata. Il conteggio riguarda date distinte nella finestra di 180 giorni, anche quando nello stesso giorno sono stati recuperati più prezzi. Le righe sono scelte alfabeticamente alternando i negozi. Sono esempi di lettura dello storico e non una selezione di affari: ricette diverse non vengono considerate equivalenti.</p>'+table+
+        '<h2>30, 90 e 180 giorni sono finestre, non promesse di copertura</h2><p>Nel comparatore apri “Storico prezzi osservati” sulla scheda e scegli il periodo. La finestra delimita le date che possono entrare nel riepilogo. Il numero di giorni osservati indica invece quante date abbiamo davvero a disposizione. Se il sito segue quel formato soltanto da poco, una finestra più lunga può mostrare gli stessi pochi punti. Gli intervalli senza dati rimangono vuoti: non rappresentano un prezzo pari a zero.</p>'
+        '<h2>Più recuperi in una giornata</h2><p>Per ogni data conserviamo minimo e massimo recuperati, ultimo prezzo e disponibilità dell’ultimo recupero. Non è un archivio di ogni variazione intragiornaliera. Il minimo giornaliero può quindi differire dall’ultimo prezzo visibile. Inoltre, la disponibilità osservata per ultima non prova che ogni prezzo di quella giornata fosse acquistabile. Per comprare, verifica sempre la scheda e il carrello del negozio.</p>'
+        '<h2>Resta sullo stesso prodotto e negozio</h2><p>Lo storico appartiene a una specifica offerta del negozio. Un codice interno riutilizzato per una nuova ricetta o un altro formato non deve ereditare i prezzi precedenti. Per questo controlliamo l’identità dichiarata, includendo titolo, variante, marca, GTIN e peso netto: se cambia, la serie riparte. Un grafico più corto può quindi dipendere anche da una correzione dell’identità, non soltanto da un prodotto appena importato.</p>'
+        '<h2>Storico e confronto tra negozi rispondono a domande diverse</h2><p>Lo storico mostra come è variata l’offerta che abbiamo osservato nel tempo. Il confronto per GTIN, marca e peso netto mostra le offerte recenti dello stesso formato in negozi diversi. Un negozio può essere vicino al proprio minimo e costare comunque più di un altro oggi. Per scegliere, parti dal confronto attuale e aggiungi la spedizione della lista completa; usa lo storico come contesto.</p>'
+        '<h2>Il minimo osservato non certifica uno sconto</h2><p>La nostra finestra di raccolta non dimostra quale prezzo precedente un venditore debba usare per annunciare una riduzione. Non trasformiamo quindi questi minimi in un prezzo barrato o in una percentuale promozionale. Anche il minimo su pochi giorni non è una previsione: non permette di stabilire quando il prodotto scenderà ancora o se tornerà disponibile a quel prezzo.</p>'
+        '<p>Prova il dettaglio storico nel <a href="confronta-cibo.html">comparatore</a>, controlla la tabella delle date e poi verifica il totale nella <a href="carrello-risparmio.html">lista risparmio</a>. Se formato o prezzo non corrispondono, usa la segnalazione accanto all’offerta. Il registro <a href="correzioni.html">Correzioni</a> distingue gli interventi documentati dai sospetti ancora da verificare.</p>')
+
+
+GUIDES.append(('leggere-storico-prezzi','Come leggere lo storico prezzi senza farsi ingannare','Minimi, massimi e giorni realmente osservati: esempi del catalogo per distinguere una finestra di ricerca da una serie storica completa.',history_content))
 
 
 def build():

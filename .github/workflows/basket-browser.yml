@@ -46,6 +46,8 @@ jobs:
         run: python -m unittest discover -s tests
       - name: Generate local observed history shards
         run: python automation/update_history.py
+      - name: Generate current catalog guides locally
+        run: python automation/build_savings_guides.py
       - name: Install pinned browser driver
         run: npm install --prefix "$RUNNER_TEMP/basket-browser" puppeteer-core@25.14.0
       - name: Test isolated mobile basket

@@ -2,7 +2,7 @@ import datetime as dt
 import json
 import re
 import unittest
-from automation.build_savings_guides import food_examples, food_content, litter_examples, document, pack_content, shipping_content
+from automation.build_savings_guides import food_examples, food_content, litter_examples, document, pack_content, shipping_content, observed_examples, history_content
 
 
 class SavingsGuidesTests(unittest.TestCase):
@@ -51,3 +51,19 @@ class SavingsGuidesTests(unittest.TestCase):
         self.assertIn('https://example.com/shipping',html)
         for day in ['2020-01-01',(self.now.date()+dt.timedelta(days=1)).isoformat(),'not-a-date']:
             self.assertNotIn('<table',shipping_content([],self.now,rules|{'checked_at':day}))
+
+    def test_history_counts_real_days_and_rejects_changed_identity_and_bad_rows(self):
+        import hashlib
+        fingerprint=hashlib.sha256(json.dumps([self.o.get(k) for k in ('merchant_id','title','variant','brand','gtin','weight_kg')],ensure_ascii=False,separators=(',',':')).encode()).hexdigest()
+        day=self.now.date().isoformat()
+        record={'day':day,'low':10,'last':12,'high':14}
+        history={'identities':{'a':fingerprint},'offers':{'a':[record,record|{'low':9},{'day':'2099-01-01','low':1,'last':1,'high':1},record|{'low':-4},record|{'high':8}]}}
+        example=observed_examples([self.o],self.now,history)[0][1]
+        self.assertEqual(example['days'],1)
+        self.assertEqual(example['low'],9)
+        self.assertEqual(example['high'],14)
+        self.assertEqual(observed_examples([self.o|{'variant':'New recipe'}],self.now,history),[])
+        self.assertNotIn('<table',history_content([self.o],self.now,{}))
+        html=history_content([self.o],self.now,history)
+        self.assertIn('9,00 €',html)
+        self.assertIn(day,html)
