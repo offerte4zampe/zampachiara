@@ -1,7 +1,7 @@
 // Isolated UI smoke test: local static files and blocked external requests only.
 import http from 'node:http';import fs from 'node:fs/promises';import path from 'node:path';import {fileURLToPath,pathToFileURL} from 'node:url';import {gunzipSync} from 'node:zlib';import assert from 'node:assert/strict';
 const base=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../site'),catalog=JSON.parse(gunzipSync(await fs.readFile(path.join(base,'data/catalog.json.gz'))));
-const {default:puppeteer}=await import(pathToFileURL(process.env.PUPPETEER_MODULE_PATH).href);
+const packageRoot=path.join(process.env.PUPPETEER_ROOT,'node_modules/puppeteer-core'),metadata=JSON.parse(await fs.readFile(path.join(packageRoot,'package.json')));const {default:puppeteer}=await import(pathToFileURL(path.join(packageRoot,metadata.main)).href);
 const types={'.html':'text/html; charset=utf-8','.js':'text/javascript','.css':'text/css','.json':'application/json','.gz':'application/gzip','.svg':'image/svg+xml','.png':'image/png'};
 const server=http.createServer(async(req,res)=>{try{let pathname=decodeURIComponent(new URL(req.url,'http://localhost').pathname);if(pathname==='/')pathname='/index.html';const filename=path.resolve(base,'.'+pathname);if(!filename.startsWith(base+path.sep)){res.writeHead(403).end();return}res.setHeader('Content-Type',types[path.extname(filename)]||'application/octet-stream');res.end(await fs.readFile(filename))}catch{res.writeHead(404).end('Not found')}});
 await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));let browser;

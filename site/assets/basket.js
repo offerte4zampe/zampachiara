@@ -1,12 +1,12 @@
 (function(root){'use strict';
 const trade=typeof module!=='undefined'&&module.exports?require('./trade.js'):root.O4ZTrade;
-const key='o4z-basket-v1',round=n=>Math.round(n*100)/100;
+const key='o4z-basket-v1';
 function normalize(saved){if(!Array.isArray(saved))return [];const seen=new Set();return saved.filter(x=>x&&typeof x.id==='string'&&/^[a-zA-Z0-9:_-]{1,100}$/.test(x.id)&&Number.isInteger(x.quantity)&&x.quantity>=1&&x.quantity<=10&&!seen.has(x.id)&&seen.add(x.id)).slice(0,20).map(x=>({id:x.id,quantity:x.quantity}))}
 function orderShipping(lines,rules,territory='standard',now=Date.now()){
  if(!lines.length)return {reason:'Nessun prodotto'};
  const merchant=lines[0].offer?.merchant_id;let cents=0,weight=0,unknownWeight=false,oldest=Infinity,weightOldest=Infinity;
  for(const {offer:o,quantity:q} of lines){const stamp=Date.parse(o?.checked_at);if(!o||o.merchant_id!==merchant)return {reason:'Righe di negozi diversi: ordini separati'};if(!Number.isInteger(q)||q<1||q>10||!Number.isFinite(o.price)||o.price<=0||o.available!==true||!Number.isFinite(stamp)||now-stamp>36*3600000||stamp>now+300000)return {reason:'Prezzo, disponibilità o quantità non verificabili'};cents+=Math.round(o.price*100)*q;oldest=Math.min(oldest,stamp);if(o.shipping_weight_kg>0)weight+=o.shipping_weight_kg*q;else unknownWeight=true;if(o.shipping_weight_checked_at){const ws=Date.parse(o.shipping_weight_checked_at);if(!Number.isFinite(ws)||now-ws>7*86400000||ws>now+300000)return {subtotal:cents/100,reason:'Peso di spedizione da aggiornare'};weightOldest=Math.min(weightOldest,ws)}}
- const virtual={merchant_id:merchant,price:cents/100,checked_at:new Date(oldest).toISOString(),shipping_weight_kg:unknownWeight?null:round(weight)};if(weightOldest!==Infinity)virtual.shipping_weight_checked_at=new Date(weightOldest).toISOString();return trade.shipping(virtual,rules,1,territory,now);
+ const virtual={merchant_id:merchant,price:cents/100,checked_at:new Date(oldest).toISOString(),shipping_weight_kg:unknownWeight?null:weight};if(weightOldest!==Infinity)virtual.shipping_weight_checked_at=new Date(weightOldest).toISOString();return trade.shipping(virtual,rules,1,territory,now);
 }
 function scenarios(saved,offers,rules,territory='standard',now=Date.now()){
  const wanted=normalize(saved),byId=new Map(offers.map(o=>[o.id,o])),merchants=[...new Map(offers.map(o=>[o.merchant_id,o.merchant])).entries()];

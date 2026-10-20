@@ -25,7 +25,7 @@ jobs:
       - name: Test isolated mobile basket
         run: |
           export CHROME_PATH="$(command -v google-chrome)"
-          export PUPPETEER_MODULE_PATH="$RUNNER_TEMP/basket-browser/node_modules/puppeteer-core/lib/esm/puppeteer/puppeteer-core.js"
+          export PUPPETEER_ROOT="$RUNNER_TEMP/basket-browser"
           node tests/check_basket_browser.mjs
       - uses: actions/upload-artifact@v4
         if: always()
