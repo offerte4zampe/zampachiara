@@ -2,6 +2,12 @@
 
 Ultimo aggiornamento: 20 ottobre 2026.
 
+## Sessione 20 ottobre 2026, formati e costo unitario
+- Terza guida originale `/prezzo-confezione-o-prezzo-kg`: distingue esborso per confezione, costo unitario e totale ordine. Esempi da prezzi/pesi netti recenti, selezione alfabetica tra negozi, nessuna equivalenza nutrizionale o ricostruzione di multipack incerti. Collegata all’indice, al costo mensile e alla lista risparmio; rigenerazione nel generatore esistente.
+- File: `automation/build_savings_guides.py`, nuova pagina e indice guide, test unitario e prova browser estesa. Nessuna modifica agli invii o raccolta email. Verifiche e pubblicazione da completare sotto.
+- Decisione esplicita di Mirco: non pubblicare il suo nome. Identificazione del titolare nell’informativa resta una dipendenza esterna irrisolta; mantenere chiuse le iscrizioni e non recuperare dati personali dalla memoria. Continuare sulle attività indipendenti.
+- Prossimo: altre tre–cinque guide utili per arrivare a 6–8, osservatorio con soli dati maturati e checklist finale. Nessun completamento totale dichiarato.
+
 ## Sessione 20 ottobre 2026, predisposizione newsletter e avvisi
 - `newsletter-readiness.js` centralizza cinque requisiti espliciti (DOI, cancellazione, privacy, consenso separato, permessi provider) e modulo ospitato HTTPS con host approvato. `newsletter.json` resta con URL nullo e tutti i flag false; frontend aggiornato senza aprire iscrizioni, inviare email o leggere contatti.
 - `worker/notification-plan.mjs` è un modulo puro non collegato al Worker: verifica consenso attivo per la sola finalità avviso, identità dell'offerta, prezzo recente/disponibile e attraversamento effettivo della soglia in centesimi. Prime osservazioni, buchi temporali, replay, revoche e ricette/formati cambiati non generano decisioni di notifica. Nessun adattatore di invio, endpoint, database remoto o scheduler attivato.

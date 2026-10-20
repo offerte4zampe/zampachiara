@@ -2,7 +2,7 @@ import datetime as dt
 import json
 import re
 import unittest
-from automation.build_savings_guides import food_examples, food_content, litter_examples, document
+from automation.build_savings_guides import food_examples, food_content, litter_examples, document, pack_content
 
 
 class SavingsGuidesTests(unittest.TestCase):
@@ -34,3 +34,12 @@ class SavingsGuidesTests(unittest.TestCase):
         article=data['@graph'][0];self.assertEqual(article['headline'],'Title')
         self.assertNotIn('datePublished',article);self.assertEqual(article['author']['@type'],'Organization')
         self.assertIn('guide-risparmio.html',html)
+
+    def test_pack_comparison_keeps_tracking_and_does_not_fill_unknown_weight(self):
+        offer=self.o|dict(affiliate_url='https://example.com/tracked')
+        html=pack_content([offer],self.now)
+        self.assertIn('6,00 €/kg',html)
+        self.assertIn('https://example.com/tracked',html)
+        self.assertIn('sponsored',html)
+        self.assertIn('ricette differenti',html)
+        self.assertNotIn('<table',pack_content([offer|dict(weight_kg=None)],self.now))

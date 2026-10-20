@@ -82,6 +82,26 @@ def litter_content(offers,now):
 GUIDES = [('costo-crocchette-cane','Quanto costano le crocchette al mese?','Prezzo/kg e costo giornaliero con esempi reali e una razione modificabile: separa consumo, confezioni e spedizione.',food_content),('confrontare-prezzi-lettiere','Come confrontare i prezzi delle lettiere','Formati in kg e litri, stesso prodotto e spesa complessiva: esempi rilevati dal catalogo e controlli prima del checkout.',litter_content)]
 
 
+def pack_content(offers, now):
+    rows=[]
+    for o in food_examples(offers, now):
+        rows.append(f'<tr><td>{source_link(o)}<br>{h(o["merchant"])}</td><td>{o["weight_kg"]:g} kg</td><td>{money(o["price"])}</td><td>{money(o["price"]/o["weight_kg"])}/kg</td><td>{h(o["checked_at"][:16].replace("T"," "))} UTC</td></tr>')
+    table='<p>Nessun esempio recente con peso netto disponibile. Il metodo resta utilizzabile sulla confezione del negozio.</p>'
+    if rows:
+        table='<div class="guide-table" tabindex="0" role="region" aria-label="Prezzo della confezione e prezzo al chilo"><table><caption>Esempi di lettura del prezzo, ricette diverse e spedizione esclusa</caption><thead><tr><th>Prodotto e fonte</th><th>Peso netto</th><th>Confezione</th><th>Prezzo/kg</th><th>Rilevazione</th></tr></thead><tbody>'+''.join(rows)+'</tbody></table></div>'
+    return ('<h2>Due numeri per due decisioni diverse</h2><p>Il prezzo della confezione indica quanto paghi per portare a casa quel formato. Il prezzo al chilo serve a capire quanto costa una quantità uguale di prodotto. Leggerli insieme evita di scegliere un sacco soltanto perché il numero più grande sulla scheda sembra basso. Il formato più conveniente al chilo può richiedere più denaro subito; quello con l’esborso minore può costare di più per la stessa quantità.</p>'
+        '<h2>Rifai il conto prima di confrontare</h2><p>Dividi il prezzo della confezione per i chilogrammi netti dichiarati. Se il peso è espresso in grammi, dividilo prima per 1.000. Usa il risultato non arrotondato per i calcoli successivi e arrotonda soltanto il valore mostrato. Il peso del collo usato dal corriere non misura il contenuto acquistato: se manca il peso netto, lascia il confronto al chilo in sospeso.</p>'
+        '<h2>Esempi attuali: dalla confezione al chilo</h2><p>Le righe seguenti mostrano come leggere entrambi i valori nel catalogo. Sono prodotti e ricette differenti, selezionati alfabeticamente alternando i negozi: non costituiscono una graduatoria e non dimostrano che un alimento possa sostituirne un altro.</p>'+table+
+        '<h2>La stessa marca non basta</h2><p>Prima di cercare lo stesso articolo in un altro negozio, controlla il nome completo, la ricetta, la fase di vita dichiarata e il formato selezionato. Il nostro confronto esatto richiede un GTIN valido, una marca e un peso netto coincidenti. Se cambi dimensione del sacco, può cambiare anche il codice: le offerte restano separate. Un’identità incerta non diventa verificata perché i nomi delle schede si assomigliano.</p>'
+        '<h2>Attenzione al selettore e ai multipack</h2><p>Una pagina può contenere più formati mentre il titolo visibile descrive soltanto quello iniziale. Controlla quale opzione è selezionata quando apri il negozio e quale quantità finisce nel carrello. Per un multipack servono numero di confezioni, contenuto netto di ciascuna e conferma che il prezzo riguardi l’intero pacco. Se uno di questi dati manca, non moltiplicare il formato per ricostruire un prezzo apparentemente conveniente. Escludiamo i multipack con base del prezzo non verificata.</p>'
+        '<h2>Aggiungi la spedizione al livello dell’ordine</h2><p>Il prezzo/kg della tabella esclude la spedizione. Per sapere quanto spendi davvero, scegli quantità realistiche e confronta il totale della lista: prodotti più spedizione applicata una volta. Una soglia gratuita non rende gratuito il prodotto aggiunto per raggiungerla. Nel carrello risparmio i negozi con assortimento incompleto o condizioni non verificabili non vengono presentati come alternativa completa con un totale certo.</p>'
+        '<h2>Il sacco grande entra nel tuo budget?</h2><p>Controlla lo spazio disponibile e le indicazioni di conservazione del produttore. Il prezzo/kg non dimostra quanto durerà il prodotto né quale razione sia adatta al tuo animale. Se conosci già la razione, il calcolatore giornaliero traduce il prezzo e il peso in costo del consumo; il pagamento resta legato a confezioni intere. Puoi così valutare separatamente esborso immediato e consumo previsto.</p>'
+        '<p>Prima del pagamento ricontrolla formato, quantità, prezzo e disponibilità nel negozio: una rilevazione datata non garantisce il totale al checkout. Per approfondire il consumo consulta la <a href="costo-crocchette-cane.html">guida al costo giornaliero e mensile</a>; per il pagamento usa la <a href="carrello-risparmio.html">lista risparmio</a>.</p>')
+
+
+GUIDES.append(('prezzo-confezione-o-prezzo-kg','Prezzo della confezione o prezzo al kg: cosa confrontare','Esempi dal catalogo per leggere il costo del sacco, verificare formati e multipack e distinguere prezzo unitario da spesa totale.',pack_content))
+
+
 def build():
     now=dt.datetime.now(dt.timezone.utc)
     catalog=json.loads(gzip.decompress((ROOT/'site/data/catalog.json.gz').read_bytes()))
