@@ -2,6 +2,13 @@
 
 Ultimo aggiornamento: 20 ottobre 2026.
 
+## Sessione 20 ottobre 2026, integrità dei collegamenti interni
+- Estesa la guardia statica a tutti i collegamenti tra le 310 pagine generate e ai frammenti dichiarati: una destinazione HTML assente o un ancoraggio inesistente blocca ora sia la pipeline cataloghi sia la prova browser. Asset, URL esterni, mailto e protocolli non navigazionali non vengono confusi con pagine.
+- Rapporto pubblico `/data/site-quality.json` portato a `method_version: 2`; restano inclusi i controlli precedenti su canonical, metadati, landmark, immagini, JSON-LD, schede esterne sicure e `rel=sponsored`.
+- Verifiche: 6 test unitari specifici locali superati; browser CI 39491459410 riuscito con 70 test Python, 30 Node, 310 pagine/0 problemi e prova mobile a 393×852 senza errori JavaScript o overflow. La prima esecuzione browser 39491292243 falliva soltanto perché il test attendeva ancora la versione 1 del rapporto; aspettativa aggiornata e rieseguita con successo.
+- Il controllo Lighthouse pubblico 39490698346 non ha prodotto metriche: il runner GitHub ha ricevuto HTTP 403 da Cloudflare per 30 tentativi sulla pagina Osservatorio. Questo non è un fallimento prestazionale e non viene attribuito al sito; la pagina e il rapporto pubblico erano raggiungibili dal controllo browser separato. Registrato come dipendenza infrastrutturale da riesaminare senza allentare la protezione del dominio.
+- Prossimo: completare la rigenerazione catalogo con la nuova guardia e verificare la pubblicazione del rapporto versione 2; poi proseguire solo sui punti realizzabili della matrice. Newsletter, nuovi feed/API, Search Console, analytics e revisione veterinaria restano dipendenze esterne documentate.
+
 ## Sessione 20 ottobre 2026, guida alla soglia di spedizione
 - Quarta guida originale `/spedizione-gratuita-conviene`: confronto algebrico dei due pagamenti, soglie incluse/escluse, peso logistico distinto dal netto, completezza della lista e utilità delle scorte. Nessun carrello, prezzo o risparmio inventato.
 - Tabella derivata dal registro spedizioni già usato dal carrello, con fonti ufficiali e data; informazioni discordanti mantenute, nessuna gratuità presunta. Oltre sette giorni o con data futura/non valida la tabella viene omessa con avviso. Fonti Bauzaar, WebPet, Isola e Animaliapet ricontrollate il 20 ottobre, coerenti con il registro; nessun cambio delle tariffe.

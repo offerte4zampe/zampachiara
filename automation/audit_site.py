@@ -1,4 +1,4 @@
-"""Deterministic static quality gates for generated public HTML."""
+"""Deterministic metadata, safety and internal-link gates for generated public HTML."""
 import datetime as dt
 import gzip
 import json
