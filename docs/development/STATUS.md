@@ -2,6 +2,14 @@
 
 Ultimo aggiornamento: 20 ottobre 2026.
 
+## Sessione 20 ottobre 2026, controlli qualità e correzioni
+- `automation/guard_catalog.py` eseguito dopo l'arricchimento e prima di storico/pagine: sospende ID mancanti/duplicati, prezzi non validi, URL non HTTPS/con credenziali o rilevazioni scadute/future. Rimuove pesi non validi senza ricavarli da altri campi né cambiare il prezzo. Registro snapshot `site/data/catalog-quarantine.json`; conteggi e matching nel report qualità ricalcolati sulle offerte pubblicabili.
+- Sospensione statistica soltanto per GTIN valido normalizzato, marca e peso netto esatti, con almeno due altri negozi indipendenti concordanti entro il 20% e differenza oltre ±50%. Nessuna mediana per marca/categoria o ricetta presunta. La sospensione indica un sospetto da verificare, non un errore accertato. Offerte indisponibili restano marcate come tali; link HTTP rotti non certificati da questo controllo sintattico e nessuna visita di negozi/URL affiliati nei test.
+- Campione prima/dopo: 13168 offerte esaminate e pubblicabili, zero sospensioni e zero pesi rimossi. Non inventare anomalie per dimostrare il controllo; il numero cambia con i feed.
+- `automation/corrections.json` e `automation/build_corrections_page.py`: `/correzioni` riporta due correzioni tecniche documentate con commit reali (precisione peso di spedizione e requisito del peso netto per la razione), distingue controllo interno da segnalazioni utenti e mostra data/conteggi dei controlli. Nessun ticket, reclamo o tempo di risposta inventato. Collegamento dal footer di Metodo, Contatti e comparatore; le pagine generate ereditano il footer dal Metodo.
+- Verifiche locali: 40 Python e 23 Node superati; casi di ricette/formati diversi, negozi non indipendenti, prezzi discordanti, GTIN non valido, dati corrotti, duplicati e pesi invalidi. Nessun nuovo Lighthouse o certificazione legale. Pipeline e deploy da verificare dopo il commit.
+- Prossimo: confermare pubblicazione e registro, poi infrastruttura alert/newsletter disattivata e contenuti originali verificati. Restano aperti i controlli dei link HTTP e delle basi degli sconti mostrati; non dichiarare completata tutta la qualità o tutta la roadmap. Blocchi esterni sopra invariati.
+
 ## Fonti
 - [Roadmap richiesta da Mirco](roadmap.md)
 - [Audit iniziale](../audits/2026-10-19/README.md)

@@ -1,0 +1,6 @@
+{
+  "entries": [
+    {"date": "2026-10-20", "origin": "Controllo interno", "title": "Peso di spedizione vicino al limite", "detail": "Il calcolo del carrello conserva il peso di trasporto senza arrotondarlo verso il basso: 35,004 kg non diventano 35 kg. Se il peso supera il limite modellato, il totale non viene stimato.", "evidence": "https://github.com/offerte4zampe/zampachiara/commit/ad85037bd48fd864628515c21656d594c8effca9"},
+    {"date": "2026-10-20", "origin": "Controllo interno", "title": "Costo giornaliero soltanto con peso netto verificato", "detail": "Il campo per la razione giornaliera viene mostrato soltanto per categorie alimentari riconoscibili con peso netto positivo. Il peso di trasporto non sostituisce il peso dell’alimento.", "evidence": "https://github.com/offerte4zampe/zampachiara/commit/3f77ebf07a01017ae7b2dd2d84a5b087ac042976"}
+  ]
+}

@@ -12,6 +12,10 @@ on:
       - 'tests/test_partner_feed.py'
       - 'automation/update_catalog.py'
       - 'automation/enrich_catalog.py'
+      - 'automation/guard_catalog.py'
+      - 'automation/build_corrections_page.py'
+      - 'automation/corrections.json'
+      - 'tests/test_catalog_guard.py'
       - 'automation/update_history.py'
       - 'automation/build_category_pages.py'
       - 'automation/build_product_pages.py'
@@ -44,12 +48,14 @@ jobs:
       - run: node --test tests/test_metrics.mjs tests/test_trade.mjs tests/test_report.mjs tests/test_basket.mjs tests/test_daily_cost.mjs tests/test_price_history.mjs
       - run: python automation/update_catalog.py
       - run: python automation/enrich_catalog.py
+      - run: python automation/guard_catalog.py
       - run: python automation/update_history.py
       - run: python automation/build_category_pages.py
       - run: python automation/build_product_pages.py
       - run: python automation/build_matched_pages.py
       - run: python automation/build_brand_pages.py
       - run: python automation/build_home_data.py
+      - run: python automation/build_corrections_page.py
       - run: python automation/apply_social_metadata.py
       - run: python automation/build_sitemaps.py
       - name: Publish refreshed catalog
@@ -60,10 +66,10 @@ jobs:
             echo "Main changed during generation; retain current publication and retry on next run."
             exit 0
           fi
-          if ! git diff --quiet -- site/data/catalog.json.gz site/data/price-history.json.gz site/data/history site/data/catalog-quality.json site/data/home.json automation/identifier-cache.json automation/shipping-cache.json site/*.html site/sitemap*.xml automation/sitemap-state.json; then
+          if ! git diff --quiet -- site/data/catalog.json.gz site/data/price-history.json.gz site/data/history site/data/catalog-quality.json site/data/catalog-quarantine.json site/data/home.json automation/identifier-cache.json automation/shipping-cache.json site/*.html site/sitemap*.xml automation/sitemap-state.json; then
             git config user.name "Offerte4Zampe catalog bot"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add site/data/catalog.json.gz site/data/price-history.json.gz site/data/history site/data/catalog-quality.json site/data/home.json automation/identifier-cache.json automation/shipping-cache.json site/*.html site/sitemap*.xml automation/sitemap-state.json
+            git add site/data/catalog.json.gz site/data/price-history.json.gz site/data/history site/data/catalog-quality.json site/data/catalog-quarantine.json site/data/home.json automation/identifier-cache.json automation/shipping-cache.json site/*.html site/sitemap*.xml automation/sitemap-state.json
             git commit -m "chore: refresh real merchant prices"
             git push
           fi
