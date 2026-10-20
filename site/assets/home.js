@@ -2,8 +2,9 @@
 const el=(tag,value,cls)=>{const e=document.createElement(tag);e.textContent=value;if(cls)e.className=cls;return e};
 const url=s=>{try{const u=new URL(s);return u.protocol==='https:'?u.href:''}catch{return ''}};
 function link(label,params,cls){const a=el('a',label,cls);a.href='confronta-cibo.html?'+new URLSearchParams(params);return a}
+function productTitle(o,tag){const h=el(tag,''),a=el('a',o.title,'product-title-link'),dest=url(o.affiliate_url||o.url);if(!dest)return el(tag,o.title);a.href=dest;a.rel=o.affiliate_url?'sponsored noopener noreferrer':'noopener noreferrer';h.append(a);return h}
 function card(o,spotlight=false){const a=document.createElement('article');a.className=spotlight?'spotlight-product':'home-deal';a.dataset.homeOffer=o.checked_at;const im=url(o.image);if(im){const img=document.createElement('img');img.src=im;img.alt='';img.loading=spotlight?'eager':'lazy';img.width=160;img.height=145;a.append(img)}
-a.append(el('p',o.merchant+' · '+o.brand,'micro'),el(spotlight?'h2':'h3',o.title),el('p',o.variant,'micro'));const p=el('p','','catalog-price');p.append(el('strong',money.format(o.price)));if(O4ZTrade.discount(o)){p.append(el('del',money.format(o.previous_price)),el('span','−'+Math.round((1-o.price/o.previous_price)*100)+'%','catalog-sale'))}a.append(p);
+a.append(el('p',o.merchant+' · '+o.brand,'micro'),productTitle(o,spotlight?'h2':'h3'),el('p',o.variant,'micro'));const p=el('p','','catalog-price');p.append(el('strong',money.format(o.price)));if(O4ZTrade.discount(o)){p.append(el('del',money.format(o.previous_price)),el('span','−'+Math.round((1-o.price/o.previous_price)*100)+'%','catalog-sale'))}a.append(p);
 if(o.weight_kg)a.append(el('p',money.format(o.price/o.weight_kg)+'/kg · spedizione esclusa','micro'));
 a.append(el('p','Rilevato: '+new Date(o.checked_at).toLocaleString('it-IT'),'micro'));
 a.append(link('Confronta il prodotto →',{q:o.title.slice(0,110)},'btn secondary'));const report=el('a','Prezzo o dati sbagliati? Segnala','micro');report.href=O4ZTrade.reportUrl(o);a.append(report);return a}

@@ -45,3 +45,5 @@ body{background:var(--cream);font-family:'Trebuchet MS',system-ui,-apple-system,
 .daily-cost summary {cursor:pointer;min-height:44px;padding-block:10px}
 
 .observed-history {margin-block:12px}.observed-history summary {min-height:44px;padding-block:10px;cursor:pointer}.observed-history select {font:inherit;min-height:44px;max-width:100%}.observed-history th,.observed-history td {padding:6px;font-size:13px}
+
+.product-title-link{color:inherit;text-decoration:none}.product-title-link:hover{text-decoration:underline}.product-title-link:focus-visible{outline:3px solid #267c76;outline-offset:4px;text-decoration:underline}
