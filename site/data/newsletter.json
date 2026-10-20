@@ -1,9 +1,14 @@
 {
   "provider": "Brevo",
-  "signup_url": null,
+  "signup_url": "https://abacc216.sibforms.com/serve/MUIFAHEk8iKY6FOx7OmqlnuhQsK1qCCTfQk659sRtA2nffS2-deI-GScXV6pFlc9J6r0dippqXSbt5w9M4WjLAWO8rWrQDnq_ylZPmw5jgeAZt3sQ_SyI3mxZ7vyEa82mfE8jYI5lPjtV5mItKSZcbBxrrF5J9TzawLjo5jf3eWgoNjhs0si-o5b8eWelBxNeSN22t-pY87-5GLS-Q==",
   "double_opt_in_verified": false,
   "unsubscribe_verified": false,
   "privacy_notice_verified": false,
-  "separate_consent_verified": false,
-  "provider_permissions_verified": false
+  "separate_consent_verified": true,
+  "provider_permissions_verified": false,
+  "configuration_checked_on": "2026-10-20",
+  "sender": "capobranco@offerte4zampe.it",
+  "sender_verified": true,
+  "domain_authenticated": true,
+  "double_opt_in_configured": true
 }
