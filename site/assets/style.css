@@ -43,3 +43,5 @@ body{background:var(--cream);font-family:'Trebuchet MS',system-ui,-apple-system,
 .daily-cost label {display:block;font-size:16px}
 .daily-cost input {display:block;max-width:100%;width:160px;min-height:44px;font:inherit;margin-top:6px}
 .daily-cost summary {cursor:pointer;min-height:44px;padding-block:10px}
+
+.observed-history {margin-block:12px}.observed-history summary {min-height:44px;padding-block:10px;cursor:pointer}.observed-history select {font:inherit;min-height:44px;max-width:100%}.observed-history th,.observed-history td {padding:6px;font-size:13px}
