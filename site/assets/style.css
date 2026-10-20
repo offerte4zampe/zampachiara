@@ -30,3 +30,5 @@ body{background:var(--cream);font-family:'Trebuchet MS',system-ui,-apple-system,
 .section-desc,#home-deals-status,.micro,.shopping-return p{color:#536567}
 .newsletter-banner p{color:#53635e}
 @media(max-width:580px){#catalog-status{min-block-size:8em}#catalog-identity-status{min-block-size:8em}}
+/* Brand landing cards use section headings without oversized page typography. */
+.catalog-card h2{font-size:18px;line-height:1.4}
