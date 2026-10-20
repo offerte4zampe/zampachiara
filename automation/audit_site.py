@@ -46,6 +46,9 @@ class Page(HTMLParser):
 def inspect(site):
     files=sorted(site.glob('*.html'));issues=[];pages=[];canonicals={}
     for path in files:
+        # Search Console ownership tokens are machine verification files, not pages.
+        if path.name.startswith('google') and path.name.endswith('.html'):
+            continue
         p=Page(path.read_text())
         rel=path.name
         local=[]
@@ -78,7 +81,7 @@ def inspect(site):
         local=sorted(set(local))
         issues.extend({'page':rel,'rule':rule} for rule in local)
         pages.append({'page':rel,'indexable':indexable,'canonical':p.canonical[0] if len(p.canonical)==1 else None,'issues':local})
-    return {'pages_scanned':len(files),'indexable_pages':sum(p['indexable'] for p in pages),'unique_canonicals':len(canonicals),'issues':issues,'rule_counts':dict(sorted(Counter(i['rule'] for i in issues).items())),'pages':pages}
+    return {'pages_scanned':len(pages),'indexable_pages':sum(p['indexable'] for p in pages),'unique_canonicals':len(canonicals),'issues':issues,'rule_counts':dict(sorted(Counter(i['rule'] for i in issues).items())),'pages':pages}
 
 
 def build():

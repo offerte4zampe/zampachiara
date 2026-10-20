@@ -34,3 +34,9 @@ class StaticSiteAuditTests(unittest.TestCase):
         html=html.replace(' lang="it"','').replace('<h1>H</h1>','').replace('class="skip"','class="other"')
         rules={x['rule'] for x in self.run_site({'bad.html':html})['issues']}
         self.assertTrue({'html_lang_it','one_h1','skip_link','image_alt','image_dimensions','safe_new_tab','clean_internal_canonical'}<=rules)
+
+    def test_search_console_verification_token_is_not_a_content_page(self):
+        token='google-site-verification: google123.html'
+        result=self.run_site({'google123.html':token,'one.html':BASE.format(slug='one',body='')})
+        self.assertEqual(result['pages_scanned'],1)
+        self.assertEqual(result['issues'],[])
