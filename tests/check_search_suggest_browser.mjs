@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 export async function checkSuggestions(page,origin,catalog){
  const now=Date.parse(catalog.generated_at),o=catalog.offers.find(o=>o.available&&typeof o.title==='string'&&o.title.length>4&&Number.isFinite(Date.parse(o.checked_at))&&now-Date.parse(o.checked_at)<=36*3600000&&Date.parse(o.checked_at)<=now+300000);
  assert(o,'Fresh catalog fixture required');const query=o.title.slice(0,Math.min(8,o.title.length));
+ const homeRequests=[];const record=r=>homeRequests.push(r.url());page.on('request',record);
  await page.goto(origin+'/index.html',{waitUntil:'domcontentloaded'});
  await page.focus('#home-query');await page.type('#home-query',query);
  await page.waitForSelector('#home-query-suggestions [role=option]',{visible:true,timeout:30000});
@@ -10,6 +11,9 @@ export async function checkSuggestions(page,origin,catalog){
  assert(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth<=1));
  assert(await page.$eval('#home-query-suggestions',e=>{const box=e.getBoundingClientRect(),y=Math.min(box.bottom-10,innerHeight-10),x=box.left+box.width/2;return y<=box.top||e.contains(document.elementFromPoint(x,y))}),'Suggestions must not be clipped by hero');
  await page.screenshot({path:'browser-reports/search-suggestions-mobile.png',fullPage:true});
+ assert(homeRequests.some(url=>url.endsWith('/data/search-index.json')),'Home must use compact search index');
+ assert(!homeRequests.some(url=>url.endsWith('/data/catalog.json.gz')),'Home search must not download the full catalog');
+ page.off('request',record);
  await page.keyboard.press('ArrowDown');
  const expected=await page.$eval('#home-query-suggestions [aria-selected=true]',e=>e.dataset.query);
  assert(await page.$eval('#home-query',e=>Boolean(e.getAttribute('aria-activedescendant'))));

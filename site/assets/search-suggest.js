@@ -9,11 +9,10 @@ function candidates(offers,query,now=Date.now()){
  .filter(o=>{const key=norm(o.title)+'|'+norm(o.variant);if(seen.has(key))return false;seen.add(key);return true}).slice(0,8);
 }
 let catalogPromise;
-function catalog(){if(!catalogPromise)catalogPromise=fetch('data/catalog.json.gz',{cache:'no-cache'}).then(async r=>{
- if(!r.ok)throw Error('catalog');const bytes=await r.arrayBuffer(),raw=new Uint8Array(bytes);
- const body=raw[0]===31&&raw[1]===139?await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))).text():new TextDecoder().decode(bytes);
- const data=JSON.parse(body);if(!Array.isArray(data.offers))throw Error('catalog');return data.offers;
+function catalog(){if(!catalogPromise)catalogPromise=fetch('data/search-index.json',{cache:'default'}).then(async r=>{
+ if(!r.ok)throw Error('search-index');const data=await r.json();if(!Array.isArray(data.offers))throw Error('search-index');return data.offers;
  }).catch(e=>{catalogPromise=null;throw e});return catalogPromise}
+
 function mount(input,provide,choose){
  if(!input)return;
  const wrap=document.createElement('div');wrap.className='search-suggest';input.before(wrap);wrap.append(input);
@@ -26,13 +25,14 @@ function mount(input,provide,choose){
  function accept(i){const o=rows[i];if(!o)return;input.value=o.title;close();choose(o)}
  async function update(){
  const ticket=++version,q=input.value;if(norm(q).length<2){close();return}
+ status.textContent='Ricerca suggerimenti…';
  try{const offers=await provide();if(ticket!==version||document.activeElement!==input||composing)return;rows=candidates(offers,q);list.replaceChildren();active=-1;input.removeAttribute('aria-activedescendant');
  rows.forEach((o,i)=>{const option=document.createElement('li');option.id=list.id+'-'+i;option.role='option';option.setAttribute('aria-selected','false');option.dataset.query=o.title;
  const title=document.createElement('span');title.textContent=o.title;option.append(title);
  if(o.variant){const detail=document.createElement('small');detail.textContent=o.variant;option.append(detail)}
  option.addEventListener('pointerdown',e=>e.preventDefault());option.addEventListener('click',()=>accept(i));list.append(option)});
  list.hidden=!rows.length;input.setAttribute('aria-expanded',String(Boolean(rows.length)));status.textContent=rows.length?rows.length+' suggerimenti. Usa le frecce e Invio per selezionare.':'Nessun suggerimento. Puoi continuare la ricerca.';
- }catch{if(ticket===version)close()}
+ }catch{if(ticket===version){close();status.textContent='Suggerimenti non disponibili. Puoi comunque premere Cerca.'}}
  }
  function schedule(){close();if(!composing)timer=setTimeout(update,100)}
  input.addEventListener('input',schedule);input.addEventListener('focus',schedule);input.addEventListener('blur',close);

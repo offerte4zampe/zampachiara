@@ -55,9 +55,22 @@ def build(catalog, now=None):
     }
 
 
+
+def search_index(catalog):
+    """Only names and provenance for suggestions: no prices, images or tracking URLs."""
+    fields = ('title', 'variant', 'brand', 'gtin', 'merchant', 'available', 'checked_at')
+    return {'generated_at': catalog.get('generated_at'), 'offers': [
+        {key: offer[key] for key in fields if key in offer}
+        for offer in catalog.get('offers', []) if isinstance(offer.get('title'), str)
+    ]}
+
+
 def main():
     data = json.loads(gzip.decompress((ROOT/'site/data/catalog.json.gz').read_bytes()))
     path = ROOT/'site/data/home.json'
+    index = ROOT/'site/data/search-index.json'
+    index.write_text(json.dumps(search_index(data), ensure_ascii=False, separators=(',', ':'))+'\n')
+    print(f'Search index: {index.stat().st_size} bytes; gzip {len(gzip.compress(index.read_bytes()))} bytes')
     payload = build(data)
     path.write_text(json.dumps(payload, ensure_ascii=False, separators=(',', ':')) + '\n')
     home = ROOT/'site/index.html'
