@@ -4,7 +4,7 @@ const text=(tag,value,cls)=>{const e=document.createElement(tag);e.textContent=v
 const date=s=>{const d=new Date(s);return Number.isNaN(+d)?'non disponibile':d.toLocaleString('it-IT')};
 const params=new URLSearchParams(location.search);
 $('catalog-multishop').checked=params.get('matched')==='1';
-$('catalog-query').value=(params.get('q')||'').slice(0,120);$('catalog-sale').checked=params.get('sale')==='1';
+$('catalog-query').value=(params.get('q')||'').slice(0,120);$('catalog-sale').checked=false;$('catalog-sale').disabled=true;
 const safeUrl=(s,image=false)=>{try{const u=new URL(s);return u.protocol==='https:'?u.href:''}catch{return ''}};
 function stale(o){return Date.now()-Date.parse(o.checked_at)>36*3600000}
 function fillSelect(id,values){for(const value of [...new Set(values.filter(Boolean))].sort((a,b)=>a.localeCompare(b,'it'))){const o=text('option',value);o.value=value;$(id).append(o)}}

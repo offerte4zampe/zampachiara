@@ -21,11 +21,9 @@ def build(catalog, now=None):
             return 0 <= (now - datetime.datetime.fromisoformat(o['checked_at'].replace('Z', '+00:00'))).total_seconds() <= 36 * 3600
         except (ValueError, KeyError, TypeError):
             return False
-    # Keep selection rules in home.js; at most 7 candidates per brand and source
-    # are enough for its six distinct-brand picks and preferred-brand spotlight.
+    # Current prices, independent of unverified comparison prices or commissions.
     rows = [o for o in catalog['offers'] if str(o.get('url','')).startswith('https://') and o.get('available') and isinstance(o.get('price'), (int, float)) and o['price'] > 0]
-    sales = [o for o in rows if recent(o) and o.get('image') and isinstance(o.get('previous_price'), (int, float)) and o['previous_price'] > o['price'] and o['price'] / o['previous_price'] >= .4]
-    sales.sort(key=lambda o: 1 - o['price']/o['previous_price'], reverse=True)
+    sales = sorted((o for o in rows if recent(o) and o.get('image')), key=lambda o: (o['title'].casefold(), o['id']))
     selected = []
     seen = set()
     def add(o):
@@ -41,11 +39,11 @@ def build(catalog, now=None):
                 if len(brands) == 7:
                     break
     for o in rows:
-        if recent(o) and o.get('image') and o['price'] >= 15 and any(b in o.get('brand', '').lower() for b in ['royal canin', 'purina', 'trainer']) and isinstance(o.get('previous_price'), (int, float)) and o['previous_price'] > o['price'] and o['price'] / o['previous_price'] >= .4:
+        if recent(o) and o.get('image') and o['price'] >= 15 and any(b in o.get('brand', '').lower() for b in ['royal canin', 'purina', 'trainer']):
             add(o)
             break
     counts = collections.Counter(o['brand'] for o in rows if o.get('brand'))
-    fields = ['id', 'title', 'merchant', 'merchant_id', 'brand', 'variant', 'price', 'previous_price', 'weight_kg', 'image', 'url', 'available', 'checked_at']
+    fields = ['id', 'title', 'merchant', 'merchant_id', 'brand', 'variant', 'price', 'weight_kg', 'image', 'url', 'available', 'checked_at']
     return {k: catalog[k] for k in ['generated_at', 'refresh_hours', 'sources']} | {
         'stats': {'offers': len(catalog['offers']), 'brands': len({o.get('brand') for o in catalog['offers'] if o.get('brand')})},
         'top_brands': [brand for brand, count in counts.most_common(10)],
@@ -66,7 +64,7 @@ def main():
 
 def pick(payload):
     """Same source diversity and distinct-brand order for HTML and hydration."""
-    sales = sorted(payload['offers'], key=lambda o: -(1-o['price']/o['previous_price']))
+    sales = payload['offers']
     picked, brands = [], set()
     for source in payload['sources']:
         found = next((o for o in sales if o['merchant_id'] == source['id'] and o['brand'] not in brands), None)
@@ -110,7 +108,7 @@ def render_home(html, payload):
         image = o.get('image', '')
         img = f'<img src="{h(image,quote=True)}" alt="" width="160" height="145" loading="lazy">' if image.startswith('https://') else ''
         unit = f'<p class="micro">{money(o["price"]/o["weight_kg"])}/kg · spedizione esclusa</p>' if o.get('weight_kg') else '<p class="micro">Spedizione esclusa</p>'
-        return f'''<article class="{'spotlight-product' if spotlight else 'home-deal'}" data-home-offer="{h(o['checked_at'],quote=True)}">{img}<p class="micro">{h(o['merchant'])} · {h(o['brand'])}</p><{tag}>{h(o['title'])}</{tag}><p class="micro">{h(o.get('variant') or '')}</p><p class="catalog-price"><strong>{money(o['price'])}</strong><del>{money(o['previous_price'])}</del><span class="catalog-sale">−{int((1-o['price']/o['previous_price'])*100+.5)}%</span></p>{unit}<p class="micro">Rilevato: <time datetime="{h(o['checked_at'],quote=True)}">{h(o['checked_at'][:16].replace('T',' '))} UTC</time></p>{link('Confronta il prodotto →', q=o['title'][:110]).replace('<a ', '<a class="btn secondary" ')}{error_link(o)}</article>'''
+        return f'''<article class="{'spotlight-product' if spotlight else 'home-deal'}" data-home-offer="{h(o['checked_at'],quote=True)}">{img}<p class="micro">{h(o['merchant'])} · {h(o['brand'])}</p><{tag}>{h(o['title'])}</{tag}><p class="micro">{h(o.get('variant') or '')}</p><p class="catalog-price"><strong>{money(o['price'])}</strong></p>{unit}<p class="micro">Rilevato: <time datetime="{h(o['checked_at'],quote=True)}">{h(o['checked_at'][:16].replace('T',' '))} UTC</time></p>{link('Confronta il prodotto →', q=o['title'][:110]).replace('<a ', '<a class="btn secondary" ')}{error_link(o)}</article>'''
     deals, hero = pick(payload)
     parts = {
         'home-deals': ''.join(card(o) for o in deals),

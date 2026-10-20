@@ -5,6 +5,8 @@ on:
     branches: [main]
     paths:
       - 'site/assets/price-history.js'
+      - 'site/assets/home.js'
+      - 'site/index.html'
       - 'tests/test_price_history.mjs'
       - 'site/assets/daily-cost.js'
       - 'tests/test_daily_cost.mjs'

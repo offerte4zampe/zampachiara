@@ -4,7 +4,7 @@ from automation.build_home_data import build
 
 
 class HomeDataTests(unittest.TestCase):
-    def test_small_payload_keeps_prices_and_excludes_stale_or_suspicious_deals(self):
+    def test_small_payload_keeps_current_prices_without_using_reference_discount(self):
         now = datetime.datetime(2026, 10, 19, tzinfo=datetime.timezone.utc)
         base = dict(id='ok', merchant_id='shop', merchant='Shop', brand='Brand', title='Food', price=10, previous_price=20, image='https://example.com/a.jpg', url='https://example.com/product', available=True, checked_at=now.isoformat())
         offers = [base, base | dict(id='stale', checked_at='2026-10-16T00:00:00+00:00'), base | dict(id='suspicious', previous_price=100), base | dict(id='out', available=False)]
@@ -13,6 +13,9 @@ class HomeDataTests(unittest.TestCase):
         self.assertEqual(result['offers'][0]['price'], 10)
         self.assertEqual(result['stats']['offers'], 4)
         self.assertNotIn('affiliate_url', result['offers'][0])
+        self.assertNotIn('previous_price', result['offers'][0])
+        without_reference = build(dict(offers=[base | dict(previous_price=None)], sources=[dict(id='shop')], generated_at=now.isoformat(), refresh_hours=6), now)
+        self.assertEqual(without_reference['offers'], result['offers'])
 
 class HomePrerenderTests(unittest.TestCase):
     def test_regions_are_replaced_idempotently_and_offer_text_escaped(self):
@@ -27,3 +30,5 @@ class HomePrerenderTests(unittest.TestCase):
         self.assertIn('10,00 €',rendered)
         self.assertIn('data-home-offer',rendered)
         self.assertIn('5,00 €/kg',rendered)
+        self.assertNotIn('<del>',rendered)
+        self.assertNotIn('catalog-sale',rendered)

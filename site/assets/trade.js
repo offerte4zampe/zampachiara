@@ -13,7 +13,9 @@ function shipping(o,rules,quantity=1,territory='standard',now=Date.now()){
  const fee=(r.free_from!==undefined&&subtotal>=r.free_from)||(r.free_above!==undefined&&subtotal>r.free_above)?0:r.fee;
  return {subtotal,fee,total:Math.round((subtotal+fee)*100)/100,rule:r};
 }
-function discount(o){return o.previous_price>o.price&&o.price/o.previous_price>=.4;}
+// The feeds expose comparison/list prices, not a verified reduction basis.
+// Keep promotional percentages disabled until an evidenced source is integrated.
+function discount(o){return false;}
 function merchant(url){
  try{const u=new URL(url);if(u.protocol!=='https:')return '';const shops={'www.bauzaar.it':'Bauzaar','bauzaar.it':'Bauzaar','webpet.it':'WebPet','www.webpet.it':'WebPet','animaliapet.eu':'Animaliapet','www.animaliapet.eu':'Animaliapet'};if(shops[u.hostname])return shops[u.hostname];if(u.hostname==='tc.tradetracker.net'&&u.searchParams.get('c')==='16143'&&u.searchParams.get('a')==='518044')return 'Bauzaar';return ''}catch{return ''}
 }
