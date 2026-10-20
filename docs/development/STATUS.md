@@ -2,6 +2,13 @@
 
 Ultimo aggiornamento: 20 ottobre 2026.
 
+## Sessione 20 ottobre 2026, ricerca e lentezza segnalate da Mirco
+- Sul browser pubblico i suggerimenti precedenti comparivano dopo il caricamento dell'intero catalogo; non riprodotta un'assenza permanente. Eliminata questa dipendenza nella home con `data/search-index.json`, generato dal catalogo con soli nomi/formati/provenienza/freschezza, senza prezzi, immagini o URL commerciali. Precaricamento al focus, stato di attesa e fallback di errore esplicito. Nessuna disponibilità o prezzo inventati.
+- Comparatore: testo ricercabile preparato una volta, rendering differito di 180 ms durante la digitazione, quote di spedizione conservate finché quantità/territorio non cambiano. Filtri e ordinamento indipendenti dalle commissioni invariati.
+- Browser CI 39494439906 e 39494489186 riusciti: 72 Python/30 Node, prova mobile con elenco, selezione, tastiera/Escape, nessun overflow/errore JS; nuova asserzione conferma che la ricerca home richiede l'indice e non catalog.json.gz. Catalogo 39494745256 riuscito, dati `bf8006f`; primo ciclo aveva preservato correttamente la testa concorrente senza pubblicare.
+- Indice campione 3.883.119 byte JSON / 419.461 byte gzip di riferimento; è un confronto di payload, non una misura LCP o una promessa di latenza mobile. Non attribuito un miglioramento percentuale non misurato.
+- Verifica online: home con “monge” mostra otto suggerimenti; freccia/Invio apre il comparatore; “royal” nel comparatore mostra otto suggerimenti e 457 offerte/23 gruppi nel campione. Nessun clic affiliato. File: search-suggest/home/catalog JS, build_home_data, workflow e test indice/browser. Restano eventuali ottimizzazioni di primo caricamento catalogo e misure sul campo.
+
 ## Sessione 20 ottobre 2026, correzione audit richiesta da Mirco
 - Risolto il blocco della procedura: Lighthouse verifica ora il checkout statico su loopback, senza dipendere dal 403 del dominio pubblico. Il controllo HTTP pubblico resta separato, salvato e segnalato come warning, non come risultato positivo di produzione. Nessuna modifica alle regole Cloudflare o aggiramento delle protezioni.
 - CI 39492896264 riuscita, commit funzionale `7adab04`: 12 rapporti validi, quattro pagine × tre iterazioni. Verificati numero di report, URL locale, assenza di runtimeError e punteggi numerici; soglia 0,95 accessibilità/SEO mantenuta.
