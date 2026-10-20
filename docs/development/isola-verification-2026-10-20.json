@@ -1,0 +1,33 @@
+{
+  "checked_on": "2026-10-20",
+  "feature_commit": "addd12b8178cfead8dd351ab8982bc385aee2293",
+  "shipping_commit": "e7db272c824051a6ff99bf50054828930ea86c4a",
+  "data_commit": "3cbcfb1fb4194e0e2adf5a14da8ecb7b5e6cc503",
+  "catalog_run": "https://github.com/offerte4zampe/zampachiara/actions/runs/39407230272",
+  "browser_run": "https://github.com/offerte4zampe/zampachiara/actions/runs/39407230382",
+  "results": {
+    "python_tests": 44,
+    "node_tests": 27,
+    "catalog_ci": "success",
+    "browser_ci": "success",
+    "cloudflare_data_build": "success",
+    "cloudflare_shipping_build": "success",
+    "public_catalog_verified": true,
+    "public_shipping_verified": true,
+    "offers_total": 17643,
+    "isola_offers": 4476,
+    "feed_rows": 7223,
+    "excluded_unverified_multipack": 2747,
+    "valid_gtin_total": 9213,
+    "cross_shop_groups": 242,
+    "quarantined_peer_outlier": 1
+  },
+  "shipping_source": "https://www.isoladeitesori.it/faq.html",
+  "limits": [
+    "Multipack price/quantity basis not verified; excluded from ingestion",
+    "Exact subtotal 59 EUR shipping unknown; no total shown",
+    "No email permission approval obtained; newsletter unchanged",
+    "No new Lighthouse or field performance measurement"
+  ],
+  "next": "Continue roadmap: bounded non-tracking HTTP checks, original evidence-based content, final accessibility/checklist; retain external dependencies."
+}
