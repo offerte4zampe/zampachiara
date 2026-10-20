@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-20",
+  "feature": "manual daily food cost",
+  "commits": [
+    "980ae893b16ee1f55f5727734fbf4a1a43575e7f",
+    "ec37fac91454fbb32e3e9f0e71f5af8c9f40922b",
+    "3f77ebf07a01017ae7b2dd2d84a5b087ac042976",
+    "65b62d4009a8775efe87e63b86da7ccc86f4a5dc"
+  ],
+  "tests": {
+    "python": 33,
+    "node": 21,
+    "browser_run": 39370196891,
+    "viewport": [
+      393,
+      852
+    ],
+    "daily_manual_calculation": true,
+    "horizontal_overflow_pixels": 0,
+    "uncaught_errors": [],
+    "external_network": "blocked",
+    "production_writes": false
+  },
+  "catalog_run": 39370334284,
+  "public": {
+    "comparator": {
+      "url": "https://offerte4zampe.it/confronta-cibo",
+      "http": 200,
+      "script": true
+    },
+    "example": {
+      "url": "https://offerte4zampe.it/prezzi-08009470011112-0684d537dc",
+      "http": 200,
+      "daily_data": true
+    },
+    "javascript": {
+      "http": 200,
+      "bytes_observed": 2821,
+      "food_and_net_weight_guards": true
+    }
+  },
+  "limitations": [
+    "Manual ration only; no producer feeding tables verified",
+    "Shipping excluded; no medical or dietary recommendation",
+    "No new Lighthouse or field metrics",
+    "History/quality/disabled alerts work remains; external blocks unchanged"
+  ]
+}
