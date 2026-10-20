@@ -249,3 +249,8 @@ Preservare aggiornamenti altrui e marchio. Commit piccoli, test pertinenti, veri
 - Prima esecuzione checklist: escluso esplicitamente il token HTML di verifica Search Console, che non è una pagina di contenuto; aggiunto test dedicato. Browser CI 39489730923 riuscito con 68 Python, 30 Node, 310 pagine scandite e zero problemi statici; prova mobile senza overflow/errori JS.
 - Catalogo CI 39489730960 riuscito; dati `91aff35`, 310 pagine, 307 indicizzabili e 307 canoniche univoche, zero violazioni. Workers Build riuscita. Verifica diretta del sito pubblico: `https://offerte4zampe.it/data/site-quality.json` restituisce lo stesso report aggiornato, quindi questa volta la pubblicazione live è stata osservata oltre alla sola build.
 - Il primo audit Lighthouse pubblico 39489638434 non ha avviato Lighthouse: la sua attesa cercava testo dentro una risposta compressa. Non è un fallimento prestazionale del sito. Corretto il controllo con decompressione e pattern tollerante agli spazi; esteso a quattro pagine e aggiunto riepilogo delle mediane su tre esecuzioni, con soglia 0,95 per accessibilità e SEO. Nuova esecuzione da verificare prima di registrare punteggi.
+
+
+## Sessione 20 ottobre 2026, matrice finale in manutenzione
+- Aggiunta `docs/development/roadmap-matrix.md`: stato per area, evidenze, residui e criterio di chiusura. Separa completato, predisposto ma disattivato, maturazione temporale e dipendenze esterne; non trasforma blocchi in risultati.
+- Il lavoro complessivo resta aperto: audit Lighthouse pubblico in nuovo tentativo dopo il problema di raggiungibilità dal runner, newsletter/alert e terzi richiedono verifiche esterne. La matrice non autorizza campagne, contatti o attivazioni.
