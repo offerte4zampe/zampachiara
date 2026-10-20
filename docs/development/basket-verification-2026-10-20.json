@@ -1,0 +1,42 @@
+{
+  "checked_at": "2026-10-20T03:26:37.459443+00:00",
+  "local_tests_python": 33,
+  "local_tests_node": 18,
+  "browser_smoke_run": "https://github.com/offerte4zampe/zampachiara/actions/runs/39364031777",
+  "mobile_viewport": [
+    393,
+    852
+  ],
+  "browser_external_network": "blocked",
+  "browser_clock": "catalog generated_at snapshot, not live field metrics",
+  "browser_passed": [
+    "add from comparator",
+    "default total ordering",
+    "quantity persistence after reload",
+    "removed offer never produces a total",
+    "no horizontal overflow",
+    "no uncaught JS errors"
+  ],
+  "public_basket_page_live": true,
+  "public_basket_page_noindex": true,
+  "shipping_review_date": "2026-10-20",
+  "shipping_sources": [
+    "https://www.bauzaar.it/pages/tempi-di-evasione",
+    "https://www.webpet.it/policies/shipping-policy",
+    "https://www.animaliapet.eu/policies/shipping-policy"
+  ],
+  "conservative_exclusions": [
+    "Bauzaar exactly 59 EUR",
+    "Bauzaar over 35 kg or unknown shipping weight",
+    "special destination/service",
+    "stale price or supplementary weight",
+    "Animaliapet conflicting published conditions",
+    "incomplete assortment"
+  ],
+  "saved_data": [
+    "offer ID",
+    "quantity"
+  ],
+  "no_production_orders": true,
+  "new_lighthouse_run": false
+}
