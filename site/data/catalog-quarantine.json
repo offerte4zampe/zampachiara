@@ -1,0 +1,8 @@
+{
+  "checked_at": "2026-10-20T07:23:58.940940+00:00",
+  "input_offers": 13168,
+  "published_offers": 13168,
+  "quarantined": [],
+  "repaired": [],
+  "method": "Validazione sintattica e temporale. Anomalie oltre ±50% solo con GTIN, marca e peso netto identici e almeno due altri negozi concordanti entro il 20%. Una sospensione non prova un errore del negozio; nessuna modifica dei prezzi."
+}
