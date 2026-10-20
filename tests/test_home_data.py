@@ -16,6 +16,9 @@ class HomeDataTests(unittest.TestCase):
         self.assertNotIn('previous_price', result['offers'][0])
         without_reference = build(dict(offers=[base | dict(previous_price=None)], sources=[dict(id='shop')], generated_at=now.isoformat(), refresh_hours=6), now)
         self.assertEqual(without_reference['offers'], result['offers'])
+        unrelated = [base | dict(id='tree', title='Albero di Natale', brand='Decorazioni'), base | dict(id='supplement', title='Integratore renale per gatti', brand='Supplements')]
+        curated = build(dict(offers=[base]+unrelated, sources=[dict(id='shop')], generated_at=now.isoformat(), refresh_hours=6), now)
+        self.assertEqual([o['id'] for o in curated['offers']], ['ok'])
 
 class HomePrerenderTests(unittest.TestCase):
     def test_regions_are_replaced_idempotently_and_offer_text_escaped(self):
