@@ -1,0 +1,31 @@
+{
+  "checked_at": "2026-10-20T02:57:12.807784+00:00",
+  "tests_python": 33,
+  "tests_javascript": 11,
+  "category_ItemList_live_items": 24,
+  "report_page_live": true,
+  "report_page_noindex": true,
+  "report_submit_disabled_without_javascript": true,
+  "public_category_report_links": 24,
+  "support_recipient_source": "Existing mailto address on site/contatti.html",
+  "report_form_behavior": "Prepares preview and mailto locally; visitor must choose email client and send; no server endpoint, mailing list or automatic email",
+  "report_context_allowlist": [
+    "id",
+    "title",
+    "shop",
+    "price",
+    "checked"
+  ],
+  "excluded_from_report_context": [
+    "affiliate_url",
+    "email",
+    "visitor_id"
+  ],
+  "css_compression_observed": "br",
+  "css_compressed_download_bytes": 8643,
+  "cache_control_observed": "public, max-age=0, must-revalidate",
+  "reference": "https://schema.org/ItemList",
+  "new_lighthouse": false,
+  "manual_browser_form_test": false,
+  "google_rich_results_test": false
+}

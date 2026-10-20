@@ -14,9 +14,9 @@ Ultimo aggiornamento: 20 ottobre 2026.
 - 25 test Python e 10 JavaScript superati; Lighthouse mobile ripetuto 3 volte/pagina: performance mediana home97/comparatore86/guida99; CLS0 e accessibilità automatica100 nelle nuove prove.
 
 ## Prossimo lavoro
-1. Completare SEO: ItemList sulle altre liste e validazione Google Rich Results ancora da eseguire; verificare nuova lettura sitemap in Search Console quando disponibile. Home, confronti GTIN e prime cinque marche sono prerenderizzati; sitemap per tipo implementate.
-2. Verificare compressione/cache e accessibilità mobile delle nuove pagine. HSTS statico, 404 e metadati social implementati; niente migrazioni URL inutili.
-3. Copertura matching e peso netto; correzioni prezzo, carrello browser, storico reale, costo giornaliero manuale dove manca razione ufficiale.
+1. Completare le verifiche SEO: Google Rich Results e nuova lettura sitemap in Search Console quando disponibili. ItemList delle liste statiche completati; Home, confronti GTIN e prime cinque marche sono prerenderizzati; sitemap per tipo implementate.
+2. Verificare accessibilità mobile e interazioni delle nuove pagine. Brotli e cache HTTP sono stati verificati su un asset pubblico; HSTS statico, 404 e metadati social implementati; niente migrazioni URL inutili.
+3. Carrello risparmio browser, ordinamento trasparente per totale stimato, storico reale e costo giornaliero dove manca la razione ufficiale; estendere copertura matching/peso. Segnalazione errori per offerta implementata.
 4. UI mobile, accessibilità manuale ove verificabile, contenuti originali verificati.
 5. Predisporre newsletter e alert con test; attivare raccolta/invio solo con requisiti verificati.
 6. Misurazione e prove finali, registro completo delle voci della roadmap con evidenze.
@@ -60,3 +60,13 @@ Preservare aggiornamenti altrui e marchio. Commit piccoli, test pertinenti, veri
 - `site/assets/style.css`: titoli delle nuove schede marca a 18px, evitando la tipografia grande della pagina. Nessuna prova browser mobile completa o nuovo Lighthouse in questa sessione.
 - Verifiche: 31 test Python e 10 JavaScript della pipeline; idempotenza/lastmod/noindex, identità esatta della marca e rotazione fonti; XML con URL unici e corrispondenza ItemList/schede. [Evidenze](seo-structure-verification-2026-10-20.json).
 - Prossimo: completare validazioni tecniche pendenti senza riavviare l'audit, quindi segnalazione errori per prezzo e carrello risparmio; nessun blocco totale, continuare il lavoro autorizzato. Restano invariati i blocchi di credenziali, privacy, nuovi feed e invio email sopra elencati.
+
+
+## Sessione 20 ottobre 2026, liste e segnalazioni
+- Commit `f7ee240`: helper `automation/list_schema.py` e test; ItemList applicato alle tre categorie e agli indici prodotti, confronti GTIN e marche, oltre alle landing marca già complete. Nomi/URL vengono dalle schede e dai collegamenti visibili; nessuna recensione, equivalenza o rating dedotto. Verifica pubblica categoria crocchette cani: 24 elementi. Fonte consultata: https://schema.org/ItemList .
+- Commit `e0196fc`: segnalazione errori accanto alle offerte statiche (home, categorie, prodotti, confronti, marche) e dinamiche nel comparatore. File nuovi: `automation/report_link.py`, `site/segnala-errore.html`, `site/assets/report.js`, test Python e Node; aggiornati generatori, home/catalog/trade JS, CSS e workflow.
+- `/segnala-errore` prepara nel browser un testo con soli ID offerta, titolo, negozio, prezzo e data riportati nel collegamento. Anteprima prima del link al programma email; l'invio resta un'azione del visitatore. Nessun endpoint di raccolta, iscrizione o invio automatico, nessun indirizzo email dell'utente o URL affiliato nei parametri. Destinatario ripreso dal contatto già pubblicato sul sito. Nessun messaggio inviato durante lo sviluppo.
+- Dati del collegamento dichiarati non verificati; nessuno SLA di risposta inventato. Campi accessibili, descrizione massima 1000 caratteri, avvertenza di non inserire dati sanitari/documenti/pagamenti. Pagina noindex e invio disabilitato senza JS, con alternativa email esplicita. La conferma/correzione pubblica di segnalazioni reali richiede ancora gestione del titolare: non inventare ticket.
+- Verifiche: 33 test Python e 11 JavaScript, sintassi JS, pipeline e deploy Cloudflare riusciti. Test su allowlist, limiti, escape dei dati e assenza di URL affiliati/identificatori personali nella segnalazione. Modulo pubblico e 24 collegamenti di segnalazione nella categoria verificati; non ancora prova browser manuale completa del modulo o della consegna email.
+- Compressione CSS verificata con Accept-Encoding br: Content-Encoding br, 8643 byte nella richiesta osservata; cache public,max-age=0,must-revalidate e HSTS confermati. Nessuna nuova misura Lighthouse né certificazione Rich Results/WCAG. [Evidenze](feedback-and-lists-verification-2026-10-20.json).
+- Prossimo lavoro concreto: carrello risparmio locale con totali di spedizione corretti per ordine, e ordinamento del comparatore per totale soltanto dove stimabile. Completare gli altri strumenti e contenuti autorizzati; non ripetere audit, creazione pagine marca o modulo segnalazioni. Persistono i blocchi esterni già descritti; nessun blocco totale.
