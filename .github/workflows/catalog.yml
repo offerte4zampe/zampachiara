@@ -20,6 +20,7 @@ on:
       - 'automation/apply_social_metadata.py'
       - 'automation/build_sitemaps.py'
       - 'automation/build_brand_pages.py'
+      - 'automation/list_schema.py'
       - '.github/workflows/catalog.yml'
   workflow_dispatch:
 permissions:

@@ -3,6 +3,12 @@ import gzip, json, re
 from pathlib import Path
 from html import escape as h
 from urllib.parse import quote
+
+try:
+    from automation.list_schema import append_list_schema
+except ImportError:
+    from list_schema import append_list_schema
+
 ROOT = Path(__file__).resolve().parents[1]
 CATEGORIES = [
  ('crocchette-cani', 'Crocchette per cani: prezzi e offerte', 'crocchette cani', ('cani > cibo > secco', 'crocchette cani'), 'Confronta lo stesso alimento, la stessa ricetta e lo stesso formato. Un sacco più economico può contenere meno prodotto: quando il peso è dichiarato, controlla anche il prezzo al chilo. Le diete veterinarie presenti nel catalogo non sono consigli alimentari: segui le indicazioni del veterinario.'),
@@ -39,6 +45,7 @@ def build():
         page=re.sub(r'(<meta property="og:title" content=")[^"]*',lambda m:m[1]+h(title+' | Offerte a 4 Zampe',quote=True),page)
         page=page.replace('https://offerte4zampe.it/chi-siamo',f'https://offerte4zampe.it/{slug}')
         page=page.replace(' aria-current="page"','')
+        page=append_list_schema(page,title,[(o['title']+' — '+(o.get('variant') or ''),o.get('affiliate_url') or o['url']) for o in selected])
         (ROOT/f'site/{slug}.html').write_text(page)
     sitemap=ROOT/'site/sitemap.xml'; text=sitemap.read_text()
     for slug,*_ in CATEGORIES:

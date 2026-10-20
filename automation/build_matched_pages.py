@@ -14,6 +14,12 @@ try:
 except ImportError:
     from build_product_pages import fresh, page
 
+
+try:
+    from automation.list_schema import append_list_schema
+except ImportError:
+    from list_schema import append_list_schema
+
 ROOT = Path(__file__).resolve().parents[1]
 BASE = 'https://offerte4zampe.it/'
 
@@ -87,18 +93,19 @@ def build():
     catalog = json.loads(gzip.decompress((ROOT/'site/data/catalog.json.gz').read_bytes()))
     template = (ROOT/'site/chi-siamo.html').read_text()
     matched = groups(catalog['offers'])
-    current, links = set(), []
+    current, links, list_items = set(), [], []
     for key, rows in sorted(matched.items()):
         slug = slug_for(key)
         current.add(slug)
         (ROOT/f'site/{slug}.html').write_text(render(template,key,rows,slug))
+        list_items.append((product_label(rows[0]),BASE+slug))
         links.append(f'<li><a href="{slug}.html">{h(product_label(rows[0]))} · {rows[0]["weight_kg"]} kg</a> · {len({o["merchant_id"] for o in rows})} negozi · GTIN {h(key[0])}</li>')
     for old in (ROOT/'site').glob('prezzi-*-*.html'):
         if re.fullmatch(r'prezzi-\d{8,14}-[0-9a-f]{10}',old.stem) and old.stem not in current:
             body = '<section class="pagehero"><div class="wrap"><h1>Confronto da aggiornare</h1><p>Non ci sono più dati recenti sufficienti per questo confronto. Non mostriamo i vecchi prezzi come attuali.</p><a href="confronti-prodotti.html">Confronti disponibili →</a></div></section>'
             old.write_text(page(template,old.stem,'Confronto da aggiornare','Prezzi e disponibilità non confermati.',body).replace('content="index,follow"','content="noindex,follow"'))
     body = '<section class="pagehero"><div class="wrap"><nav aria-label="Percorso"><a href="index.html">Home</a></nav><h1>Lo stesso prodotto, in più negozi</h1><p>Confronti con codice GTIN, marca e peso netto coincidenti. Ricette o formati diversi restano separati.</p></div></section><section class="section"><div class="wrap content"><p>La selezione dipende dai codici e dai pesi disponibili nei cataloghi, non dalle commissioni. Prezzi non in tempo reale; verifica sempre la confezione e la spedizione nel negozio.</p><ul>'+''.join(links)+'</ul><a href="confronta-cibo.html?matched=1">Filtra nel comparatore →</a></div></section>'
-    (ROOT/'site/confronti-prodotti.html').write_text(page(template,'confronti-prodotti','Confronti per GTIN: lo stesso prodotto in più negozi','Prodotti con stesso GTIN, marca e peso netto presenti in più negozi, con prezzi e date.',body))
+    (ROOT/'site/confronti-prodotti.html').write_text(append_list_schema(page(template,'confronti-prodotti','Confronti per GTIN: lo stesso prodotto in più negozi','Prodotti con stesso GTIN, marca e peso netto presenti in più negozi, con prezzi e date.',body),'Confronti per GTIN e formato',list_items))
     xml = (ROOT/'site/sitemap.xml').read_text()
     xml = re.sub(r'<url><loc>https://offerte4zampe.it/(?:prezzi-\d{8,14}-[0-9a-f]{10}|confronti-prodotti)</loc>.*?</url>','',xml,flags=re.S)
     for slug in sorted(current|{'confronti-prodotti'}):

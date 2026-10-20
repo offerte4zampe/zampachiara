@@ -10,6 +10,12 @@ try:
 except ImportError:
     from build_product_pages import page, fresh
     from build_matched_pages import groups, slug_for, product_label, merchant_url
+
+try:
+    from automation.list_schema import append_list_schema
+except ImportError:
+    from list_schema import append_list_schema
+
 ROOT = Path(__file__).resolve().parents[1]
 BASE = 'https://offerte4zampe.it/'
 BRANDS = [('monge','Monge'),('royal-canin','Royal Canin'),('farmina','Farmina'),('natural-trainer','Natural Trainer'),('purina-pro-plan','Purina Pro Plan')]
@@ -31,7 +37,7 @@ def build():
     offers = json.loads(gzip.decompress((ROOT/'site/data/catalog.json.gz').read_bytes()))['offers']
     template = (ROOT/'site/chi-siamo.html').read_text()
     matched = groups(offers)
-    links = []
+    links, list_items = [], []
     for suffix,brand in BRANDS:
         slug = 'marca-'+suffix
         rows,picked = select(offers,brand)
@@ -59,9 +65,10 @@ def build():
         output=page(template,slug,title,'Prezzi rilevati e formati '+brand+' nelle fonti del catalogo. Verifica ricetta, confezione e spedizione prima di acquistare.',body)
         output=output.replace('</head>','<script type="application/ld+json">'+json.dumps(data,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c')+'</script></head>')
         (ROOT/f'site/{slug}.html').write_text(output)
+        list_items.append((brand,BASE+slug))
         links.append(f'<li><a href="{slug}.html">{h(brand)}</a> · {len(rows)} offerte rilevate · {shop_count} negozi</li>')
     body='<section class="pagehero"><div class="wrap"><h1>Marche: trova i tuoi prodotti abituali</h1><p>Una prima selezione di marche con dati sufficienti nei cataloghi. Ogni pagina distingue nomi, formati, fonti e data di recupero.</p></div></section><section class="section"><div class="wrap content"><ul>'+''.join(links)+'</ul><p>Non sono tutte le marche disponibili. <a href="confronta-cibo.html">Usa il filtro marca nel comparatore</a> per esplorare il catalogo completo.</p></div></section>'
-    (ROOT/'site/marche.html').write_text(page(template,'marche','Marche di prodotti per animali: prezzi e formati','Marche con dati di catalogo sufficienti: ricette, confezioni, negozi e prezzi rilevati.',body))
+    (ROOT/'site/marche.html').write_text(append_list_schema(page(template,'marche','Marche di prodotti per animali: prezzi e formati','Marche con dati di catalogo sufficienti: ricette, confezioni, negozi e prezzi rilevati.',body),'Marche nel catalogo',list_items))
     home=ROOT/'site/index.html'
     before=home.read_text()
     if 'href="marche.html"' not in before:
