@@ -1,7 +1,7 @@
 {
   "https://offerte4zampe.it/": {
-    "content_hash": "f4c0bba438fc05210776e9f938d175a340e94698992b0efeae93633d7728f95e",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "54a33857d3573c4b517483455874e36284285832ffbbc2052c3f2380ffd938ae",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/calcolatore": {
     "content_hash": "c5b1807a083798fb16b1cf4377187910470757d166e1cc5f86fecdae04f065d6",
@@ -16,8 +16,8 @@
     "lastmod": "2026-10-20T08:36:20+00:00"
   },
   "https://offerte4zampe.it/confrontare-prezzi-lettiere": {
-    "content_hash": "d15606755a44646a6a05ef14b6431795a6b51d2d4941fd6afd674a59788f1564",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "0440daebd922074321b1672e496246f0966b2c93949d2212ce813fa42c8a7f6f",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/confronti-prodotti": {
     "content_hash": "e7198c55e08cfbd033e89158d2ab764a56c7765ec50ce0674554e80ad3fe1754",
@@ -28,68 +28,72 @@
     "lastmod": null
   },
   "https://offerte4zampe.it/correzioni": {
-    "content_hash": "729c81da95de919091b18f3219e018b3a17452095ceb8450b617a2e9d1a984e8",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "de0bc5cae9a69bd13a2d6f93987248951f0cac179bf2ba768c2d947f7bd766df",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/costo-crocchette-cane": {
-    "content_hash": "cdcd6849b5085f40b438c4eea509cae9afe4e7122e47e18ddb5571de29c9bd52",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "7576cd896534f4e080cd0937d0f517fd27cd7e4ed5e59257292e91abe6007c3f",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/crocchette-cani": {
-    "content_hash": "1683fb9d2a3aa532317e323c0a67957224e27986dd9007d72706a892797995fc",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "8c0be721b99812d503e97c08cef52d9244df9f73515afd453fb3001b6711ca29",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/crocchette-gatti": {
-    "content_hash": "c8d4a701282818ef9dd69c190cc86ea44398e2188d6ff65884f90d9a06f1702a",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "b565c62e96d4dc38a21aaae3333f8282d33b5a3aa1a524f915f342d3805773fd",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/guide-risparmio": {
-    "content_hash": "ef2de8834575b81bba9381469f1f58cb461e70e2eef108c9032681e125f4be24",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "aaa8be5c08f307268e529dbe035695049bc38ece24c28bb54136ebb8c60a04e4",
+    "lastmod": "2026-10-20T16:38:17+00:00"
+  },
+  "https://offerte4zampe.it/leggere-storico-prezzi": {
+    "content_hash": "ca68faa65b5bbcb187778a41efc130f9cd30435b727ebdb0c4daeec7c178a0d7",
+    "lastmod": null
   },
   "https://offerte4zampe.it/lettiere-gatti": {
-    "content_hash": "3bc69b08cff295679c9be6e3ff671f9b141c1704d3d25a1c336fdc0c526dc75d",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "dcc1cf7b9b45cbc83303e402b80ecc121f2ff9c22a17dd362c501955bad036fc",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/marca-farmina": {
-    "content_hash": "5b894b7143ccb2ca316af37bc60855d279c766f3ab8df4f0179c57b5ec9ef77d",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "f77fbd43fc2de6803cfa719376f9edd795c7222aa4c84bbc702b2fc1d90be71e",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/marca-monge": {
-    "content_hash": "181a73d663283998fea00852b57fdc629b65cacf809fed8a0ca2c2520d87fe5a",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "be38dc4a42893537e1848e5a21a5bbd3615b936fb7ac787a0a17d29a1b61d5a2",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/marca-natural-trainer": {
-    "content_hash": "f4762e6295853ef7b010eb104a246ea7241cf7fdb6c075423c1b095817d58bc2",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "33962fb35c14eeef4c7767f9add269325fd9d8b5ed45828cabeda3e3acfd2079",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/marca-purina-pro-plan": {
-    "content_hash": "851201c688f1f4c6968fb3a85bd39cb5393e2dc914bda71246d71c7aaa5af42f",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "a85185eaf1b03477546c00f6bbe622eb0d238a187bee04cb976245b4b2d02fbc",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/marca-royal-canin": {
-    "content_hash": "3ffe75e374a8967ac5a89822d2aa9f226ac33b6ebd74dd480e9827c4dc74326c",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "bca6b649d4d75af04c607d94e580f380d54f09ecf1d85cd10c20d0f24286190e",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/marche": {
     "content_hash": "2f5b62ae6acf578febdb78183ee01213e5f9ae4ef4d23c25d4c21112305881f5",
     "lastmod": "2026-10-20T10:21:17+00:00"
   },
   "https://offerte4zampe.it/monge-adult-cat-pollo": {
-    "content_hash": "2e4f3e859ce60f8286748a53f23fb5448b2b0b8e9b28c4e6f1a91a41f50979fe",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "20a5143d131de0f9d9f97c3fbfb2e48161573d2ee851aa6c58849401c8e2015c",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/monge-adult-manzo-riso": {
-    "content_hash": "08c542038c3d41abf7362ac83aa10ce2e0ea77380566c239409f286ced2adc04",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "09d22bba2e6285423ad3666581e54844f1d3e081ce974834024592e01ac27b55",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/monge-maxi-adult-pollo": {
-    "content_hash": "91e4cc335c222864e115b43ffc382c7382926e554c5367edb29a837e4330414c",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "6bf58a8fc9bbbe9de728dd16d0a2d468f0cafd958271331695f23b62859be623",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/monge-medium-adult-pollo": {
-    "content_hash": "2b1f0d536cd0871cac7c84844fcdd0ee0b90df27c0e73c794e4351e1872739ce",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "1add90820116ddd7b33a7e319395c8efd6bc5ff317a2e8a868e8bb69e670d9f3",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/newsletter": {
     "content_hash": "cbde1eb60047acab905d8234e0a18c7f05f24b7cfe0153a49ce1c2f574c924ff",
@@ -104,1088 +108,1088 @@
     "lastmod": null
   },
   "https://offerte4zampe.it/prezzi-00052742025742-c32ef03d99": {
-    "content_hash": "ee072b97ca11088f5dcbf76516ad3b356acbf498227002c10917bcb08e391200",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "2c8494c516c0deff95e9542e39a5f4e00b27bea01e933029952b638b33bac5bf",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-00744845401126-0a8eaaa492": {
-    "content_hash": "62d02b6407015b4a46389dd9b4f98f7181abd93f490dfeca85775330becfe150",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "a02882aafcb6414eca0505c18da77f79df644eeb77c692a5427c621a30276025",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-00744845402888-93cf77763c": {
-    "content_hash": "ed599df86c72c1d129c0d6f25da262db28f5d4a47e38b5679f32f4ae8687b164",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "2dce454828cd012a68b14b4ebc7a2a4bd3e53f75d5a2cd71f5ec14acc789a294",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-00744845402963-3681c2436d": {
-    "content_hash": "60059c2fc4b74e85115a30cb3066815c6f76cd452b8c085e3b844ad343ea850f",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "2853e110402c6f7ca6df9452e8722a62945e49c5bafb672ec68386ea7cc0b9c8",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-00744845931241-b2332b957b": {
-    "content_hash": "09f9a3aa77101ed09505a0435345dbddc8e8196c275c6ac9e69a5b358d49a12c",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "675fa5940c1407413bbc3f4f88abba6ec7a9b718c6696b15a15f87f69bacb4a7",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-03182550702423-0de6505d95": {
-    "content_hash": "54e7150e6e416c936282e2cb04664a4558d789764a9ceb52896f68dd73ea1e4c",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "02de3cd281fca514dfc7340eb476a2059ae1d8194194336195153fe025bedba8",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-03182550707305-90ac268d7c": {
-    "content_hash": "f9a30fed48b68738be08917c797f545af402f6769b2ac672b637794c80dfa11b",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "f6be6a30192e573e81520a2012b47a2bcac339149286211dccb1a9fdee664c19",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-03182550707312-3cef704f70": {
-    "content_hash": "2890f05a2ba42b5cdafc0c49022b0b500f54f5604b4df3863dba0062b3add79c",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "be53fe020a1557e0796a10be60b0f9c6adb4fb1715f9a5dfd8ac7c34f4128eb8",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-03182550721394-35aafed27e": {
-    "content_hash": "dfed9da9c280a551d903164349b7c08ff1b06677c3f0e4ced7b97aeb60c72796",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "64778f7c9427e90090884e9cbbc41458dc97060938d22531240661f04c1ad0a6",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-03182550737555-e9705795b6": {
-    "content_hash": "578b912ffd5a91b04ed5176c8cd1fd36192f95613d92d1151dcf3eeea616de2e",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "d8fe68e60d365d60f4149e01f8adf75a2395b32e33dd13d23656279dd1f6683c",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-03182550737593-a4cd0c5fa2": {
-    "content_hash": "13009ed1a002a79f5958f716688933a2b9c6498d41272d0b6ad1f2ad76e33f42",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "5d31a60e4b2b13f3276bfb90f64f9d7b897a85fb916cdf03ac146130d0427dec",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-03182550751995-bfea2bfa10": {
-    "content_hash": "2f89f28d1a029462fc5146d69018fe1db015527357f1bc33e3daa968cd180be4",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "13d526983a2d6ed30a6f357c407a6ef0c1bfd0cdf9539df897545ab6f9af87f6",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-03182550778657-026672e4ef": {
-    "content_hash": "7946d1405754c4658a498bc09c678b60bffb4435c4108300e9ff82bb26bc3c74",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "0b89a739a86665c2043e7e3cf89d7847d4f19080219d78173420bbe71f303946",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-03182550793001-692ccb71dc": {
-    "content_hash": "7f2efb1f8399c03c115d63642738aee75138d1ef1ab31a562a0776add58e54c0",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "f41fba91e8eccb544ed27976798fffb9baf7fe3b87711471be4fcc3757961f25",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-03182550793049-9b1091c429": {
-    "content_hash": "4febf6835a0012f960d2568e8aa8c1d252da64699a5ae58bc08acaa49f2ebc77",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "4f3093e5027612b6fd6120aff0b4dbb1c45a21500b28f8daffccad64ea4f5601",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-03182550793612-468744c3c6": {
-    "content_hash": "fc6ff6aafff4f72a4fb871cdc3b112f6ca736be41bba14c74ab23251a16d8922",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "a80faeabbbd20bf41bd148563f1167cd5c08a85edb090b924354c9bcdea2a1c1",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-03182550793704-9c360357ae": {
-    "content_hash": "feea9af319c21512fead5ce07d594b422547e73d715a7db82bbccd34601c1934",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "7c1db86e84510845fe8a10b411b6c6cf3589d7e1cafdc4377178eb97c51b8b6c",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-03182550793728-6359b23499": {
-    "content_hash": "b08f798dcfd0ef67523285c8b967a2c8c7c18d582711d2d8427d173aed161d88",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "150223de2ae65682a86f6ed1c609caa510d8e425402a1691bb3bc89a27ca8d49",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-03182550805155-b51a3f85d9": {
-    "content_hash": "614aaca57f16be8697ab53e8220e0301102972cac41c03f4714f7fae62d0f510",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "6053840f363d5fb5a5a934429a4dd8d3f37b85a0c0fdfa8b63209d78a8983cc8",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-03182550805186-eac93e5637": {
-    "content_hash": "40f0df76c3ab7910dc65a980e4df3312697820df15c724e038e6312dd2c50d4d",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "d039735975865b06d8750f400ef5ff94e7104ad6065a886bdb6d6ff46c676dcb",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-03182550842938-171ed64b0d": {
-    "content_hash": "9c9e6e73cd28f8e69e5332addf39c57e68fed73085a002fb1cce61618e3dfcc0",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "2244c225b3d7d4c06f1166db42aaa8d1d738c6a8fc6fc433e389bbc392ad4851",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-03182550894142-daa1e85cbc": {
-    "content_hash": "aeb17089c2f73d8810507fae09b3435d0476633f1c01bb167805a56ea6fe65c5",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "102460874dd7f78199b226a24fd03f2296d4b195b71e1ab9a7fad3ebfd20f2bd",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-03182550902991-975697877c": {
-    "content_hash": "6837848d1406729e2e1ebecf59bb0181ee23b910054617bd967e9c89b77ae78c",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "014b71e0a68057712564657e3aa56f77557a5a36f783ce846690a03557279cc6",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-03182551055672-a12cacf511": {
-    "content_hash": "d58c0281f9c8ac5cad69e1d78a0fe71487eaada45df5a6fedfbd084830208b41",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "18c225cff58f9790bbe1976b0886d5f3d5abbd3d7453eb93dea579d6b47a96bd",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-03182551055719-7a321d5b2a": {
-    "content_hash": "ec0029bdae56527cf50f6423a1cfc221eac3c1c8d85f0e92c4c8fd600b62cc9e",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "6e234c746b58593b793c884dff05b68882f234f41d1c6d755c41654103d17092",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-03182551065213-c05d31f035": {
-    "content_hash": "4498dcd784b0665f9e776cde93e4732790248f965de883e2a2b8504784766d3e",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "fb8830be960400f2ca70088b8ef7d4102b85d6587eaee66b1aa760b6b801b3f5",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-03700260009832-f96df87d68": {
-    "content_hash": "a4dec1ceb54705f97e13ef7ad7ad41a3c9be23a799638c704fb7e6263103dcf3",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "136c822917a51628b2be5209d568b918dff535d8e362fb24ef96cf31f30f92d0",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-04001967117172-348867ab5e": {
-    "content_hash": "77ea51f637bb813892f8e7d0bb9dddd832032c1afdce558e3119cc06e28acf0c",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "466088cb0b0357a31fd80e383c9f2484e3156502c129c1fc541f1608d4fccc06",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-04001967117271-75d2091058": {
-    "content_hash": "c9862db0e08237e7c78874dfc29c90762ca24ce019bc984de340473fbf22d094",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "efd5b271dd6a836428402271c76b4b8571cb884c4fce3b75f96f8d60abcb22e2",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-04001967117370-d6b055161d": {
-    "content_hash": "baac5d9fd4600f47baa3af63e5bbdd1437fc5d7eb5ed0b73db7b96c2403ab8f0",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "899e7e721d2a96fd83d1c3584928cff6b94750bdbb069cd4e044b315f43eb332",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-04001967127867-dac1eb0170": {
-    "content_hash": "1dcbcca5f82a4ff3b741742218cf95ddbbef0dadc588e8c6f597836e976356d9",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "7c347ac64c2dd77bd358e3f03dafaa5e343c42c158f682e97ba0ce3c976f6916",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-04002064205069-3731604bb8": {
-    "content_hash": "9f78fe154d213b8e2656674919dc2d6ce30df42d3363f74a38e9cfe9e24b0fe4",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "b3b225be3faee38048ec2ede48707772e2231f16f073c127d0b6e9c364076194",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-04002064617107-7c8b033a54": {
-    "content_hash": "44d17237ab0dce67b8f25d3dbe99f94a70fc54a54337d826b6ed8305004172ea",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "9efa74a1ea7a4c4f4e3d4bf3c8d39449f948f24cc20397fee6a194acbbd3e29f",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-04002064618005-46c001e9ec": {
-    "content_hash": "70a40da12e9a811aff2823c06f8da6fa61a38fbe75d6c1f49f15af45228c771e",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "35850804c57a34b7fb0ff82a91e5af367b702c57273f6b03f6654e2646e33102",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-04002064618104-14cb3e6a59": {
-    "content_hash": "d00a74edcf77cdc9bd5a7b541535bf55d6cde23038af6f6170461aeeacfc2f93",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "deb77faedc0ee05350f6d65135ca089d048e1435f5496914cc71aed1362cfc71",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-04002973213353-c821979249": {
-    "content_hash": "99ad2b1a03c6535b35c95fc336e559ff56cf6addc52e8e0cd879f2a51e279e86",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "9891b638253b59d4f482944a1a72fc8d091e687e5ce45e6f5f588532c691d006",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-04018761140107-c8982b93b7": {
-    "content_hash": "950824e2bfdf52f413724172f395db288863476a4ccfaccb64ef30ec15d8345b",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "0090fe065f520cd550046ed6076384b12e3b74a33b4679e75855d66ace0ae5ba",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-04018761142064-26fa254780": {
-    "content_hash": "c72dbb2a7e8f00e02be42063dd7f5a2bc07f7225dbeef45db220294092f04a69",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "4e0c0370b37c01f2a1705cdbe181a6f7f5b119b5bf168763f7a66001acc83050",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-04018761250257-ee0378ce97": {
-    "content_hash": "a9fee1b5603f952c1099ca7dd5e2807c033c82b87f26029c402d7b37bc702c6b",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "a1c3e587c9e3d7c9359cbf0734045b031966c14c2d1b0c7663278469a007aa8a",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-04771317456632-b553723685": {
-    "content_hash": "8a1a8af0e5aa39386d6e89906eeca5a7c9411ec31f4f92e5954854a752236f3b",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "c328a3f071aa14b236650487b73d5dc247eda362747e3a05b67fe36ab2a35a2c",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-04771317456649-17be6a1b41": {
-    "content_hash": "9f04a7d626ac5fac0797482f41a7e7b0b7d2638f1b560376e25ffb55fb1a675a",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "1252c3d2ae710ea36c0e94744d9180ba66444cb9c0a275e70998a19150b236e3",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-04771317456670-bded0f3400": {
-    "content_hash": "cec21dc3ddb2ff305328d2fcd478ac98cb9ae119b2f6544bddcd6753945a2bf2",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "92716f0873290932d44f08ef2e813aef146de0d75d8d6fc8a79baa5f8757d9a4",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-04771317456687-65aeb776e1": {
-    "content_hash": "8921ac3d0b5d0d214c8725d78233e62878bc973fa5f27fb735ed18c8cb714f4d",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "2c3e97de562f6bb362473edfbd989a64c2e953cba4afd2e751d315672816ba3f",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-04771317457936-2e460d0ba5": {
-    "content_hash": "90a8f5ea80cdf2b4d1f00edb4c81fa39a1f63407383a89a8f7cbfd853f6da33f",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "56a24edee6b2968f53fd52d59cb1f5b85556944cb21a0730ba6376b9489a5625",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-04771317458292-4159944003": {
-    "content_hash": "1f3acfe96c3025e3f174187937a8df216a88f0c932c12d5040c4cdd1f82e2c72",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "bc1786aee2fc226c3c0cb1277e3cc6e7695a2a0e13472275b09c44842a683638",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-04771317458346-71e65e9d73": {
-    "content_hash": "9daebe4c8533e1d900c7904283cd9aa269f3b908317654f7cbe78338d2af71e4",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "d55fcd69f72fd0da1670ec551b4e799a09273df727cd0d717906f94146eecedd",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-04771317472304-658dcb2919": {
-    "content_hash": "3a9441a5395cb9f9dac98b276a33d40a00ccc65de8df710b7de55ef8432db4f7",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "2fba595150753ea6cb30130b3db5b35c0867574c76235c3ca9213b8ed5c7c250",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-04771317472311-ccdcc67259": {
-    "content_hash": "8789ffdebda2aa0a228a3856a1c1f034c98e06c4e43b23823af7ce54caa989a9",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "c2e455be65a25258a662179b8d2e82a081755a79b911b63c7c4c440ff22cfb98",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-04771317472328-1e489cc84c": {
-    "content_hash": "a2c5abe942d1a956a007f6509b877d8653ab78a6b2386d6aaa841d77c4ccb295",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "07d3f16a6aa9ea1bc230f3abdfa3b77302acf130cdbe3bfd4608445419128d36",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-04771317472335-53c748cdba": {
-    "content_hash": "1671ff51d68240a99bd99a180c802f35f173c90f6736a7192d3c404b7b054cc5",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "e705ca87aefbf8f992e2e5a00204aae84782f52c6e58bcda2b35e327cae79e38",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-05060184241250-46189b96dd": {
-    "content_hash": "267271dc902c54c5f74ae4e83dfe547e3d439de120314679898213a20972734e",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "1b740e2ad7755d57946fdf1d386024198867e4e2f5761e0222fb551f0a3e78c0",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08001154000221-4e250c0f7d": {
-    "content_hash": "bdc99df5310d42e8e090b5e27118ec26298050975040c1a23012b901e3e9c69a",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "f80aebfdca00693b6a05f0838d7c3a44e357b3c381dda0c115e76c0a74092bfd",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08001154001532-df3e1bcb75": {
-    "content_hash": "e7ad364ce1b203eff3a0f8da3ef11eb248682c54ba53765e5afdec07548a3d39",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "c76dc5c3a0c8fb2bea85b33075de641c52def906648e5f6055b34ea041f5db26",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08001154001655-bc0ccdbf79": {
-    "content_hash": "ce6680b99a546fe11117a1f2130167eb7b7090ab0f302526b662540b31442a6b",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "1f76dc450789299176bff699d145a14208c704d52f1b9eadd862fae0ad225057",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08001154002508-80f3897348": {
-    "content_hash": "8411d6c2a82a7b650ba383af0b536e1add8f06ae50a818f05eacc67956719ac2",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "43d6abedd80d7115ecfded484ece002ee8036d411905b53b9df7834514af7ffd",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08001154002515-8a54ef8a4d": {
-    "content_hash": "4b7d5d5d2149e9e2e7d167cdd5fc56b57cf0649eb3590bd4caec89e9c3bda3da",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "07b8127feeddd45059ff178b12de4fbc5df05cbf182fb02a5e6d275971f3324a",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08001154002522-c50eefd46a": {
-    "content_hash": "44ba6d3ad3e65c476dcc6c30263482bdd43d786bbecd4c84fda601cc49616919",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "5ca706fe49106924a991310c8aff6554c82aaeeab03f1fdfa0af7548cb2c6d2e",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08001154002539-4bf062dd0e": {
-    "content_hash": "a0e8930d04058790697e6aa61dfa0b680d3f98d5873c499e5d1cdf53a5cfa4fc",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "40bf5f186dabf23ab5c425131138f89ec0df5bd7d7d052c5033693422f6396bd",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08001154002546-98e9185f83": {
-    "content_hash": "b5366356d77b8e6e7d52f2e2cea9e4ea6d49d78976506b595a5c420dbc713c19",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "fe89ae7c9fb7aeb42ecda661e43ee1de13ddfb85ac7e5f5ade20cb1162ad628d",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08001154007541-dfd072b369": {
-    "content_hash": "51e718781126a0711cd8471fd1edc727ec82fe457f173dc6e7913939bef5b285",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "9b93a3310cecc238de9cdaab617efd8b06d2e641635b745c96a6d48119bcff59",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08001154007589-2fda482eea": {
-    "content_hash": "0c55be153688a2a6468cdfdf8c83573f93aa829c492f94718bc818121c90fdb0",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "b91ff08b3b5ef697f0a987b7dba718b4679774e332ee409990afae89868e737f",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08001154007619-28320be4f1": {
-    "content_hash": "e676d78beec5acaff80405a9762b6e9b1300cb294a51a19466f9427d7eedae88",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "e49a9aec419d0c26746ecea47b1e53e156fbfdc4b4cbd4ccc74c974f74790b18",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08001154007640-c027cdcaaf": {
-    "content_hash": "ab9e5977b8a83272a2a39409b0afd31a9b4e60b6d7a3228acc8ca5d61064f926",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "9d7ba24b219d849311812756fb9b09c00844644cf39d5fcdd519ba8283945396",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08001154007725-1fd5133866": {
-    "content_hash": "73de1029e39d315506de14e4279176624cf5da65bb3f7015a9f920d2e885812a",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "e63a124d605ea9a91338a37fcd1752955c668b0187626ff21eb7968b3092d4ab",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08001154120837-b6c6c2010a": {
-    "content_hash": "5341acc53dea884424d61943c1c8c6f4a7da128c02c6ea5d28579312cb2a2c35",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "cb79308a633a07fc6ea44c10e3d851635667ddfe7713ff6bc1f2f9fed46b3164",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08001154122176-187ddc235a": {
-    "content_hash": "ee539f3270e6bc66ca428aca371fb62b01bfc25cd103d109c2114daac292409f",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "15703e08c907ded60c04c73b24259e07b4ccabe3b299ad1ec4c4100d537b004a",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08001154122282-9d4b093064": {
-    "content_hash": "48fe0fd8f260097af6bae5ae9b269dcd27c0e6fdf49321dd271b07defa267a93",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "855fa1dbb75a567a300e92f4c25cce28f34846ec7555bee61417a9bda0fcf04b",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08001154125542-3f8a61fd38": {
-    "content_hash": "ff2a13678510163e2a633c2489b5e23951061122c636f6a493c573f21d7cf0b7",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "3132254c9a9d24ad03a03892e33c920e8372ad270af1f258379721b8a1d70297",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08001154125863-c171e819e3": {
-    "content_hash": "23bde362620a2ea121186b9b8a61333b4c134366b432dbaa0ebdff2180c24159",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "60744cf98da5ba752e76129b1eff259bda1da613b5e7576f3f1833d84e2498c1",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08001154125870-c52da0b3be": {
-    "content_hash": "4f83f06b0497b0b311bc9a0eb55c6737c5a2a17d916170fb8947e069ef10273b",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "56b552edd69f9fe793ad00d4d8ed0280538c6456da9319f603c11d1ab980109f",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08001154125887-afffacdfaa": {
-    "content_hash": "ddf1388565e3c1cf540a1e79030300bdc14439112bba57b821296922d6a80748",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "412c5331d360f1023d2770591a36d2ed3a87c8261ede69c7e9cd4740a542ceb0",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08001154125894-7e79adb3e2": {
-    "content_hash": "e3d2797b083c00bee38c62a3c1ae51a0ba14ac32e97b44cb5daacfb498f50daf",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "b0febe3a1a7ff962c3c4138b1b9bc06fd1664b66e1d5b00f6f705042f0203b66",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08001154126570-9940b0a5c8": {
-    "content_hash": "708447cd7588fcdbacfd727a18de02ea48d3ef35d138b539d88bb71b62249f54",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "3d270f7f4ef9ce384f45c94e4de334b3d452f55d7b243cab2e17e4e058912b9a",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470004015-2b91104c94": {
-    "content_hash": "248f965517b736c349a18e58d5b80ddfbc5e7369b758c207625cf5db1f3e96c9",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "d887f1458bfc6719a1ae03ff266564b0d5b516f88e77296b2a4f09059950e083",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470004053-dc9a4cc6a2": {
-    "content_hash": "bc8998c63e84ea79bb916a9913e7c2fa25ec39bdbaee2db979b6e18e8465c579",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "c8377811d2867fc221c043f604fdc50c782e3bed4806b97c4d9f37c0146ec1a5",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470004091-c9443acaed": {
-    "content_hash": "246b64030b706aeb27d33b7ed08e47b4da6ff710f995f48d4fe93d1d96789de5",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "54acea67eef9f865e0eb2f7e3702caa817962846e7598c5276c4a99519451695",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470004107-e3ba89c5d7": {
-    "content_hash": "129706ff55c6190e715d93e707de4ebf55e90e9baf5580ce6f830e5fa51ce5fd",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "9971329f6abba42edd28e9ff5b28589e4dd397092f7dcaa088081abf1823d29d",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470004114-19666ce9de": {
-    "content_hash": "2de496a5dca153647938903f0e6e8c7eccfba4a22329427d0983abfa85e1cfbc",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "b3e0e26bb264becf314b9740e3047b481dde9181f36c8d31b1e243f9fa95ee40",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470004220-73a367533a": {
-    "content_hash": "9621bca21c918b2758cab94d02c75254571d5ee334846e2dead3871b1ee8785c",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "dae65f85c94365aa61cbc465c7d4bdfb7827eda656c485ad53134a839511a4f4",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470004244-021706d8bc": {
-    "content_hash": "839d6e8d4146c13d8b71e2f1715d9f249d64db2cdea9e0f092ffb084726cbcab",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "50e428fece5b25fdfda757941477763002579f1a739bc16346b5659831b73d59",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470004411-ea7ddb67b8": {
-    "content_hash": "f390870e99371f979317b41c5ac547b6839b6e5c62d3438612d4e0d4b48216c9",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "98a0f53ffc03209bebc43e2e498d96617fbbccc305494654c3db30afd4494d9d",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470004862-9165368d5b": {
-    "content_hash": "5bc32d869feae47a3be24b43f4bfcd6f27b83b689fe9bf5fa5f074876474a6ec",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "1443d002397329ff73a6ef52f3b07a69f67c644b1a8623c94cf3854f9ccd9ff7",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470004879-046cdfee5d": {
-    "content_hash": "e9bdf7e4a81b8899c82e31dcabe7f707cf93aca7a93d6fd7bb52fc24eec4cf69",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "e3945e7b523c00b11a5d3b720a9a04b9697586950586ec207e5f6ed27aefa04b",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470004947-eb9dc00782": {
-    "content_hash": "2f7283d192e5f66897ffadccce4f3395f4c1aefb2e6c339fe3f1032156cf3a48",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "dcb26f37e09ff2e3754b7424ecdcc0b84cb39b1554833a9031c44815a4063c0f",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470004985-4053da4dfd": {
-    "content_hash": "72341877e3800ed329c68ea889851ccd7b5b2ff15a9da0aceb648210cd26cda4",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "a09b821d4f54059e44fdf87eb49ca0fe3cc84f4610f9c9f1107d776d59e99e99",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470004992-66feadc628": {
-    "content_hash": "fcea8d03242e5c74e7f276185f9755968400c56d64609ac62d75a6db3d54635f",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "0745199bc848c72ecbbc51947807b61cc2f2fc5afccc233a8558a128bce31c7c",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470005111-5f4128b1fc": {
-    "content_hash": "7619fa09e20d81044a50d46f9915dce8940f201c7821a85b7ee0afe85393fd00",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "68c29ca1b6cca49f17f56da8384282a309c831a1d5874a2bdefcd82ef743735f",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470005227-495c5ff120": {
-    "content_hash": "5649a629bdf73412ffa5c5f5e750a232c969743632e16f29914599011952a9f8",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "2280da4b0d5ab6349241b7f483febf6760db7ad90e413b8e674c2ce2e054e2fc",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470005234-cc12d0c377": {
-    "content_hash": "9658adc746de0b16ac4e669a83743820f491331f42d0d23b26a8b3f250a701d9",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "5a766347601b73445fdbf73a59bc43530c8948951bb84ae21ec2ee30d46b27da",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470005463-a908037770": {
-    "content_hash": "98cfd8db87cc6f2257f6b1738a438f50a927c5dca1a333f957a2c90cb1dad222",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "a7f128e9a4daee96cbcf63395eeb1e61a8601487f41f4c230398e66b8be6f2a9",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470005470-ff29ac50f6": {
-    "content_hash": "93081eb40a91f5fdee38466a2df792dccc99e7944e65a7a495f4be914543c4fc",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "fba8add9cb581fc2b04cb928189c61b925b255279b40ea56cf18a6c6ea427bc5",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470005487-fd70d54517": {
-    "content_hash": "0659fa3a8b403ebd4f6a90c6f82983521b544151ee9dedbdf40961e0a161b00b",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "bb616da2421d06f653a1789dceee78db7ad9a72c2c099aa9f77d502ae510a41e",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470005494-2172b66468": {
-    "content_hash": "5b900396ed1a9e51dc21b759559cdd48627a875790c9cbcd5414508dbfdf5dd8",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "f4563447e538db2c93c7ee21689be202f10b5ebdc8a834a743c5e8c6bf9b5e3b",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470005500-87626288d4": {
-    "content_hash": "ccf8f3a3595edc20d47b0ae9d597c2abaa0896e490db33a12f1a080a8261e25a",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "bcf733d56f4ed30ac8e1598b5c0bfedd03f0e538167abce768ab8e12fa16bdfd",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470005517-2537cd8e4e": {
-    "content_hash": "22ba8e91b7ed01acb7a07de65a74cd2c626967ed1815a8805a76dde6a08002ea",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "c7f66f6e06a729d7b0cb4d7b59b3ffbc794fe520dc12d2bcce2e3378287191f1",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470005531-f89292ddf6": {
-    "content_hash": "94e7310d9d650557d1ba98bb540d1b99d7ed2bc5bfcee48c2128ad2e712f3422",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "aba4d731e3901a098d07301a065559b64d5d3db1fb6e16642e808a7c3a48cd11",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470006781-52ab55cacc": {
-    "content_hash": "9dfb2e62ff6af8c02c6965c936647bf09ce392ae0fe49dc97256618923dad700",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "6850e284d2e3cdd8ccab7a95ca19be60d296d6aa7d3584fe6eb95863fab00d97",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470006798-8797d3fa56": {
-    "content_hash": "03ac6dc9a8000bd1426ef4c67106be7c500d2cabfcbeba9e0c81779e0c988a1d",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "51c52d23c7f0623a0d45409387e1e07f8c5cdbc01695e04a8d25a310a488ae6b",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470006804-f2dd7145b1": {
-    "content_hash": "32f8b76ea88ffeac49ee644639cd0834c83eb059129b76ca0d784fe9ef6d43b0",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "b3723bfa1685cfc86d513664c6d08c363e0f5b6ba67095812499580070430ed3",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470006811-ccf1d0aa46": {
-    "content_hash": "429f2a28d22ce8be94cda1220ca8f5aa3ad159420a1e3f715e4b245b23d9f4bb",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "93dd67261f53d6ecb9f81afeaf230225c648dbcf4941d8bfc8cf4f4ebb6ff03f",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470006828-953b1506b7": {
-    "content_hash": "6f2ac167abc4909f48879d209db7e5c52d4045ef9fbaf24af45e92e19e35b3ef",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "5e017be243a60ea79254304032270bba526a7106480ade7faaf8caa11af7187f",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470006835-04dc610b04": {
-    "content_hash": "5cc8487b0099ef917b9909db6bcc281d80d2a003c4d1980376d9833db4141935",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "01c26c3b417c69fe6ed1cfbcd1292b3601261b09bfbda98a9a721c7135dc9f73",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470006842-2f8fc22e9d": {
-    "content_hash": "81176d033983a6958a4bf1a5b872beab02cb8e6911ab30cefbd218e8236ce9fc",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "80b6a23a82b2773883ecb1734eb77c39e3ecb565afaffcb7d29be03709f7f875",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470006859-f5f6967df0": {
-    "content_hash": "7a45d1b191aba4d013aeb2c3131203c9ed4b77c53e4547c0f84b3eea35719550",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "4cfc921aa4f891fe96154bb0f49fd0e64e2dd04be14512248cb90b99abe4c130",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470006866-895fd0d7fc": {
-    "content_hash": "fced26a6ba6528cc6ecc41d5250c5233ead58ed66c240ec796089e1a793f3b52",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "2448164a2a07c0ae0cc837d91f259be4a8d4667667968b082c1f73844bade697",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470006873-d92d1f232b": {
-    "content_hash": "4d4605ad4060d1e2e94b85069f34990675d2a4361ff95ce5d96e99d18aa0ae38",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "feecbad969fcca34d3f31b50ca5ffb20923b8129be94f4dcbccff20e2b5b2fb5",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470006880-03550f50cf": {
-    "content_hash": "07497fd1d5b915965dff9fca598ebf14832d5f5fa1dc43fb350a9481cf846275",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "3219ac6654c7d39265bf47cadd499306e91686c5467aceec944bf3c063583e0d",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470006897-f464c247e8": {
-    "content_hash": "ee187829778ec1ad261631c378b15759b3f2a2efa43a73e107a16f25f4bb6361",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "fbaad6337dc330b3ce8d7c9412058ba14749777c9528fdecbe69b20f2714be93",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470006903-02c66ed372": {
-    "content_hash": "3932a53cc569dfa471fd0a238872a88c866e55140a136919e0abad56d7f09405",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "7f31a25a33a055a0cce6e956c8c613f35196e1a90e449c6878829b1e8cbebeaa",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470006927-8883073b99": {
-    "content_hash": "09a18c26043f9e0540e18f3e9db0cd04127e9bb17190f92832a39fee47b7fbbf",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "6184b95b391bd3eb29b7353167ab2509851e0dade73aca83f25739c41ae89638",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470007009-4ae6b9756e": {
-    "content_hash": "dac8a9f7ff3432ebf61a93baa585329ccc0eca4d0514fdc66bcd0498a76727cb",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "5703b52b6e99a7d901e8feb02ab634ff189436eebbdcff02cbccc5381acd2e14",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470007016-3e1c165ccb": {
-    "content_hash": "9d72cf9e3a83af91e502720a72f661d0e5d79c803ca67e3af4fa928c84bb0f01",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "91f9645e694210cb7547fa4b612590f164f66ad085abbcfb6f9bc5d70f197beb",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470007023-7578f5fdba": {
-    "content_hash": "8daa6cf329ef45edc230340a1b296711a8ce6c4dca86d05291bda67267ccf6f8",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "64ecc85e44e0127f11457afa1b5e5f67c9fca1eb6a3be35e0c0cce3878f0f888",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470007030-2108e34cbb": {
-    "content_hash": "b25c524f36d703620d11a1f0a9075425304456ad2037082845f9223a980a68f5",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "4499df356272ec80751bd7280a41f926eae24a4d2f43bc68a795e89635dcbdbd",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470007047-c9f378bcae": {
-    "content_hash": "531b6e62c6d8920cab3925a73f4f6875ee202a4cdf511556bd94e99b4b745183",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "49a14ab16db2ddc9e34b3ce0b3f7d7bc25f3f3bf908540354ba75d7794d1e1dc",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470007054-a5d6639e40": {
-    "content_hash": "904c232eae217adc5c3895e413fce523c67a750cdb6ef88963998add5684bfc1",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "a0d27b4ab7b692200d823174ccb4acaa49e84494a36ac0debe6b2cf88f0452c8",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470007092-fdc10dc997": {
-    "content_hash": "00454bdac352deea36e000306093a2d815292ed6256ceaf17da2e8a508a191c9",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "00a8486d9c3bcb814dcb6fb0413354da44e8a17f8e66966963e25c3290597e87",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470007153-20a93a61ec": {
-    "content_hash": "21dfe699410943d0239894b32626163269b2dd6cf49148d56890953a8a7ec4cb",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "221d46e8b6c61ec86314699d37084e10d25379c65cb45350458b633182672791",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470007184-f04fe8a95c": {
-    "content_hash": "101efca11f87ecb7d757103edac80fd8a9bec5df2f8396d2ccef114338d2f64f",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "b104ee42fcae21b10d097a6dd32fe73b804a41069f96b4cc6ab4c791a9a2e64b",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470007214-15f53cfede": {
-    "content_hash": "0cdbbe875c990d4f917300290075d704fb878c7c0f0ef0d3827b853920c484d2",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "4e5a63b8a426b1276994afe2ad7243d08b3fc83a7b993557c56d980f8c4735de",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470007221-22d03b4233": {
-    "content_hash": "60ddae3fad79134a260da0eed0061a7402f5a6661ce01135afaca44da24a086b",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "3394c32616636d16ea286d7c5859a3c03a4112d2032c9f25ea2321038eefa411",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470007238-04014a7fb1": {
-    "content_hash": "08417997465b904e785a96413b336f11e07ab70397cc812d41e0acfd6be81bec",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "6d2c760992c7bd05dff47e5b08e1778abeaf3688162ef1246606f8dcec79def8",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470007245-87dc63f0a5": {
-    "content_hash": "6ce4fc3c1bf4ed37bc2a1eea2953e9a084c60ffed647029e0892577280f87c10",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "b22d06854f80ff2068516e33dcc2e9f5363eae7a1e8588e672e8dda9c861a6a8",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470007269-43a30d54a4": {
-    "content_hash": "4acb3a0a5dacfcc114fee69e4930876d17939589f684d15cfb550353832e7f96",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "c73c43b31dabaa5689153191ac20b06b199cb24bf0721c2c4bf9c5914e60c0f1",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470007283-4ce6ceb54f": {
-    "content_hash": "0dc60aa9da972045961a5e1019ed27a89b387c9997fe76926483ab6d5244f9fa",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "e66eaa7e5320cb0563f29027e74bf3a446e1ec4491f767a0410b4a462708b9a9",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470007290-0e61c72f5f": {
-    "content_hash": "0ee69c3ce70926004d410be429f690b8ba75202d9193f9e0e7c80e5b1cf6ce27",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "fcd19ebacd577635de49b8abb41d4ab85cd0e4f68330844cf65f04520dbc168e",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470007306-508b448127": {
-    "content_hash": "beff42686317282c21b185bee90b3deefaa8e0188bdd53e93960f26ba815650c",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "f2e4dfb3f792caab9560a834bfa7f7ee7de717fd476096622cf22ce16d08fea1",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470007313-f91273e2d7": {
-    "content_hash": "519d5cfdeacff4f4239fa6c1e5a1220058bd798c87a46a12261eace28136c51b",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "85dfb3e785dc9cc1933ce5c95eafbfc7e0cb1da19cf57dbcf0acad96e6d0e5cd",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470007320-5b1b6672fc": {
-    "content_hash": "8d7e4ae31798bd2d1cb45c0c9f347d456f5253b9325bedd88adba9655d2c05b0",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "7af38fce5ba767496348c23d4902adfce7c3aadc7521df101476a0ea170bd8ed",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470007764-c9eb93ae5f": {
-    "content_hash": "a6c9664956e200ec321c13fb4632dd049892d90c1a36c2a6dac08b5b2047dad5",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "9cf2c7287e43be6fe01667209c88dbffaed4d6b859854cbfd4b32e6314e4512d",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470007788-5f789da7df": {
-    "content_hash": "771c0d95e7a22d123c7778ce4f084348e0541c9b22d588693ab8c131ce0b6491",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "e08b27d4df9dde5e2385905872833c55c020e608bd56071c8e6d8a42cde44ee0",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470007795-3a59f6bb61": {
-    "content_hash": "898010a882df383dc462af0a17ab68f0788240d6e7e1e5db66ad2fab72181898",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "43886b68e0665db9ebd7202a287e19af24ebc0222724b71448970b99c34ae200",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470007818-00a22ef6f3": {
-    "content_hash": "28b64b28668efd8c89920e93cd6f2ee65d9168760e9022562c71d3e9b829181b",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "59624d3c7e00588746bcd9bcd69a2df0aea7c286f91d8e1507229bc8d109cd59",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470007832-5f58a5eaf4": {
-    "content_hash": "3410d1eb0ba0ca438846cfab3fe900430df62ab0a1d72d9e81b50fbfc81651ae",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "c5059e4a6db9c6ba79c3e26cd281e697b26706859c247d6354951b4dd3d31e0f",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470007849-b9c06bc4f6": {
-    "content_hash": "f1776481b33ab5e0f5aaa746e1ad7ed5ce7f06dcaac73c4a7630f7b3f0b5c366",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "9286c93d156e4dac7a6c5e1696d287f9714ceba83ab1343a3b7d3590b585391c",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470007856-e1b9794662": {
-    "content_hash": "b838b4fed7ede61c4a9249e5d68b02d6eee9d3aa34c7ac4ba2dd3f14272c448b",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "1a8df8fb4470110947fc2806ebc766d23aacad5f78d0809feb14961bee9abcba",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470007863-00e259cc63": {
-    "content_hash": "edc037ca1c3434f6e02e1ef4b31574f80d3e8b726a5eff74e947b78689f0727b",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "c982f19c058ca81d4088a3f25214285f4bfefbfc57b0fe1eded75857835725a6",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470007870-0ae643916e": {
-    "content_hash": "c86febe7da91ad106b6734656cea915581f5e15753ab52f7e318866087a5e396",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "1a089d0ac6f02cf7abbb0102db135a6077673437ae7f671f26360792d994fcfa",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470007887-325f72272e": {
-    "content_hash": "e4f66683e70bffd74f291949a18a5427102dfa8ea5cdf3ebc1e2ddc65a0c879b",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "661610e0dddac1f3ddaed900e0525d5073426556df889b28870e4006a855ac53",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470007894-7f36048ac6": {
-    "content_hash": "adb068362f1222fb950609d2676d61bfbb7f2ec7792795b2b33bfa9daea76ef4",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "629b83683cf4866fb9918eb621f2bfaa9c962fdc9bc6bdc58c09928ebe29b1f2",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470007931-530631cab8": {
-    "content_hash": "2572882b0d073449e70388fa4b31045cade2b3cee123f8031c1ba7bc0761be45",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "3a23bdc018eebaa2dcb7b12881324caa79f40a9e316e1e37508852d1fcb0e609",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470007948-b402a4b085": {
-    "content_hash": "8bfc7327533638c201e664afe77e2c1c8eed01cf46b584d034428febaa8ed73d",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "7af4eacc1c47f4bfe216329e96d0db1625c216aef4411ae864172969b7545111",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470007955-7711da5187": {
-    "content_hash": "f3c0233b70eeb5e315f5f6441ca558ce78416d65c010074ebf10c1714554d4d9",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "de5a81bcf3b446a91c6663c6657ae01d1fe2f93878be8afcef11f90477a5fa90",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470011105-cc9449247e": {
-    "content_hash": "b322011a5422248caf89637e12b7beb811d2f938fa2acb0e5f21d7c9e3c1cac7",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "dd80834c173d98f1c54f0c926cbb4294b3078b396c5f3325e4a407ba1343f4fd",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470011112-0684d537dc": {
-    "content_hash": "e67891284eca5a2f6890bcd0bc084789882a776b30d4a612588cee78aab319a6",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "fe39c221c044ca4efcd862b57722239cf03e04fc43754d71858ae040d69011f1",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470011129-3d4361c36c": {
-    "content_hash": "434d3d9c5e5310f9feae84094ec81fbc8780b51951ab0a855e0163b524feb133",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "17d58c881cff73df9c171c240a8e0d642cb44600db29042b8e68a604ef41b958",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470011136-f665f11b66": {
-    "content_hash": "09e6132c12314525ea7dedb1c5c0cf8bc59fc61c53904d632dfe426e467c546a",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "8055bc4ca64a49dfe5b28432e22dce18f050aa11dc535871046d549383c47bc5",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470011143-30c7042ed5": {
-    "content_hash": "4daa63a78cf30647760d399b91677b1c2e7116d514a4dcc73d0c7d28dd99974b",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "789a0d1a447b0e1455774fe7f1fc37a031e038012debc3c166b54240e195dd65",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470011150-f503b54e50": {
-    "content_hash": "649aa6f7339447a98ad96acd56ccd05a22c38a1d363ad005711b4cb3bc713cac",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "36c0b8b9d7f5a09388e43391e01830db0ea6311eba3f504a59a1cf6b0ac79b7f",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470011167-dad2ff31a5": {
-    "content_hash": "a961d7b6afb041001da0be0d3dcde26d74693522a24c4293ca6b128b42943cee",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "0d91c0a9966c5674d4cbc2a007b843baa68f33a9d9ff3c1d6799853676a97f66",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470011174-cc356c76dc": {
-    "content_hash": "9be5a23208a9635285d8afaae6344742371750c5a95baec9b668fd77a7107026",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "ad3acd6baaeb7bbd6bc352919563fed1357885acf28151532c380d19e5b7d59a",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470011181-4639176f7a": {
-    "content_hash": "b8f989b0cbbcd4768a482731842dfd32cb873202a06f1814119d8b31409c9819",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "02691314220c42f860da8b478d2921fc5a604cf70521eab8cf9fbaec3d0edaa1",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470011198-69c4a75431": {
-    "content_hash": "048ef3066cc6baa244d09bd205ffcd2866e7610b5eb29e5fc224b2b3fbe23342",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "d6516f954420bb0ea5a7a40596740731a887d6466676ba8601a0d89af3d88ad7",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470011204-46995e520c": {
-    "content_hash": "6edd20a80a44e83ff32445ca706e9344d49660b4d63b35f513fbd9ead40b8c56",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "30f817e380fac77f7e718bd9d726474d1bf50cb437e7b109264db838114f8b34",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470011211-6f890f542a": {
-    "content_hash": "1e1dfaee849d3ea107df2d32dff089fd0e5be79d9a704853a6b0196d79e64af6",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "07dfa1b219145b79496f49bf85aaaffb96a6d1c3ae0d0b063d7406b6fcc21602",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470011228-f94839fefb": {
-    "content_hash": "e507c0ecdf4c79f0580cf5d1eb028e22b185d6fe5008419ef7aa29cde11db2c9",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "f5eeb033182314c3fa9290a17c5898f16aab69423f0abd26ac3a78aac38be220",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470011235-76c0a9c27c": {
-    "content_hash": "c6190fc47a8cece64f73bed648e0c6dc424e62d21ea4b856a5b5b4b9e1a56cc6",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "3fc07d6fa72444f0892d3a68a1ffd5446081ec3a941a15b8b04a11e625a45b01",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470011266-71991fc62c": {
-    "content_hash": "1039f07ed1ee30ee399ed4d6f48ff725e995a4f3af34b22161ba5b142281a27e",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "18dbeafca53162c1287629809d424d6a785735cf16ecc0087deb6708d864fcb0",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470011273-fbe5bb765f": {
-    "content_hash": "cb71221ff240b0586bafb0aab00f14435a4114d4ff7276d3fbc635f2d2de2cb5",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "49d1234e5fca83a51158a525f1d0e60157b41c2fb504a3350ab4f888e3538249",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470011280-d23ae4ea1e": {
-    "content_hash": "149d0466a08b0a855d5c0419f0f6ff67058930e043b0aeecb6e662e11ddda95e",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "e693ff990d898bfcc103330da093561271a944ad26a3727f805298279a9ad324",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470011303-f41ed384df": {
-    "content_hash": "d77aa8eaaf9bf28be2ae4da3cfb545067bf8363c2eecd624315ddaa91c8a5a8a",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "4a68944ab4a83215f0ece830297d462cba5658a33f1e3da3a314ce7d9f492486",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470011310-507c765a15": {
-    "content_hash": "c6110431f07474e698885d18aef886df0e92f5c0d4bd3c5f7c292998a7d63d70",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "590558c7a56bb705f4f19f6e2877bce00f5f6c3f9d5d21c0884346ab19089689",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470011327-92e28c963c": {
-    "content_hash": "723f98ecf0547db7cf33e627e09e79034624e2efae69f5554c1e7ead24d6a071",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "0a8ad6b5ddb49f27e5f50caf7afcd65a94877e64d030ac84756aeb194d340ff8",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470011341-cab5b06228": {
-    "content_hash": "1ee0479f6faf82fc3913cf2f59c9f4ac34aefe292790f70042c6d3d5f67c88c3",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "b2df3a69ac0d322a7478bef90ea3ada64a1a13979a9c7d459ed2843f4b5d7a99",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470011365-12eba5ff7c": {
-    "content_hash": "fa5450810944a8f67f259a40fb12b67ad53ce07a3d217d004ab46a5864fc10db",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "1f61c946e11d603332f8f20b1fe14a394e76386427673f950db59b8ffee4b4cd",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470011372-fc94b51014": {
-    "content_hash": "50eb00269cce1b470d524bb299891b24548b79a0c098d10ffa3ecc3d0ff5d35d",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "3febe5e6d9dec841de67c194768593cdd53099c34ec407bace329e59afc702b3",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470011396-564a6e3f11": {
-    "content_hash": "7def6e80a9310b5738f2f51d1caa33ff0980c033f2ca8e050ac42e3a7a6238f4",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "5c6ee84726107b33b082aa5945c0bc666cf1553ab23a85b4700086e4d04f0abb",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470011402-f1eaf67685": {
-    "content_hash": "243c280eabaee972e601b97eda1d0f7a26a41c6ecf90900c6a656475380e5ada",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "493caf6fd395730caee34ede7d95b95f91bc33afd41bc4a95c0cdd6d22406aa5",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470011518-0ab9747ce2": {
-    "content_hash": "bcada73d23a51efdb7813e61fe66d356220f9e0cc1356c225870636835cb1f4d",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "1343205cca5946381db98531da0371484e1a3dfd12ded891f1fd56925c528c06",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470011525-3bf705b625": {
-    "content_hash": "5b31a21e2391849ded05665b0fbd3d783ae619f6861f2e5ca525d969d253e66e",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "0385571b989780f0af258a11d439e80ab46f87552a1e22c2facee25de2ad6e11",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470011532-a032ca26b5": {
-    "content_hash": "c16f32abf6c1ff0374c6612834f237ee2f21915499af8178cdd1629eadc204c6",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "93722be8f523a1f6f9232c11defe4c8c210ccfabbbf432e45ed40b05f59a535c",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470011549-880ed866f1": {
-    "content_hash": "e17d9df0dad141bab0bbc355bbc6ba28e476eba182950056b50c326937522d9f",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "8f1284bb12c0b52309d6bf3985e54b504ad651059a67299499578bb4aee36ed9",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470011556-2d973d6088": {
-    "content_hash": "93138f5eb32392f947298c8348a4dd6697e8ef8ea6060c77e15147315b8a8f97",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "ba38db4ce5ed2baec39b02ba8f17dd7fe893bd52fcd6eaf2b5836dccec9141ac",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470011563-1ceb7161e6": {
-    "content_hash": "cb7d8ea6c9809762827ada33bd58483495b256a75326294f6404b275ff883c81",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "9d1b24196ec072ed3c0a30d2cee9922d67771dfa1d0649e6cb886f7b5bf1f78a",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470011587-9646845ec5": {
-    "content_hash": "66e3bb2f6b2e76be9ea0c5d185f8171db33074f0489696b50c3eb0579f3552d2",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "6ec5b03879bd6572ab6172142427c972a424b9e899e54475bc8b34e28644f5b8",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470011617-d4b5061cfb": {
-    "content_hash": "0fbd8bf6553006bc9b02cf48e0da11ada52b170680ef44e5be9e877194cf4ff4",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "a07fd2591029bb7204ecdadec0f45e36a982315ebee9561f9a6ab4517c818fe3",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470011662-cc9118b3c7": {
-    "content_hash": "1f653eda0cff04f7c365e77e15b4d3f3174ca8f1deae83d7f0be2d0cbb72ac3c",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "24f56a40fc83cf14477d287f6c8b09ef8a145a496ad2b667301335e02b5f29b2",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470011709-9782bab2a7": {
-    "content_hash": "4276461c30d7509818c0761a8ff37b8edf3d33a9239e09506f338af9208917d5",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "1c6c8a3263cf3fa76146deadd45a580bb79c0e10cf2c2d5463ac1296dc1660ae",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470011914-e41532e831": {
-    "content_hash": "d45c94f5ea90dc45c95cba0702d1e242e275ce204e6823d008e330bd8b9a6200",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "a3ae4ede5d00f5e3d4dded388692cdc4d8c3d28fdd6dc06476e0cfcc71d09147",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470011921-19bed1ad62": {
-    "content_hash": "f4e57b512265c2103531b365a96a735eaa0425b2ec4d1ea3029c05a6c9282bd9",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "d8eeabbd93e45251fabac1862c1743f645e83e725cf6ed81f5f571be6b98680a",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470011938-cdc8ce43b2": {
-    "content_hash": "28656f1f003ccb554890112a9ca89d25eb630fbb6c44ae18ab61456819afc71e",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "1549fd58b4bbddc481620c7298a035d1b55e9901660b8efeff4407bc3d31e317",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470011952-21ae269d57": {
-    "content_hash": "e1b4c357e8be776d91e11830d7b7d62745ddda4f6c262b27841c82c116438995",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "f31e42f2ef5ef43d4b385ca59f95201bfef7754e97e903a4dd26f3c0269d07ee",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470011976-1be0914609": {
-    "content_hash": "d1d1348631d1bba003240b9619fcf4e7d45662c10801d7c17efcdfbfed1659b9",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "acdce1630045fda51cc70e54f5f84d8998555511d0f51212f52c377ccb29e249",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470013017-9133c3ca80": {
-    "content_hash": "a4f5fdcbc0ebb9331fc73cb633e4b07975775834faa4502b9992e94e7642ad3e",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "6836f2060897d9bf58c6e585cc7528aeca4d40ae7ceb53f08e2942b7ca9e4213",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470013031-cc15693b62": {
-    "content_hash": "69124da45ae293ab0f3c831ee3c81227f76ba4cf9322b559d2a97f9a1157191e",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "55083e195d5cfdd558e93c629affee58d2f4d4f12dce57f76219e91cd7298651",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470013055-9ca9f7132a": {
-    "content_hash": "ac159fe0b16b70523f43c359ac33ae3fc9d6ac51dd155f6848074af0be613174",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "2f263907e8dd1d8dc3966b2cf671b76ddb98ada015944a802c6a3fbf2faa4295",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470013079-3637c9aea7": {
-    "content_hash": "5cab0c84da6905949cc3264b7f49d27dcfae42d13f713fa744154267101f7e63",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "8efb2889eb8bd066fe3dbf362481175acfb7be3dd51c0a96df45e8e556fc31da",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470013086-e1d8bd723d": {
-    "content_hash": "30159933ce04a032e0e2b0f043043dd39293a85599ef404958fdafc089df3d6b",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "5a1cc6bd39ef150b203ecf790e3e560283afe6b40295c6319e7d1f1b2cdfc02b",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470013116-9f4160f45a": {
-    "content_hash": "2c179c6586f514a60b0d9190d6ff3195a109aa5e33f1be9c0c566f433557e5e8",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "b608dfa6cd1d638466532e2ec7855ebcb2bd0e6f8a0e171bbfd0787de53eb3d9",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470013123-ff161369e2": {
-    "content_hash": "8e0c8731ecfadaceba1f0f6b0ad3a0f7719f23b084a0c007a5b459bcfe151cf2",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "0c61b5e2e811d69cb8c9ff0968e88a9782f8483205801a4f3aaaee40d4e18ff5",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470013147-a58322358e": {
-    "content_hash": "5618e8687635f3cfbee4f8701a312d97f73acff2ad02b330dd514b3209e188f4",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "e9a1ad99ec02249e7ad52faf1afd1331e1c4d2f199ca9b08017cb468c4c648b7",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470013161-987cc816bf": {
-    "content_hash": "963ecc6b18a0222a4b707dd0aec1d2e81b421e0b310623baeede481d3f48f7da",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "6d49d83ef4c1e6ff2ca60ad483c02113e676f9a56e3a35e59f0af3a2588db4e8",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470013338-7935f4a4ca": {
-    "content_hash": "24d4b74954bc1fd61481ffd0f6cdf5d8609ad70cf05d429b67210069e3649ed0",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "3c374991c86dcc7c189bcd6d7edecf87383bd873e0d026921c64142b7b10814d",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470013376-6db3663603": {
-    "content_hash": "dc9c35a9b90787327d86999ce2e494b338dc1f24e191d3cf4086b8bd47c060b3",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "e0570a6c9426e75f9321744dd7fbe742c989df2aa06bf06bb19edca8cbdd173a",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470013604-b1c078dc5b": {
-    "content_hash": "f8363d8c11410aa2394878d75c212507639971f19cc8e922afbcf1e35acb4132",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "e2da548202fdd9f6ed6b2ffc27ff07c6c5777f4355fa45e35e474e7cba096c3b",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470013611-6a74cef0f3": {
-    "content_hash": "9d0613b7dc451fae01b5bed969af0fa7e61c3e8d9a535d230a14f629a5db0c3f",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "ee89b33aa6276611ed7b45bc382f4178be2a5702a69bac4cb84fabaa3dabf05c",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470013628-55a280a24a": {
-    "content_hash": "a76ff9d0dd20b82746df9980893c0f636e0bd5692afdd175969397f6f9c6644f",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "769fea335e18393ae90bbdfd1ab49166f83a64e83ff18240d8188002bb4d3fab",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470013635-253ada5ac0": {
-    "content_hash": "d1860565264462445755630b445f47fcb8eb5ebe9a67201f8ca6a47cd6ecf7e5",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "8eeef5d6cc78d4bafeec65ef842eb0591fa82a21f8af6bf012da0d5f23cb7171",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470014144-378fdcb480": {
-    "content_hash": "144210c24e3e17e0089c237401b1e5fd623908a52a1c81d45e0a1b06a6ec5afd",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "581ae5a8e59cefff0256027e6cf1e6f7eb3cdb7d92519e20f7af46493e95115b",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470014151-2a99dba759": {
-    "content_hash": "1a224e9adf1d92b9bc1c2e9a759944f91027d96e555302d4869bc5c1751053a1",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "9adc2ab21d71cb607bb19898f6fb1ddb0500df0062daec0eae4b18c9b8d673d4",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470014175-5cc3a92fe8": {
-    "content_hash": "1e5a2a00f51c4cf630f052658da8fafba86116b65413ed608a344ffd5010aded",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "271d37152d594026c6cdb0605bae9b5e34dc8dd474dd12b4f00c41b7f201e231",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470014182-839f936bb9": {
-    "content_hash": "3f299e5f862f65b26d32c9782e3e874c372e6119d6c19b605e4e92880343e948",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "0e0d6c9217c77c2192cc984b0e2a8db869491763746d39f745bfcc7b4c2de5af",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470014342-a060c54e76": {
-    "content_hash": "9c323cb156d640e34c84e639fee928c8c279f2be87d01518cc28df18e7c471e0",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "262095bd14c8eeda9ad457286bf4ebfc44b4836a26befea739d3012c1c914ecd",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470014359-168c214d81": {
-    "content_hash": "c1025ea6b3ad00c5c00a14f79c8abf56646141c6da9ff8c29d7cfd798c8d7c45",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "58148064d85d4fbf7307422462aabb91346377f6395883bf19d8ae9775b36720",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470014366-9afe959a29": {
-    "content_hash": "b6c97f13c74c8f9a9e69f91d204c7a2f4acca70768625950b53b18e89e23ce06",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "aad200858a6a8cb04ca8a0ad94c472a9925495942a370a4ee28ab4439eb4cb44",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470014380-911bb431d7": {
-    "content_hash": "0ea55620342c63fe0ddacdc0dc3aa1e09c5450f611e9049643e44913676aafa5",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "a500d4e64f65a363d57d03e78375dacf95d62f96878e922b35d0355f10348325",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470014397-1ec341e09d": {
-    "content_hash": "8ec7a9b38b1e887926b2dc9d383d7b6604c73a7e680334b630aeac2f7fc4f2a6",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "19f804f7a11163ce02f873c5f90dac5d3e1fa1cf74cdd0f8be8ea80474841131",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470014403-bc9c8efe9d": {
-    "content_hash": "471623ebbee268581c06cf87449c9d455e19bea6d7dfc784327e8a04333d0f32",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "d001fc686f47a5fb2d74d2a00ac007e61b5aad3eef30dd99e8aa5e15b1cbeb6c",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470014410-7d989409a6": {
-    "content_hash": "e22eb46f9f5e0013cf4e25443d28c939783157376590d3641bc7c783be364d0a",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "e9f02e1babf02709723fd65da9c528d3342dcbae4439217f04bcdf9eadd3c88a",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470015004-dba64e3773": {
-    "content_hash": "02e9b44026c5339f551859c280ba5e7f23d717853235b009011e8d27954fdafb",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "959afeeb4d4576d295f2e431e676c7d4662bfd0b8323cdc457e5f6f1bbe4e90e",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470015011-b766bf95ce": {
-    "content_hash": "c5f7b607c9563a257dece6f44ebcbddd21b276dd4f0f704f65861007bdb0c637",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "a064148e067dd4603037eff0edc2d0ee0d8ab53f72f93f6ca6fbf804d33b3541",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470015028-fff914b3bb": {
-    "content_hash": "4a2450a67035c30c5e15e85fad59d75cc14946e9a53d9786bb24d5cfacb115b5",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "46c0f9265fca23a9553459e3efb5da5da972cce79ca3afe6b773c7fe2ce5a55d",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470056236-4fa963ecc1": {
-    "content_hash": "bed3c8d5519abf2f25378fb93db0448c13aa08b1c1cb2edbbee85e9dcea5fb99",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "9d0f409913dffb111fb4587515f021e6fe9c1c3820529a4940c64d3022ec1e3e",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470056304-df3f7f12c6": {
-    "content_hash": "c5fb225ce83158f6ffb0fb15bcdff1e5ff33fe2cc495c6d740bc9e3acfce296a",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "7a3494e2285832bfe3cf39aeefa997c876c8b86ad69772a9117d545b97cfb75d",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470085236-edcb811cfe": {
-    "content_hash": "9a0c1f6f058f968b12c86106e795ed0713100e69a4e458d5c2e66311bd829266",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "fd5f1926a27c29c5e706e14be29752ea95597be4876b35f99c2336fd514477d9",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470085243-ba449f753e": {
-    "content_hash": "32757b7fe3c643b21f3d7aa00763d97551492070003e09795baee8b65c9d8e39",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "71e342eb64cf9bf9817f2968cb26d6da0d8cd9256fb80b39671345904c85fc89",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470085250-ff80aeb073": {
-    "content_hash": "3cc2fc08fa89b89f06890fc32b847f8ce21a1b6492f84d5db656daccd5af63a4",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "b79e01749042dfd91b89ea5e23619409c900a451a41d50bc366a5c57cbfaa08b",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470085267-a525b9168f": {
-    "content_hash": "41cc96b6f0e93ac61aaf50d3989dc3316459feb1ed75fbdd3a7d996b0de5e4a9",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "0bd326e37e8f0f1ce58e3fe8711ce83e91514880297ec0b5296fddba1b9c4ae3",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470085274-655cf4a827": {
-    "content_hash": "1b882ac01ec9c60a770887458ea9f25c2e43591c265cd13dbec849d7730f250c",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "b2a2708ce9f7be74cf92cdc5fdf4de333e8a14219155f13c232f2db91a5c29e1",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470085281-28be91c429": {
-    "content_hash": "f4625c5f8504931b69737ec80e189ef0263936a8293d8ada82215ac43ef8c3e7",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "d982e879baab4deaaafee2c0aaa3f6afc9824a5758d5134039fdd937b228b493",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470386012-3bbef2cad6": {
-    "content_hash": "58902e715d3f30ade06d7d8488dbe6cf5c9c55f77f6d64c338a2ea1411e14629",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "a3722bb32fb64de816cf927f47847b5a5a9ff475eebf23d7ac0e578dac75ca51",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470386098-c8811c29df": {
-    "content_hash": "c323e23d225c87f9034aa02cef3dccb4116aa0a37745e3d81300f1bd4371ae75",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "e00e3ce766196e7073e2e51f0f942d3f925a6b777af7f8d207846660345ee341",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470386104-184ff9020b": {
-    "content_hash": "6e41885cd2ff23c3143de72d22a003c5de5574f588981b55e16647114c0b6334",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "3c137e38e59ce77f1a88f55cf12e9005576d9857ce92944d38ca40695258a1ed",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08009470386258-6f229663a5": {
-    "content_hash": "ee38e3bd2afd77a4813621aa979c75ffda9b6934768a03324f9eb94bd41af58e",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "8f6f8077c67c60c8f839fb957b33c275d65f29532486a497e095e751733a4eea",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08015579035485-a86534cd86": {
-    "content_hash": "1ef59ae75adef065bba386230c2a9c67bad3f965d64d81b691efbadfde2f0109",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "e6b62f8820393f56b18a955d144267c45b980825b603b9aea545911a703a49c1",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08015579035492-420acf95a6": {
-    "content_hash": "bfdfbb23cf45070f2137602f58ab9c0e8f473f2125e71cde2fea6ed8bddd9225",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "37833ae957206393e48bac16c4e90505dd207edc1d673a78e0244ede3d11a023",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08015579035751-9b494cde63": {
-    "content_hash": "daad4cdb9bd0a0ea2c86211db5865adea1a2b1ecf2fe261140e67d5a6e3dc93b",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "16083ebd245c851d4f4299530265c6fdafce2a990506c170b689cac6d47081dd",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08015579035768-32cefa9476": {
-    "content_hash": "67052b07d44376d473da5d4657916310207a21fa07ab0549b7998e87fe9cd01d",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "dd226edf42e5f3a8528d3b34ca611ec4794afa042d622a2a53447d33727c0728",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08015579036055-534a02d289": {
-    "content_hash": "813b2ad237be68932c0396e526d122cd57a754ff0a68e55cfe5875b049682ed5",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "39d2017b85783e7918bad0f42ea28d370a55ee514cc9da17c5bc6554a7ba4f12",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08015579036086-41d175ff25": {
-    "content_hash": "66b8628876a64110b6f0cf85d70a2cee69b78d4b898be4ecb98d2c8cb0f2ebc5",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "21d458585901bd842c3101273faf4076e421db1e1d130331026b38254d1b6214",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08015579047396-6b8db2061a": {
-    "content_hash": "659d6246d4740841392434c48d1021b22cc732a2be0a7246551c5670171a0540",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "b8e6392905c9d8d218ba4f8a19972c385c6d4f783611ff05c8467db72fc0d0ed",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08015579047440-dc9fe1866a": {
-    "content_hash": "0cba2ccadb0bd3ff3961197c29f7c994c3f741fc168a048dc3a90218b7aa12c8",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "f24ed6acd24d33b42c040fef1329976388df3c4a79e3ee5b5dc2ff1af1300506",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08015579047457-b43cdf4471": {
-    "content_hash": "7a75447471e0f2afac36f41c355b83ffdd7233ab0cc337f183652edc22ee6ddc",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "f9f5e7a6adb14d9c1f173be3b1f9ad8216d056d250cb0a145c56f4406139e1a4",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08015699008260-83f4c4243a": {
-    "content_hash": "95abcdd4e82e8714347f434fbd04adef4f011859ce0d27925470f4159a472666",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "d13f20768ff616c6c42395af30030aa4f594ca4fc0997ba66fe7b00252313c30",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08015699008321-bd66af1d7f": {
-    "content_hash": "141455d7942dddf35242fcc264f15b9bd7aa2194a66ad4c4bdf957394a3fbbaa",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "e28cc48d69e7d981bce5d2415643ba672960199a3930ad16b35c75f1c85e9c5e",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08015699008345-b4c9282784": {
-    "content_hash": "eddb86bf8fe658910dcce25df49943a48799eaf6eced77b58000ea0433b92848",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "c7c127747f79364c2ffabb27e245382dee44eb1fa9d0bd55ea408d0fab0033ed",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08015699008383-cd3d2ee11c": {
-    "content_hash": "c515d84aaedde70f02e8179e3ba4387980cf1bbfc1fdab424bfb9508b59b5233",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "43e8823ae4a4dd03cd6048854cdf640c26c4f78335ae4d75bba0ef8adf9392e6",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08019808113173-073a49558a": {
-    "content_hash": "77d481461cceec4e82a12b309c7866441a0f31c21635e255cf1a1f4e306efa69",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "6e8ac50fdbb58f4f0dffe4616bd08d5ffda6b4074669f95ae5270b112df1bbac",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08019808144344-e39e34624e": {
-    "content_hash": "3bc5fe307f5b5aaae240f6be4048cf93b44eb878a27b78f34a79405d63176cda",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "6d46687daf84312919c94988dc65c92d4fa2410491503510b227e1b98141c645",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08025767002014-3ee9a2274d": {
-    "content_hash": "f7af3b862a9b9a56fdee7be0a051f9b18f26618d7ec0dbbed8c5ce388b60f540",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "f101602c8e3171413a18bc48c3b5dcd1df4fb2d422a745402dc609e50303fa89",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08032611678004-5cf19c80ab": {
-    "content_hash": "fceeb30a5cd49ff9d674b77dea40eb591f3663b28e304827d563172c03ce9ce0",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "1822cffa88c1ba23949e301d34d8e348c60daac58ddebf88d0124d4686513a35",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08052469420112-516c51c160": {
-    "content_hash": "27cce298dea210a3dd6706e4fd836123a34c2f134517d09fd2533601f168545e",
-    "lastmod": null
+    "content_hash": "1d685a0a2e743877d74a4fc3f5382d5d39b792567ad849099c07023db30cdd15",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08052469420143-f231cb9bd3": {
-    "content_hash": "121a826e1dd708a0a226e332c723dc0e1898ced47dadccc5a5aab772caf6be26",
-    "lastmod": null
+    "content_hash": "083343e25cc97577642577d217b0a36a280c47271280c5de814850efa55240a6",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08052469420150-507bac8455": {
-    "content_hash": "e4aa75ff09f8e77a5b4dc13a3477f62b2c34defd280ffe1282e607f37d870838",
-    "lastmod": null
+    "content_hash": "e5e02e7dfd3a08ca2e355399a8f85b39c0aba576ab04a59a4cd918d3aa9b4201",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08052469420167-385bc7d455": {
-    "content_hash": "8c8ba2c959f7f4bf4b32a7ca59af913e639132a2b2eca71779c0c54a93565015",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "73f013db414ed22de1d07ade7708cb0d52fee1c8ff42bed02cc91454e91202df",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08059149029573-55c06e4fff": {
-    "content_hash": "a38e8f1f909e9dc4f6d628e88a23a095899a06ecb476e109d2caf9dbd2808aa0",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "39d7829c70a9b582e2f41606c6dd02189031bd9929a092b896b9d96c4b489e8b",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08059149029627-303ab47c98": {
-    "content_hash": "a0ecd64446e6bdecb46d52aab45a05928bf571e92da7f316fd16932b6283d0f3",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "cd4cafb78ec15f33c70bfbe9b35ae6a2667d51e5cc0a828a63880ff1c04bb52e",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08059149029719-1c5fdfd988": {
-    "content_hash": "3b9580184d76693fadf861af6c9a900f756395bab889fe5650014c360ec1d0d0",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "1c932e9f501982c0350f9b2b3efe8f20e57619aee2fb68e71f0de6e509fbd08a",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08059149029795-7fa3522d27": {
-    "content_hash": "aea62259a10c2110504215b74389a08a18d1913aa6377a7f69dddf6918accfbb",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "72f5f79bc226765b22c3dc27165fd307f8b21b56f7dfeaeb3cc7c401bb1eb573",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08059149428383-833b652070": {
-    "content_hash": "af9837f130a5e22e2939755e3875b89355817ce887a124542624f1d198094777",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "3403a4adb6677b4c473035b4fe1ec612d09064ecb93ffdd31810ed8ac536301d",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08059149428598-3c7286e658": {
-    "content_hash": "f698b80c8f12f34b12ccd98a779fabc9128f56ab0c7871f25f708e8eb8c111ca",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "c38da66d8b5da2de64439107dae878ed0ed83b20f756c3ab7b64059190105fb6",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08059149428628-b221ffda57": {
-    "content_hash": "3e8f35516b199ebd0759cb4a695e7434bab7bedde9cdb1cec99ee76b08685b66",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "67b012eb883b3e030b2c714cd85624360f0dda734e979ab9588dd949b237d81b",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08059149430096-179ba58700": {
-    "content_hash": "34a220a383d44bcfbfff603a93e6c02c90682890ec0fa2c738a3d01956d5ba86",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "3a35bc2460c25132937e6b5f0c128a631d3cfc7f71eca6d34f311b592234ace0",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08059149430201-09bb12127c": {
-    "content_hash": "cf3591888d706bcb5996d598696cdf3a1e4526199295d544c2fdfb774bf24773",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "542fd5b2f47470d055641df6cba2230bc1cccf4149915b2c4c971b48e8567586",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08059149430218-3caa9ea69f": {
-    "content_hash": "972e27022f7dc47dd3c292895abede225e2c55e6be754320f46e0ec01a2f4b4f",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "9a79630c6fc2dc8b45693ced336b4db5c3bde5be882ea0c346dddb4e9239fbde",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08059149430225-74c41b76a6": {
-    "content_hash": "866f011c57b69799b0814f444a509c7c4cd1c7570cbb98ee1ef442a045ed2ae6",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "4be0bb2ebb676fb1e80bda006ef8aeb5b56b1a4983a37a5be0eb77682cded925",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08059149431697-4b86b825e8": {
-    "content_hash": "f9b5951f1444354e99d46bfc24cf93f3cdfbeee9edff428d9bdfecf54fa81354",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "3d9105fab04f2ec70f35e8ef7d49862e4d17415db4e4f5fd4c7ef75afcf367ed",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08059149431703-01d69cdd20": {
-    "content_hash": "4cf796852a67f110eac911e500c04859935fbc7638a606f3820f6c3157154190",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "b4fc8654dc055a3bfed20f8c10243e5e9b9163ce11cfc0ee1e5bb1d4e3a3891c",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08059149431758-679b698720": {
-    "content_hash": "fd390d0e5141a00264d37826d8500fbdb6a3992a39fb63814571990be1a9aaf4",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "39b3dfcf601d2f74410035ce5bbcb6eee18ea6704041613b5a5afcd126c360ac",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08410650159744-252f410789": {
-    "content_hash": "9ad756d8039bce3328a88e8c2a7683301d22e084212f5b58a9e44ca94f1a2d7e",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "e0e0f99ab02244a6cae4739c050931d17c07c09981b5c5aa50a8ca302cca4b0e",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08410650162065-a3e502f71c": {
-    "content_hash": "844e0244c0a04464bef66ff6bbf108b6f5d4a7e014159ed4cdaece8207784a1e",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "2730c74a83e44607e00c3740e95dab900ce93d477ac7da0f08617c90f879a805",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08410650171425-3b6eb5c62c": {
-    "content_hash": "497a38b50bcdf66ba15c4964afe56236530c8849707360e1ddf05d0bb457d6e6",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "d6f4dc10a9ead5403e41b80d08574962f7e805d603a3ab1db3aaf4e916baaf9d",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08410650604312-82ede25576": {
-    "content_hash": "68c629b5229b24371372a8dc167471f8d2dfca6252883f6953e45e9e02b6208c",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "2ff9a6791b590de6e3c941f94327338157adcdf718e1bc7ae725ac851a64fa1c",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08410650604329-697f48a44e": {
-    "content_hash": "7def194ed92cc8b6b3f4c33d63b91577db097acaf43ab69a55639f5329a7af38",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "3ec3e330b02ac2dbe705298cbcca119c0eda743774d673628ddb868050499862",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-08410650604350-f0c8fb4a8c": {
-    "content_hash": "3d3dd340711dfa3c74b3c167cfccd871be65530ce2d81cdcf1ee98ca50e24635",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "3f466e9c2944c2d04996fe330f27beb265a2222f7469744b32c784e66e477c5b",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-09003579008379-34fa74b593": {
-    "content_hash": "738f9bd61960047df62809a18134b46b6d23a838d3f40702d2a42d13d51efd16",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "f50d57fb35d996e16c0594118756671900ee304514950d043a1509d758ab44fb",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzi-09003579309513-25024223e6": {
-    "content_hash": "106a2acd82c535491bf6069401d8fb62dc4895d5d483ca6b848efc56b78be347",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "49ec042ccc80125f81f247bfb860ee2961ce683f5cac21f54a34d38cb07e52b6",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prezzo-confezione-o-prezzo-kg": {
-    "content_hash": "67a8fbbf49fa75b6f18547697f477a21ad8abc8f636a5768489c072626bf2209",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "d1d90d6f316184f3d43ba0cb5ed5a05867b919b69b49a761f950a5eb1d233fa0",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/privacy": {
     "content_hash": "f2efb051b96643603c9989cecf83a925e34ea5ed471e35a002e7bd5086dfac54",
     "lastmod": "2026-10-20T15:53:27+00:00"
   },
   "https://offerte4zampe.it/pro-plan-large-athletic-agnello": {
-    "content_hash": "5c95272170da11a4bccac80a9d75e997b98bd260a977d9bc258564ec388b4739",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "80f7ff005d6afad799189a7f564fa8ee1a3ba64457f6d09372fddd3d6668e5c8",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/pro-plan-medium-sensitive-skin-salmone": {
-    "content_hash": "0f545d056e38a0d3f7cc4da593fba0a3caac5dc4f624fe57f98489fb418e9900",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "eabab23a6fab1bc3984fae2aa554c8d5f4bca317bd17ed6032d3189bf5cd7e7e",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/prodotti": {
     "content_hash": "c30a7e753278e80dad0cdd8adeafef100d94f57760547ed8b3dc0daf1b6523e8",
@@ -1196,20 +1200,20 @@
     "lastmod": null
   },
   "https://offerte4zampe.it/royal-canin-maxi-adult": {
-    "content_hash": "21a4ba03f39dd389d066623105c57be6ead8516eee04821260017d94548718c8",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "c4ea6f4fe4c96514138717861802b39f3d534bd110e1c879a05cc406912d7407",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/royal-canin-medium-adult": {
-    "content_hash": "e0fcb673cdc87330935898aee71d2f02be91920b8aff0f206462226c5041ba7d",
-    "lastmod": "2026-10-20T15:53:27+00:00"
+    "content_hash": "72563084bb68f3474af081e2ec68f2a15b261b262112b301e33255628868b8cb",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/scelte": {
     "content_hash": "d99efd03632b188f55c904542cf0437a0c09015ddc35a140ae16bb8f0f5a88d5",
     "lastmod": null
   },
   "https://offerte4zampe.it/spedizione-gratuita-conviene": {
-    "content_hash": "b81a2ec173028e32a7a196c6487a96d038d12fae97880178bd19b1ccef7c71c4",
-    "lastmod": null
+    "content_hash": "be07626074488f8d660a60420a4d17a3157226b66418d7ba1781ca5eb5fc921c",
+    "lastmod": "2026-10-20T16:38:17+00:00"
   },
   "https://offerte4zampe.it/spedizioni": {
     "content_hash": "a307641de76dc86d0d25ac485d3aa555596bc805ab327cc53c8f334171d027fa",
