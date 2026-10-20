@@ -19,11 +19,11 @@ jobs:
       - name: Wait for the compact home deployment
         run: |
           for attempt in $(seq 1 30); do
-            if curl --fail --silent https://offerte4zampe.it/data/site-quality.json | grep -q '"method_version": 1'; then exit 0; fi
+            if curl --compressed --fail --silent https://offerte4zampe.it/data/site-quality.json | grep -Eq '"method_version"[[:space:]]*:[[:space:]]*1'; then exit 0; fi
             sleep 10
           done
           exit 1
-      - name: Audit three public pages on mobile
+      - name: Audit four public pages on mobile
         run: |
           mkdir -p reports
           export CHROME_PATH="$(command -v google-chrome)"
@@ -34,6 +34,24 @@ jobs:
             node "$RUNNER_TEMP/site-audit/node_modules/lighthouse/cli/index.js" "$url" --chrome-flags="--headless --disable-dev-shm-usage" --only-categories=performance,accessibility,best-practices,seo --output=json --output=html --output-path="reports/$slug-$iteration" --quiet
           done
           done
+      - name: Summarize median scores and enforce accessibility and SEO
+        run: |
+          node <<'NODE'
+          const fs=require('fs'),path=require('path');
+          const files=fs.readdirSync('reports').filter(f=>f.endsWith('.report.json'));
+          const groups={};
+          for(const file of files){
+            const slug=file.replace(/-\d+\.report\.json$/,'');
+            const report=JSON.parse(fs.readFileSync(path.join('reports',file)));
+            const scores=Object.fromEntries(['performance','accessibility','best-practices','seo'].map(k=>[k,report.categories[k].score]));
+            (groups[slug]??=[]).push(scores);
+          }
+          const median=values=>values.sort((a,b)=>a-b)[Math.floor(values.length/2)];
+          const summary=Object.fromEntries(Object.entries(groups).map(([slug,runs])=>[slug,Object.fromEntries(Object.keys(runs[0]).map(k=>[k,median(runs.map(r=>r[k]))]))]));
+          fs.writeFileSync('reports/summary.json',JSON.stringify({iterations:3,pages:summary},null,2));
+          console.log(JSON.stringify(summary));
+          if(Object.values(summary).some(s=>s.accessibility<.95||s.seo<.95))process.exit(1);
+          NODE
       - uses: actions/upload-artifact@v4
         if: always()
         with:
