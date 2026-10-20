@@ -19,6 +19,7 @@ on:
       - 'automation/build_matched_pages.py'
       - 'automation/apply_social_metadata.py'
       - 'automation/build_sitemaps.py'
+      - 'automation/build_brand_pages.py'
       - '.github/workflows/catalog.yml'
   workflow_dispatch:
 permissions:
@@ -43,6 +44,7 @@ jobs:
       - run: python automation/build_category_pages.py
       - run: python automation/build_product_pages.py
       - run: python automation/build_matched_pages.py
+      - run: python automation/build_brand_pages.py
       - run: python automation/build_home_data.py
       - run: python automation/apply_social_metadata.py
       - run: python automation/build_sitemaps.py
