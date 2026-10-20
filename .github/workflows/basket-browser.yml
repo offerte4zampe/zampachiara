@@ -41,7 +41,7 @@ jobs:
         with:
           node-version: '22'
       - name: Test basket and pricing invariants
-        run: node --test tests/test_basket.mjs tests/test_trade.mjs tests/test_report.mjs tests/test_metrics.mjs tests/test_daily_cost.mjs tests/test_price_history.mjs tests/test_notification_plan.mjs
+        run: node --test tests/test_basket.mjs tests/test_trade.mjs tests/test_report.mjs tests/test_metrics.mjs tests/test_daily_cost.mjs tests/test_price_history.mjs tests/test_notification_plan.mjs tests/test_search_suggest.mjs
       - name: Test schema and generators without external services
         run: python -m unittest discover -s tests
       - name: Generate local observed history shards

@@ -8,6 +8,7 @@ a.append(el('p',o.merchant+' · '+o.brand,'micro'),productTitle(o,spotlight?'h2'
 if(o.weight_kg)a.append(el('p',money.format(o.price/o.weight_kg)+'/kg · spedizione esclusa','micro'));
 a.append(el('p','Rilevato: '+new Date(o.checked_at).toLocaleString('it-IT'),'micro'));
 a.append(link('Confronta il prodotto →',{q:o.title.slice(0,110)},'btn secondary'));const report=el('a','Prezzo o dati sbagliati? Segnala','micro');report.href=O4ZTrade.reportUrl(o);a.append(report);return a}
+O4ZSuggest.mount($('home-query'),O4ZSuggest.catalog,o=>{location.href='confronta-cibo.html?'+new URLSearchParams({q:o.title})});
 const fresh=s=>Number.isFinite(Date.parse(s))&&Date.now()-Date.parse(s)<=36*3600000&&Date.now()-Date.parse(s)>=-300000;
 for(const node of document.querySelectorAll('[data-home-offer]'))if(!fresh(node.dataset.homeOffer))node.replaceChildren(el('p','Rilevazione da aggiornare. Consulta il catalogo per verificare il prezzo.','micro'),link('Apri il catalogo →',{},'btn secondary'));
 (async()=>{try{const r=await fetch('data/home.json',{cache:'no-cache'});if(!r.ok)throw Error();const d=await r.json();if(document.getElementById('main').dataset.homeGenerated===d.generated_at)return;const rows=d.offers.filter(o=>Number.isFinite(o.price)&&o.price>0&&o.available&&url(o.url));
