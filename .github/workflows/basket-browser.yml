@@ -5,6 +5,13 @@ on:
     branches: [main]
     paths:
       - 'site/assets/price-history.js'
+      - 'site/assets/newsletter-readiness.js'
+      - 'site/assets/newsletter.js'
+      - 'site/newsletter.html'
+      - 'site/data/newsletter.json'
+      - 'worker/notification-plan.mjs'
+      - 'worker/schema/**'
+      - 'tests/test_notification*'
       - 'site/assets/home.js'
       - 'site/index.html'
       - 'tests/test_price_history.mjs'
@@ -32,7 +39,9 @@ jobs:
         with:
           node-version: '22'
       - name: Test basket and pricing invariants
-        run: node --test tests/test_basket.mjs tests/test_trade.mjs tests/test_report.mjs tests/test_metrics.mjs tests/test_daily_cost.mjs tests/test_price_history.mjs
+        run: node --test tests/test_basket.mjs tests/test_trade.mjs tests/test_report.mjs tests/test_metrics.mjs tests/test_daily_cost.mjs tests/test_price_history.mjs tests/test_notification_plan.mjs
+      - name: Test schema and generators without external services
+        run: python -m unittest discover -s tests
       - name: Generate local observed history shards
         run: python automation/update_history.py
       - name: Install pinned browser driver
