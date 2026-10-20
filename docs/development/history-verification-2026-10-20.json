@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-20",
+  "implementation_commit": "666fa39664b05dc6f50c8d3a28b76cf43070554d",
+  "guard_commit": "f1cf247f528e54724c6ed4683b152dadc6860aeb",
+  "tests": {
+    "python": 36,
+    "node": 23,
+    "browser_run": 39375509832,
+    "viewport": [
+      393,
+      852
+    ],
+    "snapshot_clock": "2026-10-20T05:32:38.299176+00:00",
+    "history_periods": [
+      30,
+      90,
+      180
+    ],
+    "history_lazy_requests": 1,
+    "history_horizontal_overflow": 0,
+    "daily_manual_calculation": true,
+    "add_from_catalog": true,
+    "total_default": true,
+    "quantity_persisted": 2,
+    "missing_offer_no_total": true,
+    "horizontal_overflow_pixels": 0,
+    "uncaught_errors": [],
+    "external_network": "blocked",
+    "production_writes": false
+  },
+  "catalog_run": 39375406099,
+  "public": {
+    "script_http": 200,
+    "matched_page_http": 200,
+    "matched_history_hosts": 2,
+    "shard_http": 200,
+    "shard_bytes": 1352,
+    "shard_offers": 63,
+    "retention_days": 180,
+    "updated_at": "2026-10-20T05:32:38.299176+00:00"
+  },
+  "payload_sample": {
+    "before_aggregate_gzip": 247694,
+    "after_shard_median_gzip": 1190,
+    "after_shard_max_gzip": 1676,
+    "causality": "payload comparison only; no new LCP measurement"
+  },
+  "limitations": [
+    "Only observed daily min/max, not every intraday sample",
+    "180-day window is retention, not historical data coverage",
+    "Recipe/format identity baseline may reset earlier observations",
+    "External account/legal/email/analytics blocks remain"
+  ]
+}
