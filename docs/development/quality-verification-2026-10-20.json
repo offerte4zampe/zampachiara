@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-20",
+  "implementation_commit": "47854eb0bf73c83e1b665dd83af2d9a6c70f5c1b",
+  "published_data_commit": "2a5b78c52881ad16a43a93f67bb2956d142f1129",
+  "tests": {
+    "python": 40,
+    "node": 23,
+    "catalog_run": 39386182488,
+    "mobile_run": 39386182422,
+    "conclusion": "success"
+  },
+  "public": {
+    "url": "https://offerte4zampe.it/correzioni",
+    "http": 200,
+    "documented_internal_corrections": 2,
+    "checked_at": "2026-10-20T07:23:58.940940+00:00",
+    "input_offers": 13168,
+    "published_offers": 13168,
+    "quarantined": 0,
+    "repaired": 0
+  },
+  "limitations": [
+    "Outlier status is suspicion only, not proven merchant error",
+    "No remote HTTP link checking yet",
+    "Reference-price discount basis not yet verified",
+    "No new Lighthouse or field measurements",
+    "Newsletter, accounts, feeds and legal external dependencies remain"
+  ]
+}
