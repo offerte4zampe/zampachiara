@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-20",
+  "feature_commit": "f12b295eb8ab3c4152ecfe60c7e110124a3a53c9",
+  "data_commit": "ed53802392d6b1dd005b7d5fb24e489653e4a8f2",
+  "checks": {
+    "python_tests": 54,
+    "node_tests": 27,
+    "browser_run": "https://github.com/offerte4zampe/zampachiara/actions/runs/39424585584",
+    "browser_result": "success",
+    "catalog_run": "https://github.com/offerte4zampe/zampachiara/actions/runs/39424585637",
+    "catalog_result": "success",
+    "cloudflare_data_result": "success",
+    "public_food_guide_http": 200,
+    "public_litter_guide_http": 200,
+    "public_sitemap_guides_count": 2
+  },
+  "limitations": [
+    "No medical/nutritional equivalence or veterinarian review claimed",
+    "250 g/day is explicitly an arithmetic assumption, not a recommendation",
+    "Static dated price examples require periodic generation",
+    "Other original guides and monthly observatory remain open",
+    "No new Lighthouse or CrUX measurement"
+  ]
+}
