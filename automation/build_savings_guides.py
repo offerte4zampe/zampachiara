@@ -187,6 +187,33 @@ def history_content(offers, now, history=None):
 GUIDES.append(('leggere-storico-prezzi','Come leggere lo storico prezzi senza farsi ingannare','Minimi, massimi e giorni realmente osservati: esempi del catalogo per distinguere una finestra di ricerca da una serie storica completa.',history_content))
 
 
+
+def identity_examples(offers, now):
+    choices=groups([o for o in offers if eligible(o,now)])
+    return sorted(choices.items(),key=lambda item:(product_label(item[1][0]).casefold(),item[0]))[:2]
+
+
+def identity_content(offers, now):
+    rows=[]
+    for key,items in identity_examples(offers,now):
+        for o in sorted(items,key=lambda item:(item['merchant'].casefold(),item['id'])):
+            rows.append(f'<tr><td>{source_link(o)}<br>{h(o["merchant"])}</td><td>{h(key[0])}</td><td>{h(o["brand"])}</td><td>{o["weight_kg"]:g} kg</td><td>{money(o["price"])}</td><td>{h(o["checked_at"][:16].replace("T"," "))} UTC</td></tr>')
+    table='<p>Nessun esempio recente confrontabile in più negozi: i prodotti senza abbinamento certo restano separati.</p>'
+    if rows:
+        table='<div class="guide-table" tabindex="0" role="region" aria-label="Identità dichiarata dello stesso formato"><table><caption>Esempi con GTIN, marca e peso netto coincidenti; prezzi della confezione, spedizione esclusa</caption><thead><tr><th>Prodotto e fonte</th><th>GTIN</th><th>Marca</th><th>Peso netto</th><th>Prezzo</th><th>Rilevazione</th></tr></thead><tbody>'+''.join(rows)+'</tbody></table></div>'
+    return ('<h2>Prima del prezzo controlla cosa stai comprando</h2><p>Due titoli simili possono descrivere ricette, quantità o confezioni diverse. Una foto uguale non basta: può raffigurare una linea intera oppure un formato diverso da quello selezionato. Prima di scegliere il prezzo più basso, verifica nome completo, variante, quantità netta e numero di unità nella scheda del negozio. Il nostro confronto economico non certifica equivalenza nutrizionale.</p>'
+        '<h2>Gli identificatori che usiamo nel catalogo</h2><p>Per riunire offerte di negozi diversi richiediamo un GTIN con cifra di controllo valida, la stessa marca normalizzata e lo stesso peso netto dichiarato. Non correggiamo un codice mancante copiandolo da una foto o da un prodotto dal nome simile. La cifra di controllo verifica la struttura del numero: non garantisce da sola che il negozio lo abbia assegnato correttamente al prodotto.</p>'
+        '<h2>Esempi leggibili, non una classifica di convenienza</h2><p>Queste righe provengono dal catalogo recente e disponibile al rilevamento. Il codice viene riportato per consentire un controllo, insieme a marca, peso, fonte e data. La selezione dei gruppi è alfabetica, non ordinata per commissione. I prezzi escludono la spedizione: una differenza fra righe non dimostra quale ordine completo costi meno.</p>'+table+
+        '<h2>Il codice del negozio non è il codice del prodotto</h2><p>Il numero nella URL o nella scheda può essere un identificatore interno del venditore. Due negozi possono usare numeri diversi per lo stesso prodotto; lo stesso negozio può cambiare pagina mantenendo una parte del titolo. Non confrontare questi identificatori come se fossero GTIN. Quando manca il codice condiviso, puoi cercare e leggere le offerte, ma il sito non le unisce automaticamente in un confronto certo.</p>'
+        '<h2>Nei multipack verifica entrambe le quantità</h2><p>Una vendita può comprendere più unità. Il peso di una singola busta e il peso totale del pacco non sono intercambiabili. Il codice mostrato può riferirsi alla singola unità oppure alla confezione venduta: non deduciamo quale dei due sia dal solo titolo. Se quantità e codice non sono sufficientemente chiari, teniamo separata l’offerta anziché moltiplicare una quantità ipotizzata. Controlla anche che il prezzo corrisponda alla variante effettivamente selezionata.</p>'
+        '<h2>Che cosa fare se non trovi il confronto</h2><p>Prova il nome della linea e poi il formato nel <a href="confronta-cibo.html">comparatore</a>. L’assenza di un gruppo non significa che il prodotto sia venduto da un solo negozio: può mancare un dato, essere scaduta una rilevazione o essere diverso il formato importato. Non sostituire un prodotto nella lista solo per ottenere un risultato più economico. Usa la <a href="carrello-risparmio.html">lista risparmio</a> quando le identità dei tuoi articoli sono confermate.</p>'
+        '<h2>L’ultimo controllo avviene nel negozio</h2><p>Apri la fonte e verifica ricetta, formato, numero di pezzi, disponibilità e importo nel carrello. I dati importati possono contenere errori: anche una coincidenza dei tre campi rimane un criterio documentato di abbinamento, non una garanzia assoluta. Se noti una discrepanza, usa “Prezzo sbagliato?” accanto all’offerta indicando il dato da correggere. Non occorre allegare informazioni sul pagamento o altri dati personali.</p>'
+        '<p>Per confrontare taglie diverse senza confonderle leggi la <a href="prezzo-confezione-o-prezzo-kg.html">guida al prezzo della confezione e al costo/kg</a>. Per valutare un ordine intero consulta le <a href="spedizione-gratuita-conviene.html">condizioni di spedizione</a>: stesso prodotto e stesso pagamento completo sono due controlli distinti.</p>')
+
+
+GUIDES.append(('stesso-prodotto-formato-gtin','Stesso prodotto o solo un nome simile? Controlla formato e GTIN','Esempi del catalogo per distinguere codice prodotto, formato e multipack prima di confrontare i prezzi tra negozi.',identity_content))
+
+
 def build():
     now=dt.datetime.now(dt.timezone.utc)
     catalog=json.loads(gzip.decompress((ROOT/'site/data/catalog.json.gz').read_bytes()))

@@ -2,7 +2,7 @@ import datetime as dt
 import json
 import re
 import unittest
-from automation.build_savings_guides import food_examples, food_content, litter_examples, document, pack_content, shipping_content, observed_examples, history_content
+from automation.build_savings_guides import food_examples, food_content, litter_examples, document, pack_content, shipping_content, observed_examples, history_content, identity_examples, identity_content
 
 
 class SavingsGuidesTests(unittest.TestCase):
@@ -67,3 +67,15 @@ class SavingsGuidesTests(unittest.TestCase):
         html=history_content([self.o],self.now,history)
         self.assertIn('9,00 €',html)
         self.assertIn(day,html)
+
+    def test_identity_guide_requires_exact_format_and_preserves_merchant_tracking(self):
+        other=self.o|dict(id='b',merchant_id='b',merchant='Shop B',affiliate_url='https://example.com/tracked')
+        self.assertEqual(len(identity_examples([self.o,other],self.now)),1)
+        html=identity_content([self.o,other],self.now)
+        self.assertIn('4006381333931',html)
+        self.assertIn('https://example.com/tracked',html)
+        self.assertIn('sponsored',html)
+        self.assertIn('spedizione esclusa',html)
+        for patch in [dict(gtin='4006381333932'),dict(weight_kg=3),dict(brand='Other'),dict(available=False),dict(checked_at='2020-01-01T00:00:00Z')]:
+            self.assertEqual(identity_examples([self.o,other|patch],self.now),[])
+            self.assertNotIn('<table',identity_content([self.o,other|patch],self.now))

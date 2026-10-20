@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 
 export async function checkGuides(page, origin) {
-  for (const slug of ['costo-crocchette-cane', 'confrontare-prezzi-lettiere', 'prezzo-confezione-o-prezzo-kg', 'spedizione-gratuita-conviene', 'leggere-storico-prezzi']) {
+  for (const slug of ['costo-crocchette-cane', 'confrontare-prezzi-lettiere', 'prezzo-confezione-o-prezzo-kg', 'spedizione-gratuita-conviene', 'leggere-storico-prezzi', 'stesso-prodotto-formato-gtin']) {
     await page.goto(origin+'/'+slug+'.html', {waitUntil:'domcontentloaded'});
     assert.equal(await page.$$eval('main h1', es=>es.length),1);
     assert(await page.$('.guide-table table caption'));
