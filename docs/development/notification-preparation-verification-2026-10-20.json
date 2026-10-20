@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-20",
+  "commit": "2ee1fa4b7bae782a13c226d40ab06e67f2b1926b",
+  "tests": {
+    "python": 41,
+    "node": 26,
+    "browser_run": 39401800645,
+    "conclusion": "success",
+    "newsletter_link_hidden": true,
+    "newsletter_href": "#",
+    "external_network": "blocked"
+  },
+  "deploy": {
+    "cloudflare": "success",
+    "public_config_http": 200,
+    "signup_url": null,
+    "all_verification_flags": false
+  },
+  "prepared": [
+    "fail-closed newsletter readiness checks",
+    "offline price threshold crossing planner",
+    "SQL schema tested in memory",
+    "activation handoff with remaining work"
+  ],
+  "not_activated": [
+    "email collection",
+    "provider calls",
+    "email sending",
+    "remote database or migration",
+    "subscription endpoint",
+    "delivery adapter",
+    "notification schedule"
+  ],
+  "sources": [
+    "https://developers.brevo.com/reference/create-doi-contact",
+    "https://developers.cloudflare.com/d1/reference/migrations/"
+  ],
+  "next": "Bounded nontracking link checks, original data-based content, accessibility and final roadmap verification"
+}
