@@ -5,6 +5,12 @@ import gzip
 import json
 import pathlib
 
+
+try:
+    from automation.report_link import error_link
+except ImportError:
+    from report_link import error_link
+
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 
 
@@ -104,7 +110,7 @@ def render_home(html, payload):
         image = o.get('image', '')
         img = f'<img src="{h(image,quote=True)}" alt="" width="160" height="145" loading="lazy">' if image.startswith('https://') else ''
         unit = f'<p class="micro">{money(o["price"]/o["weight_kg"])}/kg · spedizione esclusa</p>' if o.get('weight_kg') else '<p class="micro">Spedizione esclusa</p>'
-        return f'''<article class="{'spotlight-product' if spotlight else 'home-deal'}" data-home-offer="{h(o['checked_at'],quote=True)}">{img}<p class="micro">{h(o['merchant'])} · {h(o['brand'])}</p><{tag}>{h(o['title'])}</{tag}><p class="micro">{h(o.get('variant') or '')}</p><p class="catalog-price"><strong>{money(o['price'])}</strong><del>{money(o['previous_price'])}</del><span class="catalog-sale">−{int((1-o['price']/o['previous_price'])*100+.5)}%</span></p>{unit}<p class="micro">Rilevato: <time datetime="{h(o['checked_at'],quote=True)}">{h(o['checked_at'][:16].replace('T',' '))} UTC</time></p>{link('Confronta il prodotto →', q=o['title'][:110]).replace('<a ', '<a class="btn secondary" ')}</article>'''
+        return f'''<article class="{'spotlight-product' if spotlight else 'home-deal'}" data-home-offer="{h(o['checked_at'],quote=True)}">{img}<p class="micro">{h(o['merchant'])} · {h(o['brand'])}</p><{tag}>{h(o['title'])}</{tag}><p class="micro">{h(o.get('variant') or '')}</p><p class="catalog-price"><strong>{money(o['price'])}</strong><del>{money(o['previous_price'])}</del><span class="catalog-sale">−{int((1-o['price']/o['previous_price'])*100+.5)}%</span></p>{unit}<p class="micro">Rilevato: <time datetime="{h(o['checked_at'],quote=True)}">{h(o['checked_at'][:16].replace('T',' '))} UTC</time></p>{link('Confronta il prodotto →', q=o['title'][:110]).replace('<a ', '<a class="btn secondary" ')}{error_link(o)}</article>'''
     deals, hero = pick(payload)
     parts = {
         'home-deals': ''.join(card(o) for o in deals),

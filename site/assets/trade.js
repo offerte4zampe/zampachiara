@@ -26,5 +26,6 @@ function groupOffers(rows,now=Date.now()){
  const index=new Map();for(const o of rows){const k=matchKey(o,now);if(k){if(!index.has(k))index.set(k,[]);index.get(k).push(o)}}
  const used=new Set();return rows.flatMap(o=>{const k=matchKey(o,now),g=index.get(k);if(!g||new Set(g.map(x=>x.merchant_id)).size<2)return [[o]];if(used.has(k))return [];used.add(k);return [g]});
 }
-const api={shipping,discount,merchant,matchKey,groupOffers};if(typeof module!=='undefined')module.exports=api;else root.O4ZTrade=api;
+function reportUrl(o){const p=new URLSearchParams();for(const [key,source,limit] of [['id','id',100],['title','title',240],['shop','merchant',100],['price','price',30],['checked','checked_at',60]])p.set(key,String(o[source]??'').slice(0,limit));return 'segnala-errore.html?'+p;}
+const api={shipping,discount,merchant,matchKey,groupOffers,reportUrl};if(typeof module!=='undefined')module.exports=api;else root.O4ZTrade=api;
 })(typeof window!=='undefined'?window:this);

@@ -20,6 +20,12 @@ try:
 except ImportError:
     from list_schema import append_list_schema
 
+
+try:
+    from automation.report_link import error_link
+except ImportError:
+    from report_link import error_link
+
 ROOT = Path(__file__).resolve().parents[1]
 BASE = 'https://offerte4zampe.it/'
 
@@ -81,7 +87,7 @@ def render(template,key,rows,slug):
             rel = 'sponsored noopener noreferrer' if o.get('affiliate_url') else 'noopener noreferrer'
             action = f'<a class="btn secondary" href="{h(merchant_url(o),quote=True)}" target="_blank" rel="{rel}">Vai al negozio ↗</a>'
         disclosure = '<p class="micro">Possiamo ricevere una commissione, senza costi aggiuntivi per te.</p>' if o.get('affiliate_url') else ''
-        cards.append(f'<article class="panel"><h2>{h(o["merchant"])}</h2><p>{h(o["title"])}</p><p>{h(o.get("variant") or "Formato dichiarato nel catalogo")} · {o["weight_kg"]} kg</p><p class="catalog-price"><strong>{o["price"]:.2f} €</strong></p><p>{o["price"]/o["weight_kg"]:.2f} €/kg · spedizione esclusa</p><p>{"Disponibile" if o["available"] else "Non disponibile"} al rilevamento</p><p class="micro">Recupero dati: <time datetime="{h(o["checked_at"],quote=True)}">{h(o["checked_at"])}</time></p>{action}{disclosure}</article>')
+        cards.append(f'<article class="panel"><h2>{h(o["merchant"])}</h2><p>{h(o["title"])}</p><p>{h(o.get("variant") or "Formato dichiarato nel catalogo")} · {o["weight_kg"]} kg</p><p class="catalog-price"><strong>{o["price"]:.2f} €</strong></p><p>{o["price"]/o["weight_kg"]:.2f} €/kg · spedizione esclusa</p><p>{"Disponibile" if o["available"] else "Non disponibile"} al rilevamento</p><p class="micro">Recupero dati: <time datetime="{h(o["checked_at"],quote=True)}">{h(o["checked_at"])}</time></p>{action}{disclosure}{error_link(o)}</article>')
     query = urlencode(dict(gtin=key[0],weight=key[1],matchbrand=key[2]))
     body = f'<section class="pagehero"><div class="wrap"><nav aria-label="Percorso"><a href="index.html">Home</a> / <a href="confronti-prodotti.html">Confronti per prodotto</a></nav><h1>{h(title)}</h1><p>GTIN {h(key[0])} · marca {h(seed["brand"])} · peso netto {seed["weight_kg"]} kg.</p></div></section><section class="section"><div class="wrap"><p class="notice">Confronto basato sullo stesso codice GTIN, marca e peso netto dichiarati dai negozi. Controlla comunque ricetta, etichetta e confezione. Prezzi rilevati, non in tempo reale; spedizione esclusa. Un prezzo inferiore non è automaticamente il totale più conveniente.</p><div class="catalog-grid">'+''.join(cards)+f'</div><h2>Confronta anche la spedizione</h2><p>Il comparatore permette di impostare quantità e destinazione. Il totale viene stimato soltanto se le condizioni del negozio e il peso di spedizione sono verificabili.</p><a class="btn" href="confronta-cibo.html?{h(query,quote=True)}">Apri il confronto completo →</a><p><a href="prodotti.html">Altri prodotti</a> · <a href="chi-siamo.html">Metodo e fonti</a> · <a href="confronta-cibo.html#manual-tool">Calcola il costo giornaliero con la razione del produttore</a></p><p class="micro">I cataloghi sono recuperati periodicamente; il feed del fornitore può avere un aggiornamento differito. Il prezzo valido è quello mostrato nel negozio prima del pagamento.</p></div></section>'
     output = page(template,slug,title,product_label(seed)+'. GTIN '+key[0]+': prezzi e costo al kg tra negozi, spedizione esclusa, con data di rilevamento.',body)

@@ -32,3 +32,5 @@ body{background:var(--cream);font-family:'Trebuchet MS',system-ui,-apple-system,
 @media(max-width:580px){#catalog-status{min-block-size:8em}#catalog-identity-status{min-block-size:8em}}
 /* Brand landing cards use section headings without oversized page typography. */
 .catalog-card h2{font-size:18px;line-height:1.4}
+
+.field textarea{width:100%;max-width:100%;font:inherit;padding:12px;border:1px solid var(--line);border-radius:10px;background:#fffdf7;resize:vertical}.field textarea:focus{outline:3px solid #88c3ba;outline-offset:2px}.report-context dd{margin-inline-start:0;overflow-wrap:anywhere;margin-block-end:12px}

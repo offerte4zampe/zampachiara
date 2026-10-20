@@ -9,6 +9,12 @@ try:
 except ImportError:
     from list_schema import append_list_schema
 
+
+try:
+    from automation.report_link import error_link
+except ImportError:
+    from report_link import error_link
+
 ROOT=Path(__file__).resolve().parents[1]
 PRODUCTS=[
  ('monge-maxi-adult-pollo','bauzaar:56820456423749'),
@@ -63,7 +69,7 @@ def build():
             price=f'{o["price"]:.2f} €' if recent else 'Non aggiornato'
             unit=unit if recent else 'Non aggiornato'
             buy=(f'<a class="btn secondary" data-metric="merchant_click" data-merchant="{h(o["merchant"])}" href="{h(o.get("affiliate_url") or o["url"],quote=True)}" target="_blank" rel="sponsored noopener noreferrer">Vedi nel negozio ↗</a>' if recent and o['available'] else 'Acquisto da verificare')
-            table.append(f'<tr><td>{h(o.get("variant") or "Formato non specificato")}</td><td>{price}</td><td>{unit}</td><td>{availability}</td><td>{h(o["checked_at"][:10])}</td><td>{buy}</td></tr>')
+            table.append(f'<tr><td>{h(o.get("variant") or "Formato non specificato")}</td><td>{price}</td><td>{unit}</td><td>{availability}</td><td>{h(o["checked_at"][:10])}</td><td>{buy}{error_link(o)}</td></tr>')
         body=f'''<section class="pagehero"><div class="wrap"><span class="eyebrow">{h(seed['brand'])} · Prezzi dal catalogo</span><h1>{h(title)}</h1><p>{h(desc)}</p><a class="btn secondary" href="prodotti.html">← Tutti i prodotti in evidenza</a></div></section><section class="section"><div class="wrap content"><h2>Formati rilevati presso {h(seed['merchant'])}</h2><p>Questa scheda raccoglie le varianti con lo stesso nome e marca nel catalogo di {h(seed['merchant'])}. Non è un confronto verificato fra negozi: senza un codice EAN non uniamo automaticamente prodotti dai nomi simili.</p><div style="overflow-x:auto"><table><thead><tr><th>Formato</th><th>Prezzzo prodotto</th><th>Prezzo al kg</th><th>Disponibilità rilevata</th><th>Rilevato il</th><th>Negozio</th></tr></thead><tbody>{''.join(table)}</tbody></table></div><p class="notice">Spedizione esclusa. Prezzo e disponibilità possono cambiare: il totale valido è quello mostrato dal negozio al pagamento. I link Bauzaar sono commerciali: possiamo ricevere una commissione, senza costi aggiuntivi per te.</p><h2>Come confrontare questo prodotto</h2><p>Per {h(seed['title'])}, controlla che il nome completo, la ricetta e la fascia di età riportati sulla confezione coincidano. Una confezione più grande può avere un prezzo al kg inferiore, ma richiede più spazio e deve essere consumata nei tempi indicati dal produttore.</p><p>Il prezzo al kg divide il prezzo rilevato per il peso esplicito della variante; non converte litri in kg e non comprende la spedizione. Non indica da solo il costo giornaliero: quello dipende dalla razione adatta al tuo animale.</p><h2>Vuoi cercarlo anche negli altri cataloghi?</h2><p>Il comparatore cerca il testo nei cataloghi importati. I risultati possono includere ricette e formati diversi: verifica le confezioni prima di confrontare i prezzi.</p><a class="btn" href="confronta-cibo.html?q={quote(seed['title'])}">Cerca nel comparatore →</a><p class="micro">Aggiornamento previsto ogni sei ore. Ogni riga mostra la data effettiva del prezzo. <a href="chi-siamo.html">Metodo di raccolta</a>.</p></div></section>'''.replace('Prezzzo','Prezzo')
         (ROOT/f'site/{slug}.html').write_text(page(template,slug,title,desc,body)); urls.append(slug)
         list_items.append((seed['title'],'https://offerte4zampe.it/'+slug))

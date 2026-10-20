@@ -6,7 +6,7 @@ function card(o,spotlight=false){const a=document.createElement('article');a.cla
 a.append(el('p',o.merchant+' · '+o.brand,'micro'),el(spotlight?'h2':'h3',o.title),el('p',o.variant,'micro'));const p=el('p','','catalog-price');p.append(el('strong',money.format(o.price)));if(O4ZTrade.discount(o)){p.append(el('del',money.format(o.previous_price)),el('span','−'+Math.round((1-o.price/o.previous_price)*100)+'%','catalog-sale'))}a.append(p);
 if(o.weight_kg)a.append(el('p',money.format(o.price/o.weight_kg)+'/kg · spedizione esclusa','micro'));
 a.append(el('p','Rilevato: '+new Date(o.checked_at).toLocaleString('it-IT'),'micro'));
-a.append(link('Confronta il prodotto →',{q:o.title.slice(0,110)},'btn secondary'));return a}
+a.append(link('Confronta il prodotto →',{q:o.title.slice(0,110)},'btn secondary'));const report=el('a','Prezzo o dati sbagliati? Segnala','micro');report.href=O4ZTrade.reportUrl(o);a.append(report);return a}
 const fresh=s=>Number.isFinite(Date.parse(s))&&Date.now()-Date.parse(s)<=36*3600000&&Date.now()-Date.parse(s)>=-300000;
 for(const node of document.querySelectorAll('[data-home-offer]'))if(!fresh(node.dataset.homeOffer))node.replaceChildren(el('p','Rilevazione da aggiornare. Consulta il catalogo per verificare il prezzo.','micro'),link('Apri il catalogo →',{},'btn secondary'));
 (async()=>{try{const r=await fetch('data/home.json',{cache:'no-cache'});if(!r.ok)throw Error();const d=await r.json();if(document.getElementById('main').dataset.homeGenerated===d.generated_at)return;const rows=d.offers.filter(o=>Number.isFinite(o.price)&&o.price>0&&o.available&&url(o.url));
