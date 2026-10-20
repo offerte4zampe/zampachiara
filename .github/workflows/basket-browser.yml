@@ -26,6 +26,8 @@ on:
       - 'tests/test_basket.mjs'
       - 'site/carrello-risparmio.html'
       - 'tests/check_basket_browser.mjs'
+      - 'tests/check_guides_browser.mjs'
+      - 'automation/build_savings_guides.py'
       - '.github/workflows/basket-browser.yml'
 permissions:
   contents: read

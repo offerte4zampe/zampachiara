@@ -1,0 +1,36 @@
+import datetime as dt
+import json
+import re
+import unittest
+from automation.build_savings_guides import food_examples, food_content, litter_examples, document
+
+
+class SavingsGuidesTests(unittest.TestCase):
+    def setUp(self):
+        self.now=dt.datetime.now(dt.timezone.utc)
+        # Synthetic fixtures used only in tests, never written as public offers.
+        self.o=dict(id='a',merchant_id='a',merchant='Shop A',brand='Brand',title='Food cane',category='Crocchette cani',price=12,weight_kg=2,available=True,url='https://example.com/product',checked_at=self.now.isoformat(),gtin='4006381333931')
+
+    def test_manual_ration_is_explicit_and_price_math_uses_actual_net_weight(self):
+        html=food_content([self.o],self.now)
+        self.assertIn('6,00 €/kg',html);self.assertIn('1,50 €',html);self.assertIn('45,00 €',html)
+        self.assertIn('Non è una razione consigliata',html);self.assertIn('spedizione esclusa',html)
+        self.assertIn(self.o['url'],html)
+
+    def test_stale_missing_weight_medical_and_unavailable_examples_are_not_used(self):
+        for patch in [dict(checked_at='2020-01-01T00:00:00Z'),dict(weight_kg=None),dict(weight_kg=float('nan')),dict(title='Dieta veterinaria cane'),dict(available=False),dict(price=-3)]:
+            self.assertEqual(food_examples([self.o|patch],self.now),[])
+        html=food_content([],self.now);self.assertNotIn('<tr>',html)
+
+    def test_litter_comparison_requires_exact_code_brand_and_net_quantity(self):
+        a=self.o|dict(title='Lettiera 2 kg',category='Lettiera');b=a|dict(id='b',merchant_id='b',merchant='Shop B')
+        self.assertEqual(len(litter_examples([a,b],self.now)),1)
+        for patch in [dict(weight_kg=3),dict(gtin=''),dict(brand='Other'),dict(weight_kg=None)]:
+            self.assertEqual(litter_examples([a,b|patch],self.now),[])
+
+    def test_article_metadata_and_visible_breadcrumb_correspond(self):
+        html=document('<html><head><title>Method</title></head><body><main></main></body></html>','sample','Title','Description','<h2>Content</h2>',self.now)
+        data=json.loads(re.search(r'<script type="application/ld\+json">(.*?)</script>',html)[1])
+        article=data['@graph'][0];self.assertEqual(article['headline'],'Title')
+        self.assertNotIn('datePublished',article);self.assertEqual(article['author']['@type'],'Organization')
+        self.assertIn('guide-risparmio.html',html)
