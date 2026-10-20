@@ -102,6 +102,36 @@ def pack_content(offers, now):
 GUIDES.append(('prezzo-confezione-o-prezzo-kg','Prezzo della confezione o prezzo al kg: cosa confrontare','Esempi dal catalogo per leggere il costo del sacco, verificare formati e multipack e distinguere prezzo unitario da spesa totale.',pack_content))
 
 
+def shipping_content(offers, now, rules=None):
+    if rules is None:
+        rules=json.loads((ROOT/'site/data/shipping-rules.json').read_text())
+    try:
+        age=(now.date()-dt.date.fromisoformat(rules.get('checked_at',''))).days
+        valid=0 <= age <= 7
+    except (TypeError, ValueError):
+        valid=False
+    rows=[]
+    if valid:
+        for mid,rule in sorted(rules.get('merchants',{}).items(),key=lambda item:item[1].get('name','').casefold()):
+            source=rule.get('source','')
+            if not source.startswith('https://'):continue
+            rows.append(f'<tr><td>{h(rule["name"])}</td><td>{h(rule.get("note","Condizioni non disponibili"))}</td><td><a href="{h(source,quote=True)}" rel="noopener noreferrer">Condizioni ufficiali</a></td><td>{h(rules["checked_at"])}</td></tr>')
+    table='<p>Le condizioni disponibili hanno superato la finestra di verifica di sette giorni o non sono complete: consulta il checkout dei negozi per le tariffe attuali.</p>'
+    if rows:
+        table='<div class="guide-table" tabindex="0" role="region" aria-label="Condizioni di spedizione verificate"><table><caption>Consegna standard Italia: limiti e località particolari possono cambiare il totale</caption><thead><tr><th>Negozio</th><th>Condizioni e limiti</th><th>Fonte</th><th>Verifica</th></tr></thead><tbody>'+''.join(rows)+'</tbody></table></div>'
+    return ('<h2>La soglia gratuita è una condizione dell’ordine</h2><p>Quando un negozio propone la spedizione gratuita oltre un importo minimo, il vantaggio riguarda il costo della consegna. Per capire se conviene aggiungere un prodotto devi confrontare due pagamenti completi: la lista che ti serve con la sua spedizione, e la lista ampliata con la nuova spedizione. Raggiungere la soglia non dimostra automaticamente un risparmio.</p>'
+        '<h2>Il confronto da fare senza inventare un carrello</h2><p>Indica con S il subtotale degli articoli necessari e con F la consegna prevista per quella lista. La prima alternativa costa S + F. Se aggiungi un articolo da A euro e la consegna diventa gratuita, la seconda costa S + A. La differenza è A − F: quando A è maggiore di F, paghi di più oggi. Se la consegna non diventa gratuita, va aggiunta anche la nuova tariffa. Questo calcolo confronta l’esborso; l’utilità dell’articolo aggiunto rimane una tua scelta.</p>'
+        '<h2>Le condizioni che abbiamo effettivamente controllato</h2><p>La tabella riprende il registro usato dal carrello risparmio, con fonte e data. Mantiene esplicite le soglie ambigue e le informazioni discordanti. Una tariffa non verificata non viene sostituita con zero. Le condizioni sono mostrate solo entro sette giorni dalla verifica registrata; il checkout resta il riferimento per la tua destinazione.</p>'+table+
+        '<h2>“Da” e “oltre” non sono la stessa soglia</h2><p>Se le condizioni dicono “da” un certo importo, la soglia può includere quell’importo esatto. “Oltre” richiede invece di superarlo. Quando il testo del negozio non chiarisce il punto di confine, il nostro calcolo lascia il totale non disponibile per quel caso. Non aggiungere un centesimo immaginario o una quantità non selezionabile per risolvere il confronto: verifica i prodotti e le condizioni reali del tuo ordine.</p>'
+        '<h2>Controlla anche peso e destinazione</h2><p>La gratuità può avere un limite di peso o escludere alcune località e servizi. Il peso netto serve per il prezzo/kg del prodotto; il peso di spedizione serve per i limiti del corriere. Sono dati diversi. Una confezione con peso netto noto non basta a dimostrare che un ordine rientri nel limite logistico. Se manca il peso necessario o la destinazione richiede un supplemento non noto, evita di considerare certo il totale stimato.</p>'
+        '<h2>Confronta la stessa lista tra negozi</h2><p>Salva gli articoli che ti servono nella <a href="carrello-risparmio.html">lista risparmio</a> e imposta le quantità. Il confronto completo richiede la stessa identità del prodotto e lo stesso formato per ogni voce. Un negozio che dispone solo di parte della lista non è un’alternativa equivalente, anche se il suo subtotale è più basso. La spedizione si applica una volta al singolo ordine, non una volta per ciascun prodotto.</p>'
+        '<h2>Prima di aggiungere una scorta</h2><p>Considera se avresti comunque comprato il prodotto, quando prevedi di usarlo, lo spazio disponibile e le indicazioni di conservazione sulla confezione. Una scorta può anticipare una spesa futura ma aumenta il pagamento immediato. Non scegliere ricette diverse soltanto per raggiungere la gratuità: il confronto del costo non certifica equivalenza nutrizionale. Per distinguere contenuto e costo unitario leggi anche la <a href="prezzo-confezione-o-prezzo-kg.html">guida a confezioni e prezzo/kg</a>.</p>'
+        '<p>Controlla infine il carrello del negozio: quantità selezionata, eventuali vincoli del codice promozionale, consegna per il tuo CAP e importo da pagare. Il sito mostra rilevazioni e regole datate, senza promettere che il checkout resti invariato.</p>')
+
+
+GUIDES.append(('spedizione-gratuita-conviene','Spedizione gratuita: conviene raggiungere la soglia?','Confronta l’esborso della lista con e senza articoli aggiunti, usando soglie, limiti di peso e condizioni ufficiali datate.',shipping_content))
+
+
 def build():
     now=dt.datetime.now(dt.timezone.utc)
     catalog=json.loads(gzip.decompress((ROOT/'site/data/catalog.json.gz').read_bytes()))

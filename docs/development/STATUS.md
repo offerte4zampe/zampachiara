@@ -2,6 +2,11 @@
 
 Ultimo aggiornamento: 20 ottobre 2026.
 
+## Sessione 20 ottobre 2026, guida alla soglia di spedizione
+- Quarta guida originale `/spedizione-gratuita-conviene`: confronto algebrico dei due pagamenti, soglie incluse/escluse, peso logistico distinto dal netto, completezza della lista e utilità delle scorte. Nessun carrello, prezzo o risparmio inventato.
+- Tabella derivata dal registro spedizioni già usato dal carrello, con fonti ufficiali e data; informazioni discordanti mantenute, nessuna gratuità presunta. Oltre sette giorni o con data futura/non valida la tabella viene omessa con avviso. Fonti Bauzaar, WebPet, Isola e Animaliapet ricontrollate il 20 ottobre, coerenti con il registro; nessun cambio delle tariffe.
+- File: generatore guide, nuova pagina e indice, prova browser e test scadenza/ambiguità. 56 test Python locali superati; CI/deploy da verificare. Ancora due–quattro guide per l’obiettivo 6–8, osservatorio con dati reali e checklist finale. Newsletter resta chiusa per i requisiti residui documentati; nessun blocco totale.
+
 ## Sessione 20 ottobre 2026, esito prova DOI autorizzata
 - Nella sessione interattiva Mirco ha richiesto l’iscrizione di un proprio indirizzo di prova, poi confermato «fatto» e «si torna tutto». Brevo mostrava consegna della conferma da capobranco; registrato ora `double_opt_in_verified: true` e data in `site/data/newsletter.json`. Il destinatario di prova e i log personali non sono pubblicati nel repository.
 - La prima conferma è arrivata nello spam secondo il riscontro dell’utente: `inbox_placement_verified: false`. Non attestare recapito in posta in arrivo, reputazione risolta o consegna futura garantita. Non ripetere l’invio in questo ciclo.

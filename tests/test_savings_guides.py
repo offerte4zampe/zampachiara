@@ -2,7 +2,7 @@ import datetime as dt
 import json
 import re
 import unittest
-from automation.build_savings_guides import food_examples, food_content, litter_examples, document, pack_content
+from automation.build_savings_guides import food_examples, food_content, litter_examples, document, pack_content, shipping_content
 
 
 class SavingsGuidesTests(unittest.TestCase):
@@ -43,3 +43,11 @@ class SavingsGuidesTests(unittest.TestCase):
         self.assertIn('sponsored',html)
         self.assertIn('ricette differenti',html)
         self.assertNotIn('<table',pack_content([offer|dict(weight_kg=None)],self.now))
+
+    def test_shipping_rules_expire_and_preserve_uncertainty_without_free_defaults(self):
+        rules={'checked_at':self.now.date().isoformat(),'merchants':{'a':{'name':'A','note':'Tariffa da verificare, soglia ambigua','source':'https://example.com/shipping'}}}
+        html=shipping_content([],self.now,rules)
+        self.assertIn('Tariffa da verificare, soglia ambigua',html)
+        self.assertIn('https://example.com/shipping',html)
+        for day in ['2020-01-01',(self.now.date()+dt.timedelta(days=1)).isoformat(),'not-a-date']:
+            self.assertNotIn('<table',shipping_content([],self.now,rules|{'checked_at':day}))
