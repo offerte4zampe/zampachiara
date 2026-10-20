@@ -221,7 +221,7 @@ def build():
     for slug,title,description,render in GUIDES:
         (ROOT/f'site/{slug}.html').write_text(document(template,slug,title,description,render(catalog['offers'],now),now))
     links=''.join(f'<article class="panel"><h2><a href="{slug}.html">{h(title)}</a></h2><p>{h(description)}</p></article>' for slug,title,description,_ in GUIDES)
-    body='<section class="pagehero"><div class="wrap"><h1>Guide pratiche al risparmio per cani e gatti</h1><p>Metodi riproducibili ed esempi del catalogo, con fonti, date e limiti. Nessuna classifica nutrizionale.</p></div></section><section class="section"><div class="wrap content">'+links+'<p><a href="confronta-cibo.html">Confronta prezzi</a> · <a href="chi-siamo.html">Metodo editoriale</a>.</p></div></section>'
+    body='<section class="pagehero"><div class="wrap"><h1>Guide pratiche al risparmio per cani e gatti</h1><p>Metodi riproducibili ed esempi del catalogo, con fonti, date e limiti. Nessuna classifica nutrizionale.</p></div></section><section class="section"><div class="wrap content">'+links+'<p><a href="confronta-cibo.html">Confronta prezzi</a> · <a href="osservatorio-prezzi.html">Osservatorio prezzi</a> · <a href="chi-siamo.html">Metodo editoriale</a>.</p></div></section>'
     (ROOT/'site/guide-risparmio.html').write_text(page(template,'guide-risparmio','Guide pratiche al risparmio per animali','Guide con esempi reali per confrontare confezioni, costo al kg e spese di spedizione.',body))
 
 
