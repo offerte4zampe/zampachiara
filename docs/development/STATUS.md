@@ -2,6 +2,12 @@
 
 Ultimo aggiornamento: 20 ottobre 2026.
 
+## Sessione 20 ottobre 2026, correzione audit richiesta da Mirco
+- Risolto il blocco della procedura: Lighthouse verifica ora il checkout statico su loopback, senza dipendere dal 403 del dominio pubblico. Il controllo HTTP pubblico resta separato, salvato e segnalato come warning, non come risultato positivo di produzione. Nessuna modifica alle regole Cloudflare o aggiramento delle protezioni.
+- CI 39492896264 riuscita, commit funzionale `7adab04`: 12 rapporti validi, quattro pagine × tre iterazioni. Verificati numero di report, URL locale, assenza di runtimeError e punteggi numerici; soglia 0,95 accessibilità/SEO mantenuta.
+- Mediane locali (performance/accessibilità/best practices/SEO): home 99/100/77/100; comparatore 75/100/77/100; guida costo crocchette 100/100/77/100; Osservatorio 99/100/77/100. Non sono misure Cloudflare, CrUX o prestazioni sul campo e non sono confrontabili causalmente con precedenti test pubblici. Performance del comparatore e best practices richiedono lettura dei report, non sono dichiarate risolte.
+- HTTP pubblico dal runner resta 403: risolta l'esecuzione dell'audit del codice, non l'accessibilità del dominio da quella rete. Non autorizza disabilitare protezioni. Fonte tecnica Lighthouse: https://github.com/GoogleChrome/lighthouse/blob/main/docs/headless-chrome.md . File: `.github/workflows/site-audit.yml`, questo registro e sintesi persistente `lighthouse-local-2026-10-20.json`. Rapporti HTML/JSON in artefatto CI per 14 giorni.
+
 ## Sessione 20 ottobre 2026, integrità dei collegamenti interni
 - Estesa la guardia statica a tutti i collegamenti tra le 310 pagine generate e ai frammenti dichiarati: una destinazione HTML assente o un ancoraggio inesistente blocca ora sia la pipeline cataloghi sia la prova browser. Asset, URL esterni, mailto e protocolli non navigazionali non vengono confusi con pagine.
 - Rapporto pubblico `/data/site-quality.json` portato a `method_version: 2`; restano inclusi i controlli precedenti su canonical, metadati, landmark, immagini, JSON-LD, schede esterne sicure e `rel=sponsored`.

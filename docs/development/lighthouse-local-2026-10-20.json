@@ -1,0 +1,35 @@
+{
+  "scope": "local-static-checkout-not-production",
+  "date": "2026-10-20",
+  "commit": "7adab04bae607d8ee577c901521f2c55877ce343",
+  "run": "https://github.com/offerte4zampe/zampachiara/actions/runs/39492896264",
+  "iterations": 3,
+  "reports": 12,
+  "public_probe_http": 403,
+  "pages": {
+    "home": {
+      "performance": 99,
+      "accessibility": 100,
+      "best_practices": 77,
+      "seo": 100
+    },
+    "confronta-cibo": {
+      "performance": 75,
+      "accessibility": 100,
+      "best_practices": 77,
+      "seo": 100
+    },
+    "costo-crocchette-cane": {
+      "performance": 100,
+      "accessibility": 100,
+      "best_practices": 77,
+      "seo": 100
+    },
+    "osservatorio-prezzi": {
+      "performance": 99,
+      "accessibility": 100,
+      "best_practices": 77,
+      "seo": 100
+    }
+  }
+}
