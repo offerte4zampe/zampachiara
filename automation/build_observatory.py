@@ -15,6 +15,7 @@ except ImportError:
     from build_product_pages import page
 
 ROOT=Path(__file__).resolve().parents[1]
+# Minimum coverage is editorial, never proof of a representative market sample.
 MIN_DAYS=7
 MIN_PAIRS=10
 MIN_MERCHANTS=2

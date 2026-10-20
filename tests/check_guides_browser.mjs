@@ -10,7 +10,7 @@ export async function checkGuides(page, origin) {
     assert.equal(await page.$eval('main', e=>e.textContent.includes('prezzi inventati')),false);
   }
   await page.goto(origin+'/osservatorio-prezzi.html', {waitUntil:'domcontentloaded'});
-  assert.equal(await page.$eval('main h1', es=>es.length),1);
+  assert.equal(await page.$$eval('main h1', es=>es.length),1);
   assert(await page.$('a[download][href="data/price-observatory.json"]'));
   assert(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth<=1),'Observatory causes page overflow');
   const data=await page.evaluate(async()=>fetch('/data/price-observatory.json').then(r=>r.json()));
