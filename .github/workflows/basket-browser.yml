@@ -4,6 +4,8 @@ on:
   push:
     branches: [main]
     paths:
+      - 'site/assets/daily-cost.js'
+      - 'tests/test_daily_cost.mjs'
       - 'site/assets/basket.js'
       - 'site/assets/catalog.js'
       - 'site/assets/trade.js'
@@ -26,7 +28,7 @@ jobs:
         with:
           node-version: '22'
       - name: Test basket and pricing invariants
-        run: node --test tests/test_basket.mjs tests/test_trade.mjs tests/test_report.mjs tests/test_metrics.mjs
+        run: node --test tests/test_basket.mjs tests/test_trade.mjs tests/test_report.mjs tests/test_metrics.mjs tests/test_daily_cost.mjs
       - name: Install pinned browser driver
         run: npm install --prefix "$RUNNER_TEMP/basket-browser" puppeteer-core@25.14.0
       - name: Test isolated mobile basket

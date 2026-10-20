@@ -38,3 +38,8 @@ body{background:var(--cream);font-family:'Trebuchet MS',system-ui,-apple-system,
 .basket-total{font-size:24px;font-weight:800;color:var(--green)}.basket-offer{border-top:1px solid var(--line);padding-block:16px}.basket-offer h3{font-size:18px;line-height:1.4}#basket-items,#basket-orders{display:grid;gap:18px;margin-block:20px}#basket-items h2{font-size:19px;line-height:1.4}#basket-items input{font:inherit;padding:8px;width:80px;margin:10px}#basket-items button{margin:10px}.btn:disabled{opacity:.6;cursor:not-allowed}
 
 .catalog-basket-bar{padding:12px 16px;border:1px solid var(--line);border-radius:14px;background:#eaf3ed;margin-block:16px}.catalog-basket-bar p{margin:4px 0}
+
+.daily-cost {margin-block:12px;padding-block:8px;border-top:1px solid var(--line,#ddd)}
+.daily-cost label {display:block;font-size:16px}
+.daily-cost input {display:block;max-width:100%;width:160px;min-height:44px;font:inherit;margin-top:6px}
+.daily-cost summary {cursor:pointer;min-height:44px;padding-block:10px}
