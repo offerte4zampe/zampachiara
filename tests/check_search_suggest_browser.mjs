@@ -8,6 +8,7 @@ export async function checkSuggestions(page,origin,catalog){
  assert.equal(await page.$eval('#home-query',e=>e.getAttribute('aria-expanded')),'true');
  assert(await page.$$eval('#home-query-suggestions [role=option]',es=>es.length<=8));
  assert(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth<=1));
+ assert(await page.$eval('#home-query-suggestions',e=>{const box=e.getBoundingClientRect(),y=Math.min(box.bottom-10,innerHeight-10),x=box.left+box.width/2;return y<=box.top||e.contains(document.elementFromPoint(x,y))}),'Suggestions must not be clipped by hero');
  await page.screenshot({path:'browser-reports/search-suggestions-mobile.png',fullPage:true});
  await page.keyboard.press('ArrowDown');
  const expected=await page.$eval('#home-query-suggestions [aria-selected=true]',e=>e.dataset.query);
