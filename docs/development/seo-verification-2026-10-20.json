@@ -1,0 +1,26 @@
+{
+  "checked_at": "2026-10-20T00:41:51.711541+00:00",
+  "home_static_offer_cards": 7,
+  "home_loading_placeholders": 0,
+  "comparison_index_http": 200,
+  "comparison_links_snapshot": 149,
+  "sample_product": "https://offerte4zampe.it/prezzi-03182550702423-0de6505d95",
+  "sample_schema_types": [
+    "BreadcrumbList",
+    "Product"
+  ],
+  "sample_offer_count": 2,
+  "sample_prices_in_html": true,
+  "custom_404_http": 404,
+  "custom_404_search_present": true,
+  "tests_python": 28,
+  "google_rich_results_test": "not_run",
+  "new_lighthouse": "not_run",
+  "notes": "Le quantità cambiano con il catalogo. Validazione locale JSON e coerenza prezzi/schema; nessuna promessa di rich result o indicizzazione.",
+  "social_metadata_live_cache_busted": true,
+  "social_preview_dimensions": [
+    1200,
+    630
+  ],
+  "comparison_index_social_image": "https://offerte4zampe.it/assets/social-compare.png"
+}
