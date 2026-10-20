@@ -16,4 +16,7 @@ export async function checkGuides(page, origin) {
   const data=await page.evaluate(async()=>fetch('/data/price-observatory.json').then(r=>r.json()));
   assert.equal(data.method_version,1);
   assert(data.months.every(row=>row.closed||row.index_previous_month_100===null));
+  const quality=await page.evaluate(async()=>fetch('/data/site-quality.json').then(r=>r.json()));
+  assert.equal(quality.method_version,1);
+  assert.equal(quality.issues.length,0);
 }
