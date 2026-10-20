@@ -86,7 +86,7 @@ def render(template,key,rows,slug):
         if o['available']:
             rel = 'sponsored noopener noreferrer' if o.get('affiliate_url') else 'noopener noreferrer'
             action = f'<a class="btn secondary" href="{h(merchant_url(o),quote=True)}" target="_blank" rel="{rel}">Vai al negozio ↗</a>'
-        daily = h(json.dumps({k:o.get(k) for k in ('price','weight_kg','available','checked_at')},separators=(',',':')),quote=True)
+        daily = h(json.dumps({k:o.get(k) for k in ('price','weight_kg','available','checked_at','category')},separators=(',',':')),quote=True)
         disclosure = '<p class="micro">Possiamo ricevere una commissione, senza costi aggiuntivi per te.</p>' if o.get('affiliate_url') else ''
         cards.append(f'<article class="panel"><h2>{h(o["merchant"])}</h2><p>{h(o["title"])}</p><p>{h(o.get("variant") or "Formato dichiarato nel catalogo")} · {o["weight_kg"]} kg</p><p class="catalog-price"><strong>{o["price"]:.2f} €</strong></p><p>{o["price"]/o["weight_kg"]:.2f} €/kg · spedizione esclusa</p><p>{"Disponibile" if o["available"] else "Non disponibile"} al rilevamento</p><p class="micro">Recupero dati: <time datetime="{h(o["checked_at"],quote=True)}">{h(o["checked_at"])}</time></p>{action}{disclosure}<div data-daily-offer="{daily}"><p class="micro">Calcolo giornaliero disponibile con JavaScript e razione manuale.</p></div>{error_link(o)}</article>')
     query = urlencode(dict(gtin=key[0],weight=key[1],matchbrand=key[2]))

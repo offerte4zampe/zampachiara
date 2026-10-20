@@ -1,6 +1,7 @@
 /* Manual ration only: arithmetic estimate, never a feeding recommendation. */
 (function(root){
 'use strict';
+function isFood(offer){return /crocchette|umido|(?:cani|gatti) > cibo > secco/i.test(String(offer.category||''));}
 function estimate(offer,grams,now=Date.now()){
  const stamp=Date.parse(offer.checked_at),price=Number(offer.price),kg=Number(offer.weight_kg),g=Number(grams);
  if(!offer.available||!Number.isFinite(stamp)||stamp>now+300000||now-stamp>36*3600000)return null;
@@ -9,6 +10,7 @@ function estimate(offer,grams,now=Date.now()){
  return {daily,month30:daily*30,days:kg*1000/g};
 }
 function mount(offer){
+ if(!isFood(offer)){const note=document.createElement('p');note.className='micro';note.textContent='Costo della razione non disponibile: categoria alimentare non verificata.';return note;}
  const details=document.createElement('details'),summary=document.createElement('summary');summary.textContent='Quanto costa al giorno?';details.className='daily-cost';details.append(summary);
  const note=document.createElement('p');note.className='micro';note.textContent='Inserisci la razione totale giornaliera indicata sulla confezione o concordata con il veterinario. Non stimiamo il fabbisogno del tuo animale.';
  const label=document.createElement('label');label.textContent='Razione giornaliera (g) ';
