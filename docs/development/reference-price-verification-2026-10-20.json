@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-20",
+  "commits": [
+    "f8685654a1849a002a6c30123307ae05c7cc4463",
+    "eee76cfa6ae224f88a528e271d25baab65155218"
+  ],
+  "published_data_commit": "5153552230616c2f83329197630e2e85e9518282",
+  "tests": {
+    "python": 40,
+    "node": 23,
+    "browser_run": 39394499116,
+    "catalog_runs": [
+      39394499022,
+      39394697148
+    ],
+    "conclusion": "success"
+  },
+  "public": {
+    "home_http": 200,
+    "home_cards": 6,
+    "struck_prices": 0,
+    "comparator_http": 200,
+    "discount_filter_unavailable": true,
+    "discount_sort_removed": true,
+    "final_home_payload_bytes": 12482
+  },
+  "policy": "No promotional percentages from unverified comparison prices. Current package prices and independent comparisons remain available.",
+  "primary_sources": {
+    "shopify": "https://shopify.dev/docs/api/ajax/reference/product",
+    "mimit": "Indexed official FAQ; full retrieval timed out",
+    "eurlex": "Full retrieval blocked by anti-bot challenge"
+  },
+  "limitations": [
+    "No legal compliance certification",
+    "Home topic exclusions are conservative keyword screening, not veterinary review",
+    "No new Lighthouse or field performance measurement",
+    "External newsletter/legal/merchant/API dependencies remain; roadmap incomplete"
+  ]
+}
