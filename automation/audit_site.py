@@ -5,7 +5,7 @@ import json
 from collections import Counter
 from html.parser import HTMLParser
 from pathlib import Path
-from urllib.parse import urlsplit
+from urllib.parse import unquote, urlsplit
 
 ROOT=Path(__file__).resolve().parents[1]
 BASE='offerte4zampe.it'
@@ -15,10 +15,11 @@ class Page(HTMLParser):
     def __init__(self,text):
         super().__init__(convert_charrefs=True)
         self.lang='';self.canonical=[];self.robots='';self.title=[];self.description=[];self.viewport=False
-        self.h1=0;self.main=0;self.skip=False;self.links=[];self.images=[];self.schemas=[];self._title=False;self._script=False;self._script_type='';self._buffer=''
+        self.h1=0;self.main=0;self.skip=False;self.links=[];self.images=[];self.schemas=[];self.ids=set();self._title=False;self._script=False;self._script_type='';self._buffer=''
         self.feed(text)
     def handle_starttag(self,tag,attrs):
         a=dict(attrs)
+        if a.get('id'):self.ids.add(a['id'])
         if tag=='html':self.lang=a.get('lang','')
         if tag=='link' and 'canonical' in a.get('rel','').split():self.canonical.append(a.get('href',''))
         if tag=='meta' and a.get('name')=='robots':self.robots=a.get('content','').lower()
@@ -43,14 +44,39 @@ class Page(HTMLParser):
             self._script=False;self._script_type='';self._buffer=''
 
 
+def _internal_target(current, href):
+    u=urlsplit(href)
+    if u.scheme and u.scheme not in {'http','https'}:
+        return None
+    if u.netloc and u.netloc!=BASE:
+        return None
+    path=unquote(u.path)
+    if not path:
+        target=current
+    else:
+        clean=path.lstrip('/')
+        if not clean:
+            target='index.html'
+        elif clean.endswith('/'):
+            target=clean.rstrip('/').rsplit('/',1)[-1]+'.html'
+        elif clean.endswith('.html'):
+            target=clean.rsplit('/',1)[-1]
+        elif '.' not in clean.rsplit('/',1)[-1]:
+            target=clean.rsplit('/',1)[-1]+'.html'
+        else:
+            return None
+    return target,unquote(u.fragment)
+
+
 def inspect(site):
-    files=sorted(site.glob('*.html'));issues=[];pages=[];canonicals={}
+    files=sorted(site.glob('*.html'));issues=[];pages=[];canonicals={};parsed={}
     for path in files:
         # Search Console ownership tokens are machine verification files, not pages.
         if path.name.startswith('google') and path.name.endswith('.html'):
             continue
-        p=Page(path.read_text())
-        rel=path.name
+        p=Page(path.read_text());parsed[path.name]=p
+    available=set(parsed)
+    for rel,p in parsed.items():
         local=[]
         if p.lang!='it':local.append('html_lang_it')
         if not p.viewport:local.append('viewport')
@@ -72,6 +98,13 @@ def inspect(site):
             rels=set(link.get('rel','').split())
             if link.get('target')=='_blank' and not {'noopener','noreferrer'}<=rels:local.append('safe_new_tab')
             if ('tc.tradetracker.' in href or 'amazon.' in href and ('tag=' in href or '/dp/' in href)) and 'sponsored' not in rels:local.append('commercial_rel_sponsored')
+            target=_internal_target(rel,href)
+            if target:
+                target_page,fragment=target
+                if target_page not in available:
+                    local.append('valid_internal_link')
+                elif fragment and fragment not in parsed[target_page].ids:
+                    local.append('valid_internal_fragment')
         for image in p.images:
             if 'alt' not in image:local.append('image_alt')
             if not image.get('width') or not image.get('height'):local.append('image_dimensions')
@@ -83,7 +116,6 @@ def inspect(site):
         pages.append({'page':rel,'indexable':indexable,'canonical':p.canonical[0] if len(p.canonical)==1 else None,'issues':local})
     return {'pages_scanned':len(pages),'indexable_pages':sum(p['indexable'] for p in pages),'unique_canonicals':len(canonicals),'issues':issues,'rule_counts':dict(sorted(Counter(i['rule'] for i in issues).items())),'pages':pages}
 
-
 def build():
     result=inspect(ROOT/'site')
     try:
@@ -91,7 +123,7 @@ def build():
         observed_at=catalog.get('generated_at')
     except (OSError,ValueError,EOFError):
         observed_at=None
-    report={'method_version':1,'observed_at':observed_at,**result}
+    report={'method_version':2,'observed_at':observed_at,**result}
     (ROOT/'site/data/site-quality.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
     print('Static quality:',report['pages_scanned'],'pages;',len(report['issues']),'issues')
     if report['issues']:

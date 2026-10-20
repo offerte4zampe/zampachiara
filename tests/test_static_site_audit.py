@@ -35,6 +35,19 @@ class StaticSiteAuditTests(unittest.TestCase):
         rules={x['rule'] for x in self.run_site({'bad.html':html})['issues']}
         self.assertTrue({'html_lang_it','one_h1','skip_link','image_alt','image_dimensions','safe_new_tab','clean_internal_canonical'}<=rules)
 
+    def test_internal_pages_and_fragments_must_resolve(self):
+        one=BASE.format(slug='one',body='<a href="/two#details">Due</a><a href="#main">Inizio</a>')
+        two=BASE.format(slug='two',body='<section id="details">Dettagli</section>')
+        self.assertEqual(self.run_site({'one.html':one,'two.html':two})['issues'],[])
+        broken_page=one.replace('/two#details','/missing')
+        self.assertIn('valid_internal_link',{x['rule'] for x in self.run_site({'one.html':broken_page,'two.html':two})['issues']})
+        broken_fragment=one.replace('#details','#missing')
+        self.assertIn('valid_internal_fragment',{x['rule'] for x in self.run_site({'one.html':broken_fragment,'two.html':two})['issues']})
+
+    def test_assets_external_and_special_schemes_are_not_page_targets(self):
+        body='<a href="/assets/style.css">CSS</a><a href="https://example.com/x">Esterno</a><a href="mailto:ciao@example.com">Email</a>'
+        self.assertEqual(self.run_site({'one.html':BASE.format(slug='one',body=body)})['issues'],[])
+
     def test_search_console_verification_token_is_not_a_content_page(self):
         token='google-site-verification: google123.html'
         result=self.run_site({'google123.html':token,'one.html':BASE.format(slug='one',body='')})
