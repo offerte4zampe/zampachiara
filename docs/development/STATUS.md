@@ -14,8 +14,8 @@ Ultimo aggiornamento: 20 ottobre 2026.
 - 25 test Python e 10 JavaScript superati; Lighthouse mobile ripetuto 3 volte/pagina: performance mediana home97/comparatore86/guida99; CLS0 e accessibilità automatica100 nelle nuove prove.
 
 ## Prossimo lavoro
-1. Completare SEO: pagine marca utili, ItemList sulle liste, sitemap per tipo con lastmod basato su cambiamenti reali; validazione Google Rich Results ancora da eseguire. Home e confronti GTIN sono già prerenderizzati.
-2. Verificare cache/header e accessibilità mobile delle nuove pagine. 404 e metadati social già implementati; niente migrazioni URL inutili.
+1. Completare SEO: ItemList sulle altre liste e validazione Google Rich Results ancora da eseguire; verificare nuova lettura sitemap in Search Console quando disponibile. Home, confronti GTIN e prime cinque marche sono prerenderizzati; sitemap per tipo implementate.
+2. Verificare compressione/cache e accessibilità mobile delle nuove pagine. HSTS statico, 404 e metadati social implementati; niente migrazioni URL inutili.
 3. Copertura matching e peso netto; correzioni prezzo, carrello browser, storico reale, costo giornaliero manuale dove manca razione ufficiale.
 4. UI mobile, accessibilità manuale ove verificabile, contenuti originali verificati.
 5. Predisporre newsletter e alert con test; attivare raccolta/invio solo con requisiti verificati.
@@ -49,3 +49,14 @@ Preservare aggiornamenti altrui e marchio. Commit piccoli, test pertinenti, veri
 - Verifiche: 28 test Python superati, precedenti 10 JavaScript ancora invariati; pipeline confronti e pipeline social concluse con successo, deploy Cloudflare confermati. Esempio pubblico controllato: JSON-LD BreadcrumbList e Product, due offerte e prezzi presenti nell'HTML iniziale. [Evidenze](seo-verification-2026-10-20.json).
 - Limiti: controlli JSON/coerenza dati locali, non ancora Rich Results Test Google; nessun nuovo Lighthouse, nessuna certificazione WCAG o promessa di indicizzazione. Dati e prezzi rimangono fotografie datate. La cache pubblica può mostrare per breve tempo la versione precedente durante la propagazione.
 - Prossime priorità: chiudere le voci SEO ancora aperte sopra; quindi segnalazione errori per offerta, carrello risparmio e storico reale. Non riavviare l'audit o rigenerare una seconda architettura di confronti.
+
+
+## Sessione 20 ottobre 2026, sitemap e marche
+- `automation/build_sitemaps.py` e `tests/test_sitemaps.py`: `/sitemap.xml` ora è un indice di partizioni canoniche per pagine, guide, categorie, prodotti e marche. Esclusi noindex, URL esterni e parametri. L'endpoint registrato in robots/Search Console resta invariato; nuova lettura da Google non ancora verificata.
+- `automation/sitemap-state.json` conserva impronta del contenuto significativo e lastmod osservato. Alla prima inventariazione la data storica sconosciuta viene omessa. Aggiornamenti del solo orologio di recupero o copyright non spostano lastmod; prezzi, testo, link nel contenuto e schema modificati sì. Test specifici passati; riferimento: https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap .
+- `automation/build_brand_pages.py` e `tests/test_brand_pages.py`: cinque landing per Monge, Royal Canin, Farmina, Natural Trainer, Purina Pro Plan, più `/marche`. Richiedono almeno 12 offerte recenti della marca esatta, senza includere automaticamente altre linee. Campione di 24 offerte per pagina con rotazione alfabetica dei negozi, fonte, formato, peso disponibile e data; collegamenti ai confronti GTIN solo quando esistono. Nessuna classifica nutrizionale o selezione per commissioni.
+- ItemList e BreadcrumbList corrispondono ai contenuti visibili delle landing. Verifica pubblica `/marca-monge`: HTTP200, 24 schede e 24 elementi ItemList. Sitemap marche pubblica: sei URL. Collegamento alle marche nella home; fonti, strumenti e guide collegati dalle landing. Le pagine con dati insufficienti diventano noindex senza vecchi prezzi.
+- `.github/workflows/catalog.yml` genera marche prima della home, metadati social e sitemap alla fine; versiona stato e partizioni. Le due esecuzioni catalogo sono concluse con successo. `site/_headers`: HSTS max-age=86400 verificato su risposta pubblica; senza includeSubDomains o preload. Cache osservata: max-age=0, must-revalidate; compressione non certificata.
+- `site/assets/style.css`: titoli delle nuove schede marca a 18px, evitando la tipografia grande della pagina. Nessuna prova browser mobile completa o nuovo Lighthouse in questa sessione.
+- Verifiche: 31 test Python e 10 JavaScript della pipeline; idempotenza/lastmod/noindex, identità esatta della marca e rotazione fonti; XML con URL unici e corrispondenza ItemList/schede. [Evidenze](seo-structure-verification-2026-10-20.json).
+- Prossimo: completare validazioni tecniche pendenti senza riavviare l'audit, quindi segnalazione errori per prezzo e carrello risparmio; nessun blocco totale, continuare il lavoro autorizzato. Restano invariati i blocchi di credenziali, privacy, nuovi feed e invio email sopra elencati.

@@ -1,0 +1,28 @@
+{
+  "checked_at": "2026-10-20T01:43:50.516633+00:00",
+  "python_tests": 31,
+  "javascript_tests_in_catalog_ci": 10,
+  "local_brand_pages": 5,
+  "brand_item_counts": [
+    24,
+    24,
+    24,
+    24,
+    24
+  ],
+  "live_monge_cards": 24,
+  "live_monge_schema_items": 24,
+  "live_monge_schema_types": [
+    "ItemList",
+    "BreadcrumbList"
+  ],
+  "live_brands_sitemap_urls": 6,
+  "live_sitemap_root": "sitemapindex",
+  "live_hsts": "max-age=86400",
+  "cache_control_observed": "public, max-age=0, must-revalidate",
+  "sitemap_policy": "Exclude noindex/foreign/parameter URLs; omit unknown initial lastmod; keep prior date on refresh-only changes; record observed significant main-content/schema changes.",
+  "lighthouse_new_run": false,
+  "google_rich_results_test_run": false,
+  "new_search_console_sitemap_read_verified": false,
+  "notes": "Nessuna certificazione di accessibilità, indicizzazione o rich result. Numero offerte e pagine varia col catalogo."
+}
