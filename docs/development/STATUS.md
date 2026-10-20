@@ -2,6 +2,11 @@
 
 Ultimo aggiornamento: 20 ottobre 2026.
 
+## Sessione 20 ottobre 2026, esito prova DOI autorizzata
+- Nella sessione interattiva Mirco ha richiesto l’iscrizione di un proprio indirizzo di prova, poi confermato «fatto» e «si torna tutto». Brevo mostrava consegna della conferma da capobranco; registrato ora `double_opt_in_verified: true` e data in `site/data/newsletter.json`. Il destinatario di prova e i log personali non sono pubblicati nel repository.
+- La prima conferma è arrivata nello spam secondo il riscontro dell’utente: `inbox_placement_verified: false`. Non attestare recapito in posta in arrivo, reputazione risolta o consegna futura garantita. Non ripetere l’invio in questo ciclo.
+- Identità titolare già autorizzata e inserita; restano informativa/conservazione, verifica cancellazione e permessi effettivi dei contenuti. Gli altri gate non sono alterati: iscrizioni pubbliche ancora chiuse, nessuna email/campagna inviata o lista letta durante questo ciclo. Continuare sugli altri punti realizzabili.
+
 ## Sessione 20 ottobre 2026, formati e costo unitario
 - Terza guida originale `/prezzo-confezione-o-prezzo-kg`: distingue esborso per confezione, costo unitario e totale ordine. Esempi da prezzi/pesi netti recenti, selezione alfabetica tra negozi, nessuna equivalenza nutrizionale o ricostruzione di multipack incerti. Collegata all’indice, al costo mensile e alla lista risparmio; rigenerazione nel generatore esistente.
 - File: `automation/build_savings_guides.py`, nuova pagina e indice guide, test unitario e prova browser estesa. Nessuna modifica agli invii o raccolta email. Verifiche e pubblicazione da completare sotto.
