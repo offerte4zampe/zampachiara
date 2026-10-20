@@ -1,0 +1,36 @@
+name: Basket browser smoke
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'site/assets/basket.js'
+      - 'site/assets/catalog.js'
+      - 'site/carrello-risparmio.html'
+      - 'tests/check_basket_browser.mjs'
+      - '.github/workflows/basket-browser.yml'
+permissions:
+  contents: read
+jobs:
+  mobile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install pinned browser driver
+        run: npm install --prefix "$RUNNER_TEMP/basket-browser" puppeteer-core@25.14.0
+      - name: Test isolated mobile basket
+        run: |
+          export CHROME_PATH="$(command -v google-chrome)"
+          export PUPPETEER_MODULE_PATH="$RUNNER_TEMP/basket-browser/node_modules/puppeteer-core/lib/esm/puppeteer/puppeteer-core.js"
+          node tests/check_basket_browser.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: basket-mobile-smoke
+          path: browser-reports/
+          if-no-files-found: warn
+          retention-days: 14

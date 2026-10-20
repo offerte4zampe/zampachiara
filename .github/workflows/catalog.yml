@@ -39,7 +39,7 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m unittest discover -s tests
-      - run: node --test tests/test_metrics.mjs tests/test_trade.mjs tests/test_report.mjs
+      - run: node --test tests/test_metrics.mjs tests/test_trade.mjs tests/test_report.mjs tests/test_basket.mjs
       - run: python automation/update_catalog.py
       - run: python automation/enrich_catalog.py
       - run: python automation/update_history.py
