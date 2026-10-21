@@ -2,6 +2,11 @@
 
 Ultimo aggiornamento: 21 ottobre 2026.
 
+## Verifica conclusa: primo collegamento Amazon senza API
+- Commit ed7ef08; CI39561208960 e Workers Builds riuscite.80 test Python/39 Node e prova mobile; link diretto con tag corretto, rel sponsored, zero prezzo/stock nel blocco Amazon, nessuna variazione del numero dei cataloghi prezzati e collegamento conservato al cambio quantità; assenza del blocco sui prodotti senza mappa.
+- Verifica pubblica browser: /prodotto?id=isola-dei-tesori%3A000181239 mostra Beaphar Collare No Stress Gatto35cm e pulsante Verifica prezzo su Amazon verso /dp/B0722X975H?tag=offerte4zam02-21. Nessun clic Amazon effettuato, nessuna vendita/attribuzione commerciale confermata. Primo abbinamento soltanto, non intero catalogo; ampliare esclusivamente dopo controllo puntuale.
+- Prezzi Amazon via API ancora bloccati; integrazione editoriale senza prezzi ora operativa. Non inserire Amazon fra fonti importate o usare i link editoriali nel calcolo del miglior prezzo.
+
 ## Sessione 21 ottobre 2026, Amazon senza API autorizzato da Mirco
 - Scheda prodotto: pulsante Verifica prezzo su Amazon in blocco distinto dalla classifica dei negozi con prezzo. Nessun prezzo, stock, immagine, recensione o totale Amazon importato; link diretto /dp/ASIN con tracking offerte4zam02-21 e rel sponsored. Nessun link alla ricerca e nessuna equivalenza per somiglianza.
 - Prima corrispondenza editoriale: Isola000181239 → B0722X975H, Beaphar No Stress gatto, un collare35cm, valeriana/lavanda. Consultate pagine ufficiali Amazon e Isola il21 ottobre; nel JSON URL di evidenza e fingerprint completo del catalogo. Non dichiarato GTIN Amazon verificato. Candidati Acana e Royal Canin non attivati: confezioni/ricette o versioni non sufficientemente confermate.
