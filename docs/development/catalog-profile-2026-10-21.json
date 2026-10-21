@@ -17,5 +17,17 @@
     "render_comparison": 1
   },
   "change": "Read stock/sale/sort controls once per filter-sort operation instead of inside every filter/comparison callback; same filtering and sorting logic.",
-  "after_medians": null
+  "after_medians": {
+    "decode_decompress": 85.9,
+    "parse": 23.7,
+    "prepare_indexes": 55.6,
+    "prepare_controls": 7.5,
+    "filter_sort": 56.7,
+    "group": 28.1,
+    "render_cards": 4.7,
+    "render_comparison": 1.2
+  },
+  "after_run": 39574683247,
+  "after_commit": "627a6eadec8a0ecc3a4d9cc4bec1419ea0c7f509",
+  "interpretation": "Filter/sort medians observed 60.2 ms before and 56.7 ms after on the same catalog; other phases changed in both directions across separate runner executions. No isolated causal speedup, production speed or INP claim."
 }

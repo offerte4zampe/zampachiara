@@ -2,6 +2,12 @@
 
 Ultimo aggiornamento: 21 ottobre 2026.
 
+## Verifica conclusa: profilazione e lettura controlli
+- CI39574683247 e Workers Builds riuscite:80 Python/40 Node,311 pagine/zero problemi, percorso mobile esistente integro. Tre misure su17605 offerte dello stesso catalogo, con artefatto catalog-profile.json.
+- Mediane successive ms: decodifica85,9; parsing23,7; indici55,6; controlli7,5; filtro/ordinamento56,7; gruppi28,1; schede4,7; confronto1,2. Filtro/ordinamento prima60,2/dopo56,7; gli altri tempi variano tra runner e non dimostrano un guadagno causale isolato. Nessuna dichiarazione di miglioramento percentuale, INP o velocità pubblica.
+- Dati prima/dopo e limiti persistiti in catalog-profile-2026-10-21.json. Le metriche non sono sommate come tempo percepito e non comprendono download pubblico/layout/paint. Profilazione attivabile soltanto su query profile=1, senza richieste a terzi o statistiche utente.
+- Prossima priorità: ridurre il lavoro di preparazione/caricamento sul main thread con verifica dello stesso ordinamento sul catalogo reale, poi uniformità dei titoli della lista risparmio e materiali acquisizione. Newsletter/alert, API Amazon, nuovi feed e CMP restano dipendenze registrate; non conclusa l'intera roadmap.
+
 ## Profilazione: prima misura e intervento circoscritto
 - CI39574478004 riuscita con17605 offerte, tre iterazioni. Mediane locali ms: decodifica39,9; parsing22,3; indici43,6; controlli6,4; filtro/ordinamento60,2; gruppi24,4; schede4,3; confronto1. La fase filtro/ordinamento è la più costosa fra quelle misurate; non spiega automaticamente TBT/INP sul sito pubblico.
 - Eliminata lettura ripetuta dei controlli stock/sconto/sort all'interno di ogni callback di filtro e confronto. Valori catturati una volta per operazione sincrona, stessi criteri e tie-break; nessun cambiamento a prezzi, spedizione, matching o commissioni.
