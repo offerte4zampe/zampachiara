@@ -31,3 +31,6 @@ Aggiornata il 21 ottobre 2026. Questa matrice distingue implementazione verifica
 ## Criteri per dichiarare conclusa l’automazione
 
 L’automazione può essere chiusa solo quando non rimane lavoro tecnico autorizzato e ripetibile senza nuove decisioni. La maturazione dello storico, gli accessi di terzi, le campagne, i contatti, i dati legali mancanti e gli accordi professionali sono dipendenze, non attività da simulare. In presenza di tali blocchi il progetto può essere tecnicamente operativo, ma non va descritto come completamente finito.
+
+## Esito conclusivo tecnico, 21 ottobre 2026
+Lavori autorizzati attualmente realizzabili conclusi e verificati. Ultimo browser CI: 57 Node,85 Python,312 pagine/zero problemi; Worker e fallback verificati. Audit cinque pagine: performance99–100, accessibilità/SEO/best practices100, comparatore TBT89,9 ms eLCP1954 ms in laboratorio. Pubblicazione funzionale osservata sul dominio. Restano tutte le dipendenze esterne elencate sopra: il progetto complessivo non è interamente finito. Il ciclo autonomo viene fermato per evitare ripetizioni; nuove integrazioni/attivazioni riprendono con dati o accessi verificabili.

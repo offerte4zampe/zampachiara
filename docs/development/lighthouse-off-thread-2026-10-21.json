@@ -1,0 +1,109 @@
+{
+  "scope": "local-static-checkout-not-production",
+  "commit": "4de516913e8600f547ba3787209195993b8cd103",
+  "lighthouse": "13.5.0",
+  "iterations": 3,
+  "pages": {
+    "confronta-cibo": {
+      "performance": 0.99,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    },
+    "costo-crocchette-cane": {
+      "performance": 1,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    },
+    "home": {
+      "performance": 0.99,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    },
+    "linea-monge-bwild": {
+      "performance": 1,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    },
+    "osservatorio-prezzi": {
+      "performance": 1,
+      "accessibility": 1,
+      "best-practices": 1,
+      "seo": 1
+    }
+  },
+  "median_metrics": {
+    "confronta-cibo": {
+      "first-contentful-paint": 1051.6197,
+      "largest-contentful-paint": 1954.0177499999998,
+      "total-blocking-time": 89.92865000000006,
+      "cumulative-layout-shift": 0,
+      "speed-index": 1051.6197
+    },
+    "costo-crocchette-cane": {
+      "first-contentful-paint": 903.4348,
+      "largest-contentful-paint": 1655.1522,
+      "total-blocking-time": 0,
+      "cumulative-layout-shift": 0,
+      "speed-index": 903.4348
+    },
+    "home": {
+      "first-contentful-paint": 1054.2401,
+      "largest-contentful-paint": 1808.4802,
+      "total-blocking-time": 0,
+      "cumulative-layout-shift": 0,
+      "speed-index": 1054.2401
+    },
+    "linea-monge-bwild": {
+      "first-contentful-paint": 1051.8735,
+      "largest-contentful-paint": 1802.02455,
+      "total-blocking-time": 0,
+      "cumulative-layout-shift": 0,
+      "speed-index": 1051.8735
+    },
+    "osservatorio-prezzi": {
+      "first-contentful-paint": 1051.6668,
+      "largest-contentful-paint": 1802.3994,
+      "total-blocking-time": 0,
+      "cumulative-layout-shift": 0,
+      "speed-index": 1051.6668
+    }
+  },
+  "metric_units": {
+    "first-contentful-paint": "ms",
+    "largest-contentful-paint": "ms",
+    "total-blocking-time": "ms",
+    "cumulative-layout-shift": "unitless",
+    "speed-index": "ms"
+  },
+  "best_practices_findings": {
+    "confronta-cibo": [
+      [],
+      [],
+      []
+    ],
+    "costo-crocchette-cane": [
+      [],
+      [],
+      []
+    ],
+    "home": [
+      [],
+      [],
+      []
+    ],
+    "linea-monge-bwild": [
+      [],
+      [],
+      []
+    ],
+    "osservatorio-prezzi": [
+      [],
+      [],
+      []
+    ]
+  }
+}
