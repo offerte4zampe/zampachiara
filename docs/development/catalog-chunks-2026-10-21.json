@@ -1,0 +1,24 @@
+{
+  "run": 39580024800,
+  "commit": "bf1625dec32656b3d2d707ba9901cab839f6d27c",
+  "catalog_generated_at": "2026-10-21T06:49:57.705690+00:00",
+  "offers": 17605,
+  "iterations": 3,
+  "units": "milliseconds",
+  "scope": "Local Chromium mobile viewport on GitHub runner, no throttling; not production or INP",
+  "chunk_rows": 500,
+  "max_observed_chunk_ms": 1.7,
+  "medians": {
+    "decode_decompress": 40.6,
+    "parse": 23.6,
+    "prepare_chunk_cpu": 39.6,
+    "prepare_indexes_wall": 40.9,
+    "prepare_controls": 6.8,
+    "filter_sort": 48.8,
+    "group": 16.4,
+    "render_cards": 4,
+    "render_comparison": 0.8
+  },
+  "equivalence": "Full eligibility, order, search-text map and identity map compared against previous algorithm on actual catalog",
+  "limitations": "No same-run A/B or production causal improvement established. Wall time includes yields; max chunk is a sample, not a guarantee."
+}

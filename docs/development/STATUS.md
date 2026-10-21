@@ -2,6 +2,12 @@
 
 Ultimo aggiornamento: 21 ottobre 2026.
 
+## Verifica conclusa: preparazione catalogo a blocchi
+- CI39580024800 e Workers Builds riuscite.80 Python/43 Node,311 pagine/zero problemi; confronto integrale con logica precedente su17605 offerte: stessi riferimenti/ordine, testi ricerca e gruppi identità. Mobile393×852, nessun errore JS e flussi esistenti conservati.
+- Tre misure locali: CPU preparazione mediana39,6ms, tempo complessivo con yield40,9ms, massimo singolo blocco osservato1,7ms. Campione precedente preparazione sincrona55,6ms: run diversi e nessuna causalità prestazionale isolata dichiarata. Vantaggio strutturale verificato: blocchi con cessione del task fra500righe, non un unico ciclo sincrono.
+- Altre mediane ms: decodifica40,6; parsing23,6; controlli6,8; filtro/ordinamento48,8; gruppi16,4; schede4; confronto0,8. Non sono produzione/INP/CrUX, non sommare come tempo percepito; report integrali nell'artefatto e sintesi persistita in catalog-chunks-2026-10-21.json.
+- Prossimo intervento concreto: titoli della lista risparmio ancora verso negozio, da uniformare alla scheda interna mantenendo esterne solo le CTA negozio; poi materiali acquisizione. API Amazon, newsletter/alert, nuovi feed, CMP e accordi restano dipendenze esterne; roadmap ancora aperta.
+
 ## Sessione 21 ottobre 2026, preparazione cooperativa del catalogo
 - La preparazione degli indici occupava una fase sincrona con mediana55,6ms nel campione precedente. Nuovo modulo esegue validazione, ricerca e indice identità in un solo passaggio, in blocchi di500 righe con yield al browser fra i blocchi (scheduler.yield dove disponibile, timer altrimenti). Ordine originale, offerte, testi e gruppi invariati.
 - Misure profile=1 distinguono tempo complessivo inclusi yield, somma CPU dei blocchi e massimo blocco osservato. Non promette caricamento complessivo più breve: la finalità è lasciare opportunità al browser fra blocchi. Parsing, ordinamento e rendering restano fuori da questa modifica.
