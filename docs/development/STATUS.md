@@ -2,6 +2,11 @@
 
 Ultimo aggiornamento: 21 ottobre 2026.
 
+## Correzione passaggio intermedio segnalato da Mirco
+- Rimossa la navigazione al pointerup: la selezione si completa sul click/tap mantenendo visibile l'opzione fino all'evento, per evitare il click sul modulo sottostante dopo la chiusura. Blocca propagazione/default; blur protetto durante il gesto e scroll cancellato.
+- Eliminato il fallback dei suggerimenti home verso il comparatore manuale. Indice richiesto con rivalidazione/versione e sole righe con ID. Anche l'eventuale submit dopo una scelta mantiene la destinazione prodotto. Versionati gli asset nelle due pagine per non riusare il vecchio percorso.
+- Il collegamento Stesso codice e formato ora va direttamente alla scheda prodotto. Test mobile esteso a nessuna navigazione intermedia al comparatore dopo il tap home. File HTML/JS e test browser; CI/deploy da verificare, nessuna causa Safari fisico attestata.
+
 ## Correzione richiesta da Mirco: tocco e navigazione prodotto coerente
 - Suggerimenti: selezione su pointerup con controllo del movimento e cancellazione dello scroll, scelta una sola volta; blur non nasconde l'elenco durante il tocco. Mantenuti clic accessibile e tastiera. Test browser ora usa tap reale emulato in home e comparatore, entrambi verso scheda interna.
 - Titoli dinamici del comparatore e selezione dei suggerimenti aprono prodotto.html?id=... . Nuova normalizzazione dopo tutti i generatori: link a prodotti riconosciuti nei cataloghi (categorie, marche, guide, anteprima e liste) passano alla scheda interna. CTA rietichettate Confronta nei negozi; restano esterni i pulsanti di scelta negozio nelle schede di confronto per prodotto. Nessun cambio affiliate_url nel catalogo.

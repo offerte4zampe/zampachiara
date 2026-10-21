@@ -9,8 +9,8 @@ function candidates(offers,query,now=Date.now()){
  .filter(o=>{const key=norm(o.title)+'|'+norm(o.variant);if(seen.has(key))return false;seen.add(key);return true}).slice(0,8);
 }
 let catalogPromise;
-function catalog(){if(!catalogPromise)catalogPromise=fetch('data/search-index.json',{cache:'default'}).then(async r=>{
- if(!r.ok)throw Error('search-index');const data=await r.json();if(!Array.isArray(data.offers))throw Error('search-index');return data.offers;
+function catalog(){if(!catalogPromise)catalogPromise=fetch('data/search-index.json?v=product-id-2',{cache:'no-cache'}).then(async r=>{
+ if(!r.ok)throw Error('search-index');const data=await r.json();if(!Array.isArray(data.offers))throw Error('search-index');return data.offers.filter(o=>typeof o.id==='string'&&o.id.length>0);
  }).catch(e=>{catalogPromise=null;throw e});return catalogPromise}
 
 function mount(input,provide,choose){
@@ -33,9 +33,9 @@ function mount(input,provide,choose){
  let start=null,chosen=false;
  const chooseOnce=()=>{if(chosen)return;chosen=true;interacting=false;accept(i)};
  option.addEventListener('pointerdown',e=>{start={x:e.clientX,y:e.clientY,id:e.pointerId};interacting=true;if(e.pointerType==='mouse')e.preventDefault()});
- option.addEventListener('pointerup',e=>{const tap=start&&start.id===e.pointerId&&Math.hypot(e.clientX-start.x,e.clientY-start.y)<12;start=null;interacting=false;if(tap){e.preventDefault();chooseOnce()}else if(document.activeElement!==input)close()});
+ option.addEventListener('pointerup',e=>{const tap=start&&start.id===e.pointerId&&Math.hypot(e.clientX-start.x,e.clientY-start.y)<12;start=null;interacting=false;if(!tap&&document.activeElement!==input)close()});
  option.addEventListener('pointercancel',()=>{start=null;interacting=false;if(document.activeElement!==input)close()});
- option.addEventListener('click',chooseOnce);list.append(option)});
+ option.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();chooseOnce()});list.append(option)});
  list.hidden=!rows.length;input.setAttribute('aria-expanded',String(Boolean(rows.length)));status.textContent=rows.length?rows.length+' suggerimenti. Usa le frecce e Invio per selezionare.':'Nessun suggerimento. Puoi continuare la ricerca.';
  }catch{if(ticket===version){close();status.textContent='Suggerimenti non disponibili. Puoi comunque premere Cerca.'}}
  }
