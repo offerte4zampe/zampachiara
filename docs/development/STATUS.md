@@ -2,6 +2,13 @@
 
 Ultimo aggiornamento: 21 ottobre 2026.
 
+## Sessione 21 ottobre 2026, Amazon senza API autorizzato da Mirco
+- Scheda prodotto: pulsante Verifica prezzo su Amazon in blocco distinto dalla classifica dei negozi con prezzo. Nessun prezzo, stock, immagine, recensione o totale Amazon importato; link diretto /dp/ASIN con tracking offerte4zam02-21 e rel sponsored. Nessun link alla ricerca e nessuna equivalenza per somiglianza.
+- Prima corrispondenza editoriale: Isola000181239 → B0722X975H, Beaphar No Stress gatto, un collare35cm, valeriana/lavanda. Consultate pagine ufficiali Amazon e Isola il21 ottobre; nel JSON URL di evidenza e fingerprint completo del catalogo. Non dichiarato GTIN Amazon verificato. Candidati Acana e Royal Canin non attivati: confezioni/ricette o versioni non sufficientemente confermate.
+- Registro separato amazon-links.json: solo dati di abbinamento, non offerte prezzate. Collegamento nascosto in assenza di verifica, duplicati, variazione titolo/marca/formato/GTIN o verifica oltre30giorni; nessuna indisponibilità presunta. Errori del registro non bloccano il catalogo.
+- File: amazon-links JS/JSON, prodotto HTML/JS, tre test modello, browser e workflow. Tre test Node locali e sintassi superati; CI/deploy da verificare. Prova browser controlla link diretto/tag/assenza prezzo e stock, cambio quantità, offerta senza mappa e numero negozi invariato; nessun click Amazon.
+- Fonti: https://www.amazon.it/Beaphar-calmante-Valeriana-problemi-comportamentali/dp/B0722X975H e https://www.isoladeitesori.it/prodotto/beaphar-collare-no-stress-gatto-35-cm/000181239.html . Nessuna commissione o vendita verificata. Prezzi automatici Amazon restano bloccati in attesa dell'accesso ufficiale.
+
 ## Verifica conclusa: spedizione nella scheda prodotto
 - CI39560093056 e Workers Builds riuscite. Suite80 Python/36 Node,311 pagine statiche/zero problemi; prova mobile con quantità modificabile, destinazione particolare senza totali e permanenza di tutti i negozi. Percorso home/suggerimento → scheda diretta ancora verificato senza pagina intermedia; URL commerciali controllati senza clic esterni.
 - Il primo ciclo aveva un errore nel test ($eval anziché $eval su raccolta), corretto senza ridurre le asserzioni; nessun errore del calcolo emerso. Build verificata, non nuovo controllo HTTP pubblico né nuova misura Lighthouse/CrUX. Condizioni tariffarie esistenti conservate, non riverificate presso i negozi in questa sessione.

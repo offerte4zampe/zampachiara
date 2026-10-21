@@ -45,4 +45,17 @@ export async function checkSuggestions(page,origin,catalog){
  assert.equal(new URL(page.url()).pathname,'/prodotto.html');
  assert.equal(new URL(page.url()).searchParams.get('id'),selected);
 
+ const links=await page.evaluate(async()=>{const r=await fetch('data/amazon-links.json');return r.json()});
+ const mapping=links.links.find(row=>catalog.offers.some(o=>o.id===row.offer_id));assert(mapping,'At least one verified mapping must exist in catalog');
+ await page.goto(origin+'/prodotto.html?id='+encodeURIComponent(mapping.offer_id),{waitUntil:'domcontentloaded'});
+ await page.waitForSelector('#product-amazon a',{visible:true,timeout:30000});
+ const amazon=await page.$eval('#product-amazon a',e=>({href:e.href,rel:e.rel,text:e.textContent}));
+ const target=new URL(amazon.href);assert.equal(target.hostname,'www.amazon.it');assert.equal(target.pathname,'/dp/'+mapping.asin);assert.equal(target.searchParams.get('tag'),links.tracking_id);assert(amazon.rel.includes('sponsored'));assert.equal(amazon.text,'Verifica prezzo su Amazon ↗');
+ assert(await page.$eval('#product-amazon',e=>!e.textContent.includes('€')&&!e.textContent.includes('Disponibile al rilevamento')));
+ assert.equal(await page.$$eval('#product-shops [data-product-shop]',rows=>rows.length),catalog.sources.length);
+ await page.select('#product-quantity','3');assert.equal(await page.$eval('#product-amazon a',e=>e.href),amazon.href);
+ const unmapped=catalog.offers.find(o=>!links.links.some(row=>row.offer_id===o.id));assert(unmapped);
+ await page.goto(origin+'/prodotto.html?id='+encodeURIComponent(unmapped.id),{waitUntil:'domcontentloaded'});
+ await page.waitForSelector('#product-shops [data-product-shop]',{timeout:30000});assert(await page.$eval('#product-amazon',e=>e.hidden));
+
 }

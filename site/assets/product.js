@@ -2,11 +2,17 @@
 const $=id=>document.getElementById(id),money=new Intl.NumberFormat('it-IT',{style:'currency',currency:'EUR'});
 const el=(tag,value,cls)=>{const n=document.createElement(tag);n.textContent=value;if(cls)n.className=cls;return n};
 const safe=s=>{try{const u=new URL(s);return u.protocol==='https:'&&!u.username&&!u.password?u.href:''}catch{return ''}};
-let catalog,id,shippingRules=null;
+let catalog,id,shippingRules=null,amazonLinks=null;
 function render(){
  const quantity=Number($('product-quantity').value),territory=$('product-territory').value;
  const view=O4ZProduct.productView(catalog,id,Date.now(),shippingRules,quantity,territory);
  if(!view){$('product-status').textContent='Questo prodotto non è presente nel catalogo corrente. Non mostriamo prezzi precedenti come attuali.';return}
+ const amazon=$('product-amazon');amazon.replaceChildren();amazon.hidden=true;
+ const amazonLink=O4ZAmazon.productLink(view.seed,amazonLinks);
+ if(amazonLink){
+  amazon.hidden=false;amazon.append(el('h2','Amazon'),el('p','Prezzo e disponibilità da verificare su Amazon. Questa opzione non partecipa alla classifica dei prezzi.','micro'));
+  const link=el('a','Verifica prezzo su Amazon ↗','btn secondary');link.href=amazonLink.url;link.target='_blank';link.rel='sponsored noopener noreferrer';amazon.append(link,el('p','Possiamo ricevere una commissione, senza costi aggiuntivi per te.','micro'));
+ }
  const o=view.seed;$('product-title').textContent=o.title;document.title=o.title+' — prezzi nei negozi | Offerte a 4 Zampe';
  $('product-format').textContent=[o.brand,o.variant,o.weight_kg?o.weight_kg+' kg':''].filter(Boolean).join(' · ');
  const image=safe(o.image);if(image){const img=document.createElement('img');img.src=image;img.alt=o.title;img.width=180;img.height=160;img.style.objectFit='contain';$('product-image').replaceChildren(img)}
@@ -26,11 +32,12 @@ function render(){
 }
 async function load(){try{
  id=new URLSearchParams(location.search).get('id');if(!id)throw Error('missing');
+ const amazon=fetch('data/amazon-links.json',{cache:'no-cache'}).then(r=>r.ok?r.json():null).catch(()=>null);
  const rules=fetch('data/shipping-rules.json',{cache:'no-cache'}).then(r=>r.ok?r.json():null).catch(()=>null);
  const r=await fetch('data/catalog.json.gz',{cache:'no-cache'});if(!r.ok)throw Error('network');
  const bytes=await r.arrayBuffer(),raw=new Uint8Array(bytes);
  catalog=JSON.parse(raw[0]===31&&raw[1]===139?await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))).text():new TextDecoder().decode(bytes));
- shippingRules=await rules;render();
+ [shippingRules,amazonLinks]=await Promise.all([rules,amazon]);render();
  for(const control of ['product-quantity','product-territory'])$(control).addEventListener('change',render);
  }catch{$('product-status').textContent='Impossibile caricare questa scheda. Riprova tra poco oppure torna alla ricerca.'}}
 load();

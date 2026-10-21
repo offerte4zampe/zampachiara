@@ -24,6 +24,9 @@ on:
       - 'site/assets/trade.js'
       - 'site/assets/product-model.js'
       - 'site/assets/product.js'
+      - 'site/assets/amazon-links.js'
+      - 'site/data/amazon-links.json'
+      - 'tests/test_amazon_links.mjs'
       - 'site/prodotto.html'
       - 'tests/test_product_view.mjs'
       - 'tests/test_home_data.py'
@@ -62,7 +65,7 @@ jobs:
         with:
           node-version: '22'
       - name: Test basket and pricing invariants
-        run: node --test tests/test_basket.mjs tests/test_trade.mjs tests/test_report.mjs tests/test_metrics.mjs tests/test_daily_cost.mjs tests/test_price_history.mjs tests/test_notification_plan.mjs tests/test_search_suggest.mjs tests/test_product_view.mjs
+        run: node --test tests/test_basket.mjs tests/test_trade.mjs tests/test_report.mjs tests/test_metrics.mjs tests/test_daily_cost.mjs tests/test_price_history.mjs tests/test_notification_plan.mjs tests/test_search_suggest.mjs tests/test_product_view.mjs tests/test_amazon_links.mjs
       - name: Test schema and generators without external services
         run: python -m unittest discover -s tests
       - name: Generate compact search index locally
