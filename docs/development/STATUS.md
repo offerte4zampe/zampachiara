@@ -2,6 +2,12 @@
 
 Ultimo aggiornamento: 21 ottobre 2026.
 
+## Sessione 21 ottobre 2026, condivisione della ricerca
+- Comando Condividi questa ricerca: copia un URL con ricerca, marca/negozio, GTIN/formato, disponibilità, ordinamento e destinazione/quantità spedizione. I valori supportati vengono ripristinati all'apertura; non include lista personale, email o razioni.
+- Se gli appunti non sono disponibili mostra un campo etichettato con link selezionabile e stato accessibile. Esplicito che prezzi e disponibilità possono cambiare. Azzera filtri rimuove anche ordinamento/disponibilità condivisi, conservando la stima spedizione.
+- Prova browser aggiunta per caratteri speciali, copia, riapertura e fallback appunti. Sintassi JS verificata localmente; CI e build da verificare. File: comparatore HTML/JS e smoke browser. Nessun messaggio inviato.
+- Verifica WebPet ancora aperta: il registro richiama genericamente il prodotto segnalato, senza ID/URL. Non basta per sospendere o rinominare un'offerta. Prossimo: misurazione successiva alle modifiche e materiale acquisizione; blocchi esterni invariati.
+
 ## Sessione 21 ottobre 2026, azzeramento filtri del comparatore
 - Aggiunto comando Azzera filtri: svuota ricerca, marca e negozio, ripristina disponibilità e totale stimato iniziali, rimuove i vincoli GTIN/formato e i relativi parametri dall'URL. Conserva lista, confronto selezionato e destinazione/quantità spedizione dell'utente; non modifica prezzi né link commerciali.
 - Il comando chiude i suggerimenti, annulla il rendering differito e riporta il focus alla ricerca. Prova mobile estesa con vista filtrata da URL e ripristino dei risultati. Esito CI e pubblicazione da verificare.

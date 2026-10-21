@@ -7,6 +7,10 @@ const preview=$('catalog-preview');
 if(preview&&['q','shop','brand','gtin','matched'].some(key=>params.has(key)))preview.hidden=true;
 $('catalog-multishop').checked=params.get('matched')==='1';
 $('catalog-query').value=(params.get('q')||'').slice(0,120);$('catalog-sale').checked=false;$('catalog-sale').disabled=true;
+const allowedSort=['name','price','total','kg'];if(allowedSort.includes(params.get('sort')))$('catalog-sort').value=params.get('sort');
+$('catalog-stock').checked=params.get('stock')!=='all';
+const sharedQuantity=Number(params.get('quantity'));if(Number.isInteger(sharedQuantity)&&sharedQuantity>=1&&sharedQuantity<=10)$('shipping-quantity').value=sharedQuantity;
+if(params.get('territory')==='special')$('shipping-territory').value='special';
 const safeUrl=(s,image=false)=>{try{const u=new URL(s);return u.protocol==='https:'?u.href:''}catch{return ''}};
 function productTitle(o,tag='h3',label=o.title){const heading=text(tag,''),a=text('a',label,'product-title-link'),url=safeUrl(o.affiliate_url||o.url);if(!url)return text(tag,label);a.href=url;a.rel=o.affiliate_url?'sponsored noopener noreferrer':'noopener noreferrer';a.setAttribute('aria-label',label+' — '+o.merchant);heading.append(a);return heading}
 function stale(o){return Date.now()-Date.parse(o.checked_at)>36*3600000}
@@ -47,11 +51,24 @@ function quote(o){if(quoteCache.has(o.id))return quoteCache.get(o.id);const valu
 async function load(){try{const shippingPromise=fetch('data/shipping-rules.json',{cache:'no-cache'}).then(r=>r.ok?r.json():null).catch(()=>null);const r=await fetch('data/catalog.json.gz',{cache:'no-cache'});if(!r.ok)throw Error();const bytes=await r.arrayBuffer();const raw=new Uint8Array(bytes);const payload=JSON.parse(raw[0]===31&&raw[1]===139?await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))).text():new TextDecoder().decode(bytes));if(!Array.isArray(payload.offers))throw Error();shippingRules=await shippingPromise;data=payload.offers.filter(o=>o.id&&typeof o.title==='string'&&Number.isFinite(o.price)&&o.price>0&&safeUrl(o.url));identityIndex=new Map();for(const o of data){if(o.gtin&&o.weight_kg){const key=identity(o);if(!identityIndex.has(key))identityIndex.set(key,[]);identityIndex.get(key).push(o)}}searchText=new Map(data.map(o=>[o.id,[o.title,o.variant,o.brand,o.category,o.sku,o.gtin].join(' ').toLocaleLowerCase('it')]));fillSelect('catalog-shop',data.map(o=>o.merchant));fillSelect('catalog-brand',data.map(o=>o.brand));for(const [key,id] of [['shop','catalog-shop'],['brand','catalog-brand']]){const value=params.get(key);if(value&&Array.from($(id).options).some(o=>o.value===value))$(id).value=value;}
 $('catalog-status').textContent='Cataloghi importati automaticamente · aggiornamento previsto ogni '+payload.refresh_hours+' ore · ultima esecuzione '+date(payload.generated_at)+'. I link Bauzaar e Isola dei Tesori possono generare commissioni, senza costi aggiuntivi per te.';
 fetch('data/catalog-quality.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error();return r.json()}).then(a=>{$('catalog-identity-status').textContent=a.with_valid_gtin+' offerte con codice GTIN valido su '+a.offers+' importate; '+a.cross_shop_groups+' gruppi con stesso codice, marca e peso in più negozi. Le altre offerte restano confronti manuali.'}).catch(()=>{});const sources=$('catalog-sources');for(const s of payload.sources||[]){sources.append(text('li',s.name+': '+s.offers+' offerte · '+(s.status==='ok'?'importazione riuscita':s.status==='stale'?'aggiornamento fallito; dati precedenti conservati':'fonte non disponibile')+' · recupero '+date(s.checked_at)+(['bauzaar','isola-dei-tesori'].includes(s.id)?' · feed ufficiale aggiornato dal fornitore giornalmente':'')))}if(params.get('gtin'))$('catalog-status').textContent+=' Vista per codice GTIN e peso esplicito; ricetta ed etichetta vanno comunque controllate. Per uscire apri Confronta prezzi dal menu.';O4ZSuggest.mount($('catalog-query'),()=>data.filter(o=>(!$('catalog-shop').value||o.merchant===$('catalog-shop').value)&&(!$('catalog-brand').value||o.brand===$('catalog-brand').value)),()=>{limit=30;render()});render();}catch{$('catalog-status').textContent='Catalogo completo momentaneamente non disponibile. La selezione statica, se presente, riporta data e fonte del rilevamento; verifica sempre il prezzo nel negozio. Riprova più tardi.';$('catalog-filters').hidden=true}}
+$('catalog-share').addEventListener('click',async()=>{
+ const shared=new URL(location.pathname,location.origin),query=shared.searchParams;
+ for(const [key,id] of [['q','catalog-query'],['shop','catalog-shop'],['brand','catalog-brand']]){const value=$(id).value.trim();if(value)query.set(key,value);}
+ for(const key of ['gtin','weight','matchbrand'])if(params.has(key))query.set(key,params.get(key));
+ if($('catalog-multishop').checked)query.set('matched','1');
+ if($('catalog-sort').value!=='total')query.set('sort',$('catalog-sort').value);
+ if(!$('catalog-stock').checked)query.set('stock','all');
+ const quantity=Number($('shipping-quantity').value);if(Number.isInteger(quantity)&&quantity>=1&&quantity<=10&&quantity!==1)query.set('quantity',quantity);
+ if($('shipping-territory').value==='special')query.set('territory','special');
+ $('catalog-share-url').value=shared.href;$('catalog-share-fallback').hidden=true;
+ try{await navigator.clipboard.writeText(shared.href);$('catalog-share-status').textContent='Link copiato. Condivide filtri e stima spedizione, non la lista personale. Prezzi e disponibilità possono cambiare.';}
+ catch{$('catalog-share-fallback').hidden=false;$('catalog-share-url').focus();$('catalog-share-url').select();$('catalog-share-status').textContent='Copia il link dal campo. Condivide filtri e stima spedizione; prezzi e disponibilità possono cambiare.';}
+});
 let renderTimer;
 $('catalog-reset').addEventListener('click',()=>{
  clearTimeout(renderTimer);
  $('catalog-status').textContent=$('catalog-status').textContent.replace(' Vista per codice GTIN e peso esplicito; ricetta ed etichetta vanno comunque controllate. Per uscire apri Confronta prezzi dal menu.','');
- for(const key of ['q','shop','brand','gtin','weight','matchbrand','matched','sale'])params.delete(key);
+ for(const key of ['q','shop','brand','gtin','weight','matchbrand','matched','sale','sort','stock'])params.delete(key);
  for(const id of ['catalog-query','catalog-shop','catalog-brand'])$(id).value='';
  $('catalog-stock').checked=true;$('catalog-sale').checked=false;$('catalog-multishop').checked=false;$('catalog-sort').value='total';
  const url=new URL(location.href);url.search=params.toString();history.replaceState(null,'',url);
