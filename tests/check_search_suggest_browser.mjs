@@ -29,7 +29,7 @@ export async function checkSuggestions(page,origin,catalog){
  await page.$eval('#product-share button:last-of-type',e=>e.click());
  await page.waitForFunction(()=>document.querySelector('#product-share [role=status]').textContent.includes('manualmente'));
  assert.equal(await page.$eval('#product-share-url',e=>e.readOnly),true);
- const outbound=await page.$eval('#product-shops a:not([data-shipping-conditions]):not([data-product-report])',rows=>rows.map(a=>({href:a.href,rel:a.rel})));
+ const outbound=await page.$$eval('#product-shops a:not([data-shipping-conditions]):not([data-product-report])',rows=>rows.map(a=>({href:a.href,rel:a.rel})));
  for(const a of outbound){assert(catalog.offers.some(o=>(o.affiliate_url||o.url)===a.href),'Exact catalog URL required');if(a.href.includes('tradetracker'))assert(a.rel.includes('sponsored'))}
  assert(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth<=1));
  await page.select('#product-quantity','2');await page.select('#product-territory','special');
