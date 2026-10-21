@@ -561,3 +561,8 @@ Preservare aggiornamenti altrui e marchio. Commit piccoli, test pertinenti, veri
 - Tre test Node locali passati e sintassi catalog.js valida. CI browser e verifica pubblicazione ancora da eseguire; nessun miglioramento prestazionale già attribuito.
 - Fonte tecnica: MDN Using web workers, consultata 21/10/2026: https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers .
 - Prossima attività: verificare CI, pubblicazione e nuova misura dopo questa modifica; restano invariati i blocchi esterni già registrati.
+
+### Verifica Worker completata
+- Commit a337b2ea3c1ac94aa004bbf11ae55fd7e1c5a887: CI 39676813846 riuscita, 57 test Node, 85 Python, 312 pagine e zero problemi statici; browser mobile inclusi Worker effettivo, fallback, ordine e identità catalogo invariati. Workers Builds: zampachiara success sullo stesso commit.
+- Profilo locale 17.583 offerte: decode Worker 37,8 ms, parse Worker 30,9 ms, caricamento complessivo 135,3 ms; filtro/ordinamento main 26,9 ms, gruppo 20,9 ms. Quote chunk massimo 1 ms, preparazione massimo 7,1 ms. Non sono misure INP o produzione.
+- Riavviata misura Lighthouse su checkout aggiornato tramite workflow audit: confrontare il risultato senza dedurre causalità isolata. Blocchi esterni invariati.

@@ -34,7 +34,7 @@ jobs:
             sleep 1
           done
           exit 1
-      - name: Audit five checked-out pages after cooperative initial render (not production)
+      - name: Audit five checked-out pages after off-thread catalog decoding (not production)
         run: |
           mkdir -p reports
           export CHROME_PATH="$(command -v google-chrome)"
