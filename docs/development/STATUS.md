@@ -2,6 +2,9 @@
 
 Ultimo aggiornamento: 21 ottobre 2026.
 
+## Verifica navigazione diretta
+- CI39558482339 e Workers Builds riusciti: touch home/comparatore, nessuna visita intermedia al comparatore dopo scelta home, URL prodotto con ID corretto. Il primo tentativo ha riprodotto un blur fra pointerup e click; mantenuta la protezione fino al click effettivo, con chiusura su tocco esterno. Eliminato fallback manuale e rivalidato indice con ID; asset HTML versionati. Nessuna verifica su Safari fisico dichiarata.
+
 ## Correzione passaggio intermedio segnalato da Mirco
 - Rimossa la navigazione al pointerup: la selezione si completa sul click/tap mantenendo visibile l'opzione fino all'evento, per evitare il click sul modulo sottostante dopo la chiusura. Blocca propagazione/default; blur protetto durante il gesto e scroll cancellato.
 - Eliminato il fallback dei suggerimenti home verso il comparatore manuale. Indice richiesto con rivalidazione/versione e sole righe con ID. Anche l'eventuale submit dopo una scelta mantiene la destinazione prodotto. Versionati gli asset nelle due pagine per non riusare il vecchio percorso.
