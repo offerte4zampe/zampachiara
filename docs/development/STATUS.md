@@ -7,6 +7,8 @@ Ultimo aggiornamento: 21 ottobre 2026.
 - Otto test Node locali superati, inclusi ordine, assenza di mutazioni, input vuoto e2000 offerte dello stesso negozio. Benchmark sintetico Node,2000 righe con identità uguale e due negozi, sette iterazioni dopo warmup: mediana63,445 ms prima /3,036 ms dopo. Non è un catalogo reale né una misura mobile/LCP/TBT.
 - File: site/assets/trade.js e tests/test_trade.mjs. CI browser e Workers Build da verificare. Tracking e prezzi non modificati. Prossimo: misurazione del catalogo reale, poi materiali acquisizione; dipendenze esterne invariate.
 
+- Verifica conclusa raggruppamento: browser CI39554262881 e Workers Builds riusciti. Suite78 Python/31 Node,310 pagine/zero problemi; mobile393×852 senza overflow/errori JS. Nessuna nuova misura Lighthouse o verifica HTTP pubblica: il benchmark sintetico non descrive l'incremento reale del sito. Proseguire con misure del catalogo reale e dipendenze documentate.
+
 ## Sessione 21 ottobre 2026, caricamento pubblicitario non verificato
 - Letto l'artefatto Lighthouse 39544864292: cookie test_cookie da googleads.g.doubleclick.net e issue Cookie sullo stesso endpoint; due script AdSense contribuiscono al CPU time del campione. Il task principale da790 ms è Unattributable: non attribuito automaticamente ad AdSense o al catalogo.
 - Rimossa dalla pipeline la partenza automatica di adsbygoogle.js finché account/CMP/consenso non sono verificati. Restano meta di proprietà, ads.txt, slot diretti e link affiliati approvati; nessun account, campagna o impostazione remota modificati. Non presentare questo intervento come conformità legale completa o riattivare gli annunci con un semplice flag.
