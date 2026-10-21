@@ -53,3 +53,34 @@ body{background:var(--cream);font-family:'Trebuchet MS',system-ui,-apple-system,
 .search-suggest{position:relative;min-width:0;flex:1}.search-suggest input{width:100%;box-sizing:border-box}.search-suggest-list{position:absolute;top:100%;left:0;right:0;z-index:100;margin:6px 0 0;padding:6px;list-style:none;background:#fff;color:#182d28;border:1px solid #7b9389;border-radius:12px;box-shadow:0 10px 28px #102c2430;max-height:min(360px,48vh);overflow-y:auto;overscroll-behavior:contain}.search-suggest-list[hidden]{display:none}.search-suggest-list [role=option]{display:block;min-height:44px;padding:10px;cursor:pointer;line-height:1.35;overflow-wrap:anywhere;border-radius:7px}.search-suggest-list [role=option]:hover,.search-suggest-list [aria-selected=true]{background:#e4f2ec;outline:2px solid #267c76;outline-offset:-2px}.search-suggest-list small{display:block;margin-top:4px;color:#3b554b}.home-search{overflow:visible}.catalog-filters{position:relative;z-index:5}
 
 .shopping-hero{overflow:visible;position:relative;z-index:6}
+
+/* Device preference only: no account, storage or additional request. */
+@media screen and (prefers-color-scheme:dark){
+ :root{color-scheme:dark;--ink:#e5f0ed;--muted:#b5c9c6;--green:#8ed6c9;--soft:#203f3e;--cream:#102326;--accent:#efae89;--line:#597674;--card:#183235;--shadow:0 14px 40px #0003}
+ header,.navlinks{background:#152d30;border-color:var(--line)}
+ .navlinks a,.home-deal h3,.catalog-card h3,.content p,.content li,.home-stats{color:var(--ink)}
+ .panel,.feature,.catalog-card,.home-deal,.merchant,.article,.newsitem,.accordion,.summary-cards>div,.shopping-categories a,.brand-links a,.merchant-tiles a,.home-faq details,.home-spotlight,.daily-pick .home-spotlight,.artcard,.pet-bubble,.sponsor-positions article{background:var(--card);color:var(--ink);border-color:var(--line);box-shadow:none}
+ .shopping-hero,.heroart{background:var(--cream);border-color:var(--line)}
+ .pagehero,.section.alt,.shopping-return,.newsletter-banner,.newsletter-preview,.total,.help,.compare-box,.compare-winner,.ins-results>div,.catalog-basket-bar,.sponsor-contact,.advertising-slot{background:var(--soft);color:var(--ink);border-color:var(--line)}
+ .pagehero p,.micro,.section-desc,#home-deals-status,.shopping-return p,.newsletter-banner p,.help,.article small,.advertising-label,.ads-placeholder,.search-suggest-list small{color:var(--muted)}
+ .home-search,.search-suggest-list{background:var(--card);color:var(--ink);border-color:var(--line)}
+ .home-search input{color:var(--ink)}
+ input,select,textarea,.field input,.field select,.field textarea{background:#102326;color:var(--ink);border-color:var(--line)}
+ input::placeholder,textarea::placeholder{color:var(--muted);opacity:1}
+ .btn,.navcta,.home-search .btn{background:#216d68;color:#fff;border-color:#8ed6c9}
+ .btn:hover,.navcta:hover,.home-search .btn:hover{background:#17534f;color:#fff}
+ .btn.secondary,.btn.ghost,.choice,.pill,.tag,.popular-searches a{background:var(--soft);color:var(--green);border-color:var(--line)}
+ .btn.secondary:hover,.choice.active,.search-suggest-list [role=option]:hover,.search-suggest-list [aria-selected=true],.shopping-categories a:hover,.brand-links a:hover{background:#305352;color:var(--ink)}
+ .eyebrow,.catalog-sale,.notice{background:#493729;color:#ffe0b7;border-color:#bda17e}
+ .eyebrow:before{background:#efae89}
+ .kicker,.step-number{color:#efae89}
+ .hero h1 em,.catalog-price strong,.matched-offer>strong{color:var(--green)}
+ .matched-offer{background:var(--card);border-color:var(--line)}
+ .catalog-table th,.content th{background:var(--soft);color:var(--ink)}
+ .catalog-table th,.catalog-table td,.content th,.content td{border-color:var(--line)}
+ .feature .emoji,.shopping-categories span,.shopping-categories a:nth-child(2n) span,.shopping-categories a:nth-child(3n) span{background:var(--soft)}
+ .home-deal img,.catalog-card img,.spotlight-product img,#product-image img{background:#fff;mix-blend-mode:normal;border-radius:8px}
+ .skip{background:var(--card);color:var(--green)}
+ :is(a,button,input,select,textarea,summary):focus-visible,.guide-table:focus-visible,.home-search:focus-within{outline:3px solid #efae89;outline-offset:3px}
+ .footer{background:#152d30}.footer:before{background:none}
+}

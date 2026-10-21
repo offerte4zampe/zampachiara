@@ -2,6 +2,12 @@
 
 Ultimo aggiornamento: 21 ottobre 2026.
 
+## Sessione 21 ottobre 2026, tema scuro secondo dispositivo
+- Prima solo tema chiaro; aggiunta palette scura esclusivamente per media screen/prefers-color-scheme:dark. Nessuna preferenza salvata o tracker, nessuna modifica ai dati/prezzi. Tema chiaro e stampa conservati. Superfici, controlli, tabella, suggerimenti e focus adattati; immagini prodotto su fondo bianco senza multiply.
+- File: style.css, check_themes_browser.mjs, runner browser e trigger workflow. Prova su sei pagine in entrambe le preferenze a393px: campioni di colori calcolati per testo, micro, CTA, controlli e contenuto con rapporto almeno4,5, overflow e screenshot home scura. Il campione non certifica WCAG completa né tutte le combinazioni/immagini.
+- Sintassi test locale superata; browser/CI e Workers da verificare. Fonte tecnica consultata21 ottobre: https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme . Nessuna prestazione o miglioramento conversione attribuito.
+- Prossimo: correggere eventuali colori emersi nella prova, registrare esiti e aggiornare matrice residui. Dipendenze esterne newsletter/API/CMP/feed/accordi ancora aperte.
+
 ## Verifica conclusa: condivisione e build con metriche Amazon
 - CI39607314594 riuscita:48 Node/80 Python,311 pagine/zero problemi statici e prova mobile esistente estesa a link esatto e fallback manuale quando clipboard negata. Primo tentativo39607179395 aveva errore nella prova collection ($eval anziché $eval); corretto mantenendo l'asserzione su tutti i collegamenti commerciali.
 - Workers Builds riuscita sul commit045f4618cc3bab2eece85a1418e695b83deae89f, che comprende anche le precedenti modifiche metriche Amazon: pubblicazione tramite build ora confermata. Il servizio web non consente lettura degli asset pubblici richiesti; nessuna ispezione HTTP live o verifica di click/vendite dichiarata.

@@ -48,6 +48,7 @@ on:
       - 'tests/check_basket_browser.mjs'
       - 'tests/profile_catalog_browser.mjs'
       - 'tests/check_guides_browser.mjs'
+      - 'tests/check_themes_browser.mjs'
       - 'automation/build_savings_guides.py'
       - 'automation/build_observatory.py'
       - 'automation/audit_site.py'
