@@ -33,6 +33,7 @@ on:
       - 'automation/build_catalog_preview.py'
       - 'tests/test_catalog_preview.py'
       - 'tests/test_search_index.py'
+      - 'tests/test_home_data.py'
       - 'tests/test_search_suggest.mjs'
       - 'automation/build_matched_pages.py'
       - 'automation/apply_social_metadata.py'

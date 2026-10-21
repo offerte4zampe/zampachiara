@@ -33,6 +33,6 @@ class HomePrerenderTests(unittest.TestCase):
         self.assertIn('10,00 €',rendered)
         self.assertIn('data-home-offer',rendered)
         self.assertIn('5,00 €/kg',rendered)
-        self.assertIn('class="product-title-link" href="https://example.com/tracked-product" rel="sponsored noopener noreferrer"',rendered)
+        self.assertIn('class="product-title-link" href="prodotto.html?id=a"',rendered)
         self.assertNotIn('<del>',rendered)
         self.assertNotIn('catalog-sale',rendered)

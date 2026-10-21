@@ -26,6 +26,8 @@ on:
       - 'site/assets/product.js'
       - 'site/prodotto.html'
       - 'tests/test_product_view.mjs'
+      - 'tests/test_home_data.py'
+      - 'tests/test_search_index.py'
       - 'tests/check_search_suggest_browser.mjs'
       - 'site/assets/style.css'
       - 'site/confronta-cibo.html'
