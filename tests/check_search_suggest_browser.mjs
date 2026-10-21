@@ -23,7 +23,7 @@ export async function checkSuggestions(page,origin,catalog){
  await page.waitForSelector('#product-shops [data-product-shop]',{timeout:30000});
  assert.equal(await page.$$eval('#product-shops [data-product-shop]',rows=>rows.length),catalog.sources.length);
  const seed=catalog.offers.find(o=>o.id===expected);assert(seed);assert.equal(await page.$eval('#product-title',e=>e.textContent),seed.title);
- const outbound=await page.$$eval('#product-shops a:not([data-shipping-conditions])',rows=>rows.map(a=>({href:a.href,rel:a.rel})));
+ const outbound=await page.$$eval('#product-shops a:not([data-shipping-conditions]):not([data-product-report])',rows=>rows.map(a=>({href:a.href,rel:a.rel})));
  for(const a of outbound){assert(catalog.offers.some(o=>(o.affiliate_url||o.url)===a.href),'Exact catalog URL required');if(a.href.includes('tradetracker'))assert(a.rel.includes('sponsored'))}
  assert(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth<=1));
  await page.select('#product-quantity','2');await page.select('#product-territory','special');
@@ -70,5 +70,25 @@ export async function checkSuggestions(page,origin,catalog){
   assert.equal(new URL(href).searchParams.get('tag'),links.tracking_id);
   assert(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth<=1));
  }
+
+ const food=catalog.offers.find(o=>o.available&&o.weight_kg>0&&/crocchette|umido|(?:cani|gatti) > cibo > secco/i.test(o.category||'')&&now-Date.parse(o.checked_at)<=36*3600000);assert(food,'Fresh food fixture');
+ await page.goto(origin+'/prodotto.html?id='+encodeURIComponent(food.id),{waitUntil:'domcontentloaded'});
+ await page.waitForSelector('[data-product-basket]',{timeout:30000});
+ const initial=await page.evaluate(()=>localStorage.getItem('o4z-basket-v1'));
+ await page.evaluate(()=>localStorage.removeItem('o4z-basket-v1'));
+ await page.click('[data-product-basket="'+food.id+'"]');
+ assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('o4z-basket-v1'))[0].quantity),1);
+ assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('o4z-basket-v1'))[0].id),food.id);
+ await page.evaluate(value=>value===null?localStorage.removeItem('o4z-basket-v1'):localStorage.setItem('o4z-basket-v1',value),initial);
+ const report=await page.$eval('[data-product-report]',e=>e.href);assert.equal(new URL(report).searchParams.get('id'),food.id);
+ await page.click('.daily-cost summary');await page.type('.daily-cost input','150');
+ const daily=await page.$eval('.daily-cost [role=status]',e=>e.textContent);assert(daily.includes('al giorno'));
+ await page.click('.observed-history summary');
+ await page.waitForFunction(()=>document.querySelector('.observed-history').textContent.includes('Periodo osservato'),{timeout:30000});
+ await page.select('#product-quantity','2');
+ assert.equal(await page.$eval('.daily-cost input',e=>e.value),'150');
+ assert.equal(await page.$eval('.daily-cost [role=status]',e=>e.textContent),daily);
+ assert(await page.$eval('.observed-history',e=>e.open));
+ assert(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth<=1));
 
 }

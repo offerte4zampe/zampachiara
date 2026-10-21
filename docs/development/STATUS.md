@@ -2,6 +2,13 @@
 
 Ultimo aggiornamento: 21 ottobre 2026.
 
+## Sessione 21 ottobre 2026, funzioni nella scheda prodotto finale
+- La nuova destinazione dei suggerimenti non esponeva storico, costo giornaliero, lista e segnalazione già disponibili nel comparatore. Integrati nella scheda prodotto finale riusando i moduli esistenti, senza rinviare l'utente al comparatore manuale.
+- Ogni offerta recente mostra storico su richiesta, costo manuale solo per alimento con peso verificato, aggiunta di una confezione alla lista e segnalazione con ID/prezzo/data. Esaurite non aggiungibili. Quantità della stima spedizione distinta esplicitamente dalla quantità salvata in lista.
+- Elementi storico/razione conservati al cambio quantità/località: non perdono i grammi inseriti e lo storico resta aperto; richieste storico solo su apertura. Nessuna nuova razione consigliata o prezzo inventato, nessun servizio email attivato.
+- File: site/prodotto.html, site/assets/product.js, tests/check_search_suggest_browser.mjs. Controlli sintassi JS locali superati; aggiunta prova mobile per aggiunta lista/ripristino stato, segnalazione ID e conservazione storico/razione. CI/Workers da verificare.
+- Misura strutturale: prima zero strumenti nella scheda finale, dopo riuso dei quattro strumenti esistenti per offerta; non è un miglioramento prestazionale misurato. Profilazione catalogo reale e dipendenze API/email/CMP restano aperte; prossima attività: chiudere verifica del flusso e poi profilare il lavoro sul main thread.
+
 ## Verifica conclusa: sei schede KONG con collegamento Amazon
 - CI39561944082 e Workers Builds riuscite. Suite80 Python/40 Node e browser mobile: tutte le sette mappe corrispondono ai dati identificativi del catalogo corrente; pagina corretta, ASIN specifico e tag verificati per ciascuna, senza navigare fuori dal sito. Nessun overflow nei percorsi di tutte le mappe.
 - Distinguere sette schede da quattro prodotti distinti: le sei nuove schede coprono tre taglie KONG nei due negozi. Build verificata, non nuova ispezione HTTP pubblica o misura delle vendite. Registro e test persistono nel repository; prezzi Amazon non attivati.
