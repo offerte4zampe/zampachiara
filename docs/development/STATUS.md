@@ -2,6 +2,12 @@
 
 Ultimo aggiornamento: 21 ottobre 2026.
 
+## Sessione 21 ottobre 2026, misura dei clic Amazon
+- Individuato residuo concreto: i collegamenti Amazon editoriali erano attivi ma merchant() non li riconosceva e l'allowlist del Worker escludeva Amazon. Scheda dinamica inoltre classificata other per assenza del marcatore pagina prodotto. Corrette le tre cause senza toccare destinazioni, tag o ordine dei prezzi.
+- Riconosciuti soltanto link HTTPS amazon.it/www.amazon.it diretti /dp/ASIN con singolo tag del progetto; esclusi ricerca, host simili, tag assente/errato/duplicato e credenziali nell'URL. Worker conserva solo il nome merchant autorizzato: nessun ASIN, URL, query o ID offerta nei log. Consenso facoltativo, DNT e GPC invariati.
+- File: trade.js, prodotto.html, worker/index.mjs, test_trade/test_metrics e trigger CI.14 test Node mirati locali superati: rilevamento, esclusioni, integrazione client/Worker, consenso negato e segnali privacy; nessun clic reale, vendita o ricavo attribuito. Prima Amazon escluso dalla funzione, dopo riconosciuto nei casi verificati: non è una misura di traffico.
+- CI completa e Workers da verificare. Restano blocchi esterni API/email/CMP/feed/accordi e misure reali. Prossimo: confermare esito e poi verificare condivisione dalla scheda prodotto finale, requisito non coperto dalla sola condivisione del vecchio comparatore.
+
 ## Sessione 21 ottobre 2026, materiali acquisizione preparati
 - Creato docs/growth/acquisition-kit-2026-10-21.md: presentazione del progetto, proposta editoriale per revisione, tre contenuti brevi e testo di un carosello educativo, fonti, disclosure e condizioni di rilascio. Nessun invio, destinatario ricercato, campagna o pubblicazione social; il documento è una bozza nel repository.
 - Verificati tutti gli otto percorsi distinti citati contro l'albero corrente: file presenti. JSON osservatorio letto integralmente:145 righe e zero indici non null, coerenti con la bozza. Nessun prezzo, codice sconto, statistica di risparmio o grafico di trend inventato. Verifica di coerenza repository, non nuova ispezione HTTP dei link pubblici.

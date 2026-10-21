@@ -1,6 +1,6 @@
 const EVENTS = new Set(['page_view','catalog_search','compare_add','merchant_click']);
 const PRODUCTS = new Set(['monge-maxi-adult-pollo','monge-medium-adult-pollo','monge-adult-manzo-riso','monge-adult-cat-pollo','royal-canin-medium-adult','royal-canin-maxi-adult','pro-plan-large-athletic-agnello','pro-plan-medium-sensitive-skin-salmone']);
-const SHOPS = new Set(['Bauzaar','WebPet','Animaliapet','Isola dei Tesori']);
+const SHOPS = new Set(['Bauzaar','WebPet','Animaliapet','Isola dei Tesori','Amazon']);
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);

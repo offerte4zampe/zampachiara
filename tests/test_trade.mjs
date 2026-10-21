@@ -40,3 +40,9 @@ test('grouping preserves first occurrence, row order and singleton shops without
  const sameShop=Array.from({length:2000},(_,i)=>({...a,id:String(i)}));
  assert.equal(groupOffers(sameShop,now).length,2000);
 });
+
+test('Amazon recognition accepts only explicit Italian product links with the project tag',()=>{
+ assert.equal(merchant('https://www.amazon.it/dp/B0722X975H?tag=offerte4zam02-21'),'Amazon');
+ assert.equal(merchant('https://amazon.it/dp/B0002AR15U/?tag=offerte4zam02-21'),'Amazon');
+ for(const url of ['https://www.amazon.it/s?k=collare&tag=offerte4zam02-21','https://www.amazon.it/dp/B0722X975H','https://www.amazon.it/dp/B0722X975H?tag=someone-21','https://www.amazon.it/dp/B0722X975H?tag=offerte4zam02-21&tag=other-21','https://amazon.it.evil.test/dp/B0722X975H?tag=offerte4zam02-21','http://www.amazon.it/dp/B0722X975H?tag=offerte4zam02-21','https://user:pass@www.amazon.it/dp/B0722X975H?tag=offerte4zam02-21'])assert.equal(merchant(url),'');
+});
