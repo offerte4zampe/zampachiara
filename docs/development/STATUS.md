@@ -2,6 +2,12 @@
 
 Ultimo aggiornamento: 21 ottobre 2026.
 
+## Verifica CI: caricamento iniziale cooperativo
+- CI39663147531 riuscita:54 Node/85 Python,312 pagine/zero problemi statici; percorsi mobile e ordinamento totale conservati. Confronto sul catalogo reale17583 offerte fra preventivi diretti e cache cooperativa: stesso ordine integrale degli ID.
+- Tre misure locali senza throttling: CPU preventivi mediana20,6ms/massimo blocco6,7ms; indici CPU48,3ms/massimo blocco2,1ms; filtro/ordine44,7ms, gruppi18,8ms, schede6,1ms, confronto0,6ms. Parsing28,9ms e decodifica49,8ms. Report persistito in catalog-initial-yield-2026-10-21.json; queste misure non sono INP/Lighthouse né prova di minore tempo percepito.
+- Avviata nuova verifica Lighthouse sul codice modificato tramite workflow esistente, stesse cinque pagine/tre iterazioni/condizioni, per valutare il TBT residuo539ms del campione precedente. Leggere esito prima di dichiarare chiuso il residuo prestazionale; non attribuire causalità tra runner diversi.
+- Nessuna chiusura dell'intero progetto né disabilitazione: resta questa valutazione tecnica oltre ai blocchi esterni documentati.
+
 ## Sessione 21 ottobre 2026, blocchi iniziali del comparatore
 - Audit39659082421 riuscito: accessibilità/SEO/best practices100 su cinque pagine; performance100 tranne comparatore85, LCP1954ms/CLS0/TBT539ms mediani locali. Home LCP1804ms/TBT10ms, guida1652/0, linea1802/0, osservatorio1502/0. Non produzione o INP; prima84/TBT602ms su altro runner, nessuna causalità isolata. Evidenza integrale salvata in lighthouse-final-before-yield-2026-10-21.json.
 - Residuo concreto: preparazione iniziale dei preventivi, ordinamento, gruppi e DOM restavano nello stesso task dopo gli indici. Preventivi iniziali della vista totale senza filtri ora riscaldati in blocchi500 con yield; ulteriori yield fra ordinamento, gruppi e DOM. Algoritmi/prezzi/ordine invariati; render interattivo già esistente resta sincrono. Versione rende inoffensivo un caricamento iniziale superato da un controllo utente.

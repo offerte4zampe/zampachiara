@@ -1,0 +1,22 @@
+{
+  "quote_max_chunk_ms": 6.7,
+  "quote_order_equivalence": true,
+  "prepare_max_chunk_ms": 2.1,
+  "scope": "Local checkout, Chromium mobile viewport on GitHub runner; no CPU/network throttling, no production/INP measurement",
+  "catalog_generated_at": "2026-10-21T18:46:50.473430+00:00",
+  "offers": 17583,
+  "iterations": 3,
+  "units": "milliseconds",
+  "medians": {
+    "decode_decompress": 49.8,
+    "parse": 28.9,
+    "prepare_chunk_cpu": 48.3,
+    "prepare_indexes": 49.4,
+    "prepare_controls": 7.4,
+    "quote_chunk_cpu": 20.6,
+    "filter_sort": 44.7,
+    "group": 18.8,
+    "render_cards": 6.1,
+    "render_comparison": 0.6
+  }
+}
