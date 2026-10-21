@@ -2,6 +2,12 @@
 
 Ultimo aggiornamento: 21 ottobre 2026.
 
+## Sessione 21 ottobre 2026, totale nella scheda prodotto
+- La scheda raggiunta dai suggerimenti ora riusa il calcolatore di spedizione esistente: quantità 1–10, consegna standard o particolare, totale e costo spedizione separati, fonte delle condizioni. Ordine per totale stimabile disponibile, poi prezzo confezione per le offerte senza totale; commissioni escluse. Nessuna tariffa o data di verifica modificata.
+- Totali assenti con regole scadute, conflittuali, peso di spedizione mancante, soglia incerta o destinazioni speciali. Prezzo confezione e avviso spedizione esclusa restano espliciti. Cambiare quantità non ricarica il catalogo; URL affiliati preservati e offerte esaurite senza acquisto.
+- File: prodotto.html, product-model/product JS, test modello e browser suggerimenti. Corretti metadati copiati dalla pagina Metodo e duplicazione del caricamento trade.js.
+- Cinque test Node locali e controllo sintassi superati (ordine totale vs prezzo, soglie quantità, condizioni assenti/scadute/conflittuali e tracking); CI mobile e Workers Builds ancora da verificare. Nessuna nuova misura prestazionale o verifica tariffe dei negozi dichiarata. Prossimo: confermare pubblicazione e profilare catalogo reale; dipendenze esterne invariate.
+
 ## Verifica navigazione diretta
 - CI39558482339 e Workers Builds riusciti: touch home/comparatore, nessuna visita intermedia al comparatore dopo scelta home, URL prodotto con ID corretto. Il primo tentativo ha riprodotto un blur fra pointerup e click; mantenuta la protezione fino al click effettivo, con chiusura su tocco esterno. Eliminato fallback manuale e rivalidato indice con ID; asset HTML versionati. Nessuna verifica su Safari fisico dichiarata.
 

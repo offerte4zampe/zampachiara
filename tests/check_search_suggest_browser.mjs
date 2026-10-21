@@ -23,9 +23,14 @@ export async function checkSuggestions(page,origin,catalog){
  await page.waitForSelector('#product-shops [data-product-shop]',{timeout:30000});
  assert.equal(await page.$$eval('#product-shops [data-product-shop]',rows=>rows.length),catalog.sources.length);
  const seed=catalog.offers.find(o=>o.id===expected);assert(seed);assert.equal(await page.$eval('#product-title',e=>e.textContent),seed.title);
- const outbound=await page.$$eval('#product-shops a',rows=>rows.map(a=>({href:a.href,rel:a.rel})));
+ const outbound=await page.$$eval('#product-shops a:not([data-shipping-conditions])',rows=>rows.map(a=>({href:a.href,rel:a.rel})));
  for(const a of outbound){assert(catalog.offers.some(o=>(o.affiliate_url||o.url)===a.href),'Exact catalog URL required');if(a.href.includes('tradetracker'))assert(a.rel.includes('sponsored'))}
  assert(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth<=1));
+ await page.select('#product-quantity','2');await page.select('#product-territory','special');
+ assert(await page.$eval('[data-shipping-estimate]',rows=>rows.every(e=>e.textContent.includes('Totale non calcolato'))));
+ assert.equal(await page.$eval('#product-shops [data-product-shop]',rows=>rows.length),catalog.sources.length);
+ await page.select('#product-territory','standard');
+ assert.equal(await page.$eval('#product-quantity',e=>e.value),'2');
  await page.screenshot({path:'browser-reports/product-mobile.png',fullPage:true});
  await page.goto(origin+'/index.html',{waitUntil:'domcontentloaded'});await page.focus('#home-query');await page.type('#home-query',query);await page.waitForSelector('#home-query-suggestions [role=option]',{visible:true});const clickedId=await page.$eval('#home-query-suggestions [role=option]',e=>e.dataset.productId);await Promise.all([page.waitForNavigation({waitUntil:'domcontentloaded'}),page.tap('#home-query-suggestions [role=option]')]);assert.equal(new URL(page.url()).searchParams.get('id'),clickedId);assert(!navigations.some(url=>url.includes('confronta-cibo')),'Home suggestion must navigate directly without comparator intermediate');page.off('framenavigated',recordNavigation);
  await page.goto(origin+'/confronta-cibo.html',{waitUntil:'domcontentloaded'});
