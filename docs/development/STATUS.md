@@ -2,6 +2,11 @@
 
 Ultimo aggiornamento: 21 ottobre 2026.
 
+## Profilazione: prima misura e intervento circoscritto
+- CI39574478004 riuscita con17605 offerte, tre iterazioni. Mediane locali ms: decodifica39,9; parsing22,3; indici43,6; controlli6,4; filtro/ordinamento60,2; gruppi24,4; schede4,3; confronto1. La fase filtro/ordinamento è la più costosa fra quelle misurate; non spiega automaticamente TBT/INP sul sito pubblico.
+- Eliminata lettura ripetuta dei controlli stock/sconto/sort all'interno di ogni callback di filtro e confronto. Valori catturati una volta per operazione sincrona, stessi criteri e tie-break; nessun cambiamento a prezzi, spedizione, matching o commissioni.
+- Baseline salvata in catalog-profile-2026-10-21.json, report integrale nell'artefatto CI. Nuova misurazione necessaria; non attribuire una percentuale finché non disponibile e non trattare run su runner diversi come esperimento controllato.
+
 ## Sessione 21 ottobre 2026, profilazione catalogo reale
 - Aggiunte misure esplicite abilitate soltanto con profile=1: decodifica/decompressione, parsing, indici, controlli, filtro/ordinamento, raggruppamento, DOM delle schede e confronto. Nessun invio di misure o query a terzi; prezzi, matching, ordine e commissioni invariati.
 - Browser CI esegue tre caricamenti del catalogo reale del checkout e salva artefatto catalog-profile.json con campioni e mediane in millisecondi. Chromium con viewport mobile su runner GitHub, senza throttling CPU/rete; non produzione, CrUX o INP. Nessuna soglia prestazionale inventata.

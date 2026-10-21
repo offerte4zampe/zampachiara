@@ -1,0 +1,21 @@
+{
+  "scope": "Local checkout, Chromium mobile viewport on GitHub runner; no CPU/network throttling; not production/INP",
+  "catalog_generated_at": "2026-10-21T06:49:57.705690+00:00",
+  "offers": 17605,
+  "iterations": 3,
+  "units": "milliseconds",
+  "baseline_run": 39574478004,
+  "baseline_commit": "02531df9406eb88a6bdf7c2fd12fa543886ff711",
+  "baseline_medians": {
+    "decode_decompress": 39.9,
+    "parse": 22.3,
+    "prepare_indexes": 43.6,
+    "prepare_controls": 6.4,
+    "filter_sort": 60.2,
+    "group": 24.4,
+    "render_cards": 4.3,
+    "render_comparison": 1
+  },
+  "change": "Read stock/sale/sort controls once per filter-sort operation instead of inside every filter/comparison callback; same filtering and sorting logic.",
+  "after_medians": null
+}
