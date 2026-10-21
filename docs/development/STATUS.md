@@ -2,6 +2,13 @@
 
 Ultimo aggiornamento: 21 ottobre 2026.
 
+## Sessione 21 ottobre 2026, prima pagina di linea verificata
+- Consultata fonte ufficiale https://www.monge.it/i-nostri-marchi/ il21 ottobre: BWild è distinta dalle altre proposte Monge, con secco/umido per cane e gatto e denominazioni Low Grain/Grain Free. Pubblicato generatore per /linea-monge-bwild: ammette solo marca esatta Monge/Monge BWild e token BWild esplicito nel titolo, senza abbinare ricette/formati.
+- Snapshot indice corrente:25 offerte candidate in due negozi; disponibilità/freschezza/prezzo ricontrollati sul catalogo dal generatore. Soglia editoriale dodici offerte e due fonti; sotto soglia nessun prezzo/noindex. Selezione alfabetica alternata per fonte, massimo24 righe, senza influenza commissioni. Nessun minimo della linea presentato come equivalenza nutrizionale.
+- Tutti i titoli e CTA aprono la scheda interna esatta. Fonte/data, metodo, limiti multipack e guide pertinenti visibili; breadcrumb, canonical e partizione sitemap marche. Collegamenti da pagina Monge e indice marche. Nessuna affermazione sanitaria o codice promozionale aggiunto.
+- File: build_line_pages/test_line_pages, build_brand_pages, build_sitemaps, due workflow e prova guide mobile. Tre test Python mirati locali passati e sintassi generatori verificata; CI, numero effettivo di righe e pubblicazione da confermare. Non ripetere audit.
+- Prossimo: verificare CI/catalogo e pagina generata, poi aggiornare matrice di chiusura; dipendenze esterne invariate.
+
 ## Verifica CI conclusa: dimensioni touch
 - CI39638367252 riuscita:51 Node/82 Python,311 pagine/zero problemi statici, prova su sei pagine in chiaro/scuro con CTA e campi visibili almeno44px, contrasto campionato e nessun overflow. Flussi suggerimenti/lista/scheda finale conservati, nessun clic commerciale.
 - Check Workers del commit37a39484c439c9fe1b6fed3ce6cf34f30d845b99 ancora assente al controllo; la verifica pubblica precedente dimostra anteprima server e scheda operativa, non ancora le nuove altezze. Confermare build al ciclo seguente senza ripetere suite.

@@ -64,7 +64,7 @@ def fingerprint(html):
 
 def group_for(path, html):
     slug = path.stem
-    if slug.startswith('marca-') or slug == 'marche':
+    if slug.startswith(('marca-','linea-')) or slug == 'marche':
         return 'brands'
     if slug in ['crocchette-cani','crocchette-gatti','lettiere-gatti']:
         return 'categories'
