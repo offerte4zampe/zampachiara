@@ -29,3 +29,14 @@ test('Isola official standard shipping preserves ambiguous exact threshold',()=>
  assert.equal(shipping({...offer,price:59},actual,1,'standard',time).total,undefined);
  assert.equal(shipping(offer,actual,1,'special',time).total,undefined);
 });
+
+test('grouping preserves first occurrence, row order and singleton shops without mutation',()=>{
+ const a={id:'a',merchant_id:'a',gtin:'4006381333931',brand:'Brand',weight_kg:2,checked_at:'2026-10-18T10:00:00Z'};
+ const rows=[{...a,id:'single',weight_kg:4},a,{...a,id:'same-shop'},{...a,id:'b',merchant_id:'b'}, {...a,id:'invalid',gtin:'bad'}];
+ const snapshot=JSON.stringify(rows);
+ assert.deepEqual(groupOffers(rows,now).map(group=>group.map(o=>o.id)),[['single'],['a','same-shop','b'],['invalid']]);
+ assert.equal(JSON.stringify(rows),snapshot);
+ assert.deepEqual(groupOffers([],now),[]);
+ const sameShop=Array.from({length:2000},(_,i)=>({...a,id:String(i)}));
+ assert.equal(groupOffers(sameShop,now).length,2000);
+});
