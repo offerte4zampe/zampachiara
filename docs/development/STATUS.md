@@ -2,6 +2,12 @@
 
 Ultimo aggiornamento: 21 ottobre 2026.
 
+## Sessione 21 ottobre 2026, materiali acquisizione preparati
+- Creato docs/growth/acquisition-kit-2026-10-21.md: presentazione del progetto, proposta editoriale per revisione, tre contenuti brevi e testo di un carosello educativo, fonti, disclosure e condizioni di rilascio. Nessun invio, destinatario ricercato, campagna o pubblicazione social; il documento è una bozza nel repository.
+- Verificati tutti gli otto percorsi distinti citati contro l'albero corrente: file presenti. JSON osservatorio letto integralmente:145 righe e zero indici non null, coerenti con la bozza. Nessun prezzo, codice sconto, statistica di risparmio o grafico di trend inventato. Verifica di coerenza repository, non nuova ispezione HTTP dei link pubblici.
+- Matrice aggiornata su preparazione PR, Amazon editoriale e loader AdSense disattivato. Nessuna modifica al sito eseguibile: test applicativi e misure prestazionali non ripetuti per soli documenti; check pubblicazione da registrare.
+- Prossima attività: verificare gli eventuali residui tecnici indipendenti nella matrice e concludere la classificazione dei blocchi esterni con criteri precisi, senza ripetere audit o interventi completati. Newsletter/alert, API, feed, CMP, misure esterne e accordi restano aperti; nessuna conclusione totale.
+
 ## Verifica conclusa: titoli interni nella lista
 - CI39583433176 e Workers Builds riuscite:80 Python/43 Node,311 pagine statiche/zero problemi. Browser mobile verifica tutti i titoli in lista e scenari verso schede interne con ID del catalogo, apertura della scheda e ritorno alla lista, quantità persistita e CTA negozio con tracking/sponsored conservati. Nessun clic commerciale.
 - File funzionali basket.js e carrello-risparmio.html; prova estesa check_basket_browser.mjs. Non ripetere questa correzione nei prossimi cicli. Nessuna nuova misura pubblica Lighthouse/INP o vendite verificata.

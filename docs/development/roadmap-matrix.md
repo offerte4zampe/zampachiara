@@ -1,6 +1,6 @@
 # Matrice di completamento roadmap
 
-Aggiornata il 20 ottobre 2026. Questa matrice distingue implementazione verificata, lavoro predisposto ma non attivo e dipendenze esterne. Non attribuisce risultati SEO, vendite o conformità legale senza evidenze.
+Aggiornata il 21 ottobre 2026. Questa matrice distingue implementazione verificata, lavoro predisposto ma non attivo e dipendenze esterne. Non attribuisce risultati SEO, vendite o conformità legale senza evidenze.
 
 | Area | Stato | Evidenza attuale | Residuo o dipendenza |
 |---|---|---|---|
@@ -16,13 +16,13 @@ Aggiornata il 20 ottobre 2026. Questa matrice distingue implementazione verifica
 | Segnalazioni e correzioni | Completato | Bozza locale mailto, allowlist, registro pubblico, controlli automatici | La presa in carico umana delle segnalazioni non è automatizzabile senza leggere/inviare posta |
 | Guide originali | Obiettivo minimo completato | Sei guide generate da dati correnti, testate e collegate | Altre due guide sono facoltative entro l’obiettivo 6–8; revisione veterinaria richiede accordo reale |
 | Osservatorio prezzi | Infrastruttura completata | Pagina, JSON, metodo e copertura; 145 righe categoria/mese al primo ciclo | Zero indici pubblicabili finché non esistono due mesi chiusi con pannello minimo |
-| Affiliazioni | Parzialmente attive | Bauzaar e Isola tracciati con disclosure e `rel=sponsored`; ordine indipendente dalle commissioni | Amazon richiede accesso API/condizioni di qualificazione; altri merchant richiedono approvazione/feed |
-| Pubblicità | Predisposta, non pienamente verificata | AdSense inserito e slot separati dal contenuto | Stato account, CMP e ricavi richiedono accesso/consenso verificato |
+| Affiliazioni | Parzialmente attive | Bauzaar e Isola tracciati con disclosure e `rel=sponsored`; ordine indipendente dalle commissioni | Amazon: sette schede/quattro ASIN con link editoriali diretti verificati, senza prezzo/stock; prezzi automatici richiedono API ufficiali. Altri merchant richiedono approvazione/feed |
+| Pubblicità | Predisposta, non pienamente verificata | Metadati/ads.txt e spazi predisposti; loader AdSense rimosso finché CMP/account non verificati | Stato account, CMP e ricavi richiedono accesso/consenso verificato |
 | Newsletter Brevo | Predisposta, non attiva sul sito | Mittente/dominio, modulo con consenso separato e DOI provato; conferma iniziale finita nello spam | Cancellazione/soppressione, informativa e permessi contenuti ancora da verificare; nessuna campagna inviata |
 | Avvisi prezzo | Infrastruttura offline | Schema e motore puro per soglia/consenso/replay | D1, callback autenticati, revoca, coda e invio richiedono configurazione remota e prove autorizzate |
 | Privacy/cookie | Parziale | Titolare autorizzato, contatto, pagine informative e blocco funzionalità non pronte | Conservazione, ruoli/DPA, cancellazione e CMP effettiva richiedono decisioni/verifiche esterne |
 | Analytics e KPI | Parziale | Metriche first-party minimizzate e audit tecnici | Search Console, traffico, ritorni e ricavi non sono disponibili dal repository |
-| Acquisizione/PR | Non eseguita | Osservatorio e dati scaricabili preparano una base reale | Pubblicazioni, contatti, community, social e collaborazioni richiedono approvazione umana |
+| Acquisizione/PR | Materiali preparati, nessuna diffusione | `docs/growth/acquisition-kit-2026-10-21.md`: presentazione, proposta editoriale, tre post e testo carosello; fonti e controlli di rilascio | Pubblicazioni, contatti, community, social e collaborazioni richiedono approvazione umana; nessun indice o grafico di trend senza dati maturati |
 | Parere veterinario | Bloccato esternamente | Nessuna qualifica dichiarata senza accordo | Serve professionista reale e consenso alla pubblicazione |
 | Pubblicazione | Verificata per l’ultimo ciclo dati | GitHub Actions, Workers Build e report qualità letto sul dominio | Ogni modifica successiva va riverificata; una build riuscita non prova da sola il rendering pubblico |
 
