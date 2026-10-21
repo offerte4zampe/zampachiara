@@ -2,6 +2,12 @@
 
 Ultimo aggiornamento: 21 ottobre 2026.
 
+## Verifica conclusa: strumenti nella scheda prodotto finale
+- CI39567758130 e Workers Builds riuscite:80 Python/40 Node,311 pagine statiche/zero problemi, mobile touch con aggiunta alla lista, ID segnalazione, razione manuale conservata e storico riutilizzato (una sola richiesta dopo apertura). Percorsi suggerimenti/Amazon restano verificati.
+- Emersa larghezza del viewport mobile425px rispetto ai393 impostati: vincolati controlli spedizione e pulsanti/contenitori degli strumenti; aggiunta asserzione innerWidth<=394 per evitare che il solo confronto scrollWidth/innerWidth nasconda il ridimensionamento. Il tap sulla lista ora verificato con posizione stabile; nessun click commerciale effettuato. La prova razione usa evento input sul campo, lo storico toggle sul componente.
+- Riutilizzo delle istanze evita perdita di input e duplicazione richieste al cambio quantità/località. I test separano le richieste storico dei percorsi scheda/comparatore. Nessuna prestazione reale o INP misurati.
+- Prossimo lavoro: profilazione dettagliata catalogo reale (decompressione/parsing/ordinamento/raggruppamento/rendering), poi intervento sulla causa osservata. Restano dipendenze API Amazon, servizi newsletter/alert, nuovi feed e CMP; roadmap non conclusa.
+
 ## Sessione 21 ottobre 2026, funzioni nella scheda prodotto finale
 - La nuova destinazione dei suggerimenti non esponeva storico, costo giornaliero, lista e segnalazione già disponibili nel comparatore. Integrati nella scheda prodotto finale riusando i moduli esistenti, senza rinviare l'utente al comparatore manuale.
 - Ogni offerta recente mostra storico su richiesta, costo manuale solo per alimento con peso verificato, aggiunta di una confezione alla lista e segnalazione con ID/prezzo/data. Esaurite non aggiungibili. Quantità della stima spedizione distinta esplicitamente dalla quantità salvata in lista.
