@@ -58,4 +58,17 @@ export async function checkSuggestions(page,origin,catalog){
  await page.goto(origin+'/prodotto.html?id='+encodeURIComponent(unmapped.id),{waitUntil:'domcontentloaded'});
  await page.waitForSelector('#product-shops [data-product-shop]',{timeout:30000});assert(await page.$eval('#product-amazon',e=>e.hidden));
 
+ // Every editorial mapping must match the current catalog, including exact variant.
+ for(const entry of links.links){
+  const seed=catalog.offers.find(o=>o.id===entry.offer_id);assert(seed,'Mapped offer must exist: '+entry.offer_id);
+  for(const key of ['title','brand','variant','gtin'])assert.equal(String(seed[key]??''),String(entry[key]??''),'Mapped identity changed: '+entry.offer_id+' '+key);
+  await page.goto(origin+'/prodotto.html?id='+encodeURIComponent(entry.offer_id),{waitUntil:'domcontentloaded'});
+  await page.waitForSelector('#product-amazon a',{visible:true,timeout:30000});
+  assert.equal(await page.$eval('#product-title',e=>e.textContent),seed.title);
+  const href=await page.$eval('#product-amazon a',e=>e.href);
+  assert.equal(new URL(href).pathname,'/dp/'+entry.asin);
+  assert.equal(new URL(href).searchParams.get('tag'),links.tracking_id);
+  assert(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth<=1));
+ }
+
 }

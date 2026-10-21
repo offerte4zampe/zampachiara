@@ -2,6 +2,13 @@
 
 Ultimo aggiornamento: 21 ottobre 2026.
 
+## Sessione 21 ottobre 2026, estensione verificata Amazon KONG
+- Aggiunti sei abbinamenti espliciti, per tre prodotti distinti: KONG Classic rosso S/L/XL nelle schede Bauzaar e Isola. ASIN rispettivamente B0002AR15U/B0002AR0I8/B0002AR0HO. Totale registro: sette schede, quattro prodotti/ASIN, incluso Beaphar già verificato da Mirco.
+- Consultate pagine ufficiali Amazon e negozi; verificati linea Classic, gomma rossa, taglia e confezione singola. Esclusi Extreme, Puppy e multipack. Nessun abbinamento per M/XS o WebPet senza verifica. Non dichiarato confronto GTIN Amazon: gli identificatori del feed servono al controllo della stabilità della scheda.
+- Fonti di evidenza e riferimenti salvati nel registro. Nessun prezzo, disponibilità, immagine o recensione Amazon importati; ordine dei negozi e fonti importate invariati. Verifiche oltre30giorni o dati identificativi cambiati continuano a nascondere il link.
+- File: site/data/amazon-links.json, tests/test_amazon_links.mjs, tests/check_search_suggest_browser.mjs. Quattro test Node locali e controllo sintassi browser superati; test su tutti i sette abbinamenti contro catalogo reale e destinazioni separate per taglia. CI/deploy da confermare; nessun clic commerciale effettuato.
+- Prossimo: confermare CI/Workers, poi ulteriori prodotti soltanto con evidenza della variante corretta. API Amazon e prezzi automatici ancora dipendenza esterna.
+
 ## Verifica conclusa: primo collegamento Amazon senza API
 - Commit ed7ef08; CI39561208960 e Workers Builds riuscite.80 test Python/39 Node e prova mobile; link diretto con tag corretto, rel sponsored, zero prezzo/stock nel blocco Amazon, nessuna variazione del numero dei cataloghi prezzati e collegamento conservato al cambio quantità; assenza del blocco sui prodotti senza mappa.
 - Verifica pubblica browser: /prodotto?id=isola-dei-tesori%3A000181239 mostra Beaphar Collare No Stress Gatto35cm e pulsante Verifica prezzo su Amazon verso /dp/B0722X975H?tag=offerte4zam02-21. Nessun clic Amazon effettuato, nessuna vendita/attribuzione commerciale confermata. Primo abbinamento soltanto, non intero catalogo; ampliare esclusivamente dopo controllo puntuale.

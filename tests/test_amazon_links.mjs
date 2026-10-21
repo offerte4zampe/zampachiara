@@ -5,3 +5,14 @@ const now=Date.parse('2026-10-21T12:00:00Z');
 test('verified exact product uses direct tagged Amazon link without prices or stock',()=>{const value=productLink(offer,config,now);assert.deepEqual(value,{url:'https://www.amazon.it/dp/'+row.asin+'?tag=offerte4zam02-21',checked_at:row.checked_at});});
 test('no fuzzy mapping, changed format, title, GTIN or brand',()=>{assert.equal(productLink({...offer,id:'other'},config,now),null);for(const key of ['title','brand','variant','gtin'])assert.equal(productLink({...offer,[key]:'changed'},config,now),null);});
 test('expired, future, ambiguous or unsafe mapping never generates a link',()=>{for(const patch of [{checked_at:'2026-01-01'},{checked_at:'2027-01-01'},{asin:'bad'},{evidence_url:'https://www.amazon.it.evil.test/dp/'+row.asin}])assert.equal(productLink(offer,{...config,links:[{...row,...patch}]},now),null);assert.equal(productLink(offer,{...config,links:[row,row]},now),null);assert.equal(productLink(offer,null,now),null);});
+
+test('editorial registry has unique offer IDs and size-specific KONG destinations',()=>{
+ assert.equal(new Set(config.links.map(r=>r.offer_id)).size,config.links.length);
+ const expected={'bauzaar:58411806589253':'B0002AR15U','isola-dei-tesori:000158950':'B0002AR15U','bauzaar:58411806523717':'B0002AR0I8','isola-dei-tesori:000158952':'B0002AR0I8','bauzaar:58411806458181':'B0002AR0HO','isola-dei-tesori:000158953':'B0002AR0HO'};
+ for(const [id,asin] of Object.entries(expected))assert.equal(config.links.find(r=>r.offer_id===id)?.asin,asin);
+ for(const entry of config.links){
+  assert(!Object.keys(entry).some(k=>/price|availability|available|image|rating|review/i.test(k)));
+  const resolved=productLink({id:entry.offer_id,...entry},config,now);
+  assert(resolved);assert.equal(new URL(resolved.url).pathname,'/dp/'+entry.asin);
+ }
+});
