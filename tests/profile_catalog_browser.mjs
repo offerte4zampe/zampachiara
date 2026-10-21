@@ -16,7 +16,7 @@ export async function profileCatalog(page,origin,catalog){
  for(let i=0;i<3;i++){
   await page.goto(origin+'/confronta-cibo.html?profile=1',{waitUntil:'domcontentloaded'});
   await page.waitForFunction(()=>Boolean(window.O4ZCatalogProfile),{timeout:30000});
-  const result=await page.evaluate(()=>window.O4ZCatalogProfile);assert(result.offers>0);assert(result.cards>0);
+  const result=await page.evaluate(()=>window.O4ZCatalogProfile);assert.equal(result.loader_thread,'worker','Supported browser must parse in worker');assert(result.offers>0);assert(result.cards>0);
   for(const sample of result.samples)assert(Number.isFinite(sample.ms)&&sample.ms>=0);
   runs.push(result);
  }
@@ -25,6 +25,6 @@ export async function profileCatalog(page,origin,catalog){
  const medians=Object.fromEntries(stages.map(stage=>{const values=runs.map(r=>r.samples.filter(s=>s.stage===stage).reduce((n,s)=>n+s.ms,0)).sort((a,b)=>a-b);return [stage,Number(values[1].toFixed(3))]}));
  const maxChunkMs=Math.max(...runs.flatMap(r=>r.samples.filter(s=>s.stage==='prepare_chunk_cpu').map(s=>s.ms)));assert(Number.isFinite(maxChunkMs));
  const quoteMax=Math.max(...runs.flatMap(r=>r.samples.filter(s=>s.stage==='quote_chunk_cpu').map(s=>s.ms)));assert(Number.isFinite(quoteMax));
- const report={quote_max_chunk_ms:Number(quoteMax.toFixed(3)),quote_order_equivalence:true,prepare_max_chunk_ms:Number(maxChunkMs.toFixed(3)),scope:'Local checkout, Chromium mobile viewport on GitHub runner; no CPU/network throttling, no production/INP measurement',catalog_generated_at:catalog.generated_at,offers:runs[0].offers,iterations:3,units:'milliseconds',medians,runs};
+ const report={quote_max_chunk_ms:Number(quoteMax.toFixed(3)),quote_order_equivalence:true,prepare_max_chunk_ms:Number(maxChunkMs.toFixed(3)),scope:'Decode/parse samples are worker CPU; remaining stages are main thread. Local checkout, Chromium mobile viewport on GitHub runner; no CPU/network throttling, no production/INP measurement',catalog_generated_at:catalog.generated_at,offers:runs[0].offers,iterations:3,units:'milliseconds',medians,runs};
  await fs.writeFile('browser-reports/catalog-profile.json',JSON.stringify(report,null,2));console.log('CATALOG_PROFILE '+JSON.stringify({...report,runs:undefined}));
 }

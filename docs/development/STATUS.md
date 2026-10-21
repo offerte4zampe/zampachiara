@@ -552,3 +552,12 @@ Preservare aggiornamenti altrui e marchio. Commit piccoli, test pertinenti, veri
 ## Sessione 20 ottobre 2026, matrice finale in manutenzione
 - Aggiunta `docs/development/roadmap-matrix.md`: stato per area, evidenze, residui e criterio di chiusura. Separa completato, predisposto ma disattivato, maturazione temporale e dipendenze esterne; non trasforma blocchi in risultati.
 - Il lavoro complessivo resta aperto: audit Lighthouse pubblico in nuovo tentativo dopo il problema di raggiungibilità dal runner, newsletter/alert e terzi richiedono verifiche esterne. La matrice non autorizza campagne, contatti o attivazioni.
+
+
+## 21 ottobre 2026 — decodifica catalogo fuori dal thread principale
+- Misura successiva al rendering cooperativo: Lighthouse run 39663379234, comparatore performance 88, TBT 439,9 ms, LCP 1953,3 ms, CLS 0; altre quattro pagine performance 100. Evidenza: lighthouse-after-initial-yield-2026-10-21.json. Differenze tra run non dimostrano causalità isolata.
+- catalog-load.js e catalog-loader.worker.js spostano decompressione e JSON.parse nel Worker dedicato; fallback allo stesso catalogo sul thread principale in assenza/errori/timeout. Nessuna modifica a prezzi, identità, ordine o affiliazioni.
+- catalog.js/confronta-cibo.html integrano il caricatore; profiling distingue esplicitamente tempi Worker e main. Test browser richiede Worker su Chromium; fixture errore rete disabilita Worker per intercettare deterministicamente il fetch di fallback.
+- Tre test Node locali passati e sintassi catalog.js valida. CI browser e verifica pubblicazione ancora da eseguire; nessun miglioramento prestazionale già attribuito.
+- Fonte tecnica: MDN Using web workers, consultata 21/10/2026: https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers .
+- Prossima attività: verificare CI, pubblicazione e nuova misura dopo questa modifica; restano invariati i blocchi esterni già registrati.
