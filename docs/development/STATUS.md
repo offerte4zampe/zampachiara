@@ -7,6 +7,8 @@ Ultimo aggiornamento: 21 ottobre 2026.
 - Verifica locale di equivalenza con localeCompare per accenti, maiuscole e formati superata. File: site/assets/catalog.js. CI mobile e Workers Build da verificare; nessuna percentuale di miglioramento attribuita senza misura del catalogo reale.
 - Prossimo: misurazione del catalogo reale dopo le ottimizzazioni e materiali acquisizione; blocchi esterni invariati.
 
+- Verifica conclusa collator: browser CI39554725235 e Workers Builds riusciti; suite esistente mobile completata. Nessuna nuova misura Lighthouse/CrUX o verifica HTTP live. La prossima misura deve distinguere costo di parsing, ordinamento, raggruppamento e rendering sul catalogo reale, evitando benchmark sintetici presentati come esperienza utente.
+
 ## Sessione 21 ottobre 2026, raggruppamento delle offerte
 - groupOffers calcola la chiave una sola volta per riga e conserva i negozi distinti per gruppo. Eliminata la ricostruzione del Set di negozi per ogni offerta dello stesso gruppo; conservati validazione GTIN/freschezza/marca/peso, ordine iniziale e righe del medesimo negozio.
 - Otto test Node locali superati, inclusi ordine, assenza di mutazioni, input vuoto e2000 offerte dello stesso negozio. Benchmark sintetico Node,2000 righe con identità uguale e due negozi, sette iterazioni dopo warmup: mediana63,445 ms prima /3,036 ms dopo. Non è un catalogo reale né una misura mobile/LCP/TBT.
