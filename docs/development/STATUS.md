@@ -1,6 +1,14 @@
 # Avanzamento roadmap
 
-Ultimo aggiornamento: 20 ottobre 2026.
+Ultimo aggiornamento: 21 ottobre 2026.
+
+## Sessione 21 ottobre 2026, priorità comparatore e home
+- Commit `a90e536`: indice in memoria per GTIN/peso/marca in luogo della scansione di tutte le offerte per ciascuna scheda. Conservati confronto rigoroso di formato/marca e negozio differente; richieste catalogo e condizioni di spedizione avviate in parallelo. Riduzione strutturale delle scansioni, senza attribuire un miglioramento LCP o una percentuale non misurata.
+- Commit `b099a31`: selezione home esclude titoli oltre 180 caratteri e ricambi/elastici dai blocchi in evidenza; nomi originali, formati e prezzi restano integri nel catalogo. Non trasformata una discordanza titolo/slug in un errore certo: gli slug dei negozi possono essere storici e serve verifica del prodotto esatto.
+- Navigazione di home/comparatore: rimossa CTA duplicata “Cerca prodotti ↗”, voce “Prodotti” verso indice statico invece della vista sconti non verificati; collegamento “Leggi le guide” all'indice guide effettivo. Meta description home include i quattro negozi. Ancora da estendere coerentemente ai template delle altre pagine.
+- Verifiche: browser 39519891883 (ottimizzazione) e 39519931764 (home/nav) riusciti; ultimo 72 Python, 30 Node, 310 pagine/0 problemi, mobile 393×852 zero overflow/errori JS. Catalogo 39519931732 riuscito, dati `a2bf5a8`, Workers Build codice e dati riuscite. Nessun nuovo Lighthouse o dato sul campo.
+- Banner: lettura interattiva precedente ha verificato in TradeTracker la creatività istituzionale Bauzaar 2475934 (468×60), campagna16143/sito518044, immagine ti.tradetracker.net e link tc.tradetracker.net; non attivata in questo ciclo, in cui la pubblicazione di campagne è esclusa. Isola richiede ancora selezione e verifica della creatività; non inventare materiale o promozioni. Rimane da completare nella sessione autorizzata ai banner.
+- Prossimo: estendere la navigazione nei generatori, migliorare il primo contenuto statico del comparatore senza perdere filtri/ordinamento; verificare l'identità del prodotto WebPet segnalato nell'audit prima di sospenderlo o rinominarlo. Newsletter/alert/API e altri blocchi esterni restano documentati. Lavoro complessivo aperto.
 
 ## Sessione 20 ottobre 2026, ricerca e lentezza segnalate da Mirco
 - Sul browser pubblico i suggerimenti precedenti comparivano dopo il caricamento dell'intero catalogo; non riprodotta un'assenza permanente. Eliminata questa dipendenza nella home con `data/search-index.json`, generato dal catalogo con soli nomi/formati/provenienza/freschezza, senza prezzi, immagini o URL commerciali. Precaricamento al focus, stato di attesa e fallback di errore esplicito. Nessuna disponibilità o prezzo inventati.
