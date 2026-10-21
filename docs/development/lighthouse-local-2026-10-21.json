@@ -1,0 +1,247 @@
+{
+  "scope": "local-static-checkout-not-production",
+  "commit": "bf2a6434ee2f217aa3d73619968c101c2c1d2ea9",
+  "lighthouse": "13.5.0",
+  "iterations": 3,
+  "pages": {
+    "confronta-cibo": {
+      "performance": 0.84,
+      "accessibility": 1,
+      "best-practices": 0.77,
+      "seo": 1
+    },
+    "costo-crocchette-cane": {
+      "performance": 1,
+      "accessibility": 1,
+      "best-practices": 0.77,
+      "seo": 1
+    },
+    "home": {
+      "performance": 1,
+      "accessibility": 1,
+      "best-practices": 0.77,
+      "seo": 1
+    },
+    "osservatorio-prezzi": {
+      "performance": 1,
+      "accessibility": 1,
+      "best-practices": 0.77,
+      "seo": 1
+    }
+  },
+  "median_metrics": {
+    "confronta-cibo": {
+      "first-contentful-paint": 1052.103,
+      "largest-contentful-paint": 1953.1545,
+      "total-blocking-time": 602,
+      "cumulative-layout-shift": 0,
+      "speed-index": 1249.9090465195309
+    },
+    "costo-crocchette-cane": {
+      "first-contentful-paint": 901.9407000000001,
+      "largest-contentful-paint": 1502.08935,
+      "total-blocking-time": 17.5,
+      "cumulative-layout-shift": 0,
+      "speed-index": 948.7567422085938
+    },
+    "home": {
+      "first-contentful-paint": 1051.8574,
+      "largest-contentful-paint": 1654.0511999999999,
+      "total-blocking-time": 17.000000000000227,
+      "cumulative-layout-shift": 0,
+      "speed-index": 1052.0256
+    },
+    "osservatorio-prezzi": {
+      "first-contentful-paint": 1051.115,
+      "largest-contentful-paint": 1351.2922,
+      "total-blocking-time": 15,
+      "cumulative-layout-shift": 0,
+      "speed-index": 1051.115
+    }
+  },
+  "metric_units": {
+    "first-contentful-paint": "ms",
+    "largest-contentful-paint": "ms",
+    "total-blocking-time": "ms",
+    "cumulative-layout-shift": "unitless",
+    "speed-index": "ms"
+  },
+  "best_practices_findings": {
+    "confronta-cibo": [
+      [
+        {
+          "id": "third-party-cookies",
+          "title": "Uses third-party cookies",
+          "score": 0,
+          "displayValue": "1 cookie found"
+        },
+        {
+          "id": "inspector-issues",
+          "title": "Issues were logged in the `Issues` panel in Chrome Devtools",
+          "score": 0,
+          "displayValue": null
+        }
+      ],
+      [
+        {
+          "id": "third-party-cookies",
+          "title": "Uses third-party cookies",
+          "score": 0,
+          "displayValue": "1 cookie found"
+        },
+        {
+          "id": "inspector-issues",
+          "title": "Issues were logged in the `Issues` panel in Chrome Devtools",
+          "score": 0,
+          "displayValue": null
+        }
+      ],
+      [
+        {
+          "id": "third-party-cookies",
+          "title": "Uses third-party cookies",
+          "score": 0,
+          "displayValue": "1 cookie found"
+        },
+        {
+          "id": "inspector-issues",
+          "title": "Issues were logged in the `Issues` panel in Chrome Devtools",
+          "score": 0,
+          "displayValue": null
+        }
+      ]
+    ],
+    "costo-crocchette-cane": [
+      [
+        {
+          "id": "third-party-cookies",
+          "title": "Uses third-party cookies",
+          "score": 0,
+          "displayValue": "1 cookie found"
+        },
+        {
+          "id": "inspector-issues",
+          "title": "Issues were logged in the `Issues` panel in Chrome Devtools",
+          "score": 0,
+          "displayValue": null
+        }
+      ],
+      [
+        {
+          "id": "third-party-cookies",
+          "title": "Uses third-party cookies",
+          "score": 0,
+          "displayValue": "1 cookie found"
+        },
+        {
+          "id": "inspector-issues",
+          "title": "Issues were logged in the `Issues` panel in Chrome Devtools",
+          "score": 0,
+          "displayValue": null
+        }
+      ],
+      [
+        {
+          "id": "third-party-cookies",
+          "title": "Uses third-party cookies",
+          "score": 0,
+          "displayValue": "1 cookie found"
+        },
+        {
+          "id": "inspector-issues",
+          "title": "Issues were logged in the `Issues` panel in Chrome Devtools",
+          "score": 0,
+          "displayValue": null
+        }
+      ]
+    ],
+    "home": [
+      [
+        {
+          "id": "third-party-cookies",
+          "title": "Uses third-party cookies",
+          "score": 0,
+          "displayValue": "1 cookie found"
+        },
+        {
+          "id": "inspector-issues",
+          "title": "Issues were logged in the `Issues` panel in Chrome Devtools",
+          "score": 0,
+          "displayValue": null
+        }
+      ],
+      [
+        {
+          "id": "third-party-cookies",
+          "title": "Uses third-party cookies",
+          "score": 0,
+          "displayValue": "1 cookie found"
+        },
+        {
+          "id": "inspector-issues",
+          "title": "Issues were logged in the `Issues` panel in Chrome Devtools",
+          "score": 0,
+          "displayValue": null
+        }
+      ],
+      [
+        {
+          "id": "third-party-cookies",
+          "title": "Uses third-party cookies",
+          "score": 0,
+          "displayValue": "1 cookie found"
+        },
+        {
+          "id": "inspector-issues",
+          "title": "Issues were logged in the `Issues` panel in Chrome Devtools",
+          "score": 0,
+          "displayValue": null
+        }
+      ]
+    ],
+    "osservatorio-prezzi": [
+      [
+        {
+          "id": "third-party-cookies",
+          "title": "Uses third-party cookies",
+          "score": 0,
+          "displayValue": "1 cookie found"
+        },
+        {
+          "id": "inspector-issues",
+          "title": "Issues were logged in the `Issues` panel in Chrome Devtools",
+          "score": 0,
+          "displayValue": null
+        }
+      ],
+      [
+        {
+          "id": "third-party-cookies",
+          "title": "Uses third-party cookies",
+          "score": 0,
+          "displayValue": "1 cookie found"
+        },
+        {
+          "id": "inspector-issues",
+          "title": "Issues were logged in the `Issues` panel in Chrome Devtools",
+          "score": 0,
+          "displayValue": null
+        }
+      ],
+      [
+        {
+          "id": "third-party-cookies",
+          "title": "Uses third-party cookies",
+          "score": 0,
+          "displayValue": "1 cookie found"
+        },
+        {
+          "id": "inspector-issues",
+          "title": "Issues were logged in the `Issues` panel in Chrome Devtools",
+          "score": 0,
+          "displayValue": null
+        }
+      ]
+    ]
+  }
+}
