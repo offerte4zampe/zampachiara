@@ -1,9 +1,9 @@
 {
   "method_version": 2,
-  "observed_at": "2026-10-21T15:23:12.784003+00:00",
-  "pages_scanned": 311,
-  "indexable_pages": 303,
-  "unique_canonicals": 303,
+  "observed_at": "2026-10-21T17:32:38.803329+00:00",
+  "pages_scanned": 312,
+  "indexable_pages": 304,
+  "unique_canonicals": 304,
   "issues": [],
   "rule_counts": {},
   "pages": [
@@ -101,6 +101,12 @@
       "page": "lettiere-gatti.html",
       "indexable": true,
       "canonical": "https://offerte4zampe.it/lettiere-gatti",
+      "issues": []
+    },
+    {
+      "page": "linea-monge-bwild.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/linea-monge-bwild",
       "issues": []
     },
     {
