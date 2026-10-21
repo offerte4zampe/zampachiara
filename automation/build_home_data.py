@@ -24,7 +24,10 @@ def build(catalog, now=None):
             return False
     # Current prices, independent of unverified comparison prices or commissions.
     def home_topic(o):
-        label = o.get('title', '')+' '+o.get('category', '')
+        title = o.get('title', '')
+        if len(title) > 180 or re.search(r'\b(ricambi?o?|elastici)\b', title, re.I):
+            return False
+        label = title+' '+o.get('category', '')
         return bool(re.search(r'\b(cani|gatti|cane|gatto|dog|cat|crocchette|umido|food|tiragraffi|lettiera)\b', label, re.I)) and not re.search(r'integrator|veterinar|diabet|renal|medicat|diete vet|calmant|antiansia|antiparassitar|feromon|farmac', label, re.I)
     rows = [o for o in catalog['offers'] if str(o.get('url','')).startswith('https://') and o.get('available') and isinstance(o.get('price'), (int, float)) and o['price'] > 0 and home_topic(o)]
     sales = sorted((o for o in rows if recent(o) and o.get('image')), key=lambda o: (o['title'].casefold(), o['id']))
