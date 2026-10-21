@@ -1,9 +1,9 @@
 {
   "method_version": 2,
-  "observed_at": "2026-10-21T01:42:56.617186+00:00",
+  "observed_at": "2026-10-21T05:46:32.996288+00:00",
   "pages_scanned": 310,
-  "indexable_pages": 307,
-  "unique_canonicals": 307,
+  "indexable_pages": 303,
+  "unique_canonicals": 303,
   "issues": [],
   "rule_counts": {},
   "pages": [
@@ -519,7 +519,7 @@
     },
     {
       "page": "prezzi-08001154002515-8a54ef8a4d.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08001154002515-8a54ef8a4d",
       "issues": []
     },
@@ -561,7 +561,7 @@
     },
     {
       "page": "prezzi-08001154007640-c027cdcaaf.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08001154007640-c027cdcaaf",
       "issues": []
     },
@@ -1167,7 +1167,7 @@
     },
     {
       "page": "prezzi-08009470011341-cab5b06228.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470011341-cab5b06228",
       "issues": []
     },
@@ -1653,7 +1653,7 @@
     },
     {
       "page": "prezzi-08052469420167-385bc7d455.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08052469420167-385bc7d455",
       "issues": []
     },
