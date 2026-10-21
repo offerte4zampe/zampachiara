@@ -2,6 +2,12 @@
 
 Ultimo aggiornamento: 21 ottobre 2026.
 
+## Sessione 21 ottobre 2026, blocchi iniziali del comparatore
+- Audit39659082421 riuscito: accessibilità/SEO/best practices100 su cinque pagine; performance100 tranne comparatore85, LCP1954ms/CLS0/TBT539ms mediani locali. Home LCP1804ms/TBT10ms, guida1652/0, linea1802/0, osservatorio1502/0. Non produzione o INP; prima84/TBT602ms su altro runner, nessuna causalità isolata. Evidenza integrale salvata in lighthouse-final-before-yield-2026-10-21.json.
+- Residuo concreto: preparazione iniziale dei preventivi, ordinamento, gruppi e DOM restavano nello stesso task dopo gli indici. Preventivi iniziali della vista totale senza filtri ora riscaldati in blocchi500 con yield; ulteriori yield fra ordinamento, gruppi e DOM. Algoritmi/prezzi/ordine invariati; render interattivo già esistente resta sincrono. Versione rende inoffensivo un caricamento iniziale superato da un controllo utente.
+- File: catalog-cooperate/catalog JS, comparatore HTML, test cooperazione/profilo e workflow. Tre Node locali passati e sintassi verificata. CI confronta ordine integrale del catalogo corrente con preventivi diretti e cache, oltre ai flussi mobile, e registra CPU/massimo blocco preventivi. Esiti e nuova misura Lighthouse da verificare prima di dichiarare miglioramento.
+- Nessuna chiusura tecnica finché il residuo prestazionale non è valutato. Email/API/CMP/nuovi feed/accordi restano bloccati esternamente; nessun invio o campagna.
+
 ## Sessione 21 ottobre 2026, verifica finale prestazionale delle modifiche
 - Matrice e gate correnti riletti; newsletter mantiene unsubscribe/privacy/permessi false, nessuna attivazione o invio. Workers della testa corrente riuscita. Nessuna nuova implementazione richiesta su moduli già conclusi.
 - Avviata verifica finale Lighthouse del checkout dopo tema scuro, dimensioni touch e nuova pagina linea: cinque pagine, tre iterazioni, aggiunta /linea-monge-bwild al workflow esistente. È una nuova verifica pertinente ai cambiamenti, non riavvio dell'audit iniziale. Il confronto/catalogo ha avuto modifiche dopo la precedente misura84/TBT602ms e non è corretto dichiarare chiusa la prestazione senza un risultato successivo.
