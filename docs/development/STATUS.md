@@ -2,6 +2,12 @@
 
 Ultimo aggiornamento: 21 ottobre 2026.
 
+## Verifica CI e dati: anteprima testuale prodotto
+- Browser CI39625088772 riuscita:51 Node/82 Python,311 pagine/zero problemi statici e flussi mobile/temi passati. Catalogo39625088775 riuscito: dati pubblicati nel repository con commitf51c83ec5a8bacabf1021e6b3e9c470c65f56065, preservata la testa.
+- Generati256 shard,1.676.358 byte complessivi, massimo9.056 byte per file: una visita con ID valido richiede un solo shard, nessun download del catalogo completo dal Worker. Campione00 contiene81 coppie ID/titolo e solo stringhe. Prima zero metadati specifici per questa rotta, dopo infrastruttura e dati generati; non è una misura di latenza o crawler.
+- Al controllo check Workers assente sia dal commit codice c932282a74acf60757a1d91bbef67a272d94cf85 sia dal commit dati: pubblicazione remota dell'anteprima e del tema precedente ancora da confermare. Non interpretare assenza check come sito guasto. Nessuna promessa di aggiornamento immediato delle anteprime già memorizzate da piattaforme esterne.
+- Prossimo: confermare Workers/risposta della rotta prodotto con ID reale, senza clic commerciali; poi chiudere matrice dei residui e blocchi esterni. Non ripetere implementazione/generazione o audit completati. Nessun blocco totale corrente.
+
 ## Sessione 21 ottobre 2026, anteprima testuale del singolo prodotto
 - Predisposti metadati server sullo stesso URL condiviso, per tutti gli user agent: titolo/descrizione/og:url del prodotto esatto, senza prezzi, stock, ricavi o equivalenze. Canonical/noindex, contenuto del confronto e immagine sociale generica restano invariati. Nessun redirect al negozio.
 - Generatore produce256 piccoli shard SHA256 contenenti solo ID/titolo dal catalogo corrente; ID ambigui esclusi. Worker legge un solo shard attraverso ASSETS e il template, senza scaricare/parsing del catalogo completo o inoltrare cookie/query/credenziali. In caso di assenza/errore lascia la scheda generica operativa. Cache risposta5min, invalidati ETag/lunghezza del template trasformato.
