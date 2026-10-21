@@ -1577,12 +1577,6 @@
     "status": 200,
     "confirmations": 0
   },
-  "webpet:52568890704212": {
-    "url": "https://www.webpet.it/products/zolux-gioco-kali-a-forma-di-topo-per-gatti?variant=52568890704212",
-    "checked_at": "2026-10-20T20:24:39.720399+00:00",
-    "status": 200,
-    "confirmations": 0
-  },
   "animaliapet:46976538411351": {
     "url": "https://www.animaliapet.eu/products/almo-nature-daily-mousse-salmone-lattina-85g-gatti-adulti?variant=46976538411351",
     "checked_at": "2026-10-20T20:46:18.176750+00:00",
@@ -3020,6 +3014,150 @@
   "webpet:52568910463316": {
     "url": "https://www.webpet.it/products/dashi-colorflex-rosso-red-collare-per-gatti?variant=52568910463316",
     "checked_at": "2026-10-21T12:50:32.006019+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976541917527": {
+    "url": "https://www.animaliapet.eu/products/monge-mini-adult-agnello-riso-e-patate-7-5kg-crocchette-cani?variant=46976541917527",
+    "checked_at": "2026-10-21T15:23:14.292563+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56818720473413": {
+    "url": "https://www.bauzaar.it/products/deli-pet-torta-di-compleanno-auguri-snack-per-cani?variant=56818720473413",
+    "checked_at": "2026-10-21T15:23:14.292563+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000112196": {
+    "url": "https://www.isoladeitesori.it/prodotto/sera-marine-granulat-nature-250-ml/000112196.html",
+    "checked_at": "2026-10-21T15:23:14.292563+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52568910528852": {
+    "url": "https://www.webpet.it/products/dashi-colorflex-giallo-yellow-collare-per-gatti?variant=52568910528852",
+    "checked_at": "2026-10-21T15:23:14.292563+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976541950295": {
+    "url": "https://www.animaliapet.eu/products/monge-lettiera-easy-green-mais-3-8kg-per-gatti?variant=46976541950295",
+    "checked_at": "2026-10-21T15:23:14.292563+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56818720506181": {
+    "url": "https://www.bauzaar.it/products/deli-pet-torta-di-compleanno-auguri-snack-per-cani?variant=56818720506181",
+    "checked_at": "2026-10-21T15:23:14.292563+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000112204": {
+    "url": "https://www.isoladeitesori.it/prodotto/sera-o-nip-stickies-24-pz/000112204.html",
+    "checked_at": "2026-10-21T15:23:14.292563+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52568910627156": {
+    "url": "https://www.webpet.it/products/dashi-dogtanian-collare-per-gatti?variant=52568910627156",
+    "checked_at": "2026-10-21T15:23:14.292563+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976541983063": {
+    "url": "https://www.animaliapet.eu/products/monge-gemon-pollo-medium-adult-crocchette-15kg-cani-adulti?variant=46976541983063",
+    "checked_at": "2026-10-21T15:23:14.292563+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56818724372805": {
+    "url": "https://www.bauzaar.it/products/drn-stomek-mangime-complementare-in-compresse?variant=56818724372805",
+    "checked_at": "2026-10-21T15:23:14.292563+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000112207": {
+    "url": "https://www.isoladeitesori.it/prodotto/sera-flora-flakes-1000-ml/000112207.html",
+    "checked_at": "2026-10-21T15:23:14.292563+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52568910725460": {
+    "url": "https://www.webpet.it/products/dashi-dogtanian-pettorina-guinzaglio-per-gatti?variant=52568910725460",
+    "checked_at": "2026-10-21T15:23:14.292563+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976542048599": {
+    "url": "https://www.animaliapet.eu/products/monge-natural-superpremium-specialityline-mini-adult-agnello-riso-e-patate-800g-crocchette?variant=46976542048599",
+    "checked_at": "2026-10-21T15:23:14.292563+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56818728403269": {
+    "url": "https://www.bauzaar.it/products/catisfaction-dreamies-creamy-snack-per-gatti-4x10-gr?variant=56818728403269",
+    "checked_at": "2026-10-21T15:23:14.292563+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000112208": {
+    "url": "https://www.isoladeitesori.it/prodotto/sera-flora-flakes-250-ml/000112208.html",
+    "checked_at": "2026-10-21T15:23:14.292563+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52568912134484": {
+    "url": "https://www.webpet.it/products/dashi-stripes3-brown-black-back-harness-leash-pettorina-con-guinzaglio-per-gatti-taglia-unica?variant=52568912134484",
+    "checked_at": "2026-10-21T15:23:14.292563+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976542081367": {
+    "url": "https://www.animaliapet.eu/products/monge-gemon-mini-adult-con-salmone-e-riso-crocchette-da-3kg-cani-adulti?variant=46976542081367",
+    "checked_at": "2026-10-21T15:23:14.292563+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56818731712837": {
+    "url": "https://www.bauzaar.it/products/cesar-dog-natural-goodness-terrine-bio-100-gr?variant=56818731712837",
+    "checked_at": "2026-10-21T15:23:14.292563+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000112218": {
+    "url": "https://www.isoladeitesori.it/prodotto/sera-micron-powder-50-ml/000112218.html",
+    "checked_at": "2026-10-21T15:23:14.292563+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52568912265556": {
+    "url": "https://www.webpet.it/products/leopet-crocky-paletta-per-crocchette-con-pinza-chiusi-sacco-integrata?variant=52568912265556",
+    "checked_at": "2026-10-21T15:23:14.292563+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976542114135": {
+    "url": "https://www.animaliapet.eu/products/monge-monoprotein-manzo-e-riso-2-5kg-crocchette-cani?variant=46976542114135",
+    "checked_at": "2026-10-21T15:23:14.292563+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56818786140485": {
+    "url": "https://www.bauzaar.it/products/natural-trainer-selected-quality-kitten-grain-free-pollo?variant=56818786140485",
+    "checked_at": "2026-10-21T15:23:14.292563+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000112219": {
+    "url": "https://www.isoladeitesori.it/prodotto/sera-viformo-pleco-tabs-50-ml-/000112219.html",
+    "checked_at": "2026-10-21T15:23:14.292563+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52568912724308": {
+    "url": "https://www.webpet.it/products/prolife-smart-adult-trout-rice-mini-crocchette-di-trota-e-riso-per-cani-adulti-di-taglia-piccola?variant=52568912724308",
+    "checked_at": "2026-10-21T15:23:14.292563+00:00",
     "status": 200,
     "confirmations": 0
   }
