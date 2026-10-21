@@ -50,6 +50,7 @@ fetch('data/catalog-quality.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw Er
 let renderTimer;
 $('catalog-reset').addEventListener('click',()=>{
  clearTimeout(renderTimer);
+ $('catalog-status').textContent=$('catalog-status').textContent.replace(' Vista per codice GTIN e peso esplicito; ricetta ed etichetta vanno comunque controllate. Per uscire apri Confronta prezzi dal menu.','');
  for(const key of ['q','shop','brand','gtin','weight','matchbrand','matched','sale'])params.delete(key);
  for(const id of ['catalog-query','catalog-shop','catalog-brand'])$(id).value='';
  $('catalog-stock').checked=true;$('catalog-sale').checked=false;$('catalog-multishop').checked=false;$('catalog-sort').value='total';
