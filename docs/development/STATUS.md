@@ -2,6 +2,13 @@
 
 Ultimo aggiornamento: 21 ottobre 2026.
 
+## Sessione 21 ottobre 2026, preparazione cooperativa del catalogo
+- La preparazione degli indici occupava una fase sincrona con mediana55,6ms nel campione precedente. Nuovo modulo esegue validazione, ricerca e indice identità in un solo passaggio, in blocchi di500 righe con yield al browser fra i blocchi (scheduler.yield dove disponibile, timer altrimenti). Ordine originale, offerte, testi e gruppi invariati.
+- Misure profile=1 distinguono tempo complessivo inclusi yield, somma CPU dei blocchi e massimo blocco osservato. Non promette caricamento complessivo più breve: la finalità è lasciare opportunità al browser fra blocchi. Parsing, ordinamento e rendering restano fuori da questa modifica.
+- Test locali: tre Node superati su eleggibilità/ordine/mappe/assenza mutazioni, limiti e timer che può eseguire fra blocchi. CI confronta anche tutti gli indici con la precedente logica sul catalogo reale, poi prova UI mobile e tre misure. File: catalog-prepare/catalog JS, comparatore HTML, test preparazione/profilo e workflow. CI e deploy da verificare.
+- Fonte primaria consultata21 ottobre: https://developer.chrome.com/blog/use-scheduler-yield e https://web.dev/articles/optimize-long-tasks (yield con fallback timer). Nessuna nuova libreria, tracker o servizio; API/email/CMP restano dipendenze esterne.
+- Prossimo: confermare equivalenza completa e dimensione dei blocchi osservata; poi titoli lista risparmio e materiali acquisizione.
+
 ## Verifica conclusa: profilazione e lettura controlli
 - CI39574683247 e Workers Builds riuscite:80 Python/40 Node,311 pagine/zero problemi, percorso mobile esistente integro. Tre misure su17605 offerte dello stesso catalogo, con artefatto catalog-profile.json.
 - Mediane successive ms: decodifica85,9; parsing23,7; indici55,6; controlli7,5; filtro/ordinamento56,7; gruppi28,1; schede4,7; confronto1,2. Filtro/ordinamento prima60,2/dopo56,7; gli altri tempi variano tra runner e non dimostrano un guadagno causale isolato. Nessuna dichiarazione di miglioramento percentuale, INP o velocità pubblica.

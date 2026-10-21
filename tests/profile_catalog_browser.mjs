@@ -1,5 +1,10 @@
-import assert from 'node:assert/strict';import fs from 'node:fs/promises';
+import assert from 'node:assert/strict';import {createRequire} from 'node:module';
+const require=createRequire(import.meta.url),{prepare}=require('../site/assets/catalog-prepare.js');import fs from 'node:fs/promises';
 export async function profileCatalog(page,origin,catalog){
+ const reference=catalog.offers.filter(o=>{try{return o.id&&typeof o.title==='string'&&Number.isFinite(o.price)&&o.price>0&&new URL(o.url).protocol==='https:'}catch{return false}});
+ const expectedText=new Map(reference.map(o=>[o.id,[o.title,o.variant,o.brand,o.category,o.sku,o.gtin].join(' ').toLocaleLowerCase('it')]));
+ const expectedIdentity=new Map();for(const o of reference)if(o.gtin&&o.weight_kg){const key=JSON.stringify([o.gtin,o.weight_kg,String(o.brand||'').trim().toLowerCase()]);if(!expectedIdentity.has(key))expectedIdentity.set(key,[]);expectedIdentity.get(key).push(o)}
+ const prepared=await prepare(catalog.offers);assert.deepEqual(prepared.data,reference);assert.deepEqual(prepared.searchText,expectedText);assert.deepEqual(prepared.identityIndex,expectedIdentity);
  const runs=[];
  for(let i=0;i<3;i++){
   await page.goto(origin+'/confronta-cibo.html?profile=1',{waitUntil:'domcontentloaded'});
@@ -11,6 +16,7 @@ export async function profileCatalog(page,origin,catalog){
  const stages=[...new Set(runs.flatMap(r=>r.samples.map(s=>s.stage)))];
  for(const stage of ['decode_decompress','parse','prepare_indexes','prepare_controls','filter_sort','group','render_cards','render_comparison'])assert(stages.includes(stage),'Missing measured stage '+stage);
  const medians=Object.fromEntries(stages.map(stage=>{const values=runs.map(r=>r.samples.filter(s=>s.stage===stage).reduce((n,s)=>n+s.ms,0)).sort((a,b)=>a-b);return [stage,Number(values[1].toFixed(3))]}));
- const report={scope:'Local checkout, Chromium mobile viewport on GitHub runner; no CPU/network throttling, no production/INP measurement',catalog_generated_at:catalog.generated_at,offers:runs[0].offers,iterations:3,units:'milliseconds',medians,runs};
+ const maxChunkMs=Math.max(...runs.flatMap(r=>r.samples.filter(s=>s.stage==='prepare_chunk_cpu').map(s=>s.ms)));assert(Number.isFinite(maxChunkMs));
+ const report={prepare_max_chunk_ms:Number(maxChunkMs.toFixed(3)),scope:'Local checkout, Chromium mobile viewport on GitHub runner; no CPU/network throttling, no production/INP measurement',catalog_generated_at:catalog.generated_at,offers:runs[0].offers,iterations:3,units:'milliseconds',medians,runs};
  await fs.writeFile('browser-reports/catalog-profile.json',JSON.stringify(report,null,2));console.log('CATALOG_PROFILE '+JSON.stringify({...report,runs:undefined}));
 }
