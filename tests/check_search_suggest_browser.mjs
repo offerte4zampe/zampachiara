@@ -77,7 +77,9 @@ export async function checkSuggestions(page,origin,catalog){
  await page.waitForSelector('[data-product-basket]',{timeout:30000});
  const initial=await page.evaluate(()=>localStorage.getItem('o4z-basket-v1'));
  await page.evaluate(()=>localStorage.removeItem('o4z-basket-v1'));
- await page.click('[data-product-basket="'+food.id+'"]');
+ await page.$eval('[data-product-basket="'+food.id+'"]',e=>e.scrollIntoView({block:'center'}));
+ await page.tap('[data-product-basket="'+food.id+'"]');
+ await page.waitForFunction(()=>Boolean(localStorage.getItem('o4z-basket-v1')),{timeout:10000});
  assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('o4z-basket-v1'))[0].quantity),1);
  assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('o4z-basket-v1'))[0].id),food.id);
  await page.evaluate(value=>value===null?localStorage.removeItem('o4z-basket-v1'):localStorage.setItem('o4z-basket-v1',value),initial);
