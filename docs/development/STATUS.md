@@ -2,6 +2,12 @@
 
 Ultimo aggiornamento: 21 ottobre 2026.
 
+## Verifica conclusa: condivisione e build con metriche Amazon
+- CI39607314594 riuscita:48 Node/80 Python,311 pagine/zero problemi statici e prova mobile esistente estesa a link esatto e fallback manuale quando clipboard negata. Primo tentativo39607179395 aveva errore nella prova collection ($eval anziché $eval); corretto mantenendo l'asserzione su tutti i collegamenti commerciali.
+- Workers Builds riuscita sul commit045f4618cc3bab2eece85a1418e695b83deae89f, che comprende anche le precedenti modifiche metriche Amazon: pubblicazione tramite build ora confermata. Il servizio web non consente lettura degli asset pubblici richiesti; nessuna ispezione HTTP live o verifica di click/vendite dichiarata.
+- Fonti tecniche consultate21 ottobre: https://developer.mozilla.org/en-US/docs/Web/API/Navigator/share e https://developer.mozilla.org/en-US/docs/Web/API/Clipboard/writeText . Disponibilità/permessi gestiti con fallback; esito API share non interpretato come consegna del messaggio a terzi.
+- Prossima attività indipendente: completare i residui UX della matrice (modalità scura secondo preferenza del dispositivo e contrasto verificato), poi classificare i blocchi rimanenti. Anteprime per singolo prodotto lato server non implementate; anteprima generica esplicita. Non ripetere condivisione o misure catalogo già concluse. Dipendenze esterne invariate.
+
 ## Sessione 21 ottobre 2026, condivisione dalla scheda finale
 - Aggiunta condivisione del prodotto alla destinazione finale dei suggerimenti: API nativa dove presente, copia link e campo in sola lettura per copia manuale se permessi/API mancano. Azioni soltanto su comando utente; nessun invio automatico, tracker o piattaforma sociale precaricata.
 - URL pulito interno /prodotto?id=... con solo ID esatto; non copia URL affiliato, prezzo, quantità, località o parametri della visita. Avviso esplicito: chi apre vede i dati correnti disponibili, non uno snapshot del prezzo. Anteprima social resta generica del progetto, non si dichiara generazione server per ciascuna scheda.
