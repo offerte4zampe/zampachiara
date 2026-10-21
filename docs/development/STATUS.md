@@ -2,6 +2,13 @@
 
 Ultimo aggiornamento: 21 ottobre 2026.
 
+## Sessione 21 ottobre 2026, caricamento pubblicitario non verificato
+- Letto l'artefatto Lighthouse 39544864292: cookie test_cookie da googleads.g.doubleclick.net e issue Cookie sullo stesso endpoint; due script AdSense contribuiscono al CPU time del campione. Il task principale da790 ms è Unattributable: non attribuito automaticamente ad AdSense o al catalogo.
+- Rimossa dalla pipeline la partenza automatica di adsbygoogle.js finché account/CMP/consenso non sono verificati. Restano meta di proprietà, ads.txt, slot diretti e link affiliati approvati; nessun account, campagna o impostazione remota modificati. Non presentare questo intervento come conformità legale completa o riattivare gli annunci con un semplice flag.
+- File: remove_unverified_ads.py, due test, pipeline catalogo/browser e asserzione nessuna richiesta googlesyndication/doubleclick nei percorsi testati. Due test locali superati: rimozione, idempotenza, preservazione metadati/JSON-LD/link commerciali e script interni. CI/generazione/deploy da verificare.
+- Fonte primaria verificata il21 ottobre: https://support.google.com/adsense/answer/13554020?hl=en (CMP certificata/TCF per annunci personalizzati in SEE/UK/Svizzera); non è una attestazione della configurazione dell'account. Evidenza locale, non test cookie del dominio pubblico.
+- Prossimo: confermare pubblicazione di tutte le pagine e browser; poi ottimizzare la causa verificabile del lavoro sul main thread e materiali acquisizione. Newsletter/API/CMP restano dipendenze esterne.
+
 ## Sessione 21 ottobre 2026, misure dopo le modifiche al comparatore
 - Estesa la sintesi Lighthouse esistente con mediane FCP/LCP/TBT/CLS/Speed Index, unità esplicite, versione e commit; raccolte anche le cause di best practices inferiori a uno in ciascuna iterazione. Le soglie accessibilità/SEO e le dodici misure non sono ridotte.
 - Una nuova esecuzione è giustificata dalle modifiche intervenute a ricerca, indice abbinamenti e HTML iniziale. È misura del checkout locale, non produzione/CrUX/INP. Prima la sintesi conservava solo i punteggi; ora conserva anche metriche e cause verificabili.

@@ -33,6 +33,8 @@ on:
       - 'automation/build_observatory.py'
       - 'automation/audit_site.py'
       - 'automation/apply_navigation.py'
+      - 'automation/remove_unverified_ads.py'
+      - 'tests/test_ad_loader.py'
       - 'automation/build_catalog_preview.py'
       - 'tests/test_catalog_preview.py'
       - 'tests/test_navigation.py'
@@ -66,6 +68,8 @@ jobs:
         run: python automation/build_observatory.py
       - name: Normalize primary navigation
         run: python automation/apply_navigation.py
+      - name: Remove unverified automatic ad loader
+        run: python automation/remove_unverified_ads.py
       - name: Audit generated static pages
         run: python automation/audit_site.py
       - name: Install pinned browser driver
