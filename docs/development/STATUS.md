@@ -8,6 +8,8 @@ Ultimo aggiornamento: 21 ottobre 2026.
 - File: comparatore HTML/JS e prova browser. Prima mancava un comando unico per uscire dai filtri, in particolare dalla vista GTIN; dopo il ripristino avviene senza ricaricare il catalogo. Nessuna nuova misura prestazionale.
 - Prossimo: verifica prodotto WebPet segnalato e materiali acquisizione; dipendenze esterne restano aperte.
 
+- Verifica conclusa azzeramento: browser CI 39534561027 e finale 39534678843 riusciti, 76 Python/30 Node, 310 pagine/zero problemi e prova 393×852 senza overflow/errori JS. Ripristino ricerca/negozio/multishop/stock e URL pulito verificati senza clic commerciali. Workers Builds del commit finale riuscita; nessuna nuova misura Lighthouse o verifica HTTP live. Corretto anche l'avviso residuo della vista GTIN dopo l'azzeramento. Prossima attività: verifica puntuale del prodotto segnalato e materiali riutilizzabili per acquisizione; lavoro complessivo ancora aperto.
+
 ## Sessione 21 ottobre 2026, contenuto iniziale del comparatore
 - Generatore `build_catalog_preview.py`: fino a sei offerte recenti e disponibili dalla stessa selezione editoriale della home, con titolo/formato, prezzo, €/kg solo da peso netto, fonte e rilevamento. Link titolo conserva URL affiliato e rel sponsored. Nessuna classifica di convenienza o spedizione presunta.
 - Sezione statica sostituita dal catalogo interattivo dopo il caricamento; nascosta subito nelle viste filtrate per non presentare risultati estranei alla ricerca. Se il recupero fallisce resta la selezione datata per la vista generale, con avviso esplicito. Rimossa la spiegazione obsoleta sugli sconti non verificati.
