@@ -2,6 +2,10 @@
 
 Ultimo aggiornamento: 21 ottobre 2026.
 
+## Verifica conclusa: sei schede KONG con collegamento Amazon
+- CI39561944082 e Workers Builds riuscite. Suite80 Python/40 Node e browser mobile: tutte le sette mappe corrispondono ai dati identificativi del catalogo corrente; pagina corretta, ASIN specifico e tag verificati per ciascuna, senza navigare fuori dal sito. Nessun overflow nei percorsi di tutte le mappe.
+- Distinguere sette schede da quattro prodotti distinti: le sei nuove schede coprono tre taglie KONG nei due negozi. Build verificata, non nuova ispezione HTTP pubblica o misura delle vendite. Registro e test persistono nel repository; prezzi Amazon non attivati.
+
 ## Sessione 21 ottobre 2026, estensione verificata Amazon KONG
 - Aggiunti sei abbinamenti espliciti, per tre prodotti distinti: KONG Classic rosso S/L/XL nelle schede Bauzaar e Isola. ASIN rispettivamente B0002AR15U/B0002AR0I8/B0002AR0HO. Totale registro: sette schede, quattro prodotti/ASIN, incluso Beaphar già verificato da Mirco.
 - Consultate pagine ufficiali Amazon e negozi; verificati linea Classic, gomma rossa, taglia e confezione singola. Esclusi Extreme, Puppy e multipack. Nessun abbinamento per M/XS o WebPet senza verifica. Non dichiarato confronto GTIN Amazon: gli identificatori del feed servono al controllo della stabilità della scheda.
