@@ -2,6 +2,12 @@
 
 Ultimo aggiornamento: 21 ottobre 2026.
 
+## Sessione 21 ottobre 2026, titoli della lista risparmio
+- Corretti i titoli prodotto nella lista salvata e nelle simulazioni per negozio: aprono la scheda interna prodotto?id=..., mantenendo il percorso richiesto da Mirco. Solo il comando Vedi nel negozio resta un'uscita commerciale con URL e sponsored invariati.
+- Nessuna modifica a quantità salvate, identità, prezzi o calcolo della spedizione. Offerte rimosse restano senza collegamento. Versionato lo script nella pagina lista.
+- File: basket.js, carrello-risparmio.html, check_basket_browser.mjs. Sintassi locale superata; browser esteso a tutti i titoli interni, destinazione corretta, riapertura lista e conservazione delle CTA commerciali. CI/Workers da verificare; nessun clic verso negozi.
+- Prossima attività: materiali acquisizione basati su dati/strumenti già pubblicati, senza invii né contatti. API Amazon, newsletter/alert e CMP restano dipendenze esterne; il lavoro complessivo non è dichiarato finito.
+
 ## Verifica conclusa: preparazione catalogo a blocchi
 - CI39580024800 e Workers Builds riuscite.80 Python/43 Node,311 pagine/zero problemi; confronto integrale con logica precedente su17605 offerte: stessi riferimenti/ordine, testi ricerca e gruppi identità. Mobile393×852, nessun errore JS e flussi esistenti conservati.
 - Tre misure locali: CPU preparazione mediana39,6ms, tempo complessivo con yield40,9ms, massimo singolo blocco osservato1,7ms. Campione precedente preparazione sincrona55,6ms: run diversi e nessuna causalità prestazionale isolata dichiarata. Vantaggio strutturale verificato: blocchi con cessione del task fra500righe, non un unico ciclo sincrono.
