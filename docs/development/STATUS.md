@@ -2,6 +2,12 @@
 
 Ultimo aggiornamento: 21 ottobre 2026.
 
+## Verifica conclusa: prima pagina di linea
+- CI browser39644640778 e catalogo39644640873 riuscite:51 Node/85 Python,312 pagine/zero problemi statici. Dati1ee1962d982797467e1f876c9f074fa81477c994:26 offerte idonee in tre negozi,24 schede nella selezione. Differenza dal precedente indice25/due negozi riflette un nuovo ciclo catalogo, non un miglioramento causale attribuito alla pagina.
+- Verifica pubblica browser su https://offerte4zampe.it/linea-monge-bwild: titolo, conteggi, fonte ufficiale/data, ricette distinte e24 collegamenti alle schede interne osservati. Pagina indicizzabile, presente in sitemap-brands e collegata da indice marche/pagina Monge. Nessun clic verso negozi o campagna. Suite mobile ha verificato singolo H1, link interni con ID e assenza overflow.
+- Prima pagina di linea completata, non tutte le linee del mercato. Ulteriori linee vanno aggiunte solo con identità e copertura verificate. Tema/controlli touch inclusi nel codice pubblicato osservato, senza nuova misura Lighthouse o certificazione WCAG.
+- Prossimo: allineare la matrice finale con evidenze e criteri concreti di sblocco per email/API/CMP/nuovi feed/accordi/misure esterne; distinguere estensioni editoriali future dal lavoro autorizzato ancora realizzabile. Non rifare audit, pagine o prove già concluse; nessuna chiusura totale dichiarata in questa sessione.
+
 ## Sessione 21 ottobre 2026, prima pagina di linea verificata
 - Consultata fonte ufficiale https://www.monge.it/i-nostri-marchi/ il21 ottobre: BWild è distinta dalle altre proposte Monge, con secco/umido per cane e gatto e denominazioni Low Grain/Grain Free. Pubblicato generatore per /linea-monge-bwild: ammette solo marca esatta Monge/Monge BWild e token BWild esplicito nel titolo, senza abbinare ricette/formati.
 - Snapshot indice corrente:25 offerte candidate in due negozi; disponibilità/freschezza/prezzo ricontrollati sul catalogo dal generatore. Soglia editoriale dodici offerte e due fonti; sotto soglia nessun prezzo/noindex. Selezione alfabetica alternata per fonte, massimo24 righe, senza influenza commissioni. Nessun minimo della linea presentato come equivalenza nutrizionale.
