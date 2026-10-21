@@ -2,6 +2,11 @@
 
 Ultimo aggiornamento: 21 ottobre 2026.
 
+## Sessione 21 ottobre 2026, misure dopo le modifiche al comparatore
+- Estesa la sintesi Lighthouse esistente con mediane FCP/LCP/TBT/CLS/Speed Index, unità esplicite, versione e commit; raccolte anche le cause di best practices inferiori a uno in ciascuna iterazione. Le soglie accessibilità/SEO e le dodici misure non sono ridotte.
+- Una nuova esecuzione è giustificata dalle modifiche intervenute a ricerca, indice abbinamenti e HTML iniziale. È misura del checkout locale, non produzione/CrUX/INP. Prima la sintesi conservava solo i punteggi; ora conserva anche metriche e cause verificabili.
+- File: workflow audit e registro. Esito da verificare prima di registrare numeri; nessuna causalità o velocità reale promessa. Proseguire poi sulle criticità documentate e materiali acquisizione senza pubblicazione.
+
 ## Sessione 21 ottobre 2026, condivisione della ricerca
 - Comando Condividi questa ricerca: copia un URL con ricerca, marca/negozio, GTIN/formato, disponibilità, ordinamento e destinazione/quantità spedizione. I valori supportati vengono ripristinati all'apertura; non include lista personale, email o razioni.
 - Se gli appunti non sono disponibili mostra un campo etichettato con link selezionabile e stato accessibile. Esplicito che prezzi e disponibilità possono cambiare. Azzera filtri rimuove anche ordinamento/disponibilità condivisi, conservando la stima spedizione.
