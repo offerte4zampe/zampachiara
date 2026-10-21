@@ -27,8 +27,8 @@ export async function checkSuggestions(page,origin,catalog){
  for(const a of outbound){assert(catalog.offers.some(o=>(o.affiliate_url||o.url)===a.href),'Exact catalog URL required');if(a.href.includes('tradetracker'))assert(a.rel.includes('sponsored'))}
  assert(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth<=1));
  await page.select('#product-quantity','2');await page.select('#product-territory','special');
- assert(await page.$eval('[data-shipping-estimate]',rows=>rows.every(e=>e.textContent.includes('Totale non calcolato'))));
- assert.equal(await page.$eval('#product-shops [data-product-shop]',rows=>rows.length),catalog.sources.length);
+ assert(await page.$$eval('[data-shipping-estimate]',rows=>rows.every(e=>e.textContent.includes('Totale non calcolato'))));
+ assert.equal(await page.$$eval('#product-shops [data-product-shop]',rows=>rows.length),catalog.sources.length);
  await page.select('#product-territory','standard');
  assert.equal(await page.$eval('#product-quantity',e=>e.value),'2');
  await page.screenshot({path:'browser-reports/product-mobile.png',fullPage:true});
