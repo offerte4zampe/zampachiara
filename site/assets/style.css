@@ -84,3 +84,10 @@ body{background:var(--cream);font-family:'Trebuchet MS',system-ui,-apple-system,
  :is(a,button,input,select,textarea,summary):focus-visible,.guide-table:focus-visible,.home-search:focus-within{outline:3px solid #efae89;outline-offset:3px}
  .footer{background:#152d30}.footer:before{background:none}
 }
+
+/* Project touch target minimum; inline prose links retain their text layout. */
+@media(max-width:850px){
+ .btn,.footer .btn.secondary,.home-deal .btn,.catalog-card .btn,.daily-pick .spotlight-product .btn,.content .btn,.mobilemenu{min-height:44px;min-width:44px}
+ input:not([type=checkbox]):not([type=radio]),select,textarea{min-height:44px}
+ .accordion summary,.home-faq summary{min-height:44px;display:flex;align-items:center}
+}

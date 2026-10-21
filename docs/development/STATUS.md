@@ -2,6 +2,12 @@
 
 Ultimo aggiornamento: 21 ottobre 2026.
 
+## Sessione 21 ottobre 2026, verifica pubblica e controlli touch
+- Verifica browser sul dominio: scheda Beaphar Isola000181239 mostra quattro negozi, collegamento Amazon distinto, copia link interna e OG titolo/descrizione/URL specifici del prodotto con noindex,follow conservato. Questa è osservazione DOM pubblica, non solo build. Nessun clic su negozi o statistiche attivate. Workers check presente anche sulla testa43df691b36d27871626fda69df068a01f53b6e42.
+- Residuo UX concreto dalla roadmap: alcune CTA erano43/40px e controlli nativi senza altezza touch minima. Impostato minimo44px sotto850px su CTA e campi non checkbox/radio; link nella prosa conservano layout. Non dichiarato44px come soglia WCAG AA: è requisito del progetto.
+- File: style.css e check_themes_browser.mjs. Test esistente esteso a tutte le CTA/campi visibili nelle sei pagine e nei due temi, conservando verifiche contrasto/overflow. CI e pubblicazione da confermare. Nessuna nuova misura di velocità/ricavi.
+- Prossimo: registrare esiti dei controlli touch e chiudere matrice residui, distinguendo dati/servizi esterni da lavoro tecnico realizzabile. Pagine per linea richiedono identità editoriale verificata; non dedurre linee o equivalenze dai nomi simili.
+
 ## Verifica CI e dati: anteprima testuale prodotto
 - Browser CI39625088772 riuscita:51 Node/82 Python,311 pagine/zero problemi statici e flussi mobile/temi passati. Catalogo39625088775 riuscito: dati pubblicati nel repository con commitf51c83ec5a8bacabf1021e6b3e9c470c65f56065, preservata la testa.
 - Generati256 shard,1.676.358 byte complessivi, massimo9.056 byte per file: una visita con ID valido richiede un solo shard, nessun download del catalogo completo dal Worker. Campione00 contiene81 coppie ID/titolo e solo stringhe. Prima zero metadati specifici per questa rotta, dopo infrastruttura e dati generati; non è una misura di latenza o crawler.
