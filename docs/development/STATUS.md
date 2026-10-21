@@ -2,6 +2,11 @@
 
 Ultimo aggiornamento: 21 ottobre 2026.
 
+## Verifica conclusa: spedizione nella scheda prodotto
+- CI39560093056 e Workers Builds riuscite. Suite80 Python/36 Node,311 pagine statiche/zero problemi; prova mobile con quantità modificabile, destinazione particolare senza totali e permanenza di tutti i negozi. Percorso home/suggerimento → scheda diretta ancora verificato senza pagina intermedia; URL commerciali controllati senza clic esterni.
+- Il primo ciclo aveva un errore nel test ($eval anziché $eval su raccolta), corretto senza ridurre le asserzioni; nessun errore del calcolo emerso. Build verificata, non nuovo controllo HTTP pubblico né nuova misura Lighthouse/CrUX. Condizioni tariffarie esistenti conservate, non riverificate presso i negozi in questa sessione.
+- Prossima attività realizzabile: profilare decompressione/parsing/ordinamento/raggruppamento/rendering sul catalogo reale, quindi intervenire sulla causa misurata. Blocchi API Amazon, nuove fonti, CMP e servizi email restano quelli già documentati; non dichiarare conclusa tutta la roadmap.
+
 ## Sessione 21 ottobre 2026, totale nella scheda prodotto
 - La scheda raggiunta dai suggerimenti ora riusa il calcolatore di spedizione esistente: quantità 1–10, consegna standard o particolare, totale e costo spedizione separati, fonte delle condizioni. Ordine per totale stimabile disponibile, poi prezzo confezione per le offerte senza totale; commissioni escluse. Nessuna tariffa o data di verifica modificata.
 - Totali assenti con regole scadute, conflittuali, peso di spedizione mancante, soglia incerta o destinazioni speciali. Prezzo confezione e avviso spedizione esclusa restano espliciti. Cambiare quantità non ricarica il catalogo; URL affiliati preservati e offerte esaurite senza acquisto.
