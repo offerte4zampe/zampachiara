@@ -26,6 +26,10 @@ on:
       - 'site/assets/trade.js'
       - 'site/assets/metrics.js'
       - 'worker/index.mjs'
+      - 'worker/product-preview.mjs'
+      - 'tests/test_product_preview.mjs'
+      - 'automation/build_product_metadata.py'
+      - 'tests/test_product_metadata.py'
       - 'tests/test_metrics.mjs'
       - 'tests/test_trade.mjs'
       - 'site/assets/product-model.js'
@@ -75,11 +79,13 @@ jobs:
         with:
           node-version: '22'
       - name: Test basket and pricing invariants
-        run: node --test tests/test_basket.mjs tests/test_trade.mjs tests/test_report.mjs tests/test_metrics.mjs tests/test_daily_cost.mjs tests/test_price_history.mjs tests/test_notification_plan.mjs tests/test_search_suggest.mjs tests/test_product_view.mjs tests/test_amazon_links.mjs tests/test_catalog_prepare.mjs tests/test_product_share.mjs
+        run: node --test tests/test_basket.mjs tests/test_trade.mjs tests/test_report.mjs tests/test_metrics.mjs tests/test_daily_cost.mjs tests/test_price_history.mjs tests/test_notification_plan.mjs tests/test_search_suggest.mjs tests/test_product_view.mjs tests/test_amazon_links.mjs tests/test_catalog_prepare.mjs tests/test_product_share.mjs tests/test_product_preview.mjs
       - name: Test schema and generators without external services
         run: python -m unittest discover -s tests
       - name: Generate compact search index locally
         run: python automation/build_home_data.py
+      - name: Generate title-only social metadata locally
+        run: python automation/build_product_metadata.py
       - name: Generate catalog preview locally
         run: python automation/build_catalog_preview.py
       - name: Generate local observed history shards

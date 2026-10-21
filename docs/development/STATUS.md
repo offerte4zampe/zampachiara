@@ -2,6 +2,12 @@
 
 Ultimo aggiornamento: 21 ottobre 2026.
 
+## Sessione 21 ottobre 2026, anteprima testuale del singolo prodotto
+- Predisposti metadati server sullo stesso URL condiviso, per tutti gli user agent: titolo/descrizione/og:url del prodotto esatto, senza prezzi, stock, ricavi o equivalenze. Canonical/noindex, contenuto del confronto e immagine sociale generica restano invariati. Nessun redirect al negozio.
+- Generatore produce256 piccoli shard SHA256 contenenti solo ID/titolo dal catalogo corrente; ID ambigui esclusi. Worker legge un solo shard attraverso ASSETS e il template, senza scaricare/parsing del catalogo completo o inoltrare cookie/query/credenziali. In caso di assenza/errore lascia la scheda generica operativa. Cache risposta5min, invalidati ETag/lunghezza del template trasformato.
+- File: build_product_metadata.py, product-preview.mjs e index Worker, wrangler per le sole due rotte prodotto, due test e workflow catalogo/browser. Tre Node e due Python locali passati su escaping, payload minimo, duplicati, errori e delega. CI/deploy e generazione iniziale shard da verificare prima di dichiarare attiva l'anteprima. Nessun crawler esterno contattato.
+- Fonte primaria consultata21 ottobre: https://developers.cloudflare.com/workers/static-assets/binding/ . Nessun nuovo rich result. Prossimo: verificare CI/catalogo e build sul commit dati, misurare dimensioni shard correnti e confermare l'infrastruttura pubblicata. Tema scuro precedente da includere nella verifica della build.
+
 ## Verifica CI conclusa: tema scuro
 - CI39622961624 riuscita:48 Node/80 Python,311 pagine/zero problemi statici e flussi mobile esistenti conservati. Prova dedicata su sei pagine per tema (home, catalogo, scheda finale, guida, budget, newsletter), campioni colore con rapporto>=4,5 e viewport393px senza overflow. Risultati dettagliati in theme-contrast.json e screenshot home-dark-mobile.png nell'artefatto CI. Nessuna certificazione WCAG integrale o nuova metrica Lighthouse/INP.
 - Al controllo presente solo check mobile; Workers Builds del commit66c90c6ea16f2a1ed15da8682f1be034fc7aad07 non ancora presente. Verificare pubblicazione nel prossimo ciclo senza ripetere implementazione. Tema chiaro e stampa non modificati dal blocco scuro screen.
