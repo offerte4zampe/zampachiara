@@ -2,6 +2,12 @@
 
 Ultimo aggiornamento: 21 ottobre 2026.
 
+## Correzione richiesta da Mirco: tocco e navigazione prodotto coerente
+- Suggerimenti: selezione su pointerup con controllo del movimento e cancellazione dello scroll, scelta una sola volta; blur non nasconde l'elenco durante il tocco. Mantenuti clic accessibile e tastiera. Test browser ora usa tap reale emulato in home e comparatore, entrambi verso scheda interna.
+- Titoli dinamici del comparatore e selezione dei suggerimenti aprono prodotto.html?id=... . Nuova normalizzazione dopo tutti i generatori: link a prodotti riconosciuti nei cataloghi (categorie, marche, guide, anteprima e liste) passano alla scheda interna. CTA rietichettate Confronta nei negozi; restano esterni i pulsanti di scelta negozio nelle schede di confronto per prodotto. Nessun cambio affiliate_url nel catalogo.
+- URL ambigui fra formati non scelti arbitrariamente; fonte/spedizione e altri link non prodotto conservati. Due test Python locali passati su routing, idempotenza, tracking della scelta negozio e ambiguità. Prove CI/catalogo/deploy ancora da confermare; nessuna verifica Safari fisico dichiarata.
+- File: search-suggest/catalog JS, route_product_links.py/test e workflow, prove browser suggerimenti/titoli/guide. La correzione amplia esplicitamente il flusso interno a tutte le pagine, superando i titoli diretti preesistenti.
+
 ## Sessione 21 ottobre 2026, flusso ricerca → prodotto → negozio richiesto da Mirco
 - Nuova scheda interna prodotto.html?id=... per ogni offerta del catalogo. I suggerimenti home e i titoli/CTA delle offerte home aprono questa scheda. L'indice leggero include l'ID, senza URL commerciali o prezzi; mantenuta la ricerca libera.
 - Scheda con tutti i cataloghi collegati, prezzi/formato/€/kg/date e acquisto soltanto dal negozio scelto. Abbinamento tramite GTIN valido, marca e peso netto esatti; senza identità certa la sola offerta selezionata. Distinti esaurito, assente dal catalogo, catalogo non aggiornato e corrispondenza non verificata; nessuna indisponibilità dedotta dalla sola assenza.

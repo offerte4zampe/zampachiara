@@ -19,7 +19,7 @@ function mount(input,provide,choose){
  const list=document.createElement('ul');list.id=input.id+'-suggestions';list.className='search-suggest-list';list.role='listbox';list.setAttribute('aria-label','Prodotti suggeriti');list.hidden=true;wrap.append(list);
  const status=document.createElement('span');status.className='sr-only';status.setAttribute('role','status');status.setAttribute('aria-live','polite');wrap.append(status);
  input.setAttribute('role','combobox');input.setAttribute('aria-autocomplete','list');input.setAttribute('aria-controls',list.id);input.setAttribute('aria-expanded','false');input.autocomplete='off';
- let rows=[],active=-1,version=0,timer,composing=false;
+ let rows=[],active=-1,version=0,timer,composing=false,interacting=false;
  function close(){version++;clearTimeout(timer);list.hidden=true;active=-1;input.setAttribute('aria-expanded','false');input.removeAttribute('aria-activedescendant');status.textContent=''}
  function highlight(i){active=i;[...list.children].forEach((n,index)=>n.setAttribute('aria-selected',String(index===active)));if(i>=0){input.setAttribute('aria-activedescendant',list.children[i].id);list.children[i].scrollIntoView({block:'nearest'})}}
  function accept(i){const o=rows[i];if(!o)return;input.value=o.title;close();choose(o)}
@@ -30,12 +30,17 @@ function mount(input,provide,choose){
  rows.forEach((o,i)=>{const option=document.createElement('li');option.id=list.id+'-'+i;option.role='option';option.setAttribute('aria-selected','false');option.dataset.query=o.title;option.dataset.productId=o.id||'';
  const title=document.createElement('span');title.textContent=o.title;option.append(title);
  if(o.variant){const detail=document.createElement('small');detail.textContent=o.variant;option.append(detail)}
- option.addEventListener('pointerdown',e=>e.preventDefault());option.addEventListener('click',()=>accept(i));list.append(option)});
+ let start=null,chosen=false;
+ const chooseOnce=()=>{if(chosen)return;chosen=true;interacting=false;accept(i)};
+ option.addEventListener('pointerdown',e=>{start={x:e.clientX,y:e.clientY,id:e.pointerId};interacting=true;if(e.pointerType==='mouse')e.preventDefault()});
+ option.addEventListener('pointerup',e=>{const tap=start&&start.id===e.pointerId&&Math.hypot(e.clientX-start.x,e.clientY-start.y)<12;start=null;interacting=false;if(tap){e.preventDefault();chooseOnce()}else if(document.activeElement!==input)close()});
+ option.addEventListener('pointercancel',()=>{start=null;interacting=false;if(document.activeElement!==input)close()});
+ option.addEventListener('click',chooseOnce);list.append(option)});
  list.hidden=!rows.length;input.setAttribute('aria-expanded',String(Boolean(rows.length)));status.textContent=rows.length?rows.length+' suggerimenti. Usa le frecce e Invio per selezionare.':'Nessun suggerimento. Puoi continuare la ricerca.';
  }catch{if(ticket===version){close();status.textContent='Suggerimenti non disponibili. Puoi comunque premere Cerca.'}}
  }
  function schedule(){close();if(!composing)timer=setTimeout(update,100)}
- input.addEventListener('input',schedule);input.addEventListener('focus',schedule);input.addEventListener('blur',close);
+ input.addEventListener('input',schedule);input.addEventListener('focus',schedule);input.addEventListener('blur',()=>{if(!interacting)close()});
  input.addEventListener('compositionstart',()=>{composing=true;close()});input.addEventListener('compositionend',()=>{composing=false;schedule()});
  input.addEventListener('keydown',e=>{if(e.isComposing||composing)return;if(e.key==='Escape'){if(!list.hidden)e.preventDefault();close();return}if(e.key==='Tab'){close();return}if(list.hidden)return;
  if(e.key==='ArrowDown'||e.key==='ArrowUp'){e.preventDefault();highlight(e.key==='ArrowDown'?(active+1)%rows.length:(active<0?rows.length-1:(active-1+rows.length)%rows.length))}

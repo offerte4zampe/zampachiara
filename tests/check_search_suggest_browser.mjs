@@ -26,7 +26,7 @@ export async function checkSuggestions(page,origin,catalog){
  for(const a of outbound){assert(catalog.offers.some(o=>(o.affiliate_url||o.url)===a.href),'Exact catalog URL required');if(a.href.includes('tradetracker'))assert(a.rel.includes('sponsored'))}
  assert(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth<=1));
  await page.screenshot({path:'browser-reports/product-mobile.png',fullPage:true});
- await page.goto(origin+'/index.html',{waitUntil:'domcontentloaded'});await page.focus('#home-query');await page.type('#home-query',query);await page.waitForSelector('#home-query-suggestions [role=option]',{visible:true});const clickedId=await page.$eval('#home-query-suggestions [role=option]',e=>e.dataset.productId);await Promise.all([page.waitForNavigation({waitUntil:'domcontentloaded'}),page.click('#home-query-suggestions [role=option]')]);assert.equal(new URL(page.url()).searchParams.get('id'),clickedId);
+ await page.goto(origin+'/index.html',{waitUntil:'domcontentloaded'});await page.focus('#home-query');await page.type('#home-query',query);await page.waitForSelector('#home-query-suggestions [role=option]',{visible:true});const clickedId=await page.$eval('#home-query-suggestions [role=option]',e=>e.dataset.productId);await Promise.all([page.waitForNavigation({waitUntil:'domcontentloaded'}),page.tap('#home-query-suggestions [role=option]')]);assert.equal(new URL(page.url()).searchParams.get('id'),clickedId);
  await page.goto(origin+'/confronta-cibo.html',{waitUntil:'domcontentloaded'});
  await page.waitForSelector('#catalog-query[role=combobox]',{timeout:30000});
  await page.focus('#catalog-query');await page.$eval('#catalog-query',(e,q)=>{e.value=q;e.dispatchEvent(new Event('input',{bubbles:true}))},query);
@@ -34,10 +34,9 @@ export async function checkSuggestions(page,origin,catalog){
  await page.keyboard.press('Escape');assert.equal(await page.$eval('#catalog-query-suggestions',e=>e.hidden),true);
  await page.$eval('#catalog-query',(e,q)=>{e.value=q;e.dispatchEvent(new Event('input',{bubbles:true}))},query);
  await page.waitForSelector('#catalog-query-suggestions [role=option]',{visible:true});
- const selected=await page.$eval('#catalog-query-suggestions [role=option]',e=>e.dataset.query);
- await page.click('#catalog-query-suggestions [role=option]');
- assert.equal(await page.$eval('#catalog-query',e=>e.value),selected);
- assert.equal(await page.$eval('#catalog-query',e=>e.getAttribute('aria-expanded')),'false');
- await page.$eval('#catalog-query',e=>{e.value='';e.dispatchEvent(new Event('input',{bubbles:true}))});
- assert.equal(await page.$eval('#catalog-query-suggestions',e=>e.hidden),true);
+ const selected=await page.$eval('#catalog-query-suggestions [role=option]',e=>e.dataset.productId);
+ await Promise.all([page.waitForNavigation({waitUntil:'domcontentloaded'}),page.tap('#catalog-query-suggestions [role=option]')]);
+ assert.equal(new URL(page.url()).pathname,'/prodotto.html');
+ assert.equal(new URL(page.url()).searchParams.get('id'),selected);
+
 }

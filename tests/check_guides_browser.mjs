@@ -5,7 +5,7 @@ export async function checkGuides(page, origin) {
     await page.goto(origin+'/'+slug+'.html', {waitUntil:'domcontentloaded'});
     assert.equal(await page.$$eval('main h1', es=>es.length),1);
     assert(await page.$('.guide-table table caption'));
-    assert(await page.$$eval('.guide-table a', es=>es.every(e=>e.href.startsWith('https://'))&&es.length>0));
+    assert(await page.$$eval('.guide-table a', es=>es.every(e=>(e.href.startsWith('https://')||(new URL(e.href).origin===location.origin&&new URL(e.href).pathname==='/prodotto.html'&&new URL(e.href).searchParams.has('id'))))&&es.length>0));
     assert(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth<=1),'Guide causes page overflow');
     assert.equal(await page.$eval('main', e=>e.textContent.includes('prezzi inventati')),false);
   }

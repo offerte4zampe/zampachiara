@@ -38,6 +38,8 @@ on:
       - 'automation/build_matched_pages.py'
       - 'automation/apply_social_metadata.py'
       - 'automation/apply_navigation.py'
+      - 'automation/route_product_links.py'
+      - 'tests/test_product_routing.py'
       - 'automation/remove_unverified_ads.py'
       - 'tests/test_ad_loader.py'
       - 'tests/test_navigation.py'
@@ -81,6 +83,7 @@ jobs:
       - run: python automation/build_observatory.py
       - run: python automation/apply_social_metadata.py
       - run: python automation/apply_navigation.py
+      - run: python automation/route_product_links.py
       - run: python automation/remove_unverified_ads.py
       - run: python automation/build_sitemaps.py
       - run: python automation/audit_site.py

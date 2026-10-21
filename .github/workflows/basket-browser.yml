@@ -40,6 +40,8 @@ on:
       - 'automation/build_observatory.py'
       - 'automation/audit_site.py'
       - 'automation/apply_navigation.py'
+      - 'automation/route_product_links.py'
+      - 'tests/test_product_routing.py'
       - 'automation/remove_unverified_ads.py'
       - 'tests/test_ad_loader.py'
       - 'automation/build_catalog_preview.py'
@@ -75,6 +77,8 @@ jobs:
         run: python automation/build_observatory.py
       - name: Normalize primary navigation
         run: python automation/apply_navigation.py
+      - name: Route product links through comparison
+        run: python automation/route_product_links.py
       - name: Remove unverified automatic ad loader
         run: python automation/remove_unverified_ads.py
       - name: Audit generated static pages
