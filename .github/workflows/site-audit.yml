@@ -34,12 +34,12 @@ jobs:
             sleep 1
           done
           exit 1
-      - name: Audit four checked-out pages on mobile (not production)
+      - name: Audit five checked-out pages on mobile (not production)
         run: |
           mkdir -p reports
           export CHROME_PATH="$(command -v google-chrome)"
           for iteration in 1 2 3; do
-          for slug in home confronta-cibo costo-crocchette-cane osservatorio-prezzi; do
+          for slug in home confronta-cibo costo-crocchette-cane osservatorio-prezzi linea-monge-bwild; do
             url="http://127.0.0.1:8765/$slug.html"
             if [ "$slug" = "home" ]; then url="http://127.0.0.1:8765/index.html"; fi
             node "$RUNNER_TEMP/site-audit/node_modules/lighthouse/cli/index.js" "$url" --chrome-flags="--headless --disable-dev-shm-usage" --only-categories=performance,accessibility,best-practices,seo --output=json --output=html --output-path="reports/$slug-$iteration" --quiet
@@ -50,7 +50,7 @@ jobs:
           node <<'NODE'
           const fs=require('fs'),path=require('path');
           const files=fs.readdirSync('reports').filter(f=>f.endsWith('.report.json'));
-          if(files.length!==12)throw Error('Expected exactly 12 Lighthouse reports');
+          if(files.length!==15)throw Error('Expected exactly 15 Lighthouse reports');
           const groups={},measurements={},findings={};
           const metricIds=['first-contentful-paint','largest-contentful-paint','total-blocking-time','cumulative-layout-shift','speed-index'];
           for(const file of files){
