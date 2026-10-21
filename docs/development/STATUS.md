@@ -8,6 +8,8 @@ Ultimo aggiornamento: 21 ottobre 2026.
 - Prova browser aggiunta per caratteri speciali, copia, riapertura e fallback appunti. Sintassi JS verificata localmente; CI e build da verificare. File: comparatore HTML/JS e smoke browser. Nessun messaggio inviato.
 - Verifica WebPet ancora aperta: il registro richiama genericamente il prodotto segnalato, senza ID/URL. Non basta per sospendere o rinominare un'offerta. Prossimo: misurazione successiva alle modifiche e materiale acquisizione; blocchi esterni invariati.
 
+- Verifica conclusa condivisione: browser CI 39542727466 riuscito, 76 Python/30 Node, 310 pagine/zero problemi; prova mobile 393×852 con copia simulata, query contenente &, riapertura con ordinamento/quantità conservati e fallback appunti. Zero overflow/errori JS, rete esterna bloccata. Workers Builds del commit funzionale riuscita; build distinta da ispezione HTTP live, nessuna misura Lighthouse aggiornata. Prossimo: misurazione mirata dopo queste modifiche e materiali acquisizione non pubblicati; resta aperta la verifica WebPet priva di riferimento esatto e restano le dipendenze esterne registrate.
+
 ## Sessione 21 ottobre 2026, azzeramento filtri del comparatore
 - Aggiunto comando Azzera filtri: svuota ricerca, marca e negozio, ripristina disponibilità e totale stimato iniziali, rimuove i vincoli GTIN/formato e i relativi parametri dall'URL. Conserva lista, confronto selezionato e destinazione/quantità spedizione dell'utente; non modifica prezzi né link commerciali.
 - Il comando chiude i suggerimenti, annulla il rendering differito e riporta il focus alla ricerca. Prova mobile estesa con vista filtrata da URL e ripristino dei risultati. Esito CI e pubblicazione da verificare.
