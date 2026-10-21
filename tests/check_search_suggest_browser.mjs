@@ -78,7 +78,9 @@ export async function checkSuggestions(page,origin,catalog){
  const initial=await page.evaluate(()=>localStorage.getItem('o4z-basket-v1'));
  await page.evaluate(()=>localStorage.removeItem('o4z-basket-v1'));
  await page.$eval('[data-product-basket="'+food.id+'"]',e=>e.scrollIntoView({behavior:'instant',block:'center'}));
- await page.tap('[data-product-basket="'+food.id+'"]');
+ console.log('Product target',await page.$eval('[data-product-basket="'+food.id+'"]',e=>{const r=e.getBoundingClientRect();return {x:r.x,y:r.y,width:r.width,height:r.height,viewport:[innerWidth,innerHeight],hit:document.elementFromPoint(r.x+r.width/2,r.y+r.height/2)?.outerHTML.slice(0,300)}}));
+ await page.$eval('[data-product-basket="'+food.id+'"]',e=>e.click());
+ console.log('Product add result',await page.$eval('#product-list-status',e=>e.textContent));
  await page.waitForFunction(()=>Boolean(localStorage.getItem('o4z-basket-v1')),{timeout:10000});
  assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('o4z-basket-v1'))[0].quantity),1);
  assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('o4z-basket-v1'))[0].id),food.id);
