@@ -33,6 +33,8 @@ on:
       - 'automation/build_observatory.py'
       - 'automation/audit_site.py'
       - 'automation/apply_navigation.py'
+      - 'automation/build_catalog_preview.py'
+      - 'tests/test_catalog_preview.py'
       - 'tests/test_navigation.py'
       - 'tests/test_static_site_audit.py'
       - 'tests/test_observatory.py'
@@ -54,6 +56,8 @@ jobs:
         run: python -m unittest discover -s tests
       - name: Generate compact search index locally
         run: python automation/build_home_data.py
+      - name: Generate catalog preview locally
+        run: python automation/build_catalog_preview.py
       - name: Generate local observed history shards
         run: python automation/update_history.py
       - name: Generate current catalog guides locally

@@ -2,6 +2,12 @@
 
 Ultimo aggiornamento: 21 ottobre 2026.
 
+## Sessione 21 ottobre 2026, contenuto iniziale del comparatore
+- Generatore `build_catalog_preview.py`: fino a sei offerte recenti e disponibili dalla stessa selezione editoriale della home, con titolo/formato, prezzo, €/kg solo da peso netto, fonte e rilevamento. Link titolo conserva URL affiliato e rel sponsored. Nessuna classifica di convenienza o spedizione presunta.
+- Sezione statica sostituita dal catalogo interattivo dopo il caricamento; nascosta subito nelle viste filtrate per non presentare risultati estranei alla ricerca. Se il recupero fallisce resta la selezione datata per la vista generale, con avviso esplicito. Rimossa la spiegazione obsoleta sugli sconti non verificati.
+- Due test locali superati su importi, escaping, tracking, idempotenza e omissione offerte scadute/indisponibili. Aggiunte prove browser senza JS, errore rete catalogo e vista filtrata; CI e build da verificare. Prima: zero schede nell'HTML iniziale del comparatore; dopo previsto massimo sei, senza attribuire miglioramenti LCP non misurati.
+- File: generatore/test, comparatore HTML/JS, workflow catalogo/browser e prova mobile. Restano blocchi esterni e verifica prodotto WebPet segnalato, poi misurazione pertinente e materiali acquisizione senza pubblicazione.
+
 ## Sessione 21 ottobre 2026, navigazione coerente nelle pagine generate
 - Aggiunto `automation/apply_navigation.py`, applicato dopo i generatori in catalogo e browser: voce Prodotti verso l'indice statico, rimozione della CTA duplicata soltanto nel menu principale. Le selezioni editoriali e i link commerciali nel contenuto restano integri; attributi di accessibilità conservati.
 - Due test locali superati su delimitazione del menu, idempotenza, attributo aria-current e conservazione del tracking. Pipeline browser e catalogo aggiornate; esiti CI e pubblicazione ancora da verificare, senza dichiarare già aggiornate tutte le pagine live.
