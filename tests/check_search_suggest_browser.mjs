@@ -21,11 +21,12 @@ export async function checkSuggestions(page,origin,catalog){
  assert.equal(new URL(page.url()).pathname,'/prodotto.html');assert.equal(new URL(page.url()).searchParams.get('id'),expected);
  await page.waitForSelector('#product-shops [data-product-shop]',{timeout:30000});
  assert.equal(await page.$$eval('#product-shops [data-product-shop]',rows=>rows.length),catalog.sources.length);
- const seed=catalog.offers.find(o=>o.id===expected);assert(seed);
+ const seed=catalog.offers.find(o=>o.id===expected);assert(seed);assert.equal(await page.$eval('#product-title',e=>e.textContent),seed.title);
  const outbound=await page.$$eval('#product-shops a',rows=>rows.map(a=>({href:a.href,rel:a.rel})));
  for(const a of outbound){assert(catalog.offers.some(o=>(o.affiliate_url||o.url)===a.href),'Exact catalog URL required');if(a.href.includes('tradetracker'))assert(a.rel.includes('sponsored'))}
  assert(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth<=1));
  await page.screenshot({path:'browser-reports/product-mobile.png',fullPage:true});
+ await page.goto(origin+'/index.html',{waitUntil:'domcontentloaded'});await page.focus('#home-query');await page.type('#home-query',query);await page.waitForSelector('#home-query-suggestions [role=option]',{visible:true});const clickedId=await page.$eval('#home-query-suggestions [role=option]',e=>e.dataset.productId);await Promise.all([page.waitForNavigation({waitUntil:'domcontentloaded'}),page.click('#home-query-suggestions [role=option]')]);assert.equal(new URL(page.url()).searchParams.get('id'),clickedId);
  await page.goto(origin+'/confronta-cibo.html',{waitUntil:'domcontentloaded'});
  await page.waitForSelector('#catalog-query[role=combobox]',{timeout:30000});
  await page.focus('#catalog-query');await page.$eval('#catalog-query',(e,q)=>{e.value=q;e.dispatchEvent(new Event('input',{bubbles:true}))},query);
