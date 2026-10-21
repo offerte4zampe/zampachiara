@@ -34,6 +34,8 @@ on:
       - 'tests/test_search_suggest.mjs'
       - 'automation/build_matched_pages.py'
       - 'automation/apply_social_metadata.py'
+      - 'automation/apply_navigation.py'
+      - 'tests/test_navigation.py'
       - 'automation/build_sitemaps.py'
       - 'automation/build_brand_pages.py'
       - 'automation/list_schema.py'
@@ -72,6 +74,7 @@ jobs:
       - run: python automation/build_savings_guides.py
       - run: python automation/build_observatory.py
       - run: python automation/apply_social_metadata.py
+      - run: python automation/apply_navigation.py
       - run: python automation/build_sitemaps.py
       - run: python automation/audit_site.py
       - name: Publish refreshed catalog

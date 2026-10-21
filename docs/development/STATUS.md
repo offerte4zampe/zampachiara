@@ -2,6 +2,11 @@
 
 Ultimo aggiornamento: 21 ottobre 2026.
 
+## Sessione 21 ottobre 2026, navigazione coerente nelle pagine generate
+- Aggiunto `automation/apply_navigation.py`, applicato dopo i generatori in catalogo e browser: voce Prodotti verso l'indice statico, rimozione della CTA duplicata soltanto nel menu principale. Le selezioni editoriali e i link commerciali nel contenuto restano integri; attributi di accessibilità conservati.
+- Due test locali superati su delimitazione del menu, idempotenza, attributo aria-current e conservazione del tracking. Pipeline browser e catalogo aggiornate; esiti CI e pubblicazione ancora da verificare, senza dichiarare già aggiornate tutte le pagine live.
+- Prossima attività: confermare generazione e Workers Build, poi primo contenuto statico del comparatore. Newsletter, API e altri blocchi restano documentati; nessuna campagna pubblicata o email inviata.
+
 ## Sessione 21 ottobre 2026, priorità comparatore e home
 - Commit `a90e536`: indice in memoria per GTIN/peso/marca in luogo della scansione di tutte le offerte per ciascuna scheda. Conservati confronto rigoroso di formato/marca e negozio differente; richieste catalogo e condizioni di spedizione avviate in parallelo. Riduzione strutturale delle scansioni, senza attribuire un miglioramento LCP o una percentuale non misurata.
 - Commit `b099a31`: selezione home esclude titoli oltre 180 caratteri e ricambi/elastici dai blocchi in evidenza; nomi originali, formati e prezzi restano integri nel catalogo. Non trasformata una discordanza titolo/slug in un errore certo: gli slug dei negozi possono essere storici e serve verifica del prodotto esatto.
