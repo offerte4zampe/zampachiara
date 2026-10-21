@@ -12,7 +12,7 @@ Aggiornata il 21 ottobre 2026. Questa matrice distingue implementazione verifica
 | Prezzo totale e spedizione | Completato dove le regole sono note | Carrello, quantità, stessa lista e soglie con fonte/data; nessun vincitore su dati incompleti | Località, servizi e soglie ambigue restano non disponibili |
 | Storico prezzi | Completato | Osservazioni giornaliere, identità, finestre 30/90/180, shard lazy | La profondità cresce solo col tempo; nessun backfill |
 | Costo giornaliero | Completato con input manuale | Calcolo confezione/kg/giorno/30 giorni senza razione inventata | Tabelle produttore non importate senza fonte verificata |
-| Ricerca e UX mobile | Completato | Suggerimenti accessibili, tastiera/tocco, stati vuoti, test 393×852, nessun overflow nei test | Modalità scura non prioritaria e non implementata |
+| Ricerca e UX mobile | Completato | Suggerimenti accessibili, tastiera/tocco, stati vuoti, test 393×852, nessun overflow nei test | Modalità scura secondo dispositivo implementata con prova colori/overflow su sei pagine; restano verifiche manuali complete WCAG e device reali |
 | Segnalazioni e correzioni | Completato | Bozza locale mailto, allowlist, registro pubblico, controlli automatici | La presa in carico umana delle segnalazioni non è automatizzabile senza leggere/inviare posta |
 | Guide originali | Obiettivo minimo completato | Sei guide generate da dati correnti, testate e collegate | Altre due guide sono facoltative entro l’obiettivo 6–8; revisione veterinaria richiede accordo reale |
 | Osservatorio prezzi | Infrastruttura completata | Pagina, JSON, metodo e copertura; 145 righe categoria/mese al primo ciclo | Zero indici pubblicabili finché non esistono due mesi chiusi con pannello minimo |

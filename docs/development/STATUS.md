@@ -2,6 +2,11 @@
 
 Ultimo aggiornamento: 21 ottobre 2026.
 
+## Verifica CI conclusa: tema scuro
+- CI39622961624 riuscita:48 Node/80 Python,311 pagine/zero problemi statici e flussi mobile esistenti conservati. Prova dedicata su sei pagine per tema (home, catalogo, scheda finale, guida, budget, newsletter), campioni colore con rapporto>=4,5 e viewport393px senza overflow. Risultati dettagliati in theme-contrast.json e screenshot home-dark-mobile.png nell'artefatto CI. Nessuna certificazione WCAG integrale o nuova metrica Lighthouse/INP.
+- Al controllo presente solo check mobile; Workers Builds del commit66c90c6ea16f2a1ed15da8682f1be034fc7aad07 non ancora presente. Verificare pubblicazione nel prossimo ciclo senza ripetere implementazione. Tema chiaro e stampa non modificati dal blocco scuro screen.
+- Matrice aggiornata: modalità scura ora implementata/testata, diffusione materiali ancora non autorizzata. Residuo tecnico da esaminare: anteprima condivisa specifica prodotto (oggi generica), senza inventare disponibilità/prezzi o aprire il negozio. Poi allineare stato dei residui della roadmap e blocchi esterni. Nessun blocco totale attuale.
+
 ## Sessione 21 ottobre 2026, tema scuro secondo dispositivo
 - Prima solo tema chiaro; aggiunta palette scura esclusivamente per media screen/prefers-color-scheme:dark. Nessuna preferenza salvata o tracker, nessuna modifica ai dati/prezzi. Tema chiaro e stampa conservati. Superfici, controlli, tabella, suggerimenti e focus adattati; immagini prodotto su fondo bianco senza multiply.
 - File: style.css, check_themes_browser.mjs, runner browser e trigger workflow. Prova su sei pagine in entrambe le preferenze a393px: campioni di colori calcolati per testo, micro, CTA, controlli e contenuto con rapporto almeno4,5, overflow e screenshot home scura. Il campione non certifica WCAG completa né tutte le combinazioni/immagini.
