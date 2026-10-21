@@ -2,6 +2,11 @@
 
 Ultimo aggiornamento: 21 ottobre 2026.
 
+## Verifica CI: misura dei clic Amazon
+- Commit43635ac52fad031e1948dda2d7d34cce46d3ac9d, CI39605666511 riuscita:45 Node/80 Python,311 pagine/zero problemi statici, prova browser mobile esistente passata.14 test mirati locali passati. Nessun clic affiliato reale o traffico commerciale generato.
+- Al controllo GitHub mostra soltanto check mobile riuscito; Workers Builds non ancora presente e statuses vuoto. Pubblicazione di questa modifica non dichiarata verificata: prossimo ciclo controllare check e versione pubblica prima di chiudere questo passaggio. Non ripetere implementazione o suite senza nuove modifiche.
+- Prossimo sviluppo indipendente: condivisione della scheda finale prodotto. Restano dipendenze esterne già registrate; nessun blocco totale e nessuna notifica di completamento.
+
 ## Sessione 21 ottobre 2026, misura dei clic Amazon
 - Individuato residuo concreto: i collegamenti Amazon editoriali erano attivi ma merchant() non li riconosceva e l'allowlist del Worker escludeva Amazon. Scheda dinamica inoltre classificata other per assenza del marcatore pagina prodotto. Corrette le tre cause senza toccare destinazioni, tag o ordine dei prezzi.
 - Riconosciuti soltanto link HTTPS amazon.it/www.amazon.it diretti /dp/ASIN con singolo tag del progetto; esclusi ricerca, host simili, tag assente/errato/duplicato e credenziali nell'URL. Worker conserva solo il nome merchant autorizzato: nessun ASIN, URL, query o ID offerta nei log. Consenso facoltativo, DNT e GPC invariati.
