@@ -2,6 +2,13 @@
 
 Ultimo aggiornamento: 21 ottobre 2026.
 
+## Sessione 21 ottobre 2026, flusso ricerca → prodotto → negozio richiesto da Mirco
+- Nuova scheda interna prodotto.html?id=... per ogni offerta del catalogo. I suggerimenti home e i titoli/CTA delle offerte home aprono questa scheda. L'indice leggero include l'ID, senza URL commerciali o prezzi; mantenuta la ricerca libera.
+- Scheda con tutti i cataloghi collegati, prezzi/formato/€/kg/date e acquisto soltanto dal negozio scelto. Abbinamento tramite GTIN valido, marca e peso netto esatti; senza identità certa la sola offerta selezionata. Distinti esaurito, assente dal catalogo, catalogo non aggiornato e corrispondenza non verificata; nessuna indisponibilità dedotta dalla sola assenza.
+- Titoli nella scheda non escono dal sito; CTA disponibili preservano affiliate_url e sponsored. Ordine per prezzo confezione disponibile, spedizione esclusa e avviso esplicito; nessun acquisto su dati scaduti. Pagina dinamica noindex/canonical generico, nessun rich result inventato.
+- File: product-model/product JS, prodotto HTML, home/search-suggest JS, build_home_data e test indice/modello/browser/workflow. Tre test locali modello e compilazione Python superati; CI/deploy/generazione indice da verificare prima di consegnare. Prova browser naviga da suggerimento a scheda e controlla negozi/link senza clic affiliati.
+- Questa richiesta supera il precedente comportamento dei titoli home verso negozio. Il comparatore completo resta disponibile come ricerca libera e strumento avanzato; blocchi newsletter/API/CMP invariati.
+
 ## Sessione 21 ottobre 2026, ordinamento italiano riutilizzato
 - Il comparatore riusa un solo Intl.Collator italiano per ordinare titoli e opzioni, evitando di ricreare la configurazione linguistica in ciascun confronto. Stessi criteri di prezzo/totale e stessi ordinamenti; nessun effetto delle commissioni.
 - Verifica locale di equivalenza con localeCompare per accenti, maiuscole e formati superata. File: site/assets/catalog.js. CI mobile e Workers Build da verificare; nessuna percentuale di miglioramento attribuita senza misura del catalogo reale.

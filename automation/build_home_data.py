@@ -61,7 +61,7 @@ def build(catalog, now=None):
 
 def search_index(catalog):
     """Only names and provenance for suggestions: no prices, images or tracking URLs."""
-    fields = ('title', 'variant', 'brand', 'gtin', 'merchant', 'available', 'checked_at')
+    fields = ('id', 'title', 'variant', 'brand', 'gtin', 'merchant', 'available', 'checked_at')
     return {'generated_at': catalog.get('generated_at'), 'offers': [
         {key: offer[key] for key in fields if key in offer}
         for offer in catalog.get('offers', []) if isinstance(offer.get('title'), str)
@@ -128,7 +128,7 @@ def render_home(html, payload):
         image = o.get('image', '')
         img = f'<img src="{h(image,quote=True)}" alt="" width="160" height="145" loading="lazy">' if image.startswith('https://') else ''
         unit = f'<p class="micro">{money(o["price"]/o["weight_kg"])}/kg · spedizione esclusa</p>' if o.get('weight_kg') else '<p class="micro">Spedizione esclusa</p>'
-        return f'''<article class="{'spotlight-product' if spotlight else 'home-deal'}" data-home-offer="{h(o['checked_at'],quote=True)}">{img}<p class="micro">{h(o['merchant'])} · {h(o['brand'])}</p><{tag}><a class="product-title-link" href="{h(o.get('affiliate_url') or o['url'],quote=True)}" rel="{'sponsored noopener noreferrer' if o.get('affiliate_url') else 'noopener noreferrer'}">{h(o['title'])}</a></{tag}><p class="micro">{h(o.get('variant') or '')}</p><p class="catalog-price"><strong>{money(o['price'])}</strong></p>{unit}<p class="micro">Rilevato: <time datetime="{h(o['checked_at'],quote=True)}">{h(o['checked_at'][:16].replace('T',' '))} UTC</time></p>{link('Confronta il prodotto →', q=o['title'][:110]).replace('<a ', '<a class="btn secondary" ')}{error_link(o)}</article>'''
+        return f'''<article class="{'spotlight-product' if spotlight else 'home-deal'}" data-home-offer="{h(o['checked_at'],quote=True)}">{img}<p class="micro">{h(o['merchant'])} · {h(o['brand'])}</p><{tag}><a class="product-title-link" href="prodotto.html?{h(urlencode({'id':o['id']}),quote=True)}">{h(o['title'])}</a></{tag}><p class="micro">{h(o.get('variant') or '')}</p><p class="catalog-price"><strong>{money(o['price'])}</strong></p>{unit}<p class="micro">Rilevato: <time datetime="{h(o['checked_at'],quote=True)}">{h(o['checked_at'][:16].replace('T',' '))} UTC</time></p><a class="btn secondary" href="prodotto.html?{h(urlencode({'id':o['id']}),quote=True)}">Confronta nei negozi →</a>{error_link(o)}</article>'''
     deals, hero = pick(payload)
     parts = {
         'home-deals': ''.join(card(o) for o in deals),

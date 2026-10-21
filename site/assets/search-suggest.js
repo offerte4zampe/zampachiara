@@ -27,7 +27,7 @@ function mount(input,provide,choose){
  const ticket=++version,q=input.value;if(norm(q).length<2){close();return}
  status.textContent='Ricerca suggerimenti…';
  try{const offers=await provide();if(ticket!==version||document.activeElement!==input||composing)return;rows=candidates(offers,q);list.replaceChildren();active=-1;input.removeAttribute('aria-activedescendant');
- rows.forEach((o,i)=>{const option=document.createElement('li');option.id=list.id+'-'+i;option.role='option';option.setAttribute('aria-selected','false');option.dataset.query=o.title;
+ rows.forEach((o,i)=>{const option=document.createElement('li');option.id=list.id+'-'+i;option.role='option';option.setAttribute('aria-selected','false');option.dataset.query=o.title;option.dataset.productId=o.id||'';
  const title=document.createElement('span');title.textContent=o.title;option.append(title);
  if(o.variant){const detail=document.createElement('small');detail.textContent=o.variant;option.append(detail)}
  option.addEventListener('pointerdown',e=>e.preventDefault());option.addEventListener('click',()=>accept(i));list.append(option)});
