@@ -1,7 +1,7 @@
 {
   "method_version": 2,
-  "observed_at": "2026-10-21T05:46:32.996288+00:00",
-  "pages_scanned": 310,
+  "observed_at": "2026-10-21T06:27:23.610341+00:00",
+  "pages_scanned": 311,
   "indexable_pages": 303,
   "unique_canonicals": 303,
   "issues": [],
@@ -1817,6 +1817,12 @@
       "page": "prodotti.html",
       "indexable": true,
       "canonical": "https://offerte4zampe.it/prodotti",
+      "issues": []
+    },
+    {
+      "page": "prodotto.html",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto",
       "issues": []
     },
     {
