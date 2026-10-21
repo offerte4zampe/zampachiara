@@ -2,6 +2,11 @@
 
 Ultimo aggiornamento: 21 ottobre 2026.
 
+## Verifica conclusa: titoli interni nella lista
+- CI39583433176 e Workers Builds riuscite:80 Python/43 Node,311 pagine statiche/zero problemi. Browser mobile verifica tutti i titoli in lista e scenari verso schede interne con ID del catalogo, apertura della scheda e ritorno alla lista, quantità persistita e CTA negozio con tracking/sponsored conservati. Nessun clic commerciale.
+- File funzionali basket.js e carrello-risparmio.html; prova estesa check_basket_browser.mjs. Non ripetere questa correzione nei prossimi cicli. Nessuna nuova misura pubblica Lighthouse/INP o vendite verificata.
+- Prossimo: preparare materiali di acquisizione riutilizzabili dai contenuti esistenti, senza inviarli o pubblicare campagne; blocchi esterni invariati e roadmap aperta.
+
 ## Sessione 21 ottobre 2026, titoli della lista risparmio
 - Corretti i titoli prodotto nella lista salvata e nelle simulazioni per negozio: aprono la scheda interna prodotto?id=..., mantenendo il percorso richiesto da Mirco. Solo il comando Vedi nel negozio resta un'uscita commerciale con URL e sponsored invariati.
 - Nessuna modifica a quantità salvate, identità, prezzi o calcolo della spedizione. Offerte rimosse restano senza collegamento. Versionato lo script nella pagina lista.
