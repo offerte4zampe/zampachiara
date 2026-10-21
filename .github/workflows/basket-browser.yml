@@ -38,6 +38,7 @@ on:
       - 'tests/test_basket.mjs'
       - 'site/carrello-risparmio.html'
       - 'tests/check_basket_browser.mjs'
+      - 'tests/profile_catalog_browser.mjs'
       - 'tests/check_guides_browser.mjs'
       - 'automation/build_savings_guides.py'
       - 'automation/build_observatory.py'

@@ -2,6 +2,12 @@
 
 Ultimo aggiornamento: 21 ottobre 2026.
 
+## Sessione 21 ottobre 2026, profilazione catalogo reale
+- Aggiunte misure esplicite abilitate soltanto con profile=1: decodifica/decompressione, parsing, indici, controlli, filtro/ordinamento, raggruppamento, DOM delle schede e confronto. Nessun invio di misure o query a terzi; prezzi, matching, ordine e commissioni invariati.
+- Browser CI esegue tre caricamenti del catalogo reale del checkout e salva artefatto catalog-profile.json con campioni e mediane in millisecondi. Chromium con viewport mobile su runner GitHub, senza throttling CPU/rete; non produzione, CrUX o INP. Nessuna soglia prestazionale inventata.
+- File: catalog.js, profile_catalog_browser.mjs, check_basket_browser.mjs e workflow. Controllo sintassi locale superato; risultati e build da verificare prima di ottimizzare una causa misurata. Profilo non persistito nelle statistiche utenti.
+- Prossimo: leggere mediana delle fasi e intervenire sulla più costosa verificabile; dipendenze esterne invariate.
+
 ## Verifica conclusa: strumenti nella scheda prodotto finale
 - CI39567758130 e Workers Builds riuscite:80 Python/40 Node,311 pagine statiche/zero problemi, mobile touch con aggiunta alla lista, ID segnalazione, razione manuale conservata e storico riutilizzato (una sola richiesta dopo apertura). Percorsi suggerimenti/Amazon restano verificati.
 - Emersa larghezza del viewport mobile425px rispetto ai393 impostati: vincolati controlli spedizione e pulsanti/contenitori degli strumenti; aggiunta asserzione innerWidth<=394 per evitare che il solo confronto scrollWidth/innerWidth nasconda il ridimensionamento. Il tap sulla lista ora verificato con posizione stabile; nessun click commerciale effettuato. La prova razione usa evento input sul campo, lo storico toggle sul componente.
