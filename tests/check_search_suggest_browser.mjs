@@ -23,7 +23,13 @@ export async function checkSuggestions(page,origin,catalog){
  await page.waitForSelector('#product-shops [data-product-shop]',{timeout:30000});
  assert.equal(await page.$$eval('#product-shops [data-product-shop]',rows=>rows.length),catalog.sources.length);
  const seed=catalog.offers.find(o=>o.id===expected);assert(seed);assert.equal(await page.$eval('#product-title',e=>e.textContent),seed.title);
- const outbound=await page.$$eval('#product-shops a:not([data-shipping-conditions]):not([data-product-report])',rows=>rows.map(a=>({href:a.href,rel:a.rel})));
+ const shareURL=await page.$eval('#product-share-url',e=>e.value);
+ assert.equal(new URL(shareURL).origin,'https://offerte4zampe.it');assert.equal(new URL(shareURL).pathname,'/prodotto');assert.equal(new URL(shareURL).searchParams.get('id'),expected);assert.deepEqual([...new URL(shareURL).searchParams.keys()],['id']);
+ await page.evaluate(()=>Object.defineProperty(navigator,'clipboard',{configurable:true,value:{writeText:async()=>{throw Error('denied')}}}));
+ await page.$eval('#product-share button:last-of-type',e=>e.click());
+ await page.waitForFunction(()=>document.querySelector('#product-share [role=status]').textContent.includes('manualmente'));
+ assert.equal(await page.$eval('#product-share-url',e=>e.readOnly),true);
+ const outbound=await page.$eval('#product-shops a:not([data-shipping-conditions]):not([data-product-report])',rows=>rows.map(a=>({href:a.href,rel:a.rel})));
  for(const a of outbound){assert(catalog.offers.some(o=>(o.affiliate_url||o.url)===a.href),'Exact catalog URL required');if(a.href.includes('tradetracker'))assert(a.rel.includes('sponsored'))}
  assert(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth<=1));
  await page.select('#product-quantity','2');await page.select('#product-territory','special');

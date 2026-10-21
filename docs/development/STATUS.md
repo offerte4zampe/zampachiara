@@ -2,6 +2,12 @@
 
 Ultimo aggiornamento: 21 ottobre 2026.
 
+## Sessione 21 ottobre 2026, condivisione dalla scheda finale
+- Aggiunta condivisione del prodotto alla destinazione finale dei suggerimenti: API nativa dove presente, copia link e campo in sola lettura per copia manuale se permessi/API mancano. Azioni soltanto su comando utente; nessun invio automatico, tracker o piattaforma sociale precaricata.
+- URL pulito interno /prodotto?id=... con solo ID esatto; non copia URL affiliato, prezzo, quantità, località o parametri della visita. Avviso esplicito: chi apre vede i dati correnti disponibili, non uno snapshot del prezzo. Anteprima social resta generica del progetto, non si dichiara generazione server per ciascuna scheda.
+- File: product-share.js, product.js/prodotto.html, test_product_share e prova browser suggerimenti, workflow. Tre test Node locali superati su payload minimo, API nativa/cancellazione/errore e clipboard negata/assente; sintassi prodotto verificata. Browser esteso a identità/link pulito e fallback manuale; CI e pubblicazione da verificare.
+- Riletto check43635ac: ancora solo mobile riuscito, nessuna evidenza Workers. Non dichiarata pubblicata la modifica metriche. Prossimo: chiudere verifiche del presente commit, poi residui della matrice; blocchi esterni invariati.
+
 ## Verifica CI: misura dei clic Amazon
 - Commit43635ac52fad031e1948dda2d7d34cce46d3ac9d, CI39605666511 riuscita:45 Node/80 Python,311 pagine/zero problemi statici, prova browser mobile esistente passata.14 test mirati locali passati. Nessun clic affiliato reale o traffico commerciale generato.
 - Al controllo GitHub mostra soltanto check mobile riuscito; Workers Builds non ancora presente e statuses vuoto. Pubblicazione di questa modifica non dichiarata verificata: prossimo ciclo controllare check e versione pubblica prima di chiudere questo passaggio. Non ripetere implementazione o suite senza nuove modifiche.

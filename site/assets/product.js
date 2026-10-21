@@ -45,6 +45,7 @@ async function load(){try{
  const bytes=await r.arrayBuffer(),raw=new Uint8Array(bytes);
  catalog=JSON.parse(raw[0]===31&&raw[1]===139?await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))).text():new TextDecoder().decode(bytes));
  [shippingRules,amazonLinks]=await Promise.all([rules,amazon]);render();
+ const selected=catalog.offers.find(o=>o.id===id);if(selected)O4ZShare.mount($('product-share'),selected);
  for(const control of ['product-quantity','product-territory'])$(control).addEventListener('change',render);
  }catch{$('product-status').textContent='Impossibile caricare questa scheda. Riprova tra poco oppure torna alla ricerca.'}}
 load();
