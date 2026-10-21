@@ -33,13 +33,14 @@ function mount(input,provide,choose){
  let start=null,chosen=false;
  const chooseOnce=()=>{if(chosen)return;chosen=true;interacting=false;accept(i)};
  option.addEventListener('pointerdown',e=>{start={x:e.clientX,y:e.clientY,id:e.pointerId};interacting=true;if(e.pointerType==='mouse')e.preventDefault()});
- option.addEventListener('pointerup',e=>{const tap=start&&start.id===e.pointerId&&Math.hypot(e.clientX-start.x,e.clientY-start.y)<12;start=null;interacting=false;if(!tap&&document.activeElement!==input)close()});
+ option.addEventListener('pointerup',e=>{const tap=start&&start.id===e.pointerId&&Math.hypot(e.clientX-start.x,e.clientY-start.y)<12;start=null;interacting=Boolean(tap);if(!tap&&document.activeElement!==input)close()});
  option.addEventListener('pointercancel',()=>{start=null;interacting=false;if(document.activeElement!==input)close()});
  option.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();chooseOnce()});list.append(option)});
  list.hidden=!rows.length;input.setAttribute('aria-expanded',String(Boolean(rows.length)));status.textContent=rows.length?rows.length+' suggerimenti. Usa le frecce e Invio per selezionare.':'Nessun suggerimento. Puoi continuare la ricerca.';
  }catch{if(ticket===version){close();status.textContent='Suggerimenti non disponibili. Puoi comunque premere Cerca.'}}
  }
  function schedule(){close();if(!composing)timer=setTimeout(update,100)}
+ document.addEventListener('pointerdown',e=>{if(!wrap.contains(e.target)){interacting=false;close()}});
  input.addEventListener('input',schedule);input.addEventListener('focus',schedule);input.addEventListener('blur',()=>{if(!interacting)close()});
  input.addEventListener('compositionstart',()=>{composing=true;close()});input.addEventListener('compositionend',()=>{composing=false;schedule()});
  input.addEventListener('keydown',e=>{if(e.isComposing||composing)return;if(e.key==='Escape'){if(!list.hidden)e.preventDefault();close();return}if(e.key==='Tab'){close();return}if(list.hidden)return;
