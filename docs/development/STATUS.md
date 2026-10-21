@@ -2,6 +2,11 @@
 
 Ultimo aggiornamento: 21 ottobre 2026.
 
+## Verifica CI conclusa: dimensioni touch
+- CI39638367252 riuscita:51 Node/82 Python,311 pagine/zero problemi statici, prova su sei pagine in chiaro/scuro con CTA e campi visibili almeno44px, contrasto campionato e nessun overflow. Flussi suggerimenti/lista/scheda finale conservati, nessun clic commerciale.
+- Check Workers del commit37a39484c439c9fe1b6fed3ce6cf34f30d845b99 ancora assente al controllo; la verifica pubblica precedente dimostra anteprima server e scheda operativa, non ancora le nuove altezze. Confermare build al ciclo seguente senza ripetere suite.
+- Residuo contenuti realizzabile: pagine per linea con dati sufficienti e tassonomia verificata su fonte ufficiale, distinte dalle pagine marca già presenti; non trattare questa verifica editoriale come credenziale mancante. Preparare un primo caso verificabile e relativo generatore, preservando ricette/formati distinti. Dipendenze esterne email/API/CMP/accordi restano aperte.
+
 ## Sessione 21 ottobre 2026, verifica pubblica e controlli touch
 - Verifica browser sul dominio: scheda Beaphar Isola000181239 mostra quattro negozi, collegamento Amazon distinto, copia link interna e OG titolo/descrizione/URL specifici del prodotto con noindex,follow conservato. Questa è osservazione DOM pubblica, non solo build. Nessun clic su negozi o statistiche attivate. Workers check presente anche sulla testa43df691b36d27871626fda69df068a01f53b6e42.
 - Residuo UX concreto dalla roadmap: alcune CTA erano43/40px e controlli nativi senza altezza touch minima. Impostato minimo44px sotto850px su CTA e campi non checkbox/radio; link nella prosa conservano layout. Non dichiarato44px come soglia WCAG AA: è requisito del progetto.
