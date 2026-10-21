@@ -48,5 +48,15 @@ async function load(){try{const shippingPromise=fetch('data/shipping-rules.json'
 $('catalog-status').textContent='Cataloghi importati automaticamente · aggiornamento previsto ogni '+payload.refresh_hours+' ore · ultima esecuzione '+date(payload.generated_at)+'. I link Bauzaar e Isola dei Tesori possono generare commissioni, senza costi aggiuntivi per te.';
 fetch('data/catalog-quality.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error();return r.json()}).then(a=>{$('catalog-identity-status').textContent=a.with_valid_gtin+' offerte con codice GTIN valido su '+a.offers+' importate; '+a.cross_shop_groups+' gruppi con stesso codice, marca e peso in più negozi. Le altre offerte restano confronti manuali.'}).catch(()=>{});const sources=$('catalog-sources');for(const s of payload.sources||[]){sources.append(text('li',s.name+': '+s.offers+' offerte · '+(s.status==='ok'?'importazione riuscita':s.status==='stale'?'aggiornamento fallito; dati precedenti conservati':'fonte non disponibile')+' · recupero '+date(s.checked_at)+(['bauzaar','isola-dei-tesori'].includes(s.id)?' · feed ufficiale aggiornato dal fornitore giornalmente':'')))}if(params.get('gtin'))$('catalog-status').textContent+=' Vista per codice GTIN e peso esplicito; ricetta ed etichetta vanno comunque controllate. Per uscire apri Confronta prezzi dal menu.';O4ZSuggest.mount($('catalog-query'),()=>data.filter(o=>(!$('catalog-shop').value||o.merchant===$('catalog-shop').value)&&(!$('catalog-brand').value||o.brand===$('catalog-brand').value)),()=>{limit=30;render()});render();}catch{$('catalog-status').textContent='Catalogo completo momentaneamente non disponibile. La selezione statica, se presente, riporta data e fonte del rilevamento; verifica sempre il prezzo nel negozio. Riprova più tardi.';$('catalog-filters').hidden=true}}
 let renderTimer;
+$('catalog-reset').addEventListener('click',()=>{
+ clearTimeout(renderTimer);
+ for(const key of ['q','shop','brand','gtin','weight','matchbrand','matched','sale'])params.delete(key);
+ for(const id of ['catalog-query','catalog-shop','catalog-brand'])$(id).value='';
+ $('catalog-stock').checked=true;$('catalog-sale').checked=false;$('catalog-multishop').checked=false;$('catalog-sort').value='total';
+ const url=new URL(location.href);url.search=params.toString();history.replaceState(null,'',url);
+ $('catalog-query').dispatchEvent(new Event('input',{bubbles:true}));clearTimeout(renderTimer);limit=30;render();
+ $('catalog-query').focus();
+});
+
 for(const id of ['catalog-query','catalog-shop','catalog-brand','catalog-sort','catalog-stock','catalog-sale','catalog-multishop','shipping-territory','shipping-quantity'])$(id).addEventListener((id==='catalog-query'||id==='shipping-quantity')?'input':'change',()=>{limit=30;clearTimeout(renderTimer);if(id==='catalog-query')renderTimer=setTimeout(render,180);else render()});$('catalog-more').addEventListener('click',()=>{limit+=30;render()});$('shipping-refresh').addEventListener('click',()=>{limit=30;render()});$('catalog-clear').addEventListener('click',()=>{selected.clear();render()});load();
 })();

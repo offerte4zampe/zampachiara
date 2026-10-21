@@ -2,6 +2,12 @@
 
 Ultimo aggiornamento: 21 ottobre 2026.
 
+## Sessione 21 ottobre 2026, azzeramento filtri del comparatore
+- Aggiunto comando Azzera filtri: svuota ricerca, marca e negozio, ripristina disponibilità e totale stimato iniziali, rimuove i vincoli GTIN/formato e i relativi parametri dall'URL. Conserva lista, confronto selezionato e destinazione/quantità spedizione dell'utente; non modifica prezzi né link commerciali.
+- Il comando chiude i suggerimenti, annulla il rendering differito e riporta il focus alla ricerca. Prova mobile estesa con vista filtrata da URL e ripristino dei risultati. Esito CI e pubblicazione da verificare.
+- File: comparatore HTML/JS e prova browser. Prima mancava un comando unico per uscire dai filtri, in particolare dalla vista GTIN; dopo il ripristino avviene senza ricaricare il catalogo. Nessuna nuova misura prestazionale.
+- Prossimo: verifica prodotto WebPet segnalato e materiali acquisizione; dipendenze esterne restano aperte.
+
 ## Sessione 21 ottobre 2026, contenuto iniziale del comparatore
 - Generatore `build_catalog_preview.py`: fino a sei offerte recenti e disponibili dalla stessa selezione editoriale della home, con titolo/formato, prezzo, €/kg solo da peso netto, fonte e rilevamento. Link titolo conserva URL affiliato e rel sponsored. Nessuna classifica di convenienza o spedizione presunta.
 - Sezione statica sostituita dal catalogo interattivo dopo il caricamento; nascosta subito nelle viste filtrate per non presentare risultati estranei alla ricerca. Se il recupero fallisce resta la selezione datata per la vista generale, con avviso esplicito. Rimossa la spiegazione obsoleta sugli sconti non verificati.
