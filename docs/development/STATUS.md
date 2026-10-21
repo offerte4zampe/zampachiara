@@ -5,7 +5,7 @@ Ultimo aggiornamento: 21 ottobre 2026.
 ## Sessione 21 ottobre 2026, verifica finale prestazionale delle modifiche
 - Matrice e gate correnti riletti; newsletter mantiene unsubscribe/privacy/permessi false, nessuna attivazione o invio. Workers della testa corrente riuscita. Nessuna nuova implementazione richiesta su moduli già conclusi.
 - Avviata verifica finale Lighthouse del checkout dopo tema scuro, dimensioni touch e nuova pagina linea: cinque pagine, tre iterazioni, aggiunta /linea-monge-bwild al workflow esistente. È una nuova verifica pertinente ai cambiamenti, non riavvio dell'audit iniziale. Il confronto/catalogo ha avuto modifiche dopo la precedente misura84/TBT602ms e non è corretto dichiarare chiusa la prestazione senza un risultato successivo.
-- Solo workflow site-audit e registro modificati. Soglie accessibilità/SEO invariate,15 report attesi. Nessun dato di traffico o prestazione pubblica inferito dal checkout locale. Esiti da leggere prima della classificazione conclusiva.
+- Solo workflow site-audit e registro modificati. Soglie accessibilità/SEO invariate,15 report attesi. Nessun dato di traffico o prestazione pubblica inferito dal checkout locale. Esecuzione39659082421, job119427045115, commit67a1a3bc75ece6a9a186c65f1cb9953162bf1810. Al controllo ancora in corso nello step Lighthouse: leggere questa esecuzione e artefatto local-site-mobile-audit al prossimo ciclo, senza riavviarla. Esiti da leggere prima della classificazione conclusiva.
 - Prossimo: registrare mediane/fallimenti e correggere soltanto eventuali problemi concreti; se non emergono residui indipendenti, chiudere il ciclo tecnico distinguendo i blocchi esterni, senza affermare che newsletter/API/pubblicità siano attive.
 
 ## Verifica conclusa: prima pagina di linea
