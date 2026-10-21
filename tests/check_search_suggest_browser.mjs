@@ -71,6 +71,7 @@ export async function checkSuggestions(page,origin,catalog){
   assert(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth<=1));
  }
 
+ const productHistoryRequests=[];const trackProductHistory=request=>{if(request.url().includes('/data/history/'))productHistoryRequests.push(request.url())};page.on('request',trackProductHistory);
  const food=catalog.offers.find(o=>o.available&&o.weight_kg>0&&/crocchette|umido|(?:cani|gatti) > cibo > secco/i.test(o.category||'')&&now-Date.parse(o.checked_at)<=36*3600000);assert(food,'Fresh food fixture');
  await page.goto(origin+'/prodotto.html?id='+encodeURIComponent(food.id),{waitUntil:'domcontentloaded'});
  await page.waitForSelector('[data-product-basket]',{timeout:30000});
@@ -83,12 +84,14 @@ export async function checkSuggestions(page,origin,catalog){
  const report=await page.$eval('[data-product-report]',e=>e.href);assert.equal(new URL(report).searchParams.get('id'),food.id);
  await page.click('.daily-cost summary');await page.type('.daily-cost input','150');
  const daily=await page.$eval('.daily-cost [role=status]',e=>e.textContent);assert(daily.includes('al giorno'));
+ assert.equal(productHistoryRequests.length,0,'Product history must remain lazy');
  await page.click('.observed-history summary');
  await page.waitForFunction(()=>document.querySelector('.observed-history').textContent.includes('Periodo osservato'),{timeout:30000});
  await page.select('#product-quantity','2');
  assert.equal(await page.$eval('.daily-cost input',e=>e.value),'150');
  assert.equal(await page.$eval('.daily-cost [role=status]',e=>e.textContent),daily);
  assert(await page.$eval('.observed-history',e=>e.open));
+ assert.equal(productHistoryRequests.length,1,'Quantity changes must reuse loaded history');page.off('request',trackProductHistory);
  assert(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth<=1));
 
 }
