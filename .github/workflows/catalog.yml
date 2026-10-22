@@ -8,6 +8,8 @@ on:
       - 'automation/import_partner_feed.py'
       - 'automation/bauzaar_feed.py'
       - 'automation/isola_feed.py'
+      - 'automation/paco_feed.py'
+      - 'tests/test_paco_feed.py'
       - 'tests/test_isola_feed.py'
       - 'automation/shipping_metadata.py'
       - 'tests/test_bauzaar_feed.py'

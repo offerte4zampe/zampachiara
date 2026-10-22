@@ -8,11 +8,13 @@ function render(){
  const view=O4ZProduct.productView(catalog,id,Date.now(),shippingRules,quantity,territory);
  if(!view){$('product-status').textContent='Questo prodotto non è presente nel catalogo corrente. Non mostriamo prezzi precedenti come attuali.';return}
  const amazon=$('product-amazon');amazon.replaceChildren();amazon.hidden=true;
- const amazonLink=O4ZAmazon.productLink(view.seed,amazonLinks);
+ const amazonLink=O4ZAmazon.comparisonLink(view.seed,catalog.offers,amazonLinks);
+ amazon.hidden=false;amazon.append(el('h2','Amazon'),el('p','Prezzo: non disponibile · Disponibilità: non verificata','micro'));
  if(amazonLink){
-  amazon.hidden=false;amazon.append(el('h2','Amazon'),el('p','Prezzo e disponibilità da verificare su Amazon. Questa opzione non partecipa alla classifica dei prezzi.','micro'));
+  amazon.append(el('p','Prezzo e disponibilità da verificare su Amazon. Questa opzione non partecipa alla classifica dei prezzi.','micro'));
   const link=el('a','Verifica prezzo su Amazon ↗','btn secondary');link.href=amazonLink.url;link.target='_blank';link.rel='sponsored noopener noreferrer';amazon.append(link,el('p','Possiamo ricevere una commissione, senza costi aggiuntivi per te.','micro'));
  }
+ else amazon.append(el('p','Corrispondenza esatta non ancora verificata: non proponiamo ricerche generiche o prodotti simili.','micro'));
  const o=view.seed;$('product-title').textContent=o.title;document.title=o.title+' — prezzi nei negozi | Offerte a 4 Zampe';
  $('product-format').textContent=[o.brand,o.variant,o.weight_kg?o.weight_kg+' kg':''].filter(Boolean).join(' · ');
  const image=safe(o.image);if(image){const img=document.createElement('img');img.src=image;img.alt=o.title;img.width=180;img.height=160;img.style.objectFit='contain';$('product-image').replaceChildren(img)}

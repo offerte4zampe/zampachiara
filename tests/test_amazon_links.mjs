@@ -16,3 +16,13 @@ test('editorial registry has unique offer IDs and size-specific KONG destination
   assert(resolved);assert.equal(new URL(resolved.url).pathname,'/dp/'+entry.asin);
  }
 });
+
+test('verified Amazon link can follow exact cross-store identity but never guessed variants',()=>{
+ const now=Date.now(),o={id:'paco:1',title:'Item',brand:'Brand',variant:'2 kg',gtin:'4006381333931',weight_kg:2,checked_at:new Date(now).toISOString()};
+ const other={...o,id:'other:1'};
+ const config={tracking_id:'offerte4zam02-21',links:[{...other,offer_id:other.id,asin:'B000000001',evidence_url:'https://www.amazon.it/dp/B000000001'}]};
+ const api=require('../site/assets/amazon-links.js');
+ assert(api.comparisonLink(o,[o,other],config,now));
+ assert.equal(api.comparisonLink({...o,weight_kg:4},[other],config,now),null);
+ assert.equal(api.comparisonLink({...o,gtin:''},[other],config,now),null);
+});

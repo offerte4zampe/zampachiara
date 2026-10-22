@@ -30,3 +30,11 @@ test('unknown or stale shipping rules never produce a total',()=>{
   assert.equal(productView(catalog,'a',now,rules).shops[0].quotes.get('a').total,undefined);
  }
 });
+
+test('Paco participates in exact same pack comparison and all five source states remain visible',()=>{
+ const paco={...a,id:'paco:1',merchant_id:'paco',merchant:'Paco Pet Shop',price:19,affiliate_url:'https://www.pacopetshop.it/directlinking/?tt=24833_1216771_518044_'};
+ const view=productView({offers:[a,paco],sources:[...sources,{id:'paco',name:'Paco Pet Shop',status:'ok'}]},'a',now);
+ assert.equal(view.shops.length,5);assert.equal(view.shops.find(s=>s.source.id==='paco').offers[0].affiliate_url,paco.affiliate_url);
+ const uncertain=productView({offers:[a,{...paco,gtin:'',weight_kg:null}],sources:[sources[0],{id:'paco',name:'Paco Pet Shop',status:'ok'}]},'a',now);
+ assert.equal(uncertain.shops.find(s=>s.source.id==='paco').state,'missing');
+});

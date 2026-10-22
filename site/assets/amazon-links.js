@@ -11,5 +11,12 @@ function productLink(offer,config,now=Date.now()){
  const url=new URL('https://www.amazon.it/dp/'+row.asin);url.searchParams.set('tag',config.tracking_id);
  return {url:url.href,checked_at:row.checked_at};
 }
-const api={productLink};if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.O4ZAmazon=api;
+function comparisonLink(seed,offers,config,now=Date.now()){
+ const direct=productLink(seed,config,now);if(direct)return direct;
+ const trade=typeof module!=='undefined'&&module.exports?require('./trade.js'):root.O4ZTrade;
+ const key=trade.matchKey(seed,now);if(!key)return null;
+ const matches=offers.filter(o=>trade.matchKey(o,now)===key).map(o=>productLink(o,config,now)).filter(Boolean);
+ const urls=new Set(matches.map(m=>m.url));return urls.size===1?matches[0]:null;
+}
+const api={productLink,comparisonLink};if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.O4ZAmazon=api;
 })(typeof window!=='undefined'?window:null);

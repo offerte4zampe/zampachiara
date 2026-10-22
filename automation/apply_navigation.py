@@ -11,6 +11,7 @@ def apply(html):
         nav = re.sub(r'<a\b(?=[^>]*\bclass="navcta")(?=[^>]*\bhref="confronta-cibo\.html")[^>]*>Cerca prodotti ↗</a>', '', nav)
         nav = re.sub(r'(<a\b[^>]*\bhref=")confronta-cibo\.html\?sale=1("[^>]*>)Offerte</a>', r'\1prodotti.html\2Prodotti</a>', nav)
         return nav
+    html = html.replace('I link Bauzaar e Isola dei Tesori sono affiliati tramite TradeTracker:', 'I link Bauzaar, Isola dei Tesori e Paco Pet Shop sono affiliati tramite TradeTracker:')
     return re.sub(r'<nav\b(?=[^>]*\bid="navlinks")[^>]*>.*?</nav>', menu, html, flags=re.S)
 
 
