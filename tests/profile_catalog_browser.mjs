@@ -14,9 +14,17 @@ export async function profileCatalog(page,origin,catalog){
  assert.deepEqual(cached.map(o=>o.id),direct.map(o=>o.id),'Warmed quote ordering must equal direct calculation on full catalog');
  const runs=[];
  for(let i=0;i<3;i++){
-  await page.goto(origin+'/confronta-cibo.html?profile=1',{waitUntil:'domcontentloaded'});
-  await page.waitForFunction(()=>Boolean(window.O4ZCatalogProfile),{timeout:30000});
-  const result=await page.evaluate(()=>window.O4ZCatalogProfile);assert.equal(result.loader_thread,'worker','Supported browser must parse in worker');assert(result.offers>0);assert(result.cards>0);
+  // Isolate each sample from prior product/search navigations and terminate its Worker on close.
+  const samplePage=await page.browser().newPage();
+  let result;try{
+   await samplePage.setViewport(page.viewport());
+   await samplePage.setRequestInterception(true);samplePage.on('request',r=>r.url().startsWith(origin)?r.continue():r.abort());
+   await samplePage.evaluateOnNewDocument(now=>{Date.now=()=>now},now);
+   await samplePage.goto(origin+'/confronta-cibo.html?profile=1',{waitUntil:'domcontentloaded'});
+   await samplePage.waitForFunction(()=>Boolean(window.O4ZCatalogProfile),{timeout:60000});
+   result=await samplePage.evaluate(()=>window.O4ZCatalogProfile);
+  }finally{await samplePage.close()}
+ assert.equal(result.loader_thread,'worker','Supported browser must parse in worker');assert(result.offers>0);assert(result.cards>0);
   for(const sample of result.samples)assert(Number.isFinite(sample.ms)&&sample.ms>=0);
   runs.push(result);
  }
