@@ -1,9 +1,9 @@
 {
   "method_version": 2,
-  "observed_at": "2026-10-22T00:52:32.028749+00:00",
-  "pages_scanned": 312,
-  "indexable_pages": 304,
-  "unique_canonicals": 304,
+  "observed_at": "2026-10-22T06:50:35.418016+00:00",
+  "pages_scanned": 313,
+  "indexable_pages": 227,
+  "unique_canonicals": 227,
   "issues": [],
   "rule_counts": {},
   "pages": [
@@ -201,7 +201,7 @@
     },
     {
       "page": "prezzi-00744845401126-0a8eaaa492.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-00744845401126-0a8eaaa492",
       "issues": []
     },
@@ -351,31 +351,31 @@
     },
     {
       "page": "prezzi-03700260009832-f96df87d68.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-03700260009832-f96df87d68",
       "issues": []
     },
     {
       "page": "prezzi-04001967117172-348867ab5e.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-04001967117172-348867ab5e",
       "issues": []
     },
     {
       "page": "prezzi-04001967117271-75d2091058.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-04001967117271-75d2091058",
       "issues": []
     },
     {
       "page": "prezzi-04001967117370-d6b055161d.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-04001967117370-d6b055161d",
       "issues": []
     },
     {
       "page": "prezzi-04001967127867-dac1eb0170.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-04001967127867-dac1eb0170",
       "issues": []
     },
@@ -507,19 +507,19 @@
     },
     {
       "page": "prezzi-08001154001532-df3e1bcb75.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08001154001532-df3e1bcb75",
       "issues": []
     },
     {
       "page": "prezzi-08001154001655-bc0ccdbf79.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08001154001655-bc0ccdbf79",
       "issues": []
     },
     {
       "page": "prezzi-08001154002508-80f3897348.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08001154002508-80f3897348",
       "issues": []
     },
@@ -531,37 +531,37 @@
     },
     {
       "page": "prezzi-08001154002522-c50eefd46a.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08001154002522-c50eefd46a",
       "issues": []
     },
     {
       "page": "prezzi-08001154002539-4bf062dd0e.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08001154002539-4bf062dd0e",
       "issues": []
     },
     {
       "page": "prezzi-08001154002546-98e9185f83.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08001154002546-98e9185f83",
       "issues": []
     },
     {
       "page": "prezzi-08001154007541-dfd072b369.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08001154007541-dfd072b369",
       "issues": []
     },
     {
       "page": "prezzi-08001154007589-2fda482eea.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08001154007589-2fda482eea",
       "issues": []
     },
     {
       "page": "prezzi-08001154007619-28320be4f1.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08001154007619-28320be4f1",
       "issues": []
     },
@@ -573,13 +573,13 @@
     },
     {
       "page": "prezzi-08001154007725-1fd5133866.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08001154007725-1fd5133866",
       "issues": []
     },
     {
       "page": "prezzi-08001154120837-b6c6c2010a.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08001154120837-b6c6c2010a",
       "issues": []
     },
@@ -825,151 +825,151 @@
     },
     {
       "page": "prezzi-08009470006873-d92d1f232b.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470006873-d92d1f232b",
       "issues": []
     },
     {
       "page": "prezzi-08009470006880-03550f50cf.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470006880-03550f50cf",
       "issues": []
     },
     {
       "page": "prezzi-08009470006897-f464c247e8.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470006897-f464c247e8",
       "issues": []
     },
     {
       "page": "prezzi-08009470006903-02c66ed372.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470006903-02c66ed372",
       "issues": []
     },
     {
       "page": "prezzi-08009470006927-8883073b99.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470006927-8883073b99",
       "issues": []
     },
     {
       "page": "prezzi-08009470007009-4ae6b9756e.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470007009-4ae6b9756e",
       "issues": []
     },
     {
       "page": "prezzi-08009470007016-3e1c165ccb.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470007016-3e1c165ccb",
       "issues": []
     },
     {
       "page": "prezzi-08009470007023-7578f5fdba.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470007023-7578f5fdba",
       "issues": []
     },
     {
       "page": "prezzi-08009470007030-2108e34cbb.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470007030-2108e34cbb",
       "issues": []
     },
     {
       "page": "prezzi-08009470007047-c9f378bcae.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470007047-c9f378bcae",
       "issues": []
     },
     {
       "page": "prezzi-08009470007054-a5d6639e40.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470007054-a5d6639e40",
       "issues": []
     },
     {
       "page": "prezzi-08009470007092-fdc10dc997.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470007092-fdc10dc997",
       "issues": []
     },
     {
       "page": "prezzi-08009470007153-20a93a61ec.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470007153-20a93a61ec",
       "issues": []
     },
     {
       "page": "prezzi-08009470007184-f04fe8a95c.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470007184-f04fe8a95c",
       "issues": []
     },
     {
       "page": "prezzi-08009470007214-15f53cfede.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470007214-15f53cfede",
       "issues": []
     },
     {
       "page": "prezzi-08009470007221-22d03b4233.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470007221-22d03b4233",
       "issues": []
     },
     {
       "page": "prezzi-08009470007238-04014a7fb1.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470007238-04014a7fb1",
       "issues": []
     },
     {
       "page": "prezzi-08009470007245-87dc63f0a5.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470007245-87dc63f0a5",
       "issues": []
     },
     {
       "page": "prezzi-08009470007269-43a30d54a4.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470007269-43a30d54a4",
       "issues": []
     },
     {
       "page": "prezzi-08009470007283-4ce6ceb54f.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470007283-4ce6ceb54f",
       "issues": []
     },
     {
       "page": "prezzi-08009470007290-0e61c72f5f.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470007290-0e61c72f5f",
       "issues": []
     },
     {
       "page": "prezzi-08009470007306-508b448127.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470007306-508b448127",
       "issues": []
     },
     {
       "page": "prezzi-08009470007313-f91273e2d7.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470007313-f91273e2d7",
       "issues": []
     },
     {
       "page": "prezzi-08009470007320-5b1b6672fc.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470007320-5b1b6672fc",
       "issues": []
     },
     {
       "page": "prezzi-08009470007764-c9eb93ae5f.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470007764-c9eb93ae5f",
       "issues": []
     },
@@ -1119,7 +1119,7 @@
     },
     {
       "page": "prezzi-08009470011211-6f890f542a.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470011211-6f890f542a",
       "issues": []
     },
@@ -1257,7 +1257,7 @@
     },
     {
       "page": "prezzi-08009470011709-9782bab2a7.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470011709-9782bab2a7",
       "issues": []
     },
@@ -1293,157 +1293,157 @@
     },
     {
       "page": "prezzi-08009470013017-9133c3ca80.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470013017-9133c3ca80",
       "issues": []
     },
     {
       "page": "prezzi-08009470013031-cc15693b62.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470013031-cc15693b62",
       "issues": []
     },
     {
       "page": "prezzi-08009470013055-9ca9f7132a.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470013055-9ca9f7132a",
       "issues": []
     },
     {
       "page": "prezzi-08009470013079-3637c9aea7.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470013079-3637c9aea7",
       "issues": []
     },
     {
       "page": "prezzi-08009470013086-e1d8bd723d.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470013086-e1d8bd723d",
       "issues": []
     },
     {
       "page": "prezzi-08009470013116-9f4160f45a.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470013116-9f4160f45a",
       "issues": []
     },
     {
       "page": "prezzi-08009470013123-ff161369e2.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470013123-ff161369e2",
       "issues": []
     },
     {
       "page": "prezzi-08009470013147-a58322358e.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470013147-a58322358e",
       "issues": []
     },
     {
       "page": "prezzi-08009470013161-987cc816bf.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470013161-987cc816bf",
       "issues": []
     },
     {
       "page": "prezzi-08009470013338-7935f4a4ca.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470013338-7935f4a4ca",
       "issues": []
     },
     {
       "page": "prezzi-08009470013376-6db3663603.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470013376-6db3663603",
       "issues": []
     },
     {
       "page": "prezzi-08009470013604-b1c078dc5b.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470013604-b1c078dc5b",
       "issues": []
     },
     {
       "page": "prezzi-08009470013611-6a74cef0f3.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470013611-6a74cef0f3",
       "issues": []
     },
     {
       "page": "prezzi-08009470013628-55a280a24a.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470013628-55a280a24a",
       "issues": []
     },
     {
       "page": "prezzi-08009470013635-253ada5ac0.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470013635-253ada5ac0",
       "issues": []
     },
     {
       "page": "prezzi-08009470014144-378fdcb480.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470014144-378fdcb480",
       "issues": []
     },
     {
       "page": "prezzi-08009470014151-2a99dba759.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470014151-2a99dba759",
       "issues": []
     },
     {
       "page": "prezzi-08009470014175-5cc3a92fe8.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470014175-5cc3a92fe8",
       "issues": []
     },
     {
       "page": "prezzi-08009470014182-839f936bb9.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470014182-839f936bb9",
       "issues": []
     },
     {
       "page": "prezzi-08009470014342-a060c54e76.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470014342-a060c54e76",
       "issues": []
     },
     {
       "page": "prezzi-08009470014359-168c214d81.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470014359-168c214d81",
       "issues": []
     },
     {
       "page": "prezzi-08009470014366-9afe959a29.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470014366-9afe959a29",
       "issues": []
     },
     {
       "page": "prezzi-08009470014380-911bb431d7.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470014380-911bb431d7",
       "issues": []
     },
     {
       "page": "prezzi-08009470014397-1ec341e09d.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470014397-1ec341e09d",
       "issues": []
     },
     {
       "page": "prezzi-08009470014403-bc9c8efe9d.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470014403-bc9c8efe9d",
       "issues": []
     },
     {
       "page": "prezzi-08009470014410-7d989409a6.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08009470014410-7d989409a6",
       "issues": []
     },
@@ -1593,25 +1593,25 @@
     },
     {
       "page": "prezzi-08015699008260-83f4c4243a.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08015699008260-83f4c4243a",
       "issues": []
     },
     {
       "page": "prezzi-08015699008321-bd66af1d7f.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08015699008321-bd66af1d7f",
       "issues": []
     },
     {
       "page": "prezzi-08015699008345-b4c9282784.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08015699008345-b4c9282784",
       "issues": []
     },
     {
       "page": "prezzi-08015699008383-cd3d2ee11c.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08015699008383-cd3d2ee11c",
       "issues": []
     },
@@ -1661,6 +1661,12 @@
       "page": "prezzi-08052469420167-385bc7d455.html",
       "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08052469420167-385bc7d455",
+      "issues": []
+    },
+    {
+      "page": "prezzi-08056098400859-70220d2f2e.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/prezzi-08056098400859-70220d2f2e",
       "issues": []
     },
     {
@@ -1749,19 +1755,19 @@
     },
     {
       "page": "prezzi-08410650159744-252f410789.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08410650159744-252f410789",
       "issues": []
     },
     {
       "page": "prezzi-08410650162065-a3e502f71c.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08410650162065-a3e502f71c",
       "issues": []
     },
     {
       "page": "prezzi-08410650171425-3b6eb5c62c.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08410650171425-3b6eb5c62c",
       "issues": []
     },
@@ -1791,7 +1797,7 @@
     },
     {
       "page": "prezzi-09003579309513-25024223e6.html",
-      "indexable": true,
+      "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-09003579309513-25024223e6",
       "issues": []
     },
