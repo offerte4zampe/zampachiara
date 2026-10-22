@@ -1871,12 +1871,6 @@
     "status": 200,
     "confirmations": 0
   },
-  "bauzaar:56807970767173": {
-    "url": "https://www.bauzaar.it/products/natural-code-acqua-di-cottura-85-gr?variant=56807970767173",
-    "checked_at": "2026-10-21T00:45:28.711377+00:00",
-    "status": 200,
-    "confirmations": 0
-  },
   "isola-dei-tesori:000110876": {
     "url": "https://www.isoladeitesori.it/prodotto/trixie-recinto-in-nylon-da-esterno-per-roditori-150x65-cm/000110876.html",
     "checked_at": "2026-10-21T00:45:28.711377+00:00",
@@ -2855,12 +2849,6 @@
     "status": 200,
     "confirmations": 0
   },
-  "bauzaar:56818719097157": {
-    "url": "https://www.bauzaar.it/products/deli-pet-dolce-colazione-snack-per-cani?variant=56818719097157",
-    "checked_at": "2026-10-21T06:49:59.247434+00:00",
-    "status": 200,
-    "confirmations": 0
-  },
   "isola-dei-tesori:000112183": {
     "url": "https://www.isoladeitesori.it/prodotto/sera-fd-tubifex-nature-100-ml/000112183.html",
     "checked_at": "2026-10-21T06:49:59.247434+00:00",
@@ -3446,6 +3434,150 @@
   "webpet:52568949621076": {
     "url": "https://www.webpet.it/products/prolife-intestinal-sensitive-medium-large-crocchette-dietetiche-per-cani-adulti-con-problemi-intestinali-2kg?variant=52568949621076",
     "checked_at": "2026-10-21T18:46:52.015279+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976542638423": {
+    "url": "https://www.animaliapet.eu/products/almo-nature-hfc-complete-tonno-con-zucca-70g-lattina-gatti-adulti?variant=46976542638423",
+    "checked_at": "2026-10-22T00:52:33.705072+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56807862632773": {
+    "url": "https://www.bauzaar.it/products/aqualovers-cartuccia-filtrante-per-acquario-ocean?variant=56807862632773",
+    "checked_at": "2026-10-22T00:52:33.705072+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000112243": {
+    "url": "https://www.isoladeitesori.it/prodotto/sera-goldfish-granules-100-ml/000112243.html",
+    "checked_at": "2026-10-22T00:52:33.705072+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52568952242516": {
+    "url": "https://www.webpet.it/products/prolife-smart-adult-lamb-rice-mini-bocconcini-di-agnello-e-riso-per-cani-adulti-di-taglia-piccola-100g?variant=52568952242516",
+    "checked_at": "2026-10-22T00:52:33.705072+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976542671191": {
+    "url": "https://www.animaliapet.eu/products/monge-speciality-line-all-breeds-puppy-agnello-e-riso-12kg-crocchette-cani?variant=46976542671191",
+    "checked_at": "2026-10-22T00:52:33.705072+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56817668030789": {
+    "url": "https://www.bauzaar.it/products/ciano-cartuccia-filtrante-s-per-filtri-cf20-e-cf40-askoll?variant=56817668030789",
+    "checked_at": "2026-10-22T00:52:33.705072+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000112247": {
+    "url": "https://www.isoladeitesori.it/prodotto/sera-guppy-granules-100-ml/000112247.html",
+    "checked_at": "2026-10-22T00:52:33.705072+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52568952865108": {
+    "url": "https://www.webpet.it/products/prolife-smart-adult-lamb-rice-medium-large-bocconcini-di-agnello-e-riso-per-cani-adulti-di-taglia-media-e-grande-400g?variant=52568952865108",
+    "checked_at": "2026-10-22T00:52:33.705072+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976542703959": {
+    "url": "https://www.animaliapet.eu/products/monge-dog-natural-pollo-con-verdure-lattina-95g-cani-adulti?variant=46976542703959",
+    "checked_at": "2026-10-22T00:52:33.705072+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56818844467525": {
+    "url": "https://www.bauzaar.it/products/hill-s-prescription-diet-dog-z-d-low-fat-con-proteine-idrolizzate-di-soia?variant=56818844467525",
+    "checked_at": "2026-10-22T00:52:33.705072+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000112248": {
+    "url": "https://www.isoladeitesori.it/prodotto/sera-vipachips-wafers-100-ml/000112248.html",
+    "checked_at": "2026-10-22T00:52:33.705072+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52568952963412": {
+    "url": "https://www.webpet.it/products/prolife-grain-free-adult-sensitive-pork-potato-medium-large-bocconcini-di-maiale-e-patate-per-cani-adulti-400g?variant=52568952963412",
+    "checked_at": "2026-10-22T00:52:33.705072+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976542769495": {
+    "url": "https://www.animaliapet.eu/products/monge-delicate-pezzetti-di-pollo-con-patate-e-carote-lattina-80g-gatti-adulti?variant=46976542769495",
+    "checked_at": "2026-10-22T00:52:33.705072+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56818873401669": {
+    "url": "https://www.bauzaar.it/products/tiragraffi-per-gatti-fuzzyard-record-cat-scratcher?variant=56818873401669",
+    "checked_at": "2026-10-22T00:52:33.705072+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000112251": {
+    "url": "https://www.isoladeitesori.it/prodotto/sera-cichlids-stick-250-ml/000112251.html",
+    "checked_at": "2026-10-22T00:52:33.705072+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52568953520468": {
+    "url": "https://www.webpet.it/products/prolife-grain-free-adult-sensitive-beef-potato-medium-large-bocconcini-di-manzo-e-patate-per-cani-adulti-400g?variant=52568953520468",
+    "checked_at": "2026-10-22T00:52:33.705072+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976542802263": {
+    "url": "https://www.animaliapet.eu/products/royal-canin-adult-maltese-1-5kg-crocchette-cani-adulti?variant=46976542802263",
+    "checked_at": "2026-10-22T00:52:33.705072+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56818873991493": {
+    "url": "https://www.bauzaar.it/products/gioco-interattivo-per-cani-fuzzyard-chew-toy?variant=56818873991493",
+    "checked_at": "2026-10-22T00:52:33.705072+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000112256": {
+    "url": "https://www.isoladeitesori.it/prodotto/sera-raffy-l-250-ml/000112256.html",
+    "checked_at": "2026-10-22T00:52:33.705072+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52568953815380": {
+    "url": "https://www.webpet.it/products/prolife-grain-free-adult-sensitive-lamb-potato-medium-large-bocconcini-di-agnello-e-patate-per-cani-adulti-400g?variant=52568953815380",
+    "checked_at": "2026-10-22T00:52:33.705072+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976542867799": {
+    "url": "https://www.animaliapet.eu/products/monge-delicate-pezzetti-di-pollo-con-prosciutto-lattina-80g-gatti-adulti?variant=46976542867799",
+    "checked_at": "2026-10-22T00:52:33.705072+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56818877038917": {
+    "url": "https://www.bauzaar.it/products/gioco-interattivo-per-cani-fuzzyard-chew-toy?variant=56818877038917",
+    "checked_at": "2026-10-22T00:52:33.705072+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000112259": {
+    "url": "https://www.isoladeitesori.it/prodotto/sera-raffy-royal-1-lt/000112259.html",
+    "checked_at": "2026-10-22T00:52:33.705072+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52568953946452": {
+    "url": "https://www.webpet.it/products/prolife-grain-free-adult-sensitive-lamb-potato-mini-bocconcini-di-agnello-e-patate-per-cani-adulti-di-taglia-piccola?variant=52568953946452",
+    "checked_at": "2026-10-22T00:52:33.705072+00:00",
     "status": 200,
     "confirmations": 0
   }
