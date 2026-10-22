@@ -4,7 +4,7 @@ const sources=[{id:'a',name:'A',status:'ok'},{id:'b',name:'B',status:'ok'},{id:'
 test('exact product lists all stores, sold out and missing distinctly and preserves tracking',()=>{
  const b={...a,id:'b',merchant_id:'b',merchant:'B',available:false,price:10};
  const view=productView({offers:[a,b,{...a,id:'different',merchant_id:'c',weight_kg:4}],sources},'a',now);
- assert.equal(view.shops.length,4);assert.equal(view.shops[0].source.id,'a');assert.equal(view.shops.find(s=>s.source.id==='b').offers[0].available,false);
+ assert.equal(view.shops.length,5);assert.equal(view.shops[0].source.id,'a');assert.equal(view.shops.find(s=>s.source.id==='b').offers[0].available,false);
  assert.equal(view.shops.find(s=>s.source.id==='c').state,'missing');assert.equal(view.shops.find(s=>s.source.id==='d').state,'unknown');assert.equal(view.shops[0].offers[0].affiliate_url,a.affiliate_url);
 });
 test('missing identifiers never infer cross-store equivalence',()=>{const view=productView({offers:[{...a,gtin:''},{...a,id:'b',merchant_id:'b'}],sources},'a',now);assert.equal(view.exact,false);assert.equal(view.shops.find(s=>s.source.id==='b').state,'unmatched')});
@@ -15,14 +15,14 @@ test('shipping total drives shop order and quantity thresholds without changing 
  const rules={checked_at:'2026-10-21',merchants:{a:{fee:1,free_from:30},b:{fee:8,free_from:30}}};
  const catalog={offers:[a,b],sources:sources.slice(0,2)};
  const one=productView(catalog,'a',now,rules,1);
- assert.deepEqual(one.shops.map(s=>s.source.id),['a','b']);
+ assert.deepEqual(one.shops.filter(s=>s.offers.length).map(s=>s.source.id),['a','b']);
  assert.equal(one.shops[0].quotes.get('a').total,21);
  const two=productView(catalog,'a',now,rules,2);
- assert.deepEqual(two.shops.map(s=>s.source.id),['b','a']);
+ assert.deepEqual(two.shops.filter(s=>s.offers.length).map(s=>s.source.id),['b','a']);
  assert.equal(two.shops[0].quotes.get('b').total,36);
  assert.equal(two.shops[1].offers[0].affiliate_url,a.affiliate_url);
  const special=productView(catalog,'a',now,rules,1,'special');
- assert(special.shops.every(s=>s.quotes.get(s.offers[0].id).total===undefined));
+ assert(special.shops.filter(s=>s.offers.length).every(s=>s.quotes.get(s.offers[0].id).total===undefined));
 });
 test('unknown or stale shipping rules never produce a total',()=>{
  const catalog={offers:[a],sources:[sources[0]]};
@@ -34,7 +34,26 @@ test('unknown or stale shipping rules never produce a total',()=>{
 test('Paco participates in exact same pack comparison and all five source states remain visible',()=>{
  const paco={...a,id:'paco:1',merchant_id:'paco',merchant:'Paco Pet Shop',price:19,affiliate_url:'https://www.pacopetshop.it/directlinking/?tt=24833_1216771_518044_'};
  const view=productView({offers:[a,paco],sources:[...sources,{id:'paco',name:'Paco Pet Shop',status:'ok'}]},'a',now);
- assert.equal(view.shops.length,5);assert.equal(view.shops.find(s=>s.source.id==='paco').offers[0].affiliate_url,paco.affiliate_url);
+ assert.equal(view.shops.length,6);assert.equal(view.shops.find(s=>s.source.id==='paco').offers[0].affiliate_url,paco.affiliate_url);
  const uncertain=productView({offers:[a,{...paco,gtin:'',feed_gtin:a.gtin,quantity_verified:false,weight_kg:null}],sources:[sources[0],{id:'paco',name:'Paco Pet Shop',status:'ok'}]},'a',now);
  assert.equal(uncertain.shops.find(s=>s.source.id==='paco').state,'unmatched');
+});
+
+test('zooplus appears for every product without fabricated price, availability or link',()=>{
+ for(const seed of [a,{...a,gtin:''},{...a,checked_at:'2026-10-01'}]){
+  const view=productView({offers:[seed],sources},seed.id,now);
+  const z=view.shops.find(s=>s.source.id==='zooplus');
+  assert.equal(z.state,'unknown');assert.equal(z.source.status,'pending-feed');assert.deepEqual(z.offers,[]);assert.equal(z.quotes.size,0);
+  assert.equal(view.shops.filter(s=>s.source.id==='zooplus').length,1);
+ }
+});
+test('a real zooplus catalog supersedes the pending store without duplicates or changes to matching',()=>{
+ const z={...a,id:'zooplus:1',merchant_id:'zooplus',merchant:'zooplus',price:19};
+ const catalog={offers:[a,z],sources:[...sources,{id:'zooplus',name:'zooplus',status:'ok'}]};
+ const view=productView(catalog,'a',now);
+ assert.equal(view.shops.filter(s=>s.source.id==='zooplus').length,1);
+ assert.equal(view.shops.find(s=>s.source.id==='zooplus').state,'listed');
+ assert.equal(view.shops.find(s=>s.source.id==='zooplus').offers[0],z);
+ const different=productView({...catalog,offers:[a,{...z,weight_kg:4}]},'a',now);
+ assert.equal(different.shops.find(s=>s.source.id==='zooplus').state,'missing');
 });

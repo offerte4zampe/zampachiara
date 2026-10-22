@@ -21,7 +21,10 @@ function render(){
  $('product-status').textContent=view.exact?'Confronto dello stesso GTIN, marca e peso netto. Verifica comunque ricetta e confezione prima di acquistare.':'Identità condivisa non verificabile: mostriamo la sola offerta selezionata, senza abbinare prodotti dai nomi simili.';
  const grid=$('product-shops');grid.replaceChildren();for(const shop of view.shops){
  const card=el('article','','panel');card.dataset.productShop=shop.source.id;card.append(el('h2',shop.source.name));
- if(shop.state!=='listed'){const labels={missing:'Non presente nel catalogo di questo negozio',unknown:'Disponibilità non verificabile: catalogo non aggiornato o non disponibile',unmatched:'Corrispondenza non verificata in questo negozio',stale:'Dati da aggiornare: prezzo e disponibilità non confermati'};card.append(el('p',labels[shop.state]));}
+ if(shop.source.id==='zooplus'&&shop.source.status==='pending-feed'){
+ card.append(el('p','Prezzo: non disponibile · Disponibilità: non verificata','micro'),el('p','Catalogo zooplus non ancora collegato. Non possiamo confermare lo stesso prodotto e formato né indicarne il prezzo.','micro'));
+ }
+ else if(shop.state!=='listed'){const labels={missing:'Non presente nel catalogo di questo negozio',unknown:'Disponibilità non verificabile: catalogo non aggiornato o non disponibile',unmatched:'Corrispondenza non verificata in questo negozio',stale:'Dati da aggiornare: prezzo e disponibilità non confermati'};card.append(el('p',labels[shop.state]));}
  for(const offer of shop.offers){
  const row=el('section','','matched-offer');row.append(el('p',offer.variant||offer.title,'micro'),el('strong',money.format(offer.price)),el('p',offer.weight_kg?money.format(offer.price/offer.weight_kg)+'/kg · spedizione esclusa':'Spedizione esclusa','micro'),el('p',offer.available?'Disponibile al rilevamento':'Esaurito al rilevamento'),el('p','Rilevato: '+new Date(offer.checked_at).toLocaleString('it-IT'),'micro'));
  const quote=shop.quotes.get(offer.id);const estimate=el('p',quote.total!==undefined?'Totale stimato: '+money.format(quote.total)+' ('+quantity+' confezioni · spedizione '+money.format(quote.fee)+')':'Totale non calcolato: '+quote.reason,'micro');estimate.dataset.shippingEstimate=offer.id;row.append(estimate);
@@ -37,7 +40,7 @@ function render(){
  row.append(offerTools.get(offer.id));
  card.append(row)}
  grid.append(card)}
- $('product-coverage').textContent='Confrontiamo '+view.shops.length+' cataloghi importati, non tutto il mercato. L’assenza dal catalogo non prova che il negozio non venda il prodotto. Prezzi non in tempo reale; conferma disponibilità e totale nel negozio.';
+ $('product-coverage').textContent='Confrontiamo '+view.shops.filter(s=>s.source.status!=='pending-feed').length+' cataloghi importati, non tutto il mercato. L’assenza dal catalogo non prova che il negozio non venda il prodotto. Prezzi non in tempo reale; conferma disponibilità e totale nel negozio.';
 }
 async function load(){try{
  id=new URLSearchParams(location.search).get('id');if(!id)throw Error('missing');

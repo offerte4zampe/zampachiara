@@ -22,7 +22,9 @@ export async function checkSuggestions(page,origin,catalog){
  await Promise.all([page.waitForNavigation({waitUntil:'domcontentloaded'}),page.keyboard.press('Enter')]);
  assert.equal(new URL(page.url()).pathname,'/prodotto.html');assert.equal(new URL(page.url()).searchParams.get('id'),expected);
  await page.waitForSelector('#product-shops [data-product-shop]',{timeout:30000});
- assert.equal(await page.$$eval('#product-shops [data-product-shop]',rows=>rows.length),catalog.sources.length);
+ assert.equal(await page.$$eval('#product-shops [data-product-shop]',rows=>rows.length),new Set([...catalog.sources.map(s=>s.id),'zooplus']).size);
+ const zooplus=await page.$eval('[data-product-shop="zooplus"]',e=>({text:e.textContent,links:e.querySelectorAll('a').length}));
+ assert(zooplus.text.includes('Disponibilità: non verificata'));assert(zooplus.text.includes('Catalogo zooplus non ancora collegato'));assert.equal(zooplus.links,0);
  const seed=catalog.offers.find(o=>o.id===expected);assert(seed);assert.equal(await page.$eval('#product-title',e=>e.textContent),seed.title);
  const shareURL=await page.$eval('#product-share-url',e=>e.value);
  assert.equal(new URL(shareURL).origin,'https://offerte4zampe.it');assert.equal(new URL(shareURL).pathname,'/prodotto');assert.equal(new URL(shareURL).searchParams.get('id'),expected);assert.deepEqual([...new URL(shareURL).searchParams.keys()],['id']);
@@ -35,7 +37,7 @@ export async function checkSuggestions(page,origin,catalog){
  assert(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth<=1));
  await page.select('#product-quantity','2');await page.select('#product-territory','special');
  assert(await page.$$eval('[data-shipping-estimate]',rows=>rows.every(e=>e.textContent.includes('Totale non calcolato'))));
- assert.equal(await page.$$eval('#product-shops [data-product-shop]',rows=>rows.length),catalog.sources.length);
+ assert.equal(await page.$$eval('#product-shops [data-product-shop]',rows=>rows.length),new Set([...catalog.sources.map(s=>s.id),'zooplus']).size);
  await page.select('#product-territory','standard');
  assert.equal(await page.$eval('#product-quantity',e=>e.value),'2');
  await page.screenshot({path:'browser-reports/product-mobile.png',fullPage:true});
@@ -59,7 +61,7 @@ export async function checkSuggestions(page,origin,catalog){
  const amazon=await page.$eval('#product-amazon a',e=>({href:e.href,rel:e.rel,text:e.textContent}));
  const target=new URL(amazon.href);assert.equal(target.hostname,'www.amazon.it');assert.equal(target.pathname,'/dp/'+mapping.asin);assert.equal(target.searchParams.get('tag'),links.tracking_id);assert(amazon.rel.includes('sponsored'));assert.equal(amazon.text,'Verifica prezzo su Amazon ↗');
  assert(await page.$eval('#product-amazon',e=>!e.textContent.includes('€')&&!e.textContent.includes('Disponibile al rilevamento')));
- assert.equal(await page.$$eval('#product-shops [data-product-shop]',rows=>rows.length),catalog.sources.length);
+ assert.equal(await page.$$eval('#product-shops [data-product-shop]',rows=>rows.length),new Set([...catalog.sources.map(s=>s.id),'zooplus']).size);
  await page.select('#product-quantity','3');assert.equal(await page.$eval('#product-amazon a',e=>e.href),amazon.href);
  const unmapped=catalog.offers.find(o=>!amazonModel.comparisonLink(o,catalog.offers,links,now));assert(unmapped);
  await page.goto(origin+'/prodotto.html?id='+encodeURIComponent(unmapped.id),{waitUntil:'domcontentloaded'});

@@ -4,6 +4,8 @@ function productView(catalog,id,now=Date.now(),shippingRules=null,quantity=1,ter
  const offers=catalog.offers||[],seed=offers.find(o=>o.id===id);if(!seed)return null;
  const key=trade.matchKey(seed,now),rows=key?offers.filter(o=>trade.matchKey(o,now)===key):[seed];
  const sources=new Map((catalog.sources||[]).map(s=>[s.id,s]));
+ // Keep the store visible without pretending an unconnected feed is an imported catalog.
+ if(!sources.has('zooplus'))sources.set('zooplus',{id:'zooplus',name:'zooplus',status:'pending-feed'});
  for(const o of rows)if(!sources.has(o.merchant_id))sources.set(o.merchant_id,{id:o.merchant_id,name:o.merchant,status:'unknown'});
  const shops=[...sources.values()].map(source=>{
   const matches=rows.filter(o=>o.merchant_id===source.id).sort((a,b)=>Number(b.available)-Number(a.available)||a.price-b.price);
