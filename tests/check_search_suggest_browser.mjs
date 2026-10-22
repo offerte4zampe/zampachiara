@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import {createRequire} from 'node:module';const require=createRequire(import.meta.url),amazonModel=require('../site/assets/amazon-links.js');
 export async function checkSuggestions(page,origin,catalog){
  const now=Date.parse(catalog.generated_at),o=catalog.offers.find(o=>o.available&&typeof o.title==='string'&&o.title.length>4&&Number.isFinite(Date.parse(o.checked_at))&&now-Date.parse(o.checked_at)<=36*3600000&&Date.parse(o.checked_at)<=now+300000);
  assert(o,'Fresh catalog fixture required');const query=o.title.slice(0,Math.min(8,o.title.length));
@@ -60,9 +61,9 @@ export async function checkSuggestions(page,origin,catalog){
  assert(await page.$eval('#product-amazon',e=>!e.textContent.includes('€')&&!e.textContent.includes('Disponibile al rilevamento')));
  assert.equal(await page.$$eval('#product-shops [data-product-shop]',rows=>rows.length),catalog.sources.length);
  await page.select('#product-quantity','3');assert.equal(await page.$eval('#product-amazon a',e=>e.href),amazon.href);
- const unmapped=catalog.offers.find(o=>!links.links.some(row=>row.offer_id===o.id));assert(unmapped);
+ const unmapped=catalog.offers.find(o=>!amazonModel.comparisonLink(o,catalog.offers,links,now));assert(unmapped);
  await page.goto(origin+'/prodotto.html?id='+encodeURIComponent(unmapped.id),{waitUntil:'domcontentloaded'});
- await page.waitForSelector('#product-shops [data-product-shop]',{timeout:30000});assert(await page.$eval('#product-amazon',e=>e.hidden));
+ await page.waitForSelector('#product-shops [data-product-shop]',{timeout:30000});assert.equal(await page.$eval('#product-amazon',e=>e.hidden),false);assert.equal(await page.$eval('#product-amazon',e=>e.querySelectorAll('a').length),0);assert((await page.$eval('#product-amazon',e=>e.textContent)).includes('Disponibilità: non verificata'));
 
  // Every editorial mapping must match the current catalog, including exact variant.
  for(const entry of links.links){
