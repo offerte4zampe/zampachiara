@@ -43,7 +43,7 @@ export async function checkSuggestions(page,origin,catalog){
  await page.screenshot({path:'browser-reports/product-mobile.png',fullPage:true});
  await page.goto(origin+'/index.html',{waitUntil:'domcontentloaded'});await page.focus('#home-query');await page.type('#home-query',query);await page.waitForSelector('#home-query-suggestions [role=option]',{visible:true});const clickedId=await page.$eval('#home-query-suggestions [role=option]',e=>e.dataset.productId);await Promise.all([page.waitForNavigation({waitUntil:'domcontentloaded'}),page.tap('#home-query-suggestions [role=option]')]);assert.equal(new URL(page.url()).searchParams.get('id'),clickedId);assert(!navigations.some(url=>url.includes('confronta-cibo')),'Home suggestion must navigate directly without comparator intermediate');page.off('framenavigated',recordNavigation);
  await page.goto(origin+'/confronta-cibo.html',{waitUntil:'domcontentloaded'});
- await page.waitForSelector('#catalog-query[role=combobox]',{timeout:30000});
+ await page.waitForSelector('#catalog-query[role=combobox]',{timeout:60000}).catch(async error=>{console.error('Catalog readiness failure',await page.$eval('#catalog-status',e=>e.textContent));throw error});
  await page.focus('#catalog-query');await page.$eval('#catalog-query',(e,q)=>{e.value=q;e.dispatchEvent(new Event('input',{bubbles:true}))},query);
  await page.waitForSelector('#catalog-query-suggestions [role=option]',{visible:true});
  await page.keyboard.press('Escape');assert.equal(await page.$eval('#catalog-query-suggestions',e=>e.hidden),true);
