@@ -140,6 +140,13 @@ def render_home(html, payload):
     }
     for element_id, content in parts.items():
         html = replace_region(html, element_id, content)
+    # Keep both SEO descriptions aligned with the actual imported shops, not a stale static list.
+    shops = [s['name'] for s in payload['sources'] if s.get('offers', 0) > 0 and s.get('name')]
+    if shops:
+        shop_names = ', '.join(shops[:-1]) + (' e ' if len(shops) > 1 else '') + shops[-1]
+        summary = f'Confronta offerte e prezzi per cani e gatti da {shop_names}. Prezzi rilevati, non in tempo reale.'
+        html = re.sub(r'(<meta\\s+(?:name="description"|property="og:description")\\s+content=")[^"]*(">)',
+                      lambda m: m[1] + h(summary, quote=True) + m[2], html)
     html = re.sub(r'(<main\b[^>]*?)(?: data-home-generated="[^"]*")?(>)', lambda m: re.sub(r' data-home-generated="[^"]*"', '', m[1])+' data-home-generated="'+h(payload['generated_at'],quote=True)+'"'+m[2], html, count=1)
     return html
 
