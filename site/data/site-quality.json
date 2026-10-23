@@ -1,9 +1,9 @@
 {
   "method_version": 2,
-  "observed_at": "2026-10-23T00:54:11.283062+00:00",
-  "pages_scanned": 323,
-  "indexable_pages": 237,
-  "unique_canonicals": 237,
+  "observed_at": "2026-10-23T06:48:44.162263+00:00",
+  "pages_scanned": 324,
+  "indexable_pages": 238,
+  "unique_canonicals": 238,
   "issues": [],
   "rule_counts": {},
   "pages": [
@@ -209,6 +209,12 @@
       "page": "prezzi-00744845401126-0a8eaaa492.html",
       "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-00744845401126-0a8eaaa492",
+      "issues": []
+    },
+    {
+      "page": "prezzi-00744845402758-d92434dbb5.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/prezzi-00744845402758-d92434dbb5",
       "issues": []
     },
     {
