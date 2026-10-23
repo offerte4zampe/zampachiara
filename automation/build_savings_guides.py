@@ -194,13 +194,26 @@ def identity_examples(offers, now):
 
 
 def identity_content(offers, now):
-    rows=[]
+    sections=[]
     for key,items in identity_examples(offers,now):
+        rows=[]
         for o in sorted(items,key=lambda item:(item['merchant'].casefold(),item['id'])):
             rows.append(f'<tr><td>{source_link(o)}<br>{h(o["merchant"])}</td><td>{h(key[0])}</td><td>{h(o["brand"])}</td><td>{o["weight_kg"]:g} kg</td><td>{money(o["price"])}</td><td>{h(o["checked_at"][:16].replace("T"," "))} UTC</td></tr>')
-    table='<p>Nessun esempio recente confrontabile in più negozi: i prodotti senza abbinamento certo restano separati.</p>'
-    if rows:
-        table='<div class="guide-table" tabindex="0" role="region" aria-label="Identità dichiarata dello stesso formato"><table><caption>Esempi con GTIN, marca e peso netto coincidenti; prezzi della confezione, spedizione esclusa</caption><thead><tr><th>Prodotto e fonte</th><th>GTIN</th><th>Marca</th><th>Peso netto</th><th>Prezzo</th><th>Rilevazione</th></tr></thead><tbody>'+''.join(rows)+'</tbody></table></div>'
+        prices=[o['price'] for o in items]
+        difference=money(max(prices)-min(prices))
+        sections.append(
+            f'<section aria-label="Confronto {h(product_label(items[0]),quote=True)}">'
+            f'<h3>{h(product_label(items[0]))} · {items[0]["weight_kg"]:g} kg</h3>'
+            f'<p>Due o più negozi con GTIN {h(key[0])}, marca e peso netto coincidenti. '
+            f'Differenza fra i prezzi rilevati: <strong>{difference}</strong>, spedizione esclusa; '
+            'non è un risparmio garantito al checkout.</p>'
+            '<div class="guide-table" tabindex="0" role="region" aria-label="Prezzi dello stesso formato">'
+            '<table><caption>Offerte della stessa identità dichiarata, in ordine alfabetico per negozio</caption>'
+            '<thead><tr><th>Prodotto e fonte</th><th>GTIN</th><th>Marca</th><th>Peso netto</th><th>Prezzo</th><th>Rilevazione</th></tr></thead>'
+            f'<tbody>{"".join(rows)}</tbody></table></div>'
+            f'<p><a class="btn secondary" href="{h(slug_for(key),quote=True)}.html">Apri il confronto aggiornato fra negozi →</a></p>'
+            '</section>')
+    table=''.join(sections) or '<p>Nessun esempio recente confrontabile in più negozi: i prodotti senza abbinamento certo restano separati.</p>'
     return ('<h2>Prima del prezzo controlla cosa stai comprando</h2><p>Due titoli simili possono descrivere ricette, quantità o confezioni diverse. Una foto uguale non basta: può raffigurare una linea intera oppure un formato diverso da quello selezionato. Prima di scegliere il prezzo più basso, verifica nome completo, variante, quantità netta e numero di unità nella scheda del negozio. Il nostro confronto economico non certifica equivalenza nutrizionale.</p>'
         '<h2>Gli identificatori che usiamo nel catalogo</h2><p>Per riunire offerte di negozi diversi richiediamo un GTIN con cifra di controllo valida, la stessa marca normalizzata e lo stesso peso netto dichiarato. Non correggiamo un codice mancante copiandolo da una foto o da un prodotto dal nome simile. La cifra di controllo verifica la struttura del numero: non garantisce da sola che il negozio lo abbia assegnato correttamente al prodotto.</p>'
         '<h2>Esempi leggibili, non una classifica di convenienza</h2><p>Queste righe provengono dal catalogo recente e disponibile al rilevamento. Il codice viene riportato per consentire un controllo, insieme a marca, peso, fonte e data. La selezione dei gruppi è alfabetica, non ordinata per commissione. I prezzi escludono la spedizione: una differenza fra righe non dimostra quale ordine completo costi meno.</p>'+table+
