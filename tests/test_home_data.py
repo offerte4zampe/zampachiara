@@ -23,7 +23,7 @@ class HomeDataTests(unittest.TestCase):
 class HomePrerenderTests(unittest.TestCase):
     def test_regions_are_replaced_idempotently_and_offer_text_escaped(self):
         from automation.build_home_data import render_home
-        template = '<main id="main">'+''.join('<div id="'+name+'"><div>Caricamento…</div></div>' for name in ['home-stats','home-spotlight','home-deals-status','home-deals','home-brands','home-shops'])+'</main>'
+        template = '<head><meta name="description" content="Quattro negozi"><meta property="og:description" content="Quattro negozi"></head><main id="main">'+''.join('<div id="'+name+'"><div>Caricamento…</div></div>' for name in ['home-stats','home-spotlight','home-deals-status','home-deals','home-brands','home-shops'])+'</main>'
         offer = dict(url='https://example.com/exact-product', affiliate_url='https://example.com/tracked-product', id='a', title='<script>alert(1)</script>', brand='Brand', merchant='Shop', merchant_id='shop', variant='2 kg', price=10, previous_price=20, weight_kg=2, checked_at='2026-10-19T20:00:00+00:00', image='https://example.com/image.jpg')
         payload = dict(generated_at=offer['checked_at'], refresh_hours=6, stats=dict(offers=100,brands=2), top_brands=['Brand'], sources=[dict(id='shop',name='Shop',offers=100)], offers=[offer])
         rendered = render_home(template,payload)
@@ -36,3 +36,5 @@ class HomePrerenderTests(unittest.TestCase):
         self.assertIn('class="product-title-link" href="prodotto.html?id=a"',rendered)
         self.assertNotIn('<del>',rendered)
         self.assertNotIn('catalog-sale',rendered)
+        self.assertIn('Shop. Prezzi rilevati, non in tempo reale.', rendered)
+        self.assertNotIn('Quattro negozi', rendered)
