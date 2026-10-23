@@ -2963,12 +2963,6 @@
     "status": 200,
     "confirmations": 0
   },
-  "bauzaar:56818720112965": {
-    "url": "https://www.bauzaar.it/products/deli-pet-torta-di-compleanno-osso-happy-birthday-snack-per-cani-90-gr?variant=56818720112965",
-    "checked_at": "2026-10-21T12:50:32.006019+00:00",
-    "status": 200,
-    "confirmations": 0
-  },
   "isola-dei-tesori:000112194": {
     "url": "https://www.isoladeitesori.it/prodotto/sera-san-color-flakes-250-ml/000112194.html",
     "checked_at": "2026-10-21T12:50:32.006019+00:00",
@@ -4154,6 +4148,150 @@
   "webpet:52568962138452": {
     "url": "https://www.webpet.it/products/8in1-delights-value-bag-chicken-bones-osso-di-pollo-da-masticare-formato-multiplo-per-cani-di-piccola-taglia?variant=52568962138452",
     "checked_at": "2026-10-22T18:46:39.567783+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976543818071": {
+    "url": "https://www.animaliapet.eu/products/monge-specialityline-puppy-all-breeds-salmone-e-riso-2-5kg-crocchette-cani?variant=46976543818071",
+    "checked_at": "2026-10-23T00:54:12.766074+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56818724929861": {
+    "url": "https://www.bauzaar.it/products/drn-stomek-mangime-complementare-in-compresse?variant=56818724929861",
+    "checked_at": "2026-10-23T00:54:12.766074+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000112320": {
+    "url": "https://www.isoladeitesori.it/prodotto/sera-koi-royal-medium-1-lt/000112320.html",
+    "checked_at": "2026-10-23T00:54:12.766074+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52568962335060": {
+    "url": "https://www.webpet.it/products/8in1-delights-duck-spirals-spirali-allanatra-da-masticare-per-cani-6pz?variant=52568962335060",
+    "checked_at": "2026-10-23T00:54:12.766074+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976543850839": {
+    "url": "https://www.animaliapet.eu/products/monge-natural-superpremium-adult-pollo-1-5kg-crocchette-gatti?variant=46976543850839",
+    "checked_at": "2026-10-23T00:54:12.766074+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56818979307845": {
+    "url": "https://www.bauzaar.it/products/virbac-pronefra-sospensione-orale-per-l-equilibrio-della-funzione-renale?variant=56818979307845",
+    "checked_at": "2026-10-23T00:54:12.766074+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000112327": {
+    "url": "https://www.isoladeitesori.it/prodotto/sera-shrimps-mineral-salt-105-gr/000112327.html",
+    "checked_at": "2026-10-23T00:54:12.766074+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52568962793812": {
+    "url": "https://www.webpet.it/products/8in1-delights-beef-bones-osso-di-pollo-da-masticare-per-cani?variant=52568962793812",
+    "checked_at": "2026-10-23T00:54:12.766074+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976543949143": {
+    "url": "https://www.animaliapet.eu/products/monge-hypoallergenic-salmone-e-tonno-12kg-crocchette-cani?variant=46976543949143",
+    "checked_at": "2026-10-23T00:54:12.766074+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56818996478277": {
+    "url": "https://www.bauzaar.it/products/spazzola-cardatore-soft-per-cani-ferribiella?variant=56818996478277",
+    "checked_at": "2026-10-23T00:54:12.766074+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000112333": {
+    "url": "https://www.isoladeitesori.it/prodotto/sera-koi-color-medium-1-lt/000112333.html",
+    "checked_at": "2026-10-23T00:54:12.766074+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52568962826580": {
+    "url": "https://www.webpet.it/products/8in1-delights-beef-bones-osso-di-pollo-da-masticare-per-cani?variant=52568962826580",
+    "checked_at": "2026-10-23T00:54:12.766074+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976543981911": {
+    "url": "https://www.animaliapet.eu/products/monge-speciality-line-mini-adult-salmone-e-riso-7-5kg-crocchette-cani?variant=46976543981911",
+    "checked_at": "2026-10-23T00:54:12.766074+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56818997494085": {
+    "url": "https://www.bauzaar.it/products/spazzola-cardatore-soft-per-cani-ferribiella?variant=56818997494085",
+    "checked_at": "2026-10-23T00:54:12.766074+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000112341": {
+    "url": "https://www.isoladeitesori.it/prodotto/sera-pond-color-1-lt/000112341.html",
+    "checked_at": "2026-10-23T00:54:12.766074+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52568962859348": {
+    "url": "https://www.webpet.it/products/8in1-delights-beef-bones-osso-di-pollo-da-masticare-per-cani?variant=52568962859348",
+    "checked_at": "2026-10-23T00:54:12.766074+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976544047447": {
+    "url": "https://www.animaliapet.eu/products/monge-fresh-tacchino-pate-e-bocconcini-vaschetta-100g-cani-adulti?variant=46976544047447",
+    "checked_at": "2026-10-23T00:54:12.766074+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56818997526853": {
+    "url": "https://www.bauzaar.it/products/spazzola-cardatore-soft-per-cani-ferribiella?variant=56818997526853",
+    "checked_at": "2026-10-23T00:54:12.766074+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000112345": {
+    "url": "https://www.isoladeitesori.it/prodotto/aquarium-munster-dr-bassleer-power-fish-vitamine-20-ml/000112345.html",
+    "checked_at": "2026-10-23T00:54:12.766074+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52568962990420": {
+    "url": "https://www.webpet.it/products/8in1-delights-chicken-bones-strong-osso-di-pollo-da-masticare-resistenti-per-cani?variant=52568962990420",
+    "checked_at": "2026-10-23T00:54:12.766074+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976544080215": {
+    "url": "https://www.animaliapet.eu/products/monge-daily-line-mini-adult-pollo-7-5kg-crocchette-cani?variant=46976544080215",
+    "checked_at": "2026-10-23T00:54:12.766074+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56818999198021": {
+    "url": "https://www.bauzaar.it/products/spazzola-magic-brush-ferribiella?variant=56818999198021",
+    "checked_at": "2026-10-23T00:54:12.766074+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000112372": {
+    "url": "https://www.isoladeitesori.it/prodotto/tetra-reptodelica-anchovies-250-ml/000112372.html",
+    "checked_at": "2026-10-23T00:54:12.766074+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52568963023188": {
+    "url": "https://www.webpet.it/products/8in1-delights-chicken-bones-strong-osso-di-pollo-da-masticare-resistenti-per-cani?variant=52568963023188",
+    "checked_at": "2026-10-23T00:54:12.766074+00:00",
     "status": 200,
     "confirmations": 0
   }
