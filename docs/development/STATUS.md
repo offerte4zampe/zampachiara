@@ -2,6 +2,13 @@
 
 Ultimo aggiornamento: 23 ottobre 2026.
 
+## 23 ottobre 2026 — trasparenza del comparatore (intervento mirato)
+- Rilette roadmap e pilota, HEAD `f5eb943cc11e`; il registro operativo è `docs/development/STATUS.md` (non esiste un `STATUS.md` in radice).
+- Difetto verificato nel codice: l'avviso di affiliazione generato a runtime in `site/assets/catalog.js` nominava Bauzaar e Isola dei Tesori ma ometteva Paco Pet Shop, già correttamente indicato nel footer della pagina comparatore. Corretto con commit `f5eb943cc11ef03a5d7bd5bc4c42c2135dc10f62`, senza cambiare link, tracking, catalogo, prezzi o ordinamento.
+- Controllo statico sul codice dopo il commit: presente l'avviso completo, assente la vecchia frase; sostituzione singola di testo, nessuna modifica alla logica JavaScript. CI e deploy Cloudflare non ancora confermati per questo commit; accesso HTTP pubblico non disponibile da questo ambiente.
+- Monetizzazione: nessun nuovo accesso autenticato ai pannelli network/AdSense in questa sessione, quindi nessuna nuova misura di clic, ordini o ricavi; resta la baseline ufficiale registrata nel pilota (TradeTracker 4 clic ottobre, 0 ordini/0 euro al momento della verifica precedente), non un valore aggiornato.
+- Prossimo passo: verificare build Workers e avviso pubblico, poi Search Console pagine/query e pannelli network solo con sessioni ufficiali accessibili. Prima di estendere tracciamento commerciale, verificare titolare, informativa privacy e consenso/CMP. Nessuna richiesta al titolare in questa sessione.
+
 ## Pilota prima monetizzazione — 23 ottobre 2026
 - Richiesta di Mirco: autonomia fino al primo ricavo reale. Aggiornata l'automazione Sprint esistente a ogni sei ore, senza duplicati. Piano persistente: docs/growth/pilot-first-revenue.md con baseline, criteri, priorità e blocchi.
 - Recuperata Search Console: 2 clic/9 impressioni nei dati disponibili 17–20 ottobre, filtro tre mesi; campione non sufficiente per generalizzare. Sitemap riuscita, ultima lettura22 ottobre,304 pagine rilevate (non indicizzate).
