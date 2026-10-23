@@ -198,7 +198,7 @@ def identity_content(offers, now):
     for key,items in identity_examples(offers,now):
         rows=[]
         for o in sorted(items,key=lambda item:(item['merchant'].casefold(),item['id'])):
-            rows.append(f'<tr><td>{source_link(o)}<br>{h(o["merchant"])}</td><td>{h(key[0])}</td><td>{h(o["brand"])}</td><td>{o["weight_kg"]:g} kg</td><td>{money(o["price"])}</td><td>{h(o["checked_at"][:16].replace("T"," "))} UTC</td></tr>')
+            rows.append(f'<tr><td><a class="product-title-link" href="{h(slug_for(key),quote=True)}.html">{h(product_label(o))}</a><br>{h(o["merchant"])}</td><td>{h(key[0])}</td><td>{h(o["brand"])}</td><td>{o["weight_kg"]:g} kg</td><td>{money(o["price"])}</td><td>{h(o["checked_at"][:16].replace("T"," "))} UTC</td></tr>')
         prices=[o['price'] for o in items]
         difference=money(max(prices)-min(prices))
         sections.append(
