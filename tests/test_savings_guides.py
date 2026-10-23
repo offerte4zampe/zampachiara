@@ -68,18 +68,20 @@ class SavingsGuidesTests(unittest.TestCase):
         self.assertIn('9,00 €',html)
         self.assertIn(day,html)
 
-    def test_identity_guide_requires_exact_format_and_preserves_merchant_tracking(self):
+    def test_identity_guide_requires_exact_format_and_keeps_product_clicks_internal(self):
         other=self.o|dict(id='b',merchant_id='b',merchant='Shop B',affiliate_url='https://example.com/tracked')
         self.assertEqual(len(identity_examples([self.o,other],self.now)),1)
         html=identity_content([self.o,other],self.now)
         self.assertIn('4006381333931',html)
-        self.assertIn('https://example.com/tracked',html)
-        self.assertIn('sponsored',html)
+        self.assertNotIn('https://example.com/tracked',html)
+        self.assertNotIn('href="https://example.com/product"',html)
         self.assertIn('spedizione esclusa',html)
-        # Each verified GTIN group must lead to its internal, generated comparison page.
+        # The guide keeps both product-title clicks inside the exact-format comparison.
+        # The comparison page itself retains any authorized merchant affiliate URLs.
         from automation.build_matched_pages import slug_for
         key=identity_examples([self.o,other],self.now)[0][0]
         self.assertIn(slug_for(key)+'.html',html)
+        self.assertEqual(html.count('href="'+slug_for(key)+'.html"'),3)
         self.assertIn('Apri il confronto aggiornato fra negozi',html)
         self.assertIn('2,00 €',identity_content([self.o,other|{'price':14}],self.now))
         self.assertIn('non è un risparmio garantito al checkout',html)
