@@ -2,6 +2,13 @@
 
 Ultimo aggiornamento: 23 ottobre 2026.
 
+## Pilota prima monetizzazione — 23 ottobre 2026
+- Richiesta di Mirco: autonomia fino al primo ricavo reale. Aggiornata l'automazione Sprint esistente a ogni sei ore, senza duplicati. Piano persistente: docs/growth/pilot-first-revenue.md con baseline, criteri, priorità e blocchi.
+- Recuperata Search Console: 2 clic/9 impressioni nei dati disponibili 17–20 ottobre, filtro tre mesi; campione non sufficiente per generalizzare. Sitemap riuscita, ultima lettura22 ottobre,304 pagine rilevate (non indicizzate).
+- Verificato ads.txt pubblico corretto e identico al repository: lo stato Non trovato in AdSense, aggiornato17 ottobre, non dimostra ora assenza del file. Revisione ancora pendente. Nessun annuncio riattivato, nessun clic commerciale.
+- Baseline TradeTracker:4 clic ottobre,0 vendite/0 euro; non dimostrati visitatori esterni unici. Cloudflare/Amazon non leggibili per accesso/client, Gmail temporaneamente inutilizzabile.
+- Prossima attività: distribuzione pagine/query Search Console e indicizzazione, poi correzioni soltanto su ostacoli verificati. Nessuna modifica applicativa in questo checkpoint documentale, test applicativi non ripetuti.
+
 ## Chiusura verifiche 23 ottobre 2026: Paco, Worker e nuovi negozi
 - Implementazioni: 8d9ca2d (rotazione verifiche Paco) e 678fb06 (download unico Blob, decodifica Worker e fallback sul medesimo file). CI 39914267127 riuscita: 64 test Node, 93 Python, controlli browser mobile e tre profili con Worker effettivo e un solo download per campione; Cloudflare Workers Builds zampachiara riuscito. Nessun allentamento dei controlli Worker.
 - Profilo laboratorio CI: 18.396 offerte, mediana load wall 185,9 ms, decodifica/decompressione 52,3 ms e parsing 44,2 ms nel Worker; massimo blocco preparazione 3,3 ms e preventivi 1,2 ms. Chromium viewport mobile senza throttling su runner GitHub, non INP/produzione; nessuna causalità attribuita rispetto a runner precedenti. La causa unica dei vecchi fallback intermittenti non è dimostrata.
