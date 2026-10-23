@@ -25,3 +25,8 @@ La verifica del 23 ottobre riportata in `docs/growth/pilot-first-revenue.md` reg
 5. Completare/verificare identità del titolare, privacy, cookie e consenso/CMP prima di ampliare tracking o abilitare AdSense. Mantenere indipendenza dell'ordinamento e disclosure affiliate.
 
 Nessun ricavo reale attribuito verificato in questa esecuzione; nessuna condizione per arrestare il monitoraggio della prima commissione.
+
+## Intervento successivo nello stesso giorno (2026-10-23)
+- Correzione mirata alla fonte in `automation/build_home_data.py`: le meta description HTML e Open Graph della homepage vengono ora costruite dai nomi dei negozi con offerte nel catalogo, eliminando l'elenco statico di quattro negozi non più coerente con i cinque dichiarati nella pagina. Il testo precisa che i prezzi sono rilevati e non in tempo reale. Commit `4cdad7c293f43ae8bad269c798a17f8bb2356770` (dopo `0976eaf41ce1210b7678f57388d29ea644c54299`).
+- Test di regressione aggiunto a `tests/test_home_data.py` nel commit `75172255b4410658d461f1b640b410faa4907fdc`: controlla sostituzione delle due descrizioni e idempotenza. Smoke test locale della regex superato; suite GitHub Actions e deploy Cloudflare **non ancora confermati** (l'API dello stato commit non restituisce check).
+- Prossimo passo: verificare l'esito del workflow catalogo avviato dalla modifica del generatore, controllare l'HTML pubblicato dopo rigenerazione e non dichiarare completato il deploy senza prova. Le metriche di ricavo richiedono accesso ai pannelli ufficiali.
