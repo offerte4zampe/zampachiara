@@ -76,6 +76,13 @@ class SavingsGuidesTests(unittest.TestCase):
         self.assertIn('https://example.com/tracked',html)
         self.assertIn('sponsored',html)
         self.assertIn('spedizione esclusa',html)
+        # Each verified GTIN group must lead to its internal, generated comparison page.
+        from automation.build_matched_pages import slug_for
+        key=identity_examples([self.o,other],self.now)[0][0]
+        self.assertIn(slug_for(key)+'.html',html)
+        self.assertIn('Apri il confronto aggiornato fra negozi',html)
+        self.assertIn('2,00 €',identity_content([self.o,other|{'price':14}],self.now))
+        self.assertIn('non è un risparmio garantito al checkout',html)
         for patch in [dict(gtin='4006381333932'),dict(weight_kg=3),dict(brand='Other'),dict(available=False),dict(checked_at='2020-01-01T00:00:00Z')]:
             self.assertEqual(identity_examples([self.o,other|patch],self.now),[])
             self.assertNotIn('<table',identity_content([self.o,other|patch],self.now))
