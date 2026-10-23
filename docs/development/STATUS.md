@@ -1,6 +1,14 @@
 # Avanzamento roadmap
 
-Ultimo aggiornamento: 21 ottobre 2026.
+Ultimo aggiornamento: 23 ottobre 2026.
+
+## Chiusura verifiche 23 ottobre 2026: Paco, Worker e nuovi negozi
+- Implementazioni: 8d9ca2d (rotazione verifiche Paco) e 678fb06 (download unico Blob, decodifica Worker e fallback sul medesimo file). CI 39914267127 riuscita: 64 test Node, 93 Python, controlli browser mobile e tre profili con Worker effettivo e un solo download per campione; Cloudflare Workers Builds zampachiara riuscito. Nessun allentamento dei controlli Worker.
+- Profilo laboratorio CI: 18.396 offerte, mediana load wall 185,9 ms, decodifica/decompressione 52,3 ms e parsing 44,2 ms nel Worker; massimo blocco preparazione 3,3 ms e preventivi 1,2 ms. Chromium viewport mobile senza throttling su runner GitHub, non INP/produzione; nessuna causalità attribuita rispetto a runner precedenti. La causa unica dei vecchi fallback intermittenti non è dimostrata.
+- Verifica pubblica: /confronta-cibo?profile=1 carica catalog-load.js?v=2 e catalog.js?v=worker-load-2; catalogo aggiornato 23/10 ore 08:50 Italia. Import reale Paco: 1.135 offerte, 23 quantità verificate (prima 1.122/21; assortimento mutato, differenza non attribuita interamente alla modifica). Restano esclusi dagli abbinamenti i formati non dimostrati. La rotazione mantiene 40 verifiche/ciclo.
+- Sovrn: eseguito un singolo clic del titolare consentito esplicitamente dall'onboarding, senza acquisti o traffico simulato. Dopo ricaricamento lo stato è “Under review”, risposta indicata in 1–3 giorni lavorativi, non garanzia. Il nuovo shortlink non è stato pubblicato né inserito nel comparatore. Nessuna commissione prima dell'approvazione; nessun feed Zooplus ottenuto. Awin Zooplus IT 9500 ancora in attesa.
+- TradeDoubler: accesso esistente riuscito, ma sito 3503802 in attesa di validazione qualità network; Tutti i programmi rimanda a I miei siti. Arcaplanet 345319 non candidabile/verificabile finché il sito non è validato. Nessun nuovo account o modifica pagamenti.
+- Prossimo passo dipendente: verificare gli esiti ufficiali Sovrn/Awin/TradeDoubler quando disponibili; solo dopo autorizzazione/feed reale integrare Zooplus/Arcaplanet. Nessuna integrazione catalogo dichiarata completa. Paco prosegue nelle sincronizzazioni esistenti senza nuove automazioni.
 
 ## Verifica CI: caricamento iniziale cooperativo
 - CI39663147531 riuscita:54 Node/85 Python,312 pagine/zero problemi statici; percorsi mobile e ordinamento totale conservati. Confronto sul catalogo reale17583 offerte fra preventivi diretti e cache cooperativa: stesso ordine integrale degli ID.
