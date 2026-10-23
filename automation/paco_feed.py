@@ -50,7 +50,7 @@ def normalize(payload, now=None):
     if not rows: raise ValueError('Empty feed')
     return rows
 
-def verify_quantity(row, page):
+def verify_quantity(row, page, now=None):
     """Bind only the current selected variant whose code AND whole-pack price match."""
     from update_catalog import weight
     match=re.search(r'data-product="([^"]+)"',page)
@@ -67,8 +67,35 @@ def verify_quantity(row, page):
         if not kg or not 0<kg<=1000: return row
         # The explicit label must account for all units; bare title weight is insufficient.
         return dict(row,variant=' · '.join(labels),gtin=row['feed_gtin'],weight_kg=kg,
+                    quantity_checked_at=(now or dt.datetime.now(dt.timezone.utc)).isoformat(),
                     weight_source='merchant:selected_variant',quantity_verified=True)
     except (ValueError,KeyError,TypeError): return row
+
+def stamp(value):
+    try:
+        result=dt.datetime.fromisoformat(value.replace('Z','+00:00'))
+        return result if result.tzinfo else None
+    except (AttributeError,TypeError,ValueError): return None
+
+def verification_plan(rows, previous, peers, now, limit=40):
+    """Reuse recent identical evidence and rotate a bounded verification budget."""
+    old={r['id']:r for r in previous if r.get('merchant_id')=='paco'}
+    candidates=[]
+    for i,row in enumerate(rows):
+        prior=old.get(row['id'],{})
+        same=all(prior.get(k)==row.get(k) for k in ('title','brand','feed_gtin','url','price'))
+        checked=stamp(prior.get('quantity_checked_at'))
+        kg=prior.get('weight_kg')
+        if same and prior.get('quantity_verified') is True and prior.get('gtin')==row['feed_gtin'] and isinstance(kg,(int,float)) and 0<kg<=1000 and prior.get('weight_source')=='merchant:selected_variant' and prior.get('variant') and checked and dt.timedelta(0)<=now-checked<=dt.timedelta(hours=36):
+            for key in ('variant','gtin','weight_kg','weight_source','quantity_verified','quantity_checked_at'):
+                row[key]=prior[key]
+            continue
+        attempted=stamp(prior.get('quantity_verification_attempted_at')) if same else None
+        if attempted and attempted<=now:
+            row['quantity_verification_attempted_at']=attempted.isoformat()
+        else: attempted=dt.datetime.min.replace(tzinfo=dt.timezone.utc)
+        candidates.append((row['feed_gtin'].lstrip('0') not in peers,attempted,row['id'],i))
+    return [entry[-1] for entry in sorted(candidates)[:limit]]
 
 def collect():
     now=dt.datetime.now(dt.timezone.utc)
@@ -80,18 +107,19 @@ def collect():
     from pathlib import Path
     import gzip
     catalog=Path(__file__).resolve().parents[1]/'site/data/catalog.json.gz'
-    try: peers={str(o.get('gtin','')).lstrip('0') for o in json.loads(gzip.decompress(catalog.read_bytes()))['offers'] if o.get('weight_kg')}
-    except (OSError,ValueError): peers=set()
-    chosen=sorted(range(len(rows)),key=lambda i:(rows[i]['feed_gtin'].lstrip('0') not in peers,rows[i]['id']))[:40]
+    try: previous=json.loads(gzip.decompress(catalog.read_bytes()))['offers']
+    except (OSError,ValueError,KeyError): previous=[]
+    peers={str(o.get('gtin','')).lstrip('0') for o in previous if o.get('weight_kg') and o.get('merchant_id')!='paco'}
+    chosen=verification_plan(rows,previous,peers,now)
     rp=urllib.robotparser.RobotFileParser()
     try:
         with urllib.request.urlopen(urllib.request.Request(ORIGIN+'/robots.txt',headers={'User-Agent':UA}),timeout=15) as response: rp.parse(response.read().decode().splitlines())
         def inspect(i):
-            row=rows[i]
+            row=dict(rows[i],quantity_verification_attempted_at=now.isoformat())
             if not rp.can_fetch(UA,row['url']): return i,row
             try:
                 with urllib.request.urlopen(urllib.request.Request(row['url'],headers={'User-Agent':UA}),timeout=12) as response: page=response.read(3000000).decode('utf-8')
-                return i,verify_quantity(row,page)
+                return i,verify_quantity(row,page,now)
             except Exception: return i,row
         with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
             for i,row in pool.map(inspect,chosen): rows[i]=row
