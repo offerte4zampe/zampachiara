@@ -11,28 +11,39 @@ Trasformare il [kit editoriale del 21 ottobre](acquisition-kit-2026-10-21.md) in
 - Percorso previsto: guida → confronto statico dello stesso formato → scheda/offerte → scelta esplicita del negozio. Non cliccare link affiliati per testarlo.
 - Link interni già presenti: `/guide-risparmio`, `/prezzo-confezione-o-prezzo-kg`, `/spedizione-gratuita-conviene`, `/confronta-cibo`, `/carrello-risparmio`. Nessun nuovo testo duplicato aggiunto alla homepage.
 
-## Un solo canale candidato: Reddit r/ItaliaPersonalFinance
-**Destinatari pubblici pertinenti:** utenti della community interessati al budget per animali, non individui da contattare. La pertinenza è supportata da una discussione pubblica sul costo di due gatti (17 marzo 2026): https://www.reddit.com/r/ItaliaPersonalFinance/comments/1rw8ocf/mantenere_bene_un_animale_domestico_costa/ . Non intervenire automaticamente nel vecchio thread e non inviare DM.
+## Canale Reddit scartato dopo verifica delle regole (23 ottobre 2026, 16:18 Europe/Rome)
+La sidebar pubblica di [r/ItaliaPersonalFinance](https://www.reddit.com/r/ItaliaPersonalFinance/) dichiara: «È vietato sponsorizzare le proprie attività e/o sponsorizzare fonti di guadagno in cui si è direttamente coinvolti». Testo osservabile anche nella [pagina Reddit in italiano](https://it.reddit.com/r/ItaliaPersonalFinance/comments/vhkkgz/gli_stipendi_da_1200_euro_in_italia/). La bozza Reddit preparata in precedenza è **ritirata, non autorizzabile per questo subreddit**; non pubblicare, non riproporre sotto altro account e non aggirare la regola. La pagina /about/rules non era accessibile dal browser di ricerca, ma il divieto compare nella descrizione pubblica del subreddit.
 
-**Regole ufficiali:** Reddit vieta spam, ripetizione e promozione non richiesta: https://support.reddithelp.com/hc/it/articles/360043504051-Spam . La documentazione moderatori precisa che la promozione non è sempre vietata, ma le singole community possono vietarla o limitarla: https://support.reddithelp.com/hc/en-us/articles/28012014962580-How-do-I-keep-spam-out-of-my-community . Prima di proporre una pubblicazione effettiva leggere le regole correnti del subreddit: https://www.reddit.com/r/ItaliaPersonalFinance/about/rules . **Le regole specifiche non sono state verificate in questa esecuzione; nessuna autorizzazione a pubblicare può essere presunta.** Se vietano autopromozione/link, non pubblicare e non aggirare il divieto.
+## Unico canale sostitutivo proposto: Instagram, profilo del progetto @offerte4zampe
+**Destinatari:** persone che già seguono il profilo e hanno interesse per la spesa per cani e gatti; pubblico, reach e accesso all'account **non verificati** in questa esecuzione. Il titolare ha dichiarato di possedere il profilo, non serve crearne uno nuovo. Nessun invio a terzi e nessuna pubblicazione.
 
-### Unico testo proposto per approvazione
-**Titolo:** Confrontare le crocchette: perché il nome non basta (GTIN e formato)
+**Formato:** una sola storia organica con testo su sfondo neutro creato nell'editor Instagram, senza immagini di prodotti né loghi di negozi. È un adattamento mirato del contenuto GTIN già presente nel kit, non un nuovo articolo SEO. Se l'account non dispone dello sticker Link, non pubblicare con un collegamento inesistente. Verificare nell'app la disponibilità della funzione e le [Linee guida della community Instagram](https://help.instagram.com/477434105621119); evitare tag di utenti, DM automatici, repost ripetuti e sponsorizzazioni a pagamento. Il [Centro trasparenza Meta](https://transparency.meta.com/policies/community-standards/spam/) illustra i limiti anti-spam della piattaforma.
 
-> Quando si prova a risparmiare sul cibo per animali, confrontare due sacchi con un nome simile può portare fuori strada: cambia la ricetta, il peso o il multipack. Per confrontare *lo stesso* articolo conviene controllare GTIN, marca e quantità netta, poi aggiungere la spedizione al totale. Ho lavorato a una guida gratuita con esempi datati di offerte realmente rilevate da più negozi: https://offerte4zampe.it/stesso-prodotto-formato-gtin . Sono coinvolto nel progetto Offerte a 4 Zampe: alcuni link ai negozi sono affiliati e dichiarati, ma non cambiano l'ordinamento. Prezzi e disponibilità vanno ricontrollati prima di acquistare. Come controllate che due confezioni siano davvero identiche?
+### Unico contenuto da approvare: storia Instagram
+**Testo visibile (una schermata):**
 
-Testo educativo, una sola pubblicazione eventuale; non ripetere il post in più community, non fare crosspost automatizzati. Nessun link di tracking nuovo né invito a cliccare pubblicità.
+> Stesso nome, stesso prodotto? 🐾
+>
+> Prima di confrontare i prezzi controlla **codice GTIN, formato e quantità**. Due confezioni simili non sono sempre uguali.
+>
+> Nella nostra guida gratuita trovi esempi datati da più negozi e il confronto dello stesso formato.
+>
+> **Prezzi rilevati, non in tempo reale. Affiliazioni dichiarate.**
 
-## Gate prima della pubblicazione
-1. Autorizzazione **specifica** del titolare per questo testo e questa community, non dedotta dall'autorizzazione a sviluppare il repository.
-2. Verifica delle regole della community e compatibilità con autopromozione/disclosure; se vietata, scartare il canale senza eludere il filtro.
-3. Conferma HTTP/browser che la landing e almeno un confronto interno si aprano, che le offerte mostrate siano fresche e che la disclosure/privacy siano complete; non testare uscite affiliate.
-4. Controllo dati del catalogo al momento del post; se gli esempi sono cambiati, il post resta valido senza numeri puntuali, ma la landing deve riportare rilevazioni verificabili.
+**Sticker link:** «Apri la guida» → https://offerte4zampe.it/stesso-prodotto-formato-gtin
+
+**Descrizione accessibile:** «Guida gratuita per verificare GTIN, peso netto e formato prima di confrontare prezzi di prodotti per animali. I dati sono rilevazioni datate; possibili link affiliati dichiarati.» Non citare prezzi singoli nella storia, perché possono cambiare prima della pubblicazione. Se lo sticker non è disponibile, il testo non deve suggerire un link cliccabile.
+
+### Gate prima della pubblicazione
+1. Approvazione specifica del titolare per **questa singola storia** su **@offerte4zampe**; non dedurre consenso dall'autorizzazione a modificare GitHub.
+2. Verifica dal profilo autorizzato delle regole, dell'effettiva disponibilità dello sticker Link, del testo e della destinazione. Nessun accesso Instagram o Metricool è stato eseguito qui.
+3. Conferma HTTP/browser della guida e del confronto interno, rilevazioni datate e disclosure/privacy; i tentativi di apertura web del 23 ottobre non sono riusciti per errore dello strumento e **non dimostrano downtime**.
+4. Nessun tracking aggiuntivo senza requisiti privacy/consenso verificati; nessun click affiliato, test pubblicitario o pubblicazione autonoma.
 
 ## Misurazione senza inventare risultati
-- **Baseline:** finestra 16–22 ottobre 2026, Search Console clic/impressioni organiche per la URL landing e query; Analytics, se autorizzati, sessioni con referrer Reddit. Valori attuali **non disponibili**. I 2 clic/9 impressioni storici riguardano l'intero sito nel 17–20 ottobre e non sono baseline della pagina.
-- **Osservazione:** sette giorni dalla data di pubblicazione effettiva (T+0…T+7), con controllo a T+3 e T+7 e ritardo fisiologico Search Console. Se non si pubblica, **nessuna finestra post** e nessuna attribuzione.
-- **Funnel distinto:** impressioni/clic organici Search Console ≠ sessioni analytics ≠ clic affiliati network ≠ ordini ≠ commissioni (pendenti/approvate/pagate). Registrare per ogni fonte intervallo, timezone e data lettura. Non attribuire a Reddit i clic network senza referrer/campagna verificati. Escludere test/bot solo quando identificabili; non creare traffico di prova.
+- **Baseline:** finestra 16–22 ottobre 2026, Search Console clic/impressioni organiche per la URL landing e query; Analytics, se autorizzati, sessioni con referrer Instagram e Insights della storia (visualizzazioni e tocchi sticker, se accessibili). Valori attuali **non disponibili**. I 2 clic/9 impressioni storici riguardano l'intero sito nel 17–20 ottobre e non sono baseline della pagina.
+- **Osservazione:** 24 ore per le metriche della storia e sette giorni dalla pubblicazione effettiva (T+0…T+7) per i dati del sito, con controllo a T+3 e T+7 e ritardo fisiologico Search Console. Se non si pubblica, **nessuna finestra post** e nessuna attribuzione.
+- **Funnel distinto:** impressioni/clic organici Search Console ≠ sessioni analytics ≠ clic affiliati network ≠ ordini ≠ commissioni (pendenti/approvate/pagate). Registrare per ogni fonte intervallo, timezone e data lettura. Non attribuire a Instagram i clic network senza referrer/campagna verificati. Escludere test/bot solo quando identificabili; non creare traffico di prova.
 - **Criterio di decisione:** valutare se aumentano sessioni qualificate e apertura dei confronti, senza promessa di significatività con piccoli campioni; la prima monetizzazione richiede una commissione effettiva verificata in network/AdSense, con data, importo e stato.
 
 **Stato:** pacchetto predisposto nel repository; nessuna pubblicazione esterna, invio, spesa, iscrizione o campagna effettuata.
