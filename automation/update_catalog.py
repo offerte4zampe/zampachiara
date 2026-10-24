@@ -20,7 +20,7 @@ def weight(label):
     s=label.lower().replace(',','.')
     s=re.sub(r'(?<=\d)\s*gr\b|\bgr\b', 'g', s)
     # A life-stage suffix is not a bonus quantity (e.g. Adult 5+ 15 kg).
-    s=re.sub(r'\b(adult|senior|ageing|mature|maxi|medium|mini)\s+\d{1,2}\s*\+', r'\1', s)
+    s=re.sub(r'\b(adult|senior|ageing|mature|maxi|medium|mini)\s+\d{1,2}\+(?!\d)', r'\1', s)
     if '+' in s: return None
     if re.search(r'\d\s*[-–/]\s*\d|\b(?:peso del cane|peso corporeo|cani da|fino a|oltre)\b',s): return None
     if re.search(r'\d+\s*(?:pz|pezzi|lattine|buste|bustine|confezioni)\b',s) and not re.search(r'\d+\s*[x×]',s): return None
