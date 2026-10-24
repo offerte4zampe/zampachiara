@@ -2591,12 +2591,6 @@
     "status": 200,
     "confirmations": 0
   },
-  "isola-dei-tesori:000112129": {
-    "url": "https://www.isoladeitesori.it/prodotto/sera-betta-granules-50-ml/000112129.html",
-    "checked_at": "2026-10-21T06:45:51.494438+00:00",
-    "status": 200,
-    "confirmations": 0
-  },
   "webpet:52568907645268": {
     "url": "https://www.webpet.it/products/dashi-boom-pettorina-guinzaglio-per-gatti?variant=52568907645268",
     "checked_at": "2026-10-21T06:45:51.494438+00:00",
@@ -5012,6 +5006,150 @@
   "webpet:52568969838932": {
     "url": "https://www.webpet.it/products/monge-gift-training-dog-meat-bars-snack-per-cani-adulti-ricco-in-anatra-fresca-con-spirulina-40gr?variant=52568969838932",
     "checked_at": "2026-10-24T00:57:08.775196+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976545423703": {
+    "url": "https://www.animaliapet.eu/products/monge-monoprotein-pate-solo-con-tacchino-vaschette-da-150g-cani-adulti?variant=46976545423703",
+    "checked_at": "2026-10-24T06:46:44.800922+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56819036815685": {
+    "url": "https://www.bauzaar.it/products/life-cat-natural-urinary-bustine-70-gr?variant=56819036815685",
+    "checked_at": "2026-10-24T06:46:44.800922+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000112419": {
+    "url": "https://www.isoladeitesori.it/prodotto/aqualovers-pondmix-premium-150-gr-1200-ml/000112419.html",
+    "checked_at": "2026-10-24T06:46:44.800922+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52568970035540": {
+    "url": "https://www.webpet.it/products/monge-gift-puppy-and-junior-dog-snack-maiale-con-kiwi-fruit-bars-per-cuccioli-100gr?variant=52568970035540",
+    "checked_at": "2026-10-24T06:46:44.800922+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976545456471": {
+    "url": "https://www.animaliapet.eu/products/monge-natural-all-breed-adult-light-salmone-e-riso-12kg-crocchette-cani?variant=46976545456471",
+    "checked_at": "2026-10-24T06:46:44.800922+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56819038159173": {
+    "url": "https://www.bauzaar.it/products/o-life-adult-grain-free-pate-400-gr?variant=56819038159173",
+    "checked_at": "2026-10-24T06:46:44.800922+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000112421": {
+    "url": "https://www.isoladeitesori.it/prodotto/jbl-proterra-molluscus-250-ml/000112421.html",
+    "checked_at": "2026-10-24T06:46:44.800922+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52568970133844": {
+    "url": "https://www.webpet.it/products/monge-gift-training-dog-snack-anatra-con-fichi-fruit-bars-per-cani-100gr?variant=52568970133844",
+    "checked_at": "2026-10-24T06:46:44.800922+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976545522007": {
+    "url": "https://www.animaliapet.eu/products/monge-gemon-mini-adult-con-pollo-e-riso-crocchette-da-3kg-cani-adulti?variant=46976545522007",
+    "checked_at": "2026-10-24T06:46:44.800922+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56819038978373": {
+    "url": "https://www.bauzaar.it/products/o-life-adult-grain-free-pate-400-gr?variant=56819038978373",
+    "checked_at": "2026-10-24T06:46:44.800922+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000112422": {
+    "url": "https://www.isoladeitesori.it/prodotto/tropical-cricketts-10-g/000112422.html",
+    "checked_at": "2026-10-24T06:46:44.800922+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52568970330452": {
+    "url": "https://www.webpet.it/products/monge-gift-skin-support-dog-snack-salmone-con-melagrana-granola-bars-per-cani-120gr?variant=52568970330452",
+    "checked_at": "2026-10-24T06:46:44.800922+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976545554775": {
+    "url": "https://www.animaliapet.eu/products/monge-monoprotein-pate-solo-con-agnello-vaschette-da-150g-cani-adulti?variant=46976545554775",
+    "checked_at": "2026-10-24T06:46:44.800922+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56819039011141": {
+    "url": "https://www.bauzaar.it/products/o-life-adult-grain-free-pate-400-gr?variant=56819039011141",
+    "checked_at": "2026-10-24T06:46:44.800922+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000112423": {
+    "url": "https://www.isoladeitesori.it/prodotto/tropical-meal-worms-100-ml/000112423.html",
+    "checked_at": "2026-10-24T06:46:44.800922+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52568971936084": {
+    "url": "https://www.webpet.it/products/prolife-snack-sensitive-grain-free-fish-alimento-complementare-ricco-in-salmone-per-cani-adulti-di-tutte-le-taglie-90gr?variant=52568971936084",
+    "checked_at": "2026-10-24T06:46:44.800922+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976545587543": {
+    "url": "https://www.animaliapet.eu/products/monge-monoprotein-pate-solo-con-maiale-vaschette-da-150g-cani-adulti?variant=46976545587543",
+    "checked_at": "2026-10-24T06:46:44.800922+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56819039109445": {
+    "url": "https://www.bauzaar.it/products/o-life-adult-grain-free-pate-400-gr?variant=56819039109445",
+    "checked_at": "2026-10-24T06:46:44.800922+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000112424": {
+    "url": "https://www.isoladeitesori.it/prodotto/tropical-sanirept-15ml/000112424.html",
+    "checked_at": "2026-10-24T06:46:44.800922+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52568972132692": {
+    "url": "https://www.webpet.it/products/flamingo-snacks-hapki-bastoncini-con-pollo-granchio-per-cani-adulti-di-tutte-le-taglie-85gr?variant=52568972132692",
+    "checked_at": "2026-10-24T06:46:44.800922+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976545620311": {
+    "url": "https://www.animaliapet.eu/products/monge-dog-natural-pollo-con-formaggio-lattina-95g-cani-adulti?variant=46976545620311",
+    "checked_at": "2026-10-24T06:46:44.800922+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56819040190789": {
+    "url": "https://www.bauzaar.it/products/crancito-s-snack-naturale-dog-adult-orecchie-di-suino?variant=56819040190789",
+    "checked_at": "2026-10-24T06:46:44.800922+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000112427": {
+    "url": "https://www.isoladeitesori.it/prodotto/amtra-aquaviva-150-ml/000112427.html",
+    "checked_at": "2026-10-24T06:46:44.800922+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52568972198228": {
+    "url": "https://www.webpet.it/products/flamingo-snacks-hapki-stecche-con-pollo-per-cani-adulti-di-tutte-le-taglie-55gr?variant=52568972198228",
+    "checked_at": "2026-10-24T06:46:44.800922+00:00",
     "status": 200,
     "confirmations": 0
   }
