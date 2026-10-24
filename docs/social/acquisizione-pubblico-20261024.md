@@ -1,5 +1,5 @@
 # Acquisizione pubblico — Offerte a 4 Zampe
-Verifica: 24 ottobre 2026. Nessun messaggio esterno inviato, nessun acquisto di pubblicità.
+Verifica: 24 ottobre 2026. Proposta creator inviata con autorizzazione dell'utente; nessun acquisto di pubblicità o compenso confermato.
 
 ## Stato verificato
 - Primi post Instagram/Facebook pubblicati tramite Metricool; la query analytics del 24 ottobre non restituisce ancora righe. Dato assente non significa zero visite.
@@ -38,4 +38,5 @@ Caption proposta: Cerchi sempre le stesse crocchette? Cerca il prodotto abituale
 - Asset video pubblicato sul sito, verificato HTTP 200 (188236 byte), deploy Cloudflare riuscito.
 - Metricool ha rifiutato la normalizzazione dell'URL MP4: Failed to normalize media. Il Reel NON è programmato e non risulta una bozza salvata.
 - Golden Forum escluso dalla promozione diretta: il regolamento vieta messaggi pubblicitari. Fonte: https://www.golden-forum.it/index.php?action=register .
-- Richieste di autorizzazione agli amministratori e proposte ai creator soltanto preparate, non inviate; identità/canale del destinatario da verificare prima dell'invio autorizzato.
+- Dopo autorizzazione esplicita dell'utente, proposta per @michiamopoo e @miss_dog_america inviata tramite chat ufficiale di Moma Comunicazione (titolare di LaPETtegola), https://www.momacomunicazione.it/contatti/ . Conferma automatica di ricezione visualizzata: sarà ricontattato da un consulente. Richiesta risposta a offerte4zampe@gmail.com; nessun acquisto o compenso accettato. Non equivale ad accettazione dei creator.
+- Soldissimi/Pet Lovers: modulo ufficiale https://www.soldissimi.it/contattaci/ compilato con proposta e dati del progetto, NON inviato. Bloccante: numero di telefono obbligatorio non disponibile; consenso privacy ancora da selezionare. Necessario completamento dell'utente. Nessun post nel gruppo o contatto ai membri effettuato.
