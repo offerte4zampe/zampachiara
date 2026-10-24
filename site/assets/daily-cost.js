@@ -1,7 +1,7 @@
 /* Manual ration only: arithmetic estimate, never a feeding recommendation. */
 (function(root){
 'use strict';
-function isFood(offer){return /crocchette|umido|(?:cani|gatti) > cibo > secco/i.test(String(offer.category||''));}
+function isFood(offer){return /crocchette|umido|cibo secco|(?:cani|gatti) > cibo > secco/i.test(String(offer.category||''));}
 function estimate(offer,grams,now=Date.now()){
  const stamp=Date.parse(offer.checked_at),price=Number(offer.price),kg=Number(offer.weight_kg),g=Number(grams);
  if(!offer.available||!Number.isFinite(stamp)||stamp>now+300000||now-stamp>36*3600000)return null;

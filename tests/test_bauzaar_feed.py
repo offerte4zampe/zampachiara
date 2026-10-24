@@ -36,3 +36,10 @@ class FeedTests(unittest.TestCase):
         with self.assertRaises(ValueError):m.normalize({'products':[self.p,self.p]},self.now)
     def test_out_of_stock_not_available(self):
         self.p['properties']['availability']=['out of stock'];self.assertFalse(self.row()['available'])
+
+
+    def test_invalid_price_row_does_not_freeze_valid_rows(self):
+        bad=copy.deepcopy(self.p);bad['URL']=bad['URL'].replace('variant%3D123','variant%3D124');bad['price']['amount']=0
+        rows=m.normalize({'products':[self.p,bad]},self.now)
+        self.assertEqual([r['id'] for r in rows],['bauzaar:123'])
+        with self.assertRaises(ValueError):m.normalize({'products':[bad]},self.now)

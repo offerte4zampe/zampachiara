@@ -1,4 +1,5 @@
 (function(root){'use strict';
+const metadata=typeof module!=='undefined'&&module.exports?require('./catalog-metadata.js'):root.O4ZMetadata;
 function shipping(o,rules,quantity=1,territory='standard',now=Date.now()){
  const r=rules?.merchants?.[o.merchant_id];if(!r)return {reason:'Condizioni non disponibili'};
  if(!rules.checked_at||!Number.isFinite(Date.parse(rules.checked_at))||now-Date.parse(rules.checked_at)>7*86400000)return {reason:'Condizioni da ricontrollare',rule:r};
@@ -22,7 +23,7 @@ function merchant(url){
 function matchKey(o,now=Date.now()){
  const code=String(o.gtin||''),stamp=Date.parse(o.checked_at);if(![8,12,13,14].includes(code.length)||!/^\d+$/.test(code)||new Set(code).size===1||!Number.isFinite(stamp)||now-stamp>36*3600000||stamp>now+300000||!(o.weight_kg>0)||!o.brand?.trim())return '';
  const digits=[...code.slice(0,-1)].reverse();const check=(10-digits.reduce((n,d,i)=>n+Number(d)*(i%2?1:3),0)%10)%10;if(check!==Number(code.at(-1)))return '';
- return JSON.stringify([code.padStart(14,'0'),o.weight_kg,o.brand.trim().toLowerCase()]);
+ return JSON.stringify([code.padStart(14,'0'),o.weight_kg,(metadata?metadata.brand(o.brand):o.brand).trim().toLowerCase()]);
 }
 function groupOffers(rows,now=Date.now()){
  const index=new Map(),keys=[];

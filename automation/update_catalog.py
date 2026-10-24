@@ -18,7 +18,11 @@ def amount(v):
 def weight(label):
     # Only explicitly labelled package weights. Shipping grams are NOT net weight.
     s=label.lower().replace(',','.')
+    s=re.sub(r'(?<=\d)\s*gr\b|\bgr\b', 'g', s)
+    # A life-stage suffix is not a bonus quantity (e.g. Adult 5+ 15 kg).
+    s=re.sub(r'\b(adult|senior|ageing|mature|maxi|medium|mini)\s+\d{1,2}\s*\+', r'\1', s)
     if '+' in s: return None
+    if re.search(r'\d\s*[-–/]\s*\d|\b(?:peso del cane|peso corporeo|cani da|fino a|oltre)\b',s): return None
     if re.search(r'\d+\s*(?:pz|pezzi|lattine|buste|bustine|confezioni)\b',s) and not re.search(r'\d+\s*[x×]',s): return None
     pack=re.search(r'(\d+)\s*[x×]\s*(\d+(?:\.\d+)?)\s*(kg|g)\b',s)
     if pack: return round(int(pack[1])*float(pack[2])/(1000 if pack[3]=='g' else 1),6)

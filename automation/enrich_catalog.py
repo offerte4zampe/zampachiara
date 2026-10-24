@@ -1,7 +1,7 @@
 """Bounded barcode enrichment from public product JSON; names select candidates only."""
 import os,gzip,json,re,time,datetime,urllib.parse,urllib.robotparser,urllib.request
 from pathlib import Path
-from update_catalog import get,UA
+from update_catalog import get,UA,weight
 ROOT=Path(__file__).resolve().parents[1]
 def limited_get(url):
  with urllib.request.urlopen(urllib.request.Request(url,headers={'User-Agent':UA}),timeout=8) as r:return r.read()
@@ -13,6 +13,13 @@ def gtin(value):
 def build():
  path=ROOT/'site/data/catalog.json.gz';d=json.loads(gzip.decompress(path.read_bytes()));cachepath=ROOT/'automation/identifier-cache.json'
  cache=json.loads(cachepath.read_text()) if cachepath.exists() else {};now=datetime.datetime.now(datetime.timezone.utc);robots={};urls={}
+ # Recover only explicit package weights, never ambiguous partner quantities.
+ for o in d['offers']:
+  if not o.get('weight_kg') and o.get('quantity_verified') is not False:
+   label=str(o.get('variant') or '')
+   if not re.search(r'\d\s*(?:kg|g|gr)\b',label,re.I):label=o['title']
+   kg=weight(label)
+   if kg and 0<kg<=1000:o.update(weight_kg=kg,weight_source='explicit_package_label')
  # Prefer matching brands and weights across sources, with both cats and dogs represented.
  brands={}
  for o in d['offers']:

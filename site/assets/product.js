@@ -18,8 +18,9 @@ function render(){
  const o=view.seed;$('product-title').textContent=o.title;document.title=o.title+' — prezzi nei negozi | Offerte a 4 Zampe';
  $('product-format').textContent=[o.brand,o.variant,o.weight_kg?o.weight_kg+' kg':''].filter(Boolean).join(' · ');
  const image=safe(o.image);if(image){const img=document.createElement('img');img.src=image;img.alt=o.title;img.width=180;img.height=160;img.style.objectFit='contain';$('product-image').replaceChildren(img)}
- $('product-status').textContent=view.exact?'Confronto dello stesso GTIN, marca e peso netto. Verifica comunque ricetta e confezione prima di acquistare.':'Identità condivisa non verificabile: mostriamo la sola offerta selezionata, senza abbinare prodotti dai nomi simili.';
- const grid=$('product-shops');grid.replaceChildren();for(const shop of view.shops){
+ const availableShops=view.shops.filter(s=>s.offers.some(o=>o.available)).length;
+ $('product-status').textContent=availableShops+' negoz'+(availableShops===1?'io':'i')+' con offerte disponibili al rilevamento. '+(view.exact?'Confronto dello stesso GTIN, marca e peso netto. Verifica comunque ricetta e confezione prima di acquistare.':'Identità condivisa non verificabile: mostriamo la sola offerta selezionata, senza abbinare prodotti dai nomi simili.');
+ const grid=$('product-shops');grid.replaceChildren();const other=el('details','','panel'),summary=el('summary','Altri negozi: copertura e dati non disponibili');other.append(summary);for(const shop of view.shops){
  const card=el('article','','panel');card.dataset.productShop=shop.source.id;card.append(el('h2',shop.source.name));
  if(shop.source.status==='pending-feed'){
  card.append(el('p','Prezzo: non disponibile · Disponibilità: non verificata','micro'),el('p','Catalogo '+shop.source.name+' non ancora collegato. Non possiamo confermare lo stesso prodotto e formato né indicarne il prezzo.','micro'));
@@ -39,7 +40,7 @@ function render(){
  }
  row.append(offerTools.get(offer.id));
  card.append(row)}
- grid.append(card)}
+ if(shop.state==='listed')grid.append(card);else other.append(card)}if(other.children.length>1)grid.append(other);
  $('product-coverage').textContent='Confrontiamo '+view.shops.filter(s=>s.source.status!=='pending-feed').length+' cataloghi importati, non tutto il mercato. L’assenza dal catalogo non prova che il negozio non venda il prodotto. Prezzi non in tempo reale; conferma disponibilità e totale nel negozio.';
 }
 async function load(){try{
@@ -49,7 +50,7 @@ async function load(){try{
  const r=await fetch('data/catalog.json.gz',{cache:'no-cache'});if(!r.ok)throw Error('network');
  const bytes=await r.arrayBuffer(),raw=new Uint8Array(bytes);
  catalog=JSON.parse(raw[0]===31&&raw[1]===139?await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))).text():new TextDecoder().decode(bytes));
- [shippingRules,amazonLinks]=await Promise.all([rules,amazon]);render();
+ catalog.offers=catalog.offers.map(O4ZMetadata.normalize);[shippingRules,amazonLinks]=await Promise.all([rules,amazon]);render();
  const selected=catalog.offers.find(o=>o.id===id);if(selected)O4ZShare.mount($('product-share'),selected);
  for(const control of ['product-quantity','product-territory'])$(control).addEventListener('change',render);
  }catch{$('product-status').textContent='Impossibile caricare questa scheda. Riprova tra poco oppure torna alla ricerca.'}}

@@ -16,6 +16,8 @@ on:
       - 'tests/test_partner_feed.py'
       - 'automation/update_catalog.py'
       - 'automation/enrich_catalog.py'
+      - 'automation/normalize_catalog.cjs'
+      - 'site/assets/catalog-metadata.js'
       - 'automation/guard_catalog.py'
       - 'automation/check_merchant_links.py'
       - 'tests/test_link_health.py'
@@ -72,9 +74,10 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m unittest discover -s tests
-      - run: node --test tests/test_metrics.mjs tests/test_trade.mjs tests/test_report.mjs tests/test_basket.mjs tests/test_daily_cost.mjs tests/test_price_history.mjs tests/test_search_suggest.mjs
+      - run: node --test tests/test_metrics.mjs tests/test_trade.mjs tests/test_report.mjs tests/test_basket.mjs tests/test_daily_cost.mjs tests/test_price_history.mjs tests/test_search_suggest.mjs tests/test_catalog_metadata.mjs
       - run: python automation/update_catalog.py
       - run: python automation/enrich_catalog.py
+      - run: node automation/normalize_catalog.cjs
       - run: python automation/check_merchant_links.py
       - run: python automation/guard_catalog.py
       - run: python automation/update_history.py

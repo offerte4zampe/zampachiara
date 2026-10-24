@@ -38,7 +38,9 @@ def normalize(payload, now=None):
         price = p['price']
         if price.get('currency') != 'EUR': raise ValueError('Unexpected currency')
         regular = amount(price['amount'])
-        if regular is None: raise ValueError('Invalid price')
+        # A malformed/zero-priced row must not freeze every other merchant offer.
+        # The all-invalid feed still fails closed below.
+        if regular is None: continue
         current = regular
         sale = amount(value(props, 'sale_price')); period = value(props, 'sale_price_effective_date')
         if sale and sale < regular and period:
@@ -71,7 +73,9 @@ def collect():
         raw = response.read(40_000_001)
         if len(raw) > 40_000_000: raise ValueError('Feed too large')
         last_modified = response.headers.get('Last-Modified')
-    rows = normalize(json.loads(raw), now)
+    payload = json.loads(raw)
+    rows = normalize(payload, now)
+    excluded_invalid_prices = sum(amount(p.get('price', {}).get('amount')) is None for p in payload['products'])
     return rows, dict(id='bauzaar', name='Bauzaar', status='ok', checked_at=now.isoformat(), offers=len(rows),
-        source='TradeTracker:600171', method='Feed ufficiale TradeTracker · aggiornamento giornaliero',
+        excluded_invalid_prices=excluded_invalid_prices, source='TradeTracker:600171', method='Feed ufficiale TradeTracker · aggiornamento giornaliero',
         retrieved_at=now.isoformat(), upstream_last_modified=last_modified)

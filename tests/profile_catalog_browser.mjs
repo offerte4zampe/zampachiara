@@ -1,7 +1,8 @@
 import assert from 'node:assert/strict';import {createRequire} from 'node:module';
 const require=createRequire(import.meta.url),{prepare}=require('../site/assets/catalog-prepare.js');import fs from 'node:fs/promises';
 export async function profileCatalog(page,origin,catalog){
- const reference=catalog.offers.filter(o=>{try{return o.id&&typeof o.title==='string'&&Number.isFinite(o.price)&&o.price>0&&new URL(o.url).protocol==='https:'}catch{return false}});
+ const metadata=require('../site/assets/catalog-metadata.js');
+ const reference=catalog.offers.map(metadata.normalize).filter(o=>{try{return o.id&&typeof o.title==='string'&&Number.isFinite(o.price)&&o.price>0&&new URL(o.url).protocol==='https:'}catch{return false}});
  const expectedText=new Map(reference.map(o=>[o.id,[o.title,o.variant,o.brand,o.category,o.sku,o.gtin].join(' ').toLocaleLowerCase('it')]));
  const expectedIdentity=new Map();for(const o of reference)if(o.gtin&&o.weight_kg){const key=JSON.stringify([o.gtin,o.weight_kg,String(o.brand||'').trim().toLowerCase()]);if(!expectedIdentity.has(key))expectedIdentity.set(key,[]);expectedIdentity.get(key).push(o)}
  const prepared=await prepare(catalog.offers);assert.deepEqual(prepared.data,reference);assert.deepEqual(prepared.searchText,expectedText);assert.deepEqual(prepared.identityIndex,expectedIdentity);
@@ -20,7 +21,7 @@ export async function profileCatalog(page,origin,catalog){
    await samplePage.setViewport(page.viewport());
    await samplePage.setRequestInterception(true);samplePage.on('request',r=>{if(r.url().includes('/data/catalog.json.gz'))downloads++;return r.url().startsWith(origin)?r.continue():r.abort()});
    await samplePage.evaluateOnNewDocument(now=>{Date.now=()=>now},now);
-   await samplePage.goto(origin+'/confronta-cibo.html?profile=1',{waitUntil:'domcontentloaded'});
+   await samplePage.goto(origin+'/confronta-cibo.html?profile=1&sort=total',{waitUntil:'domcontentloaded'});
    await samplePage.waitForFunction(()=>Boolean(window.O4ZCatalogProfile),{timeout:60000});
    result=await samplePage.evaluate(()=>window.O4ZCatalogProfile);
   }finally{await samplePage.close()}
