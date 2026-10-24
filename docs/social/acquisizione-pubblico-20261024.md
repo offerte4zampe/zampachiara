@@ -33,3 +33,9 @@ Buongiorno, sono Mirco e gestisco Offerte a 4 Zampe, comparatore gratuito di pro
 ## Video
 Asset: /assets/social/reel-comparatore-demo.mp4
 Caption proposta: Cerchi sempre le stesse crocchette? Cerca il prodotto abituale e controlla ricetta, formato e dati disponibili prima di acquistare. Prova gratis su offerte4zampe.it. Cataloghi parziali, prezzi rilevati e soggetti a variazioni; verifica disponibilità e totale nel negozio. Alcuni link sono affiliati: possiamo ricevere una commissione senza costi aggiuntivi per te.
+
+## Esito operativo finale
+- Asset video pubblicato sul sito, verificato HTTP 200 (188236 byte), deploy Cloudflare riuscito.
+- Metricool ha rifiutato la normalizzazione dell'URL MP4: Failed to normalize media. Il Reel NON è programmato e non risulta una bozza salvata.
+- Golden Forum escluso dalla promozione diretta: il regolamento vieta messaggi pubblicitari. Fonte: https://www.golden-forum.it/index.php?action=register .
+- Richieste di autorizzazione agli amministratori e proposte ai creator soltanto preparate, non inviate; identità/canale del destinatario da verificare prima dell'invio autorizzato.
