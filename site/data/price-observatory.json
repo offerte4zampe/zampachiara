@@ -296,45 +296,11 @@
       "panel": []
     },
     {
-      "category": "Cani > Alimentazione > Cibo Umido > Alimentazione Quotidiana",
-      "month": "2026-10",
-      "previous_month": "2026-09",
-      "closed": false,
-      "offers": 1,
-      "merchants": 1,
-      "observed_days_min": 1,
-      "observed_days_max": 1,
-      "first": "2026-10-24",
-      "last": "2026-10-24",
-      "matched_offers": 0,
-      "matched_merchants": 0,
-      "index_previous_month_100": null,
-      "status": "month_open",
-      "panel": []
-    },
-    {
       "category": "Cani > Alimentazione > Crocchette per cani > Alimentazione Quotidiana",
       "month": "2026-10",
       "previous_month": "2026-09",
       "closed": false,
-      "offers": 1,
-      "merchants": 1,
-      "observed_days_min": 1,
-      "observed_days_max": 1,
-      "first": "2026-10-24",
-      "last": "2026-10-24",
-      "matched_offers": 0,
-      "matched_merchants": 0,
-      "index_previous_month_100": null,
-      "status": "month_open",
-      "panel": []
-    },
-    {
-      "category": "Cani > Alimentazione > Crocchette per cani > Cibo secco veterinario per Cani",
-      "month": "2026-10",
-      "previous_month": "2026-09",
-      "closed": false,
-      "offers": 1,
+      "offers": 14,
       "merchants": 1,
       "observed_days_min": 1,
       "observed_days_max": 1,
@@ -351,7 +317,7 @@
       "month": "2026-10",
       "previous_month": "2026-09",
       "closed": false,
-      "offers": 1,
+      "offers": 2,
       "merchants": 1,
       "observed_days_min": 1,
       "observed_days_max": 1,
@@ -1163,7 +1129,7 @@
       "panel": []
     },
     {
-      "category": "Gatti > Cibo per gatti > Cibo Secco > Cibo secco veterinario per gatti",
+      "category": "Gatti > Cibo per gatti > Cibo Secco > Alimentazione Quotidiana",
       "month": "2026-10",
       "previous_month": "2026-09",
       "closed": false,
@@ -1180,7 +1146,7 @@
       "panel": []
     },
     {
-      "category": "Gatti > Cura e Salute > Integratori per gatti > Funzionalità Intestinale e Boli di Pelo",
+      "category": "Gatti > Cibo per gatti > Cibo Umido > Alimentazione Quotidiana",
       "month": "2026-10",
       "previous_month": "2026-09",
       "closed": false,
