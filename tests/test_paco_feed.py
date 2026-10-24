@@ -30,11 +30,11 @@ class PacoVerificationPlanTest(unittest.TestCase):
   self.now=dt.datetime(2026,10,23,10,tzinfo=dt.timezone.utc)
  def test_budget_rotates_past_first_forty_and_failed_attempts(self):
   rows=[dict(normalize(fixture())[0],id='paco:'+str(i)) for i in range(80)]
-  chosen=verification_plan(rows,[],{'4006381333931'},self.now)
+  chosen=verification_plan(rows,[],{'4006381333931'},self.now,limit=40)
   self.assertEqual(len(chosen),40)
   old=copy.deepcopy(rows)
   for i in chosen: old[i]['quantity_verification_attempted_at']=self.now.isoformat()
-  following=verification_plan(copy.deepcopy(rows),old,{'4006381333931'},self.now+dt.timedelta(hours=6))
+  following=verification_plan(copy.deepcopy(rows),old,{'4006381333931'},self.now+dt.timedelta(hours=6),limit=40)
   self.assertEqual(len(following),40);self.assertFalse(set(chosen)&set(following))
  def verified(self):
   row=normalize(fixture(),self.now)[0]
@@ -54,3 +54,12 @@ class PacoVerificationPlanTest(unittest.TestCase):
  def test_peer_candidates_precede_nonmatching_candidates(self):
   a=normalize(fixture(),self.now)[0];b=dict(a,id='paco:9',feed_gtin='other')
   self.assertEqual(verification_plan([b,a],[],{a['feed_gtin']},self.now,limit=1),[1])
+
+
+ def test_brand_typography_does_not_reset_quantity_proof(self):
+  prior=self.verified();prior['brand']='KONG'
+  rows=normalize(fixture(),self.now);rows[0]['brand']='Kong'
+  self.assertEqual(verification_plan(rows,[prior],set(),self.now),[])
+  self.assertEqual(rows[0]['quantity_checked_at'],prior['quantity_checked_at'])
+  rows=normalize(fixture(),self.now);rows[0]['brand']='Farmina'
+  self.assertEqual(verification_plan(rows,[prior],set(),self.now),[0])

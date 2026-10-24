@@ -77,13 +77,15 @@ def stamp(value):
         return result if result.tzinfo else None
     except (AttributeError,TypeError,ValueError): return None
 
-def verification_plan(rows, previous, peers, now, limit=40):
+def verification_plan(rows, previous, peers, now, limit=80):
     """Reuse recent identical evidence and rotate a bounded verification budget."""
     old={r['id']:r for r in previous if r.get('merchant_id')=='paco'}
     candidates=[]
     for i,row in enumerate(rows):
         prior=old.get(row['id'],{})
-        same=all(prior.get(k)==row.get(k) for k in ('title','brand','feed_gtin','url','price'))
+        # Display-brand normalization must not invalidate otherwise identical pack evidence.
+        brand_key=lambda s: re.sub(r"[\s&’'!._-]+",'',str(s or '').casefold())
+        same=all(prior.get(k)==row.get(k) for k in ('title','feed_gtin','url','price')) and brand_key(prior.get('brand'))==brand_key(row.get('brand'))
         checked=stamp(prior.get('quantity_checked_at'))
         kg=prior.get('weight_kg')
         if same and prior.get('quantity_verified') is True and prior.get('gtin')==row['feed_gtin'] and isinstance(kg,(int,float)) and 0<kg<=1000 and prior.get('weight_source')=='merchant:selected_variant' and prior.get('variant') and checked and dt.timedelta(0)<=now-checked<=dt.timedelta(hours=36):
@@ -128,3 +130,4 @@ def collect():
         source='TradeTracker:1216771',method='Feed ufficiale TradeTracker · aggiornamento giornaliero',
         retrieved_at=now.isoformat(),upstream_last_modified=modified,
         verified_quantities=sum(r['quantity_verified'] for r in rows))
+
