@@ -7,7 +7,7 @@ function facets(o){
  const s=[o.title,o.variant,o.category].join(' ').toLocaleLowerCase('it');
  const dog=/\b(?:cane|cani|dog|dogs|puppy)\b/.test(s),cat=/\b(?:gatto|gatti|cat|cats|kitten)\b/.test(s);
  const animal=dog&&cat?'Cane e gatto':dog?'Cane':cat?'Gatto':'';
- let type='';if(/lettier|litter/.test(s))type='Lettiere';else if(/snack|masticativ|biscott|premiet|dental/.test(s))type='Snack e premi';else if(/umido|mousse|pat[eèé]|bocconcini|bustine? |in salsa/.test(s))type='Cibo umido';else if(/crocchett|croccantin|cibo secco|\bsecco\b|dry food/.test(s))type='Cibo secco';else if(/gioc|\btoy\b|\btoys\b/.test(s))type='Giochi';
+ let type='';if(/shampoo|detergente|toelett|balsamo|dentifricio|profumo/.test(s))type='';else if(/lettier|litter/.test(s))type='Lettiere';else if(/snack|masticativ|biscott|premiet|dentalife|dentastix/.test(s))type='Snack e premi';else if(/umido|mousse|pat[eèé]|bocconcini|bustine? |in salsa/.test(s))type='Cibo umido';else if(/crocchett|croccantin|cibo secco|\bsecco\b|dry food/.test(s))type='Cibo secco';else if(/gioc|\btoy\b|\btoys\b/.test(s))type='Giochi';
  const ages=[];if(/cucciol|puppy|kitten|junior/.test(s))ages.push('Cucciolo');if(/adult|adulti|adulte/.test(s))ages.push('Adulto');if(/senior|ageing|mature/.test(s))ages.push('Senior');
  const age=ages.length===1?ages[0]:'';
  const sizes=[];if(/\bmini\b|\bsmall\b|taglia piccola/.test(s))sizes.push('Piccola');if(/\bmedium\b|taglia media/.test(s))sizes.push('Media');if(/\bmaxi\b|\blarge\b|\bgiant\b|taglia grande/.test(s))sizes.push('Grande');

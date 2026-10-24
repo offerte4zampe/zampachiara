@@ -11,3 +11,9 @@ test('facets use explicit merchant words and leave uncertain values unset',()=>{
  assert(m.matches({title:'Gioco cani e gatti'},{animal:'Gatto',type:'Giochi'}));assert(!m.matches({title:'Cibo cane'},{animal:'Gatto'}));
  assert(!m.matches({title:'Cibo cane'},{pack:'Fino a 1 kg'}));
 });
+
+test('grooming products are never classified as wet food or snacks',()=>{
+ assert.equal(m.facets({title:'Shampoo mousse per cani'}).type,'');
+ assert.equal(m.facets({title:'Dentifricio Dental per cane'}).type,'');
+ assert.equal(m.facets({title:'Purina Dentalife snack cane'}).type,'Snack e premi');
+});
