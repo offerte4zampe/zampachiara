@@ -1,4 +1,5 @@
 (function(root){'use strict';
+const metadata=typeof module!=='undefined'&&module.exports?require('./catalog-metadata.js'):root.O4ZMetadata;
 // Editorial product links only: never add these to priced catalog offers or rankings.
 function productLink(offer,config,now=Date.now()){
  if(!offer||!/^[a-z0-9-]+-21$/.test(config?.tracking_id||''))return null;
@@ -6,7 +7,8 @@ function productLink(offer,config,now=Date.now()){
  if(matches.length!==1)return null;
  const row=matches[0],stamp=Date.parse(row.checked_at);
  if(!/^[A-Z0-9]{10}$/.test(row.asin||'')||!Number.isFinite(stamp)||stamp>now+300000||now-stamp>30*86400000)return null;
- for(const key of ['title','brand','variant','gtin'])if(String(row[key]??'')!==String(offer[key]??''))return null;
+ if((metadata?metadata.brand(row.brand):String(row.brand??''))!==(metadata?metadata.brand(offer.brand):String(offer.brand??'')))return null;
+ for(const key of ['title','variant','gtin'])if(String(row[key]??'')!==String(offer[key]??''))return null;
  try{const evidence=new URL(row.evidence_url);if(evidence.protocol!=='https:'||evidence.hostname!=='www.amazon.it'||evidence.username||evidence.password||!evidence.pathname.endsWith('/dp/'+row.asin))return null}catch{return null}
  const url=new URL('https://www.amazon.it/dp/'+row.asin);url.searchParams.set('tag',config.tracking_id);
  return {url:url.href,checked_at:row.checked_at};

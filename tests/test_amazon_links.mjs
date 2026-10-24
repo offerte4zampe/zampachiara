@@ -26,3 +26,8 @@ test('verified Amazon link can follow exact cross-store identity but never guess
  assert.equal(api.comparisonLink({...o,weight_kg:4},[other],config,now),null);
  assert.equal(api.comparisonLink({...o,gtin:''},[other],config,now),null);
 });
+
+
+test('brand typography normalization preserves previously verified Amazon links',()=>{
+ for(const entry of config.links){const seed={id:entry.offer_id,...entry,brand:require('../site/assets/catalog-metadata.js').brand(entry.brand)};assert(productLink(seed,config,now));assert.equal(productLink({...seed,brand:seed.brand+' Veterinary'},config,now),null);}
+});

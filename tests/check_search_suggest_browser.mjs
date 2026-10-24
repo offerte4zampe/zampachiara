@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import {createRequire} from 'node:module';const require=createRequire(import.meta.url),amazonModel=require('../site/assets/amazon-links.js');
+import {createRequire} from 'node:module';const require=createRequire(import.meta.url),amazonModel=require('../site/assets/amazon-links.js'),metadata=require('../site/assets/catalog-metadata.js');
 export async function checkSuggestions(page,origin,catalog){
  const now=Date.parse(catalog.generated_at),o=catalog.offers.find(o=>o.available&&typeof o.title==='string'&&o.title.length>4&&Number.isFinite(Date.parse(o.checked_at))&&now-Date.parse(o.checked_at)<=36*3600000&&Date.parse(o.checked_at)<=now+300000);
  assert(o,'Fresh catalog fixture required');const query=o.title.slice(0,Math.min(8,o.title.length));
@@ -72,7 +72,7 @@ export async function checkSuggestions(page,origin,catalog){
  // Every editorial mapping must match the current catalog, including exact variant.
  for(const entry of links.links){
   const seed=catalog.offers.find(o=>o.id===entry.offer_id);assert(seed,'Mapped offer must exist: '+entry.offer_id);
-  for(const key of ['title','brand','variant','gtin'])assert.equal(String(seed[key]??''),String(entry[key]??''),'Mapped identity changed: '+entry.offer_id+' '+key);
+  for(const key of ['title','brand','variant','gtin'])assert.equal(key==='brand'?metadata.brand(seed[key]):String(seed[key]??''),key==='brand'?metadata.brand(entry[key]):String(entry[key]??''),'Mapped identity changed: '+entry.offer_id+' '+key);
   await page.goto(origin+'/prodotto.html?id='+encodeURIComponent(entry.offer_id),{waitUntil:'domcontentloaded'});
   await page.waitForSelector('#product-amazon a',{visible:true,timeout:30000});
   assert.equal(await page.$eval('#product-title',e=>e.textContent),seed.title);
