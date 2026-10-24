@@ -19,3 +19,12 @@ test('first observation, gaps and replay do not create repeated or backfilled al
  assert.equal(priceAlertDecision({...sub,last_observed_at:'2026-10-10T00:00:00Z'},offer,now).reason,'baseline_only');
  const first=priceAlertDecision(sub,offer,now);assert.equal(priceAlertDecision({...sub,...first.next},offer,now).reason,'already_observed');
 });
+
+
+test('configured hosted cancellation can be visible while signup remains closed',()=>{
+ const {unsubscribeUrl}=createRequire(import.meta.url)('../site/assets/newsletter-readiness.js');
+ const config={unsubscribe_form_configured:true,unsubscribe_url:'https://example.sibforms.com/serve/cancel'};
+ assert.equal(unsubscribeUrl(config),config.unsubscribe_url);assert.equal(readiness(config).ready,false);
+ for(const url of ['https://sibforms.com.evil.test/','http://example.sibforms.com/','https://user:pass@example.sibforms.com/'])assert.equal(unsubscribeUrl({...config,unsubscribe_url:url}),null);
+ assert.equal(unsubscribeUrl({...config,unsubscribe_form_configured:false}),null);
+});

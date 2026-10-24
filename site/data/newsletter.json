@@ -12,5 +12,8 @@
   "domain_authenticated": true,
   "double_opt_in_configured": true,
   "double_opt_in_checked_on": "2026-10-20",
-  "inbox_placement_verified": false
+  "inbox_placement_verified": false,
+  "unsubscribe_url": "https://abacc216.sibforms.com/serve/MUIFAFE-lx-YW1e8_hw21NoZ5BcDEbNzsd_fxgDLmfBXNmaMQ7OgcAK7Q7jKy9YQDqpKeTBx0gHzDXfJa7tgYRHgaVzV0B6XJ04b2S26qcBp-OdD4Tvqgj84dkUTaFpgWYWo-MFsQACU8EG9plVqFrX6II67unsbUZf0eSYGIQ1GTBiv8dK0eUugC5erVNf_n92Zx1_gt-jquPIMiQ==",
+  "unsubscribe_form_configured": true,
+  "unsubscribe_form_checked_on": "2026-10-24"
 }
