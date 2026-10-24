@@ -1,11 +1,16 @@
 import assert from 'node:assert/strict';
+import fs from 'node:fs/promises';
 
 export async function checkGuides(page, origin) {
   for (const slug of ['costo-crocchette-cane', 'confrontare-prezzi-lettiere', 'prezzo-confezione-o-prezzo-kg', 'spedizione-gratuita-conviene', 'leggere-storico-prezzi', 'stesso-prodotto-formato-gtin']) {
     await page.goto(origin+'/'+slug+'.html', {waitUntil:'domcontentloaded'});
     assert.equal(await page.$$eval('main h1', es=>es.length),1);
     assert(await page.$('.guide-table table caption'));
-    assert(await page.$$eval('.guide-table a', es=>es.every(e=>(e.href.startsWith('https://')||(new URL(e.href).origin===location.origin&&new URL(e.href).pathname==='/prodotto.html'&&new URL(e.href).searchParams.has('id'))))&&es.length>0));
+    const links=await page.$$eval('.guide-table a',es=>es.map(e=>e.href));assert(links.length>0,slug+' table needs source links');
+    for(const href of links){const u=new URL(href);if(u.origin===origin){
+      if(u.pathname==='/prodotto.html'){assert(u.searchParams.has('id'));}
+      else{assert(/^\/confronto-[a-z0-9-]+\.html$/.test(u.pathname),'Unexpected internal guide destination: '+href);await fs.access(new URL('../site'+u.pathname,import.meta.url));}
+    }else assert.equal(u.protocol,'https:');}
     assert(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth<=1),'Guide causes page overflow');
     assert.equal(await page.$eval('main', e=>e.textContent.includes('prezzi inventati')),false);
   }
@@ -25,3 +30,4 @@ export async function checkGuides(page, origin) {
   assert.equal(quality.method_version,2);
   assert.equal(quality.issues.length,0);
 }
+
