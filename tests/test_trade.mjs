@@ -46,3 +46,15 @@ test('Amazon recognition accepts only explicit Italian product links with the pr
  assert.equal(merchant('https://amazon.it/dp/B0002AR15U/?tag=offerte4zam02-21'),'Amazon');
  for(const url of ['https://www.amazon.it/s?k=collare&tag=offerte4zam02-21','https://www.amazon.it/dp/B0722X975H','https://www.amazon.it/dp/B0722X975H?tag=someone-21','https://www.amazon.it/dp/B0722X975H?tag=offerte4zam02-21&tag=other-21','https://amazon.it.evil.test/dp/B0722X975H?tag=offerte4zam02-21','http://www.amazon.it/dp/B0722X975H?tag=offerte4zam02-21','https://user:pass@www.amazon.it/dp/B0722X975H?tag=offerte4zam02-21'])assert.equal(merchant(url),'');
 });
+
+
+test('per-merchant shipping verification cannot renew stale rules for other shops',()=>{
+ const now=Date.parse('2026-10-24T12:00:00Z'),offer={merchant_id:'paco',price:50,checked_at:'2026-10-24T11:00:00Z'};
+ const rules={checked_at:'2026-09-01',merchants:{paco:{checked_at:'2026-10-24',fee:5.9,free_above:79,boundary_unknown:79},other:{fee:1}}};
+ assert.equal(shipping(offer,rules,1,'standard',now).total,55.9);
+ assert.equal(shipping({...offer,price:80},rules,1,'standard',now).total,80);
+ assert.equal(shipping({...offer,price:79},rules,1,'standard',now).total,undefined);
+ assert.equal(shipping({...offer,merchant_id:'other'},rules,1,'standard',now).total,undefined);
+ assert.equal(shipping(offer,rules,1,'special',now).total,undefined);
+ assert.equal(shipping(offer,{...rules,merchants:{paco:{...rules.merchants.paco,checked_at:'2026-11-01'}}},1,'standard',now).total,undefined);
+});

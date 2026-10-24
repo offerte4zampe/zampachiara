@@ -2,7 +2,7 @@
 const metadata=typeof module!=='undefined'&&module.exports?require('./catalog-metadata.js'):root.O4ZMetadata;
 function shipping(o,rules,quantity=1,territory='standard',now=Date.now()){
  const r=rules?.merchants?.[o.merchant_id];if(!r)return {reason:'Condizioni non disponibili'};
- if(!rules.checked_at||!Number.isFinite(Date.parse(rules.checked_at))||now-Date.parse(rules.checked_at)>7*86400000)return {reason:'Condizioni da ricontrollare',rule:r};
+ const ruleDate=r.checked_at||rules.checked_at;if(!ruleDate||!Number.isFinite(Date.parse(ruleDate))||now-Date.parse(ruleDate)>7*86400000||Date.parse(ruleDate)>now+300000)return {reason:'Condizioni da ricontrollare',rule:r};
  if(territory!=='standard')return {reason:'Località o servizi particolari: verifica nel negozio',rule:r};
  if(!Number.isInteger(quantity)||quantity<1||quantity>10)return {reason:'Quantità non valida',rule:r};
  if(r.conflict)return {reason:'Indicazioni del negozio non coerenti: verifica il checkout',rule:r};
@@ -35,3 +35,4 @@ function groupOffers(rows,now=Date.now()){
 function reportUrl(o){const p=new URLSearchParams();for(const [key,source,limit] of [['id','id',100],['title','title',240],['shop','merchant',100],['price','price',30],['checked','checked_at',60]])p.set(key,String(o[source]??'').slice(0,limit));return 'segnala-errore.html?'+p;}
 const api={shipping,discount,merchant,matchKey,groupOffers,reportUrl};if(typeof module!=='undefined')module.exports=api;else root.O4ZTrade=api;
 })(typeof window!=='undefined'?window:this);
+

@@ -4,7 +4,7 @@ export async function checkThemes(page,origin,catalog){
  const product=catalog.offers.find(o=>o.available);assert(product);
  for(const theme of ['light','dark']){
   await page.emulateMediaFeatures([{name:'prefers-color-scheme',value:theme}]);
-  for(const route of ['/index.html','/confronta-cibo.html','/prodotto.html?id='+encodeURIComponent(product.id),'/prezzo-confezione-o-prezzo-kg.html','/calcolatore.html','/newsletter.html']){
+  for(const route of ['/index.html','/confronta-cibo.html','/prodotto.html?id='+encodeURIComponent(product.id),'/prezzo-confezione-o-prezzo-kg.html','/calcolatore.html','/newsletter.html','/preferiti.html']){
    await page.goto(origin+route,{waitUntil:'domcontentloaded'});
    const data=await page.evaluate(()=>{
     function rgb(s){const m=s.match(/[\d.]+/g);return m?m.slice(0,3).map(Number):[0,0,0]}
@@ -27,3 +27,4 @@ export async function checkThemes(page,origin,catalog){
  await page.emulateMediaFeatures([{name:'prefers-color-scheme',value:'light'}]);
  await fs.writeFile('browser-reports/theme-contrast.json',JSON.stringify({scope:'Representative computed colours, not full WCAG certification',results},null,2));
 }
+
