@@ -1169,12 +1169,6 @@
     "status": 200,
     "confirmations": 0
   },
-  "animaliapet:46976537461079": {
-    "url": "https://www.animaliapet.eu/products/almo-nature-holistic-pollo-fresco-2kg-crocchette-cani-adulti-small?variant=46976537461079",
-    "checked_at": "2026-10-20T18:45:59.852231+00:00",
-    "status": 200,
-    "confirmations": 0
-  },
   "bauzaar:56817604690245": {
     "url": "https://www.bauzaar.it/products/newa-pompa-ad-immersione-micro-e-mini-per-acquari?variant=56817604690245",
     "checked_at": "2026-10-20T18:45:59.852231+00:00",
@@ -2089,12 +2083,6 @@
   },
   "webpet:52568899420500": {
     "url": "https://www.webpet.it/products/aqpetfriends-panama-tiragraffi-in-sisal-58-cm-grigio?variant=52568899420500",
-    "checked_at": "2026-10-21T00:51:44.817668+00:00",
-    "status": 200,
-    "confirmations": 0
-  },
-  "animaliapet:46976540082519": {
-    "url": "https://www.animaliapet.eu/products/monge-superpremium-tonno-con-manzo-bustine-da-80g-gatti-adulti?variant=46976540082519",
     "checked_at": "2026-10-21T00:51:44.817668+00:00",
     "status": 200,
     "confirmations": 0
@@ -5387,12 +5375,6 @@
     "status": 200,
     "confirmations": 0
   },
-  "animaliapet:46976546275671": {
-    "url": "https://www.animaliapet.eu/products/monge-natural-superpremium-adult-crocchette-pollo-da-10kg-gatti-adulti?variant=46976546275671",
-    "checked_at": "2026-10-24T15:20:40.026058+00:00",
-    "status": 200,
-    "confirmations": 0
-  },
   "bauzaar:56819068371269": {
     "url": "https://www.bauzaar.it/products/sabbia-decorativa-per-acquari-d-acqua-dolce-quarzo-aqualovers?variant=56819068371269",
     "checked_at": "2026-10-24T15:20:40.026058+00:00",
@@ -6146,6 +6128,150 @@
   "webpet:52568978391380": {
     "url": "https://www.webpet.it/products/kong-senior-gioco-in-gomma-per-cani-adulti?variant=52568978391380",
     "checked_at": "2026-10-25T06:47:28.370790+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976548438359": {
+    "url": "https://www.animaliapet.eu/products/farmina-n-d-ocean-merluzzo-zucca-arancia-2-5kg-crocchette-cani-mini-adult?variant=46976548438359",
+    "checked_at": "2026-10-25T12:45:33.694177+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56819125453125": {
+    "url": "https://www.bauzaar.it/products/museruola-per-cani-in-plastica-petup?variant=56819125453125",
+    "checked_at": "2026-10-25T12:45:33.694177+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000114104": {
+    "url": "https://www.isoladeitesori.it/prodotto/acquarium-munster-rivamor-20ml/000114104.html",
+    "checked_at": "2026-10-25T12:45:33.694177+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52568978620756": {
+    "url": "https://www.webpet.it/products/kong-goodie-bone-osso-in-gomma-gioco-per-cani?variant=52568978620756",
+    "checked_at": "2026-10-25T12:45:33.694177+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976548602199": {
+    "url": "https://www.animaliapet.eu/products/farmina-n-d-pumpkin-agnello-mirtilli-2-5kg-crocchette-cani-medium-maxi?variant=46976548602199",
+    "checked_at": "2026-10-25T12:45:33.694177+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56819126632773": {
+    "url": "https://www.bauzaar.it/products/museruola-per-cani-in-plastica-petup?variant=56819126632773",
+    "checked_at": "2026-10-25T12:45:33.694177+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000114250": {
+    "url": "https://www.isoladeitesori.it/prodotto/gymsack-eco-sostenibile-100%25-pet-lover/000114250.html",
+    "checked_at": "2026-10-25T12:45:33.694177+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52568978653524": {
+    "url": "https://www.webpet.it/products/kong-goodie-bone-osso-in-gomma-gioco-per-cani?variant=52568978653524",
+    "checked_at": "2026-10-25T12:45:33.694177+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976548667735": {
+    "url": "https://www.animaliapet.eu/products/farmina-n-d-pumpkin-cinghiale-zucca-e-mela-2-5kg-crocchette-cani-mini-adult?variant=46976548667735",
+    "checked_at": "2026-10-25T12:45:33.694177+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56819139379525": {
+    "url": "https://www.bauzaar.it/products/collare-aalborg-in-cuoio-di-bovino?variant=56819139379525",
+    "checked_at": "2026-10-25T12:45:33.694177+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000114251": {
+    "url": "https://www.isoladeitesori.it/prodotto/shopping-bag-100%25-pet-lover/000114251.html",
+    "checked_at": "2026-10-25T12:45:33.694177+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52568978686292": {
+    "url": "https://www.webpet.it/products/kong-goodie-bone-osso-in-gomma-gioco-per-cani?variant=52568978686292",
+    "checked_at": "2026-10-25T12:45:33.694177+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976548733271": {
+    "url": "https://www.animaliapet.eu/products/monge-monoprotein-pate-solo-con-pollo-vaschette-da-150g-cani-adulti?variant=46976548733271",
+    "checked_at": "2026-10-25T12:45:33.694177+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56819140624709": {
+    "url": "https://www.bauzaar.it/products/collare-per-cani-hilo-vario-basic?variant=56819140624709",
+    "checked_at": "2026-10-25T12:45:33.694177+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000114280": {
+    "url": "https://www.isoladeitesori.it/prodotto/borraccia-termica-bianca-con-stampa-verde-100%25-pet-lover/000114280.html",
+    "checked_at": "2026-10-25T12:45:33.694177+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52568979079508": {
+    "url": "https://www.webpet.it/products/kong-puppy-goodie-bone-osso-in-gomma-gioco-per-cani-cuccioli?variant=52568979079508",
+    "checked_at": "2026-10-25T12:45:33.694177+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976548766039": {
+    "url": "https://www.animaliapet.eu/products/farmina-n-d-pumpkin-cinghiale-2-5kg-crocchette-cani-adult-medium-maxi?variant=46976548766039",
+    "checked_at": "2026-10-25T12:45:33.694177+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56819141902661": {
+    "url": "https://www.bauzaar.it/products/guinzaglio-regolabile-hilo-leash?variant=56819141902661",
+    "checked_at": "2026-10-25T12:45:33.694177+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000114281": {
+    "url": "https://www.isoladeitesori.it/prodotto/mug-in-ceramica-con-stampa-grigia-100%25-pet-lover/000114281.html",
+    "checked_at": "2026-10-25T12:45:33.694177+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52568979571028": {
+    "url": "https://www.webpet.it/products/kong-palla-in-gomma-con-corda-gioco-per-cani?variant=52568979571028",
+    "checked_at": "2026-10-25T12:45:33.694177+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976548831575": {
+    "url": "https://www.animaliapet.eu/products/farmina-vetlife-gastrointestinal-300g-lattina-cani-adulti?variant=46976548831575",
+    "checked_at": "2026-10-25T12:45:33.694177+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56819144360261": {
+    "url": "https://www.bauzaar.it/products/collare-da-addestramento-solid-education-in-cuoio-di-bovino?variant=56819144360261",
+    "checked_at": "2026-10-25T12:45:33.694177+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000114286": {
+    "url": "https://www.isoladeitesori.it/prodotto/borraccia-termica-bianca-con-stampa-grigia-100%25-pet-lover/000114286.html",
+    "checked_at": "2026-10-25T12:45:33.694177+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52568980455764": {
+    "url": "https://www.webpet.it/products/kong-dental-gioco-con-corda-per-cani?variant=52568980455764",
+    "checked_at": "2026-10-25T12:45:33.694177+00:00",
     "status": 200,
     "confirmations": 0
   }
