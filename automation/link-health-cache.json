@@ -659,12 +659,6 @@
     "status": 200,
     "confirmations": 0
   },
-  "isola-dei-tesori:000110477": {
-    "url": "https://www.isoladeitesori.it/prodotto/camon-fischietto-per-addestramento/000110477.html",
-    "checked_at": "2026-10-20T15:52:57.490733+00:00",
-    "status": 200,
-    "confirmations": 0
-  },
   "webpet:52568870715732": {
     "url": "https://www.webpet.it/products/aqpetfriends-cat-toy-bastoncino-con-peluche-e-piume?variant=52568870715732",
     "checked_at": "2026-10-20T15:52:57.490733+00:00",
@@ -5813,12 +5807,6 @@
     "status": 200,
     "confirmations": 0
   },
-  "isola-dei-tesori:000112701": {
-    "url": "https://www.isoladeitesori.it/prodotto/tetra-reptomin-energy-100-ml/000112701.html",
-    "checked_at": "2026-10-24T20:41:20.657921+00:00",
-    "status": 200,
-    "confirmations": 0
-  },
   "webpet:52568975901012": {
     "url": "https://www.webpet.it/products/aqpetfriends-giochi-per-cani-rope-polipo-in-corda-di-cotone?variant=52568975901012",
     "checked_at": "2026-10-24T20:41:20.657921+00:00",
@@ -6014,6 +6002,150 @@
   "webpet:52568976916820": {
     "url": "https://www.webpet.it/products/kong-classic-gioco-in-gomma-per-cani?variant=52568976916820",
     "checked_at": "2026-10-25T00:48:33.687771+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976547979607": {
+    "url": "https://www.animaliapet.eu/products/monge-fresh-bocconi-in-pate-vitello-e-ortaggi-puppy-lattina-400g-cuccioli?variant=46976547979607",
+    "checked_at": "2026-10-25T06:47:28.370790+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56819114082629": {
+    "url": "https://www.bauzaar.it/products/guinzaglio-lunghina-da-addestramento-camon?variant=56819114082629",
+    "checked_at": "2026-10-25T06:47:28.370790+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000112716": {
+    "url": "https://www.isoladeitesori.it/prodotto/tetra-discus-granules-250-ml/000112716.html",
+    "checked_at": "2026-10-25T06:47:28.370790+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52568976949588": {
+    "url": "https://www.webpet.it/products/kong-classic-gioco-in-gomma-per-cani?variant=52568976949588",
+    "checked_at": "2026-10-25T06:47:28.370790+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976548045143": {
+    "url": "https://www.animaliapet.eu/products/farmina-n-d-pumpkin-agnello-mirtilli-12kg-crocchette-cani-adult-medium-maxi?variant=46976548045143",
+    "checked_at": "2026-10-25T06:47:28.370790+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56819115393349": {
+    "url": "https://www.bauzaar.it/products/guinzaglio-per-cani-senza-maniglia-color-e-gray-super-grip-julius-k9?variant=56819115393349",
+    "checked_at": "2026-10-25T06:47:28.370790+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000112720": {
+    "url": "https://www.isoladeitesori.it/prodotto/tetra-goldfish-holiday-2-pz-x-12-gr/000112720.html",
+    "checked_at": "2026-10-25T06:47:28.370790+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52568976982356": {
+    "url": "https://www.webpet.it/products/kong-classic-gioco-in-gomma-per-cani?variant=52568976982356",
+    "checked_at": "2026-10-25T06:47:28.370790+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976548143447": {
+    "url": "https://www.animaliapet.eu/products/monge-vetsolution-dermatosis-canine-vaschetta-150g-cane-adulto?variant=46976548143447",
+    "checked_at": "2026-10-25T06:47:28.370790+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56819115688261": {
+    "url": "https://www.bauzaar.it/products/guinzaglio-per-cani-regolabile-color-e-gray-super-grip-julius-k9?variant=56819115688261",
+    "checked_at": "2026-10-25T06:47:28.370790+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000112721": {
+    "url": "https://www.isoladeitesori.it/prodotto/tetra-reptomin-energy-250-ml/000112721.html",
+    "checked_at": "2026-10-25T06:47:28.370790+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52568977015124": {
+    "url": "https://www.webpet.it/products/kong-classic-gioco-in-gomma-per-cani?variant=52568977015124",
+    "checked_at": "2026-10-25T06:47:28.370790+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976548208983": {
+    "url": "https://www.animaliapet.eu/products/farmina-n-d-ocean-merluzzo-zucca-arancia-2-5kg-crocchette-cani-medium-maxi-adult?variant=46976548208983",
+    "checked_at": "2026-10-25T06:47:28.370790+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56819116245317": {
+    "url": "https://www.bauzaar.it/products/guinzaglio-per-cani-regolabile-color-e-gray-super-grip-julius-k9?variant=56819116245317",
+    "checked_at": "2026-10-25T06:47:28.370790+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000112750": {
+    "url": "https://www.isoladeitesori.it/prodotto/tetra-pond-sticks-10-lt/000112750.html",
+    "checked_at": "2026-10-25T06:47:28.370790+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52568977047892": {
+    "url": "https://www.webpet.it/products/kong-classic-gioco-in-gomma-per-cani?variant=52568977047892",
+    "checked_at": "2026-10-25T06:47:28.370790+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976548340055": {
+    "url": "https://www.animaliapet.eu/products/monge-natural-superpremium-extra-small-adult-pollo-800g-crocchette-cani?variant=46976548340055",
+    "checked_at": "2026-10-25T06:47:28.370790+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56819116278085": {
+    "url": "https://www.bauzaar.it/products/guinzaglio-per-cani-regolabile-color-e-gray-super-grip-julius-k9?variant=56819116278085",
+    "checked_at": "2026-10-25T06:47:28.370790+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000114100": {
+    "url": "https://www.isoladeitesori.it/prodotto/aquarium-munster-faunamor-20-ml/000114100.html",
+    "checked_at": "2026-10-25T06:47:28.370790+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52568978358612": {
+    "url": "https://www.webpet.it/products/kong-senior-gioco-in-gomma-per-cani-adulti?variant=52568978358612",
+    "checked_at": "2026-10-25T06:47:28.370790+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976548372823": {
+    "url": "https://www.animaliapet.eu/products/farmina-vetlife-hypoallergenic-anatra-e-patate-300g-lattina-cani?variant=46976548372823",
+    "checked_at": "2026-10-25T06:47:28.370790+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56819121914181": {
+    "url": "https://www.bauzaar.it/products/toilette-chiusa-per-gatti-milly-petup?variant=56819121914181",
+    "checked_at": "2026-10-25T06:47:28.370790+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000114102": {
+    "url": "https://www.isoladeitesori.it/prodotto/aquarium-munster-dessamor-20-ml/000114102.html",
+    "checked_at": "2026-10-25T06:47:28.370790+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52568978391380": {
+    "url": "https://www.webpet.it/products/kong-senior-gioco-in-gomma-per-cani-adulti?variant=52568978391380",
+    "checked_at": "2026-10-25T06:47:28.370790+00:00",
     "status": 200,
     "confirmations": 0
   }
