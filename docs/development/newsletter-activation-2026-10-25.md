@@ -21,3 +21,6 @@ L’invio usa soltanto iscrizioni confermate alla lista newsletter. Revoca: sopp
 - https://www.garanteprivacy.it/home/i-miei-diritti/diritti — diritti interessato.
 
 Test locali superati: 95 Python e78 Node. CI mobile e deploy da registrare dopo pubblicazione. Raccolta newsletter distinta da invio automatico e dagli alert prezzo, tuttora non attivi.
+
+### Verifica conclusa
+Commit funzionale94932081ad8e92f8ba496a1accae555303740c40 e aggiornamento CI f8412a5a9cdeff2881371ad316df20994b846909: Cloudflare Workers Build e mobile success. CI finale40184636049 include95 Python e78 Node, modulo visibile/cancellazione e prove mobile. Pagina pubblica https://offerte4zampe.it/newsletter osservata con iscrizioni aperte, link effettivo al modulo Brevo con checkbox non preselezionata, /privacy#newsletter con testo aggiornato e CTA pubblica di disiscrizione. Nessuna nuova email di prova, campagna, schedulazione o revisione AdSense inviata in questa attivazione. Prima email aggiornata resta bozza#5 senza destinatari.
