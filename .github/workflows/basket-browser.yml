@@ -12,6 +12,7 @@ on:
       - 'worker/notification-plan.mjs'
       - 'worker/schema/**'
       - 'tests/test_notification*'
+      - 'tests/test_newsletter_ui.mjs'
       - 'site/assets/search-suggest.js'
       - 'tests/test_search_suggest.mjs'
       - 'site/assets/home.js'
@@ -93,7 +94,7 @@ jobs:
         with:
           node-version: '22'
       - name: Test basket and pricing invariants
-        run: node --test tests/test_watchlist.mjs tests/test_catalog_metadata.mjs tests/test_basket.mjs tests/test_trade.mjs tests/test_report.mjs tests/test_metrics.mjs tests/test_daily_cost.mjs tests/test_price_history.mjs tests/test_notification_plan.mjs tests/test_search_suggest.mjs tests/test_product_view.mjs tests/test_amazon_links.mjs tests/test_catalog_prepare.mjs tests/test_product_share.mjs tests/test_product_preview.mjs tests/test_catalog_cooperate.mjs tests/test_catalog_load.mjs
+        run: node --test tests/test_watchlist.mjs tests/test_catalog_metadata.mjs tests/test_basket.mjs tests/test_trade.mjs tests/test_report.mjs tests/test_metrics.mjs tests/test_daily_cost.mjs tests/test_price_history.mjs tests/test_notification_plan.mjs tests/test_newsletter_ui.mjs tests/test_search_suggest.mjs tests/test_product_view.mjs tests/test_amazon_links.mjs tests/test_catalog_prepare.mjs tests/test_product_share.mjs tests/test_product_preview.mjs tests/test_catalog_cooperate.mjs tests/test_catalog_load.mjs
       - name: Test schema and generators without external services
         run: python -m unittest discover -s tests
       - name: Generate compact search index locally
