@@ -652,3 +652,6 @@ Preservare aggiornamenti altrui e marchio. Commit piccoli, test pertinenti, veri
 
 ## 25 ottobre 2026 — apertura iscrizioni newsletter
 Verifiche e ambito in [newsletter-activation-2026-10-25.md](newsletter-activation-2026-10-25.md). Prova reale autorizzata DOI/revoca superata, mittente capobranco; informativa completata e Brevo limitato al consenso per tracking individuale (sconosciuti non tracciati). Attivazione prevista con soli link editoriali al sito, nessun permesso DEM merchant dedotto. Bozza #5 aggiornata con footer unsubscribe, senza invio o destinatari. Test/CI/deploy da registrare dopo pubblicazione.
+
+### Verifica conclusa
+Commit funzionale94932081ad8e92f8ba496a1accae555303740c40 e aggiornamento CI f8412a5a9cdeff2881371ad316df20994b846909: Cloudflare Workers Build e mobile success. CI finale40184636049 include95 Python e78 Node, modulo visibile/cancellazione e prove mobile. Pagina pubblica https://offerte4zampe.it/newsletter osservata con iscrizioni aperte, link effettivo al modulo Brevo con checkbox non preselezionata, /privacy#newsletter con testo aggiornato e CTA pubblica di disiscrizione. Nessuna nuova email di prova, campagna, schedulazione o revisione AdSense inviata in questa attivazione. Prima email aggiornata resta bozza#5 senza destinatari.
