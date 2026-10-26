@@ -9,7 +9,8 @@
     "run_worker_first": [
       "/api/metrics",
       "/prodotto",
-      "/prodotto.html"
+      "/prodotto.html",
+      "/api/telegram/status"
     ]
   },
   "workers_dev": true,
@@ -31,5 +32,27 @@
     "traces": {
       "enabled": false
     }
+  },
+  "keep_vars": true,
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "TELEGRAM_PUBLISHER",
+        "class_name": "TelegramPublisher"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "telegram-v1",
+      "new_sqlite_classes": [
+        "TelegramPublisher"
+      ]
+    }
+  ],
+  "triggers": {
+    "crons": [
+      "*/15 * * * *"
+    ]
   }
 }
