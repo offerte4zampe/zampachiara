@@ -71,6 +71,8 @@ on:
       - 'automation/build_line_pages.py'
       - 'tests/test_line_pages.py'
       - 'automation/audit_site.py'
+      - 'automation/improve_discovery.py'
+      - 'tests/test_discovery.py'
       - 'automation/apply_navigation.py'
       - 'automation/route_product_links.py'
       - 'tests/test_product_routing.py'
@@ -117,6 +119,8 @@ jobs:
         run: python automation/route_product_links.py
       - name: Remove unverified automatic ad loader
         run: python automation/remove_unverified_ads.py
+      - name: Generate crawlable canonical discovery links
+        run: python automation/improve_discovery.py
       - name: Audit generated static pages
         run: python automation/audit_site.py
       - name: Install pinned browser driver

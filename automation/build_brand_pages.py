@@ -81,7 +81,7 @@ def build():
     (ROOT/'site/marche.html').write_text(append_list_schema(page(template,'marche','Marche di prodotti per animali: prezzi e formati','Marche con dati di catalogo sufficienti: ricette, confezioni, negozi e prezzi rilevati.',body),'Marche nel catalogo',list_items))
     home=ROOT/'site/index.html'
     before=home.read_text()
-    if 'href="marche.html"' not in before:
+    if 'href="marche.html"' not in before and 'href="/marche"' not in before:
         before=before.replace('<div class="brand-links" id="home-brands">','<p><a href="marche.html">Esplora le pagine delle marche →</a></p><div class="brand-links" id="home-brands">')
         home.write_text(before)
     print('Brand pages generated:',len(links))

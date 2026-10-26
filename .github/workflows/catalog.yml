@@ -43,6 +43,8 @@ on:
       - 'tests/test_search_suggest.mjs'
       - 'automation/build_matched_pages.py'
       - 'automation/apply_social_metadata.py'
+      - 'automation/improve_discovery.py'
+      - 'tests/test_discovery.py'
       - 'automation/apply_navigation.py'
       - 'automation/route_product_links.py'
       - 'tests/test_product_routing.py'
@@ -96,6 +98,7 @@ jobs:
       - run: python automation/apply_navigation.py
       - run: python automation/route_product_links.py
       - run: python automation/remove_unverified_ads.py
+      - run: python automation/improve_discovery.py
       - run: python automation/build_sitemaps.py
       - run: python automation/audit_site.py
       - name: Publish refreshed catalog
@@ -106,10 +109,10 @@ jobs:
             echo "Main changed during generation; retain current publication and retry on next run."
             exit 0
           fi
-          if ! git diff --quiet -- site/data/catalog.json.gz site/data/site-quality.json site/data/price-observatory.json site/data/price-history.json.gz site/data/history site/data/catalog-quality.json site/data/catalog-quarantine.json site/data/home.json site/data/search-index.json site/data/product-meta site/data/link-health.json automation/link-health-cache.json automation/identifier-cache.json automation/shipping-cache.json site/*.html site/sitemap*.xml automation/sitemap-state.json; then
+          if ! git diff --quiet -- site/data/catalog.json.gz site/data/site-quality.json site/data/discovery.json site/data/price-observatory.json site/data/price-history.json.gz site/data/history site/data/catalog-quality.json site/data/catalog-quarantine.json site/data/home.json site/data/search-index.json site/data/product-meta site/data/link-health.json automation/link-health-cache.json automation/identifier-cache.json automation/shipping-cache.json site/*.html site/sitemap*.xml automation/sitemap-state.json; then
             git config user.name "Offerte4Zampe catalog bot"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add site/data/catalog.json.gz site/data/site-quality.json site/data/price-observatory.json site/data/price-history.json.gz site/data/history site/data/catalog-quality.json site/data/catalog-quarantine.json site/data/home.json site/data/search-index.json site/data/product-meta site/data/link-health.json automation/link-health-cache.json automation/identifier-cache.json automation/shipping-cache.json site/*.html site/sitemap*.xml automation/sitemap-state.json
+            git add site/data/catalog.json.gz site/data/site-quality.json site/data/discovery.json site/data/price-observatory.json site/data/price-history.json.gz site/data/history site/data/catalog-quality.json site/data/catalog-quarantine.json site/data/home.json site/data/search-index.json site/data/product-meta site/data/link-health.json automation/link-health-cache.json automation/identifier-cache.json automation/shipping-cache.json site/*.html site/sitemap*.xml automation/sitemap-state.json
             git commit -m "chore: refresh real merchant prices"
             git push
           fi

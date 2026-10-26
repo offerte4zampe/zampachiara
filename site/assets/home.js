@@ -20,6 +20,7 @@ const recent=rows.filter(o=>fresh(o.checked_at));const sales=recent.filter(o=>o.
 const picked=[],brands=new Set();for(const source of d.sources||[]){const found=sales.find(o=>o.merchant_id===source.id&&!brands.has(o.brand));if(found){picked.push(found);brands.add(found.brand)}}for(const o of sales){if(picked.length>=6)break;if(!brands.has(o.brand)){picked.push(o);brands.add(o.brand)}}
 $('home-deals').replaceChildren(...picked.map(o=>card(o)));$('home-deals-status').textContent=picked.length?'Ultimo aggiornamento catalogo: '+new Date(d.generated_at).toLocaleString('it-IT')+'. Una selezione di offerte, non una classifica dell’intero mercato.':'Al momento non ci sono offerte recenti da mostrare. Consulta il catalogo completo.';
 const hero=recent.find(o=>/royal canin|purina|trainer/i.test(o.brand)&&o.price>=15&&o.image)||picked[0];if(hero)$('home-spotlight').replaceChildren(card(hero,true));else $('home-spotlight').replaceChildren(link('Esplora il catalogo →',{} ,'btn secondary'));
-$('home-brands').replaceChildren(...d.top_brands.map(brand=>link(brand,{brand})));
+const brandPages=JSON.parse($('home-brands').dataset.brandPages||'{}');
+$('home-brands').replaceChildren(...d.top_brands.map(brand=>{const a=link(brand,{brand}),path=brandPages[brand];if(typeof path==='string'&&/^\/marca-[a-z-]+$/.test(path))a.href=path;return a}));
 $('home-shops').replaceChildren(...(d.sources||[]).filter(s=>s.offers>0).map(s=>link(s.name+' · '+integer.format(s.offers)+' offerte →',{shop:s.name})));
 }catch{$('home-deals-status').textContent+=' Aggiornamento online non disponibile: controlla la data delle offerte e verifica nel negozio.';}})();})();

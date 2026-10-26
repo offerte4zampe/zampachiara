@@ -659,3 +659,7 @@ Commit funzionale94932081ad8e92f8ba496a1accae555303740c40 e aggiornamento CI f84
 
 ## 26 ottobre 2026 — verifica Search Console
 Verificati 595 URL esclusi e 56 indicizzati. Analisi in [search-console-2026-10-26.md](search-console-2026-10-26.md): 180 noindex intenzionali, 73 ricerche con canonical corretto, 70 alias con reindirizzamento. Tra i 265 URL rilevati ma non scansionati, 185 sono ancora indicizzabili e 80 sono confronti ritirati. I 7 URL scansionati ma non indicizzati comprendono 4 pagine canoniche utili, 2 alias e 1 modulo noindex. Sitemap riuscita, 326 URL attuali coerenti con l’inventario. Test live Google Royal Canin e guida lettiere riusciti. Nessuna modifica al codice, convalida o richiesta di indicizzazione/revisione inviata.
+
+
+## 26 ottobre 2026 — miglioramento scoperta organica
+Implementazione in [seo-discovery-2026-10-26.md](seo-discovery-2026-10-26.md): menu Guide corretto, home con sei guide HTML dirette, marche collegate alle pagine esistenti, link statici verso canonical e report del grafo. Query, frammenti, affiliati, prezzi e noindex conservati; endpoint prodotto dinamico invariato. 99 Python e78 Node locali superati, CI/generazione completa e produzione da verificare. Nessun risultato di ranking o incremento dell’indicizzazione già attribuito.

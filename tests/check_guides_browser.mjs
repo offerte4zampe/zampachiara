@@ -9,7 +9,7 @@ export async function checkGuides(page, origin) {
     const links=await page.$$eval('.guide-table a',es=>es.map(e=>e.href));assert(links.length>0,slug+' table needs source links');
     for(const href of links){const u=new URL(href);if(u.origin===origin){
       if(u.pathname==='/prodotto.html'){assert(u.searchParams.has('id'));}
-      else{assert(/^\/prezzi-\d{14}-[a-f0-9]{10}\.html$/.test(u.pathname),'Unexpected internal guide destination: '+href);await fs.access(new URL('../site'+u.pathname,import.meta.url));}
+      else{assert(/^\/prezzi-\d{14}-[a-f0-9]{10}$/.test(u.pathname),'Unexpected internal guide destination: '+href);await fs.access(new URL('../site'+u.pathname+'.html',import.meta.url));}
     }else assert.equal(u.protocol,'https:');}
     assert(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth<=1),'Guide causes page overflow');
     assert.equal(await page.$eval('main', e=>e.textContent.includes('prezzi inventati')),false);
