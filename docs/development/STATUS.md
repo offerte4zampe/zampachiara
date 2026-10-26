@@ -663,3 +663,6 @@ Verificati 595 URL esclusi e 56 indicizzati. Analisi in [search-console-2026-10-
 
 ## 26 ottobre 2026 — miglioramento scoperta organica
 Implementazione in [seo-discovery-2026-10-26.md](seo-discovery-2026-10-26.md): menu Guide corretto, home con sei guide HTML dirette, marche collegate alle pagine esistenti, link statici verso canonical e report del grafo. Query, frammenti, affiliati, prezzi e noindex conservati; endpoint prodotto dinamico invariato. 99 Python e78 Node locali superati, CI/generazione completa e produzione da verificare. Nessun risultato di ranking o incremento dell’indicizzazione già attribuito.
+
+### Pubblicazione verificata
+Commit funzionale 1c0f1c9fc31d49ca79f97e4fb74602169ab61c8f; CI mobile 40334912704 riuscita con 99 Python e 78 Node. Rigenerazione 40334912752 riuscita, commit dati 0b45d634e040edd7a1ce6fffd1d54e542192fc9b e Cloudflare Workers Builds success. Home pubblica con sei guide, menu Guide e marche canoniche verificati, clic guida lettiere riuscito. Report completo: 326 pagine indicizzabili tutte raggiungibili, nessuna isolata, profondità massima 2 già prima e dopo. Nessuna riduzione globale di profondità o incremento d’indicizzazione attribuito. Nessuna richiesta Search Console o revisione AdSense inviata.
