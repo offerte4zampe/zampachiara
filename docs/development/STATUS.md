@@ -655,3 +655,7 @@ Verifiche e ambito in [newsletter-activation-2026-10-25.md](newsletter-activatio
 
 ### Verifica conclusa
 Commit funzionale94932081ad8e92f8ba496a1accae555303740c40 e aggiornamento CI f8412a5a9cdeff2881371ad316df20994b846909: Cloudflare Workers Build e mobile success. CI finale40184636049 include95 Python e78 Node, modulo visibile/cancellazione e prove mobile. Pagina pubblica https://offerte4zampe.it/newsletter osservata con iscrizioni aperte, link effettivo al modulo Brevo con checkbox non preselezionata, /privacy#newsletter con testo aggiornato e CTA pubblica di disiscrizione. Nessuna nuova email di prova, campagna, schedulazione o revisione AdSense inviata in questa attivazione. Prima email aggiornata resta bozza#5 senza destinatari.
+
+
+## 26 ottobre 2026 — verifica Search Console
+Verificati 595 URL esclusi e 56 indicizzati. Analisi in [search-console-2026-10-26.md](search-console-2026-10-26.md): 180 noindex intenzionali, 73 ricerche con canonical corretto, 70 alias con reindirizzamento. Tra i 265 URL rilevati ma non scansionati, 185 sono ancora indicizzabili e 80 sono confronti ritirati. I 7 URL scansionati ma non indicizzati comprendono 4 pagine canoniche utili, 2 alias e 1 modulo noindex. Sitemap riuscita, 326 URL attuali coerenti con l’inventario. Test live Google Royal Canin e guida lettiere riusciti. Nessuna modifica al codice, convalida o richiesta di indicizzazione/revisione inviata.
