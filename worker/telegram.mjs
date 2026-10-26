@@ -46,7 +46,7 @@ export class TelegramPublisher {
  constructor(state,env){this.state=state;this.env=env;this.chain=Promise.resolve();}
  fetch(request){
   // Internal binding only; request body cannot supply text, recipient or URLs.
-  if(request.method==='GET')return this.state.storage.get('post:'+TEST_POST.id).then(test=>Response.json({integration:'telegram-v1',configured:Boolean(this.env.TELEGRAM_BOT_TOKEN)&&this.env.TELEGRAM_CHANNEL_ID==='@sconti4zampe',test_status:test?.status||'pending',test_message_id:test?.message_id||null}));
+  if(request.method==='GET')return this.state.storage.get('post:'+TEST_POST.id).then(test=>Response.json({integration:'telegram-v1',configured:Boolean(this.env.TELEGRAM_BOT_TOKEN)&&this.env.TELEGRAM_CHANNEL_ID==='@sconti4zampe',token_present:Boolean(this.env.TELEGRAM_BOT_TOKEN),channel_present:Boolean(this.env.TELEGRAM_CHANNEL_ID),channel_matches:this.env.TELEGRAM_CHANNEL_ID==='@sconti4zampe',test_status:test?.status||'pending',test_message_id:test?.message_id||null}));
   if(request.method!=='POST')return Promise.resolve(new Response(null,{status:405}));
   const run=this.chain.then(()=>this.tick());this.chain=run.catch(()=>{});
   return run.then(result=>Response.json(result));
