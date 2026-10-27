@@ -5801,12 +5801,6 @@
     "status": 200,
     "confirmations": 0
   },
-  "bauzaar:56807970767173": {
-    "url": "https://www.bauzaar.it/products/natural-code-acqua-di-cottura-85-gr?variant=56807970767173",
-    "checked_at": "2026-10-25T00:48:33.687771+00:00",
-    "status": 200,
-    "confirmations": 0
-  },
   "isola-dei-tesori:000112704": {
     "url": "https://www.isoladeitesori.it/prodotto/tetra-reptodelica-shrimps-250-ml/000112704.html",
     "checked_at": "2026-10-25T00:48:33.687771+00:00",
@@ -7088,6 +7082,150 @@
   "webpet:52568988942676": {
     "url": "https://www.webpet.it/products/aqpetfriends-giochi-per-cani-dental-osso-di-gomma-con-texture-interna?variant=52568988942676",
     "checked_at": "2026-10-26T18:54:52.713515+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976554107223": {
+    "url": "https://www.animaliapet.eu/products/trixie-premium-collare-denim-xs-s-22-35cm-10mm?variant=46976554107223",
+    "checked_at": "2026-10-27T00:54:50.739976+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56819235914053": {
+    "url": "https://www.bauzaar.it/products/giochi-in-lattice-per-cani-baby-toys-ferribiella?variant=56819235914053",
+    "checked_at": "2026-10-27T00:54:50.739976+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000115181": {
+    "url": "https://www.isoladeitesori.it/prodotto/trixie-gioco-triangolo-con-anelli-in-corda-citystyle-per-cani-44-cm/000115181.html",
+    "checked_at": "2026-10-27T00:54:50.739976+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52568989073748": {
+    "url": "https://www.webpet.it/products/aqpetfriends-giochi-per-cani-dental-palla-riccio-di-gomma?variant=52568989073748",
+    "checked_at": "2026-10-27T00:54:50.739976+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976554238295": {
+    "url": "https://www.animaliapet.eu/products/trixie-premium-pettorina-ad-h-rosso-s-m-42-60cm-15mm?variant=46976554238295",
+    "checked_at": "2026-10-27T00:54:50.739976+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56819235946821": {
+    "url": "https://www.bauzaar.it/products/giochi-in-lattice-per-cani-baby-toys-ferribiella?variant=56819235946821",
+    "checked_at": "2026-10-27T00:54:50.739976+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000115183": {
+    "url": "https://www.isoladeitesori.it/prodotto/trixie-gioco-per-cani-jumper-rosa-10-cm/000115183.html",
+    "checked_at": "2026-10-27T00:54:50.739976+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52568989303124": {
+    "url": "https://www.webpet.it/products/aqpetfriends-giochi-per-cani-dental-palla-sport-di-gomma-con-effetto-sonoro?variant=52568989303124",
+    "checked_at": "2026-10-27T00:54:50.739976+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976554467671": {
+    "url": "https://www.animaliapet.eu/products/trixie-premium-collare-marrone-xxs-xs-15-25cm-10mm?variant=46976554467671",
+    "checked_at": "2026-10-27T00:54:50.739976+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56819235979589": {
+    "url": "https://www.bauzaar.it/products/giochi-in-lattice-per-cani-baby-toys-ferribiella?variant=56819235979589",
+    "checked_at": "2026-10-27T00:54:50.739976+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000115201": {
+    "url": "https://www.isoladeitesori.it/prodotto/trixie-piramide-citystyle-per-gatti-7-cm/000115201.html",
+    "checked_at": "2026-10-27T00:54:50.739976+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52568989368660": {
+    "url": "https://www.webpet.it/products/aqpetfriends-giochi-per-cani-dental-pallina-di-gomma-con-effetto-sonoro?variant=52568989368660",
+    "checked_at": "2026-10-27T00:54:50.739976+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976554500439": {
+    "url": "https://www.animaliapet.eu/products/trixie-premium-pettorina-ad-h-nero-m-l-52-75cm-20mm?variant=46976554500439",
+    "checked_at": "2026-10-27T00:54:50.739976+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56819236110661": {
+    "url": "https://www.bauzaar.it/products/ciotola-in-ceramica-galatea-ferribiella?variant=56819236110661",
+    "checked_at": "2026-10-27T00:54:50.739976+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000115202": {
+    "url": "https://www.isoladeitesori.it/prodotto/trixie-gioco-pesce-in-peluche-per-gatti-8-cm/000115202.html",
+    "checked_at": "2026-10-27T00:54:50.739976+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52568989434196": {
+    "url": "https://www.webpet.it/products/aqpetfriends-giochi-per-cani-strong-donut-di-gomma?variant=52568989434196",
+    "checked_at": "2026-10-27T00:54:50.739976+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976554533207": {
+    "url": "https://www.animaliapet.eu/products/trixie-premium-collare-nero-xxs-xs-15-25cm-10mm?variant=46976554533207",
+    "checked_at": "2026-10-27T00:54:50.739976+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56819236241733": {
+    "url": "https://www.bauzaar.it/products/ciotola-in-ceramica-galatea-ferribiella?variant=56819236241733",
+    "checked_at": "2026-10-27T00:54:50.739976+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000115213": {
+    "url": "https://www.isoladeitesori.it/prodotto/trixie-bagnetto-coperto-15x16x17-cm/000115213.html",
+    "checked_at": "2026-10-27T00:54:50.739976+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52568990056788": {
+    "url": "https://www.webpet.it/products/aqpetfriends-giochi-per-cani-strong-fionda-di-gomma?variant=52568990056788",
+    "checked_at": "2026-10-27T00:54:50.739976+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976554631511": {
+    "url": "https://www.animaliapet.eu/products/trixie-premium-pettorina-ad-h-blu-xs-s-30-40cm-10mm?variant=46976554631511",
+    "checked_at": "2026-10-27T00:54:50.739976+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56819236405573": {
+    "url": "https://www.bauzaar.it/products/peluche-baby-toys-ferribiella?variant=56819236405573",
+    "checked_at": "2026-10-27T00:54:50.739976+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000115214": {
+    "url": "https://www.isoladeitesori.it/prodotto/trixie-bagnetto-coperto-per-uccelli/000115214.html",
+    "checked_at": "2026-10-27T00:54:50.739976+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52568990318932": {
+    "url": "https://www.webpet.it/products/aqpetfriends-giochi-per-cani-strong-osso-di-gomma?variant=52568990318932",
+    "checked_at": "2026-10-27T00:54:50.739976+00:00",
     "status": 200,
     "confirmations": 0
   }
