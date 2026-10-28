@@ -14,7 +14,12 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
-      - name: Verify and send (fail closed)
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Prepare fresh catalog selection
+        run: python3 automation/build_weekly_newsletter.py
+      - name: Validate and send only when enabled
         env:
           BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
           BREVO_LIST_ID: ${{ vars.BREVO_LIST_ID }}
