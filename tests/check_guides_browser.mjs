@@ -10,7 +10,7 @@ export async function checkGuides(page, origin) {
     const age=(Date.parse(generated.slice(0,10))-Date.parse(rules.checked_at))/86400000;
     const expiredShipping=slug==='spedizione-gratuita-conviene'&&!(age>=0&&age<=7);
     const caption=await page.$('.guide-table table caption');
-    const links=await page.$eval('.guide-table a',es=>es.map(e=>e.href));
+    const links=await page.$$eval('.guide-table a',es=>es.map(e=>e.href));
     if(expiredShipping){
       assert.equal(caption,null,'Expired shipping conditions must not be shown as verified');
       assert.equal(links.length,0);
