@@ -5,8 +5,20 @@ export async function checkGuides(page, origin) {
   for (const slug of ['costo-crocchette-cane', 'confrontare-prezzi-lettiere', 'prezzo-confezione-o-prezzo-kg', 'spedizione-gratuita-conviene', 'leggere-storico-prezzi', 'stesso-prodotto-formato-gtin']) {
     await page.goto(origin+'/'+slug+'.html', {waitUntil:'domcontentloaded'});
     assert.equal(await page.$$eval('main h1', es=>es.length),1);
-    assert(await page.$('.guide-table table caption'));
-    const links=await page.$$eval('.guide-table a',es=>es.map(e=>e.href));assert(links.length>0,slug+' table needs source links');
+    const rules=JSON.parse(await fs.readFile(new URL('../site/data/shipping-rules.json',import.meta.url),'utf8'));
+    const generated=await page.$eval('time[datetime]',e=>e.getAttribute('datetime'));
+    const age=(Date.parse(generated.slice(0,10))-Date.parse(rules.checked_at))/86400000;
+    const expiredShipping=slug==='spedizione-gratuita-conviene'&&!(age>=0&&age<=7);
+    const caption=await page.$('.guide-table table caption');
+    const links=await page.$eval('.guide-table a',es=>es.map(e=>e.href));
+    if(expiredShipping){
+      assert.equal(caption,null,'Expired shipping conditions must not be shown as verified');
+      assert.equal(links.length,0);
+      assert(await page.$eval('main',e=>e.textContent.includes('Le condizioni disponibili hanno superato la finestra di verifica di sette giorni o non sono complete')));
+    }else{
+      assert(caption,slug+' needs a caption');
+      assert(links.length>0,slug+' table needs source links');
+    }
     for(const href of links){const u=new URL(href);if(u.origin===origin){
       if(u.pathname==='/prodotto.html'){assert(u.searchParams.has('id'));}
       else{assert(/^\/prezzi-\d{14}-[a-f0-9]{10}$/.test(u.pathname),'Unexpected internal guide destination: '+href);await fs.access(new URL('../site'+u.pathname+'.html',import.meta.url));}
