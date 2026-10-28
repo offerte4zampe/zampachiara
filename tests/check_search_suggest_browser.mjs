@@ -27,7 +27,7 @@ export async function checkSuggestions(page,origin,catalog){
  assert(zooplus.text.includes('Disponibilità: non verificata'));assert(zooplus.text.includes('Catalogo zooplus non ancora collegato'));assert.equal(zooplus.links,0);
  const bitiba=await page.$eval('[data-product-shop="bitiba"]',e=>({text:e.textContent,links:e.querySelectorAll('a').length}));
  assert(bitiba.text.includes('Disponibilità: non verificata'));assert(bitiba.text.includes('Catalogo bitiba non ancora collegato'));assert.equal(bitiba.links,0);
- const seed=catalog.offers.find(o=>o.id===expected);assert(seed);assert.equal(await page.$eval('#product-title',e=>e.textContent),seed.title);
+ const seed=catalog.offers.find(o=>o.id===expected);assert(seed);assert.equal(await page.$eval('#product-title',e=>e.textContent),seed.canonical_title||seed.title);
  const shareURL=await page.$eval('#product-share-url',e=>e.value);
  assert.equal(new URL(shareURL).origin,'https://offerte4zampe.it');assert.equal(new URL(shareURL).pathname,'/prodotto');assert.equal(new URL(shareURL).searchParams.get('id'),expected);assert.deepEqual([...new URL(shareURL).searchParams.keys()],['id']);
  await page.evaluate(()=>Object.defineProperty(navigator,'clipboard',{configurable:true,value:{writeText:async()=>{throw Error('denied')}}}));
@@ -76,7 +76,7 @@ export async function checkSuggestions(page,origin,catalog){
   for(const key of ['title','brand','variant','gtin'])assert.equal(key==='brand'?metadata.brand(seed[key]):String(seed[key]??''),key==='brand'?metadata.brand(entry[key]):String(entry[key]??''),'Mapped identity changed: '+entry.offer_id+' '+key);
   await page.goto(origin+'/prodotto.html?id='+encodeURIComponent(entry.offer_id),{waitUntil:'domcontentloaded'});
   await page.waitForSelector('#product-amazon a',{visible:true,timeout:30000});
-  assert.equal(await page.$eval('#product-title',e=>e.textContent),seed.title);
+  assert.equal(await page.$eval('#product-title',e=>e.textContent),seed.canonical_title||seed.title);
   const href=await page.$eval('#product-amazon a',e=>e.href);
   assert.equal(new URL(href).pathname,'/dp/'+entry.asin);
   assert.equal(new URL(href).searchParams.get('tag'),links.tracking_id);

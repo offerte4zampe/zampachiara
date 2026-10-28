@@ -30,7 +30,7 @@ function render(){
   const link=el('a','Verifica prezzo su Amazon ↗','btn secondary');link.href=amazonLink.url;link.target='_blank';link.rel='sponsored noopener noreferrer';amazon.append(link,el('p','Possiamo ricevere una commissione, senza costi aggiuntivi per te.','micro'));
  }
  else amazon.append(el('p','Corrispondenza esatta non ancora verificata: non proponiamo ricerche generiche o prodotti simili.','micro'));
- const o=view.seed;if(!$('product-watch').dataset.ready){O4ZWatch.mount($('product-watch'),o);$('product-watch').dataset.ready='1';}$('product-title').textContent=o.title;document.title=o.title+' — prezzi nei negozi | Offerte a 4 Zampe';
+ const o=view.seed;if(!$('product-watch').dataset.ready){O4ZWatch.mount($('product-watch'),o);$('product-watch').dataset.ready='1';}$('product-title').textContent=o.canonical_title||o.title;document.title=(o.canonical_title||o.title)+' — prezzi nei negozi | Offerte a 4 Zampe';
  $('product-format').textContent=[o.brand,o.variant==='1ct'?'':o.variant,o.weight_kg?(o.weight_kg<1?Number((o.weight_kg*1000).toFixed(3))+' g':o.weight_kg+' kg'):''].filter(Boolean).join(' · ');
  const image=safe(o.image);if(image){const img=document.createElement('img');img.src=image;img.alt=o.title;img.width=180;img.height=160;img.style.objectFit='contain';$('product-image').replaceChildren(img)}
  const reviewed=view.shops.some(s=>s.offers.some(o=>o.identity_review));

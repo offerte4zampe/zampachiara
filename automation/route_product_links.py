@@ -54,7 +54,7 @@ def apply(html, offers, merchant_choice=False):
         opening = '<a '+ ' '.join(escape(k)+'="'+escape(v or '', quote=True)+'"' for k,v in attrs.items())+'>'
         inner = match[0].split('>', 1)[1].rsplit('</a', 1)[0]
         if label in ('Vai al negozio ↗', 'Vedi nel negozio ↗'):
-            inner = 'Confronta nei negozi →'
+            inner = 'Vedi offerta →' if rows[0].get('canonical_shop_count', 2) < 2 else 'Confronta nei negozi →'
         return opening+inner+'</a>'
     return re.sub(r'<a\b[^>]*>.*?</a\s*>', route, html, flags=re.S | re.I)
 

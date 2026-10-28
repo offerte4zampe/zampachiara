@@ -24,15 +24,17 @@ function merchant(url){
 function matchKey(o,now=Date.now()){
  if(o.quantity_verified===false||o.weight_conflict)return '';
  if(o.identity_review&&(!Number.isFinite(Date.parse(o.identity_expires_at))||Date.parse(o.identity_expires_at)<now))return '';
- const code=String(o.gtin||''),stamp=Date.parse(o.checked_at);if(![8,12,13,14].includes(code.length)||!/^\d+$/.test(code)||new Set(code).size===1||!Number.isFinite(stamp)||now-stamp>36*3600000||stamp>now+300000||!(o.weight_kg>0)||!o.brand?.trim())return '';
+ const code=String(o.gtin||''),stamp=Date.parse(o.checked_at);if(![8,12,13,14].includes(code.length)||!/^\d+$/.test(code)||new Set(code).size===1||!Number.isFinite(stamp)||now-stamp>36*3600000||stamp>now+300000||!o.brand?.trim())return '';
  const digits=[...code.slice(0,-1)].reverse();const check=(10-digits.reduce((n,d,i)=>n+Number(d)*(i%2?1:3),0)%10)%10;if(check!==Number(code.at(-1)))return '';
+ if(o.product_identity_verified===true&&/^p-[a-f0-9]{20}$/.test(o.product_id||''))return JSON.stringify(['canonical',o.product_id]);
+ if(!(o.weight_kg>0))return '';
  return JSON.stringify([code.padStart(14,'0'),o.weight_kg,(metadata?metadata.brand(o.brand):o.brand).trim().toLowerCase()]);
 }
 function groupOffers(rows,now=Date.now()){
  const index=new Map(),keys=[];
  for(const o of rows){const k=matchKey(o,now);keys.push(k);if(k){let group=index.get(k);if(!group){group={offers:[],merchants:new Set()};index.set(k,group)}group.offers.push(o);group.merchants.add(o.merchant_id)}}
  const used=new Set(),result=[];
- for(let i=0;i<rows.length;i++){const k=keys[i],group=index.get(k);if(!group||group.merchants.size<2){result.push([rows[i]]);continue}if(!used.has(k)){used.add(k);result.push(group.offers)}}
+ for(let i=0;i<rows.length;i++){const k=keys[i],group=index.get(k);if(!group||(group.merchants.size<2&&!rows[i].product_identity_verified)){result.push([rows[i]]);continue}if(!used.has(k)){used.add(k);result.push(group.offers)}}
  return result;
 }
 function reportUrl(o){const p=new URLSearchParams();for(const [key,source,limit] of [['id','id',100],['title','title',240],['shop','merchant',100],['price','price',30],['checked','checked_at',60]])p.set(key,String(o[source]??'').slice(0,limit));return 'segnala-errore.html#'+p;}

@@ -107,6 +107,13 @@ def build():
     previous = json.loads(state_path.read_text()) if state_path.exists() else {}
     now = datetime.datetime.now(datetime.timezone.utc).replace(microsecond=0).isoformat()
     state, parts = inventory(ROOT/'site',previous,now)
+    canonical_path=ROOT/'site/data/canonical-sitemap.json'
+    if canonical_path.exists():
+        for row in json.loads(canonical_path.read_text()):
+            if not row['url'].startswith(BASE+'prodotto/'):raise ValueError('Unexpected canonical product URL')
+            if row['url'] in state:raise ValueError('Duplicate canonical product')
+            state[row['url']]={'content_hash':row['content_hash'],'lastmod':row.get('lastmod')}
+            parts['products'].append((row['url'],row.get('lastmod')))
     if not state:
         raise ValueError('No canonical pages found; preserve prior sitemap')
     index = ET.Element('{'+NS+'}sitemapindex')
