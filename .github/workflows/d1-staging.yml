@@ -1,0 +1,67 @@
+name: D1 shipping staging
+on:
+  pull_request:
+    branches: [main]
+    paths: ['worker/shipping-source.mjs','worker/staging-shipping.mjs','worker/staging/**','wrangler.staging.jsonc','automation/verify_d1_staging.py','site/data/shipping-rules.json','tests/test_shipping_source.mjs','.github/workflows/d1-staging.yml']
+  workflow_dispatch:
+    inputs:
+      remote:
+        description: 'Run on authenticated remote staging resources (never production)'
+        type: boolean
+        default: false
+permissions:
+  contents: read
+jobs:
+  local-workerd:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Shared loader and fallback tests
+        run: node --test tests/test_shipping_source.mjs tests/test_shipping_migration.mjs tests/test_canonical_product.mjs
+      - name: Install pinned Wrangler
+        run: npm install --prefix "$RUNNER_TEMP/d1-tools" wrangler@4.154.0
+      - name: Migrate, seed and verify in local workerd
+        run: python automation/verify_d1_staging.py --wrangler "$RUNNER_TEMP/d1-tools/node_modules/.bin/wrangler"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: local-workerd-shipping-report
+          path: |
+            staging-reports/local-shipping-report.json
+            staging-reports/local-migrations.log
+          if-no-files-found: warn
+  remote-staging:
+    if: github.event_name == 'workflow_dispatch' && inputs.remote
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment: cloudflare-staging
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned Wrangler
+        run: npm install --prefix "$RUNNER_TEMP/d1-tools" wrangler@4.154.0
+      - name: Verify separate remote D1 and staging Worker
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: python automation/verify_d1_staging.py --remote --wrangler "$RUNNER_TEMP/d1-tools/node_modules/.bin/wrangler"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: remote-d1-shipping-report
+          path: |
+            staging-reports/remote-shipping-report.json
+            staging-reports/remote-migrations.log
+          if-no-files-found: warn
