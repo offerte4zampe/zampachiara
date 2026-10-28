@@ -34,3 +34,15 @@ test('SQLite seed roundtrip feeds the same pricing implementation',()=>{
  const rows=JSON.parse(execFileSync('python',['-c',script],{encoding:'utf8'}));
  for(const shop of data.shops)assert.deepEqual(outcome(trade.shipping(offer(shop.id,59),trade.shippingRulesFromRows(rows,now),1,'standard',now)),outcome(trade.shipping(offer(shop.id,59),source,1,'standard',now)));
 });
+test('all three threshold modes distinguish one cent below, exact and one cent above',()=>{
+ const base=data.rules.find(r=>r.shop_id==='webpet');
+ for(const [mode,expected] of [['inclusive',[5.9,0,0]],['exclusive',[5.9,5.9,0]],['unknown',[5.9,undefined,0]]]){
+  const rules=trade.shippingRulesFromRows([{...base,free_from_cents:5900,threshold_mode:mode}],now);
+  for(const [i,cents] of [5899,5900,5901].entries())assert.equal(trade.shipping(offer('webpet',cents/100),rules,1,'standard',now).fee,expected[i]);
+ }
+});
+test('a current uncertain rule never falls back to an older verified rule',()=>{
+ const base=data.rules.find(r=>r.shop_id==='webpet');
+ const rows=[{...base,valid_to:new Date(now).toISOString()},{...base,valid_from:new Date(now).toISOString(),status:'uncertain',std_cents:null,free_from_cents:null}];
+ assert.equal(trade.shipping(offer('webpet',100),trade.shippingRulesFromRows(rows,now),1,'standard',now).total,undefined);
+});
