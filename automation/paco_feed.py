@@ -91,10 +91,10 @@ def verification_plan(rows, previous, peers, now, limit=80):
         prior=old.get(row['id'],{})
         # Display-brand normalization must not invalidate otherwise identical pack evidence.
         brand_key=lambda s: re.sub(r"[\s&’'!._-]+",'',str(s or '').casefold())
-        same=all(prior.get(k)==row.get(k) for k in ('title','feed_gtin','url','price')) and brand_key(prior.get('brand'))==brand_key(row.get('brand'))
+        same=all(prior.get(k)==row.get(k) for k in ('title','url','price')) and str(prior.get('feed_gtin','')).zfill(14)==str(row.get('feed_gtin','')).zfill(14) and brand_key(prior.get('brand'))==brand_key(row.get('brand'))
         checked=stamp(prior.get('quantity_checked_at'))
         kg=prior.get('weight_kg')
-        if same and prior.get('quantity_verified') is True and prior.get('gtin')==row['feed_gtin'] and isinstance(kg,(int,float)) and 0<kg<=1000 and prior.get('weight_source')=='merchant:selected_variant' and prior.get('variant') and checked and dt.timedelta(0)<=now-checked<=dt.timedelta(hours=36):
+        if same and prior.get('quantity_verified') is True and str(prior.get('gtin','')).zfill(14)==str(row['feed_gtin']).zfill(14) and isinstance(kg,(int,float)) and 0<kg<=1000 and prior.get('weight_source')=='merchant:selected_variant' and prior.get('variant') and checked and dt.timedelta(0)<=now-checked<=dt.timedelta(hours=36):
             for key in ('variant','gtin','weight_kg','weight_source','quantity_verified','quantity_checked_at'):
                 row[key]=prior[key]
             continue
