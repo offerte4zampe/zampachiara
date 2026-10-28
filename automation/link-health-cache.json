@@ -635,12 +635,6 @@
     "status": 200,
     "confirmations": 0
   },
-  "isola-dei-tesori:000110351": {
-    "url": "https://www.isoladeitesori.it/prodotto/trixie-set-palle-arcobaleno-in-spugna-4-pz/000110351.html",
-    "checked_at": "2026-10-20T15:52:57.490733+00:00",
-    "status": 200,
-    "confirmations": 0
-  },
   "webpet:52568870584660": {
     "url": "https://www.webpet.it/products/aqpetfriends-cat-toy-bastoncino-con-pappagallo-di-stoffa-e-campanella?variant=52568870584660",
     "checked_at": "2026-10-20T15:52:57.490733+00:00",
@@ -1483,12 +1477,6 @@
   },
   "bauzaar:56817608327493": {
     "url": "https://www.bauzaar.it/products/prolife-sterilised-sensitive-medium-large-adult-merluzzo-e-riso?variant=56817608327493",
-    "checked_at": "2026-10-20T20:24:39.720399+00:00",
-    "status": 200,
-    "confirmations": 0
-  },
-  "isola-dei-tesori:000110822": {
-    "url": "https://www.isoladeitesori.it/prodotto/trixie-scopa-di-matatabi-gioco-per-gatti-42428/000110822.html",
     "checked_at": "2026-10-20T20:24:39.720399+00:00",
     "status": 200,
     "confirmations": 0
@@ -2971,12 +2959,6 @@
   },
   "animaliapet:46976541917527": {
     "url": "https://www.animaliapet.eu/products/monge-mini-adult-agnello-riso-e-patate-7-5kg-crocchette-cani?variant=46976541917527",
-    "checked_at": "2026-10-21T15:23:14.292563+00:00",
-    "status": 200,
-    "confirmations": 0
-  },
-  "bauzaar:56818720473413": {
-    "url": "https://www.bauzaar.it/products/deli-pet-torta-di-compleanno-auguri-snack-per-cani?variant=56818720473413",
     "checked_at": "2026-10-21T15:23:14.292563+00:00",
     "status": 200,
     "confirmations": 0
@@ -7802,6 +7784,150 @@
   "webpet:52569003458900": {
     "url": "https://www.webpet.it/products/dashi-christmas-gnome-peluche-gioco-per-cani?variant=52569003458900",
     "checked_at": "2026-10-28T01:04:47.283886+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976557089111": {
+    "url": "https://www.animaliapet.eu/products/trixie-shampoo-pelo-chiaro-250ml-cani?variant=46976557089111",
+    "checked_at": "2026-10-28T07:01:21.393858+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56819247022405": {
+    "url": "https://www.bauzaar.it/products/borsetta-porta-sacchetti-hilo-hunter?variant=56819247022405",
+    "checked_at": "2026-10-28T07:01:21.393858+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000115304": {
+    "url": "https://www.isoladeitesori.it/prodotto/petup-joy-palla-tennis-64-cm/000115304.html",
+    "checked_at": "2026-10-28T07:01:21.393858+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52569003655508": {
+    "url": "https://www.webpet.it/products/aqpetfriends-giochi-per-cani-fluffymon-bolt?variant=52569003655508",
+    "checked_at": "2026-10-28T07:01:21.393858+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976557121879": {
+    "url": "https://www.animaliapet.eu/products/trixie-premium-guinzaglio-rosso-m-l-1m-20mm?variant=46976557121879",
+    "checked_at": "2026-10-28T07:01:21.393858+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56819247546693": {
+    "url": "https://www.bauzaar.it/products/borsetta-porta-sacchetti-hilo-hunter?variant=56819247546693",
+    "checked_at": "2026-10-28T07:01:21.393858+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000115305": {
+    "url": "https://www.isoladeitesori.it/prodotto/petup-joy-palla-tennis-10-cm/000115305.html",
+    "checked_at": "2026-10-28T07:01:21.393858+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52569003950420": {
+    "url": "https://www.webpet.it/products/aqpetfriends-giochi-per-cani-fluffymon-buz?variant=52569003950420",
+    "checked_at": "2026-10-28T07:01:21.393858+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976557154647": {
+    "url": "https://www.animaliapet.eu/products/trixie-premio-chicken-pasta-100g-snack-per-cani?variant=46976557154647",
+    "checked_at": "2026-10-28T07:01:21.393858+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56819247579461": {
+    "url": "https://www.bauzaar.it/products/borsetta-porta-sacchetti-hilo-hunter?variant=56819247579461",
+    "checked_at": "2026-10-28T07:01:21.393858+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000115306": {
+    "url": "https://www.isoladeitesori.it/prodotto/petup-joy-osso-in-latex-145-cm/000115306.html",
+    "checked_at": "2026-10-28T07:01:21.393858+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52569004081492": {
+    "url": "https://www.webpet.it/products/aqpetfriends-giochi-per-cani-fluffymon-horn?variant=52569004081492",
+    "checked_at": "2026-10-28T07:01:21.393858+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976557187415": {
+    "url": "https://www.animaliapet.eu/products/trixie-premium-collare-bordeaux-s-25-40cm-15m?variant=46976557187415",
+    "checked_at": "2026-10-28T07:01:21.393858+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56819247612229": {
+    "url": "https://www.bauzaar.it/products/borsetta-porta-sacchetti-hilo-hunter?variant=56819247612229",
+    "checked_at": "2026-10-28T07:01:21.393858+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000115308": {
+    "url": "https://www.isoladeitesori.it/prodotto/petup-joy-bilanciere-in-lattice-185-cm/000115308.html",
+    "checked_at": "2026-10-28T07:01:21.393858+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52569004245332": {
+    "url": "https://www.webpet.it/products/aqpetfriends-giochi-per-cani-fluffymon-wise?variant=52569004245332",
+    "checked_at": "2026-10-28T07:01:21.393858+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976557285719": {
+    "url": "https://www.animaliapet.eu/products/trixie-premium-collare-nero-xs-s-22-35cm-10mm?variant=46976557285719",
+    "checked_at": "2026-10-28T07:01:21.393858+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56819247644997": {
+    "url": "https://www.bauzaar.it/products/borsetta-porta-sacchetti-hilo-hunter?variant=56819247644997",
+    "checked_at": "2026-10-28T07:01:21.393858+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000115309": {
+    "url": "https://www.isoladeitesori.it/prodotto/petup-joy-pallina-face-7-cm/000115309.html",
+    "checked_at": "2026-10-28T07:01:21.393858+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52569004573012": {
+    "url": "https://www.webpet.it/products/aqpetfriends-giochi-per-cani-plush-animali-di-stoffa-con-effetto-sonoro?variant=52569004573012",
+    "checked_at": "2026-10-28T07:01:21.393858+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976557449559": {
+    "url": "https://www.animaliapet.eu/products/trixie-premium-collare-rosa-s-m-30-45cm-15mm?variant=46976557449559",
+    "checked_at": "2026-10-28T07:01:21.393858+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56819248431429": {
+    "url": "https://www.bauzaar.it/products/collare-convenience-hunter?variant=56819248431429",
+    "checked_at": "2026-10-28T07:01:21.393858+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000115310": {
+    "url": "https://www.isoladeitesori.it/prodotto/petup-joy-long-body-timmy-20-cm/000115310.html",
+    "checked_at": "2026-10-28T07:01:21.393858+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52569004835156": {
+    "url": "https://www.webpet.it/products/aqpetfriends-giochi-per-cani-plush-animali-di-stoffa-con-collo-lungo?variant=52569004835156",
+    "checked_at": "2026-10-28T07:01:21.393858+00:00",
     "status": 200,
     "confirmations": 0
   }
