@@ -60,14 +60,14 @@ export async function canonicalProduct(request,env,now=Date.now()){
  const state=view(p,rules,now,quantity,territory),page=content(p,state);
  const template=await env.ASSETS.fetch(new Request(new URL('/prodotto',url.origin)));if(!template.ok)return template;
  let html=await template.text();
- html=html.replace(/<main\b[\s\S]*?<\/main>/,()=>'<main id="main" data-canonical-product="'+esc(p.id)+'">'+page.body+'</main>')
+ html=html.replace('<head>','<head><base href="/">').replace(/<main\b[\s\S]*?<\/main>/,()=>'<main id="main" data-canonical-product="'+esc(p.id)+'">'+page.body+'</main>')
  .replace(/<title>[^<]*<\/title>/,()=>'<title>'+esc(page.title)+' | Offerte a 4 Zampe</title>')
  .replace(/<meta name="description" content="[^"]*">/,()=>'<meta name="description" content="'+esc(page.description)+'">')
  .replace(/<meta name="robots" content="[^"]*">/,()=>'<meta name="robots" content="'+(state.indexable&&quantity===1&&territory==='standard'?'index,follow':'noindex,follow')+'">')
  .replace(/<link rel="canonical" href="[^"]*">/,()=>'<link rel="canonical" href="'+page.url+'">')
  .replace(/<meta property="og:(title|description|url)" content="[^"]*">/g,(_,key)=>'<meta property="og:'+key+'" content="'+esc(key==='title'?page.title:key==='url'?page.url:page.description)+'">')
  .replace(/<script src="assets\/product\.js[^\"]*" defer><\/script>/,'')
- .replace('</head>','<base href="/"><script type="application/ld+json">'+JSON.stringify(page.schema).replace(/</g,'\\u003c')+'</script></head>');
+ .replace('</head>','<script type="application/ld+json">'+JSON.stringify(page.schema).replace(/</g,'\\u003c')+'</script></head>');
  const headers={'Content-Type':'text/html; charset=utf-8','Cache-Control':'public, max-age=300','X-Product-Model':'canonical-v1'};
  return new Response(request.method==='HEAD'?null:html,{status:200,headers});
 }
