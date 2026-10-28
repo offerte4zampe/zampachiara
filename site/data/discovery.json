@@ -1,14 +1,14 @@
 {
   "method_version": 1,
   "before": {
-    "indexable_pages": 321,
-    "reachable_from_home": 321,
+    "indexable_pages": 326,
+    "reachable_from_home": 326,
     "unreachable": [],
     "max_link_depth": 2
   },
   "after": {
-    "indexable_pages": 321,
-    "reachable_from_home": 321,
+    "indexable_pages": 326,
+    "reachable_from_home": 326,
     "unreachable": [],
     "max_link_depth": 2
   }
