@@ -5,7 +5,7 @@ import json
 from collections import Counter
 from html.parser import HTMLParser
 from pathlib import Path
-from urllib.parse import unquote, urlsplit
+from urllib.parse import unquote, urlsplit, parse_qsl
 
 ROOT=Path(__file__).resolve().parents[1]
 BASE='offerte4zampe.it'
@@ -104,7 +104,11 @@ def inspect(site):
                 if target_page not in available:
                     local.append('valid_internal_link')
                 elif fragment and fragment not in parsed[target_page].ids:
-                    local.append('valid_internal_fragment')
+                    # The report form consumes allowlisted context in the fragment;
+                    # it is application state, not an HTML anchor target.
+                    fields=parse_qsl(urlsplit(href).fragment, keep_blank_values=True)
+                    report_context=(target_page=='segnala-errore.html' and fields and any(k=='id' and v for k,v in fields) and all(k in ('id','title','shop','price','checked') for k,v in fields))
+                    if not report_context:local.append('valid_internal_fragment')
         for image in p.images:
             if 'alt' not in image:local.append('image_alt')
             if not image.get('width') or not image.get('height'):local.append('image_dimensions')

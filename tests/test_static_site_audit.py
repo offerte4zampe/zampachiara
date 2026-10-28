@@ -53,3 +53,11 @@ class StaticSiteAuditTests(unittest.TestCase):
         result=self.run_site({'google123.html':token,'one.html':BASE.format(slug='one',body='')})
         self.assertEqual(result['pages_scanned'],1)
         self.assertEqual(result['issues'],[])
+
+    def test_report_context_is_application_state_not_a_broken_anchor(self):
+        target=BASE.format(slug='segnala-errore',body='')
+        one=BASE.format(slug='one',body='<a href="/segnala-errore#id=shop%3A123&amp;title=Test">Segnala</a>')
+        self.assertEqual(self.run_site({'one.html':one,'segnala-errore.html':target})['issues'],[])
+        for href in ['/segnala-errore#missing','/segnala-errore#id=123&amp;unknown=1','/one#id=123']:
+            source=BASE.format(slug='one',body='<a href="'+href+'">Segnala</a>')
+            self.assertIn('valid_internal_fragment',{x['rule'] for x in self.run_site({'one.html':source,'segnala-errore.html':target})['issues']})
