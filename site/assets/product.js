@@ -35,7 +35,7 @@ function render(){
  if(!offerTools.has(offer.id)){
   const tools=el('div','','product-tools');tools.append(O4ZHistory.mount(offer.id),O4ZDaily.mount(offer));
   const add=el('button','Aggiungi una confezione alla lista','btn secondary');add.type='button';add.dataset.productBasket=offer.id;add.disabled=!offer.available;add.onclick=()=>{$('product-list-status').textContent=O4ZBasket.addProduct(offer,catalog.offers)};tools.append(add);
-  const report=el('a','Prezzo o dati sbagliati? Segnala','micro');report.href=O4ZTrade.reportUrl(offer);report.dataset.productReport='';tools.append(report);
+  const report=el('a','Prezzo o dati sbagliati? Segnala','micro');report.href=O4ZTrade.reportUrl(offer);report.rel='nofollow';report.dataset.productReport='';tools.append(report);
   offerTools.set(offer.id,tools);
  }
  row.append(offerTools.get(offer.id));
