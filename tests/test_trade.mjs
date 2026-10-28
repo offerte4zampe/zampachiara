@@ -58,3 +58,12 @@ test('per-merchant shipping verification cannot renew stale rules for other shop
  assert.equal(shipping(offer,rules,1,'special',now).total,undefined);
  assert.equal(shipping(offer,{...rules,merchants:{paco:{...rules.merchants.paco,checked_at:'2026-11-01'}}},1,'standard',now).total,undefined);
 });
+
+test('reviewed identity expires independently of price freshness',()=>{
+ const {matchKey}=require('../site/assets/trade.js');
+ const now=Date.parse('2026-10-28T12:00:00Z');
+ const o={gtin:'4006381333931',brand:'Brand',weight_kg:.03,checked_at:'2026-10-28T11:00:00Z',identity_review:'explicit-review',identity_expires_at:'2026-10-29T00:00:00Z'};
+ assert(matchKey(o,now));
+ assert.equal(matchKey({...o,identity_expires_at:'2026-10-27'},now),'');
+ assert.equal(matchKey({...o,identity_expires_at:undefined},now),'');
+});

@@ -13,13 +13,17 @@ def gtin(value):
 def build():
  path=ROOT/'site/data/catalog.json.gz';d=json.loads(gzip.decompress(path.read_bytes()));cachepath=ROOT/'automation/identifier-cache.json'
  cache=json.loads(cachepath.read_text()) if cachepath.exists() else {};now=datetime.datetime.now(datetime.timezone.utc);robots={};urls={}
- # Recover only explicit package weights, never ambiguous partner quantities.
+ # Recompute inferred title weights too: old parser results must not persist.
+ from reviewed_identity import apply as apply_reviewed_identity
  for o in d['offers']:
-  if not o.get('weight_kg') and o.get('quantity_verified') is not False:
+  if o.get('quantity_verified') is False:continue
+  inferred=o.get('weight_source') in ('explicit_package_label','official_feed:title')
+  if not o.get('weight_kg') or inferred:
    label=str(o.get('variant') or '')
    if not re.search(r'\d\s*(?:kg|g|gr)\b',label,re.I):label=o['title']
    kg=weight(label)
-   if kg and 0<kg<=1000:o.update(weight_kg=kg,weight_source='explicit_package_label')
+   o.update(weight_kg=kg,weight_source='explicit_package_label' if kg else '')
+ apply_reviewed_identity(d['offers'], json.loads((ROOT/'automation/reviewed-identities.json').read_text()), now)
  # Prefer matching brands and weights across sources, with both cats and dogs represented.
  brands={}
  for o in d['offers']:
@@ -65,7 +69,7 @@ def build():
    time.sleep(.25)
   except Exception:continue
  for o in d['offers']:
-  o['gtin']=gtin(o.get('gtin'));o['gtin_source']='catalog' if o['gtin'] else ''
+  o['gtin']=gtin(o.get('gtin'));o['gtin_source']=o.get('gtin_source') or ('catalog' if o['gtin'] else '')
   e=cache.get(o['id'])
   if o.get('source_type')!='official_feed' and e and (now-datetime.datetime.fromisoformat(e['checked_at'])).days<30:
    if e['gtin']:o.update(gtin=e['gtin'],gtin_source=e['source'],gtin_checked_at=e['checked_at'])
@@ -77,6 +81,9 @@ def build():
   if o['gtin'] and o.get('weight_kg'):groups.setdefault((o['gtin'],o['weight_kg'],o['brand'].strip().casefold()),[]).append(o)
  matched=[v for v in groups.values() if len({o['merchant_id'] for o in v})>1]
  audit={'checked_at':now.isoformat(),'offers':len(d['offers']),'with_valid_gtin':sum(bool(o['gtin']) for o in d['offers']),'cross_shop_groups':len(matched),'method':'Codice a barre con checksum valido e stesso peso netto esplicito. Nomi non usati per certificare equivalenza.'}
+ audit['reviewed_identities']=sum(bool(o.get('identity_review')) for o in d['offers'])
+ audit['method']='GTIN con checksum valido e stesso peso netto; eventuali equivalenze revisionate riportano fonte e scadenza. Nessun abbinamento automatico per somiglianza del nome.'
+ audit['merchant_coverage']={source['id']:{'offers':sum(o['merchant_id']==source['id'] for o in d['offers']),'with_gtin':sum(o['merchant_id']==source['id'] and bool(o.get('gtin')) for o in d['offers']),'with_weight':sum(o['merchant_id']==source['id'] and bool(o.get('weight_kg')) for o in d['offers']),'in_cross_shop_groups':sum(o['merchant_id']==source['id'] for g in matched for o in g)} for source in d['sources']}
  (ROOT/'site/data/catalog-quality.json').write_text(json.dumps(audit,ensure_ascii=False))
  print(json.dumps(audit));print('Requested product pages:',len(selected))
 if __name__=='__main__':build()

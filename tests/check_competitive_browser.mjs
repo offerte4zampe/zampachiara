@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-export async function checkCompetitive(page,origin){
+export async function checkCompetitive(page,origin,catalog){
  await page.goto(origin+'/confronta-cibo.html',{waitUntil:'domcontentloaded'});
  await page.waitForSelector('#catalog-grid article',{timeout:30000});
  assert.equal(await page.$eval('#catalog-sort',e=>e.value),'matched');
@@ -15,4 +15,21 @@ export async function checkCompetitive(page,origin){
  assert.equal(await page.$eval('#catalog-animal',e=>e.value),'Cane');assert.equal(await page.$eval('#catalog-type',e=>e.value),'Cibo secco');
  await page.click('#catalog-reset');for(const key of ['animal','type','age','size','pack'])assert.equal(await page.$eval('#catalog-'+key,e=>e.value),'');
  assert(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth<=1));
+ // Regression: the exact reviewed 30 x 1 g offers must share one product view.
+ const ids=['bauzaar:56820111606085','isola-dei-tesori:000132103'];
+ const rows=ids.map(id=>catalog.offers.find(o=>o.id===id));
+ if(rows.every(o=>o&&o.weight_kg===.03&&o.gtin===rows[0].gtin)){
+  await page.goto(origin+'/prodotto.html?id='+encodeURIComponent(ids[0]),{waitUntil:'domcontentloaded'});
+  await page.waitForSelector('#product-price-table [data-comparison-offer]',{timeout:30000});
+  const offers=await page.$$eval('#product-price-table [data-comparison-offer]',es=>es.map(e=>e.dataset.comparisonOffer));
+  for(const id of ids)assert(offers.includes(id),'Missing Fortiflora store: '+id);
+  assert(!(await page.$eval('#product-shops',e=>e.textContent)).includes('Non presente nel catalogo'));
+  assert(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth<=1));
+  await page.screenshot({path:'browser-reports/fortiflora-comparison-mobile.png',fullPage:true});
+  await page.goto(origin+'/confronta-cibo.html?q=fortiflora',{waitUntil:'domcontentloaded'});
+  await page.waitForSelector('#catalog-grid .catalog-group',{timeout:30000});
+  const cards=await page.$$eval('#catalog-grid .catalog-group',es=>es.map(e=>({text:e.textContent,titles:e.querySelectorAll('h3').length})));
+  assert(cards.some(c=>c.text.includes('Bauzaar')&&c.text.includes('Isola dei Tesori')&&c.titles===1));
+ }
+
 }

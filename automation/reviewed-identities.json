@@ -1,0 +1,29 @@
+[
+  {
+    "id": "fortiflora-canine-powder-30x1g",
+    "reference_id": "bauzaar:56820111606085",
+    "gtin": "08445290041074",
+    "weight_kg": 0.03,
+    "reviewed_at": "2026-10-28T00:00:00+00:00",
+    "expires_at": "2027-01-26T00:00:00+00:00",
+    "evidence": [
+      "https://www.bauzaar.it/products/purina-veterinary-diets-fortiflora-canine?variant=56820111606085",
+      "https://www.isoladeitesori.it/prodotto/purina-proplan-fortiflora-probiotic-per-cani-30-pz-x-1-gr/000132103.html"
+    ],
+    "note": "Revisione esplicita delle due schede: Fortiflora Canine Probiotic polvere, 30 bustine da 1 g. GTIN dal catalogo Bauzaar; il feed Isola non dichiara un codice. Esclusi Chews, Plus, Feline e confezioni da 7. Non è una lettura del barcode Isola.",
+    "offers": [
+      {
+        "id": "bauzaar:56820111606085",
+        "title": "Purina Pro Plan Fortiflora Canine Probiotic Supporto intestinale Stick per cani 1 gr x 30 - Integratori per cani",
+        "url": "https://www.bauzaar.it/products/purina-veterinary-diets-fortiflora-canine?variant=56820111606085",
+        "brand": "Purina Pro Plan"
+      },
+      {
+        "id": "isola-dei-tesori:000132103",
+        "title": "Purina ProPlan Fortiflora Probiotic per Cani 30 pz x 1 gr",
+        "url": "https://www.isoladeitesori.it/prodotto/purina-proplan-fortiflora-probiotic-per-cani-30-pz-x-1-gr/000132103.html",
+        "brand": "Purina Pro Plan"
+      }
+    ]
+  }
+]

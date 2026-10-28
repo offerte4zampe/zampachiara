@@ -16,19 +16,35 @@ def amount(v):
         d=Decimal(str(v)); return float(d) if d.is_finite() and 0<d<100000 else None
     except (InvalidOperation,ValueError): return None
 def weight(label):
-    # Only explicitly labelled package weights. Shipping grams are NOT net weight.
-    s=label.lower().replace(',','.')
+    """Net weight of the selling pack, only from explicit unambiguous quantities."""
+    s=str(label or '').lower().replace(',', '.')
     s=re.sub(r'(?<=\d)\s*gr\b|\bgr\b', 'g', s)
-    # A life-stage suffix is not a bonus quantity (e.g. Adult 5+ 15 kg).
     s=re.sub(r'\b(adult|senior|ageing|mature|maxi|medium|mini)\s+\d{1,2}\+(?!\d)', r'\1', s)
-    if '+' in s: return None
-    if re.search(r'\d\s*[-–/]\s*\d|\b(?:peso del cane|peso corporeo|cani da|fino a|oltre)\b',s): return None
-    if re.search(r'\d+\s*(?:pz|pezzi|lattine|buste|bustine|confezioni)\b',s) and not re.search(r'\d+\s*[x×]',s): return None
-    pack=re.search(r'(\d+)\s*[x×]\s*(\d+(?:\.\d+)?)\s*(kg|g)\b',s)
-    if pack: return round(int(pack[1])*float(pack[2])/(1000 if pack[3]=='g' else 1),6)
-    matches=list(re.finditer(r'(?<![\d.])(\d+(?:\.\d+)?)\s*(kg|g)\b',s))
-    if len(matches)==1:return float(matches[0][1])/(1000 if matches[0][2]=='g' else 1)
+    if '+' in s or re.search(r'\d\s*[-–/]\s*\d|\b(?:peso del cane|peso corporeo|cani da|fino a|oltre)\b',s): return None
+    number=r'(\d+(?:\.\d+)?)'
+    unit=r'(kg|g)(?=\b|[x×]\d)'
+    count=r'(?:pz|pezzi|lattine|buste|bustine|compresse|confezioni|stick)'
+    # Count before unit (30 pz x 1 g) and reverse (1 g x 30).
+    patterns=[(r'(?<![\d.])(\d+)\s*(?:'+count+r'\s*)?[x×]\s*'+number+r'\s*'+unit, False),
+              (r'(?<![\d.])'+number+r'\s*'+unit+r'\s*[x×]\s*(\d+)(?![\d.])\s*(?:'+count+r'\b)?', True),
+              (r'(?<![\d.])(\d+)\s*'+count+r'\s+da\s+'+number+r'\s*'+unit, False)]
+    packs=[]
+    for pattern,reverse in patterns:
+        for m in re.finditer(pattern,s):
+            n,amount,u=(int(m[3]),float(m[1]),m[2]) if reverse else (int(m[1]),float(m[2]),m[3])
+            # Additional quantities outside this explicit pack make the label ambiguous.
+            remainder=s[:m.start()]+s[m.end():]
+            if re.search(number+r'\s*'+unit,remainder) or re.search(r'\d+\s*'+count+r'\b',remainder): return None
+            total=round(n*amount/(1000 if u=='g' else 1),6)
+            if n>0 and 0<total<=1000:packs.append(total)
+    if packs:return packs[0] if len(packs)==1 else None
+    if re.search(r'\d+\s*'+count+r'\b|(?<![a-z])[x×]\s*\d',s): return None
+    matches=list(re.finditer(r'(?<![\d.])'+number+r'\s*'+unit,s))
+    if len(matches)==1:
+        kg=float(matches[0][1])/(1000 if matches[0][2]=='g' else 1)
+        return kg if 0<kg<=1000 else None
     return None
+
 def collect(source, shipping_only=False):
     sid,name,base=source; now=datetime.datetime.now(datetime.timezone.utc).isoformat(); rows=[]
     try:

@@ -1,6 +1,25 @@
 {
   "entries": [
-    {"date": "2026-10-20", "origin": "Controllo interno", "title": "Peso di spedizione vicino al limite", "detail": "Il calcolo del carrello conserva il peso di trasporto senza arrotondarlo verso il basso: 35,004 kg non diventano 35 kg. Se il peso supera il limite modellato, il totale non viene stimato.", "evidence": "https://github.com/offerte4zampe/zampachiara/commit/ad85037bd48fd864628515c21656d594c8effca9"},
-    {"date": "2026-10-20", "origin": "Controllo interno", "title": "Costo giornaliero soltanto con peso netto verificato", "detail": "Il campo per la razione giornaliera viene mostrato soltanto per categorie alimentari riconoscibili con peso netto positivo. Il peso di trasporto non sostituisce il peso dell’alimento.", "evidence": "https://github.com/offerte4zampe/zampachiara/commit/3f77ebf07a01017ae7b2dd2d84a5b087ac042976"}
+    {
+      "date": "2026-10-28",
+      "origin": "Segnalazione utente e verifica interna",
+      "title": "Confezioni multiple e confronto FortiFlora",
+      "detail": "Corretto il peso totale dei formati espliciti come 30 pz x 1 g e 1 g x 30. La scheda Isola FortiFlora Canine polvere 30 bustine era importata e disponibile ma priva di GTIN: abbinamento revisionato con la corrispondente scheda Bauzaar, sospeso se cambiano titolo, formato o identificativi. L’assenza di un abbinamento non viene più presentata come assenza dal catalogo del negozio. Prezzi e date dei rilevamenti restano quelli importati.",
+      "evidence": "https://www.isoladeitesori.it/prodotto/purina-proplan-fortiflora-probiotic-per-cani-30-pz-x-1-gr/000132103.html"
+    },
+    {
+      "date": "2026-10-20",
+      "origin": "Controllo interno",
+      "title": "Peso di spedizione vicino al limite",
+      "detail": "Il calcolo del carrello conserva il peso di trasporto senza arrotondarlo verso il basso: 35,004 kg non diventano 35 kg. Se il peso supera il limite modellato, il totale non viene stimato.",
+      "evidence": "https://github.com/offerte4zampe/zampachiara/commit/ad85037bd48fd864628515c21656d594c8effca9"
+    },
+    {
+      "date": "2026-10-20",
+      "origin": "Controllo interno",
+      "title": "Costo giornaliero soltanto con peso netto verificato",
+      "detail": "Il campo per la razione giornaliera viene mostrato soltanto per categorie alimentari riconoscibili con peso netto positivo. Il peso di trasporto non sostituisce il peso dell’alimento.",
+      "evidence": "https://github.com/offerte4zampe/zampachiara/commit/3f77ebf07a01017ae7b2dd2d84a5b087ac042976"
+    }
   ]
 }

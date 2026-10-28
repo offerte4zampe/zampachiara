@@ -3,6 +3,21 @@ const $=id=>document.getElementById(id),money=new Intl.NumberFormat('it-IT',{sty
 const el=(tag,value,cls)=>{const n=document.createElement(tag);n.textContent=value;if(cls)n.className=cls;return n};
 const safe=s=>{try{const u=new URL(s);return u.protocol==='https:'&&!u.username&&!u.password?u.href:''}catch{return ''}};
 let catalog,id,shippingRules=null,amazonLinks=null;const offerTools=new Map();
+function comparisonTable(view){
+ let container=$('product-price-table');if(!container){container=el('section','','product-comparison');container.id='product-price-table';$('product-quantity').closest('.panel').before(container)}
+ container.replaceChildren(el('h2','Prezzi nei negozi'),el('p','Su schermi piccoli scorri la tabella per vedere totale e collegamenti ai negozi.','micro'));
+ const wrap=el('div','','comparison-scroll');wrap.tabIndex=0;wrap.setAttribute('role','region');wrap.setAttribute('aria-label','Tabella prezzi e spedizioni, scorribile');
+ const table=el('table','','comparison-table'),caption=el('caption','Stesso prodotto e formato · prezzi rilevati, da confermare nel negozio');table.append(caption);
+ const head=el('thead',''),tr=el('tr','');for(const label of ['Negozio','Prezzo','Spedizione','Totale stimato','Disponibilità','Offerta']){const th=el('th',label);th.scope='col';tr.append(th)}head.append(tr);table.append(head);
+ const body=el('tbody','');
+ for(const shop of view.shops){for(const offer of shop.offers){const row=el('tr',''),q=shop.quotes.get(offer.id);row.dataset.comparisonOffer=offer.id;
+ const seller=el('th',shop.source.name);seller.scope='row';if(offer.identity_review)seller.append(el('small','Abbinamento revisionato'));
+ row.append(seller,el('td',money.format(offer.price)),el('td',q.fee!==undefined?money.format(q.fee):'Da verificare'),el('td',q.total!==undefined?money.format(q.total):'Non calcolabile'));
+ const status=el('td',offer.available?'Disponibile al rilevamento':'Esaurito al rilevamento');status.append(el('small',new Date(offer.checked_at).toLocaleString('it-IT')));row.append(status);
+ const action=el('td',''),target=safe(offer.affiliate_url||offer.url);if(offer.available&&target){const a=el('a','Vai al negozio ↗','btn secondary');a.href=target;a.target='_blank';a.rel=offer.affiliate_url?'sponsored noopener noreferrer':'noopener noreferrer';action.append(a)}row.append(action);body.append(row);
+ }}
+ table.append(body);wrap.append(table);container.append(wrap,el('p','Il totale usa quantità e destinazione selezionate. Le spese mancanti non valgono zero. I link affiliati possono generare una commissione, senza costi aggiuntivi.','micro'));
+}
 function render(){
  const quantity=Number($('product-quantity').value),territory=$('product-territory').value;
  const view=O4ZProduct.productView(catalog,id,Date.now(),shippingRules,quantity,territory);
@@ -16,16 +31,18 @@ function render(){
  }
  else amazon.append(el('p','Corrispondenza esatta non ancora verificata: non proponiamo ricerche generiche o prodotti simili.','micro'));
  const o=view.seed;if(!$('product-watch').dataset.ready){O4ZWatch.mount($('product-watch'),o);$('product-watch').dataset.ready='1';}$('product-title').textContent=o.title;document.title=o.title+' — prezzi nei negozi | Offerte a 4 Zampe';
- $('product-format').textContent=[o.brand,o.variant,o.weight_kg?o.weight_kg+' kg':''].filter(Boolean).join(' · ');
+ $('product-format').textContent=[o.brand,o.variant==='1ct'?'':o.variant,o.weight_kg?(o.weight_kg<1?Number((o.weight_kg*1000).toFixed(3))+' g':o.weight_kg+' kg'):''].filter(Boolean).join(' · ');
  const image=safe(o.image);if(image){const img=document.createElement('img');img.src=image;img.alt=o.title;img.width=180;img.height=160;img.style.objectFit='contain';$('product-image').replaceChildren(img)}
+ const reviewed=view.shops.some(s=>s.offers.some(o=>o.identity_review));
  const availableShops=view.shops.filter(s=>s.offers.some(o=>o.available)).length;
- $('product-status').textContent=availableShops+' negoz'+(availableShops===1?'io':'i')+' con offerte disponibili al rilevamento. '+(view.exact?'Confronto dello stesso GTIN, marca e peso netto. Verifica comunque ricetta e confezione prima di acquistare.':'Identità condivisa non verificabile: mostriamo la sola offerta selezionata, senza abbinare prodotti dai nomi simili.');
+ $('product-status').textContent=availableShops+' negoz'+(availableShops===1?'io':'i')+' con offerte disponibili al rilevamento. '+(view.exact?(reviewed?'Confronto con abbinamento revisionato delle schede e del formato. Il codice non è dichiarato da tutti i negozi.':'Confronto dello stesso GTIN, marca e peso netto. Verifica comunque ricetta e confezione prima di acquistare.'):'Identità condivisa non verificabile: mostriamo la sola offerta selezionata, senza abbinare prodotti dai nomi simili.');
+ comparisonTable(view);
  const grid=$('product-shops');grid.replaceChildren();const other=el('details','','panel'),summary=el('summary','Altri negozi: copertura e dati non disponibili');other.append(summary);for(const shop of view.shops){
  const card=el('article','','panel');card.dataset.productShop=shop.source.id;card.append(el('h2',shop.source.name));
  if(shop.source.status==='pending-feed'){
  card.append(el('p','Prezzo: non disponibile · Disponibilità: non verificata','micro'),el('p','Catalogo '+shop.source.name+' non ancora collegato. Non possiamo confermare lo stesso prodotto e formato né indicarne il prezzo.','micro'));
  }
- else if(shop.state!=='listed'){const labels={missing:'Non presente nel catalogo di questo negozio',unknown:'Disponibilità non verificabile: catalogo non aggiornato o non disponibile',unmatched:'Corrispondenza non verificata in questo negozio',stale:'Dati da aggiornare: prezzo e disponibilità non confermati'};card.append(el('p',labels[shop.state]));}
+ else if(shop.state!=='listed'){const labels={missing:'Nessuna offerta abbinata con certezza: il negozio potrebbe vendere questo prodotto',unknown:'Disponibilità non verificabile: catalogo non aggiornato o non disponibile',unmatched:'Corrispondenza non verificata in questo negozio',stale:'Dati da aggiornare: prezzo e disponibilità non confermati'};card.append(el('p',labels[shop.state]));if(shop.source.status==='ok'){const a=el('a','Cerca tra le offerte importate di '+shop.source.name+' →','micro');a.dataset.catalogSearch='';a.href='/confronta-cibo?'+new URLSearchParams({shop:shop.source.name,q:o.title.split(' - ')[0].split(/\s+/).slice(0,5).join(' ')});card.append(a)}}
  for(const offer of shop.offers){
  const row=el('section','','matched-offer');row.append(el('p',offer.variant||offer.title,'micro'),el('strong',money.format(offer.price)),el('p',offer.weight_kg?money.format(offer.price/offer.weight_kg)+'/kg · spedizione esclusa':'Spedizione esclusa','micro'),el('p',offer.available?'Disponibile al rilevamento':'Esaurito al rilevamento'),el('p','Rilevato: '+new Date(offer.checked_at).toLocaleString('it-IT'),'micro'));
  const quote=shop.quotes.get(offer.id);const estimate=el('p',quote.total!==undefined?'Totale stimato: '+money.format(quote.total)+' ('+quantity+' confezioni · spedizione '+money.format(quote.fee)+')':'Totale non calcolato: '+quote.reason,'micro');estimate.dataset.shippingEstimate=offer.id;row.append(estimate);
