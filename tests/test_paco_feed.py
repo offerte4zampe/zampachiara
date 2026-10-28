@@ -63,3 +63,10 @@ class PacoVerificationPlanTest(unittest.TestCase):
   self.assertEqual(rows[0]['quantity_checked_at'],prior['quantity_checked_at'])
   rows=normalize(fixture(),self.now);rows[0]['brand']='Farmina'
   self.assertEqual(verification_plan(rows,[prior],set(),self.now),[0])
+
+ def test_catalog_padded_gtin_preserves_quantity_proof_across_refresh(self):
+  prior=self.verified();prior['gtin']=prior['gtin'].zfill(14)
+  rows=normalize(fixture(),self.now+dt.timedelta(hours=6))
+  self.assertEqual(verification_plan(rows,[prior],set(),self.now+dt.timedelta(hours=6)),[])
+  self.assertTrue(rows[0]['quantity_verified']);self.assertEqual(rows[0]['weight_kg'],2.04)
+  self.assertEqual(rows[0]['quantity_checked_at'],prior['quantity_checked_at'])
