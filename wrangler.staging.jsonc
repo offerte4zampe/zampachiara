@@ -1,0 +1,14 @@
+{
+  "name": "zampachiara-d1-staging",
+  "main": "worker/staging-shipping.mjs",
+  "compatibility_date": "2026-10-15",
+  "workers_dev": true,
+  "routes": [],
+  "vars": {"SHIPPING_RULES_SOURCE":"json","SHIPPING_SHADOW":"false","STAGING_LOCATION":"local"},
+  "d1_databases": [{
+    "binding": "SHIPPING_DB_STAGING",
+    "database_name": "zampachiara-shipping-staging",
+    "database_id": "00000000-0000-0000-0000-000000000000",
+    "migrations_dir": "worker/staging/migrations"
+  }]
+}

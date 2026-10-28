@@ -35,6 +35,7 @@
     }
   },
   "keep_vars": true,
+  "vars": {"SHIPPING_RULES_SOURCE":"json","SHIPPING_SHADOW":"false"},
   "durable_objects": {
     "bindings": [
       {

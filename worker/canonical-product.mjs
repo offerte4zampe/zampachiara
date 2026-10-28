@@ -1,4 +1,5 @@
 import trade from '../site/assets/trade.js';
+import {shippingSource} from './shipping-source.mjs';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const money=n=>new Intl.NumberFormat('it-IT',{style:'currency',currency:'EUR'}).format(n);
 const safe=u=>{try{const url=new URL(u);return url.protocol==='https:'&&!url.username&&!url.password?url.href:''}catch{return ''}};
@@ -57,7 +58,8 @@ export async function canonicalProduct(request,env,now=Date.now()){
  if(!p)return new Response('Prodotto non trovato',{status:404,headers:{'Content-Type':'text/plain; charset=utf-8'}});
  const rules=await jsonAsset(env,url.origin,'/data/shipping-rules.json');const quantity=Number(url.searchParams.get('quantity')||1),territory=url.searchParams.get('territory')==='special'?'special':'standard';
  if(!Number.isInteger(quantity)||quantity<1||quantity>10)return new Response('Quantità non valida',{status:400});
- const state=view(p,rules,now,quantity,territory),page=content(p,state);
+ const loaded=await shippingSource(env,p.offers,rules,{now,quantity,territory});
+ const state=view(p,loaded.rules,now,quantity,territory),page=content(p,state);
  const template=await env.ASSETS.fetch(new Request(new URL('/prodotto',url.origin)));if(!template.ok)return template;
  let html=await template.text();
  html=html.replace('<head>','<head><base href="/">').replace(/<main\b[\s\S]*?<\/main>/,()=>'<main id="main" data-canonical-product="'+esc(p.id)+'">'+page.body+'</main>')
