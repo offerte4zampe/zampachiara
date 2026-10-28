@@ -1,5 +1,5 @@
 {
-  "updated_at": "27/10/2026 06:05 UTC — i link RSS non sono verificati editorialmente",
+  "updated_at": "28/10/2026 06:12 UTC — i link RSS non sono verificati editorialmente",
   "items": [
     {
       "title": "In Valle d’Aosta avviati tre servizi pubblici per animali da compagnia",
@@ -26,6 +26,14 @@
       "verified": true
     },
     {
+      "title": "Nuovo Codice della strada, la LAV chiede a Salvini di tutelare il soccorso veterinario - La Piazza Web",
+      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNRGd0STRIVzdKQlRYTHNydUk4Y0tQdlZsQmpNUkx6WG95V3l0MnJDNjJPWWdNM2tlcEFoQnBSQ1Y3SXYwNnJMa0F1ZTF4dGRQMGVzWFhBb2JzVGR5NTZkV004dkVUU1NXc3V6cWVQcGc1YkxEdFE5QncwMlN2N0p6UklMN3I4UnJ3ME1HQ29NQzJVc1BiVTFFekJrLU51RmdrLVlZOG1sMHowdUhQeHFncnJodG5VakNCbmZwRUNpMHdVODBHMjhVeFZaYTFldFB3X0tLZVdR?oc=5",
+      "source": "La Piazza Web",
+      "date": "27/10/2026",
+      "category": "Feed RSS · non verificato editorialmente",
+      "verified": false
+    },
+    {
       "title": "Pet Health Vietnam 2026 mira a sensibilizzare l'opinione pubblica sull'alimentazione degli animali domestici. - Vietnam.vn",
       "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPRFEwNHZGaGVaY1BoMlZQVzl4bkpqbGt6Tlk0TnNoWFluSjVzRFVhU1ZVM1AyVmVOWTdxYWw5U2tPbHlLRVpQeG1aV1ByXzFPbGVSRV94ZU5aMExGeVhBUmFPTldNYWh0MTc1UkpiZndQdS15eXVCdW9UT09BR1BiQTNqa2xaR2lUdkNoaEJVc1dOckZUT0E?oc=5",
       "source": "Vietnam.vn",
@@ -50,25 +58,17 @@
       "verified": false
     },
     {
+      "title": "Traffico illegale di cuccioli a Napoli, animali malati venduti come cani di razza - lentepubblica.it",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQdnREVGxHNW9veDZqOWNhSW53SXNwdkh1UEFOSlI1TlJBYktQTUI5Y0thRFplV014WDZCMW9ROUE1eGl6NEZLc19xdUg2ZmFraWY0MVp2MDBQYUZuQkxQOHVEUGR3WTJwaWRCR0RoZE5WNk5yR1V1eDc3aEVxcWk0NnRUeDJZZw?oc=5",
+      "source": "lentepubblica.it",
+      "date": "25/10/2026",
+      "category": "Feed RSS · non verificato editorialmente",
+      "verified": false
+    },
+    {
       "title": "Caserta, scoperto canile abusivo in una discarica: salvati 16 cani, un denunciato - Sbircia la Notizia Magazine",
       "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPUVVsT0ctOVdLMWZhRF9vYTlRNFdXVjNxWUVPdThULWVmU3pkVXVraDlWcnVzZ1o4TFEwTVpfa2RQbWVHd1doVlNuanZISXA0RTRnVjc2ci10TUtPRV92UEU0WDRpX3ZnYnhCZzNWX0xObG5YRENIZ2tZWmdNSEF4Tk1EWFg5MVdN?oc=5",
       "source": "Sbircia la Notizia Magazine",
-      "date": "24/10/2026",
-      "category": "Feed RSS · non verificato editorialmente",
-      "verified": false
-    },
-    {
-      "title": "Caserta, canile abusivo in una discarica al confine con Maddaloni: salvati 16 cani - Lo Strillone",
-      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPYVhhNW96U3pFUGlsT1FjdDlfRjRjSjBVSmJZTnlidDEybEpsbE56eXVjU1JwNjJfQmFDZkx1RTNPTm5EOU92RXZnNkFiWEdLejNaV0xkQWtaT1k5TGZhTktyN0RyZDZqc20yYnNGZkF5Z05VWnhEaTMzblNtdGNQNzZZeHF2eXpYa0VQZnR5cWo2c2VFeHFuSUVXTHQ4Z0lES05oNzZ2VDRMX0duaGRlZktPU3g5NWpMcmRjMjNmNGdnN3c1MzByOHVpbHI?oc=5",
-      "source": "Lo Strillone",
-      "date": "24/10/2026",
-      "category": "Feed RSS · non verificato editorialmente",
-      "verified": false
-    },
-    {
-      "title": "Pasti in ritardo, buio in anticipo. Cosa cambia per cani e gatti con l'ora solare. I consigli dei veterinari per superare ansia e stress - Corriere della Sera",
-      "url": "https://news.google.com/rss/articles/CBMiwwJBVV95cUxNM3Btd2hQSUFRTXhjZTlSdVJJV19fbTBVVmRBdC04UGJuU0pZdDctSVR6aERfdWZuV2hrVllIR0NpT3BjYjZZYW5ZWU52bXVMZnY1SWI2anRHcDIzLTJzNW91V25GTnpzdWxOZGFDREZyV0M2NFgwY3FCSmhDS0hZa3BIeDk5OFhJNEFxNS1OVC1veFZiQTVYWXNOeUNqc01iVDVYU2RrQlhVeDdvenBFTlRLazlWZ3o5YW5KVkVVekVyZWRDZ0g1QllFZHhUd3Q1Sy1Qek1idW9SWXNPd2pWZXgtN29aQ0dnVVp5WXFUOVdOdjl1Rjl2LVdodkQwZkFER01tdFhTYWVQWVZ1VzdJTUF1cVZVdS00THlFbjFSRWdBRjgwMHozNDNPWm5kQVA5Zm56UGpBVWNpbDBFWEM2b01lc9IByAJBVV95cUxPZUVKVmR6ektuaWUxMGlZVE5HN19wTmYzOFNUbXZpZUpwb2ZJcDktRml6ekhFRGJkcHNabHltZ1FGbTlVSXhxeFYwQzZkYUhIYURuc3ZqODhjcDlhVEVqem5BSkViUkc4QlRDZTRnbzV0NUQ2eGpycWJrY1Q5Q05xRGRYMFJFdWhDbFJ2WmN6dFA3Vjh2eW5vUVM5YVNyWGpIMTJZdDVEUldCLUxYUndMWDZsdDlPRzJWT1BvcG1NNnUzNzEwZWxLSlJTWkE3ci0yZFJDend4UHUtQm9kUUhLZkRfOVFzN1J4eE54RnZzc0piRllEb1FMX2ZXNVJWTGpuenhNVjl0eTJBOW1hYWxxUFA4Z3pORDNqeUpPdURVOTdJWElhNkpDM3RXTGZubjJMdGY3eGdYUm1QUm80UjE3eEk5Q0NzTXpw?oc=5",
-      "source": "Corriere della Sera",
       "date": "24/10/2026",
       "category": "Feed RSS · non verificato editorialmente",
       "verified": false
