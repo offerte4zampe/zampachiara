@@ -1,0 +1,24 @@
+name: Weekly Brevo newsletter
+on:
+  schedule:
+    - cron: '0 8 * * 1'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: o4z-brevo-newsletter
+  cancel-in-progress: false
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify and send (fail closed)
+        env:
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+          BREVO_LIST_ID: ${{ vars.BREVO_LIST_ID }}
+          BREVO_SEND_ENABLED: ${{ vars.BREVO_SEND_ENABLED }}
+          BREVO_SENDER: capobranco@offerte4zampe.it
+          NEWSLETTER_PAYLOAD: newsletter-approved.json
+        run: python3 automation/send_brevo_newsletter.py
