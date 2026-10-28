@@ -1,5 +1,6 @@
 import {scheduledTelegram} from './telegram.mjs';
 export {TelegramPublisher} from './telegram.mjs';
+import {canonicalProduct,slugForOffer} from './canonical-product.mjs';
 import {productPreview} from './product-preview.mjs';
 const EVENTS = new Set(['page_view','catalog_search','compare_add','merchant_click']);
 const PRODUCTS = new Set(['monge-maxi-adult-pollo','monge-medium-adult-pollo','monge-adult-manzo-riso','monge-adult-cat-pollo','royal-canin-medium-adult','royal-canin-maxi-adult','pro-plan-large-athletic-agnello','pro-plan-medium-sensitive-skin-salmone']);
@@ -15,7 +16,14 @@ export default {
       const result=await stub.fetch(new Request('https://internal/status'));
       return new Response(result.body,{headers:{'Content-Type':'application/json','Cache-Control':'no-store'}});
     }
-    if (['/prodotto','/prodotto.html'].includes(url.pathname)) return productPreview(request,env);
+    if(url.pathname.startsWith('/prodotto/'))return canonicalProduct(request,env);
+    if (['/prodotto','/prodotto.html'].includes(url.pathname)){
+      const ids=url.searchParams.getAll('id');
+      if(['GET','HEAD'].includes(request.method)&&ids.length===1&&ids[0]&&ids[0].length<=200){
+        try{const slug=await slugForOffer(env,url.origin,ids[0]);if(slug&&/^[a-z0-9-]{1,200}$/.test(slug))return Response.redirect(new URL('/prodotto/'+slug,url.origin).href,301)}catch{}
+      }
+      return productPreview(request,env);
+    }
     if (url.pathname !== '/api/metrics') return env.ASSETS.fetch(request);
     const headers = {'Cache-Control':'no-store'};
     if (request.method !== 'POST') return new Response(null,{status:405,headers});

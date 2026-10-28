@@ -76,6 +76,8 @@ def inspect(site):
             continue
         p=Page(path.read_text());parsed[path.name]=p
     available=set(parsed)
+    route_path=site/'data/canonical-route-list.json'
+    dynamic={'/prodotto/'+slug for slug in json.loads(route_path.read_text())} if route_path.exists() else set()
     for rel,p in parsed.items():
         local=[]
         if p.lang!='it':local.append('html_lang_it')
@@ -98,6 +100,8 @@ def inspect(site):
             rels=set(link.get('rel','').split())
             if link.get('target')=='_blank' and not {'noopener','noreferrer'}<=rels:local.append('safe_new_tab')
             if ('tc.tradetracker.' in href or 'pacopetshop.it/directlinking/' in href or 'amazon.' in href and ('tag=' in href or '/dp/' in href)) and 'sponsored' not in rels:local.append('commercial_rel_sponsored')
+            if urlsplit(href).path in dynamic and (not urlsplit(href).netloc or urlsplit(href).netloc==BASE):
+                continue
             target=_internal_target(rel,href)
             if target:
                 target_page,fragment=target

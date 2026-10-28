@@ -1,0 +1,35 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {canonicalProduct,view,content,slugForOffer,historySummary} from '../worker/canonical-product.mjs';
+import worker from '../worker/index.mjs';
+const now=Date.parse('2026-10-28T12:00:00Z');
+const a={id:'a:1',merchant_id:'a',merchant:'Shop A',title:'Brand Adult 2 kg',price:20,available:true,gtin:'4006381333931',weight_kg:2,shipping_weight_kg:2,checked_at:'2026-10-28T11:00:00Z',url:'https://shop.test/a',quantity:{verified:true},unit_price:10,unit_price_unit:'kg'};
+const b={...a,id:'b:1',merchant_id:'b',merchant:'Shop B',price:18,url:'https://shop.test/b'};
+const product={id:'p-00000000000000000001',slug:'brand-adult-2-kg-4006381333931',name:'Brand Adult 2 kg',brand:'Brand',format:'2 kg',gtin:'4006381333931',image:'https://images.test/food.jpg',indexable:true,offers:[a,b],history:[]};
+const rules={checked_at:'2026-10-28',merchants:{a:{fee:1},b:{fee:8}}};
+const template='<html><head><title>Old</title><meta name="description" content="Old"><meta name="robots" content="noindex,follow"><link rel="canonical" href="https://offerte4zampe.it/prodotto"></head><body><main id="main">Old</main><script src="assets/product.js?v=1" defer></script></body></html>';
+function env(p=product){return {ASSETS:{fetch:async req=>{const path=new URL(req.url).pathname;if(path.startsWith('/data/canonical-products/'))return Response.json({[p.slug]:p});if(path.startsWith('/data/canonical-routes/'))return Response.json({'a:1':p.slug});if(path==='/data/shipping-rules.json')return Response.json(rules);if(path==='/prodotto')return new Response(template,{headers:{'Content-Type':'text/html'}});return new Response('missing',{status:404})}}}}
+test('canonical HTML contains actual prices, totals and Product schema without client rendering',async()=>{
+ const r=await canonicalProduct(new Request('https://offerte4zampe.it/prodotto/'+product.slug),env(),now);const html=await r.text();assert.equal(r.status,200);
+ assert(html.includes('Shop A'));assert(html.includes('Shop B'));assert(html.includes('21,00'));assert(html.includes('26,00'));assert(html.includes('AggregateOffer'));assert(html.includes('index,follow'));assert(!html.includes('assets/product.js'));assert(html.includes('<base href="/">'));
+ assert(html.indexOf('Shop A')<html.indexOf('Shop B'),'total includes shipping, not just product price');
+});
+test('unknown shipping never becomes zero or wins a total badge',()=>{const v=view(product,{checked_at:'2026-10-28',merchants:{a:{fee:1}}},now);assert.equal(v.quotes.get('b:1').total,undefined);assert.equal(v.rows[0].id,'a:1');assert.equal(v.best,21)});
+test('single-store page describes an offer, never claims a multi-shop comparison',()=>{
+ const p={...product,offers:[a],indexable:false};const v=view(p,rules,now),c=content(p,v);assert(c.body.includes('non è un confronto tra negozi'));assert.equal(v.indexable,false);
+});
+test('expired observations disappear from current offers and structured prices',()=>{
+ const p={...product,offers:[{...a,checked_at:'2026-10-01'}]};const c=content(p,view(p,rules,now));assert(!c.schema.offers);assert(!c.body.includes('20,00'));
+});
+test('legacy offer identifiers redirect to the canonical product and unknown slugs return 404',async()=>{
+ const e=env();assert.equal(await slugForOffer(e,'https://offerte4zampe.it','a:1'),product.slug);
+ const old=await worker.fetch(new Request('https://offerte4zampe.it/prodotto.html?id=a%3A1'),e);assert.equal(old.status,301);assert.equal(old.headers.get('Location'),'https://offerte4zampe.it/prodotto/'+product.slug);
+ const missing=await canonicalProduct(new Request('https://offerte4zampe.it/prodotto/missing-product'),e,now);assert.equal(missing.status,404);
+});
+test('hostile titles are escaped in HTML and JSON-LD',async()=>{
+ const p={...product,name:'</script><img onerror="bad">'};const r=await canonicalProduct(new Request('https://offerte4zampe.it/prodotto/'+p.slug),env(p),now);const html=await r.text();assert(!html.includes('<img onerror="bad">'));assert(html.includes('\\u003c/script>'));
+});
+
+test('historical mean uses only real observed counts; missing days are not invented',()=>{
+ const rows=[{day:'2026-10-27',low:10,high:20,sum:30,count:2},{day:'2026-10-25',low:30,high:30,sum:30,count:1}];
+ const s=historySummary(rows,30,now);assert.equal(s.rows.length,2);assert.equal(s.low,10);assert.equal(s.high,30);assert.equal(s.mean,20);
+});
