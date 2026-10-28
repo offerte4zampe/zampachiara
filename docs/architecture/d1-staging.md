@@ -26,8 +26,8 @@ The remote report contains:
 
 - Seed row counts (five shops and five rules), and the actual sum of `meta.rows_written` from the binding batch. Explicit SQLite `BEGIN/COMMIT` wrappers are not passed to D1.
 - 610 fixture combinations calculated *inside the Worker* using rows read from its actual binding. Reference times derive from the unchanged source verification dates; the report never presents historical fixtures as current merchant observations.
-- `meta.rows_read` for the rule lookups of a five-shop product request, plus `EXPLAIN QUERY PLAN` so index use is verified independently from the billing counter.
-- Actual capability probes for CHECK constraints, a generated column with an index, triggers, and FTS5 with the trigram tokenizer. FTS availability is recorded, not assumed. Temporary probe tables are removed; the five shipping rules remain.
+- `meta.rows_read` for the rule lookups of a five-shop product request, plus `EXPLAIN QUERY PLAN` so index use is verified independently from the billing counter. The optimizer may choose the equivalent UNIQUE index on `(shop_id, zone, valid_from)` instead of `idx_ship_shop`; either indexed search is valid, a full rule scan is not.
+- Actual capability probes for CHECK constraints, a generated column with an index, triggers, and FTS5 with the trigram tokenizer. FTS availability is recorded, not assumed. `sqlite_version()` may be forbidden through the binding; that diagnostic is optional and is never used to infer feature availability. Temporary probe tables are removed; the five shipping rules remain.
 
 ## Fallback, shadow, and rollback
 

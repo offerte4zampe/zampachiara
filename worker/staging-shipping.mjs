@@ -29,7 +29,8 @@ export async function capabilities(db){
    await db.prepare(`INSERT INTO ${name}_fts(title) VALUES('Fortiflora cani')`).run();
    const found=await db.prepare(`SELECT count(*) AS n FROM ${name}_fts WHERE ${name}_fts MATCH 'forti'`).first();trigram=found.n===1;
   }catch{trigram=false;}
-  return {generated_columns_and_index:generated,check_constraints:check,triggers:trigger,fts5_trigram:trigram,sqlite:await db.prepare('SELECT sqlite_version() AS version').first()};
+  let sqlite;try{sqlite=await db.prepare('SELECT sqlite_version() AS version').first();}catch{sqlite={version:null,available_through_binding:false};}
+  return {generated_columns_and_index:generated,check_constraints:check,triggers:trigger,fts5_trigram:trigram,sqlite};
  }finally{await db.prepare(`DROP TABLE IF EXISTS ${name}_fts`).run();await db.prepare(`DROP TABLE IF EXISTS ${name}`).run();}
 }
 export default {async fetch(request,env){

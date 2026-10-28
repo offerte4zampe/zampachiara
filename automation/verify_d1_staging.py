@@ -66,7 +66,8 @@ def main():
         if seed_result['counts']!={'shops':5,'rules':5}:raise RuntimeError('Seed row counts differ from SQLite fixture')
         if result['matrix']['cases']!=610 or result['matrix']['differences']:raise RuntimeError('Shipping parity failed')
         if not all(result['capabilities'][k] for k in ['check_constraints','triggers','generated_columns_and_index']):raise RuntimeError('Required SQL capabilities failed')
-        if not any('idx_ship_shop' in row.get('detail','') for row in result['plans']):raise RuntimeError('Shipping query does not use idx_ship_shop')
+        details=[row.get('detail','') for row in result['plans']]
+        if not any(re.search(r'SEARCH r USING (?:COVERING )?INDEX',d) for d in details) or any(re.search(r'SCAN r(?:$| )',d) for d in details):raise RuntimeError('Shipping query scans rules instead of using an index')
         print(json.dumps({'execution':report['execution'],'cases':610,'differences':0,'seed_meta':seed_result['meta'],'product_request_meta':result['product_request']['meta'],'fts5_trigram':result['capabilities']['fts5_trigram'],'report':str(path)},ensure_ascii=False))
     finally:
         if process:
