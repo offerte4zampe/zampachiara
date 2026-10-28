@@ -90,6 +90,14 @@ def enrich(html, pages, home=False):
             else:
                 html = re.sub(r'<section\b[^>]*><div class="wrap"><div class="section-heading"><div><span class="kicker">Acquisti più consapevoli</span>.*?</section>', lambda _: section, html, flags=re.S)
         brands = {name: '/marca-' + slug for slug, name in BRANDS if '/marca-' + slug in active}
+        # Promote only precise brand destinations which exist and are indexable.
+        def popular_region(m):
+            value = m[0]
+            for label, name in [('Royal Canin', 'Royal Canin'), ('Purina', 'Purina Pro Plan'), ('Trainer', 'Natural Trainer')]:
+                if name in brands:
+                    value = re.sub(r'<a\b[^>]*>' + re.escape(label) + r'</a>', lambda _: '<a href="' + brands[name] + '">' + name + '</a>', value)
+            return value
+        html = re.sub(r'<div class="popular-searches">.*?</div>', popular_region, html, flags=re.S)
         def brand_region(m):
             value = re.sub(r' data-brand-pages="[^"]*"', '', m[0])
             value = value.replace('id="home-brands"', 'id="home-brands" data-brand-pages="' + escape(json.dumps(brands, ensure_ascii=False), quote=True) + '"')
