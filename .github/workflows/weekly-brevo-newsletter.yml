@@ -4,7 +4,7 @@ on:
     - cron: '0 8 * * 1'
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
 concurrency:
   group: o4z-brevo-newsletter
   cancel-in-progress: false
@@ -19,6 +19,17 @@ jobs:
           python-version: '3.12'
       - name: Regression tests\n        run: python3 -m unittest discover -s tests -p 'test_weekly_newsletter.py' -v\n      - name: Prepare fresh catalog selection
         run: python3 automation/build_weekly_newsletter.py
+      - name: Build weekly article and social drafts
+        run: python3 automation/build_weekly_article_social.py
+      - name: Publish article and store social drafts
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add site/offerte/ automation/weekly-social-draft.json
+          if ! git diff --cached --quiet; then
+            git commit -m "content: weekly offers article and social drafts"
+            git push
+          fi
       - name: Validate and send only when enabled
         env:
           BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
