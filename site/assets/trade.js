@@ -32,7 +32,7 @@ function groupOffers(rows,now=Date.now()){
  for(let i=0;i<rows.length;i++){const k=keys[i],group=index.get(k);if(!group||group.merchants.size<2){result.push([rows[i]]);continue}if(!used.has(k)){used.add(k);result.push(group.offers)}}
  return result;
 }
-function reportUrl(o){const p=new URLSearchParams();for(const [key,source,limit] of [['id','id',100],['title','title',240],['shop','merchant',100],['price','price',30],['checked','checked_at',60]])p.set(key,String(o[source]??'').slice(0,limit));return 'segnala-errore.html?'+p;}
+function reportUrl(o){const p=new URLSearchParams();for(const [key,source,limit] of [['id','id',100],['title','title',240],['shop','merchant',100],['price','price',30],['checked','checked_at',60]])p.set(key,String(o[source]??'').slice(0,limit));return 'segnala-errore.html#'+p;}
 const api={shipping,discount,merchant,matchKey,groupOffers,reportUrl};if(typeof module!=='undefined')module.exports=api;else root.O4ZTrade=api;
 })(typeof window!=='undefined'?window:this);
 

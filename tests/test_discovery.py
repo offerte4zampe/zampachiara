@@ -50,6 +50,15 @@ class DiscoveryTests(unittest.TestCase):
             self.assertEqual((site/'index.html').read_text(),html)
             self.assertIn('noindex,follow',(site/'marca-monge.html').read_text())
 
+    def test_popular_searches_use_only_available_precise_brand_pages(self):
+        pages = self.pages | {'/marca-royal-canin.html': {'canonical': '/marca-royal-canin', 'indexable': True}, '/marca-purina-pro-plan.html': {'canonical': '/marca-purina-pro-plan', 'indexable': True}}
+        source = '<div class="popular-searches"><a href="/confronta-cibo?q=Royal%20Canin">Royal Canin</a><a href="/confronta-cibo?q=Purina">Purina</a><a href="/confronta-cibo?q=Trainer">Trainer</a></div>'
+        result = enrich(source, pages, home=True)
+        self.assertIn('href="/marca-royal-canin">Royal Canin</a>', result)
+        self.assertIn('href="/marca-purina-pro-plan">Purina Pro Plan</a>', result)
+        self.assertIn('href="/confronta-cibo?q=Trainer">Trainer</a>', result)
+        self.assertEqual(enrich(result, pages, home=True), result)
+
     def test_repeated_catalog_navigation_does_not_duplicate_favorites(self):
         from automation.apply_navigation import apply
         html='<nav id="navlinks"><a href="/preferiti">Preferiti</a></nav>'
