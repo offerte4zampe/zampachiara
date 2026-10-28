@@ -1,9 +1,9 @@
 {
   "method_version": 2,
-  "observed_at": "2026-10-28T16:55:54.682438+00:00",
-  "pages_scanned": 483,
-  "indexable_pages": 339,
-  "unique_canonicals": 339,
+  "observed_at": "2026-10-28T18:04:01.995368+00:00",
+  "pages_scanned": 484,
+  "indexable_pages": 41,
+  "unique_canonicals": 41,
   "issues": [],
   "rule_counts": {},
   "pages": [
@@ -201,206 +201,206 @@
     },
     {
       "page": "prezzi-00052742025742-c32ef03d99.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-00052742025742-c32ef03d99",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/hill-s-science-plan-dog-medium-adult-con-pollo-14-kg-00052742025742-06dec2",
       "issues": []
     },
     {
       "page": "prezzi-00052742335414-d08345243e.html",
       "indexable": false,
-      "canonical": "https://offerte4zampe.it/prezzi-00052742335414-d08345243e",
+      "canonical": "https://offerte4zampe.it/prodotto/hill-s-prescription-diet-metabolic-mini-canine-6-kg-6kg-00052742335414-8e22b6",
       "issues": []
     },
     {
       "page": "prezzi-00064992543112-eaeebf6c26.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-00064992543112-eaeebf6c26",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/acana-ranchlands-grain-free-11-4-kg-11-4kg-00064992543112-3ec1e4",
       "issues": []
     },
     {
       "page": "prezzi-00744845401126-0a8eaaa492.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-00744845401126-0a8eaaa492",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/oxbow-mangime-essentials-chinchilla-1-36-kg-00744845401126-debb11",
       "issues": []
     },
     {
       "page": "prezzi-00744845402291-e61d3960d1.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-00744845402291-e61d3960d1",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/oxbow-western-timothy-2-25-kg-mangime-per-conigli-00744845402291-3e7141",
       "issues": []
     },
     {
       "page": "prezzi-00744845402758-d92434dbb5.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-00744845402758-d92434dbb5",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/oxbow-fieno-western-timothy-1-130-kg-00744845402758-74662a",
       "issues": []
     },
     {
       "page": "prezzi-00744845402888-93cf77763c.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-00744845402888-93cf77763c",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/oxbow-mangime-essentials-adult-rabbit-2-27-kg-00744845402888-a8cdc4",
       "issues": []
     },
     {
       "page": "prezzi-00744845402963-3681c2436d.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-00744845402963-3681c2436d",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/oxbow-fieno-orchard-grass-1-13-kg-00744845402963-5bfef3",
       "issues": []
     },
     {
       "page": "prezzi-00744845931241-b2332b957b.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-00744845931241-b2332b957b",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/oxbow-critical-care-fine-grind-100-g-00744845931241-de97ac",
       "issues": []
     },
     {
       "page": "prezzi-03182550702423-0de6505d95.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-03182550702423-0de6505d95",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/royal-canin-kitten-2-kg-2kg-03182550702423-fa2d1c",
       "issues": []
     },
     {
       "page": "prezzi-03182550707305-90ac268d7c.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-03182550707305-90ac268d7c",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/royal-canin-mother-babycat-400-g-0-4kg-03182550707305-8ede6e",
       "issues": []
     },
     {
       "page": "prezzi-03182550707312-3cef704f70.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-03182550707312-3cef704f70",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/royal-canin-mother-babycat-2-kg-2kg-03182550707312-047c5a",
       "issues": []
     },
     {
       "page": "prezzi-03182550721394-35aafed27e.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-03182550721394-35aafed27e",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/royal-canin-feline-hairball-care-400-g-0-4kg-03182550721394-e4fa56",
       "issues": []
     },
     {
       "page": "prezzi-03182550737555-e9705795b6.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-03182550737555-e9705795b6",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/royal-canin-sterilised-37-cat-food-400-g-0-4kg-03182550737555-dc6e74",
       "issues": []
     },
     {
       "page": "prezzi-03182550737593-a4cd0c5fa2.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-03182550737593-a4cd0c5fa2",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/royal-canin-sterilised-37-cat-food-2-kg-2kg-03182550737593-bc9a68",
       "issues": []
     },
     {
       "page": "prezzi-03182550751995-bfea2bfa10.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-03182550751995-bfea2bfa10",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/royal-canin-digestive-care-cat-adult-2-kg-2kg-03182550751995-6db118",
       "issues": []
     },
     {
       "page": "prezzi-03182550778657-026672e4ef.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-03182550778657-026672e4ef",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/royal-canin-mini-starter-mother-babydog-1-kg-1kg-03182550778657-4c7388",
       "issues": []
     },
     {
       "page": "prezzi-03182550793001-692ccb71dc.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-03182550793001-692ccb71dc",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/royal-canin-mini-puppy-dog-food-2-kg-2kg-03182550793001-14bac5",
       "issues": []
     },
     {
       "page": "prezzi-03182550793032-850c0cb9d3.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-03182550793032-850c0cb9d3",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/royal-canin-mini-puppy-dog-food-4-kg-4kg-03182550793032-2b9464",
       "issues": []
     },
     {
       "page": "prezzi-03182550793049-9b1091c429.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-03182550793049-9b1091c429",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/royal-canin-mini-puppy-dog-food-8-kg-8kg-03182550793049-7a8af0",
       "issues": []
     },
     {
       "page": "prezzi-03182550793612-468744c3c6.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-03182550793612-468744c3c6",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/royal-canin-extra-small-puppy-1-5-kg-1-5kg-03182550793612-592333",
       "issues": []
     },
     {
       "page": "prezzi-03182550793704-9c360357ae.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-03182550793704-9c360357ae",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/royal-canin-x-small-adult-500-g-0-5kg-03182550793704-8650e4",
       "issues": []
     },
     {
       "page": "prezzi-03182550793728-6359b23499.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-03182550793728-6359b23499",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/royal-canin-x-small-adult-1-5-kg-1-5kg-03182550793728-76db9b",
       "issues": []
     },
     {
       "page": "prezzi-03182550805155-b51a3f85d9.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-03182550805155-b51a3f85d9",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/royal-canin-kitten-sterilised-400-g-0-4kg-03182550805155-992541",
       "issues": []
     },
     {
       "page": "prezzi-03182550805186-eac93e5637.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-03182550805186-eac93e5637",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/royal-canin-kitten-sterilised-2-kg-2kg-03182550805186-233914",
       "issues": []
     },
     {
       "page": "prezzi-03182550831383-ad5014d951.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-03182550831383-ad5014d951",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/royal-canin-mini-adult-8-2-kg-2kg-03182550831383-4c6596",
       "issues": []
     },
     {
       "page": "prezzi-03182550842938-171ed64b0d.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-03182550842938-171ed64b0d",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/royal-canin-urinary-care-2-kg-2kg-03182550842938-1af218",
       "issues": []
     },
     {
       "page": "prezzi-03182550894142-daa1e85cbc.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-03182550894142-daa1e85cbc",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/royal-canin-mini-sterilised-1-kg-1kg-03182550894142-2482a2",
       "issues": []
     },
     {
       "page": "prezzi-03182550902991-975697877c.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-03182550902991-975697877c",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/royal-canin-light-weight-care-1-5-kg-1-5kg-03182550902991-7524bc",
       "issues": []
     },
     {
       "page": "prezzi-03182551055672-a12cacf511.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-03182551055672-a12cacf511",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/royal-canin-mini-adult-2-kg-2kg-03182551055672-5a9993",
       "issues": []
     },
     {
       "page": "prezzi-03182551055719-7a321d5b2a.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-03182551055719-7a321d5b2a",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/royal-canin-mini-adult-4-kg-4kg-03182551055719-1e8ce3",
       "issues": []
     },
     {
       "page": "prezzi-03182551063714-0b00d3c949.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-03182551063714-0b00d3c949",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/royal-canin-training-treats-110g-snack-cani-03182551063714-ec6cde",
       "issues": []
     },
     {
       "page": "prezzi-03182551065213-c05d31f035.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-03182551065213-c05d31f035",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/royal-canin-maxi-puppy-3-kg-3kg-03182551065213-683538",
       "issues": []
     },
     {
       "page": "prezzi-03401144275403-29444f6e66.html",
       "indexable": false,
-      "canonical": "https://offerte4zampe.it/prezzi-03401144275403-29444f6e66",
+      "canonical": "https://offerte4zampe.it/prodotto/easypill-gatto-40-g-03401144275403-856cab",
       "issues": []
     },
     {
@@ -441,8 +441,8 @@
     },
     {
       "page": "prezzi-04002064201856-01957730d0.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-04002064201856-01957730d0",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/gimbi-drops-con-carote-50-g-04002064201856-c07c76",
       "issues": []
     },
     {
@@ -453,110 +453,110 @@
     },
     {
       "page": "prezzi-04002064201894-54729f6d32.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-04002064201894-54729f6d32",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/gimbi-drops-mix-50-g-04002064201894-d36ac4",
       "issues": []
     },
     {
       "page": "prezzi-04002064205069-3731604bb8.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-04002064205069-3731604bb8",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/gimbi-fieno-per-roditori-1-kg-04002064205069-da4aff",
       "issues": []
     },
     {
       "page": "prezzi-04002064400723-31306f2d35.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-04002064400723-31306f2d35",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/gimcat-nutri-pocket-catnip-menta-60-g-04002064400723-00cf3d",
       "issues": []
     },
     {
       "page": "prezzi-04002064407630-ec568af500.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-04002064407630-ec568af500",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/gimcat-gras-bits-50-g-04002064407630-1847a9",
       "issues": []
     },
     {
       "page": "prezzi-04002064409436-e248a38ad4.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-04002064409436-e248a38ad4",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/gimcat-cheezies-50-g-04002064409436-604172",
       "issues": []
     },
     {
       "page": "prezzi-04002064422176-debd4825ba.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-04002064422176-debd4825ba",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/gimborn-gimcat-crunchy-anatra-e-erba-gatta-50g-snack-per-gatti-04002064422176-39d0ab",
       "issues": []
     },
     {
       "page": "prezzi-04002064422343-8faa41debb.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-04002064422343-8faa41debb",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/gimborn-gimcat-crunchy-salmone-e-spinaci-gatta-50g-snack-per-gatti-04002064422343-7126a2",
       "issues": []
     },
     {
       "page": "prezzi-04002064617107-7c8b033a54.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-04002064617107-7c8b033a54",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/lettiera-agglomerante-per-gatti-in-bentonite-biokat-s-bianco-10-lt-10-kg-fresh-10kg-04002064617107-75dd70",
       "issues": []
     },
     {
       "page": "prezzi-04002064618005-46c001e9ec.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-04002064618005-46c001e9ec",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/biokat-s-bianco-classic-attracting-lettiera-10kg-per-gatti-04002064618005-2d3461",
       "issues": []
     },
     {
       "page": "prezzi-04002064618104-14cb3e6a59.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-04002064618104-14cb3e6a59",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/biokat-s-bianco-classic-extra-10-kg-lettiera-per-gatti-04002064618104-9a90a4",
       "issues": []
     },
     {
       "page": "prezzi-04002064618180-0ddbb98562.html",
       "indexable": false,
-      "canonical": "https://offerte4zampe.it/prezzi-04002064618180-0ddbb98562",
+      "canonical": "https://offerte4zampe.it/prodotto/biokat-s-organic-white-extra-4kg-lettiera-per-gatti-04002064618180-7054b7",
       "issues": []
     },
     {
       "page": "prezzi-04002973213353-c821979249.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-04002973213353-c821979249",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/cat-s-best-original-lettiera-7lt-3kg-04002973213353-8530b0",
       "issues": []
     },
     {
       "page": "prezzi-04007221046462-b4c60afddf.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-04007221046462-b4c60afddf",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/seresto-per-cane-collare-antiparassitario-per-cani-di-peso-inferiore-a-8-kg-sconto-30-04007221046462-5fb7cc",
       "issues": []
     },
     {
       "page": "prezzi-04011905029702-0b8fb552c2.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-04011905029702-0b8fb552c2",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/trixie-schoko-cioccolato-per-cani-100g-snack-cani-04011905029702-4f0562",
       "issues": []
     },
     {
       "page": "prezzi-04011905029733-8e13bb7c5f.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-04011905029733-8e13bb7c5f",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/trixie-mini-schoko-cioccolato-snack-per-cani-30g-04011905029733-ede07c",
       "issues": []
     },
     {
       "page": "prezzi-04011905315249-f55af165b8.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-04011905315249-f55af165b8",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/trixie-snack-mini-hearts-per-addestramento-200-g-04011905315249-ba5201",
       "issues": []
     },
     {
       "page": "prezzi-04018761140107-c8982b93b7.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-04018761140107-c8982b93b7",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/bunny-fieno-con-mele-500-g-04018761140107-b6f797",
       "issues": []
     },
     {
       "page": "prezzi-04018761142064-26fa254780.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-04018761142064-26fa254780",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/bunny-fieno-naturale-da-prati-non-trattati-600-g-04018761142064-1d171a",
       "issues": []
     },
     {
@@ -579,20 +579,20 @@
     },
     {
       "page": "prezzi-04771317456632-b553723685.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-04771317456632-b553723685",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/nature-s-protection-white-dogs-agnello-adult-1-5kg-crocchette-cani-04771317456632-effb02",
       "issues": []
     },
     {
       "page": "prezzi-04771317456649-17be6a1b41.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-04771317456649-17be6a1b41",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/nature-s-protection-white-dogs-agnello-10kg-small-mini-adult-crocchette-cani-04771317456649-fbed8b",
       "issues": []
     },
     {
       "page": "prezzi-04771317456670-bded0f3400.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-04771317456670-bded0f3400",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/nature-s-protection-white-dogs-pesce-bianco-small-e-mini-adult-1-5kg-crocchette-cani-04771317456670-a6d199",
       "issues": []
     },
     {
@@ -603,98 +603,98 @@
     },
     {
       "page": "prezzi-04771317457936-2e460d0ba5.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-04771317457936-2e460d0ba5",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/nature-s-protection-superior-care-dog-adult-sensitive-skin-stomach-grain-free-con-agnello-10-kg-10kg-04771317457936-9b49e9",
       "issues": []
     },
     {
       "page": "prezzi-04771317458292-4159944003.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-04771317458292-4159944003",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/nature-s-protection-white-dogs-pesce-bianco-junior-1-5kg-crocchette-cuccioli-04771317458292-371a16",
       "issues": []
     },
     {
       "page": "prezzi-04771317458346-71e65e9d73.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-04771317458346-71e65e9d73",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/nature-s-protection-white-dogs-salmone-adult-small-mini-1-5kg-crocchette-cani-04771317458346-81f118",
       "issues": []
     },
     {
       "page": "prezzi-04771317472281-db151dbcd1.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-04771317472281-db151dbcd1",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/nature-s-protection-red-coat-small-junior-salmone-1-5kg-crocchette-cani-cuccioli-04771317472281-e328b2",
       "issues": []
     },
     {
       "page": "prezzi-04771317472304-658dcb2919.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-04771317472304-658dcb2919",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/nature-s-protection-red-coat-salmone-1-5kg-crocchette-cani-small-adult-04771317472304-5514b2",
       "issues": []
     },
     {
       "page": "prezzi-04771317472311-ccdcc67259.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-04771317472311-ccdcc67259",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/nature-s-protection-red-coat-small-adult-salmone-crocchette-cani-10kg-04771317472311-cf0c34",
       "issues": []
     },
     {
       "page": "prezzi-04771317472328-1e489cc84c.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-04771317472328-1e489cc84c",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/nature-s-protection-red-coat-adult-agnello-1-5kg-crocchette-cani-04771317472328-05c3a7",
       "issues": []
     },
     {
       "page": "prezzi-04771317472335-53c748cdba.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-04771317472335-53c748cdba",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/nature-s-protection-red-coat-adult-agnello-10kg-crocchette-cani-04771317472335-8743ab",
       "issues": []
     },
     {
       "page": "prezzi-04771317478832-f66236b1a8.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-04771317478832-f66236b1a8",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/nature-s-protection-white-dogs-pesce-bianco-small-e-mini-adult-4kg-crocchette-cani-04771317478832-402bbc",
       "issues": []
     },
     {
       "page": "prezzi-05010394002066-2caf7e6f79.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-05010394002066-2caf7e6f79",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/markies-dod-adult-mini-biscotti-500-g-05010394002066-cd5c43",
       "issues": []
     },
     {
       "page": "prezzi-05010394004343-14e94d80ec.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-05010394004343-14e94d80ec",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/pedigree-dog-adult-markies-1-5-kg-05010394004343-1c8ab7",
       "issues": []
     },
     {
       "page": "prezzi-05010394996587-c8bc515b8d.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-05010394996587-c8bc515b8d",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/pedigree-dod-adult-markies-biscotti-500-g-05010394996587-19ebb5",
       "issues": []
     },
     {
       "page": "prezzi-05025730009258-47e62028ec.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-05025730009258-47e62028ec",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/natural-trainer-freeze-dried-nutrisnack-medium-maxi-pollo-50-g-05025730009258-b0d2d3",
       "issues": []
     },
     {
       "page": "prezzi-05025730009272-3e945d41c0.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-05025730009272-3e945d41c0",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/natural-trainer-freeze-dried-nutrisnack-medium-maxi-manzo-50-g-05025730009272-3e8be6",
       "issues": []
     },
     {
       "page": "prezzi-05025730009319-d045fae878.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-05025730009319-d045fae878",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/trainer-nutri-insaporitore-manzo-liofilizzato-120g-snack-cani-adult-05025730009319-65f4ca",
       "issues": []
     },
     {
       "page": "prezzi-05025730009333-46e728007d.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-05025730009333-46e728007d",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/trainer-nutri-insaporitore-pollo-liofilizzato-15g-snack-cani-adult-05025730009333-c82b30",
       "issues": []
     },
     {
@@ -706,7 +706,7 @@
     {
       "page": "prezzi-05056273601753-26368bbb9a.html",
       "indexable": false,
-      "canonical": "https://offerte4zampe.it/prezzi-05056273601753-26368bbb9a",
+      "canonical": "https://offerte4zampe.it/prodotto/lily-s-kitchen-adult-salmon-supper-7-kg-7kg-05056273601753-ab6882",
       "issues": []
     },
     {
@@ -717,14 +717,14 @@
     },
     {
       "page": "prezzi-05060184240635-795bc192b7.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-05060184240635-795bc192b7",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/lily-s-kitchen-breakfast-crunch-800-g-05060184240635-d5e268",
       "issues": []
     },
     {
       "page": "prezzi-05060184241250-46189b96dd.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-05060184241250-46189b96dd",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/lily-s-kitchen-adult-lamb-shepherd-s-pie-7-kg-7kg-05060184241250-3365e7",
       "issues": []
     },
     {
@@ -747,26 +747,26 @@
     },
     {
       "page": "prezzi-07613033568619-0203da77a8.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-07613033568619-0203da77a8",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/purina-pro-plan-kitten-healthy-start-umido-gatti-mousse-pollo-85-g-confezione-da-24-pezzi-07613033568619-221bd4",
       "issues": []
     },
     {
       "page": "prezzi-07613035152908-ea4abb8e25.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-07613035152908-ea4abb8e25",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/purina-dog-pro-plan-veterinary-diets-ha-hypoallergenic-11-kg-crocchette-monoproteiche-cane-11kg-07613035152908-2ee994",
       "issues": []
     },
     {
       "page": "prezzi-07613035155121-25b4ad671d.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-07613035155121-25b4ad671d",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/purina-pro-plan-veterinary-diets-ur-urinary-12-kg-12kg-07613035155121-17cb2d",
       "issues": []
     },
     {
       "page": "prezzi-07613035159822-f694e80ccb.html",
       "indexable": false,
-      "canonical": "https://offerte4zampe.it/prezzi-07613035159822-f694e80ccb",
+      "canonical": "https://offerte4zampe.it/prodotto/purina-pro-plan-veterinary-diets-dm-diabetes-management-1-5-kg-1-5kg-07613035159822-4fae80",
       "issues": []
     },
     {
@@ -777,20 +777,20 @@
     },
     {
       "page": "prezzi-07613038125633-f13f5eb705.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-07613038125633-f13f5eb705",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/gourmet-nature-s-creations-snack-per-gatti-salmone-e-carota-5-x10-g-07613038125633-7d4cc8",
       "issues": []
     },
     {
       "page": "prezzi-07613038125695-6cd57b4658.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-07613038125695-6cd57b4658",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/gourmet-nature-s-creations-snack-per-gatti-exquisite-puree-pollo-e-zucca-5-x-10-g-07613038125695-aee68d",
       "issues": []
     },
     {
       "page": "prezzi-07613287886347-0b45d6e8bd.html",
       "indexable": false,
-      "canonical": "https://offerte4zampe.it/prezzi-07613287886347-0b45d6e8bd",
+      "canonical": "https://offerte4zampe.it/prodotto/purina-pro-plan-veterinary-diets-nf-renal-function-advanced-care-1-5-kg-1-5kg-07613287886347-6815b6",
       "issues": []
     },
     {
@@ -807,14 +807,14 @@
     },
     {
       "page": "prezzi-08001154000221-4e250c0f7d.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08001154000221-4e250c0f7d",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/almo-nature-daily-agnello-pollo-e-riso-12kg-crocchette-cani-all-breed-08001154000221-289440",
       "issues": []
     },
     {
       "page": "prezzi-08001154000245-398fc6cfe2.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08001154000245-398fc6cfe2",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/almo-nature-daily-manzo-e-riso-12kg-crocchette-cani-all-breed-08001154000245-e2d416",
       "issues": []
     },
     {
@@ -825,8 +825,8 @@
     },
     {
       "page": "prezzi-08001154000870-f469024a1b.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08001154000870-f469024a1b",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/almo-nature-daily-sterilised-pollo-12kg-crocchette-gatti-08001154000870-3f3b57",
       "issues": []
     },
     {
@@ -843,50 +843,50 @@
     },
     {
       "page": "prezzi-08001154001877-6f164fc63f.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08001154001877-6f164fc63f",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/almo-nature-hfc-hydration-help-monoproteico-in-brodo-50-g-filetti-di-pollo-08001154001877-fe557a",
       "issues": []
     },
     {
       "page": "prezzi-08001154001884-668614f151.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08001154001884-668614f151",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/almo-nature-hfc-hydration-help-monoproteico-in-brodo-50-g-filetti-di-tonno-08001154001884-a80f15",
       "issues": []
     },
     {
       "page": "prezzi-08001154001891-54c838010a.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08001154001891-54c838010a",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/almo-nature-hfc-hydration-help-monoproteico-in-brodo-50-g-filetti-di-salmone-08001154001891-df6cd6",
       "issues": []
     },
     {
       "page": "prezzi-08001154001907-eb9096e23c.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08001154001907-eb9096e23c",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/almo-nature-hfc-hydration-help-monoproteico-in-brodo-50-g-sardine-08001154001907-287c05",
       "issues": []
     },
     {
       "page": "prezzi-08001154001914-5b847fde08.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08001154001914-5b847fde08",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/almo-nature-hfc-hydration-help-latte-di-capra-50g-bustina-gatti-08001154001914-498f46",
       "issues": []
     },
     {
       "page": "prezzi-08001154002232-b2cbe8a7fe.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08001154002232-b2cbe8a7fe",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/almo-nature-daily-mousse-pollo-90g-tetra-recart-gatti-08001154002232-465d4f",
       "issues": []
     },
     {
       "page": "prezzi-08001154002249-a512b54993.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08001154002249-a512b54993",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/almo-nature-daily-mousse-salmone-90g-tetra-recart-gatti-08001154002249-93bf67",
       "issues": []
     },
     {
       "page": "prezzi-08001154002263-1be39c3806.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08001154002263-1be39c3806",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/almo-nature-daily-mousse-tonno-e-merluzzo-90g-tetra-recart-gatti-08001154002263-c0a61e",
       "issues": []
     },
     {
@@ -897,20 +897,20 @@
     },
     {
       "page": "prezzi-08001154002324-041da4ceb8.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08001154002324-041da4ceb8",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/almo-nature-daily-mousse-maiale-380g-tetra-recart-cani-08001154002324-1dd68a",
       "issues": []
     },
     {
       "page": "prezzi-08001154002331-c12f17e0f3.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08001154002331-c12f17e0f3",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/almo-nature-daily-mousse-manzo-380g-tetra-recart-cani-08001154002331-ba17d2",
       "issues": []
     },
     {
       "page": "prezzi-08001154002348-b652d0b923.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08001154002348-b652d0b923",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/almo-nature-daily-mousse-merluzzo-380g-tetra-recart-cani-08001154002348-69ae32",
       "issues": []
     },
     {
@@ -957,8 +957,8 @@
     },
     {
       "page": "prezzi-08001154007619-28320be4f1.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08001154007619-28320be4f1",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/almo-nature-hfc-jelly-gluten-free-cat-70-g-salmone-08001154007619-5bea9c",
       "issues": []
     },
     {
@@ -981,38 +981,38 @@
     },
     {
       "page": "prezzi-08001154008319-65617bb81b.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08001154008319-65617bb81b",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/almo-nature-hfc-jelly-gluten-free-cat-70-g-tonno-con-gallinella-08001154008319-3689a4",
       "issues": []
     },
     {
       "page": "prezzi-08001154008326-2269e1e380.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08001154008326-2269e1e380",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/almo-nature-hfc-jelly-gluten-free-cat-70-g-tonno-con-lampuga-08001154008326-9069dd",
       "issues": []
     },
     {
       "page": "prezzi-08001154008333-75ce6fda0d.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08001154008333-75ce6fda0d",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/almo-nature-hfc-jelly-gluten-free-cat-70-g-tonno-con-ricciola-08001154008333-a558dc",
       "issues": []
     },
     {
       "page": "prezzi-08001154008340-0531738e0a.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08001154008340-0531738e0a",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/almo-nature-hfc-jelly-gluten-free-cat-70-g-tonno-con-triglia-08001154008340-fe5b9d",
       "issues": []
     },
     {
       "page": "prezzi-08001154120837-b6c6c2010a.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08001154120837-b6c6c2010a",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/almo-nature-hfc-jelly-gluten-free-cat-70-g-tonno-con-calamari-08001154120837-085199",
       "issues": []
     },
     {
       "page": "prezzi-08001154122176-187ddc235a.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08001154122176-187ddc235a",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/almo-nature-life-maintenance-medium-adult-con-salmone-12-kg-12kg-08001154122176-f46ef5",
       "issues": []
     },
     {
@@ -1023,188 +1023,188 @@
     },
     {
       "page": "prezzi-08001154125047-c33bce9c5e.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08001154125047-c33bce9c5e",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/almo-nature-daily-coniglio-400g-lattina-gatti-adulti-08001154125047-c28de9",
       "issues": []
     },
     {
       "page": "prezzi-08001154125054-55ebfdac6a.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08001154125054-55ebfdac6a",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/almo-nature-daily-manzo-400g-lattina-gatti-adulti-08001154125054-a6f6bf",
       "issues": []
     },
     {
       "page": "prezzi-08001154125061-c81048c818.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08001154125061-c81048c818",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/almo-nature-daily-tacchino-400g-lattina-gatti-adulti-08001154125061-13571e",
       "issues": []
     },
     {
       "page": "prezzi-08001154125542-3f8a61fd38.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08001154125542-3f8a61fd38",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/almo-nature-life-maintenance-medium-adult-con-manzo-12-kg-12kg-08001154125542-206e57",
       "issues": []
     },
     {
       "page": "prezzi-08001154125863-c171e819e3.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08001154125863-c171e819e3",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/almo-nature-sterilised-cat-adult-con-merluzzo-70-g-08001154125863-5d1d5d",
       "issues": []
     },
     {
       "page": "prezzi-08001154125870-c52da0b3be.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08001154125870-c52da0b3be",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/almo-nature-cat-adult-sterilised-con-pollo-70-g-08001154125870-cf449c",
       "issues": []
     },
     {
       "page": "prezzi-08001154125887-afffacdfaa.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08001154125887-afffacdfaa",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/almo-nature-anti-hairball-cat-adult-con-manzo-70-g-08001154125887-81b28d",
       "issues": []
     },
     {
       "page": "prezzi-08001154125894-7e79adb3e2.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08001154125894-7e79adb3e2",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/almo-nature-anti-hairball-cat-adult-con-pollo-70-g-08001154125894-23f4f8",
       "issues": []
     },
     {
       "page": "prezzi-08001154126563-2258b7d1e5.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08001154126563-2258b7d1e5",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/almo-nature-intestinal-help-cat-adult-con-pesce-70gr-08001154126563-837603",
       "issues": []
     },
     {
       "page": "prezzi-08001154126570-9940b0a5c8.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08001154126570-9940b0a5c8",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/almo-nature-intestinal-help-cat-adult-pollame-70-g-08001154126570-022e87",
       "issues": []
     },
     {
       "page": "prezzi-08001154126587-4d08d72792.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08001154126587-4d08d72792",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/almo-nature-cat-adult-urinary-help-con-pesce-70gr-08001154126587-fd5269",
       "issues": []
     },
     {
       "page": "prezzi-08001154126594-1be4b5eb79.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08001154126594-1be4b5eb79",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/almo-nature-cat-adult-urinary-help-pollo-70gr-08001154126594-a80637",
       "issues": []
     },
     {
       "page": "prezzi-08001154127362-9c8b61720d.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08001154127362-9c8b61720d",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/almo-nature-urinary-help-per-gatti-pollo-sacco-da-2-kg-08001154127362-386aa4",
       "issues": []
     },
     {
       "page": "prezzi-08001154127911-af5c6dac60.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08001154127911-af5c6dac60",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/almo-nature-natural-cat-litter-grain-texture-lettiera-vegetale-10-lt-4-kg-4kg-08001154127911-35fed4",
       "issues": []
     },
     {
       "page": "prezzi-08009470004015-2b91104c94.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470004015-2b91104c94",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-daily-line-mini-puppy-e-junior-pollo-3kg-crocchette-cani-08009470004015-dfebcc",
       "issues": []
     },
     {
       "page": "prezzi-08009470004053-dc9a4cc6a2.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470004053-dc9a4cc6a2",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-mini-adult-pollo-7-5kg-crocchette-cani-08009470004053-4b5e2e",
       "issues": []
     },
     {
       "page": "prezzi-08009470004091-c9443acaed.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470004091-c9443acaed",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-natural-superpremium-mini-adult-pollo-800g-crocchette-cani-08009470004091-69612d",
       "issues": []
     },
     {
       "page": "prezzi-08009470004107-e3ba89c5d7.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470004107-e3ba89c5d7",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-natural-mini-puppy-e-junior-pollo-800g-crocchette-cuccioli-08009470004107-5382aa",
       "issues": []
     },
     {
       "page": "prezzi-08009470004114-19666ce9de.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470004114-19666ce9de",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-daily-line-mini-adult-pollo-3kg-crocchette-cani-08009470004114-d096a5",
       "issues": []
     },
     {
       "page": "prezzi-08009470004220-73a367533a.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470004220-73a367533a",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-medium-puppy-e-junior-pollo-3kg-crocchette-cuccioli-08009470004220-9a32e0",
       "issues": []
     },
     {
       "page": "prezzi-08009470004244-021706d8bc.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470004244-021706d8bc",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-natural-superpremium-medium-adult-ricco-di-pollo-3-kg-3kg-08009470004244-a11ee9",
       "issues": []
     },
     {
       "page": "prezzi-08009470004275-1bd3264d6f.html",
       "indexable": false,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470004275-1bd3264d6f",
+      "canonical": "https://offerte4zampe.it/prodotto/monge-medium-adult-ricco-di-pollo-per-cani-sacco-da-12-kg-08009470004275-fde0f0",
       "issues": []
     },
     {
       "page": "prezzi-08009470004411-ea7ddb67b8.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470004411-ea7ddb67b8",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-maxi-adult-pollo-12kg-crocchette-cani-08009470004411-603d9f",
       "issues": []
     },
     {
       "page": "prezzi-08009470004862-9165368d5b.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470004862-9165368d5b",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-kitten-pollo-400g-crocchette-gattini-08009470004862-a9ccc5",
       "issues": []
     },
     {
       "page": "prezzi-08009470004879-046cdfee5d.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470004879-046cdfee5d",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-kitten-pollo-1-5kg-crocchette-gattini-08009470004879-a445df",
       "issues": []
     },
     {
       "page": "prezzi-08009470004947-eb9dc00782.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470004947-eb9dc00782",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-monoprotein-manzo-e-riso-2-5kg-crocchette-cani-08009470004947-eb3f38",
       "issues": []
     },
     {
       "page": "prezzi-08009470004985-4053da4dfd.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470004985-4053da4dfd",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-natural-pollo-400g-crocchette-gatti-adulti-08009470004985-3f645b",
       "issues": []
     },
     {
       "page": "prezzi-08009470004992-66feadc628.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470004992-66feadc628",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-adult-pollo-1-5kg-crocchette-gatti-08009470004992-2d106d",
       "issues": []
     },
     {
       "page": "prezzi-08009470005111-5f4128b1fc.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470005111-5f4128b1fc",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-indoor-pollo-1-5kg-crocchette-gatti-adulti-08009470005111-b18761",
       "issues": []
     },
     {
       "page": "prezzi-08009470005227-495c5ff120.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470005227-495c5ff120",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-hairball-400g-crocchette-gatti-adulti-08009470005227-3e2b52",
       "issues": []
     },
     {
       "page": "prezzi-08009470005234-cc12d0c377.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470005234-cc12d0c377",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-hairball-pollo-1-5kg-crocchette-gatti-adulti-08009470005234-18df84",
       "issues": []
     },
     {
@@ -1215,44 +1215,44 @@
     },
     {
       "page": "prezzi-08009470005463-a908037770.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470005463-a908037770",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-sterilized-monoprotein-trota-400g-crocchette-gatti-08009470005463-1962ac",
       "issues": []
     },
     {
       "page": "prezzi-08009470005470-ff29ac50f6.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470005470-ff29ac50f6",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-monoprotein-kitten-trota-400g-crocchette-gattini-08009470005470-4f4528",
       "issues": []
     },
     {
       "page": "prezzi-08009470005487-fd70d54517.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470005487-fd70d54517",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-natural-superpremium-salmone-400g-crocchette-gatti-08009470005487-cc583a",
       "issues": []
     },
     {
       "page": "prezzi-08009470005494-2172b66468.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470005494-2172b66468",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-sterilized-monoprotein-trota-1-5kg-crocchette-gatti-08009470005494-590dc3",
       "issues": []
     },
     {
       "page": "prezzi-08009470005500-87626288d4.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470005500-87626288d4",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-kitten-monoprotein-trota-1-5kg-gattini-08009470005500-1c9c68",
       "issues": []
     },
     {
       "page": "prezzi-08009470005517-2537cd8e4e.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470005517-2537cd8e4e",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-natural-salmone-adult-1-5kg-crocchette-gatti-08009470005517-66d1b5",
       "issues": []
     },
     {
       "page": "prezzi-08009470005531-f89292ddf6.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470005531-f89292ddf6",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-monoprotein-sterilised-merluzzo-1-5kg-crocchette-gatti-sterilizzati-08009470005531-860131",
       "issues": []
     },
     {
@@ -1263,56 +1263,56 @@
     },
     {
       "page": "prezzi-08009470006781-52ab55cacc.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470006781-52ab55cacc",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-supreme-sterilised-tonno-sogliola-e-piselli-bustine-80g-gatti-08009470006781-551983",
       "issues": []
     },
     {
       "page": "prezzi-08009470006798-8797d3fa56.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470006798-8797d3fa56",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-supreme-adult-tonno-spigola-e-patate-bustine-80g-gatti-08009470006798-861962",
       "issues": []
     },
     {
       "page": "prezzi-08009470006804-f2dd7145b1.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470006804-f2dd7145b1",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-supreme-adult-tonno-cozze-e-olive-bustine-80g-gatti-08009470006804-79fe98",
       "issues": []
     },
     {
       "page": "prezzi-08009470006811-ccf1d0aa46.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470006811-ccf1d0aa46",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-supreme-sterilised-tonno-triglia-e-fagiolini-bustine-80g-gatti-08009470006811-8eec1d",
       "issues": []
     },
     {
       "page": "prezzi-08009470006828-953b1506b7.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470006828-953b1506b7",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-supreme-adult-tonno-broccoli-e-mais-bustine-80g-gatti-08009470006828-f43f44",
       "issues": []
     },
     {
       "page": "prezzi-08009470006835-04dc610b04.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470006835-04dc610b04",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-supreme-kitten-tonno-spinaci-e-carote-bustine-80g-kitten-08009470006835-3582c8",
       "issues": []
     },
     {
       "page": "prezzi-08009470006842-2f8fc22e9d.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470006842-2f8fc22e9d",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-supreme-adult-tonno-zucca-e-mais-bustine-80g-gatti-08009470006842-9140ab",
       "issues": []
     },
     {
       "page": "prezzi-08009470006859-f5f6967df0.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470006859-f5f6967df0",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-supreme-adult-tonno-piselli-e-carote-bustine-80g-gatti-08009470006859-71c033",
       "issues": []
     },
     {
       "page": "prezzi-08009470006866-895fd0d7fc.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470006866-895fd0d7fc",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-supreme-kitten-tonno-piselli-e-carote-bustine-80g-kitten-08009470006866-adc50d",
       "issues": []
     },
     {
@@ -1467,224 +1467,224 @@
     },
     {
       "page": "prezzi-08009470007788-5f789da7df.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470007788-5f789da7df",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-supreme-sterilised-tonno-quinoa-e-fagiolini-bustine-80g-gatti-08009470007788-90be04",
       "issues": []
     },
     {
       "page": "prezzi-08009470007795-3a59f6bb61.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470007795-3a59f6bb61",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-supreme-adult-tonno-quinoa-e-alghe-bustine-80g-gatti-08009470007795-8f085b",
       "issues": []
     },
     {
       "page": "prezzi-08009470007801-e37f26e9b9.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470007801-e37f26e9b9",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-supreme-kitten-tonno-quinoa-e-carote-bustine-80g-kitten-08009470007801-1b2860",
       "issues": []
     },
     {
       "page": "prezzi-08009470007818-00a22ef6f3.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470007818-00a22ef6f3",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-supreme-sterilised-tonno-quinoa-e-zucca-bustine-80g-gatti-08009470007818-794cd2",
       "issues": []
     },
     {
       "page": "prezzi-08009470007825-e4b6d08a7e.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470007825-e4b6d08a7e",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-supreme-senior-tonno-riso-integrale-e-te-verde-matcha-lattina-80g-gatti-08009470007825-f2b71d",
       "issues": []
     },
     {
       "page": "prezzi-08009470007832-5f58a5eaf4.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470007832-5f58a5eaf4",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-supreme-sterilised-tonno-riso-integrale-e-goji-lattina-80g-gatti-08009470007832-b4ff51",
       "issues": []
     },
     {
       "page": "prezzi-08009470007849-b9c06bc4f6.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470007849-b9c06bc4f6",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-supreme-sterilised-tonno-riso-integrale-e-mirtilli-rossi-lattina-80g-gatti-08009470007849-6ed948",
       "issues": []
     },
     {
       "page": "prezzi-08009470007856-e1b9794662.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470007856-e1b9794662",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-supreme-adult-tonno-riso-integrale-e-cocco-lattina-80g-gatti-08009470007856-d334da",
       "issues": []
     },
     {
       "page": "prezzi-08009470007863-00e259cc63.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470007863-00e259cc63",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-supreme-sterilised-tonno-riso-integrale-e-longan-lattina-80g-gatti-08009470007863-8c3ae5",
       "issues": []
     },
     {
       "page": "prezzi-08009470007870-0ae643916e.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470007870-0ae643916e",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-supreme-sterilised-tonno-riso-integrale-e-ginkgo-biloba-lattina-80g-gatti-08009470007870-6ea96d",
       "issues": []
     },
     {
       "page": "prezzi-08009470007887-325f72272e.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470007887-325f72272e",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-supreme-sterilised-tonno-con-granchio-lattina-80g-gatti-08009470007887-56ef99",
       "issues": []
     },
     {
       "page": "prezzi-08009470007894-7f36048ac6.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470007894-7f36048ac6",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-supreme-sterilised-tonno-con-calamari-lattina-80g-gatti-08009470007894-0c2572",
       "issues": []
     },
     {
       "page": "prezzi-08009470007931-530631cab8.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470007931-530631cab8",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-supreme-sterilised-tonno-con-spigola-lattina-80g-gatti-08009470007931-14f610",
       "issues": []
     },
     {
       "page": "prezzi-08009470007948-b402a4b085.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470007948-b402a4b085",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-supreme-adult-tonno-con-orata-lattina-80g-gatti-08009470007948-d34204",
       "issues": []
     },
     {
       "page": "prezzi-08009470007955-7711da5187.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470007955-7711da5187",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-supreme-kitten-tonno-con-orata-lattina-80g-gattini-08009470007955-d71c55",
       "issues": []
     },
     {
       "page": "prezzi-08009470007962-8a827669a2.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470007962-8a827669a2",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-supreme-kitten-tonno-riso-integrale-e-cocco-lattina-80g-gattini-08009470007962-7069ef",
       "issues": []
     },
     {
       "page": "prezzi-08009470011037-91ee1aa9da.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470011037-91ee1aa9da",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-specialityline-all-breeds-puppy-anatra-riso-patate-2-5kg-cani-cuccioli-08009470011037-51b983",
       "issues": []
     },
     {
       "page": "prezzi-08009470011105-cc9449247e.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470011105-cc9449247e",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-adult-maiale-riso-e-patate-2-5kg-crocchette-cani-08009470011105-b3419a",
       "issues": []
     },
     {
       "page": "prezzi-08009470011112-0684d537dc.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470011112-0684d537dc",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-all-breeds-adult-monoprotein-con-maiale-riso-e-patate-per-cani-sacco-da-12-kg-tutte-le-taglie-08009470011112-f968d2",
       "issues": []
     },
     {
       "page": "prezzi-08009470011129-3d4361c36c.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470011129-3d4361c36c",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-specialityline-all-breed-adult-anatra-riso-e-patate-2-5kg-crocchette-cani-08009470011129-7c9310",
       "issues": []
     },
     {
       "page": "prezzi-08009470011136-f665f11b66.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470011136-f665f11b66",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-all-breeds-adult-anatra-riso-e-patate-per-cani-sacco-da-12-kg-tutte-le-taglie-08009470011136-8de3aa",
       "issues": []
     },
     {
       "page": "prezzi-08009470011143-30c7042ed5.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470011143-30c7042ed5",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-all-breed-adult-coniglio-riso-e-patate-2-5kg-crocchette-cani-08009470011143-c356f0",
       "issues": []
     },
     {
       "page": "prezzi-08009470011150-f503b54e50.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470011150-f503b54e50",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-all-breed-adult-coniglio-riso-e-patate-12kg-crocchette-08009470011150-4ccffe",
       "issues": []
     },
     {
       "page": "prezzi-08009470011167-dad2ff31a5.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470011167-dad2ff31a5",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-hypoallergenic-salmone-e-tonno-2-5kg-crocchette-cani-08009470011167-f9fb0d",
       "issues": []
     },
     {
       "page": "prezzi-08009470011174-cc356c76dc.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470011174-cc356c76dc",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-all-breeds-hypoallergenic-salmone-e-tonno-per-cani-sacco-da-12-kg-tutte-le-taglie-08009470011174-274d70",
       "issues": []
     },
     {
       "page": "prezzi-08009470011181-4639176f7a.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470011181-4639176f7a",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-specialityline-puppy-agnello-e-riso-2-5kg-crocchette-cuccioli-08009470011181-a4650f",
       "issues": []
     },
     {
       "page": "prezzi-08009470011198-69c4a75431.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470011198-69c4a75431",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-speciality-line-all-breeds-puppy-agnello-e-riso-12kg-crocchette-cani-08009470011198-37efab",
       "issues": []
     },
     {
       "page": "prezzi-08009470011204-46995e520c.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470011204-46995e520c",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-puppy-all-breeds-salmone-e-riso-2-5kg-crocchette-cani-08009470011204-82b902",
       "issues": []
     },
     {
       "page": "prezzi-08009470011211-6f890f542a.html",
       "indexable": false,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470011211-6f890f542a",
+      "canonical": "https://offerte4zampe.it/prodotto/monge-all-breeds-puppy-junior-monoprotein-con-salmone-e-riso-per-cuccioli-sacco-da-12-kg-08009470011211-babd9d",
       "issues": []
     },
     {
       "page": "prezzi-08009470011228-f94839fefb.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470011228-f94839fefb",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-light-all-breed-adult-salmone-e-riso-2-5kg-crocchette-08009470011228-9e7959",
       "issues": []
     },
     {
       "page": "prezzi-08009470011235-76c0a9c27c.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470011235-76c0a9c27c",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-all-breeds-adult-light-salmone-e-riso-per-cani-sacco-da-12-kg-08009470011235-e5086b",
       "issues": []
     },
     {
       "page": "prezzi-08009470011266-71991fc62c.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470011266-71991fc62c",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-natural-puppy-salmone-e-riso-800g-crocchette-cuccioli-08009470011266-d4ba3d",
       "issues": []
     },
     {
       "page": "prezzi-08009470011273-fbe5bb765f.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470011273-fbe5bb765f",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-all-breeds-adult-pollo-riso-e-patate-2-5kg-crocchette-cani-08009470011273-a322a2",
       "issues": []
     },
     {
       "page": "prezzi-08009470011280-d23ae4ea1e.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470011280-d23ae4ea1e",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-speciality-line-adult-all-breeds-pollo-riso-e-patate-12kg-crocchette-cani-08009470011280-726897",
       "issues": []
     },
     {
       "page": "prezzi-08009470011303-f41ed384df.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470011303-f41ed384df",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-all-breeds-salmone-e-riso-12kg-crocchette-cani-08009470011303-fa12f5",
       "issues": []
     },
     {
       "page": "prezzi-08009470011310-507c765a15.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470011310-507c765a15",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-natural-agnello-riso-e-patate-all-breed-adult-2-5kg-crocchette-cani-08009470011310-a8c06c",
       "issues": []
     },
     {
       "page": "prezzi-08009470011327-92e28c963c.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470011327-92e28c963c",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-all-breed-agnello-riso-e-patate-12kg-crocchette-cani-08009470011327-0a3626",
       "issues": []
     },
     {
@@ -1695,86 +1695,86 @@
     },
     {
       "page": "prezzi-08009470011365-12eba5ff7c.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470011365-12eba5ff7c",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-monoprotein-puppy-e-junior-manzo-e-riso-12kg-crocchette-cuccioli-08009470011365-b0d614",
       "issues": []
     },
     {
       "page": "prezzi-08009470011372-fc94b51014.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470011372-fc94b51014",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-monoprotein-puppy-e-junior-manzo-e-riso-2-5kg-crocchette-08009470011372-354e0e",
       "issues": []
     },
     {
       "page": "prezzi-08009470011396-564a6e3f11.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470011396-564a6e3f11",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-specialityline-all-breeds-tacchino-riso-patate-12kg-cani-adulti-08009470011396-b34843",
       "issues": []
     },
     {
       "page": "prezzi-08009470011402-f1eaf67685.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470011402-f1eaf67685",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-extra-small-puppy-e-junior-pollo-800g-crocchette-cani-cuccioli-08009470011402-bb38e4",
       "issues": []
     },
     {
       "page": "prezzi-08009470011419-06401afb51.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470011419-06401afb51",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-natural-extra-small-adult-pollo-800g-crocchette-cani-08009470011419-7b92b8",
       "issues": []
     },
     {
       "page": "prezzi-08009470011518-0ab9747ce2.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470011518-0ab9747ce2",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-natural-mini-puppy-agnello-e-riso-800g-crocchette-cuccioli-08009470011518-66b2e3",
       "issues": []
     },
     {
       "page": "prezzi-08009470011525-3bf705b625.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470011525-3bf705b625",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-mini-puppy-e-junior-agnello-e-riso-2-5kg-crocchette-cani-08009470011525-0d047d",
       "issues": []
     },
     {
       "page": "prezzi-08009470011532-a032ca26b5.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470011532-a032ca26b5",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-natural-mini-adult-agnello-riso-e-patate-800g-crocchette-cani-08009470011532-7bfaf0",
       "issues": []
     },
     {
       "page": "prezzi-08009470011549-880ed866f1.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470011549-880ed866f1",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-specialityline-mini-adult-agnello-riso-e-patate-2-5kg-crocchette-cani-08009470011549-69e25e",
       "issues": []
     },
     {
       "page": "prezzi-08009470011556-2d973d6088.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470011556-2d973d6088",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-mini-adult-agnello-riso-e-patate-7-5kg-crocchette-cani-08009470011556-1785d3",
       "issues": []
     },
     {
       "page": "prezzi-08009470011563-1ceb7161e6.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470011563-1ceb7161e6",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-mini-adult-salmone-e-riso-800g-crocchette-cani-08009470011563-92d6a6",
       "issues": []
     },
     {
       "page": "prezzi-08009470011587-9646845ec5.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470011587-9646845ec5",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-mini-adult-salmone-e-riso-7-5kg-crocchette-cani-08009470011587-06a0fc",
       "issues": []
     },
     {
       "page": "prezzi-08009470011617-d4b5061cfb.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470011617-d4b5061cfb",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-specialityline-all-breeds-puppy-maiale-riso-patate-2-5kg-cani-cuccioli-08009470011617-0dd805",
       "issues": []
     },
     {
       "page": "prezzi-08009470011662-cc9118b3c7.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470011662-cc9118b3c7",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-daily-line-medium-puppy-e-junior-pollo-12kg-crocchette-cani-08009470011662-061bf8",
       "issues": []
     },
     {
@@ -1785,20 +1785,20 @@
     },
     {
       "page": "prezzi-08009470011914-e41532e831.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470011914-e41532e831",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-urinary-pollo-1-5kg-crocchette-gatti-08009470011914-ce2669",
       "issues": []
     },
     {
       "page": "prezzi-08009470011921-19bed1ad62.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470011921-19bed1ad62",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-sterilised-pollo-400g-crocchette-gatti-adulti-08009470011921-705d1c",
       "issues": []
     },
     {
       "page": "prezzi-08009470011938-cdc8ce43b2.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470011938-cdc8ce43b2",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-natural-sterilised-pollo-1-5kg-crocchette-gatti-08009470011938-e8e1eb",
       "issues": []
     },
     {
@@ -1809,14 +1809,14 @@
     },
     {
       "page": "prezzi-08009470011952-21ae269d57.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470011952-21ae269d57",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-sterilised-monoprotein-anatra-1-5kg-crocchette-gatti-08009470011952-8b1ca4",
       "issues": []
     },
     {
       "page": "prezzi-08009470011976-1be0914609.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470011976-1be0914609",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-monoprotein-kitten-manzo-1-5kg-crocchette-gattini-08009470011976-512381",
       "issues": []
     },
     {
@@ -1977,86 +1977,86 @@
     },
     {
       "page": "prezzi-08009470015004-dba64e3773.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470015004-dba64e3773",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-lettiera-easy-green-vegetale-3-5kg-per-gatti-08009470015004-f5bfe1",
       "issues": []
     },
     {
       "page": "prezzi-08009470015011-b766bf95ce.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470015011-b766bf95ce",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-lettiera-easy-green-mais-3-8kg-per-gatti-08009470015011-7dca80",
       "issues": []
     },
     {
       "page": "prezzi-08009470015028-fff914b3bb.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470015028-fff914b3bb",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-lettiera-easy-green-con-carboni-attivi-3-8kg-08009470015028-991ac8",
       "issues": []
     },
     {
       "page": "prezzi-08009470056236-4fa963ecc1.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470056236-4fa963ecc1",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-natural-superpremium-adult-cat-ricco-in-pollo-10-kg-10kg-08009470056236-64eb8b",
       "issues": []
     },
     {
       "page": "prezzi-08009470056304-df3f7f12c6.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470056304-df3f7f12c6",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-natural-superpremium-sterilised-monoprotein-con-trota-10-kg-cibo-monoproteico-gatto-10kg-08009470056304-ccce47",
       "issues": []
     },
     {
       "page": "prezzi-08009470081016-a253ee449c.html",
       "indexable": false,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470081016-a253ee449c",
+      "canonical": "https://offerte4zampe.it/prodotto/monge-vetsolution-canine-dermatotis-grain-free-adult-salmone-12-kg-12kg-08009470081016-bc3938",
       "issues": []
     },
     {
       "page": "prezzi-08009470085236-edcb811cfe.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470085236-edcb811cfe",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-gift-sticks-dental-coniglio-e-salvia-15g-snack-gatti-08009470085236-043f97",
       "issues": []
     },
     {
       "page": "prezzi-08009470085243-ba449f753e.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470085243-ba449f753e",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-gift-sticks-kitten-trota-e-camomilla-15g-snack-gattini-08009470085243-d4bdf6",
       "issues": []
     },
     {
       "page": "prezzi-08009470085250-ff80aeb073.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470085250-ff80aeb073",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-gift-sticks-fussy-cat-maiale-e-rosa-canina-15g-snack-gatti-08009470085250-c14e7a",
       "issues": []
     },
     {
       "page": "prezzi-08009470085267-a525b9168f.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470085267-a525b9168f",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-gift-sticks-hairball-salmone-e-carciofo-15g-snack-gatti-08009470085267-cdc377",
       "issues": []
     },
     {
       "page": "prezzi-08009470085274-655cf4a827.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470085274-655cf4a827",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-gift-sticks-skin-support-merluzzo-e-trifoglio-rosso-15g-snack-gatti-08009470085274-0e1071",
       "issues": []
     },
     {
       "page": "prezzi-08009470085281-28be91c429.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470085281-28be91c429",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-gift-sticks-sterilised-anatra-e-melissa-15g-snack-gatti-08009470085281-de2113",
       "issues": []
     },
     {
       "page": "prezzi-08009470085489-acc02b1a51.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470085489-acc02b1a51",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-gift-meat-bars-immunity-support-coniglio-e-nucleotidi-40g-snack-cani-08009470085489-e2a56e",
       "issues": []
     },
     {
       "page": "prezzi-08009470386012-3bbef2cad6.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470386012-3bbef2cad6",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-gemon-maiale-e-riso-3kg-crocchette-cani-all-breeds-adult-08009470386012-438ed4",
       "issues": []
     },
     {
@@ -2073,44 +2073,44 @@
     },
     {
       "page": "prezzi-08009470386258-6f229663a5.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08009470386258-6f229663a5",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/monge-gemon-maiale-e-riso-15kg-crocchette-cani-all-breeds-adult-08009470386258-ac29e7",
       "issues": []
     },
     {
       "page": "prezzi-08010276025333-9989be71f6.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08010276025333-9989be71f6",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/farmina-vet-life-feline-obesity-2-kg-2kg-08010276025333-399ec8",
       "issues": []
     },
     {
       "page": "prezzi-08010276025340-e5cc0f1ff0.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08010276025340-e5cc0f1ff0",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/farmina-vet-life-feline-gastro-intestinal-2-kg-2kg-08010276025340-fec93b",
       "issues": []
     },
     {
       "page": "prezzi-08010276025395-5dc7cb8024.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08010276025395-5dc7cb8024",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/farmina-vet-life-canine-renal-12-kg-12kg-08010276025395-a3bbb2",
       "issues": []
     },
     {
       "page": "prezzi-08010276025449-459d1b08e4.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08010276025449-459d1b08e4",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/farmina-vet-life-canine-ultrahypo-12-kg-crocchette-monoproteiche-cane-12kg-08010276025449-03074b",
       "issues": []
     },
     {
       "page": "prezzi-08011259002440-8c98e0948b.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08011259002440-8c98e0948b",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/exclusion-diet-renal-per-cani-sacco-da-12-kg-taglia-media-e-grande-08011259002440-2bbdb7",
       "issues": []
     },
     {
       "page": "prezzi-08011259002488-7a460b894c.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08011259002488-7a460b894c",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/exclusion-diet-renal-cibo-umido-per-cani-6x400-gr-08011259002488-28d528",
       "issues": []
     },
     {
@@ -2139,20 +2139,20 @@
     },
     {
       "page": "prezzi-08011259004260-6411aa4796.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08011259004260-6411aa4796",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/exclusion-diet-intestinal-cat-maiale-e-riso-1-5-kg-cibo-monoproteico-gatto-1-5kg-08011259004260-541a8e",
       "issues": []
     },
     {
       "page": "prezzi-08015579034686-915140576b.html",
       "indexable": false,
-      "canonical": "https://offerte4zampe.it/prezzi-08015579034686-915140576b",
+      "canonical": "https://offerte4zampe.it/prodotto/prolife-smart-adult-mini-con-trota-e-riso-per-cani-sacco-da-7-kg-08015579034686-b99487",
       "issues": []
     },
     {
       "page": "prezzi-08015579034730-7dd3de0f0f.html",
       "indexable": false,
-      "canonical": "https://offerte4zampe.it/prezzi-08015579034730-7dd3de0f0f",
+      "canonical": "https://offerte4zampe.it/prodotto/prolife-smart-cane-adult-mini-manzo-e-riso-7-kg-7kg-08015579034730-4185d8",
       "issues": []
     },
     {
@@ -2170,37 +2170,37 @@
     {
       "page": "prezzi-08015579035089-8c1705ba0b.html",
       "indexable": false,
-      "canonical": "https://offerte4zampe.it/prezzi-08015579035089-8c1705ba0b",
+      "canonical": "https://offerte4zampe.it/prodotto/prolife-lifestyle-cane-mature-mini-presce-bianco-e-riso-2-kg-2kg-08015579035089-9f55e3",
       "issues": []
     },
     {
       "page": "prezzi-08015579035218-0aae50b919.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08015579035218-0aae50b919",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/prolife-sensitive-adult-coniglio-e-patate-per-cani-sacco-da-10-kg-08015579035218-45e500",
       "issues": []
     },
     {
       "page": "prezzi-08015579035263-438791de57.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08015579035263-438791de57",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/prolife-sensitive-cane-adult-medium-large-maiale-e-riso-10-kg-10kg-08015579035263-00a7f8",
       "issues": []
     },
     {
       "page": "prezzi-08015579035348-6c35c7315f.html",
       "indexable": false,
-      "canonical": "https://offerte4zampe.it/prezzi-08015579035348-6c35c7315f",
+      "canonical": "https://offerte4zampe.it/prodotto/prolife-sensitive-grain-free-mini-con-maiale-e-patate-per-cani-sacco-da-7-kg-08015579035348-6834df",
       "issues": []
     },
     {
       "page": "prezzi-08015579035362-f55cfd874a.html",
       "indexable": false,
-      "canonical": "https://offerte4zampe.it/prezzi-08015579035362-f55cfd874a",
+      "canonical": "https://offerte4zampe.it/prodotto/prolife-sensitive-grain-free-medium-large-con-maiale-e-patate-per-cani-sacco-da-10-kg-08015579035362-3d991d",
       "issues": []
     },
     {
       "page": "prezzi-08015579035447-49bc005aa8.html",
       "indexable": false,
-      "canonical": "https://offerte4zampe.it/prezzi-08015579035447-49bc005aa8",
+      "canonical": "https://offerte4zampe.it/prodotto/prolife-sensitive-grain-free-mini-con-pesce-e-patate-per-cani-sacco-da-7-kg-08015579035447-71c94b",
       "issues": []
     },
     {
@@ -2223,20 +2223,20 @@
     },
     {
       "page": "prezzi-08015579035751-9b494cde63.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08015579035751-9b494cde63",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/prolife-lifestyle-gatto-adult-salmone-e-riso-1-5-kg-1-5kg-08015579035751-f002db",
       "issues": []
     },
     {
       "page": "prezzi-08015579035768-32cefa9476.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08015579035768-32cefa9476",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/prolife-lifestyle-gatto-adult-salmone-e-riso-7-kg-7kg-08015579035768-5a6b21",
       "issues": []
     },
     {
       "page": "prezzi-08015579035799-e3ace28ef8.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08015579035799-e3ace28ef8",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/prolife-sterilised-gatto-adult-manzo-e-riso-7-kg-7kg-08015579035799-e6f2a3",
       "issues": []
     },
     {
@@ -2247,50 +2247,56 @@
     },
     {
       "page": "prezzi-08015579036055-534a02d289.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08015579036055-534a02d289",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/prolife-kitten-salmone-e-riso-per-gattini-sacco-da-1-5-kg-08015579036055-5b704e",
       "issues": []
     },
     {
       "page": "prezzi-08015579036086-41d175ff25.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08015579036086-41d175ff25",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/prolife-lifestyle-gatto-kitten-pollo-e-riso-1-5-kg-1-5kg-08015579036086-682996",
       "issues": []
     },
     {
       "page": "prezzi-08015579036123-7f684a67cd.html",
       "indexable": false,
-      "canonical": "https://offerte4zampe.it/prezzi-08015579036123-7f684a67cd",
+      "canonical": "https://offerte4zampe.it/prodotto/prolife-adult-pollo-e-riso-per-gatti-adulti-sacco-da-7-kg-08015579036123-068bcb",
       "issues": []
     },
     {
       "page": "prezzi-08015579039315-82cf151162.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08015579039315-82cf151162",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/prolife-smart-dog-mini-100-g-puppy-pollo-e-riso-confezione-da-10-pezzi-08015579039315-19a1a3",
       "issues": []
     },
     {
       "page": "prezzi-08015579039681-27a19e5706.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08015579039681-27a19e5706",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/prolife-sensitive-umido-cane-medium-large-400-g-coniglio-e-patate-confezione-da-6-pezzi-08015579039681-2e0e57",
+      "issues": []
+    },
+    {
+      "page": "prezzi-08015579039711-a80d91cfef.html",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/prolife-grain-free-sensitive-dog-adult-medium-large-400-g-maiale-e-patate-confezione-da-6-pezzi-08015579039711-8b9b30",
       "issues": []
     },
     {
       "page": "prezzi-08015579040458-9fd66c5590.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08015579040458-9fd66c5590",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/prolife-sterilised-con-maiale-cibo-umido-per-gatti-12-bustine-da-85-gr-08015579040458-d45241",
       "issues": []
     },
     {
       "page": "prezzi-08015579040502-0542789faf.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08015579040502-0542789faf",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/prolife-senior-manzo-e-riso-cibo-umido-per-gatti-12-bustine-da-85-gr-08015579040502-2ad9f7",
       "issues": []
     },
     {
       "page": "prezzi-08015579046559-a731b4e563.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08015579046559-a731b4e563",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/prolife-snack-dog-adult-sensitive-grain-free-90-g-pesce-08015579046559-b17e98",
       "issues": []
     },
     {
@@ -2301,14 +2307,14 @@
     },
     {
       "page": "prezzi-08015579047440-dc9fe1866a.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08015579047440-dc9fe1866a",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/prolife-sterilised-sensitive-medium-large-adult-monoproteico-anatra-e-riso-2-5-kg-crocchette-monoproteiche-cane-2-5-08015579047440-eefc2f",
       "issues": []
     },
     {
       "page": "prezzi-08015579047457-b43cdf4471.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08015579047457-b43cdf4471",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/prolife-sterilised-sensitive-medium-large-adult-monoproteico-anatra-e-riso-10-kg-crocchette-monoproteiche-cane-10kg-08015579047457-bb8127",
       "issues": []
     },
     {
@@ -2337,26 +2343,26 @@
     },
     {
       "page": "prezzi-08018157016982-260b919f54.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08018157016982-260b919f54",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/bombola-per-acquari-ricambi-co2-non-ricaricabile-askoll-bombola-600-g-08018157016982-b850fe",
       "issues": []
     },
     {
       "page": "prezzi-08018157017231-3601916802.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08018157017231-3601916802",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/bombola-per-acquari-ricambi-co2-non-ricaricabile-askoll-bombola-1300-g-08018157017231-a5de51",
       "issues": []
     },
     {
       "page": "prezzi-08019808044156-ac25b43400.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08019808044156-ac25b43400",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/camon-biscotti-animaletti-500-g-08019808044156-c976c3",
       "issues": []
     },
     {
       "page": "prezzi-08019808113111-a98f76f2bf.html",
       "indexable": false,
-      "canonical": "https://offerte4zampe.it/prezzi-08019808113111-a98f76f2bf",
+      "canonical": "https://offerte4zampe.it/prodotto/orme-naturali-pomata-lenitiva-per-cani-e-gatti-100-g-08019808113111-6a69f9",
       "issues": []
     },
     {
@@ -2367,8 +2373,8 @@
     },
     {
       "page": "prezzi-08019808132914-61a57a938e.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08019808132914-61a57a938e",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/camon-sticks-treats-8-cm-400-g-08019808132914-4faba9",
       "issues": []
     },
     {
@@ -2380,7 +2386,7 @@
     {
       "page": "prezzi-08019808144542-0fb528388b.html",
       "indexable": false,
-      "canonical": "https://offerte4zampe.it/prezzi-08019808144542-0fb528388b",
+      "canonical": "https://offerte4zampe.it/prodotto/orme-naturali-struvipet-pasta-per-cani-e-gatti-dispenser-da-100-gr-08019808144542-371cbf",
       "issues": []
     },
     {
@@ -2391,26 +2397,26 @@
     },
     {
       "page": "prezzi-08021676020675-e81c940d43.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08021676020675-e81c940d43",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/restomyl-dentalcroc-snack-per-l-alitosi-innovet-60-g-gatto-08021676020675-2c8b3a",
       "issues": []
     },
     {
       "page": "prezzi-08021676020743-687fea351e.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08021676020743-687fea351e",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/restomyl-dentalcroc-snack-per-l-alitosi-innovet-60-g-cane-08021676020743-c410ae",
       "issues": []
     },
     {
       "page": "prezzi-08021676020750-742becd345.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08021676020750-742becd345",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/innovet-restomyl-dentalcroc-150-g-08021676020750-a01ec8",
       "issues": []
     },
     {
       "page": "prezzi-08025767002014-3ee9a2274d.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08025767002014-3ee9a2274d",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/candioli-forbid-50-g-08025767002014-80dd84",
       "issues": []
     },
     {
@@ -2422,43 +2428,43 @@
     {
       "page": "prezzi-08028347043124-14ffb400e4.html",
       "indexable": false,
-      "canonical": "https://offerte4zampe.it/prezzi-08028347043124-14ffb400e4",
+      "canonical": "https://offerte4zampe.it/prodotto/vet-line-secco-monoproteico-cane-adult-bufalo-12-5-kg-crocchette-monoproteiche-cane-12-5kg-08028347043124-edc1c0",
       "issues": []
     },
     {
       "page": "prezzi-08032611672507-f844d43fe7.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08032611672507-f844d43fe7",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/naturalpet-doggy-snacks-sandwich-pollo-merluzzo-80-g-08032611672507-ad2b6c",
       "issues": []
     },
     {
       "page": "prezzi-08032611678004-5cf19c80ab.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08032611678004-5cf19c80ab",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/petup-lettiera-bentonite-8-kg-08032611678004-9cc208",
       "issues": []
     },
     {
       "page": "prezzi-08033837553403-6b38dbd5f5.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08033837553403-6b38dbd5f5",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/natural-code-adult-cat-cibo-umido-per-gatti-01-filetti-di-pollo-24x85-gr-08033837553403-3343f2",
       "issues": []
     },
     {
       "page": "prezzi-08052469420112-516c51c160.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08052469420112-516c51c160",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/i-m-different-snack-con-pollo-40-g-08052469420112-bef9a2",
       "issues": []
     },
     {
       "page": "prezzi-08052469420143-f231cb9bd3.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08052469420143-f231cb9bd3",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/i-m-different-snack-con-trota-40-g-08052469420143-b42177",
       "issues": []
     },
     {
       "page": "prezzi-08052469420150-507bac8455.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08052469420150-507bac8455",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/i-m-different-snack-con-prosciutto-crudo-40-g-08052469420150-32649d",
       "issues": []
     },
     {
@@ -2469,74 +2475,74 @@
     },
     {
       "page": "prezzi-08052740002433-c171e9b5ac.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08052740002433-c171e9b5ac",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/aldog-super-premium-adult-medium-large-monoproteico-con-maiale-12-kg-crocchette-monoproteiche-cane-12kg-08052740002433-35fbb3",
       "issues": []
     },
     {
       "page": "prezzi-08052740002464-362a6309fb.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08052740002464-362a6309fb",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/aldog-super-premium-adult-medium-large-nordic-sea-12-kg-12kg-08052740002464-856023",
       "issues": []
     },
     {
       "page": "prezzi-08052740004130-0fa2a02159.html",
       "indexable": false,
-      "canonical": "https://offerte4zampe.it/prezzi-08052740004130-0fa2a02159",
+      "canonical": "https://offerte4zampe.it/prodotto/aldog-super-premium-artica-mini-salmone-e-riso-per-cani-small-sacco-da-8-kg-08052740004130-56ca89",
       "issues": []
     },
     {
       "page": "prezzi-08052745706411-4c83304557.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08052745706411-4c83304557",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/amico-veg-dog-premietti-con-mela-300-g-08052745706411-faa5ee",
       "issues": []
     },
     {
       "page": "prezzi-08052745706428-5faea8cb87.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08052745706428-5faea8cb87",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/amico-veg-dog-premietti-con-frutti-di-bosco-300g-08052745706428-f987c1",
       "issues": []
     },
     {
       "page": "prezzi-08052745706435-9a70f60172.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08052745706435-9a70f60172",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/amico-veg-dog-biscotti-croccosi-integrali-300-g-08052745706435-8b91fd",
       "issues": []
     },
     {
       "page": "prezzi-08052745706442-1c76830283.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08052745706442-1c76830283",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/amico-veg-snack-vegetali-croccosi-300-g-mix-verdure-08052745706442-73bb3e",
       "issues": []
     },
     {
       "page": "prezzi-08053017343686-7d79c6d4f7.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08053017343686-7d79c6d4f7",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/oasy-bocconcini-in-salsa-kitten-per-gattini-con-pollo-12x85-gr-08053017343686-7d51c2",
       "issues": []
     },
     {
       "page": "prezzi-08053017343761-7dc9ea2742.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08053017343761-7dc9ea2742",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/oasy-bocconcini-in-salsa-adult-hairball-per-gatti-12x85-gr-08053017343761-627c1c",
       "issues": []
     },
     {
       "page": "prezzi-08053017343822-cd90148124.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08053017343822-cd90148124",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/oasy-cat-mature-bocconcini-in-salsa-85-g-salmone-confezione-da-12-pezzi-08053017343822-585706",
       "issues": []
     },
     {
       "page": "prezzi-08056098400835-0f4d3cd132.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08056098400835-0f4d3cd132",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/naturalpet-fagottini-ripieni-cat-adult-60-g-pollo-e-salmone-08056098400835-53149d",
       "issues": []
     },
     {
       "page": "prezzi-08056098400842-fb0564501a.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08056098400842-fb0564501a",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/naturalpet-fagottini-ripieni-cat-adult-60-g-sterilised-pollo-08056098400842-b6fa71",
       "issues": []
     },
     {
@@ -2547,98 +2553,98 @@
     },
     {
       "page": "prezzi-08059149029573-55c06e4fff.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08059149029573-55c06e4fff",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/trainer-natural-kitten-pollo-1-5kg-crocchette-gattini-08059149029573-c9714d",
       "issues": []
     },
     {
       "page": "prezzi-08059149029627-303ab47c98.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08059149029627-303ab47c98",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/trainer-natural-cat-pollo-1-5kg-crocchette-gatti-adulti-08059149029627-4b791c",
       "issues": []
     },
     {
       "page": "prezzi-08059149029719-1c5fdfd988.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08059149029719-1c5fdfd988",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/trainer-natural-cat-tonno-1-5kg-crocchette-gatti-adulti-08059149029719-99613b",
       "issues": []
     },
     {
       "page": "prezzi-08059149029795-7fa3522d27.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08059149029795-7fa3522d27",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/natural-trainer-daily-nutrition-adult-sterilised-con-prosciutto-crudo-1-5-kg-1-5kg-08059149029795-2883be",
       "issues": []
     },
     {
       "page": "prezzi-08059149282008-73e88b5ad2.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08059149282008-73e88b5ad2",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/trainer-bocconcini-merluzzo-e-tacchino-multipack-24x85g-gatti-sterilizzati-08059149282008-5cae3d",
       "issues": []
     },
     {
       "page": "prezzi-08059149282015-1a50764c0b.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08059149282015-1a50764c0b",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/trainer-bocconcini-pollo-e-salmone-bustina-24x85g-gatti-adult-multipack-08059149282015-a9c439",
       "issues": []
     },
     {
       "page": "prezzi-08059149428383-833b652070.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08059149428383-833b652070",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/trainer-sterilised-salmone-10kg-crocchette-gatti-adulti-08059149428383-6bec79",
       "issues": []
     },
     {
       "page": "prezzi-08059149428598-3c7286e658.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08059149428598-3c7286e658",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/trainer-ideal-weight-tacchino-12kg-crocchette-cani-medium-maxi-adult-08059149428598-4d9b80",
       "issues": []
     },
     {
       "page": "prezzi-08059149428628-b221ffda57.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08059149428628-b221ffda57",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/trainer-sterilised-prosciutto-crudo-10kg-crocchette-gatti-08059149428628-9b9736",
       "issues": []
     },
     {
       "page": "prezzi-08059149430096-179ba58700.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08059149430096-179ba58700",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/trainer-natural-sterilised-trota-300g-crocchette-gatti-adulti-08059149430096-839d22",
       "issues": []
     },
     {
       "page": "prezzi-08059149430201-09bb12127c.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08059149430201-09bb12127c",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/trainer-natural-sterilised-trota-1-5kg-crocchette-gatti-adulti-08059149430201-55c0c0",
       "issues": []
     },
     {
       "page": "prezzi-08059149430218-3caa9ea69f.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08059149430218-3caa9ea69f",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/trainer-natural-sterilised-anatra-300g-crocchette-gatti-adulti-08059149430218-c07eb3",
       "issues": []
     },
     {
       "page": "prezzi-08059149430225-74c41b76a6.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08059149430225-74c41b76a6",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/trainer-natural-sterilised-anatra-1-5kg-crocchette-gatti-adulti-08059149430225-cb94f8",
       "issues": []
     },
     {
       "page": "prezzi-08059149431697-4b86b825e8.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08059149431697-4b86b825e8",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/natural-trainer-boli-di-pelo-con-pollo-fresco-1-5kg-crocchette-gatti-adulti-08059149431697-f4934d",
       "issues": []
     },
     {
       "page": "prezzi-08059149431703-01d69cdd20.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08059149431703-01d69cdd20",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/natural-trainer-boli-di-pelo-con-pollo-fresco-300g-crocchette-gatti-adulti-08059149431703-994a95",
       "issues": []
     },
     {
       "page": "prezzi-08059149431758-679b698720.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08059149431758-679b698720",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/trainer-benessere-digestivo-trota-300g-crocchette-gatti-adulti-08059149431758-3c84fc",
       "issues": []
     },
     {
@@ -2661,32 +2667,32 @@
     },
     {
       "page": "prezzi-08410650547558-5598331709.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08410650547558-5598331709",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/natural-trainer-flowpack-adult-4x85-g-salmone-08410650547558-81ae06",
       "issues": []
     },
     {
       "page": "prezzi-08410650547978-7ba224bcea.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08410650547978-7ba224bcea",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/natural-trainer-flowpack-adult-4x85-g-manzo-08410650547978-72d494",
       "issues": []
     },
     {
       "page": "prezzi-08410650547985-454f61b711.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08410650547985-454f61b711",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/natural-trainer-cat-sterilised-multipack-4-x-85-g-merluzzo-4ct-08410650547985-d1a0dc",
       "issues": []
     },
     {
       "page": "prezzi-08410650551265-20f4fbff5d.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08410650551265-20f4fbff5d",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/trainer-bocconcini-tonno-e-manzo-multipack-12x85g-gatti-adulti-08410650551265-729f02",
       "issues": []
     },
     {
       "page": "prezzi-08410650551272-f67539d99b.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08410650551272-f67539d99b",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/natural-trainer-cat-sterilised-multipack-4-x-85-g-tonno-4ct-08410650551272-9cb89f",
       "issues": []
     },
     {
@@ -2697,104 +2703,104 @@
     },
     {
       "page": "prezzi-08410650604329-697f48a44e.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08410650604329-697f48a44e",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/natural-trainer-selected-quality-adult-cat-sterilised-grain-free-pesce-bianco-300-g-0-3kg-08410650604329-3b072c",
       "issues": []
     },
     {
       "page": "prezzi-08410650604350-f0c8fb4a8c.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08410650604350-f0c8fb4a8c",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/natural-trainer-selected-quality-adult-cat-sterilised-pollo-1-25-kg-1-25kg-08410650604350-fd3166",
       "issues": []
     },
     {
       "page": "prezzi-08410650623863-622b44ec59.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08410650623863-622b44ec59",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/trainer-kitten-bocconcini-pollo-merluzzo-tonno-e-tacchino-multipack-12x85g-gattini-08410650623863-810a15",
       "issues": []
     },
     {
       "page": "prezzi-08429037001804-46f89805de.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08429037001804-46f89805de",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/ownat-classic-monoproteic-salmone-per-cani-sacco-da-12-kg-08429037001804-354a6d",
       "issues": []
     },
     {
       "page": "prezzi-08429037001811-2ad2ad0f40.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08429037001811-2ad2ad0f40",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/ownat-classic-monoproteic-agnello-per-cani-sacco-da-12-kg-08429037001811-f7549c",
       "issues": []
     },
     {
       "page": "prezzi-08429037001828-65b672fdda.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08429037001828-65b672fdda",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/ownat-classic-monoproteic-iberian-pork-per-cani-sacco-da-12-kg-08429037001828-addbc7",
       "issues": []
     },
     {
       "page": "prezzi-08445290041074-dae8b10f3c.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08445290041074-dae8b10f3c",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/purina-proplan-fortiflora-probiotic-per-cani-30-pz-x-1-g-08445290041074-0932c6",
       "issues": []
     },
     {
       "page": "prezzi-08606014102826-ca94b0e03f.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08606014102826-ca94b0e03f",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/farmina-vet-life-renal-cibo-umido-per-cani-6x300-gr-08606014102826-d55a96",
       "issues": []
     },
     {
       "page": "prezzi-08606109019831-1f4c56dec3.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08606109019831-1f4c56dec3",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/kudo-low-grain-adult-medium-maxi-adriatic-fish-12-kg-12kg-08606109019831-3aec4d",
       "issues": []
     },
     {
       "page": "prezzi-08711231151974-9ba01f4c6d.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-08711231151974-9ba01f4c6d",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/beaphar-lactol-kitty-milk-latte-in-polvere-per-gattini-per-gatti-250-g-08711231151974-158270",
       "issues": []
     },
     {
       "page": "prezzi-09003579000458-bf79ce445d.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-09003579000458-bf79ce445d",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/royal-canin-veterinary-diet-cat-renal-con-pollo-12x85-g-09003579000458-3bc21c",
       "issues": []
     },
     {
       "page": "prezzi-09003579000489-18b7e81f59.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-09003579000489-18b7e81f59",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/royal-canin-veterinary-diet-cat-renal-con-manzo-12x85-g-09003579000489-96aabc",
       "issues": []
     },
     {
       "page": "prezzi-09003579000519-0e1743c075.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-09003579000519-0e1743c075",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/royal-canin-veterinary-diet-cat-renal-con-pesce-85-g-x-12-pz-09003579000519-5ddf35",
       "issues": []
     },
     {
       "page": "prezzi-09003579008379-34fa74b593.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-09003579008379-34fa74b593",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/royal-canin-dog-medium-adult-140-g-09003579008379-79e8ea",
       "issues": []
     },
     {
       "page": "prezzi-09003579011980-ca5a0794dd.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-09003579011980-ca5a0794dd",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/royal-canin-veterinary-diet-cat-diabetic-12x85-g-09003579011980-c6b9b3",
       "issues": []
     },
     {
       "page": "prezzi-09003579029763-e04a30413a.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-09003579029763-e04a30413a",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/royal-canin-pate-per-cani-adult-410-g-medium-09003579029763-a978fb",
       "issues": []
     },
     {
       "page": "prezzi-09003579308936-4c3e3bb31e.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-09003579308936-4c3e3bb31e",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/royal-canin-instinctive-in-salsa-85-g-09003579308936-e117f0",
       "issues": []
     },
     {
@@ -2811,14 +2817,14 @@
     },
     {
       "page": "prezzi-09120067441125-901f1c7178.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-09120067441125-901f1c7178",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/lev-kitten-cibo-umido-per-gattini-tonnetto-kitten-24x70-gr-09120067441125-677ba1",
       "issues": []
     },
     {
       "page": "prezzi-09120067442078-767a459731.html",
-      "indexable": true,
-      "canonical": "https://offerte4zampe.it/prezzi-09120067442078-767a459731",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/lev-kitten-pouch-cibo-umido-per-gattini-tonnetto-24x60-gr-09120067442078-d231f7",
       "issues": []
     },
     {
