@@ -14,9 +14,9 @@ export async function checkThemes(page,origin,catalog){
      const e=[...document.querySelectorAll(selector)].find(e=>e.getClientRects().length);if(!e)continue;
      const fg=getComputedStyle(e).color,bg=background(e),a=lum(rgb(fg)),b=lum(rgb(bg));rows.push({selector,fg,bg,ratio:(Math.max(a,b)+.05)/(Math.min(a,b)+.05)});
     }
-    const targets=[...document.querySelectorAll('.btn:not(:disabled),select,input:not([type=checkbox]):not([type=radio])')].filter(e=>e.getClientRects().length).map(e=>({tag:e.tagName,id:e.id,height:e.getBoundingClientRect().height}));return {targets,rows,bg:getComputedStyle(document.body).backgroundColor,overflow:document.documentElement.scrollWidth-innerWidth,viewport:innerWidth};
+    const targets=[...document.querySelectorAll('.btn:not(:disabled),select,input:not([type=checkbox]):not([type=radio])')].filter(e=>e.getClientRects().length).map(e=>({tag:e.tagName,id:e.id,height:e.getBoundingClientRect().height}));return {targets,rows,bg:getComputedStyle(document.body).backgroundColor,overflow:document.documentElement.scrollWidth-innerWidth,viewport:innerWidth,halloween:document.documentElement.classList.contains('halloween')};
    });
-   assert.equal(data.bg,theme==='dark'?'rgb(16, 35, 38)':'rgb(255, 250, 242)');
+   assert.equal(data.bg,theme==='dark'?(data.halloween?'rgb(33, 30, 40)':'rgb(16, 35, 38)'):'rgb(255, 250, 242)');
    for(const row of data.rows)assert(row.ratio>=4.5,theme+' '+route+' '+JSON.stringify(row));
    for(const target of data.targets)assert(target.height>=44,theme+' '+route+' touch target '+JSON.stringify(target));
    assert(data.overflow<=1,route+' overflow');assert(data.viewport<=394);

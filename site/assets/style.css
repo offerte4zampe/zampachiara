@@ -91,3 +91,44 @@ body{background:var(--cream);font-family:'Trebuchet MS',system-ui,-apple-system,
  input:not([type=checkbox]):not([type=radio]),select,textarea{min-height:44px}
  .accordion summary,.home-faq summary{min-height:44px;display:flex;align-items:center}
 }
+
+/* Halloween 2026: decorative only, automatically gated by base.js. */
+html.halloween{--green:#97401c;--soft:#f8e8d8;--cream:#fffaf2;--accent:#e9973f;--line:#e5d5c5}
+.halloween body{background:var(--cream)}
+.halloween header,.halloween .navlinks{background:#fffaf2}
+.halloween .brand-dot,.halloween .hero h1 em,.halloween .catalog-price strong{color:#97401c}
+.halloween .shopping-hero{background:radial-gradient(ellipse at 85% 25%,#f4d5a8 0,transparent 48%),linear-gradient(120deg,#fffaf2,#fff0dc);border-color:#e8cfb4}
+.halloween .shopping-hero .eyebrow{background:#352938;color:#ffe5bd;letter-spacing:.12em}
+.halloween .shopping-hero .eyebrow:before{background:#ed9b43}
+.halloween .home-search{border-color:#97401c;box-shadow:0 8px 0 #97401c0c}
+.halloween .btn,.halloween .navcta,.halloween .home-search .btn{background:#97401c;color:#fff;border-color:#97401c}
+.halloween .btn:hover,.halloween .navcta:hover,.halloween .home-search .btn:hover{background:#733015}
+.halloween .btn.secondary,.halloween .btn.ghost{background:#fffaf2;color:#873916;border-color:#d9b99d}
+.halloween .btn.secondary:hover{background:#fae6d1}
+.halloween .pet-bubble{background:#fffaf2;border-color:#d6ab79;color:#513d35;z-index:2}
+.halloween .pet-sticker{background:#3c2c42;color:#fff4e5;box-shadow:0 8px 0 #d7b9a2;z-index:2}
+.halloween .pet-hero-art>img.halloween-art{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;pointer-events:none}
+.halloween .section.alt,.halloween .pagehero{background:#f8ecdf}
+.halloween .kicker,.halloween .step-number{color:#97401c}
+.halloween .shopping-categories span,.halloween .shopping-categories a:nth-child(2n) span,.halloween .shopping-categories a:nth-child(3n) span{background:#fae3c6}
+.halloween .brand-links a,.halloween .merchant-tiles a{border-color:#e4cfb8}
+.halloween .newsletter-banner{background:#f8e2c3;border-color:#dfbf96}
+.halloween .footer{background:#302735;color:#e8dce9}
+.halloween .footer:before{background:none}
+.halloween .footer a,.halloween .footer .micro{color:#f3e8db!important}
+.halloween :is(a,button,input,select,textarea,summary):focus-visible{outline:3px solid #97401c;outline-offset:3px}
+@media screen and (prefers-color-scheme:dark){
+ html.halloween{--ink:#f4e9df;--muted:#d3c1b6;--green:#ffc18b;--soft:#392c35;--cream:#211e28;--line:#816b76;--card:#2d2733}
+ .halloween header,.halloween .navlinks{background:#292330}
+ .halloween .shopping-hero{background:radial-gradient(ellipse at 85% 25%,#513544 0,transparent 55%),#211e28;border-color:var(--line)}
+ .halloween .brand-dot,.halloween .hero h1 em,.halloween .catalog-price strong,.halloween .kicker,.halloween .step-number{color:#ffc18b}
+ .halloween .section.alt,.halloween .pagehero,.halloween .newsletter-banner{background:#392c35;border-color:var(--line)}
+ .halloween .pet-bubble{background:#392c35;color:#ffe5bd;border-color:#987956}
+ .halloween .btn,.halloween .navcta,.halloween .home-search .btn{background:#97401c;border-color:#e9ad77}
+ .halloween .btn.secondary,.halloween .btn.ghost{background:#392c35;color:#ffd0a4;border-color:var(--line)}
+ .halloween .btn.secondary:hover{background:#503a43}
+ .halloween .shopping-categories span,.halloween .shopping-categories a:nth-child(2n) span,.halloween .shopping-categories a:nth-child(3n) span{background:#49333a}
+ .halloween .brand-links a,.halloween .merchant-tiles a{border-color:var(--line)}
+ .halloween :is(a,button,input,select,textarea,summary):focus-visible{outline-color:#ffc18b}
+}
+@media print{.halloween-art{display:none!important}}

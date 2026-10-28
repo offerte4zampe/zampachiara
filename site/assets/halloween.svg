@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="560" viewBox="0 0 640 560" fill="none">
+<!-- Lightweight vector decorations around the existing pets. -->
+<g fill="#392b43"><path d="M441 95q18-27 40-17l9-15 8 15q23-10 42 17-22-7-29 7-13-9-21 3-9-12-22-3-6-14-27-7Z"/><path d="M69 204q14-23 33-15l7-12 7 12q19-8 34 15-18-6-24 6-10-8-17 2-7-10-18-2-5-12-22-6Z"/></g>
+<circle cx="544" cy="161" r="24" fill="#efbb71"/><circle cx="554" cy="151" r="24" fill="#fae8cd"/>
+<g transform="translate(52 398) rotate(-8 65 65)"><path d="m64 25 4-19 13-3-9 25" stroke="#556542" stroke-width="10" stroke-linecap="round"/><path d="M69 33C19 5-9 57 16 99c14 24 41 18 53 13 17 10 45 8 57-15 24-44-4-89-57-64Z" fill="#dc7a29"/><ellipse cx="68" cy="73" rx="32" ry="46" fill="#ef9639"/><path d="m37 63 17-15 7 20Zm42 4 9-19 17 16ZM40 85q28 33 57 0l-5 23H48Z" fill="#4c3140"/><path d="m60 105 7-8 7 9" stroke="#ef9639" stroke-width="7"/></g>
+<g fill="#bc7946"><path d="m178 95 3 8 9 3-9 3-3 9-3-9-9-3 9-3Z"/><path d="m565 327 3 8 9 3-9 3-3 9-3-9-9-3 9-3Z"/><circle cx="119" cy="304" r="3"/><circle cx="577" cy="248" r="3"/></g></svg>
