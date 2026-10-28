@@ -7,7 +7,10 @@ import re
 import urllib.request
 import urllib.robotparser
 from urllib.parse import urlsplit, parse_qs
-from bauzaar_feed import amount, value
+try:
+    from .bauzaar_feed import amount, value
+except ImportError:
+    from bauzaar_feed import amount, value
 
 FEED_URL='https://pf.tradetracker.net/?aid=518044&encoding=utf-8&type=json&fid=1216771&categoryType=2&additionalType=2'
 ORIGIN='https://www.pacopetshop.it'
@@ -52,13 +55,16 @@ def normalize(payload, now=None):
 
 def verify_quantity(row, page, now=None):
     """Bind only the current selected variant whose code AND whole-pack price match."""
-    from update_catalog import weight
+    try:
+        from .update_catalog import weight
+    except ImportError:
+        from update_catalog import weight
     match=re.search(r'data-product="([^"]+)"',page)
     if not match: return row
     try:
         p=json.loads(html.unescape(match[1]));attrs=list(p.get('attributes',{}).values())
-        codes={str(a.get('ean13','')).strip() for a in attrs if a.get('ean13')}
-        if codes!={row['feed_gtin']} or not codes: return row
+        codes={str(a.get('ean13','')).strip().zfill(14) for a in attrs if a.get('ean13')}
+        if codes!={str(row['feed_gtin']).zfill(14)} or not codes: return row
         if abs(float(p['price_amount'])-row['price'])>.005: return row
         labels=[str(a.get('name','')) for a in attrs]
         quantities=[x for x in labels if re.search(r'\d\s*(?:kg|gr|g)\b',x,re.I)]

@@ -67,3 +67,11 @@ test('reviewed identity expires independently of price freshness',()=>{
  assert.equal(matchKey({...o,identity_expires_at:'2026-10-27'},now),'');
  assert.equal(matchKey({...o,identity_expires_at:undefined},now),'');
 });
+
+test('unverified selling quantities and conflicting net weights never become matches or totals',()=>{
+ const {matchKey}=require('../site/assets/trade.js');
+ const unverified={...o,quantity_verified:false,gtin:'4006381333931',brand:'Brand',weight_kg:2};
+ assert.equal(shipping(unverified,rules,1,'standard',now).total,undefined);
+ assert.equal(matchKey(unverified,now),'');
+ assert.equal(matchKey({...unverified,quantity_verified:true,weight_conflict:true},now),'');
+});

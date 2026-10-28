@@ -59,3 +59,15 @@ class LinkHealthTests(unittest.TestCase):
         output,_,report=apply(catalog,{self.offer['id']:entry},self.now,forbidden,pause=0)
         self.assertEqual(output['offers'],[]);self.assertEqual(catalog['offers'][0]['price'],12)
         self.assertEqual(report['suppressed'][0]['id'],self.offer['id'])
+
+    def test_all_five_stores_are_checked_without_affiliate_redirects(self):
+        offers=[dict(id=s+':1',merchant_id=s,url=u) for s,u in [
+            ('bauzaar','https://www.bauzaar.it/products/food?variant=1'),
+            ('webpet','https://www.webpet.it/products/food?variant=1'),
+            ('animaliapet','https://www.animaliapet.eu/products/food?variant=1'),
+            ('isola-dei-tesori','https://www.isoladeitesori.it/prodotto/food/0001.html'),
+            ('paco','https://www.pacopetshop.it/it/brand/1-food.htm')]]
+        self.assertTrue(all(safe_product(o) for o in offers))
+        self.assertEqual(len(candidates(offers,{},self.now,5)),5)
+        for url in ['https://www.pacopetshop.it/directlinking/?tt=1','https://www.pacopetshop.it/it/brand/1-food.htm?x=1']:
+            self.assertFalse(safe_product(dict(offers[-1],url=url)))

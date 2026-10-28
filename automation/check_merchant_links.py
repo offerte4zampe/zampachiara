@@ -14,7 +14,7 @@ from urllib.parse import urlsplit
 ROOT = Path(__file__).resolve().parents[1]
 UA = 'Offerte4Zampe-LinkCheck/1.0 (+https://offerte4zampe.it/contatti)'
 HOSTS = {'bauzaar': 'www.bauzaar.it', 'webpet': 'www.webpet.it',
-         'animaliapet': 'www.animaliapet.eu', 'isola-dei-tesori': 'www.isoladeitesori.it'}
+         'animaliapet': 'www.animaliapet.eu', 'isola-dei-tesori': 'www.isoladeitesori.it', 'paco': 'www.pacopetshop.it'}
 
 
 def safe_product(offer):
@@ -23,6 +23,8 @@ def safe_product(offer):
         u = urlsplit(offer['url'])
         if u.scheme != 'https' or u.netloc != HOSTS.get(offer['merchant_id']) or u.fragment:
             return False
+        if offer['merchant_id'] == 'paco':
+            return not u.query and bool(re.fullmatch(r'/it/[^/]+/\d+-[^/]+\.htm', u.path))
         if offer['merchant_id'] == 'isola-dei-tesori':
             return not u.query and bool(re.fullmatch(r'/prodotto/[^/]+/\d+\.html', u.path))
         return bool(re.fullmatch(r'/products/[^/]+', u.path)) and bool(re.fullmatch(r'variant=\d+', u.query))

@@ -1,6 +1,7 @@
 (function(root){'use strict';
 const metadata=typeof module!=='undefined'&&module.exports?require('./catalog-metadata.js'):root.O4ZMetadata;
 function shipping(o,rules,quantity=1,territory='standard',now=Date.now()){
+ if(o.quantity_verified===false)return {reason:'Formato della confezione non verificato: totale non confrontabile'};
  const r=rules?.merchants?.[o.merchant_id];if(!r)return {reason:'Condizioni non disponibili'};
  const ruleDate=r.checked_at||rules.checked_at;if(!ruleDate||!Number.isFinite(Date.parse(ruleDate))||now-Date.parse(ruleDate)>7*86400000||Date.parse(ruleDate)>now+300000)return {reason:'Condizioni da ricontrollare',rule:r};
  if(territory!=='standard')return {reason:'Località o servizi particolari: verifica nel negozio',rule:r};
@@ -21,6 +22,7 @@ function merchant(url){
  try{const u=new URL(url);if(u.protocol!=='https:'||u.username||u.password)return '';if(['www.amazon.it','amazon.it'].includes(u.hostname)&&/^\/dp\/[A-Z0-9]{10}\/?$/.test(u.pathname)&&u.searchParams.getAll('tag').length===1&&u.searchParams.get('tag')==='offerte4zam02-21')return 'Amazon';const shops={'www.pacopetshop.it':'Paco Pet Shop','pacopetshop.it':'Paco Pet Shop','www.isoladeitesori.it':'Isola dei Tesori','isoladeitesori.it':'Isola dei Tesori','www.bauzaar.it':'Bauzaar','bauzaar.it':'Bauzaar','webpet.it':'WebPet','www.webpet.it':'WebPet','animaliapet.eu':'Animaliapet','www.animaliapet.eu':'Animaliapet'};if(shops[u.hostname])return shops[u.hostname];if(u.hostname==='tc.tradetracker.net'&&u.searchParams.get('c')==='16143'&&u.searchParams.get('a')==='518044')return 'Bauzaar';if(u.hostname==='tc.tradetracker.net'&&u.searchParams.get('c')==='31221'&&u.searchParams.get('a')==='518044')return 'Isola dei Tesori';return ''}catch{return ''}
 }
 function matchKey(o,now=Date.now()){
+ if(o.quantity_verified===false||o.weight_conflict)return '';
  if(o.identity_review&&(!Number.isFinite(Date.parse(o.identity_expires_at))||Date.parse(o.identity_expires_at)<now))return '';
  const code=String(o.gtin||''),stamp=Date.parse(o.checked_at);if(![8,12,13,14].includes(code.length)||!/^\d+$/.test(code)||new Set(code).size===1||!Number.isFinite(stamp)||now-stamp>36*3600000||stamp>now+300000||!(o.weight_kg>0)||!o.brand?.trim())return '';
  const digits=[...code.slice(0,-1)].reverse();const check=(10-digits.reduce((n,d,i)=>n+Number(d)*(i%2?1:3),0)%10)%10;if(check!==Number(code.at(-1)))return '';
