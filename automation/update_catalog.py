@@ -28,6 +28,15 @@ def weight(label):
     patterns=[(r'(?<![\d.])(\d+)\s*(?:'+count+r'\s*)?[x×]\s*'+number+r'\s*'+unit, False),
               (r'(?<![\d.])'+number+r'\s*'+unit+r'\s*[x×]\s*(\d+)(?![\d.])\s*(?:'+count+r'\b)?', True),
               (r'(?<![\d.])(\d+)\s*'+count+r'\s+da\s+'+number+r'\s*'+unit, False)]
+    # Feed titles explicitly describe the selling multipack after the unit name.
+    selling=re.search(r'\bconfezione\s+da\s+(\d+)\s*(?:pezzi|pz|lattine|buste|bustine)\b',s)
+    if selling:
+        remainder=s[:selling.start()]+s[selling.end():]
+        measures=list(re.finditer(r'(?<![\d.])'+number+r'\s*'+unit,remainder))
+        values={round(float(m[1])/(1000 if m[2]=='g' else 1),6) for m in measures}
+        if len(values)!=1 or re.search(r'\d+\s*[x×]|[x×]\s*\d|\d+\s*'+count+r'\b',remainder):return None
+        total=round(int(selling[1])*next(iter(values)),6)
+        return total if 0<total<=1000 else None
     packs=[]
     for pattern,reverse in patterns:
         for m in re.finditer(pattern,s):
@@ -75,7 +84,7 @@ def collect(source, shipping_only=False):
                     variant=v.get('title',''); variant='' if variant=='Default Title' else variant
                     title=str(p['title']);kg=weight(variant) if re.search(r'\d\s*(?:kg|g)\b',variant.lower()) else weight(title)
                     before=amount(v.get('compare_at_price'))
-                    rows.append({'id':f'{sid}:{v["id"]}','merchant':name,'merchant_id':sid,'title':title,'variant':variant,'brand':p.get('vendor',''),'category':p.get('product_type',''),'price':price,'previous_price':before if before and before>price else None,'available':bool(v.get('available')),'url':base+'/products/'+p['handle']+'?variant='+str(v['id']),'image':(p.get('images') or [{}])[0].get('src',''),'sku':str(v.get('sku') or ''),'gtin':str(v.get('barcode') or ''),'weight_kg':kg,'shipping_weight_kg':(amount(v.get('grams'))/1000 if amount(v.get('grams')) else None),'checked_at':now})
+                    rows.append({'id':f'{sid}:{v["id"]}','merchant':name,'merchant_id':sid,'title':title,'variant':variant,'brand':p.get('vendor',''),'category':p.get('product_type',''),'price':price,'previous_price':before if before and before>price else None,'available':bool(v.get('available')),'url':base+'/products/'+p['handle']+'?variant='+str(v['id']),'image':(p.get('images') or [{}])[0].get('src',''),'sku':str(v.get('sku') or ''),'gtin':str(v.get('barcode') or ''),'feed_gtin':str(v.get('barcode') or ''),'weight_kg':kg,'shipping_weight_kg':(amount(v.get('grams'))/1000 if amount(v.get('grams')) else None),'checked_at':now})
             if len(products)<250:complete=True;break
             time.sleep(.3)
         if not complete:raise ValueError('Catalog exceeded pagination safety limit')

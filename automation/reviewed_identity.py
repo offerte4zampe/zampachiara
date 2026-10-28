@@ -29,7 +29,7 @@ def apply(offers, reviews, now):
             check = (10-sum(int(n)*(3 if i%2==0 else 1) for i,n in enumerate(reversed(code[:-1])))%10)%10
             if check != int(code[-1]):
                 continue
-            if code != review['gtin'] or reference.get('gtin_source', '').startswith('reviewed:'):
+            if code.zfill(14) != str(review['gtin']).zfill(14) or reference.get('gtin_source', '').startswith('reviewed:'):
                 continue
             if any(o.get('gtin') and o['gtin'].zfill(14) != code.zfill(14) for o, _ in members):
                 continue

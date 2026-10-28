@@ -7,3 +7,10 @@ test('missing original ID and invalid saved data cannot produce a misleading tot
 test('adding a product saves only ID and quantity, never prices or affiliate URLs',()=>{const o=offer('a');const result=add([],o,[o]);assert.deepEqual(result.items,[{id:'a',quantity:1}]);assert.deepEqual(add(result.items,o,[o]).items,[{id:'a',quantity:2}])});
 test('order subtotal uses cents and exact inclusive free-shipping threshold',()=>{assert.equal(orderShipping([{offer:offer('a','b',{price:19.95}),quantity:2}],rules,'standard',now).total,39.9)});
 test('shipping weight is not rounded down across the surcharge boundary',()=>{assert.equal(orderShipping([{offer:offer('a','a',{price:60,shipping_weight_kg:35.004}),quantity:1}],rules,'standard',now).total,undefined)});
+
+test('unverified feed variants cannot enter a cart or yield a total from saved rows',()=>{
+ const o=offer('uncertain','a',{quantity_verified:false});
+ assert.deepEqual(add([],o,[o]).items,[]);
+ assert.equal(orderShipping([{offer:o,quantity:1}],rules,'standard',now).total,undefined);
+ assert.equal(scenarios([{id:o.id,quantity:1}],[o],rules,'standard',now)[0].total,undefined);
+});

@@ -32,3 +32,22 @@ class ReviewedIdentityTests(unittest.TestCase):
         self.assertEqual(apply(self.rows,[self.review],self.now+dt.timedelta(days=100)),0)
         self.assertEqual(self.rows[1]['gtin'],'')
         self.assertNotIn('identity_review',self.rows[1])
+
+    def test_refresh_accepts_equivalent_unpadded_merchant_barcode(self):
+        self.rows[0]['gtin']=self.review['gtin'].lstrip('0')
+        self.assertEqual(apply(self.rows,[self.review],self.now),1)
+        self.assertEqual(self.rows[1]['gtin'].zfill(14),self.review['gtin'])
+
+    def test_actual_feed_refresh_then_package_normalization_then_review(self):
+        from automation.bauzaar_feed import normalize as bauzaar
+        from automation.isola_feed import normalize as isola
+        from automation.package_integrity import reconcile
+        from urllib.parse import urlencode
+        a,b=self.review['offers']
+        raw_a={'campaignID':16143,'ID':'feed','name':a['title'],'price':{'currency':'EUR','amount':26.98},'URL':'https://tc.tradetracker.net/?'+urlencode({'c':'16143','a':'518044','u':a['url']}),'properties':{'availability':['in stock'],'unit_pricing_measure':['1ct'],'GTIN':[self.review['gtin'].lstrip('0')],'brand':[a['brand']]}}
+        raw_b={'campaignID':31221,'ID':b['id'].split(':')[1],'name':b['title'],'price':{'currency':'EUR','amount':40.69},'URL':'https://tc.tradetracker.net/?'+urlencode({'c':'31221','a':'518044','u':b['url']}),'properties':{'availability':['in_stock'],'GTIN':[],'brand':[b['brand']]},'variations':[]}
+        rows=bauzaar({'products':[raw_a]},self.now)+isola({'products':[raw_b]},self.now)
+        for o in rows:reconcile(o)
+        self.assertEqual(apply(rows,[self.review],self.now),1)
+        self.assertEqual({o['weight_kg'] for o in rows},{.03})
+        self.assertEqual(len({o['gtin'].zfill(14) for o in rows}),1)

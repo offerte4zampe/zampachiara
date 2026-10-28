@@ -16,6 +16,9 @@ on:
       - 'tests/test_partner_feed.py'
       - 'automation/update_catalog.py'
       - 'automation/enrich_catalog.py'
+      - 'automation/package_integrity.py'
+      - 'automation/audit_store_integrity.py'
+      - 'tests/test_store_integrity.py'
       - 'automation/reviewed_identity.py'
       - 'automation/reviewed-identities.json'
       - 'tests/test_reviewed_identity.py'
@@ -85,6 +88,7 @@ jobs:
       - run: node automation/normalize_catalog.cjs
       - run: python automation/check_merchant_links.py
       - run: python automation/guard_catalog.py
+      - run: python automation/audit_store_integrity.py
       - run: python automation/update_history.py
       - run: python automation/build_category_pages.py
       - run: python automation/build_product_pages.py
@@ -112,10 +116,10 @@ jobs:
             echo "Main changed during generation; retain current publication and retry on next run."
             exit 0
           fi
-          if ! git diff --quiet -- site/data/catalog.json.gz site/data/site-quality.json site/data/discovery.json site/data/price-observatory.json site/data/price-history.json.gz site/data/history site/data/catalog-quality.json site/data/catalog-quarantine.json site/data/home.json site/data/search-index.json site/data/product-meta site/data/link-health.json automation/link-health-cache.json automation/identifier-cache.json automation/shipping-cache.json site/*.html site/sitemap*.xml automation/sitemap-state.json; then
+          if ! git diff --quiet -- site/data/catalog.json.gz site/data/site-quality.json site/data/discovery.json site/data/price-observatory.json site/data/price-history.json.gz site/data/history site/data/catalog-quality.json site/data/catalog-quarantine.json site/data/home.json site/data/search-index.json site/data/product-meta site/data/store-audit.json automation/store-verification-cache.json site/data/link-health.json automation/link-health-cache.json automation/identifier-cache.json automation/shipping-cache.json site/*.html site/sitemap*.xml automation/sitemap-state.json; then
             git config user.name "Offerte4Zampe catalog bot"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add site/data/catalog.json.gz site/data/site-quality.json site/data/discovery.json site/data/price-observatory.json site/data/price-history.json.gz site/data/history site/data/catalog-quality.json site/data/catalog-quarantine.json site/data/home.json site/data/search-index.json site/data/product-meta site/data/link-health.json automation/link-health-cache.json automation/identifier-cache.json automation/shipping-cache.json site/*.html site/sitemap*.xml automation/sitemap-state.json
+            git add site/data/catalog.json.gz site/data/site-quality.json site/data/discovery.json site/data/price-observatory.json site/data/price-history.json.gz site/data/history site/data/catalog-quality.json site/data/catalog-quarantine.json site/data/home.json site/data/search-index.json site/data/product-meta site/data/store-audit.json automation/store-verification-cache.json site/data/link-health.json automation/link-health-cache.json automation/identifier-cache.json automation/shipping-cache.json site/*.html site/sitemap*.xml automation/sitemap-state.json
             git commit -m "chore: refresh real merchant prices"
             git push
           fi

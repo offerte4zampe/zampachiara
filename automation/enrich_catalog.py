@@ -15,14 +15,9 @@ def build():
  cache=json.loads(cachepath.read_text()) if cachepath.exists() else {};now=datetime.datetime.now(datetime.timezone.utc);robots={};urls={}
  # Recompute inferred title weights too: old parser results must not persist.
  from reviewed_identity import apply as apply_reviewed_identity
+ from package_integrity import reconcile
  for o in d['offers']:
-  if o.get('quantity_verified') is False:continue
-  inferred=o.get('weight_source') in ('explicit_package_label','official_feed:title')
-  if not o.get('weight_kg') or inferred:
-   label=str(o.get('variant') or '')
-   if not re.search(r'\d\s*(?:kg|g|gr)\b',label,re.I):label=o['title']
-   kg=weight(label)
-   o.update(weight_kg=kg,weight_source='explicit_package_label' if kg else '')
+  reconcile(o)
  apply_reviewed_identity(d['offers'], json.loads((ROOT/'automation/reviewed-identities.json').read_text()), now)
  # Prefer matching brands and weights across sources, with both cats and dogs represented.
  brands={}

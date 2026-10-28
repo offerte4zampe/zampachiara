@@ -2,6 +2,13 @@
   "entries": [
     {
       "date": "2026-10-28",
+      "origin": "Verifica indipendente di tutti i negozi",
+      "title": "Controllo feed e pagine originali, varianti e pesi",
+      "detail": "Controllati i campi di tutte le offerte dei cinque negozi e 98 pagine originali. Corretto il confronto tra GTIN a 13 e 14 cifre nel ciclo di aggiornamento. Verificati sulle varianti originali 62 pesi Bauzaar incoerenti con il feed. Paco incluso nel controllo dei link: le confezioni non verificate non producono totali né ordini stimati. Quattro varianti del campione Paco rimangono inconcludenti perché il codice della selezione nel negozio differisce dal feed. Nuovo controllo a rotazione ad ogni aggiornamento, con esiti e fonti distinti dall’esito di importazione.",
+      "evidence": "https://offerte4zampe.it/data/store-audit.json"
+    },
+    {
+      "date": "2026-10-28",
       "origin": "Segnalazione utente e verifica interna",
       "title": "Confezioni multiple e confronto FortiFlora",
       "detail": "Corretto il peso totale dei formati espliciti come 30 pz x 1 g e 1 g x 30. La scheda Isola FortiFlora Canine polvere 30 bustine era importata e disponibile ma priva di GTIN: abbinamento revisionato con la corrispondente scheda Bauzaar, sospeso se cambiano titolo, formato o identificativi. L’assenza di un abbinamento non viene più presentata come assenza dal catalogo del negozio. Prezzi e date dei rilevamenti restano quelli importati.",

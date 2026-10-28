@@ -58,9 +58,9 @@ def normalize(payload, now=None):
         if not title: raise ValueError('Missing title')
         images = p.get('images', [])
         rows.append(dict(id='bauzaar:'+variant, merchant='Bauzaar', merchant_id='bauzaar',
-            title=title, variant=measure, brand=value(props, 'brand'), category=value(props, 'product_type'),
+            title=title, variant=measure, feed_unit_pricing_measure=measure, brand=value(props, 'brand'), category=value(props, 'product_type'),
             price=current, previous_price=None, available=stock=='in stock', url=dest,
-            affiliate_url=link, image=images[0] if images else '', sku='', gtin=value(props, 'GTIN'),
+            affiliate_url=link, image=images[0] if images else '', sku='', gtin=value(props, 'GTIN'), feed_gtin=value(props, 'GTIN'),
             weight_kg=kg, weight_source='official_feed:unit_pricing_measure' if kg else '', shipping_weight_kg=None,
             checked_at=now.isoformat(), source_type='official_feed'))
     if not rows: raise ValueError('Empty feed')

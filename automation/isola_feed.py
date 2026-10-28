@@ -5,12 +5,18 @@ import json
 import re
 import urllib.request
 from urllib.parse import urlsplit, parse_qs
-from bauzaar_feed import amount, value
+try:
+    from .bauzaar_feed import amount, value
+except ImportError:
+    from bauzaar_feed import amount, value
 
 FEED_URL = 'https://pf.tradetracker.net/?aid=518044&encoding=utf-8&type=json&fid=1618255&categoryType=2&additionalType=2'
 
 def normalize(payload, now=None):
-    from update_catalog import weight
+    try:
+        from .update_catalog import weight
+    except ImportError:
+        from update_catalog import weight
     now = now or dt.datetime.now(dt.timezone.utc)
     rows, seen = [], set()
     for p in payload['products']:
@@ -45,7 +51,7 @@ def normalize(payload, now=None):
         rows.append(dict(id='isola-dei-tesori:'+ident, merchant='Isola dei Tesori', merchant_id='isola-dei-tesori',
             title=title, variant='', brand=html.unescape(value(props, 'brand')), category=value(props, 'product_type'),
             price=current, previous_price=None, available=stock=='in_stock', url=dest,
-            affiliate_url=link, image=images[0] if images else '', sku='', gtin=value(props, 'GTIN'),
+            affiliate_url=link, image=images[0] if images else '', sku='', gtin=value(props, 'GTIN'), feed_gtin=value(props, 'GTIN'),
             weight_kg=kg, weight_source='official_feed:title' if kg else '', shipping_weight_kg=None,
             checked_at=now.isoformat(), source_type='official_feed'))
     if not rows: raise ValueError('Empty feed')
