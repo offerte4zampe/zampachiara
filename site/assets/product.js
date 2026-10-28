@@ -4,8 +4,8 @@ const el=(tag,value,cls)=>{const n=document.createElement(tag);n.textContent=val
 const safe=s=>{try{const u=new URL(s);return u.protocol==='https:'&&!u.username&&!u.password?u.href:''}catch{return ''}};
 let catalog,id,shippingRules=null,amazonLinks=null;const offerTools=new Map();
 function comparisonTable(view){
- let container=$('product-price-table');if(!container){container=el('section','','product-comparison');container.id='product-price-table';$('product-shops').before(container)}
- container.replaceChildren(el('h2','Prezzi nei negozi'));
+ let container=$('product-price-table');if(!container){container=el('section','','product-comparison');container.id='product-price-table';$('product-quantity').closest('.panel').before(container)}
+ container.replaceChildren(el('h2','Prezzi nei negozi'),el('p','Su schermi piccoli scorri la tabella per vedere totale e collegamenti ai negozi.','micro'));
  const wrap=el('div','','comparison-scroll');wrap.tabIndex=0;wrap.setAttribute('role','region');wrap.setAttribute('aria-label','Tabella prezzi e spedizioni, scorribile');
  const table=el('table','','comparison-table'),caption=el('caption','Stesso prodotto e formato · prezzi rilevati, da confermare nel negozio');table.append(caption);
  const head=el('thead',''),tr=el('tr','');for(const label of ['Negozio','Prezzo','Spedizione','Totale stimato','Disponibilità','Offerta']){const th=el('th',label);th.scope='col';tr.append(th)}head.append(tr);table.append(head);
@@ -31,7 +31,7 @@ function render(){
  }
  else amazon.append(el('p','Corrispondenza esatta non ancora verificata: non proponiamo ricerche generiche o prodotti simili.','micro'));
  const o=view.seed;if(!$('product-watch').dataset.ready){O4ZWatch.mount($('product-watch'),o);$('product-watch').dataset.ready='1';}$('product-title').textContent=o.title;document.title=o.title+' — prezzi nei negozi | Offerte a 4 Zampe';
- $('product-format').textContent=[o.brand,o.variant,o.weight_kg?o.weight_kg+' kg':''].filter(Boolean).join(' · ');
+ $('product-format').textContent=[o.brand,o.variant==='1ct'?'':o.variant,o.weight_kg?(o.weight_kg<1?Number((o.weight_kg*1000).toFixed(3))+' g':o.weight_kg+' kg'):''].filter(Boolean).join(' · ');
  const image=safe(o.image);if(image){const img=document.createElement('img');img.src=image;img.alt=o.title;img.width=180;img.height=160;img.style.objectFit='contain';$('product-image').replaceChildren(img)}
  const reviewed=view.shops.some(s=>s.offers.some(o=>o.identity_review));
  const availableShops=view.shops.filter(s=>s.offers.some(o=>o.available)).length;
