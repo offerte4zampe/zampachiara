@@ -15,7 +15,11 @@ def run(cli,args,stdin=None):
 
 def call(url,token,path,data=None):
     body=json.dumps(data or {}).encode();req=urllib.request.Request(url+path,data=body,headers={'Authorization':'Bearer '+token,'Content-Type':'application/json'})
-    with urllib.request.urlopen(req,timeout=60) as r:return json.load(r)
+    try:
+        with urllib.request.urlopen(req,timeout=60) as r:return json.load(r)
+    except urllib.error.HTTPError as error:
+        if error.code>=500:raise RuntimeError('Staging '+path+' failed: '+error.read(4096).decode(errors='replace')) from None
+        raise
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('--remote',action='store_true');p.add_argument('--wrangler',default=os.environ.get('WRANGLER_BIN') or shutil.which('wrangler'));p.add_argument('--port',type=int,default=8789);a=p.parse_args()
