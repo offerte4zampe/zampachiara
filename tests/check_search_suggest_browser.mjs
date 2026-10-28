@@ -34,7 +34,8 @@ export async function checkSuggestions(page,origin,catalog){
  await page.$eval('#product-share button:last-of-type',e=>e.click());
  await page.waitForFunction(()=>document.querySelector('#product-share [role=status]').textContent.includes('manualmente'));
  assert.equal(await page.$eval('#product-share-url',e=>e.readOnly),true);
- const outbound=await page.$$eval('#product-shops a:not([data-shipping-conditions]):not([data-product-report])',rows=>rows.map(a=>({href:a.href,rel:a.rel})));
+ const catalogSearches=await page.$$eval('#product-shops [data-catalog-search]',rows=>rows.map(a=>a.href));for(const href of catalogSearches){const u=new URL(href);assert.equal(u.origin,origin);assert.equal(u.pathname,'/confronta-cibo');assert(catalog.sources.some(s=>s.name===u.searchParams.get('shop')));}
+ const outbound=await page.$$eval('#product-shops a:not([data-shipping-conditions]):not([data-product-report]):not([data-catalog-search])',rows=>rows.map(a=>({href:a.href,rel:a.rel})));
  for(const a of outbound){assert(catalog.offers.some(o=>(o.affiliate_url||o.url)===a.href),'Exact catalog URL required');if(a.href.includes('tradetracker'))assert(a.rel.includes('sponsored'))}
  assert(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth<=1));
  await page.select('#product-quantity','2');await page.select('#product-territory','special');
@@ -95,7 +96,7 @@ export async function checkSuggestions(page,origin,catalog){
  assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('o4z-basket-v1'))[0].quantity),1);
  assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('o4z-basket-v1'))[0].id),food.id);
  await page.evaluate(value=>value===null?localStorage.removeItem('o4z-basket-v1'):localStorage.setItem('o4z-basket-v1',value),initial);
- const report=await page.$eval('[data-product-report]',e=>e.href);assert.equal(new URL(report).searchParams.get('id'),food.id);
+ const report=await page.$eval('[data-product-report]',e=>e.href);assert.equal(new URLSearchParams(new URL(report).hash.slice(1)||new URL(report).search).get('id'),food.id);
  await page.$eval('.daily-cost',e=>{e.open=true;const input=e.querySelector('input');input.value='150';input.dispatchEvent(new Event('input',{bubbles:true}))});
  const daily=await page.$eval('.daily-cost [role=status]',e=>e.textContent);assert(daily.includes('al giorno'));
  assert.equal(productHistoryRequests.length,0,'Product history must remain lazy');
