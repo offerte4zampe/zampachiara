@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 
 export async function checkGuides(page, origin) {
+  const canonicalRoutes=new Set(JSON.parse(await fs.readFile(new URL('../site/data/canonical-route-list.json',import.meta.url),'utf8')));
   for (const slug of ['costo-crocchette-cane', 'confrontare-prezzi-lettiere', 'prezzo-confezione-o-prezzo-kg', 'spedizione-gratuita-conviene', 'leggere-storico-prezzi', 'stesso-prodotto-formato-gtin']) {
     await page.goto(origin+'/'+slug+'.html', {waitUntil:'domcontentloaded'});
     assert.equal(await page.$$eval('main h1', es=>es.length),1);
@@ -21,6 +22,7 @@ export async function checkGuides(page, origin) {
     }
     for(const href of links){const u=new URL(href);if(u.origin===origin){
       if(u.pathname==='/prodotto.html'){assert(u.searchParams.has('id'));}
+      else if(u.pathname.startsWith('/prodotto/')){assert(canonicalRoutes.has(u.pathname.slice('/prodotto/'.length)),'Unknown canonical product: '+href);const response=await fetch(href);assert.equal(response.status,200);assert((await response.text()).includes('data-canonical-product'));}
       else{assert(/^\/prezzi-\d{14}-[a-f0-9]{10}$/.test(u.pathname),'Unexpected internal guide destination: '+href);await fs.access(new URL('../site'+u.pathname+'.html',import.meta.url));}
     }else assert.equal(u.protocol,'https:');}
     assert(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth<=1),'Guide causes page overflow');
