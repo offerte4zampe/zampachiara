@@ -1,9 +1,37 @@
 (function(root){'use strict';
 const metadata=typeof module!=='undefined'&&module.exports?require('./catalog-metadata.js'):root.O4ZMetadata;
+// Data adapter only: all fee/threshold/weight calculations stay in shipping().
+function shippingRulesFromRows(rows,now=Date.now(),zone='IT'){
+ const merchants=Object.create(null),selected=new Map();
+ for(const row of rows){
+  const start=Date.parse(row.valid_from),end=row.valid_to==null?Infinity:Date.parse(row.valid_to);
+  if(row.zone!==zone||!Number.isFinite(start)||Number.isNaN(end)||start>now||end<=now)continue;
+  const prior=selected.get(row.shop_id);if(!prior||Date.parse(prior.valid_from)<start)selected.set(row.shop_id,row);
+ }
+ for(const [id,row] of selected){
+  const r={name:row.shop_name||id,status:row.status,checked_at:row.verified_at,verified_until:row.verified_until,valid_from:row.valid_from,valid_to:row.valid_to,source:row.source_url,note:row.notes};
+  if(row.status==='uncertain')r.conflict=true;
+  if(row.status==='verified'){
+   if(!Number.isSafeInteger(row.std_cents)||row.std_cents<0)throw Error('Invalid shipping fee');
+   r.fee=row.std_cents/100;
+   if(row.free_from_cents!=null){
+    if(!Number.isSafeInteger(row.free_from_cents)||row.free_from_cents<0||!['inclusive','exclusive','unknown'].includes(row.threshold_mode))throw Error('Invalid shipping threshold');
+    if(row.threshold_mode==='inclusive')r.free_from=row.free_from_cents/100;
+    else {r.free_above=row.free_from_cents/100;if(row.threshold_mode==='unknown')r.boundary_unknown=row.free_from_cents/100;}
+   }
+  }
+  if(row.max_weight_g!=null){if(!Number.isSafeInteger(row.max_weight_g)||row.max_weight_g<=0)throw Error('Invalid shipping weight');r.max_shipping_weight_kg=row.max_weight_g/1000;}
+  merchants[id]=r;
+ }
+ return {merchants};
+}
 function shipping(o,rules,quantity=1,territory='standard',now=Date.now()){
  if(o.quantity_verified===false)return {reason:'Formato della confezione non verificato: totale non confrontabile'};
  const r=rules?.merchants?.[o.merchant_id];if(!r)return {reason:'Condizioni non disponibili'};
- const ruleDate=r.checked_at||rules.checked_at;if(!ruleDate||!Number.isFinite(Date.parse(ruleDate))||now-Date.parse(ruleDate)>7*86400000||Date.parse(ruleDate)>now+300000)return {reason:'Condizioni da ricontrollare',rule:r};
+ const ruleDate=r.checked_at||rules.checked_at,observed=Date.parse(ruleDate),until=r.verified_until!==undefined?Date.parse(r.verified_until):observed+(rules.verification_max_age_days??7)*86400000;
+ // Seven days is retained only for older cached payloads; new JSON/D1 rows own expiry.
+ if(!Number.isFinite(observed)||!Number.isFinite(until)||until<observed||now>until||observed>now+300000||(r.valid_from!==undefined&&(!Number.isFinite(Date.parse(r.valid_from))||Date.parse(r.valid_from)>now))||(r.valid_to!=null&&(!Number.isFinite(Date.parse(r.valid_to))||Date.parse(r.valid_to)<=now)))return {reason:'Condizioni da ricontrollare',rule:r};
+ if(r.status&&r.status!=='verified'&&!r.conflict)return {reason:'Condizioni non verificate: verifica il checkout',rule:r};
  if(territory!=='standard')return {reason:'Località o servizi particolari: verifica nel negozio',rule:r};
  if(!Number.isInteger(quantity)||quantity<1||quantity>10)return {reason:'Quantità non valida',rule:r};
  if(r.conflict)return {reason:'Indicazioni del negozio non coerenti: verifica il checkout',rule:r};
@@ -38,6 +66,6 @@ function groupOffers(rows,now=Date.now()){
  return result;
 }
 function reportUrl(o){const p=new URLSearchParams();for(const [key,source,limit] of [['id','id',100],['title','title',240],['shop','merchant',100],['price','price',30],['checked','checked_at',60]])p.set(key,String(o[source]??'').slice(0,limit));return 'segnala-errore.html#'+p;}
-const api={shipping,discount,merchant,matchKey,groupOffers,reportUrl};if(typeof module!=='undefined')module.exports=api;else root.O4ZTrade=api;
+const api={shippingRulesFromRows,shipping,discount,merchant,matchKey,groupOffers,reportUrl};if(typeof module!=='undefined')module.exports=api;else root.O4ZTrade=api;
 })(typeof window!=='undefined'?window:this);
 
