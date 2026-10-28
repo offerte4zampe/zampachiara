@@ -666,3 +666,9 @@ Implementazione in [seo-discovery-2026-10-26.md](seo-discovery-2026-10-26.md): m
 
 ### Pubblicazione verificata
 Commit funzionale 1c0f1c9fc31d49ca79f97e4fb74602169ab61c8f; CI mobile 40334912704 riuscita con 99 Python e 78 Node. Rigenerazione 40334912752 riuscita, commit dati 0b45d634e040edd7a1ce6fffd1d54e542192fc9b e Cloudflare Workers Builds success. Home pubblica con sei guide, menu Guide e marche canoniche verificati, clic guida lettiere riuscito. Report completo: 326 pagine indicizzabili tutte raggiungibili, nessuna isolata, profondità massima 2 già prima e dopo. Nessuna riduzione globale di profondità o incremento d’indicizzazione attribuito. Nessuna richiesta Search Console o revisione AdSense inviata.
+
+## 28 ottobre 2026 — tema Halloween
+- Commit grafico b414947b1ecba17da33a518eb44e828ad13a1c5b: palette zucca/prugna, decorazioni SVG leggere attorno agli animali della home, badge Halloween e messaggio “Dolcetto o crocchetta?”. Applicazione sulle pagine con base.js e stile condiviso, modalità chiara e scura, decorazioni escluse da stampa e tecnologie assistive, nessuna animazione o dipendenza esterna.
+- Attivo dal 28 ottobre al 1 novembre 2026 inclusi, calendario Europe/Rome; dal 2 novembre ritorno automatico al tema normale al caricamento. Test locale su confini data, scadenza e idempotenza superato.
+- CI finale 40693766757 (commit dffffcbd79615822d7ef7f568b2829f37075b060) success: 79 Node, 99 Python, audit statico e flussi mobile, compresi contrasti e ingombri nei temi chiaro/scuro. Cloudflare Workers Builds success (check 122835301396); home pubblica e ricerca verso comparatore osservate, SVG caricato.
+- La prima CI ha rilevato un'aspettativa obsoleta della guida spedizioni: tariffe del 20 ottobre superavano la finestra di sette giorni. Il test ora verifica l'assenza della tabella e l'avviso quando i dati sono scaduti, mantenendo i controlli sulle tabelle valide. Nessuna data tariffaria rinnovata senza verifica.
