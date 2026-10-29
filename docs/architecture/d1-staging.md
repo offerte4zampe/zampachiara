@@ -40,3 +40,19 @@ The remote report contains:
 - Rollback is setting `SHIPPING_RULES_SOURCE=json`; set `SHIPPING_SHADOW=false` as well to stop all D1 reads.
 
 Do not enable production D1 until a remote report passes, and shadow differences have been reviewed. The default remains JSON until that separate activation.
+
+## Activation barriers and explicit remote status
+
+The runner validates exact names, not merely a `-staging` suffix. Before migration, deployment and seed it re-reads the isolated runtime configuration and resolves D1 metadata with `wrangler d1 info`; the actual database name and UUID must match the intended staging resource. The returned Worker URL must have the exact staging Worker name. A mismatch aborts before the next operation.
+
+The remote job checks credentials before any Wrangler operation. Missing credentials produce `remote-staging NON eseguito: credenziali assenti` in the Actions summary and fail the job. An always-running status job also distinguishes remote success from skipped/not-requested and failure. A green local job or green overall run with remote skipped is not remote evidence.
+
+`worker/d1-validation.json` currently records **no successful remote validation**. Even if runtime flags are changed, the canonical-page loader keeps JSON and does not query D1/shadow without recorded evidence. To prepare evidence after reviewing an actual remote run on `main`:
+
+```sh
+python automation/check_d1_activation.py --verify-run RUN_ID --write-proof
+```
+
+The command queries GitHub's run and latest jobs, requiring the exact staging workflow, manual dispatch on `main`, a successful completed run and an actually successful completed `remote-staging` job. It writes only the proof file, never production flags or bindings. Commit/review that proof separately; the **D1 activation gate** workflow rechecks the run through GitHub before accepting D1/shadow activation. A skipped, missing, cancelled or failed remote job is rejected. Default JSON and rollback to JSON need no D1 access.
+
+Token and environment configuration remain operator actions: a short-lived staging token with D1 Edit and Workers Scripts Edit, environment `cloudflare-staging` with required reviewers, and manual workflow dispatch. Do not reuse this token/environment for production. A separate Cloudflare account is the stronger optional isolation; software name guards do not narrow an account-wide token's permissions.

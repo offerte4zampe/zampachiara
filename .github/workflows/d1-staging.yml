@@ -2,7 +2,7 @@ name: D1 shipping staging
 on:
   pull_request:
     branches: [main]
-    paths: ['worker/shipping-source.mjs','worker/staging-shipping.mjs','worker/staging/**','wrangler.staging.jsonc','automation/verify_d1_staging.py','site/data/shipping-rules.json','tests/test_shipping_source.mjs','.github/workflows/d1-staging.yml']
+    paths: ['worker/shipping-source.mjs','worker/staging-shipping.mjs','worker/staging/**','wrangler.staging.jsonc','automation/verify_d1_staging.py','automation/check_d1_activation.py','worker/d1-validation.json','site/data/shipping-rules.json','tests/test_shipping_source.mjs','.github/workflows/d1-staging.yml']
   workflow_dispatch:
     inputs:
       remote:
@@ -50,6 +50,15 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Check staging credentials explicitly
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ] || [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
+            echo 'remote-staging NON eseguito: credenziali assenti.' >> "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
       - name: Install pinned Wrangler
         run: npm install --prefix "$RUNNER_TEMP/d1-tools" wrangler@4.154.0
       - name: Verify separate remote D1 and staging Worker
@@ -65,3 +74,20 @@ jobs:
             staging-reports/remote-shipping-report.json
             staging-reports/remote-migrations.log
           if-no-files-found: warn
+
+  remote-status:
+    if: always()
+    needs: [local-workerd, remote-staging]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Explicit remote verification status
+        env:
+          REMOTE_RESULT: ${{ needs.remote-staging.result }}
+        run: |
+          if [ "$REMOTE_RESULT" = success ]; then
+            echo 'remote-staging ESEGUITO E RIUSCITO. Attivazione produzione ancora separata e soggetta a verifica.' >> "$GITHUB_STEP_SUMMARY"
+          elif [ "$REMOTE_RESULT" = skipped ]; then
+            echo 'remote-staging NON eseguito: richiede workflow_dispatch con remote=true; credenziali non verificate. Il successo locale non autorizza D1 o shadow in produzione.' >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo 'remote-staging NON riuscito. Consultare il job e il controllo credenziali. D1 e shadow in produzione restano bloccati.' >> "$GITHUB_STEP_SUMMARY"
+          fi
