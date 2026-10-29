@@ -5,7 +5,7 @@ import re
 from html import escape, unescape
 from html.parser import HTMLParser
 from pathlib import Path
-from urllib.parse import urlencode
+from urllib.parse import urlencode, quote
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -39,8 +39,7 @@ def apply(html, offers, merchant_choice=False):
         if not rows:
             return match[0]
         title_link = 'product-title-link' in attrs.get('class', '').split()
-        if merchant_choice and not title_link:
-            return match[0]
+        outbound = merchant_choice and not title_link
         label = ''.join(parser.label).strip()
         exact = [o for o in rows if label == o.get('title') or label == o.get('title', '')+' — '+o.get('variant', '')]
         if len(rows) > 1 and len(exact) == 1:
@@ -48,12 +47,13 @@ def apply(html, offers, merchant_choice=False):
         if len(rows) != 1:
             # Never select a different format when the catalog URL is ambiguous.
             return '<span>'+match[0].split('>', 1)[1].rsplit('</a', 1)[0]+'</span>'
-        attrs['href'] = 'prodotto.html?'+urlencode({'id': rows[0]['id']})
+        attrs['href'] = ('/go/'+quote(rows[0]['id'],safe='')+'?from=product') if outbound else 'prodotto.html?'+urlencode({'id': rows[0]['id']})
         for key in ('rel', 'target', 'data-metric', 'data-merchant'):
             attrs.pop(key, None)
+        if outbound: attrs['rel'] = 'sponsored nofollow noopener noreferrer'
         opening = '<a '+ ' '.join(escape(k)+'="'+escape(v or '', quote=True)+'"' for k,v in attrs.items())+'>'
         inner = match[0].split('>', 1)[1].rsplit('</a', 1)[0]
-        if label in ('Vai al negozio ↗', 'Vedi nel negozio ↗'):
+        if not outbound and label in ('Vai al negozio ↗', 'Vedi nel negozio ↗'):
             inner = 'Vedi offerta →' if rows[0].get('canonical_shop_count', 2) < 2 else 'Confronta nei negozi →'
         return opening+inner+'</a>'
     return re.sub(r'<a\b[^>]*>.*?</a\s*>', route, html, flags=re.S | re.I)

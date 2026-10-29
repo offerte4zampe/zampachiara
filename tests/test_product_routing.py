@@ -13,7 +13,8 @@ class ProductRoutingTests(unittest.TestCase):
         self.assertIn('Confronta nei negozi',out)
         self.assertEqual(apply(out,offers),out)
         detail = apply(title+button,offers,merchant_choice=True)
-        self.assertIn(button,detail)
+        self.assertIn('/go/a%3A1?from=product',detail)
+        self.assertIn('sponsored nofollow noopener noreferrer',detail)
         self.assertIn('class="product-title-link" href="prodotto.html?',detail)
 
     def test_ambiguous_formats_not_guessed_and_unknown_urls_unchanged(self):

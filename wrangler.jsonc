@@ -11,7 +11,8 @@
       "/prodotto",
       "/prodotto.html",
       "/prodotto/*",
-      "/api/telegram/status"
+      "/api/telegram/status",
+      "/go/*"
     ]
   },
   "workers_dev": true,
@@ -62,5 +63,11 @@
   },
   "build": {
     "command": "python automation/check_d1_activation.py --prepare-build"
-  }
+  },
+  "analytics_engine_datasets": [
+    {
+      "binding": "OUTBOUND_CLICKS",
+      "dataset": "offerte4zampe_outbound"
+    }
+  ]
 }

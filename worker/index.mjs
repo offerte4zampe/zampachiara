@@ -1,3 +1,4 @@
+import {outbound} from './outbound.mjs';
 import {scheduledTelegram} from './telegram.mjs';
 export {TelegramPublisher} from './telegram.mjs';
 import {canonicalProduct,slugForOffer} from './canonical-product.mjs';
@@ -7,8 +8,9 @@ const PRODUCTS = new Set(['monge-maxi-adult-pollo','monge-medium-adult-pollo','m
 const SHOPS = new Set(['Bauzaar','WebPet','Animaliapet','Isola dei Tesori','Paco Pet Shop','Amazon']);
 export default {
   scheduled(event,env,ctx){ctx.waitUntil(scheduledTelegram(env));},
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
+    if(url.pathname.startsWith('/go/'))return outbound(request,env,ctx);
     if(url.pathname==='/api/telegram/status'){
       if(request.method!=='GET')return new Response(null,{status:405});
       if(!env.TELEGRAM_PUBLISHER)return Response.json({integration:'telegram-v1',configured:false},{status:503});

@@ -32,7 +32,7 @@ export function content(product,state){
  const single=state.shops<2;
  const rows=state.rows.map(o=>{
   const q=state.quotes.get(o.id),unknown=o.quantity?.verified===false;
-  const target=safe(o.affiliate_url||o.url),rel=o.affiliate_url?'sponsored nofollow noopener noreferrer':'nofollow noopener noreferrer';
+  const target=trade.merchantUrl(o)?trade.goUrl(o,'product'):'',rel=o.affiliate_url?'sponsored nofollow noopener noreferrer':'nofollow noopener noreferrer';
   const badge=o.available&&state.best!==null&&q.total===state.best?'<span class="tag">Totale più basso verificabile</span>':'';
   const age=Math.max(0,Math.floor((state.now-Date.parse(o.checked_at))/3600000));
   const status=unknown?'Formato non verificato':o.available?'Disponibile al rilevamento':'Esaurito al rilevamento';
