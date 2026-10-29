@@ -1,0 +1,23 @@
+name: D1 activation gate
+on:
+  pull_request:
+    branches: [main]
+    paths: ['wrangler.jsonc','worker/d1-validation.json','automation/check_d1_activation.py','.github/workflows/d1-activation.yml']
+  push:
+    branches: [main]
+    paths: ['wrangler.jsonc','worker/d1-validation.json','automation/check_d1_activation.py','.github/workflows/d1-activation.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verify-remote-evidence:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Require executed successful remote validation for D1 or shadow
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python automation/check_d1_activation.py
