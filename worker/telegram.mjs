@@ -11,7 +11,7 @@ export function productPhoto(offer){
  const hosts={'bauzaar':['cdn.shopify.com'],'isola-dei-tesori':['www.isoladeitesori.it'],'paco':['www.pacopetshop.it']};
  try{
   const url=new URL(offer?.image);
-  if(url.protocol!=='https:'||url.username||url.password||!hosts[offer?.merchant_id]?.includes(url.hostname)||!/\\.(?:jpe?g|png)$/i.test(url.pathname))return null;
+  if(url.protocol!=='https:'||url.username||url.password||!hosts[offer?.merchant_id]?.includes(url.hostname)||!/\.(?:jpe?g|png)$/i.test(url.pathname))return null;
   return url.href;
  }catch{return null;}
 }
@@ -38,7 +38,7 @@ export function payload(post,channel){
  if(channel!=='@sconti4zampe')throw new Error('invalid_channel');
  const text=post.text+'\n\n'+trackedUrl(post)+'\n\nTrasparenza: il sito contiene link affiliati; gli acquisti idonei possono generare una commissione.';
  if(text.length>(post.image?1024:4096))throw new Error('message_too_long');
- if(post.image){const image=new URL(post.image,'https://offerte4zampe.it');if(image.username||image.password||image.protocol!=='https:'||!['https://offerte4zampe.it','https://cdn.shopify.com','https://www.isoladeitesori.it','https://www.pacopetshop.it'].includes(image.origin)||!(/\\.(?:jpe?g|png)$/i.test(image.pathname)))throw new Error('invalid_image');return {method:'sendPhoto',body:{chat_id:channel,photo:image.href,caption:text,disable_notification:post.kind==='test'}};}
+ if(post.image){const image=new URL(post.image,'https://offerte4zampe.it');if(image.username||image.password||image.protocol!=='https:'||!['https://offerte4zampe.it','https://cdn.shopify.com','https://www.isoladeitesori.it','https://www.pacopetshop.it'].includes(image.origin)||!(/\.(?:jpe?g|png)$/i.test(image.pathname)))throw new Error('invalid_image');return {method:'sendPhoto',body:{chat_id:channel,photo:image.href,caption:text,disable_notification:post.kind==='test'}};}
  return {method:'sendMessage',body:{chat_id:channel,text,disable_notification:post.kind==='test',link_preview_options:{is_disabled:true}}};
 }
 export async function telegramCall(token,method,body,transport=fetch){
