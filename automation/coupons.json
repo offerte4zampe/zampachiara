@@ -1,0 +1,62 @@
+{
+  "method_version": 1,
+  "verification_policy": "Date conservative: verified_at uses UTC start of the observed day, not an invented exact test time. Maximum 48h without a new cart test.",
+  "coupons": [
+    {
+      "code": "FC20",
+      "shop": "bauzaar",
+      "merchant": "Bauzaar",
+      "benefit": "−20%",
+      "title": "Sui prodotti Forcepet",
+      "description": "Codice dedicato alla selezione Forcepet del negozio, senza spesa minima dichiarata.",
+      "status": "cart_tested",
+      "publication_allowed": true,
+      "starts_at": "2026-10-29T00:00:00Z",
+      "expires_at": "2026-10-31T23:00:00Z",
+      "expires_label": "31 ottobre 2026",
+      "verified_at": "2026-10-29T00:00:00Z",
+      "checked_date": "29/10/2026",
+      "recheck_after": "2026-10-31T00:00:00Z",
+      "source_url": "https://www.bauzaar.it/pages/promozioni",
+      "destination_url": "https://www.bauzaar.it/collections/forcepet",
+      "conditions": "Valido sui prodotti Forcepet. Inserire il codice nel carrello. Senza spesa minima dichiarata; non cumulabile con altre promozioni. Scorte limitate. Termine indicato dal negozio: 31/10/2026.",
+      "cart_test": {
+        "code": "FC20",
+        "product": "Forcepet Cat Adult Sterilised Digestive Soft patè 85 gr",
+        "variant": "Orata · 1 confezione",
+        "currency": "EUR",
+        "before_cents": 150,
+        "after_cents": 120,
+        "note": "Acquisto singolo, nessun ordine completato. Sconto osservato di 0,30 €."
+      }
+    },
+    {
+      "code": "LILY20",
+      "shop": "bauzaar",
+      "merchant": "Bauzaar",
+      "benefit": "−20%",
+      "title": "Sui prodotti Lily’s Kitchen",
+      "description": "Codice dedicato alla selezione Lily’s Kitchen del negozio, senza spesa minima dichiarata.",
+      "status": "cart_tested",
+      "publication_allowed": true,
+      "starts_at": "2026-10-29T00:00:00Z",
+      "expires_at": "2026-10-31T23:00:00Z",
+      "expires_label": "31 ottobre 2026",
+      "verified_at": "2026-10-29T00:00:00Z",
+      "checked_date": "29/10/2026",
+      "recheck_after": "2026-10-31T00:00:00Z",
+      "source_url": "https://www.bauzaar.it/pages/promozioni",
+      "destination_url": "https://www.bauzaar.it/collections/lily-s-kitchen",
+      "conditions": "Valido sui prodotti Lily’s Kitchen. Inserire il codice nel carrello. Senza spesa minima dichiarata; non cumulabile con altre promozioni. Scorte limitate. Termine indicato dal negozio: 31/10/2026.",
+      "cart_test": {
+        "code": "LILY20",
+        "product": "Lily’s Kitchen Snack Treats 70 gr",
+        "variant": "Chicken Bites (pollo) · 1 confezione",
+        "currency": "EUR",
+        "before_cents": 348,
+        "after_cents": 279,
+        "note": "Acquisto singolo, nessun ordine completato. Sconto osservato di 0,69 €; arrotondamento applicato dal negozio. Carrello misto: l’articolo Forcepet da 1,50 € è rimasto escluso da LILY20."
+      }
+    }
+  ]
+}

@@ -66,6 +66,13 @@ on:
       - 'tests/test_search_index.py'
       - 'tests/check_search_suggest_browser.mjs'
       - 'site/assets/style.css'
+      - 'site/assets/coupons.css'
+      - 'site/assets/coupons.js'
+      - 'automation/coupons.json'
+      - 'automation/build_coupon_page.py'
+      - 'automation/coupon-layout.html'
+      - 'tests/test_coupons.py'
+      - 'tests/check_coupons_browser.mjs'
       - 'site/assets/base.js'
       - 'site/assets/halloween.svg'
       - 'tests/test_seasonal_theme.mjs'
@@ -143,6 +150,8 @@ jobs:
         run: python automation/build_line_pages.py
       - name: Generate monthly observatory locally
         run: python automation/build_observatory.py
+      - name: Generate tested coupon page
+        run: python automation/build_coupon_page.py
       - name: Normalize primary navigation
         run: python automation/apply_navigation.py
       - name: Route product links through comparison

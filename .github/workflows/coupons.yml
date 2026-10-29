@@ -1,0 +1,49 @@
+name: Refresh tested coupon page
+on:
+  schedule:
+    - cron: '25 */6 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'automation/coupons.json'
+      - 'automation/coupon-layout.html'
+      - 'automation/build_coupon_page.py'
+      - 'site/assets/coupons.*'
+      - 'site/assets/shops/**'
+      - 'tests/test_coupons.py'
+      - '.github/workflows/coupons.yml'
+permissions:
+  contents: write
+concurrency:
+  group: coupon-page
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m unittest tests.test_coupons tests.test_navigation
+      - run: python automation/build_coupon_page.py
+      - run: python automation/apply_navigation.py
+      - run: python automation/improve_discovery.py
+      - run: python automation/build_sitemaps.py
+      - name: Publish dated coupon page and navigation
+        run: |
+          git fetch origin main
+          if [ "$(git rev-parse HEAD)" != "$(git rev-parse origin/main)" ]; then
+            echo "Main changed; leave current publication intact and retry next run."
+            exit 0
+          fi
+          if ! git diff --quiet -- site automation/sitemap-state.json; then
+            git config user.name "Offerte4Zampe coupon bot"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add site/*.html site/sitemap*.xml site/data/discovery.json automation/sitemap-state.json
+            git commit -m "chore: refresh cart-tested coupons and navigation"
+            git push
+          fi
