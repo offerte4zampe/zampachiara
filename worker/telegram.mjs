@@ -88,8 +88,12 @@ export class TelegramPublisher {
   if(prior?.next_at>now)return {status:'waiting'};
   if((prior?.attempts||0)>=4){await store.put('halted',true);return {status:'halted'};}
   // Verify the linked page/image exists before reserving the send.
-  const asset=await this.env.ASSETS.fetch(new Request(new URL(post.path,'https://offerte4zampe.it')));
-  if(!asset.ok)return {status:'asset_unavailable'};
+  // /prodotto?id=... is a Worker route, not a static ASSETS file.
+  // Its offer id was validated against today's catalog by offerPost().
+  if(post.kind!=='price_report'){
+   const asset=await this.env.ASSETS.fetch(new Request(new URL(post.path,'https://offerte4zampe.it')));
+   if(!asset.ok)return {status:'asset_unavailable'};
+  }
   if(post.kind!=='test'&&!post.image)return {status:'photo_required'};
   if(post.image){
    let photo;
