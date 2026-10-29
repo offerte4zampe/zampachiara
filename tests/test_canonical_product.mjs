@@ -41,3 +41,7 @@ test('merged brand-line legacy slugs redirect only to validated canonical paths'
  const hostile={...product,redirect_slug:'https://evil.test/'};
  assert.equal((await canonicalProduct(new Request('https://offerte4zampe.it/prodotto/'+hostile.slug),env(hostile),now)).status,200);
 });
+
+test('name based matches are disclosed and carry no invented confidence percentage',()=>{
+ const p={...product,matching_method:'name_characteristics',gtin:'',indexable:false};const c=content(p,view(p,rules,now));assert(c.body.includes('Abbinamento per nome e caratteristiche'));assert(!c.schema.gtin13);assert(!c.body.includes('99%'));
+});

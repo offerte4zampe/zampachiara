@@ -120,19 +120,29 @@ def fresh(o,now):
 
 def build(catalog,old_registry=None,history=None,now=None):
     now=now or dt.datetime.now(dt.timezone.utc);old_registry=old_registry or {};history=history or {}
-    buckets=defaultdict(list);q_by_id={}
+    try:
+        from .name_matching import resolve
+    except ImportError:
+        from name_matching import resolve
+    buckets=defaultdict(list)
+    q_by_id={o['id']:quantity(o) for o in catalog['offers']}
+    identities={o['id']:identity(o,q_by_id[o['id']]) for o in catalog['offers']}
+    identities,name_methods,name_report=resolve(catalog['offers'],q_by_id,identities,normalized,canonical_brand,canonical_gtin)
     for o in catalog['offers']:
-        q=quantity(o);q_by_id[o['id']]=q;buckets[json.dumps(identity(o,q),ensure_ascii=False,separators=(',',':'))].append(o)
+        buckets[json.dumps(identities[o['id']],ensure_ascii=False,separators=(',',':'))].append(o)
     products=[];offers=[];registry={};by_bucket=defaultdict(list)
     for key,rows in sorted(buckets.items()):
         pid='p-'+hashlib.sha256(key.encode()).hexdigest()[:20];previous=old_registry.get(pid,{})
         rows=sorted(rows,key=lambda o:(not fresh(o,now),len(clean_title(o['title'],o.get('brand',''),o.get('variant',''))),o['id']))
         seed=rows[0];q=q_by_id[seed['id']];attrs=attributes(seed)
         title=clean_title(seed['title'],seed.get('brand',''),seed.get('variant',''))
-        suffix=canonical_gtin(seed.get('gtin')) or pid[2:]
+        product_gtin=next((canonical_gtin(o.get('gtin')) for o in rows if canonical_gtin(o.get('gtin'))),'')
+        name_matched=any(o['id'] in name_methods for o in rows)
+        method='gtin_with_name' if name_matched and product_gtin else 'name_characteristics' if name_matched else 'gtin_quantity' if json.loads(key)[0]=='gtin' else 'unattached'
+        suffix=product_gtin or pid[2:]
         slug=previous.get('slug') or normalized(title).replace(' ','-')[:115].rstrip('-')+'-'+suffix+'-'+pid[-6:]
         active=[o for o in rows if fresh(o,now)];shops={o['merchant_id'] for o in active};verified_shops={o['merchant_id'] for o in active if q_by_id[o['id']]['verified']}
-        p=dict(id=pid,slug=slug,gtin=canonical_gtin(seed.get('gtin')),brand=canonical_brand(seed.get('brand','')),name=title,**attrs,quantity=q,format=format_label(q),image=seed.get('image',''),offer_ids=[o['id'] for o in rows],active_shop_count=len(shops),verified_shop_count=len(verified_shops),active_offer_count=len(active),low_price=min((o['price'] for o in active),default=None),matching_method='gtin_quantity' if json.loads(key)[0]=='gtin' else 'unattached',matching_confidence=1.0 if json.loads(key)[0]=='gtin' else 0.0,reviewed=any(o.get('identity_review') for o in rows))
+        p=dict(id=pid,slug=slug,gtin=product_gtin,brand=canonical_brand(seed.get('brand','')),name=title,**attrs,quantity=q,format=format_label(q),image=seed.get('image',''),offer_ids=[o['id'] for o in rows],active_shop_count=len(shops),verified_shop_count=len(verified_shops),active_offer_count=len(active),low_price=min((o['price'] for o in active),default=None),matching_method=method,matching_confidence=1.0 if method=='gtin_quantity' else None,reviewed=any(o.get('identity_review') for o in rows))
         p['indexable']=len(verified_shops)>=2 and p['matching_method']=='gtin_quantity'
         content=json.dumps([title,q,[(o['id'],o['price'],o['available']) for o in rows]],ensure_ascii=False,sort_keys=True)
         signature=hashlib.sha256(content.encode()).hexdigest();lastmod=previous.get('lastmod')
@@ -150,6 +160,8 @@ def build(catalog,old_registry=None,history=None,now=None):
         if q['kind']!='sales_unit':by_bucket[(normalized(p['brand']),attrs['species'],q['kind'],q['value'])].append(p)
         for o in rows:
             offer={**o,'product_id':pid,'product_slug':slug,'canonical_title':title,'quantity':q_by_id[o['id']],'unit_price':round(o['price']/q_by_id[o['id']]['value'],6) if q_by_id[o['id']]['verified'] else None,'unit_price_unit':q_by_id[o['id']]['unit'] if q_by_id[o['id']]['verified'] else None,'canonical_shop_count':len(verified_shops)}
+            offer['product_matching_method']=method
+            offer['offer_matching_method']=name_methods.get(o['id'],'gtin' if canonical_gtin(o.get('gtin')) else 'unattached')
             offer['canonical_format']=p['format'];offer['product_identity_verified']=p['matching_method']=='gtin_quantity'
             offer['unit_prices']={unit:round(o['price']/value,6) for unit,value in [('kg',(q_by_id[o['id']]['weight_g'] or 0)/1000),('l',(q_by_id[o['id']]['volume_ml'] or 0)/1000),('pz',q_by_id[o['id']]['pieces'] or 0)] if value and q_by_id[o['id']]['verified']}
             offers.append(offer)
@@ -184,7 +196,7 @@ def build(catalog,old_registry=None,history=None,now=None):
         family=re.sub(r'\d+(?:[.,]\d+)?\s*(?:kg|gr|g|ml|litri|lt|l)\b','',p['name'],flags=re.I)
         family=re.sub(r'confezione da \d+ pezzi','',family,flags=re.I)
         p['related']=[{k:o[k] for k in ('id','slug','name','format','low_price')} for o in families[(normalized(p['brand']),normalized(family))] if o['id']!=p['id'] and o['active_offer_count']][:4]
-    candidates=sorted(candidates,key=lambda x:(-x['confidence'],x['product_id'],x['candidate_product_id']))[:300]
+    candidates=sorted(candidates,key=lambda x:(-x['confidence'],x['product_id'],x['candidate_product_id']))
     active_products=[p for p in products if p['active_offer_count']]
     multi=[p for p in active_products if p['verified_shop_count']>=2]
     store_coverage={}
@@ -198,7 +210,7 @@ def build(catalog,old_registry=None,history=None,now=None):
             'sales_unit_only':sum(o['quantity']['kind']=='sales_unit' for o in rows),
             'offers_in_multishop_products':sum(fresh(o,now) and o['canonical_shop_count']>=2 for o in rows),
         }
-    metric=dict(store_coverage=store_coverage,products=len(products),active_products=len(active_products),offers=len(offers),multi_shop_products=len(multi),multi_shop_percent=round(100*len(multi)/max(1,len(active_products)),2),denominator='active canonical products, distinct verified merchants; duplicate offers in one shop do not count',unattached_offers=sum(p['active_offer_count'] for p in products if p['matching_method']=='unattached'),candidate_pairs=len(candidates),automatic_match_confidence_threshold=.99)
+    metric=dict(name_matching=name_report,gtin_multi_shop_products=sum(p['matching_method']=='gtin_quantity' for p in multi),characteristic_multi_shop_products=sum(p['matching_method'] in ('gtin_with_name','name_characteristics') for p in multi),store_coverage=store_coverage,products=len(products),active_products=len(active_products),offers=len(offers),multi_shop_products=len(multi),multi_shop_percent=round(100*len(multi)/max(1,len(active_products)),2),denominator='active canonical products, distinct merchants with verified quantities; GTIN and characteristic matching reported separately; duplicate offers in one shop do not count',unattached_offers=sum(p['active_offer_count'] for p in products if p['matching_method']=='unattached'),candidate_pairs=len(candidates),automatic_match_rules='GTIN and quantity, or exact normalized name plus brand and verified selling quantity; conflicting GTINs excluded')
     return dict(schema_version=1,generated_at=catalog['generated_at'],products=products,offers=offers,metrics=metric,matching_candidates=candidates,registry=registry)
 
 
