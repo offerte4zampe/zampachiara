@@ -1,7 +1,7 @@
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import {execFileSync} from 'node:child_process';
 import {shippingSource,readShippingRows} from '../worker/shipping-source.mjs';import trade from '../site/assets/trade.js';
 const json=JSON.parse(fs.readFileSync(new URL('../site/data/shipping-rules.json',import.meta.url))),data=JSON.parse(execFileSync('python',['automation/build_shipping_seed.py','--json'],{encoding:'utf8'}));
-const validation={remote_success:true,remote_run_id:'123',remote_commit_sha:'fixture-sha',build_commit_sha:'fixture-sha',verified_input_hash:'fixture-hash',current_input_hash:'fixture-hash',verified_at:'2026-10-28T12:00:00Z',database_uuid:'11111111-1111-4111-8111-111111111111'};
+const validation={remote_success:true,attestation_scope:'shipping-infrastructure-v1',ancestor_verified:true,remote_run_id:'123',remote_commit_sha:'fixture-sha',build_commit_sha:'fixture-sha',verified_input_hash:'fixture-hash',current_input_hash:'fixture-hash',verified_at:'2026-10-28T12:00:00Z',database_uuid:'11111111-1111-4111-8111-111111111111'};
 const now=Date.parse('2026-10-28T12:00:00Z'),offers=[{merchant_id:'webpet',price:20,checked_at:new Date(now).toISOString()}];
 function db(rows=data.rules){return {prepare(sql){assert(sql.includes('r.shop_id=?1'));return {bind(...values){return {values}}}},async batch(statements){return statements.map(s=>({success:true,results:rows.filter(r=>r.shop_id===s.values[0]),meta:{rows_read:2,rows_written:0}}))}};}
 test('JSON default does not query D1',async()=>{
@@ -39,9 +39,14 @@ test('production D1 and shadow flags cannot bypass absent remote validation',asy
  }
 });
 
-test('a different commit or input hash blocks previously successful validation',async()=>{
- for(const wrong of [{...validation,build_commit_sha:'changed'},{...validation,current_input_hash:'changed'}]){
+test('unverified ancestry or a changed input hash blocks validation',async()=>{
+ for(const wrong of [{...validation,build_commit_sha:'changed',ancestor_verified:false},{...validation,current_input_hash:'changed'}]){
   const r=await shippingSource({SHIPPING_RULES_SOURCE:'d1',SHIPPING_DB:db()},offers,json,{now,validation:wrong,log:()=>{}});
   assert.equal(r.activationBlocked,true);assert.equal(r.rules,json);
  }
+});
+
+test('an attested ancestor remains valid when only build SHA advances',async()=>{
+ const r=await shippingSource({SHIPPING_RULES_SOURCE:'d1',SHIPPING_DB:db()},offers,json,{now,validation:{...validation,build_commit_sha:'new-catalog-commit'},log:()=>{}});
+ assert.equal(r.source,'d1');assert.equal(r.activationBlocked,undefined);
 });

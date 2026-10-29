@@ -49,18 +49,26 @@ The remote job checks credentials before any Wrangler operation. Missing credent
 
 The repository no longer contains a positive/negative proof record. Only the successful remote workflow emits `remote-d1-attestation.json`, included in the immutable Actions artifact. It records the run ID, checked-out commit SHA, SHA-256 of the migrations/seed/verification inputs, actual verified database UUID, resource names and UTC verification time. A local execution cannot produce accepted remote evidence.
 
-To inspect an actual successful remote run for the exact current commit:
+To inspect an actual successful remote run for the current D1 input version:
 
 ```sh
 python automation/check_d1_activation.py --verify-run RUN_ID
 ```
 
-The validator reads the GitHub run, latest jobs and artifact metadata through the API. It requires the exact workflow, manual dispatch on `main`, successful run and actually executed successful `remote-staging`. It checks the downloaded archive against GitHub's SHA-256 digest, then compares the artifact run ID/SHA/hash/resources to the current checkout. Redirected artifact downloads do not receive the GitHub credential. Repository proof files and tracked generated attestations are rejected.
+The validator reads the GitHub run, latest jobs and artifact metadata through the API. It requires the exact workflow, manual dispatch on `main`, successful run and actually executed successful `remote-staging`. It checks the downloaded archive against GitHub's SHA-256 digest, then checks the artifact run ID, branch, original SHA and resource identity. For newer builds, GitHub’s compare API must confirm that the attested SHA is an ancestor; the current scoped input hash must still match. Redirected artifact downloads do not receive the GitHub credential. Repository proof files and tracked generated attestations are rejected.
 
 Wrangler's production pre-build hook always runs the same validator with `--prepare-build`. Without `SHIPPING_D1_REMOTE_RUN_ID` it generates a denied-by-default build file under ignored `worker/generated/`; with a run ID it regenerates that file exclusively from validated API/artifact evidence. It never trusts a hand-edited generated file. No source commit is created to record success, avoiding a circular change of commit SHA.
 
-The Worker checks the embedded remote SHA/hash against the build SHA/hash before honoring D1/shadow flags. The CI activation gate independently performs the API verification. Enabling either flag in the repository without valid evidence fails the gate. If runtime flags are changed without a validated build, JSON remains selected and no D1 query runs.
+The Worker requires API-verified ancestry and a matching scoped input hash before honoring D1/shadow flags. Both SHAs remain recorded as provenance; equality of the overall commit SHA is no longer required. The CI activation gate independently performs the API verification. Enabling either flag in the repository without valid evidence fails the gate. If runtime flags are changed without a validated build, JSON remains selected and no D1 query runs.
 
-**Exact SHA matching is deliberate:** every new commit, including a catalog-only commit, requires a fresh remote validation before a newly built version can use D1/shadow. An existing deployed bundle retains its own attestation until replaced. Changes to migrations, seed, source rules, shared calculations or verification code also change the input fingerprint. Rollback to JSON remains possible without D1 or GitHub access.
+**Scoped hash and ancestry:** catalog-only commits can reuse a still-available successful remote attestation when GitHub confirms ancestry and the input fingerprint is unchanged. Divergent history or a changed scoped input blocks D1/shadow. The scope includes both Wrangler configurations, migration/seed SQL, the seed generator, shipping rules (the explicit `site/data/` exception), shared shipping calculations, D1 adapter, Worker routing/rendering and verification code/workflows. Catalog snapshots, observed price history and the product registry are excluded. The fingerprint does not rely on GitHub's truncated changed-file listing.
+
+**Retention:** the artifact must be unexpired and downloadable. An expired flag, past expiration timestamp or HTTP 410 reports **“Attestazione scaduta”** and requires a new remote run. A missing/deleted artifact reports that evidence is unavailable; it is never silently treated as valid. Metadata must bind the artifact to the same `run_id`, `main` and attested SHA, in addition to the JSON record and archive digest.
+
+## Infrastructure versus catalog imports
+
+This attestation has scope `shipping-infrastructure-v1`. It establishes the behavior of the shipping schema, seed, adapter and runtime. It is not evidence that a particular catalog snapshot was imported correctly.
+
+When `product`/`offer` imports are introduced, each import run must produce its own separate result: source snapshot hash/time, run ID, target database UUID, inserted/changed/unchanged/rejected row counts, eligibility/aggregate checks, JSON equivalence and actual `rows_written`/`rows_read`. A successful infrastructure attestation cannot replace these per-import checks, and a successful catalog import cannot authorize infrastructure changes. Those imports and their report format are not activated by this change.
 
 Token and environment configuration remain operator actions: a short-lived staging token with D1 Edit and Workers Scripts Edit, environment `cloudflare-staging` with required reviewers, and manual workflow dispatch. Do not reuse this token/environment for production. A separate Cloudflare account is the stronger optional isolation; software name guards do not narrow an account-wide token's permissions.

@@ -29,7 +29,7 @@ export function quoteDifferences(offers,left,right,quantity,territory,now){
 export async function shippingSource(env,offers,jsonRules,{now=Date.now(),quantity=1,territory='standard',validation=remoteValidation,log=event=>console.log(JSON.stringify(event))}={}){
  const useD1=env.SHIPPING_RULES_SOURCE==='d1',shadow=env.SHIPPING_SHADOW==='true';
  if(!useD1&&!shadow)return {rules:jsonRules,source:'json',meta:null};
- if(validation.remote_success!==true||!(/^[1-9]\d*$/).test(String(validation.remote_run_id))||!validation.remote_commit_sha||validation.remote_commit_sha!==validation.build_commit_sha||!validation.verified_input_hash||validation.verified_input_hash!==validation.current_input_hash||!validation.verified_at||!validation.database_uuid){
+ if(validation.remote_success!==true||validation.attestation_scope!=='shipping-infrastructure-v1'||!(/^[1-9]\d*$/).test(String(validation.remote_run_id))||!validation.remote_commit_sha||!validation.build_commit_sha||validation.ancestor_verified!==true||!validation.verified_input_hash||validation.verified_input_hash!==validation.current_input_hash||!validation.verified_at||!validation.database_uuid){
   log({event:'shipping_activation_blocked',reason:'remote_validation_not_successful'});
   return {rules:jsonRules,source:'json',meta:null,activationBlocked:true};
  }

@@ -6,10 +6,10 @@ falls back to local when --remote was requested, never binds production resource
 import argparse,datetime as dt,json,os,pathlib,re,secrets,shutil,subprocess,time,urllib.request,urllib.error
 try:
     from .build_shipping_seed import convert
-    from .d1_fingerprint import input_hash,commit_sha
+    from .d1_fingerprint import input_hash,commit_sha,SCOPE
 except ImportError:
     from build_shipping_seed import convert
-    from d1_fingerprint import input_hash,commit_sha
+    from d1_fingerprint import input_hash,commit_sha,SCOPE
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 NAME='zampachiara-shipping-staging'
 WORKER='zampachiara-d1-staging'
@@ -98,7 +98,7 @@ def main():
             sha=commit_sha()
             if os.environ.get('GITHUB_SHA')!=sha:raise RuntimeError('Workflow SHA differs from checked-out commit')
             subprocess.run(['git','diff','--exit-code','HEAD','--'],cwd=ROOT,check=True,capture_output=True)
-            attestation={'execution':'remote-d1','run_id':os.environ['GITHUB_RUN_ID'],'commit_sha':sha,'input_hash':input_hash(),'verified_at':dt.datetime.now(dt.timezone.utc).isoformat(),'database_uuid':config['d1_databases'][0]['database_id'],'database_name':NAME,'worker_name':WORKER}
+            attestation={'scope':SCOPE,'execution':'remote-d1','run_id':os.environ['GITHUB_RUN_ID'],'commit_sha':sha,'input_hash':input_hash(),'verified_at':dt.datetime.now(dt.timezone.utc).isoformat(),'database_uuid':config['d1_databases'][0]['database_id'],'database_name':NAME,'worker_name':WORKER}
             (reports/'remote-d1-attestation.json').write_text(json.dumps(attestation,indent=2)+'\n')
         print(json.dumps({'execution':report['execution'],'cases':610,'differences':0,'seed_meta':seed_result['meta'],'product_request_meta':result['product_request']['meta'],'fts5_trigram':result['capabilities']['fts5_trigram'],'report':str(path)},ensure_ascii=False))
     finally:

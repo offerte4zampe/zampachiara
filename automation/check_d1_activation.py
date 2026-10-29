@@ -1,9 +1,9 @@
 """Build attestation from an actual successful GitHub remote run, never repo state."""
 import argparse,datetime as dt,hashlib,io,json,os,pathlib,re,subprocess,urllib.request,urllib.error,uuid,zipfile
 try:
-    from .d1_fingerprint import ROOT,input_hash,commit_sha
+    from .d1_fingerprint import ROOT,input_hash,commit_sha,SCOPE
 except ImportError:
-    from d1_fingerprint import ROOT,input_hash,commit_sha
+    from d1_fingerprint import ROOT,input_hash,commit_sha,SCOPE
 REPO='offerte4zampe/zampachiara'
 OUTPUT=ROOT/'worker/generated/d1-validation.json'
 
@@ -39,36 +39,65 @@ def artifact_bytes(artifact_id):
     if len(data)>5_000_000:raise ValueError('Unexpected artifact size')
     return data
 
-def validate_attestation(record,run,sha,digest):
-    validate_fields=('run_id','commit_sha','input_hash','verified_at','database_uuid','database_name','worker_name','execution')
+class AttestationExpired(ValueError):pass
+
+def validate_ancestry(verified_sha,current_sha,comparison=None):
+    if verified_sha==current_sha:return True
+    if not comparison or comparison.get('status')!='ahead' or comparison.get('merge_base_commit',{}).get('sha')!=verified_sha or comparison.get('base_commit',{}).get('sha')!=verified_sha:
+        raise ValueError('Il commit attestato non è un antenato della build corrente')
+    return True
+
+def select_artifact(artifacts,run):
+    matches=[a for a in artifacts if a.get('name')=='remote-d1-shipping-report']
+    if not matches:raise ValueError('Attestazione non disponibile: artifact assente o eliminato dopo la retention; ripetere il workflow remoto')
+    if len(matches)!=1:raise ValueError('Ambiguous workflow artifact')
+    item=matches[0]
+    until=item.get('expires_at')
+    if item.get('expired') or (until and dt.datetime.fromisoformat(until.replace('Z','+00:00'))<=dt.datetime.now(dt.timezone.utc)):
+        raise AttestationExpired('Attestazione scaduta: retention artifact terminata; ripetere il workflow remoto')
+    origin=item.get('workflow_run',{})
+    if str(origin.get('id'))!=str(run['id']) or origin.get('head_branch')!='main' or origin.get('head_sha')!=run['head_sha']:
+        raise ValueError('Artifact di un altro run, ramo o commit')
+    return item
+
+def validate_attestation(record,run,sha,digest,ancestor_verified=False):
+    validate_fields=('run_id','commit_sha','input_hash','verified_at','database_uuid','database_name','worker_name','execution','scope')
     if any(k not in record for k in validate_fields):raise ValueError('Incomplete remote attestation')
-    if str(record['run_id'])!=str(run['id']) or record['commit_sha']!=run['head_sha'] or record['commit_sha']!=sha:raise ValueError('Remote attestation SHA/run differs from current build')
+    if str(record['run_id'])!=str(run['id']) or record['commit_sha']!=run['head_sha']:raise ValueError('Remote attestation SHA/run differs from verified run')
+    if record['commit_sha']!=sha and not ancestor_verified:raise ValueError('Ancestry verification is required for a newer build')
     if record['input_hash']!=digest:raise ValueError('Migrations/seed or verification code changed since the remote run')
+    if record['scope']!=SCOPE:raise ValueError('Import validation is not infrastructure validation')
     if record['execution']!='remote-d1' or record['database_name']!='zampachiara-shipping-staging' or record['worker_name']!='zampachiara-d1-staging':raise ValueError('Attestation is not from the remote staging resources')
     if uuid.UUID(record['database_uuid']).int==0:raise ValueError('Invalid verified database UUID')
     date=dt.datetime.fromisoformat(record['verified_at'].replace('Z','+00:00'))
     if date.tzinfo is None or date>dt.datetime.now(dt.timezone.utc)+dt.timedelta(minutes=5):raise ValueError('Invalid verification timestamp')
-    return {'remote_success':True,'remote_run_id':str(run['id']),'remote_commit_sha':record['commit_sha'],'build_commit_sha':sha,'verified_input_hash':record['input_hash'],'current_input_hash':digest,'verified_at':record['verified_at'],'database_uuid':record['database_uuid']}
+    return {'remote_success':True,'attestation_scope':SCOPE,'ancestor_verified':True,'remote_run_id':str(run['id']),'remote_commit_sha':record['commit_sha'],'build_commit_sha':sha,'verified_input_hash':record['input_hash'],'current_input_hash':digest,'verified_at':record['verified_at'],'database_uuid':record['database_uuid']}
 
 def verify(run_id,sha,digest):
     if not re.fullmatch(r'[1-9]\d*',str(run_id)):raise ValueError('Invalid remote run ID')
-    run=api('/actions/runs/'+str(run_id));jobs=[];page=1
+    run=api('/actions/runs/'+str(run_id))
+    if str(run.get('id'))!=str(run_id):raise ValueError('API returned another run ID')
+    jobs=[];page=1
     while True:
         result=api('/actions/runs/'+str(run_id)+'/jobs?filter=latest&per_page=100&page='+str(page));jobs+=result['jobs']
         if len(jobs)>=result['total_count']:break
         page+=1
     validate_remote_run(run,jobs)
-    if run['head_sha']!=sha:raise ValueError('Remote run tested another commit')
+    comparison=api('/compare/'+run['head_sha']+'...'+sha) if run['head_sha']!=sha else None
+    validate_ancestry(run['head_sha'],sha,comparison)
     artifacts=api('/actions/runs/'+str(run_id)+'/artifacts?per_page=100')['artifacts']
-    matches=[a for a in artifacts if a['name']=='remote-d1-shipping-report' and not a['expired']]
-    if len(matches)!=1:raise ValueError('Missing or ambiguous workflow artifact')
-    artifact=matches[0];data=artifact_bytes(artifact['id'])
+    artifact=select_artifact(artifacts,run)
+    try:data=artifact_bytes(artifact['id'])
+    except urllib.error.HTTPError as error:
+        if error.code==410:raise AttestationExpired('Attestazione scaduta: GitHub non rende più disponibile l’artifact; ripetere il workflow remoto') from None
+        raise
     if artifact.get('digest')!='sha256:'+hashlib.sha256(data).hexdigest():raise ValueError('Artifact digest mismatch')
     with zipfile.ZipFile(io.BytesIO(data)) as archive:
-        item=archive.getinfo('remote-d1-attestation.json')
+        try:item=archive.getinfo('remote-d1-attestation.json')
+        except KeyError:raise ValueError('Attestazione assente nell’artifact; ripetere il workflow remoto') from None
         if item.file_size>65536:raise ValueError('Unexpected attestation size')
         record=json.loads(archive.read(item))
-    return validate_attestation(record,run,sha,digest)
+    return validate_attestation(record,run,sha,digest,ancestor_verified=True)
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--verify-run');parser.add_argument('--prepare-build',action='store_true');args=parser.parse_args()
@@ -86,5 +115,5 @@ def main():
     result=verify(run_id,sha,digest) if run_id else {'remote_success':False,'remote_run_id':None,'build_commit_sha':sha,'current_input_hash':digest}
     if args.prepare_build:
         OUTPUT.parent.mkdir(parents=True,exist_ok=True);OUTPUT.write_text(json.dumps(result,indent=2)+'\n')
-    print('Exact-version remote attestation verified.' if run_id else 'No remote attestation: build remains JSON; D1 and shadow blocked.')
+    print('Attestazione remota valida: input D1 invariati e commit attestato antenato della build.' if run_id else 'No remote attestation: build remains JSON; D1 and shadow blocked.')
 if __name__=='__main__':main()
