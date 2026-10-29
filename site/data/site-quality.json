@@ -1,9 +1,9 @@
 {
   "method_version": 2,
-  "observed_at": "2026-10-29T19:59:19.640415+00:00",
-  "pages_scanned": 487,
-  "indexable_pages": 41,
-  "unique_canonicals": 41,
+  "observed_at": "2026-10-29T20:29:15.022037+00:00",
+  "pages_scanned": 488,
+  "indexable_pages": 42,
+  "unique_canonicals": 42,
   "issues": [],
   "rule_counts": {},
   "pages": [
@@ -29,6 +29,12 @@
       "page": "chi-siamo.html",
       "indexable": true,
       "canonical": "https://offerte4zampe.it/chi-siamo",
+      "issues": []
+    },
+    {
+      "page": "codici-sconto.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/codici-sconto",
       "issues": []
     },
     {
