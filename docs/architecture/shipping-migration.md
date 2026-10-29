@@ -14,6 +14,7 @@ The original JSON had no explicit expiry: `trade.js` previously used seven days.
 ```sh
 python automation/build_shipping_seed.py
 python -m unittest discover -s tests
+python automation/check_d1_activation.py --prepare-build
 node --test tests/test_*.mjs
 ```
 
