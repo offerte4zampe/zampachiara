@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-10-28T18:55:41.989299+00:00",
-  "products": 17857,
-  "active_products": 16742,
-  "offers": 18292,
+  "generated_at": "2026-10-29T01:03:01.098986+00:00",
+  "products": 17900,
+  "active_products": 16748,
+  "offers": 18298,
   "multi_shop_products": 417,
   "multi_shop_percent": 2.49,
   "denominator": "active canonical products, distinct verified merchants; duplicate offers in one shop do not count",
-  "unattached_offers": 8058,
-  "candidate_pairs": 84,
+  "unattached_offers": 8046,
+  "candidate_pairs": 92,
   "automatic_match_confidence_threshold": 0.99
 }
