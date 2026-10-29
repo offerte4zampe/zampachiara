@@ -1,7 +1,7 @@
 {
   "method_version": 2,
-  "observed_at": "2026-10-29T01:03:01.098986+00:00",
-  "pages_scanned": 485,
+  "observed_at": "2026-10-29T07:01:14.456209+00:00",
+  "pages_scanned": 487,
   "indexable_pages": 41,
   "unique_canonicals": 41,
   "issues": [],
@@ -269,6 +269,12 @@
       "page": "prezzi-03182550707312-3cef704f70.html",
       "indexable": false,
       "canonical": "https://offerte4zampe.it/prodotto/royal-canin-mother-babycat-2-kg-2kg-03182550707312-047c5a",
+      "issues": []
+    },
+    {
+      "page": "prezzi-03182550716918-e6b9a1d5c9.html",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/royal-canin-mini-light-weight-care-8kg-crocchette-cani-mini-adult-03182550716918-6cba27",
       "issues": []
     },
     {
@@ -568,7 +574,7 @@
     {
       "page": "prezzi-04260109622275-f480f2a3a6.html",
       "indexable": false,
-      "canonical": "https://offerte4zampe.it/prezzi-04260109622275-f480f2a3a6",
+      "canonical": "https://offerte4zampe.it/prodotto/terra-canis-secco-canireo-grain-free-al-manzo-2-5-kg-2-5kg-04260109622275-a01447",
       "issues": []
     },
     {
@@ -2537,6 +2543,12 @@
       "page": "prezzi-08053017343822-cd90148124.html",
       "indexable": false,
       "canonical": "https://offerte4zampe.it/prodotto/oasy-cat-mature-bocconcini-in-salsa-85-g-salmone-confezione-da-12-pezzi-08053017343822-585706",
+      "issues": []
+    },
+    {
+      "page": "prezzi-08056098400828-0291991b51.html",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/naturalpet-fagottini-ripieni-cat-adult-60-g-pollo-e-formaggio-08056098400828-a30801",
       "issues": []
     },
     {

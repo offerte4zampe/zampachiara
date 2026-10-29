@@ -6581,12 +6581,6 @@
     "status": 200,
     "confirmations": 0
   },
-  "isola-dei-tesori:000115105": {
-    "url": "https://www.isoladeitesori.it/prodotto/camon-gioco-per-cani-osso-rosa-con-squeaker/000115105.html",
-    "checked_at": "2026-10-26T06:54:16.230381+00:00",
-    "status": 200,
-    "confirmations": 0
-  },
   "webpet:52568986714452": {
     "url": "https://www.webpet.it/products/aqpetfriends-giochi-per-cani-smarty-ring-in-corda-con-pallina?variant=52568986714452",
     "checked_at": "2026-10-26T06:54:16.230381+00:00",
@@ -8387,12 +8381,6 @@
     "status": 200,
     "confirmations": 0
   },
-  "isola-dei-tesori:000115331": {
-    "url": "https://www.isoladeitesori.it/prodotto/petup-gabbia-per-uccelli-chioccia-1/000115331.html",
-    "checked_at": "2026-10-28T16:56:09.480860+00:00",
-    "status": 200,
-    "confirmations": 0
-  },
   "paco:1039": {
     "url": "https://www.pacopetshop.it/it/golden-eagle/1039-crocchette-per-cani-agnello-e-riso.htm",
     "checked_at": "2026-10-28T16:56:09.480860+00:00",
@@ -8918,6 +8906,150 @@
   "paco:1245": {
     "url": "https://www.pacopetshop.it/it/prolife/1245-prolife-sensitive-con-coniglio-e-patate-umido-per-cani.htm",
     "checked_at": "2026-10-29T01:03:15.740056+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976560464215": {
+    "url": "https://www.animaliapet.eu/products/trixie-premium-guinzaglio-denim-l-xl-1m-25mm?variant=46976560464215",
+    "checked_at": "2026-10-29T07:01:30.721804+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56819741786437": {
+    "url": "https://www.bauzaar.it/products/giubbotto-per-cani-greyhound-leather-croci?variant=56819741786437",
+    "checked_at": "2026-10-29T07:01:30.721804+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000112129": {
+    "url": "https://www.isoladeitesori.it/prodotto/sera-betta-granules-50-ml/000112129.html",
+    "checked_at": "2026-10-29T07:01:30.721804+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "paco:1261": {
+    "url": "https://www.pacopetshop.it/it/icf/1261-zincoseb-shampoo-cani-e-gatti.htm",
+    "checked_at": "2026-10-29T07:01:30.721804+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52569022824788": {
+    "url": "https://www.webpet.it/products/aqpetfriends-cleanup-juicy-dispenser-per-sacchetti-igienici-in-silicone?variant=52569022824788",
+    "checked_at": "2026-10-29T07:01:30.721804+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976560496983": {
+    "url": "https://www.animaliapet.eu/products/trixie-kit-per-lallattamento-57ml?variant=46976560496983",
+    "checked_at": "2026-10-29T07:01:30.721804+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56819741819205": {
+    "url": "https://www.bauzaar.it/products/giubbotto-per-cani-greyhound-leather-croci?variant=56819741819205",
+    "checked_at": "2026-10-29T07:01:30.721804+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000115288": {
+    "url": "https://www.isoladeitesori.it/prodotto/petup-joy-anello-in-tpr-con-corda-per-cuccioli-17-cm/000115288.html",
+    "checked_at": "2026-10-29T07:01:30.721804+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "paco:1262": {
+    "url": "https://www.pacopetshop.it/it/drn/1262-enteromicro-pasta-per-cani-e-gatti.htm",
+    "checked_at": "2026-10-29T07:01:30.721804+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52569023185236": {
+    "url": "https://www.webpet.it/products/aqpetfriends-cleanup-spicy-dispenser-per-sacchetti-igienici-in-silicone?variant=52569023185236",
+    "checked_at": "2026-10-29T07:01:30.721804+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976560529751": {
+    "url": "https://www.animaliapet.eu/products/trixie-dentafun-chewing-rolls-con-pollo-17cm-3pz-140g-snack-per-cani?variant=46976560529751",
+    "checked_at": "2026-10-29T07:01:30.721804+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56819741851973": {
+    "url": "https://www.bauzaar.it/products/giubbotto-per-cani-greyhound-leather-croci?variant=56819741851973",
+    "checked_at": "2026-10-29T07:01:30.721804+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000115356": {
+    "url": "https://www.isoladeitesori.it/prodotto/petup-gabbia-per-uccelli-con-piedistallo-portobello/000115356.html",
+    "checked_at": "2026-10-29T07:01:30.721804+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "paco:1276": {
+    "url": "https://www.pacopetshop.it/it/protection-orme-naturali/1276-camon-protection-leis-collar-collare-barriera-all-olio-di-neem-per-cani.htm",
+    "checked_at": "2026-10-29T07:01:30.721804+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52569023349076": {
+    "url": "https://www.webpet.it/products/aqpetfriends-cleanup-case-led-dispenser-per-sacchetti-igienici-con-torcia-led?variant=52569023349076",
+    "checked_at": "2026-10-29T07:01:30.721804+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976560628055": {
+    "url": "https://www.animaliapet.eu/products/trixie-premium-collare-rosso-s-m-30-45cm-15mm?variant=46976560628055",
+    "checked_at": "2026-10-29T07:01:30.721804+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56819741884741": {
+    "url": "https://www.bauzaar.it/products/giubbotto-per-cani-greyhound-leather-croci?variant=56819741884741",
+    "checked_at": "2026-10-29T07:01:30.721804+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000115357": {
+    "url": "https://www.isoladeitesori.it/prodotto/petup-joy-gioco-ciabattina-con-squeaker-11-cm/000115357.html",
+    "checked_at": "2026-10-29T07:01:30.721804+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "paco:1277": {
+    "url": "https://www.pacopetshop.it/it/protection-orme-naturali/1277-camon-protection-collare-barriera-all-olio-di-neem-per-gatti.htm",
+    "checked_at": "2026-10-29T07:01:30.721804+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "webpet:52569023480148": {
+    "url": "https://www.webpet.it/products/aqpetfriends-cleanup-case-dispenser-per-sacchetti-igienici-in-plastica?variant=52569023480148",
+    "checked_at": "2026-10-29T07:01:30.721804+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "animaliapet:46976560759127": {
+    "url": "https://www.animaliapet.eu/products/trixie-premio-picknicks-catene-di-salsicce-con-selvaggina-200pz?variant=46976560759127",
+    "checked_at": "2026-10-29T07:01:30.721804+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "bauzaar:56819741917509": {
+    "url": "https://www.bauzaar.it/products/giubbotto-per-cani-greyhound-leather-croci?variant=56819741917509",
+    "checked_at": "2026-10-29T07:01:30.721804+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "isola-dei-tesori:000115358": {
+    "url": "https://www.isoladeitesori.it/prodotto/petup-joy-gioco-cane-sneaker-con-squeaker-17-cm/000115358.html",
+    "checked_at": "2026-10-29T07:01:30.721804+00:00",
+    "status": 200,
+    "confirmations": 0
+  },
+  "paco:1298": {
+    "url": "https://www.pacopetshop.it/it/camon/1298-pannolini-per-cani.htm",
+    "checked_at": "2026-10-29T07:01:30.721804+00:00",
     "status": 200,
     "confirmations": 0
   }
