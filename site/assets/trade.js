@@ -52,6 +52,8 @@ function merchant(url){
 function matchKey(o,now=Date.now()){
  if(o.quantity_verified===false||o.weight_conflict)return '';
  if(o.identity_review&&(!Number.isFinite(Date.parse(o.identity_expires_at))||Date.parse(o.identity_expires_at)<now))return '';
+ const observed=Date.parse(o.checked_at);
+ if(['name_characteristics','gtin_with_name'].includes(o.product_matching_method)&&/^p-[a-f0-9]{20}$/.test(o.product_id||'')&&o.brand?.trim()&&Number.isFinite(observed)&&now-observed<=36*3600000&&observed<=now+300000)return JSON.stringify(['characteristics',o.product_id]);
  const code=String(o.gtin||''),stamp=Date.parse(o.checked_at);if(![8,12,13,14].includes(code.length)||!/^\d+$/.test(code)||new Set(code).size===1||!Number.isFinite(stamp)||now-stamp>36*3600000||stamp>now+300000||!o.brand?.trim())return '';
  const digits=[...code.slice(0,-1)].reverse();const check=(10-digits.reduce((n,d,i)=>n+Number(d)*(i%2?1:3),0)%10)%10;if(check!==Number(code.at(-1)))return '';
  if(o.product_identity_verified===true&&/^p-[a-f0-9]{20}$/.test(o.product_id||''))return JSON.stringify(['canonical',o.product_id]);

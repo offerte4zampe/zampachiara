@@ -90,6 +90,7 @@ on:
       - 'tests/test_line_pages.py'
       - 'automation/audit_site.py'
       - 'automation/build_product_catalog.py'
+      - 'automation/name_matching.py'
       - 'automation/brand_aliases.json'
       - 'automation/apply_canonical_products.py'
       - 'worker/canonical-product.mjs'

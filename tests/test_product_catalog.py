@@ -69,3 +69,37 @@ class CanonicalProductTests(unittest.TestCase):
         missing=self.model([b],old['registry'])
         self.assertNotIn('redirect_slug',next(p for p in missing['products'] if not p['active_offer_count']))
         self.assertEqual(new['metrics']['store_coverage']['b']['offers_in_multishop_products'],1)
+
+    def test_full_catalog_name_matching_has_provenance_and_no_fake_gtin(self):
+        a=dict(self.a,title='Acana Heritage Prairie Poultry Adult 2 kg',variant='',gtin='')
+        b=dict(a,id='b:1',merchant_id='b',price=18)
+        m=self.model([a,b]);p=m['products'][0]
+        self.assertEqual(len(m['products']),1)
+        self.assertEqual(p['matching_method'],'name_characteristics')
+        self.assertEqual(p['gtin'],'');self.assertIsNone(p['matching_confidence']);self.assertFalse(p['indexable'])
+        self.assertEqual(m['metrics']['name_matching']['evaluated_offers'],2)
+        self.assertEqual(m['metrics']['characteristic_multi_shop_products'],1)
+        self.assertTrue(all(o['offer_matching_method']=='name_characteristics' and not o['gtin'] for o in m['offers']))
+
+    def test_name_fallback_rejects_recipe_age_format_and_unknown_quantity(self):
+        a=dict(self.a,title='Acana Heritage Prairie Poultry Adult 2 kg',variant='',gtin='')
+        for extra in [dict(title='Acana Heritage Prairie Poultry Puppy 2 kg'),dict(title='Acana Heritage Wild Salmon Adult 2 kg'),dict(weight_kg=4),dict(quantity_verified=False),dict(brand='Other')]:
+            m=self.model([a,dict(a,id='b:1',merchant_id='b',**extra)])
+            self.assertEqual(m['metrics']['multi_shop_products'],0)
+        generic=dict(a,title='Acana Adult Pollo 2 kg')
+        self.assertEqual(self.model([generic,dict(generic,id='b:1',merchant_id='b')])['metrics']['multi_shop_products'],0)
+
+    def test_missing_gtin_does_not_bridge_conflicting_valid_gtins(self):
+        a=dict(self.a,title='Acana Heritage Prairie Poultry Adult 2 kg',variant='')
+        b=dict(a,id='b:1',merchant_id='b',gtin='5901234123457')
+        c=dict(a,id='c:1',merchant_id='c',gtin='')
+        m=self.model([a,b,c]);self.assertEqual(m['metrics']['multi_shop_products'],0)
+        self.assertEqual(m['metrics']['name_matching']['conflicting_gtin_groups'],1)
+
+    def test_missing_gtin_attaches_to_unique_known_identity_without_inheriting_code(self):
+        a=dict(self.a,title='Acana Heritage Prairie Poultry Adult 2 kg',variant='')
+        b=dict(a,id='b:1',merchant_id='b',gtin='')
+        before=self.model([a]);m=self.model([a,b],before['registry'])
+        self.assertEqual(m['products'][0]['slug'],before['products'][0]['slug'])
+        self.assertEqual(m['products'][0]['matching_method'],'gtin_with_name')
+        self.assertEqual(next(o for o in m['offers'] if o['id']=='b:1')['gtin'],'')

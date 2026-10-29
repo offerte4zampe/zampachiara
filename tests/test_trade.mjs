@@ -75,3 +75,10 @@ test('unverified selling quantities and conflicting net weights never become mat
  assert.equal(matchKey(unverified,now),'');
  assert.equal(matchKey({...unverified,quantity_verified:true,weight_conflict:true},now),'');
 });
+
+test('explicit characteristic groups retain provenance and require fresh verified quantities',()=>{
+ const a={id:'a',merchant_id:'a',brand:'Brand',gtin:'',product_matching_method:'name_characteristics',product_id:'p-01234567890123456789',quantity_verified:true,checked_at:'2026-10-18T10:00:00Z'};
+ const b={...a,id:'b',merchant_id:'b'};
+ assert.equal(groupOffers([a,b],now).length,1);
+ for(const extra of [{quantity_verified:false},{checked_at:'2026-10-01'},{product_matching_method:'unattached'},{product_id:'invalid'}])assert.equal(groupOffers([a,{...b,...extra}],now).length,2);
+});
