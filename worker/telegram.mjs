@@ -74,13 +74,11 @@ export class TelegramPublisher {
    const day=new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Rome',year:'numeric',month:'2-digit',day:'2-digit'}).format(now);
    const time=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Rome',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(now);
    if(time!=='09:15'||await store.get('last_day')===day)return {status:'idle'};
-   // Two price-report days for each guide day, with safe guide fallback.
-   if(new Date(now).getUTCDate()%3!==0){
-    try{
-     const data=await this.env.ASSETS.fetch(new Request('https://offerte4zampe.it/data/home.json'));
-     if(data.ok){const home=await data.json();for(const offer of home.offers||[]){const candidate=offerPost(offer,home.sources,now);if(candidate&&!(await store.get('post:'+candidate.id))){post=candidate;break;}}}
-    }catch{/* unavailable/invalid catalog: no fabricated prices */}
-   }
+   // Daily verified photo offers; never fall back to text-only guides.
+   try{
+    const data=await this.env.ASSETS.fetch(new Request('https://offerte4zampe.it/data/home.json'));
+    if(data.ok){const home=await data.json();for(const offer of home.offers||[]){const candidate=offerPost(offer,home.sources,now);if(candidate&&!(await store.get('post:'+candidate.id))){post=candidate;break;}}}
+   }catch{/* unavailable/invalid catalog: no fabricated prices */}
    // No fallback to text-only or generic-image guides: editorial photo is mandatory.
    if(!post)return {status:'no_verified_photo_offer'};
   }
