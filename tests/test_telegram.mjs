@@ -23,4 +23,14 @@ test('price reports require fresh available exact-format records and a healthy s
  for(const change of [{available:false},{price:0},{price:'35'},{variant:''},{weight_kg:null},{image:null},{image:'https://evil.example/other.jpg'},{image:'https://www.isoladeitesori.it/other.webp'},{checked_at:'2026-10-24T07:00:00Z'},{checked_at:'2026-10-27T07:00:00Z'}])assert.equal(offerPost({...offer,...change},[source],now),null);
  assert.equal(offerPost(offer,[{...source,status:'error'}],now),null);
 });
+test('verified product report sends authentic image without static probing of dynamic route',async()=>{
+ const x=setup(),original=global.fetch,now=Date.parse('2026-10-29T08:15:00Z');
+ x.map.set('post:'+TEST_POST.id,{status:'sent',message_id:1});
+ const stamp='2026-10-29T07:00:00Z';
+ const offer={id:'isola-dei-tesori:1',merchant_id:'isola-dei-tesori',merchant:'Isola dei Tesori',title:'Crocchette cane 15 kg',variant:'15 kg',weight_kg:15,price:74.39,available:true,checked_at:stamp,image:'https://www.isoladeitesori.it/media/royal-canin-15kg.jpg'};
+ const requested=[];x.env.ASSETS.fetch=async request=>{requested.push(new URL(request.url).pathname);return Response.json({sources:[{id:'isola-dei-tesori',status:'ok',checked_at:stamp}],offers:[offer]});};
+ let photos=0,sends=0;
+ global.fetch=async (url,init)=>{if(String(url).includes('api.telegram.org')){sends++;assert.equal(JSON.parse(init.body).photo,offer.image);return ok();}photos++;return new Response('photo',{headers:{'content-type':'image/jpeg'}});};
+ try{assert.equal((await x.object.tick(now)).status,'sent');assert.deepEqual(requested,['/data/home.json']);assert.equal(photos,1);assert.equal(sends,1);}finally{global.fetch=original;}
+});
 test('status is read only and never exposes secret or private history',async()=>{const x=setup();const result=await x.object.fetch(new Request('https://internal/status'));const body=await result.json();assert.equal(body.configured,true);assert.doesNotMatch(JSON.stringify(body),/fake-test-value/);assert.equal(x.map.size,0);assert.equal((await worker.fetch(new Request('https://offerte4zampe.it/api/telegram/status',{method:'POST'}),{})).status,405);});
