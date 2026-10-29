@@ -47,12 +47,20 @@ The runner validates exact names, not merely a `-staging` suffix. Before migrati
 
 The remote job checks credentials before any Wrangler operation. Missing credentials produce `remote-staging NON eseguito: credenziali assenti` in the Actions summary and fail the job. An always-running status job also distinguishes remote success from skipped/not-requested and failure. A green local job or green overall run with remote skipped is not remote evidence.
 
-`worker/d1-validation.json` currently records **no successful remote validation**. Even if runtime flags are changed, the canonical-page loader keeps JSON and does not query D1/shadow without recorded evidence. To prepare evidence after reviewing an actual remote run on `main`:
+The repository no longer contains a positive/negative proof record. Only the successful remote workflow emits `remote-d1-attestation.json`, included in the immutable Actions artifact. It records the run ID, checked-out commit SHA, SHA-256 of the migrations/seed/verification inputs, actual verified database UUID, resource names and UTC verification time. A local execution cannot produce accepted remote evidence.
+
+To inspect an actual successful remote run for the exact current commit:
 
 ```sh
-python automation/check_d1_activation.py --verify-run RUN_ID --write-proof
+python automation/check_d1_activation.py --verify-run RUN_ID
 ```
 
-The command queries GitHub's run and latest jobs, requiring the exact staging workflow, manual dispatch on `main`, a successful completed run and an actually successful completed `remote-staging` job. It writes only the proof file, never production flags or bindings. Commit/review that proof separately; the **D1 activation gate** workflow rechecks the run through GitHub before accepting D1/shadow activation. A skipped, missing, cancelled or failed remote job is rejected. Default JSON and rollback to JSON need no D1 access.
+The validator reads the GitHub run, latest jobs and artifact metadata through the API. It requires the exact workflow, manual dispatch on `main`, successful run and actually executed successful `remote-staging`. It checks the downloaded archive against GitHub's SHA-256 digest, then compares the artifact run ID/SHA/hash/resources to the current checkout. Redirected artifact downloads do not receive the GitHub credential. Repository proof files and tracked generated attestations are rejected.
+
+Wrangler's production pre-build hook always runs the same validator with `--prepare-build`. Without `SHIPPING_D1_REMOTE_RUN_ID` it generates a denied-by-default build file under ignored `worker/generated/`; with a run ID it regenerates that file exclusively from validated API/artifact evidence. It never trusts a hand-edited generated file. No source commit is created to record success, avoiding a circular change of commit SHA.
+
+The Worker checks the embedded remote SHA/hash against the build SHA/hash before honoring D1/shadow flags. The CI activation gate independently performs the API verification. Enabling either flag in the repository without valid evidence fails the gate. If runtime flags are changed without a validated build, JSON remains selected and no D1 query runs.
+
+**Exact SHA matching is deliberate:** every new commit, including a catalog-only commit, requires a fresh remote validation before a newly built version can use D1/shadow. An existing deployed bundle retains its own attestation until replaced. Changes to migrations, seed, source rules, shared calculations or verification code also change the input fingerprint. Rollback to JSON remains possible without D1 or GitHub access.
 
 Token and environment configuration remain operator actions: a short-lived staging token with D1 Edit and Workers Scripts Edit, environment `cloudflare-staging` with required reviewers, and manual workflow dispatch. Do not reuse this token/environment for production. A separate Cloudflare account is the stronger optional isolation; software name guards do not narrow an account-wide token's permissions.

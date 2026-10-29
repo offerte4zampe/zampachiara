@@ -2,10 +2,10 @@ name: D1 activation gate
 on:
   pull_request:
     branches: [main]
-    paths: ['wrangler.jsonc','worker/d1-validation.json','automation/check_d1_activation.py','.github/workflows/d1-activation.yml']
+    paths: ['wrangler.jsonc','automation/d1_fingerprint.py','worker/staging/migrations/**','worker/seeds/**','site/data/shipping-rules.json','automation/check_d1_activation.py','.github/workflows/d1-activation.yml']
   push:
     branches: [main]
-    paths: ['wrangler.jsonc','worker/d1-validation.json','automation/check_d1_activation.py','.github/workflows/d1-activation.yml']
+    paths: ['wrangler.jsonc','automation/d1_fingerprint.py','worker/staging/migrations/**','worker/seeds/**','site/data/shipping-rules.json','automation/check_d1_activation.py','.github/workflows/d1-activation.yml']
 permissions:
   contents: read
   actions: read
@@ -21,3 +21,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: python automation/check_d1_activation.py
+      - name: Install pinned Wrangler for production pre-build verification
+        run: npm install --prefix "$RUNNER_TEMP/d1-build-tools" wrangler@4.154.0
+      - name: Verify deploy runs the attestation pre-build hook
+        run: '"$RUNNER_TEMP/d1-build-tools/node_modules/.bin/wrangler" deploy --dry-run --outdir "$RUNNER_TEMP/d1-production-bundle"'

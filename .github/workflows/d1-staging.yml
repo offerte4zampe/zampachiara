@@ -2,7 +2,7 @@ name: D1 shipping staging
 on:
   pull_request:
     branches: [main]
-    paths: ['worker/shipping-source.mjs','worker/staging-shipping.mjs','worker/staging/**','wrangler.staging.jsonc','automation/verify_d1_staging.py','automation/check_d1_activation.py','worker/d1-validation.json','site/data/shipping-rules.json','tests/test_shipping_source.mjs','.github/workflows/d1-staging.yml']
+    paths: ['worker/shipping-source.mjs','worker/staging-shipping.mjs','worker/staging/**','wrangler.staging.jsonc','automation/verify_d1_staging.py','automation/check_d1_activation.py','automation/d1_fingerprint.py','site/data/shipping-rules.json','tests/test_shipping_source.mjs','.github/workflows/d1-staging.yml']
   workflow_dispatch:
     inputs:
       remote:
@@ -23,6 +23,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Prepare denied-by-default build attestation
+        run: python automation/check_d1_activation.py --prepare-build
       - name: Shared loader and fallback tests
         run: node --test tests/test_shipping_source.mjs tests/test_shipping_migration.mjs tests/test_canonical_product.mjs
       - name: Install pinned Wrangler
@@ -72,6 +74,7 @@ jobs:
           name: remote-d1-shipping-report
           path: |
             staging-reports/remote-shipping-report.json
+            staging-reports/remote-d1-attestation.json
             staging-reports/remote-migrations.log
           if-no-files-found: warn
 

@@ -3,11 +3,13 @@
 Remote mode requires existing Cloudflare credentials in the environment. Never
 falls back to local when --remote was requested, never binds production resources.
 """
-import argparse,json,os,pathlib,re,secrets,shutil,subprocess,time,urllib.request,urllib.error
+import argparse,datetime as dt,json,os,pathlib,re,secrets,shutil,subprocess,time,urllib.request,urllib.error
 try:
     from .build_shipping_seed import convert
+    from .d1_fingerprint import input_hash,commit_sha
 except ImportError:
     from build_shipping_seed import convert
+    from d1_fingerprint import input_hash,commit_sha
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 NAME='zampachiara-shipping-staging'
 WORKER='zampachiara-d1-staging'
@@ -43,6 +45,7 @@ def call(url,token,path,data=None):
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('--remote',action='store_true');p.add_argument('--wrangler',default=os.environ.get('WRANGLER_BIN') or shutil.which('wrangler'));p.add_argument('--port',type=int,default=8789);a=p.parse_args()
+    subprocess.run([os.sys.executable,str(ROOT/'automation/check_d1_activation.py'),'--prepare-build'],cwd=ROOT,check=True)
     if not a.wrangler:raise SystemExit('Install pinned Wrangler 4.154.0 or set WRANGLER_BIN.')
     if a.remote and not all(os.environ.get(k) for k in ('CLOUDFLARE_API_TOKEN','CLOUDFLARE_ACCOUNT_ID')):raise SystemExit('Remote staging NOT executed: Cloudflare account/token are not configured. No database or Worker was created.')
     config=json.loads((ROOT/'wrangler.staging.jsonc').read_text());token=secrets.token_urlsafe(32)
@@ -91,6 +94,12 @@ def main():
         if not all(result['capabilities'][k] for k in ['check_constraints','triggers','generated_columns_and_index']):raise RuntimeError('Required SQL capabilities failed')
         details=[row.get('detail','') for row in result['plans']]
         if not any(re.search(r'SEARCH r USING (?:COVERING )?INDEX',d) for d in details) or any(re.search(r'SCAN r(?:$| )',d) for d in details):raise RuntimeError('Shipping query scans rules instead of using an index')
+        if a.remote and os.environ.get('GITHUB_RUN_ID'):
+            sha=commit_sha()
+            if os.environ.get('GITHUB_SHA')!=sha:raise RuntimeError('Workflow SHA differs from checked-out commit')
+            subprocess.run(['git','diff','--exit-code','HEAD','--'],cwd=ROOT,check=True,capture_output=True)
+            attestation={'execution':'remote-d1','run_id':os.environ['GITHUB_RUN_ID'],'commit_sha':sha,'input_hash':input_hash(),'verified_at':dt.datetime.now(dt.timezone.utc).isoformat(),'database_uuid':config['d1_databases'][0]['database_id'],'database_name':NAME,'worker_name':WORKER}
+            (reports/'remote-d1-attestation.json').write_text(json.dumps(attestation,indent=2)+'\n')
         print(json.dumps({'execution':report['execution'],'cases':610,'differences':0,'seed_meta':seed_result['meta'],'product_request_meta':result['product_request']['meta'],'fts5_trigram':result['capabilities']['fts5_trigram'],'report':str(path)},ensure_ascii=False))
     finally:
         if process:

@@ -3,3 +3,4 @@ node_modules/
 .dev.vars*
 wrangler.staging.runtime.json
 staging-reports/
+worker/generated/

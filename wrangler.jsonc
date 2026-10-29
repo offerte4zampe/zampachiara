@@ -35,7 +35,10 @@
     }
   },
   "keep_vars": true,
-  "vars": {"SHIPPING_RULES_SOURCE":"json","SHIPPING_SHADOW":"false"},
+  "vars": {
+    "SHIPPING_RULES_SOURCE": "json",
+    "SHIPPING_SHADOW": "false"
+  },
   "durable_objects": {
     "bindings": [
       {
@@ -56,5 +59,8 @@
     "crons": [
       "*/15 * * * *"
     ]
+  },
+  "build": {
+    "command": "python automation/check_d1_activation.py --prepare-build"
   }
 }

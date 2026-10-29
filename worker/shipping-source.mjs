@@ -1,5 +1,5 @@
 import trade from '../site/assets/trade.js';
-import remoteValidation from './d1-validation.json' with {type:'json'};
+import remoteValidation from './generated/d1-validation.json' with {type:'json'};
 export const RULE_QUERY=`SELECT r.*,s.name AS shop_name FROM shipping_rule r JOIN shop s ON s.id=r.shop_id
 WHERE r.shop_id=?1 AND r.zone=?2 AND r.valid_from<=?3 AND (r.valid_to IS NULL OR r.valid_to>?3)
 ORDER BY r.valid_from DESC LIMIT 1`;
@@ -29,7 +29,7 @@ export function quoteDifferences(offers,left,right,quantity,territory,now){
 export async function shippingSource(env,offers,jsonRules,{now=Date.now(),quantity=1,territory='standard',validation=remoteValidation,log=event=>console.log(JSON.stringify(event))}={}){
  const useD1=env.SHIPPING_RULES_SOURCE==='d1',shadow=env.SHIPPING_SHADOW==='true';
  if(!useD1&&!shadow)return {rules:jsonRules,source:'json',meta:null};
- if(validation.remote_success!==true||!(/^[1-9]\d*$/).test(String(validation.remote_run_id))){
+ if(validation.remote_success!==true||!(/^[1-9]\d*$/).test(String(validation.remote_run_id))||!validation.remote_commit_sha||validation.remote_commit_sha!==validation.build_commit_sha||!validation.verified_input_hash||validation.verified_input_hash!==validation.current_input_hash||!validation.verified_at||!validation.database_uuid){
   log({event:'shipping_activation_blocked',reason:'remote_validation_not_successful'});
   return {rules:jsonRules,source:'json',meta:null,activationBlocked:true};
  }

@@ -43,6 +43,8 @@ persistent history or recreate the object with a different name.
 Pause: remove the cron trigger through a reviewed configuration change, or remove
 the bot's permission to post. Do not remove the Durable Object migration/history.
 
+Before Node tests: `python automation/check_d1_activation.py --prepare-build`.
+
 Validation: node --test tests/test_telegram.mjs tests/test_metrics.mjs
  tests/test_product_preview.mjs tests/test_notification_plan.mjs
 All Telegram tests replace fetch with mock transport and never send real messages.
