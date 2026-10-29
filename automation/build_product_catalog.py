@@ -20,10 +20,17 @@ except ImportError:
     from package_integrity import pack_count
 ROOT=Path(__file__).resolve().parents[1]
 BASE='https://offerte4zampe.it'
+BRAND_ALIASES=json.loads((ROOT/'automation/brand_aliases.json').read_text())
 
 
 def normalized(value):
     return re.sub(r'[^a-z0-9]+',' ',unicodedata.normalize('NFKD',str(value or '')).encode('ascii','ignore').decode().lower()).strip()
+
+
+def canonical_brand(value):
+    text=str(value or '').strip()
+    aliases={normalized(k):v for k,v in BRAND_ALIASES.items()}
+    return aliases.get(normalized(text),text)
 
 
 def clean_title(title,brand='',variant=''):
@@ -100,7 +107,7 @@ def identity(o,q):
     if code and q['verified']:
         # Explicit multipack words without a resolved quantity must not collapse units.
         ambiguous=q['kind']=='sales_unit' and re.search(r'\b(?:confezione|set|kit|multipack|pezzi|pz)\b|\d\s*[x×]',o['title'],re.I)
-        if not ambiguous:return ['gtin',code,normalized(o.get('brand','')),q['kind'],q['value']]
+        if not ambiguous:return ['gtin',code,normalized(canonical_brand(o.get('brand',''))),q['kind'],q['value']]
     return ['unattached',o['id']]
 
 
@@ -125,7 +132,7 @@ def build(catalog,old_registry=None,history=None,now=None):
         suffix=canonical_gtin(seed.get('gtin')) or pid[2:]
         slug=previous.get('slug') or normalized(title).replace(' ','-')[:115].rstrip('-')+'-'+suffix+'-'+pid[-6:]
         active=[o for o in rows if fresh(o,now)];shops={o['merchant_id'] for o in active};verified_shops={o['merchant_id'] for o in active if q_by_id[o['id']]['verified']}
-        p=dict(id=pid,slug=slug,gtin=canonical_gtin(seed.get('gtin')),brand=seed.get('brand',''),name=title,**attrs,quantity=q,format=format_label(q),image=seed.get('image',''),offer_ids=[o['id'] for o in rows],active_shop_count=len(shops),verified_shop_count=len(verified_shops),active_offer_count=len(active),low_price=min((o['price'] for o in active),default=None),matching_method='gtin_quantity' if json.loads(key)[0]=='gtin' else 'unattached',matching_confidence=1.0 if json.loads(key)[0]=='gtin' else 0.0,reviewed=any(o.get('identity_review') for o in rows))
+        p=dict(id=pid,slug=slug,gtin=canonical_gtin(seed.get('gtin')),brand=canonical_brand(seed.get('brand','')),name=title,**attrs,quantity=q,format=format_label(q),image=seed.get('image',''),offer_ids=[o['id'] for o in rows],active_shop_count=len(shops),verified_shop_count=len(verified_shops),active_offer_count=len(active),low_price=min((o['price'] for o in active),default=None),matching_method='gtin_quantity' if json.loads(key)[0]=='gtin' else 'unattached',matching_confidence=1.0 if json.loads(key)[0]=='gtin' else 0.0,reviewed=any(o.get('identity_review') for o in rows))
         p['indexable']=len(verified_shops)>=2 and p['matching_method']=='gtin_quantity'
         content=json.dumps([title,q,[(o['id'],o['price'],o['available']) for o in rows]],ensure_ascii=False,sort_keys=True)
         signature=hashlib.sha256(content.encode()).hexdigest();lastmod=previous.get('lastmod')
@@ -157,9 +164,16 @@ def build(catalog,old_registry=None,history=None,now=None):
             other=set(normalized(peer['name']).split());score=len(words&other)/max(1,len(words|other))
             if p['recipe'] and peer['recipe'] and p['recipe']!=peer['recipe']:continue
             if score>=.7:candidates.append(dict(product_id=p['id'],candidate_product_id=peer['id'],confidence=round(min(.96,score),3),status='needs_evidence',reason='brand_quantity_species_and_title_similarity; missing shared GTIN'))
+    offer_targets={o['id']:(o['product_id'],o['product_slug']) for o in offers}
     for pid,entry in old_registry.items():
         if pid not in registry and entry.get('product'):
             archived={**entry['product'],'offer_ids':[],'active_shop_count':0,'verified_shop_count':0,'active_offer_count':0,'low_price':None,'indexable':False,'history':[]}
+            # Redirect only when every old offer is still present and now belongs
+            # to one exact canonical product. Removed/split offers remain archives.
+            old_ids=entry['product'].get('offer_ids',[])
+            targets={offer_targets[i] for i in old_ids if i in offer_targets}
+            if old_ids and all(i in offer_targets for i in old_ids) and len(targets)==1:
+                archived['redirect_slug']=next(iter(targets))[1]
             products.append(archived);registry[pid]=entry
     families=defaultdict(list)
     for p in products:
@@ -173,7 +187,18 @@ def build(catalog,old_registry=None,history=None,now=None):
     candidates=sorted(candidates,key=lambda x:(-x['confidence'],x['product_id'],x['candidate_product_id']))[:300]
     active_products=[p for p in products if p['active_offer_count']]
     multi=[p for p in active_products if p['verified_shop_count']>=2]
-    metric=dict(products=len(products),active_products=len(active_products),offers=len(offers),multi_shop_products=len(multi),multi_shop_percent=round(100*len(multi)/max(1,len(active_products)),2),denominator='active canonical products, distinct verified merchants; duplicate offers in one shop do not count',unattached_offers=sum(p['active_offer_count'] for p in products if p['matching_method']=='unattached'),candidate_pairs=len(candidates),automatic_match_confidence_threshold=.99)
+    store_coverage={}
+    for shop in sorted({o['merchant_id'] for o in catalog['offers']}):
+        rows=[o for o in offers if o['merchant_id']==shop]
+        store_coverage[shop]={
+            'offers':len(rows),
+            'active_offers':sum(fresh(o,now) for o in rows),
+            'missing_valid_gtin':sum(not bool(canonical_gtin(o.get('gtin'))) for o in rows),
+            'unverified_quantity':sum(not o['quantity']['verified'] for o in rows),
+            'sales_unit_only':sum(o['quantity']['kind']=='sales_unit' for o in rows),
+            'offers_in_multishop_products':sum(fresh(o,now) and o['canonical_shop_count']>=2 for o in rows),
+        }
+    metric=dict(store_coverage=store_coverage,products=len(products),active_products=len(active_products),offers=len(offers),multi_shop_products=len(multi),multi_shop_percent=round(100*len(multi)/max(1,len(active_products)),2),denominator='active canonical products, distinct verified merchants; duplicate offers in one shop do not count',unattached_offers=sum(p['active_offer_count'] for p in products if p['matching_method']=='unattached'),candidate_pairs=len(candidates),automatic_match_confidence_threshold=.99)
     return dict(schema_version=1,generated_at=catalog['generated_at'],products=products,offers=offers,metrics=metric,matching_candidates=candidates,registry=registry)
 
 

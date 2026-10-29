@@ -56,6 +56,7 @@ export async function canonicalProduct(request,env,now=Date.now()){
  if(!/^[a-z0-9][a-z0-9-]{1,200}$/.test(slug))return new Response('Prodotto non trovato',{status:404});
  const shard=await jsonAsset(env,url.origin,'/data/canonical-products/'+await prefix(slug)+'.json');const p=shard&&Object.hasOwn(shard,slug)?shard[slug]:null;
  if(!p)return new Response('Prodotto non trovato',{status:404,headers:{'Content-Type':'text/plain; charset=utf-8'}});
+ if(p.redirect_slug&&/^[a-z0-9][a-z0-9-]{1,200}$/.test(p.redirect_slug)&&p.redirect_slug!==slug)return Response.redirect(new URL('/prodotto/'+p.redirect_slug,url.origin).href,301);
  const rules=await jsonAsset(env,url.origin,'/data/shipping-rules.json');const quantity=Number(url.searchParams.get('quantity')||1),territory=url.searchParams.get('territory')==='special'?'special':'standard';
  if(!Number.isInteger(quantity)||quantity<1||quantity>10)return new Response('Quantità non valida',{status:400});
  const loaded=await shippingSource(env,p.offers,rules,{now,quantity,territory});

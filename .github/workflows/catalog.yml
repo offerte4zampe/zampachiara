@@ -17,6 +17,7 @@ on:
       - 'automation/update_catalog.py'
       - 'automation/enrich_catalog.py'
       - 'automation/build_product_catalog.py'
+      - 'automation/brand_aliases.json'
       - 'automation/apply_canonical_products.py'
       - 'tests/test_product_catalog.py'
       - 'automation/package_integrity.py'

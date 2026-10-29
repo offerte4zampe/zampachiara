@@ -33,3 +33,11 @@ test('historical mean uses only real observed counts; missing days are not inven
  const rows=[{day:'2026-10-27',low:10,high:20,sum:30,count:2},{day:'2026-10-25',low:30,high:30,sum:30,count:1}];
  const s=historySummary(rows,30,now);assert.equal(s.rows.length,2);assert.equal(s.low,10);assert.equal(s.high,30);assert.equal(s.mean,20);
 });
+
+test('merged brand-line legacy slugs redirect only to validated canonical paths',async()=>{
+ const p={...product,redirect_slug:'new-product-4006381333931'};
+ const r=await canonicalProduct(new Request('https://offerte4zampe.it/prodotto/'+p.slug),env(p),now);
+ assert.equal(r.status,301);assert.equal(r.headers.get('Location'),'https://offerte4zampe.it/prodotto/'+p.redirect_slug);
+ const hostile={...product,redirect_slug:'https://evil.test/'};
+ assert.equal((await canonicalProduct(new Request('https://offerte4zampe.it/prodotto/'+hostile.slug),env(hostile),now)).status,200);
+});
