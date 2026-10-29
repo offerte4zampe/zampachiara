@@ -1,7 +1,10 @@
 """Bounded barcode enrichment from public product JSON; names select candidates only."""
 import os,gzip,json,re,time,datetime,urllib.parse,urllib.robotparser,urllib.request
 from pathlib import Path
-from update_catalog import get,UA,weight
+try:
+ from .update_catalog import get,UA,weight
+except ImportError:
+ from update_catalog import get,UA,weight
 ROOT=Path(__file__).resolve().parents[1]
 def limited_get(url):
  with urllib.request.urlopen(urllib.request.Request(url,headers={'User-Agent':UA}),timeout=8) as r:return r.read()
@@ -10,6 +13,14 @@ def gtin(value):
  if len(s) not in (8,12,13,14) or not s.isdigit() or len(set(s))==1:return ''
  check=(10-sum(int(c)*(3 if i%2==0 else 1) for i,c in enumerate(reversed(s[:-1])) )%10)%10
  return s.zfill(14) if check==int(s[-1]) else ''
+def eligible_for_identifier_lookup(o,brands):
+ # A barcode identifies accessories, pieces and litres too. Shipping/net weight
+ # is not a prerequisite for inspecting a variant, nor inferred from its barcode.
+ return (o.get('source_type')!='official_feed' and
+         o.get('merchant_id') in ('bauzaar','webpet','animaliapet') and
+         o.get('available') is True and
+         len(brands.get(o.get('brand','').casefold(),set()))>=2)
+
 def build():
  path=ROOT/'site/data/catalog.json.gz';d=json.loads(gzip.decompress(path.read_bytes()));cachepath=ROOT/'automation/identifier-cache.json'
  cache=json.loads(cachepath.read_text()) if cachepath.exists() else {};now=datetime.datetime.now(datetime.timezone.utc);robots={};urls={}
@@ -22,12 +33,11 @@ def build():
  # Prefer matching brands and weights across sources, with both cats and dogs represented.
  brands={}
  for o in d['offers']:
-  if o['available'] and o.get('weight_kg') and o.get('brand'):brands.setdefault(o['brand'].casefold(),set()).add(o['merchant_id'])
+  if o['available'] and o.get('brand'):brands.setdefault(o['brand'].casefold(),set()).add(o['merchant_id'])
  for o in d['offers']:
-  if o.get('source_type')=='official_feed' or o['merchant_id'] not in ('bauzaar','webpet','animaliapet'):continue
+  if not eligible_for_identifier_lookup(o,brands):continue
   url=o['url'].split('?')[0]+'.js';key=o['id'];entry=cache.get(key)
   if entry and (now-datetime.datetime.fromisoformat(entry['checked_at'])).days<7:continue
-  if len(brands.get(o['brand'].casefold(),set()))<2 or not o['available'] or not o.get('weight_kg'):continue
   # Round robin merchants and species, not a claim of equivalence.
   cat='cat' if re.search(r'gatt|\bcat\b|kitten',o['title']+' '+o['category'],re.I) else 'dog'
   urls.setdefault((o['merchant_id'],cat),{})[url]=True

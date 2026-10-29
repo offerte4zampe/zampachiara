@@ -46,3 +46,26 @@ class CanonicalProductTests(unittest.TestCase):
         retired=build({'offers':[],'generated_at':self.now.isoformat()},first['registry'],now=self.now)
         self.assertEqual(retired['products'][0]['id'],first['products'][0]['id'])
         self.assertEqual(retired['products'][0]['active_offer_count'],0)
+
+    def test_explicit_brand_line_aliases_need_same_gtin_and_quantity(self):
+        a=dict(self.a,brand='Royal Canin Veterinary Diet')
+        b=dict(self.a,id='b:1',merchant_id='b',brand='Royal Canin')
+        self.assertEqual(self.model([a,b])['metrics']['multi_shop_products'],1)
+        for extra in [{'brand':'Unrelated Royal Canin imitation'},{'weight_kg':4},{'gtin':''}]:
+            self.assertEqual(self.model([a,dict(b,**extra)])['metrics']['multi_shop_products'],0)
+        # Corporate ownership alone is not an alias.
+        self.assertEqual(self.model([dict(a,brand='Askoll'),dict(b,brand='Ciano')])['metrics']['multi_shop_products'],0)
+
+    def test_brand_merge_preserves_existing_urls_with_unambiguous_redirect(self):
+        from unittest.mock import patch
+        a=dict(self.a,brand='Royal Canin Veterinary Diet')
+        b=dict(self.a,id='b:1',merchant_id='b',brand='Royal Canin')
+        with patch('automation.build_product_catalog.BRAND_ALIASES',{}):old=self.model([a,b])
+        new=self.model([a,b],old['registry'])
+        current=next(p for p in new['products'] if p['active_offer_count'])
+        retired=next(p for p in new['products'] if not p['active_offer_count'])
+        self.assertEqual(retired['redirect_slug'],current['slug'])
+        self.assertEqual(current['slug'],next(p['slug'] for p in old['products'] if p['brand']=='Royal Canin'))
+        missing=self.model([b],old['registry'])
+        self.assertNotIn('redirect_slug',next(p for p in missing['products'] if not p['active_offer_count']))
+        self.assertEqual(new['metrics']['store_coverage']['b']['offers_in_multishop_products'],1)
