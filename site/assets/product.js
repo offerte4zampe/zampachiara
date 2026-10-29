@@ -14,7 +14,7 @@ function comparisonTable(view){
  const seller=el('th',shop.source.name);seller.scope='row';if(offer.identity_review)seller.append(el('small','Abbinamento revisionato'));
  row.append(seller,el('td',money.format(offer.price)),el('td',q.fee!==undefined?money.format(q.fee):'Da verificare'),el('td',q.total!==undefined?money.format(q.total):'Non calcolabile'));
  const status=el('td',offer.quantity_verified===false?'Disponibilità dal feed; formato non verificato':offer.available?'Disponibile al rilevamento':'Esaurito al rilevamento');status.append(el('small',new Date(offer.checked_at).toLocaleString('it-IT')));row.append(status);
- const action=el('td',''),target=safe(offer.affiliate_url||offer.url);if(offer.available&&target){const a=el('a','Vai al negozio ↗','btn secondary');a.href=target;a.target='_blank';a.rel=offer.affiliate_url?'sponsored noopener noreferrer':'noopener noreferrer';action.append(a)}row.append(action);body.append(row);
+ const action=el('td',''),target=O4ZTrade.merchantUrl(offer)?O4ZTrade.goUrl(offer,'product'):'';if(offer.available&&target){const a=el('a','Vai al negozio ↗','btn secondary');a.href=target;a.target='_blank';a.rel=offer.affiliate_url?'sponsored nofollow noopener noreferrer':'sponsored nofollow noopener noreferrer';action.append(a)}row.append(action);body.append(row);
  }}
  table.append(body);wrap.append(table);container.append(wrap,el('p','Il totale usa quantità e destinazione selezionate. Le spese mancanti non valgono zero. I link affiliati possono generare una commissione, senza costi aggiuntivi.','micro'));
 }
@@ -47,8 +47,8 @@ function render(){
  const row=el('section','','matched-offer');row.append(el('p',offer.variant||offer.title,'micro'),el('strong',money.format(offer.price)),el('p',offer.weight_kg?money.format(offer.price/offer.weight_kg)+'/kg · spedizione esclusa':'Spedizione esclusa','micro'),el('p',offer.quantity_verified===false?'Disponibilità dal feed; formato non verificato':offer.available?'Disponibile al rilevamento':'Esaurito al rilevamento'),el('p','Rilevato: '+new Date(offer.checked_at).toLocaleString('it-IT'),'micro'));
  const quote=shop.quotes.get(offer.id);const estimate=el('p',quote.total!==undefined?'Totale stimato: '+money.format(quote.total)+' ('+quantity+' confezioni · spedizione '+money.format(quote.fee)+')':'Totale non calcolato: '+quote.reason,'micro');estimate.dataset.shippingEstimate=offer.id;row.append(estimate);
  if(quote.rule){const conditions=el('a','Condizioni di spedizione','micro');conditions.href=safe(quote.rule.source);conditions.target='_blank';conditions.rel='noopener noreferrer';conditions.dataset.shippingConditions='';row.append(conditions)}
- const target=safe(offer.affiliate_url||offer.url);
- if(offer.available&&target){const a=el('a','Vai al negozio ↗','btn');a.href=target;a.target='_blank';a.rel=offer.affiliate_url?'sponsored noopener noreferrer':'noopener noreferrer';row.append(a);if(offer.affiliate_url)row.append(el('p','Possiamo ricevere una commissione, senza costi aggiuntivi per te.','micro'))}
+ const target=O4ZTrade.merchantUrl(offer)?O4ZTrade.goUrl(offer,'product'):'';
+ if(offer.available&&target){const a=el('a','Vai al negozio ↗','btn');a.href=target;a.target='_blank';a.rel=offer.affiliate_url?'sponsored nofollow noopener noreferrer':'sponsored nofollow noopener noreferrer';row.append(a);if(offer.affiliate_url)row.append(el('p','Possiamo ricevere una commissione, senza costi aggiuntivi per te.','micro'))}
  if(!offerTools.has(offer.id)){
   const tools=el('div','','product-tools');tools.append(O4ZHistory.mount(offer.id),O4ZDaily.mount(offer));
   const add=el('button','Aggiungi una confezione alla lista','btn secondary');add.type='button';add.dataset.productBasket=offer.id;add.disabled=!offer.available||offer.quantity_verified===false;add.onclick=()=>{$('product-list-status').textContent=O4ZBasket.addProduct(offer,catalog.offers)};tools.append(add);

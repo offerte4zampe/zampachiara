@@ -61,3 +61,16 @@ class StaticSiteAuditTests(unittest.TestCase):
         for href in ['/segnala-errore#missing','/segnala-errore#id=123&amp;unknown=1','/one#id=123']:
             source=BASE.format(slug='one',body='<a href="'+href+'">Segnala</a>')
             self.assertIn('valid_internal_fragment',{x['rule'] for x in self.run_site({'one.html':source,'segnala-errore.html':target})['issues']})
+
+    def test_outbound_routes_require_real_offer_id_and_commercial_rel(self):
+        import gzip,json
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);(root/'data').mkdir()
+            (root/'data/catalog.json.gz').write_bytes(gzip.compress(json.dumps({'offers':[{'id':'shop:1'}]}).encode()))
+            valid='<a href="/go/shop%3A1?from=product" rel="sponsored nofollow noopener noreferrer">Shop</a>'
+            page=root/'one.html';page.write_text(BASE.format(slug='one',body=valid))
+            self.assertEqual(inspect(root)['issues'],[])
+            page.write_text(BASE.format(slug='one',body=valid.replace('shop%3A1','unknown')))
+            self.assertIn('valid_internal_link',{x['rule'] for x in inspect(root)['issues']})
+            page.write_text(BASE.format(slug='one',body=valid.replace('sponsored ','')))
+            self.assertIn('commercial_rel_sponsored',{x['rule'] for x in inspect(root)['issues']})

@@ -36,7 +36,7 @@ export async function checkSuggestions(page,origin,catalog){
  assert.equal(await page.$eval('#product-share-url',e=>e.readOnly),true);
  const catalogSearches=await page.$$eval('#product-shops [data-catalog-search]',rows=>rows.map(a=>a.href));for(const href of catalogSearches){const u=new URL(href);assert.equal(u.origin,origin);assert.equal(u.pathname,'/confronta-cibo');assert(catalog.sources.some(s=>s.name===u.searchParams.get('shop')));}
  const outbound=await page.$$eval('#product-shops a:not([data-shipping-conditions]):not([data-product-report]):not([data-catalog-search])',rows=>rows.map(a=>({href:a.href,rel:a.rel})));
- for(const a of outbound){assert(catalog.offers.some(o=>(o.affiliate_url||o.url)===a.href),'Exact catalog URL required');if(a.href.includes('tradetracker'))assert(a.rel.includes('sponsored'))}
+ for(const a of outbound){const u=new URL(a.href);assert.equal(u.origin,origin);assert(u.pathname.startsWith('/go/'));assert(catalog.offers.some(o=>o.id===decodeURIComponent(u.pathname.slice(4))),'Exact catalog offer required');for(const rel of ['sponsored','nofollow','noopener'])assert(a.rel.split(' ').includes(rel))}
  assert(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth<=1));
  await page.select('#product-quantity','2');await page.select('#product-territory','special');
  assert(await page.$$eval('[data-shipping-estimate]',rows=>rows.every(e=>e.textContent.includes('Totale non calcolato'))));

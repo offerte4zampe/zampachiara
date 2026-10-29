@@ -78,6 +78,8 @@ def inspect(site):
     available=set(parsed)
     route_path=site/'data/canonical-route-list.json'
     dynamic={'/prodotto/'+slug for slug in json.loads(route_path.read_text())} if route_path.exists() else set()
+    catalog_path=site/'data/catalog.json.gz'
+    outbound_ids={o['id'] for o in json.loads(gzip.decompress(catalog_path.read_bytes()))['offers']} if catalog_path.exists() else set()
     for rel,p in parsed.items():
         local=[]
         if p.lang!='it':local.append('html_lang_it')
@@ -101,6 +103,11 @@ def inspect(site):
             if link.get('target')=='_blank' and not {'noopener','noreferrer'}<=rels:local.append('safe_new_tab')
             if ('tc.tradetracker.' in href or 'pacopetshop.it/directlinking/' in href or 'amazon.' in href and ('tag=' in href or '/dp/' in href)) and 'sponsored' not in rels:local.append('commercial_rel_sponsored')
             if urlsplit(href).path in dynamic and (not urlsplit(href).netloc or urlsplit(href).netloc==BASE):
+                continue
+            u=urlsplit(href)
+            if u.path.startswith('/go/') and (not u.netloc or u.netloc==BASE):
+                if unquote(u.path[4:]) not in outbound_ids:local.append('valid_internal_link')
+                if not {'sponsored','nofollow','noopener'}<=rels:local.append('commercial_rel_sponsored')
                 continue
             target=_internal_target(rel,href)
             if target:
