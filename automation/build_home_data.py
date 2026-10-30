@@ -54,7 +54,7 @@ def build(catalog, now=None):
             add(o)
             break
     counts = collections.Counter(o['brand'] for o in rows if o.get('brand'))
-    fields = ['id', 'title', 'merchant', 'merchant_id', 'brand', 'variant', 'price', 'weight_kg', 'image', 'url', 'affiliate_url', 'available', 'checked_at', 'canonical_title', 'canonical_format', 'canonical_shop_count', 'product_slug', 'product_url', 'unit_price', 'unit_price_unit']
+    fields = ['id', 'title', 'merchant', 'merchant_id', 'brand', 'variant', 'price', 'weight_kg', 'image', 'image_local', 'url', 'affiliate_url', 'available', 'checked_at', 'canonical_title', 'canonical_format', 'canonical_shop_count', 'product_slug', 'product_url', 'unit_price', 'unit_price_unit']
     return {k: catalog[k] for k in ['generated_at', 'refresh_hours', 'sources']} | {
         'stats': {'offers': len(catalog['offers']), 'brands': len({o.get('brand') for o in catalog['offers'] if o.get('brand')})},
         'top_brands': [brand for brand, count in counts.most_common(10)],
