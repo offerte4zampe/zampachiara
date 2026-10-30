@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T18:47:30.266519+00:00",
+  "generated_at": "2026-10-30T18:51:34.153622+00:00",
   "selection_basis": "Operational opportunity and category/brand diversity; no search-demand data used.",
   "target": 300,
   "selected": 300,
@@ -7,10 +7,10 @@
   "at_target": 12,
   "with_third_store_lead": 28,
   "categories": {
-    "umido": 131,
+    "umido": 130,
     "crocchette": 109,
     "lettiere": 9,
-    "snack": 51
+    "snack": 52
   },
   "priority_offer_ids": [
     "animaliapet:46976533692759",
@@ -93,6 +93,7 @@
     "animaliapet:48188453060951",
     "animaliapet:48188458041687",
     "animaliapet:48255411224919",
+    "animaliapet:48489766158679",
     "animaliapet:48587011850583",
     "animaliapet:49110536257879",
     "animaliapet:49351572783447",
@@ -240,6 +241,7 @@
     "bauzaar:56961455522117",
     "bauzaar:56961455718725",
     "bauzaar:56961456013637",
+    "bauzaar:56961457062213",
     "bauzaar:56961459257669",
     "bauzaar:56961659863365",
     "bauzaar:56961696661829",
@@ -6163,6 +6165,26 @@
       "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
     },
     {
+      "product_id": "p-d60fb22107a5b3b37967",
+      "name": "Gimcat Kitten Stick 3x3g Snack per Gattini",
+      "brand": "Gimborn",
+      "category": "snack",
+      "species": "gatto",
+      "format": "9 g",
+      "url": "https://offerte4zampe.it/prodotto/gimcat-kitten-stick-3x3g-snack-per-gattini-04002064420448-b37967",
+      "verified_shops": 1,
+      "target_shops": 3,
+      "missing_shops": 2,
+      "offer_ids": [
+        "animaliapet:48489766158679"
+      ],
+      "candidate_offer_ids": [
+        "bauzaar:56961457062213"
+      ],
+      "next_action": "verify_feed_package",
+      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
+    },
+    {
       "product_id": "p-bfc2258ff706fd33803f",
       "name": "GimCat Nutri Pocket Junior Mix 60 g",
       "brand": "GimCat",
@@ -6418,26 +6440,6 @@
       ],
       "candidate_offer_ids": [
         "bauzaar:58411847844165"
-      ],
-      "next_action": "verify_feed_package",
-      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
-    },
-    {
-      "product_id": "p-a7ffbbc547261bef960b",
-      "name": "Gourmet le Perle Filettini in Salsa 85 g Manzo - confezione da 26 pezzi",
-      "brand": "Gourmet",
-      "category": "umido",
-      "species": "gatto",
-      "format": "2,21 kg",
-      "url": "https://offerte4zampe.it/prodotto/gourmet-le-perle-filettini-in-salsa-85-g-manzo-confezione-da-26-pezzi-08002205354966-ef960b",
-      "verified_shops": 1,
-      "target_shops": 3,
-      "missing_shops": 2,
-      "offer_ids": [
-        "bauzaar:58411857281349"
-      ],
-      "candidate_offer_ids": [
-        "isola-dei-tesori:000142030"
       ],
       "next_action": "verify_feed_package",
       "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
