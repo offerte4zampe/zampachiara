@@ -105,5 +105,5 @@ $('catalog-reset').addEventListener('click',()=>{
 for(const id of ['catalog-query','catalog-shop','catalog-brand','catalog-sort','catalog-stock','catalog-sale','catalog-multishop',...facetKeys.map(k=>'catalog-'+k),'shipping-territory','shipping-quantity'])$(id).addEventListener((id==='catalog-query'||id==='shipping-quantity')?'input':'change',()=>{renderVersion++;limit=30;clearTimeout(renderTimer);if(id==='catalog-query')renderTimer=setTimeout(render,180);else render()});$('catalog-more').addEventListener('click',()=>{limit+=30;render()});$('shipping-refresh').addEventListener('click',()=>{limit=30;render()});$('catalog-clear').addEventListener('click',()=>{selected.clear();render()});
 $('catalog-load')?.addEventListener('click',ensureLoad);
 $('catalog-filters').addEventListener('focusin',ensureLoad,{once:true});
-if(profiling||[...params.keys()].some(k=>!['page'].includes(k)))ensureLoad();
+if(profiling||['q','shop','brand','gtin','matched','animal','type','age','size','pack','sort','stock','quantity','territory'].some(k=>params.has(k)))ensureLoad();
 })();
