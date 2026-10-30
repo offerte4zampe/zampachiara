@@ -3,6 +3,9 @@ on:
   pull_request:
     paths:
       - 'automation/apply_navigation.py'
+      - 'automation/clean_urls.py'
+      - 'site/assets/**'
+      - 'tests/test_clean_urls.*'
       - 'automation/partials/**'
       - 'automation/stores.json'
       - 'tests/test_navigation.py'
@@ -24,6 +27,7 @@ jobs:
           node-version: '22'
       - run: python automation/check_d1_activation.py --prepare-build
       - run: python automation/apply_navigation.py
+      - run: python automation/clean_urls.py
       - run: python -m unittest discover -s tests
       - run: node --test tests/test_*.mjs
       - run: python automation/audit_site.py

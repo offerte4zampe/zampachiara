@@ -33,7 +33,7 @@ class HomePrerenderTests(unittest.TestCase):
         self.assertIn('10,00 €',rendered)
         self.assertIn('data-home-offer',rendered)
         self.assertIn('5,00 €/kg',rendered)
-        self.assertIn('class="product-title-link" href="prodotto.html?id=a"',rendered)
+        self.assertIn('class="product-title-link" href="/confronta-cibo"',rendered)
         self.assertNotIn('<del>',rendered)
         self.assertNotIn('catalog-sale',rendered)
         self.assertIn('Shop. Prezzi rilevati, non in tempo reale.', rendered)

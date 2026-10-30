@@ -159,7 +159,7 @@ def build(catalog,old_registry=None,history=None,now=None):
         products.append(p);registry[pid]={'slug':slug,'content_hash':signature,'lastmod':lastmod,'product':{k:v for k,v in p.items() if k!='history'}}
         if q['kind']!='sales_unit':by_bucket[(normalized(p['brand']),attrs['species'],q['kind'],q['value'])].append(p)
         for o in rows:
-            offer={**o,'product_id':pid,'product_slug':slug,'canonical_title':title,'quantity':q_by_id[o['id']],'unit_price':round(o['price']/q_by_id[o['id']]['value'],6) if q_by_id[o['id']]['verified'] else None,'unit_price_unit':q_by_id[o['id']]['unit'] if q_by_id[o['id']]['verified'] else None,'canonical_shop_count':len(verified_shops)}
+            offer={**o,'product_id':pid,'product_slug':slug,'product_url':'/prodotto/'+slug,'canonical_title':title,'quantity':q_by_id[o['id']],'unit_price':round(o['price']/q_by_id[o['id']]['value'],6) if q_by_id[o['id']]['verified'] else None,'unit_price_unit':q_by_id[o['id']]['unit'] if q_by_id[o['id']]['verified'] else None,'canonical_shop_count':len(verified_shops)}
             offer['product_matching_method']=method
             offer['offer_matching_method']=name_methods.get(o['id'],'gtin' if canonical_gtin(o.get('gtin')) else 'unattached')
             offer['canonical_format']=p['format'];offer['product_identity_verified']=p['matching_method']=='gtin_quantity'

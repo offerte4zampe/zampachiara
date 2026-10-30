@@ -47,7 +47,7 @@ def apply(html, offers, merchant_choice=False):
         if len(rows) != 1:
             # Never select a different format when the catalog URL is ambiguous.
             return '<span>'+match[0].split('>', 1)[1].rsplit('</a', 1)[0]+'</span>'
-        attrs['href'] = ('/go/'+quote(rows[0]['id'],safe='')+'?from=product') if outbound else 'prodotto.html?'+urlencode({'id': rows[0]['id']})
+        attrs['href'] = ('/go/'+quote(rows[0]['id'],safe='')+'?from=product') if outbound else ('/prodotto/'+rows[0]['product_slug'] if rows[0].get('product_slug') else '/confronta-cibo')
         for key in ('rel', 'target', 'data-metric', 'data-merchant'):
             attrs.pop(key, None)
         if outbound: attrs['rel'] = 'sponsored nofollow noopener noreferrer'

@@ -7,6 +7,7 @@
     "not_found_handling": "404-page",
     "binding": "ASSETS",
     "run_worker_first": [
+      "/*.html",
       "/api/metrics",
       "/prodotto",
       "/prodotto.html",
@@ -62,7 +63,7 @@
     ]
   },
   "build": {
-    "command": "python automation/check_d1_activation.py --prepare-build && python automation/apply_navigation.py"
+    "command": "python automation/check_d1_activation.py --prepare-build && python automation/apply_navigation.py && python automation/clean_urls.py"
   },
   "analytics_engine_datasets": [
     {
