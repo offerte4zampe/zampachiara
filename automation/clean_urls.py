@@ -28,6 +28,8 @@ def clean_url(value, offers=None, redirects=None):
             return product_url(offers[ids[0]]) + ('#' + u.fragment if u.fragment else '')
         # Unknown legacy IDs must keep their resolver, never guess a product.
         return value
+    if not path.endswith('.html') and not (redirects and path in redirects):
+        return value
     if path.endswith('/index.html'):
         path = path[:-10] or '/'
     elif path.endswith('.html') and not re.fullmatch(r'/google[\w-]+\.html', path):

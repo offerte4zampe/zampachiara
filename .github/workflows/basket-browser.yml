@@ -169,6 +169,8 @@ jobs:
         run: |
           export CHROME_PATH="$(command -v google-chrome)"
           export PUPPETEER_ROOT="$RUNNER_TEMP/basket-browser"
+          python automation/apply_navigation.py
+          python automation/clean_urls.py
           node tests/check_basket_browser.mjs
       - uses: actions/upload-artifact@v4
         if: always()
