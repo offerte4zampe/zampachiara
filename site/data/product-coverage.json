@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-10-30T13:06:35.591486+00:00",
+  "generated_at": "2026-10-30T13:16:32.373180+00:00",
   "name_matching": {
     "evaluated_offers": 18361,
-    "insufficient_characteristics": 9464,
-    "eligible_offers": 8897,
+    "insufficient_characteristics": 9463,
+    "eligible_offers": 8898,
     "attached_without_gtin": 13
   },
   "gtin_multi_shop_products": 526,
@@ -12,7 +12,7 @@
     "animaliapet": {
       "offers": 3993,
       "active_offers": 3869,
-      "missing_valid_gtin": 2538,
+      "missing_valid_gtin": 2536,
       "unverified_quantity": 0,
       "sales_unit_only": 1607,
       "offers_in_multishop_products": 277
@@ -36,27 +36,27 @@
     "paco": {
       "offers": 1199,
       "active_offers": 799,
-      "missing_valid_gtin": 1051,
-      "unverified_quantity": 1051,
-      "sales_unit_only": 1051,
+      "missing_valid_gtin": 1050,
+      "unverified_quantity": 1050,
+      "sales_unit_only": 1050,
       "offers_in_multishop_products": 82
     },
     "webpet": {
       "offers": 1946,
       "active_offers": 1315,
-      "missing_valid_gtin": 1539,
+      "missing_valid_gtin": 1520,
       "unverified_quantity": 0,
       "sales_unit_only": 1666,
       "offers_in_multishop_products": 45
     }
   },
-  "products": 18697,
+  "products": 18717,
   "active_products": 16647,
   "offers": 18361,
   "multi_shop_products": 539,
   "multi_shop_percent": 3.24,
   "denominator": "active canonical products, distinct merchants with verified quantities; GTIN and characteristic matching reported separately; duplicate offers in one shop do not count",
-  "unattached_offers": 7844,
-  "candidate_pairs": 107,
+  "unattached_offers": 7831,
+  "candidate_pairs": 106,
   "automatic_match_rules": "GTIN and quantity, or exact normalized name plus brand and verified selling quantity; conflicting GTINs excluded"
 }
