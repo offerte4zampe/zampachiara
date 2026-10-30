@@ -84,6 +84,7 @@ on:
       - 'tests/profile_catalog_browser.mjs'
       - 'tests/check_guides_browser.mjs'
       - 'tests/check_themes_browser.mjs'
+      - 'tests/check_mobile_menu_browser.mjs'
       - 'automation/build_savings_guides.py'
       - 'automation/build_observatory.py'
       - 'automation/build_line_pages.py'

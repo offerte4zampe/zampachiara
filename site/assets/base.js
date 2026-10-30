@@ -1,4 +1,15 @@
-(function(){'use strict';const m=document.getElementById('mobilemenu');const n=document.getElementById('navlinks');if(m&&n)m.addEventListener('click',()=>{const v=n.classList.toggle('open');m.setAttribute('aria-expanded',String(v))});document.querySelectorAll('[data-year]').forEach(x=>x.textContent=String(new Date().getFullYear()));})();
+(function(){'use strict';
+ const button=document.getElementById('mobilemenu'),nav=document.getElementById('navlinks');
+ if(button&&nav){
+  function setOpen(open){nav.classList.toggle('open',open);button.setAttribute('aria-expanded',String(open));button.setAttribute('aria-label',open?'Chiudi navigazione':'Apri navigazione')}
+  button.addEventListener('click',()=>setOpen(button.getAttribute('aria-expanded')!=='true'));
+  nav.addEventListener('click',event=>{if(event.target.closest('a'))setOpen(false)});
+  document.addEventListener('keydown',event=>{if(event.key==='Escape'&&button.getAttribute('aria-expanded')==='true'){setOpen(false);button.focus()}});
+  document.addEventListener('click',event=>{if(!nav.contains(event.target)&&!button.contains(event.target))setOpen(false)});
+  window.addEventListener('resize',()=>{if(window.innerWidth>850)setOpen(false)});
+ }
+ document.querySelectorAll('[data-year]').forEach(x=>x.textContent=String(new Date().getFullYear()));
+})();
 /* Seasonal decoration: Rome calendar, automatically ends after Halloween 2026. */
 (function(){'use strict';
  const today=new Intl.DateTimeFormat('sv-SE',{timeZone:'Europe/Rome',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
