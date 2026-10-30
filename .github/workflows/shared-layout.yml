@@ -1,0 +1,29 @@
+name: Shared site layout regression
+on:
+  pull_request:
+    paths:
+      - 'automation/apply_navigation.py'
+      - 'automation/partials/**'
+      - 'automation/stores.json'
+      - 'tests/test_navigation.py'
+      - 'worker/canonical-product.mjs'
+      - 'wrangler.jsonc'
+      - '.github/workflows/shared-layout.yml'
+permissions:
+  contents: read
+jobs:
+  regression:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python automation/check_d1_activation.py --prepare-build
+      - run: python automation/apply_navigation.py
+      - run: python -m unittest discover -s tests
+      - run: node --test tests/test_*.mjs
+      - run: python automation/audit_site.py
