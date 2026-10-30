@@ -140,11 +140,11 @@ def render_home(html, payload):
         tag = 'h2' if spotlight else 'h3'
         image = o.get('image', '')
         img = f'<img src="{h(image,quote=True)}" alt="" width="160" height="145" loading="lazy">' if image.startswith('https://') else ''
-        unit = f'<p class="micro">{money(o["price"]/o["weight_kg"])}/kg · spedizione esclusa</p>' if o.get('weight_kg') else '<p class="micro">Spedizione esclusa</p>'
+        unit = f'<p class="micro">{money(o["price"]/o["weight_kg"])}/kg</p>' if o.get('weight_kg') else ''
         title = o.get('canonical_title') or o['title']
         cta = 'Vedi offerta →' if o.get('canonical_shop_count', 2) < 2 else 'Confronta nei negozi →'
         if o.get('unit_price') and o.get('unit_price_unit'):
-            unit = '<p class="micro">'+money(o['unit_price'])+'/'+h(o['unit_price_unit'])+' · spedizione esclusa</p>'
+            unit = '<p class="micro">'+money(o['unit_price'])+'/'+h(o['unit_price_unit'])+'</p>'
         return f'''<article class="{'spotlight-product' if spotlight else 'home-deal'}" data-home-offer="{h(o['checked_at'],quote=True)}">{img}<p class="micro">{h(o['merchant'])} · {h(o['brand'])}</p><{tag}><a class="product-title-link" href="{h(product_url(o),quote=True)}">{h(title)}</a></{tag}><p class="micro">{h(o.get('variant') or '')}</p><p class="catalog-price"><strong>{money(o['price'])}</strong></p>{unit}<p class="micro">Rilevato: <time datetime="{h(o['checked_at'],quote=True)}">{h(o['checked_at'][:16].replace('T',' '))} UTC</time></p><a class="btn secondary" href="{h(product_url(o),quote=True)}">{cta}</a>{error_link(o)}</article>'''
     deals, hero = pick(payload)
     parts = {
