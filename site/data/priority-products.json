@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T13:50:11.661928+00:00",
+  "generated_at": "2026-10-30T13:55:41.956466+00:00",
   "selection_basis": "Operational opportunity and category/brand diversity; no search-demand data used.",
   "target": 300,
   "selected": 300,
@@ -7,10 +7,10 @@
   "at_target": 12,
   "with_third_store_lead": 28,
   "categories": {
-    "umido": 130,
-    "crocchette": 107,
+    "umido": 132,
+    "crocchette": 108,
     "lettiere": 9,
-    "snack": 54
+    "snack": 51
   },
   "priority_offer_ids": [
     "animaliapet:46976533692759",
@@ -51,12 +51,14 @@
     "animaliapet:46976631308631",
     "animaliapet:46976635208023",
     "animaliapet:46976637894999",
+    "animaliapet:46976644677975",
     "animaliapet:46976649724247",
     "animaliapet:46976656310615",
     "animaliapet:46976665092439",
     "animaliapet:46976666009943",
     "animaliapet:46976667418967",
     "animaliapet:46976677806423",
+    "animaliapet:46976681836887",
     "animaliapet:46976682426711",
     "animaliapet:46976682754391",
     "animaliapet:46976682852695",
@@ -113,6 +115,7 @@
     "bauzaar:56811242783045",
     "bauzaar:56818660442437",
     "bauzaar:56818663555397",
+    "bauzaar:56818664046917",
     "bauzaar:56818788696389",
     "bauzaar:56819879543109",
     "bauzaar:56819879641413",
@@ -226,6 +229,7 @@
     "bauzaar:56961245708613",
     "bauzaar:56961245970757",
     "bauzaar:56961248330053",
+    "bauzaar:56961280049477",
     "bauzaar:56961288536389",
     "bauzaar:56961313505605",
     "bauzaar:56961324745029",
@@ -345,10 +349,7 @@
     "bauzaar:58411853152581",
     "bauzaar:58411853185349",
     "bauzaar:58411853939013",
-    "bauzaar:58411855348037",
     "bauzaar:58411855806789",
-    "bauzaar:58411856265541",
-    "bauzaar:58411856298309",
     "bauzaar:58411857248581",
     "bauzaar:58411857281349",
     "bauzaar:58411857346885",
@@ -376,7 +377,6 @@
     "isola-dei-tesori:000138020",
     "isola-dei-tesori:000138021",
     "isola-dei-tesori:000138023",
-    "isola-dei-tesori:000138153",
     "isola-dei-tesori:000138213",
     "isola-dei-tesori:000138273",
     "isola-dei-tesori:000138274",
@@ -406,7 +406,6 @@
     "isola-dei-tesori:000142294",
     "isola-dei-tesori:000144181",
     "isola-dei-tesori:000144422",
-    "isola-dei-tesori:000150008",
     "isola-dei-tesori:000150032",
     "isola-dei-tesori:000150078",
     "isola-dei-tesori:000150079",
@@ -433,7 +432,6 @@
     "isola-dei-tesori:000503460",
     "isola-dei-tesori:000503476",
     "isola-dei-tesori:000503537",
-    "isola-dei-tesori:000582552",
     "isola-dei-tesori:000584438",
     "isola-dei-tesori:000584439",
     "isola-dei-tesori:000584440",
@@ -3266,6 +3264,25 @@
       "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
     },
     {
+      "product_id": "p-b0ebe79a4c645381f118",
+      "name": "Nature's Protection White Dogs Salmone Adult Small&Mini 1.5kg Crocchette Cani",
+      "brand": "Nature's Protection",
+      "category": "crocchette",
+      "species": "cane",
+      "format": "1,5 kg",
+      "url": "https://offerte4zampe.it/prodotto/nature-s-protection-white-dogs-salmone-adult-small-mini-1-5kg-crocchette-cani-04771317458346-81f118",
+      "verified_shops": 2,
+      "target_shops": 3,
+      "missing_shops": 1,
+      "offer_ids": [
+        "animaliapet:46976681836887",
+        "bauzaar:56818664046917"
+      ],
+      "candidate_offer_ids": [],
+      "next_action": "find_additional_store",
+      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
+    },
+    {
       "product_id": "p-f43bd41c28578bcf0c34",
       "name": "Nature's Protection Red Coat Small Adult Salmone Crocchette Cani 10kg",
       "brand": "Nature's Protection",
@@ -5824,6 +5841,26 @@
       "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
     },
     {
+      "product_id": "p-a836c5069676bfc622de",
+      "name": "Farmina N&D Pumpkin Pollo Zucca Melograno 140g Lattina Cani Mini Adult",
+      "brand": "Farmina",
+      "category": "umido",
+      "species": "cane",
+      "format": "140 g",
+      "url": "https://offerte4zampe.it/prodotto/farmina-n-d-pumpkin-pollo-zucca-melograno-140g-lattina-cani-mini-adult-08606014102314-c622de",
+      "verified_shops": 1,
+      "target_shops": 3,
+      "missing_shops": 2,
+      "offer_ids": [
+        "animaliapet:46976644677975"
+      ],
+      "candidate_offer_ids": [
+        "bauzaar:56961280049477"
+      ],
+      "next_action": "verify_feed_package",
+      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
+    },
+    {
       "product_id": "p-e959845cfb28698c50e9",
       "name": "Farmina N&D Urinary Adult Con Anatra E Quinoa Per Gatti · Sacco da 1,5 kg",
       "brand": "Farmina N&D",
@@ -5859,6 +5896,26 @@
       ],
       "candidate_offer_ids": [
         "bauzaar:56820215316805"
+      ],
+      "next_action": "verify_feed_package",
+      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
+    },
+    {
+      "product_id": "p-205ab3204a92e61dc6a6",
+      "name": "Farmina N&D Pumpkin Canine formula Mini 140 g Pollo e melograno - confezione da 6 pezzi",
+      "brand": "Farmina N&D Pumpkin Grain Free",
+      "category": "umido",
+      "species": "cane",
+      "format": "840 g",
+      "url": "https://offerte4zampe.it/prodotto/farmina-n-d-pumpkin-canine-formula-mini-140-g-pollo-e-melograno-confezione-da-6-pezzi-08606014102314-1dc6a6",
+      "verified_shops": 1,
+      "target_shops": 3,
+      "missing_shops": 2,
+      "offer_ids": [
+        "bauzaar:56961280049477"
+      ],
+      "candidate_offer_ids": [
+        "animaliapet:46976644677975"
       ],
       "next_action": "verify_feed_package",
       "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
@@ -6380,66 +6437,6 @@
       ],
       "candidate_offer_ids": [
         "paco:5603"
-      ],
-      "next_action": "verify_feed_package",
-      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
-    },
-    {
-      "product_id": "p-6ff9eb12c86ecd422a38",
-      "name": "Joki Plus 15 g trota",
-      "brand": "Joki Plus",
-      "category": "snack",
-      "species": "gatto",
-      "format": "15 g",
-      "url": "https://offerte4zampe.it/prodotto/joki-plus-15-g-trota-08000560780277-422a38",
-      "verified_shops": 1,
-      "target_shops": 3,
-      "missing_shops": 2,
-      "offer_ids": [
-        "isola-dei-tesori:000150008"
-      ],
-      "candidate_offer_ids": [
-        "bauzaar:58411856265541"
-      ],
-      "next_action": "verify_feed_package",
-      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
-    },
-    {
-      "product_id": "p-9374e75c270719206425",
-      "name": "Joki Dent Fresh-stripes strisce masticabili contro la placca Elanco Large 140 g",
-      "brand": "Joki Plus",
-      "category": "snack",
-      "species": "cane",
-      "format": "140 g",
-      "url": "https://offerte4zampe.it/prodotto/joki-dent-fresh-stripes-strisce-masticabili-contro-la-placca-elanco-large-140-g-08000560750034-206425",
-      "verified_shops": 1,
-      "target_shops": 3,
-      "missing_shops": 2,
-      "offer_ids": [
-        "bauzaar:58411855348037"
-      ],
-      "candidate_offer_ids": [
-        "isola-dei-tesori:000138153"
-      ],
-      "next_action": "verify_feed_package",
-      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
-    },
-    {
-      "product_id": "p-a1ede35b91bd1b402ffe",
-      "name": "Joki Plus Gatto Sterilizzato 15 g.",
-      "brand": "Joki Plus",
-      "category": "snack",
-      "species": "gatto",
-      "format": "15 g",
-      "url": "https://offerte4zampe.it/prodotto/joki-plus-gatto-sterilizzato-15-g-08000560784510-402ffe",
-      "verified_shops": 1,
-      "target_shops": 3,
-      "missing_shops": 2,
-      "offer_ids": [
-        "isola-dei-tesori:000582552"
-      ],
-      "candidate_offer_ids": [
-        "bauzaar:58411856298309"
       ],
       "next_action": "verify_feed_package",
       "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
