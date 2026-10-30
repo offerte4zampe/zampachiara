@@ -76,7 +76,7 @@ class CanonicalProductTests(unittest.TestCase):
         m=self.model([a,b]);p=m['products'][0]
         self.assertEqual(len(m['products']),1)
         self.assertEqual(p['matching_method'],'name_characteristics')
-        self.assertEqual(p['gtin'],'');self.assertIsNone(p['matching_confidence']);self.assertFalse(p['indexable'])
+        self.assertEqual(p['gtin'],'');self.assertIsNone(p['matching_confidence']);self.assertTrue(p['indexable'])
         self.assertEqual(m['metrics']['name_matching']['evaluated_offers'],2)
         self.assertEqual(m['metrics']['characteristic_multi_shop_products'],1)
         self.assertTrue(all(o['offer_matching_method']=='name_characteristics' and not o['gtin'] for o in m['offers']))
