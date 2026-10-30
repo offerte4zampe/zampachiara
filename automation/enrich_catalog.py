@@ -21,11 +21,11 @@ def eligible_for_identifier_lookup(o,brands):
          o.get('available') is True and
          len(brands.get(o.get('brand','').casefold(),set()))>=2)
 
-def lookup_priority(rows, score=0):
+def lookup_priority(rows, score=0, priority_ids=frozenset()):
  # A page returns every variant. Inspect missing identifiers before refreshing
  # pages whose entire active selection already has valid barcodes.
  missing=sum(not gtin(o.get('gtin')) for o in rows)
- return (missing == 0, -score, -missing)
+ return (missing == 0, not any(o.get('id') in priority_ids for o in rows), -score, -missing)
 
 def build():
  path=ROOT/'site/data/catalog.json.gz';d=json.loads(gzip.decompress(path.read_bytes()));cachepath=ROOT/'automation/identifier-cache.json'
@@ -58,10 +58,12 @@ def build():
    for b in rows:
     if a['merchant_id']==b['merchant_id']:continue
     other=set(re.findall(r'[a-z]+',b['title'].casefold()));score=len(tokens&other)/max(1,len(tokens|other));u=a['url'].split('?')[0]+'.js';scores[u]=max(scores.get(u,0),score)
+ priority_path=ROOT/'site/data/priority-products.json'
+ priority_ids=set(json.loads(priority_path.read_text()).get('priority_offer_ids',[])) if priority_path.exists() else set()
  page_rows={}
  for o in d['offers']:
   if o.get('available') is True:page_rows.setdefault(o['url'].split('?')[0]+'.js',[]).append(o)
- for key,group in urls.items():urls[key]=dict.fromkeys(sorted(group,key=lambda u:(*lookup_priority(page_rows.get(u,[]),scores.get(u,0)),u)))
+ for key,group in urls.items():urls[key]=dict.fromkeys(sorted(group,key=lambda u:(*lookup_priority(page_rows.get(u,[]),scores.get(u,0),priority_ids),u)))
  selected=[];limit=max(0,min(60,int(os.environ.get("ENRICH_LIMIT","30"))))
  while len(selected)<limit and any(urls.values()):
   for group in urls.values():
