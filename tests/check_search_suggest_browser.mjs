@@ -57,8 +57,7 @@ export async function checkSuggestions(page,origin,catalog){
  await page.waitForSelector('#catalog-query-suggestions [role=option]',{visible:true});
  const selected=await page.$eval('#catalog-query-suggestions [role=option]',e=>e.dataset.productId);
  await Promise.all([page.waitForNavigation({waitUntil:'domcontentloaded'}),page.tap('#catalog-query-suggestions [role=option]')]);
- assert.equal(new URL(page.url()).pathname,'/prodotto.html');
- assert.equal(new URL(page.url()).searchParams.get('id'),selected);
+ assert.equal(new URL(page.url()).pathname,'/prodotto/'+catalog.offers.find(o=>o.id===selected).product_slug);
 
  const links=await page.evaluate(async()=>{const r=await fetch('/data/amazon-links.json');return r.json()});
  const mapping=links.links.find(row=>catalog.offers.some(o=>o.id===row.offer_id));assert(mapping,'At least one verified mapping must exist in catalog');

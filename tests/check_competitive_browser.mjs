@@ -40,7 +40,8 @@ export async function checkCompetitive(page,origin,catalog){
   assert.equal(await page.$eval('#catalog-shop',e=>e.value),source.name);
   const titles=await page.$$eval('#catalog-grid article h3 a',es=>es.map(e=>e.href));
   assert(titles.length>0,source.id+' has no visible offers');
-  assert(titles.every(href=>new URL(href).origin===origin&&new URL(href).pathname==='/prodotto.html'));
+  const expectedPaths=new Set(catalog.offers.filter(o=>o.merchant_id===source.id).map(o=>'/prodotto/'+o.product_slug));
+  assert(titles.every(href=>new URL(href).origin===origin&&expectedPaths.has(new URL(href).pathname)));
  }
  const uncertain=catalog.offers.find(o=>o.merchant_id==='paco'&&o.quantity_verified===false&&o.available);
  if(uncertain){
