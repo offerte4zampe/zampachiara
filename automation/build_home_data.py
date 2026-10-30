@@ -52,7 +52,7 @@ def build(catalog, now=None):
             add(o)
             break
     counts = collections.Counter(o['brand'] for o in rows if o.get('brand'))
-    fields = ['id', 'title', 'merchant', 'merchant_id', 'brand', 'variant', 'price', 'weight_kg', 'image', 'url', 'affiliate_url', 'available', 'checked_at', 'canonical_title', 'canonical_format', 'canonical_shop_count', 'product_slug', 'unit_price', 'unit_price_unit']
+    fields = ['id', 'title', 'merchant', 'merchant_id', 'brand', 'variant', 'price', 'weight_kg', 'image', 'url', 'affiliate_url', 'available', 'checked_at', 'canonical_title', 'canonical_format', 'canonical_shop_count', 'product_slug', 'product_url', 'unit_price', 'unit_price_unit']
     return {k: catalog[k] for k in ['generated_at', 'refresh_hours', 'sources']} | {
         'stats': {'offers': len(catalog['offers']), 'brands': len({o.get('brand') for o in catalog['offers'] if o.get('brand')})},
         'top_brands': [brand for brand, count in counts.most_common(10)],
@@ -63,7 +63,7 @@ def build(catalog, now=None):
 
 def search_index(catalog):
     """Only names and provenance for suggestions: no prices, images or tracking URLs."""
-    fields = ('id', 'title', 'variant', 'brand', 'gtin', 'merchant', 'available', 'checked_at', 'product_slug')
+    fields = ('id', 'title', 'variant', 'brand', 'gtin', 'merchant', 'available', 'checked_at', 'product_slug', 'product_url')
     return {'generated_at': catalog.get('generated_at'), 'offers': [
         {key: offer[key] for key in fields if key in offer}
         for offer in catalog.get('offers', []) if isinstance(offer.get('title'), str)

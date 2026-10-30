@@ -22,7 +22,7 @@ class PreviewTests(unittest.TestCase):
         self.assertIn('12,50 €', out)
         self.assertIn('6,25 €/kg', out)
         self.assertIn('Cibo gatti &lt;test&gt;', out)
-        self.assertIn('href="/prodotto.html?id=one"', out)
+        self.assertIn('href="/confronta-cibo"', out)
         self.assertNotIn('tc.tradetracker.net', out)
         self.assertIn('spedizione esclusa', out)
         self.assertEqual(render_preview(out, catalog, NOW), out)

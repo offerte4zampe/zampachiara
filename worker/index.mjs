@@ -10,7 +10,10 @@ export default {
   scheduled(event,env,ctx){ctx.waitUntil(scheduledTelegram(env));},
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
-    if(['GET','HEAD'].includes(request.method)&&['/index.html','/confronta-cibo.html'].includes(url.pathname)){url.pathname=url.pathname==='/index.html'?'/':'/confronta-cibo';return Response.redirect(url.href,301)}
+    if (['GET','HEAD'].includes(request.method) && url.pathname.endsWith('.html') && url.pathname !== '/prodotto.html' && !/^\/google[\w-]+\.html$/.test(url.pathname)) {
+      url.pathname = url.pathname.endsWith('/index.html') ? url.pathname.slice(0, -10) || '/' : url.pathname.slice(0, -5);
+      return Response.redirect(url.href, 301);
+    }
     if(url.pathname.startsWith('/go/'))return outbound(request,env,ctx);
     if(url.pathname==='/api/telegram/status'){
       if(request.method!=='GET')return new Response(null,{status:405});
