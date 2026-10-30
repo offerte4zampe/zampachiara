@@ -28,3 +28,11 @@ class IsolaFeedTests(unittest.TestCase):
     def test_multipack_without_verified_price_basis_is_excluded(self):
         p=copy.deepcopy(self.p);p['ID']='000124';p['URL']=p['URL'].replace('000123.html','000124.html%3Fmultipack%3D3')
         rows=m.normalize({'products':[self.p,p]});self.assertEqual(len(rows),1)
+
+    def test_unknown_stock_excludes_only_that_product(self):
+        p=copy.deepcopy(self.p);p['ID']='000124';p['URL']=p['URL'].replace('000123.html','000124.html');p['properties']['availability']=[]
+        stats={}
+        rows=m.normalize({'products':[self.p,p]},stats=stats)
+        self.assertEqual([r['id'] for r in rows],['isola-dei-tesori:000123'])
+        self.assertEqual(stats['excluded_unknown_availability'],1)
+        with self.assertRaises(ValueError):m.normalize({'products':[p]})

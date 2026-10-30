@@ -15,8 +15,10 @@ def render_preview(html, catalog, now=None):
     import datetime as dt
     try:
         from .product_link import product_url
+        from .freshness import label
     except ImportError:
         from product_link import product_url
+        from freshness import label
     now=now or dt.datetime.now(dt.timezone.utc)
     groups={}
     for o in catalog['offers']:
@@ -33,7 +35,8 @@ def render_preview(html, catalog, now=None):
         unit=(f" · {o['unit_price']:.2f} €/{o['unit_price_unit']}".replace('.',',') if o.get('unit_price') else f" · {o['price']/o['weight_kg']:.2f} €/kg".replace('.',',') if o.get('weight_kg') else '')
         image=o.get('image','')
         img=f'<img src="{h(image,quote=True)}" alt="" width="150" height="130" loading="lazy">' if image.startswith('https://') else ''
-        cards.append(f'<article class="catalog-card">{img}<p class="micro">{shops} {"negozio" if shops==1 else "negozi"} · {h(o.get("brand",""))}</p><h3><a class="product-title-link" href="{h(product_url(o),quote=True)}">{h(o.get("canonical_title") or o["title"])}</a></h3><p>{h(o.get("canonical_format") or o.get("variant") or "Formato da verificare")}</p><p><strong>Da {price} €</strong>{unit} · spedizione esclusa</p><p class="micro">Rilevato: {h(o["checked_at"])} · {h(o["merchant"])} · disponibile al rilevamento</p></article>')
+        warning = '<p class="notice">'+h(label(o['checked_at'],now))+'</p>' if label(o['checked_at'],now) else ''
+        cards.append(f'<article class="catalog-card">{img}<p class="micro">{shops} {"negozio" if shops==1 else "negozi"} · {h(o.get("brand",""))}</p><h3><a class="product-title-link" href="{h(product_url(o),quote=True)}">{h(o.get("canonical_title") or o["title"])}</a></h3><p>{h(o.get("canonical_format") or o.get("variant") or "Formato da verificare")}</p><p><strong>Da {price} €</strong>{unit} · spedizione esclusa</p><p class="micro">Rilevato: {h(o["checked_at"])} · {h(o["merchant"])} · disponibile al rilevamento</p>{warning}</article>')
     content='<h2>Prodotti e prezzi dal catalogo</h2><p>Primi '+str(len(cards))+' prodotti: precedenza ai confronti con più negozi, poi nome. Prezzi rilevati, spedizione esclusa; non è una classifica per totale. Apri la scheda per confrontare le offerte.</p>'
     content+='<div class="catalog-grid">'+''.join(cards)+'</div>' if cards else '<p>Nessuna selezione recente disponibile. <a href="/prodotti">Esplora le pagine prodotto</a>.</p>'
     html = replace_region(html, 'catalog-preview', content)
