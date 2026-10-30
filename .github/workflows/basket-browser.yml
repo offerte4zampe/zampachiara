@@ -186,6 +186,7 @@ jobs:
           python automation/apply_semantics.py
           python automation/remove_unverified_ads.py
           python automation/build_catalog_index.py
+          python automation/fingerprint_assets.py
           node tests/check_basket_browser.mjs
       - uses: actions/upload-artifact@v4
         if: always()

@@ -82,7 +82,7 @@ export async function canonicalProduct(request,env,now=Date.now()){
  .replace(/<meta name="robots" content="[^"]*">/,()=>'<meta name="robots" content="'+(indexable?'index,follow':'noindex,follow')+'">')
  .replace(/<link rel="canonical" href="[^"]*">/,()=>'<link rel="canonical" href="'+page.url+'">')
  .replace(/<meta property="og:(title|description|url)" content="[^"]*">/g,(_,key)=>'<meta property="og:'+key+'" content="'+esc(key==='title'?page.title:key==='url'?page.url:page.description)+'">')
- .replace(/<script src="assets\/product\.js[^\"]*" defer><\/script>/,'')
+ .replace(/<script src="assets\/product(?:\.[a-f0-9]{12})?\.js[^\"]*" defer><\/script>/,'')
  .replace('</head>',(indexable?'<script type="application/ld+json">'+JSON.stringify(page.schema).replace(/</g,'\\u003c')+'</script>':'')+'</head>');
  if(localImage)html=html.replace(/(<meta (?:property="og:image"|name="twitter:image") content=")[^"]*(">)/g,(_,a,b)=>a+esc(localImage)+b).replace(/(<meta property="og:image:(?:width|height)" content=")[^"]*(">)/g,(_,a,b)=>a+'400'+b).replace(/(<meta property="og:image:type" content=")[^"]*(">)/g,'$1image/webp$2');
  const headers={'X-Robots-Tag':indexable?'index, follow':'noindex, follow','Content-Type':'text/html; charset=utf-8','Cache-Control':'public, max-age=300','X-Product-Model':'canonical-v1'};

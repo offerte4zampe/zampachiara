@@ -1,0 +1,10 @@
+{
+  "scope": "Public production after Task 7, with concurrent navigation fix and Task 8 rollout; not an isolated controlled experiment",
+  "report": "https://pagespeed.web.dev/analysis/https-offerte4zampe-it-confronta-cibo/alu04odf2h?form_factor=mobile",
+  "catalog": {"performance":97,"lcp_ms":1574,"fcp_ms":1574,"tbt_ms":0,"cls":0,"speed_index_ms":3918},
+  "baseline_catalog": {"performance":100,"lcp_ms":905,"tbt_ms":0,"cls":0},
+  "inp": null,
+  "inp_reason": "No CrUX data; TBT is not INP",
+  "lighthouse_version": "13.6.0",
+  "captured_date":"2026-10-30"
+}
