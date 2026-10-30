@@ -17,3 +17,7 @@ relative singular/plural, unchanged machine timestamps, idempotent HTML formatti
 and store totals matching the home count without mutating input snapshots.
 
 No affiliate destination, tracking choice, D1/shadow flag or shipping rule changed.
+
+Browser regression also validates that retired editorial offer IDs cannot produce
+a destination when the corresponding feed record is absent; active mappings still
+require exact identity. The affiliate registry and links are unchanged.
