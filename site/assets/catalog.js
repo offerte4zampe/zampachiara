@@ -5,14 +5,14 @@ function timed(name,fn){if(!profiling)return fn();const start=performance.now();
 function duration(name,start){if(profiling)profileRows.push({stage:name,ms:performance.now()-start})}
 const compareItalian=new Intl.Collator('it').compare;
 const text=(tag,value,cls)=>{const e=document.createElement(tag);e.textContent=value;if(cls)e.className=cls;return e};
-const date=s=>{const d=new Date(s);return Number.isNaN(+d)?'non disponibile':d.toLocaleString('it-IT')};
+const date=O4ZTrade.formatTimestamp;
 const params=new URLSearchParams(location.search);
 function refreshFreshness(sources){const box=$('catalog-freshness');if(!box)return;const messages=sources.map(s=>({name:s.name,label:O4ZTrade.freshnessLabel(s.checked_at)})).filter(s=>s.label);box.replaceChildren(...messages.map(s=>text('p',s.name+': '+s.label)));box.hidden=!messages.length;}
 try{refreshFreshness(JSON.parse($('catalog-freshness-data')?.textContent||'[]'))}catch{}
 const preview=$('catalog-preview');
 if(preview&&['q','shop','brand','gtin','matched','animal','type','age','size','pack'].some(key=>params.has(key)))preview.hidden=true;
 $('catalog-multishop').checked=params.get('matched')==='1';
-$('catalog-query').value=(params.get('q')||'').slice(0,120);$('catalog-sale').checked=false;$('catalog-sale').disabled=true;
+$('catalog-query').value=(params.get('q')||'').slice(0,120);$('catalog-sale').checked=false;$('catalog-sale').disabled=true;$('catalog-sale').closest('label').hidden=true;$('catalog-sale').closest('label').style.display='none';
 const allowedSort=['name','price','total','kg','matched'];if(allowedSort.includes(params.get('sort')))$('catalog-sort').value=params.get('sort');
 $('catalog-stock').checked=params.get('stock')!=='all';
 const sharedQuantity=Number(params.get('quantity'));if(Number.isInteger(sharedQuantity)&&sharedQuantity>=1&&sharedQuantity<=10)$('shipping-quantity').value=sharedQuantity;
@@ -33,7 +33,7 @@ function productCard(o){const card=text('article','','catalog-card'),url=safeUrl
 card.append(text('p',shopCount(o)===0?'Formato non verificato':shopCount(o)+' negoz'+(shopCount(o)===1?'io':'i')+' con offerte disponibili al rilevamento','micro'),text('p',o.merchant+' · '+o.brand,'micro'),productTitle(o),text('p',o.canonical_format||o.variant,'micro'));
 const prices=text('p','','catalog-price');prices.append(text('strong',money.format(o.price)));if(O4ZTrade.discount(o)){prices.append(text('del',money.format(o.previous_price)),text('span',' −'+Math.round((1-o.price/o.previous_price)*100)+'%','catalog-sale'))}card.append(prices);
 card.append(text('p',o.unit_price!==undefined&&o.unit_price!==null?money.format(o.unit_price)+'/'+o.unit_price_unit+' · '+o.canonical_format:o.weight_kg?money.format(o.price/o.weight_kg)+'/kg · confezione '+o.weight_kg+' kg':'Quantità netta non verificata: prezzo unitario non calcolato','micro'));
-card.append(text('p',(o.quantity_verified===false?'Disponibilità indicata dal feed; formato non verificato':o.available?'Disponibile al rilevamento':'Non disponibile al rilevamento')+(stale(o)?' · Dato da aggiornare':''),'micro'),text('p','Rilevato: '+date(o.checked_at),'micro'));
+card.append(text('p',(o.quantity_verified===false?'Disponibilità indicata dal feed; formato non verificato':o.available?'Disponibile al rilevamento':'Non disponibile al rilevamento')+(stale(o)?' · Dato da aggiornare':''),'micro'),text('p','Rilevato: '+date(o.checked_at)+' ('+O4ZTrade.relativeTime(o.checked_at)+')','micro'));
 const freshLabel=O4ZTrade.freshnessLabel(o.checked_at);if(freshLabel)card.append(text('p',freshLabel,'notice'));
 const q=quote(o);card.append(text('p',q.total!==undefined?'Totale stimato: '+money.format(q.total)+' ('+$('shipping-quantity').value+(Number($('shipping-quantity').value)===1?' confezione':' confezioni')+' · spedizione '+money.format(q.fee)+')':'Totale non calcolato: '+q.reason,'micro'));
 if(q.rule){const a=text('a','Condizioni di spedizione','micro');a.href=q.rule.source;a.target='_blank';a.rel='noopener noreferrer';card.append(a)}

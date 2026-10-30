@@ -18,7 +18,9 @@ def main():
     now = dt.datetime.now(dt.timezone.utc)
     p = ROOT / 'site/data/catalog.json.gz'
     catalog = json.loads(gzip.decompress(p.read_bytes()))
-    catalog['sources'] = [source_freshness(s, catalog['offers'], now) for s in catalog['sources']]
+    from collections import Counter
+    counts = Counter(o.get('merchant_id') for o in catalog['offers'])
+    catalog['sources'] = [source_freshness({**s, 'offers': counts[s['id']]}, catalog['offers'], now) for s in catalog['sources']]
     p.write_bytes(gzip.compress(json.dumps(catalog, ensure_ascii=False, separators=(',', ':')).encode(), mtime=0))
     home = build(catalog, now)
     (ROOT / 'site/data/home.json').write_text(json.dumps(home, ensure_ascii=False, separators=(',', ':')) + '\n')

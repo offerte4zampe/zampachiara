@@ -72,9 +72,9 @@ export async function checkSuggestions(page,origin,catalog){
  await page.goto(origin+'/prodotto.html?id='+encodeURIComponent(unmapped.id),{waitUntil:'domcontentloaded'});
  await page.waitForSelector('#product-shops [data-product-shop]',{timeout:30000});assert.equal(await page.$eval('#product-amazon',e=>e.hidden),false);assert.equal(await page.$eval('#product-amazon',e=>e.querySelectorAll('a').length),0);assert((await page.$eval('#product-amazon',e=>e.textContent)).includes('Disponibilità: non verificata'));
 
- // Every editorial mapping must match the current catalog, including exact variant.
+ // Validate active editorial mappings; retired feed IDs must not produce destinations.
  for(const entry of links.links){
-  const seed=catalog.offers.find(o=>o.id===entry.offer_id);assert(seed,'Mapped offer must exist: '+entry.offer_id);
+  const seed=catalog.offers.find(o=>o.id===entry.offer_id);if(!seed){assert.equal(amazonModel.comparisonLink({id:entry.offer_id},catalog.offers,links,now),null,'Retired offer must not generate an affiliate destination');continue;}
   for(const key of ['title','brand','variant','gtin'])assert.equal(key==='brand'?metadata.brand(seed[key]):String(seed[key]??''),key==='brand'?metadata.brand(entry[key]):String(entry[key]??''),'Mapped identity changed: '+entry.offer_id+' '+key);
   await page.goto(origin+'/prodotto.html?id='+encodeURIComponent(entry.offer_id),{waitUntil:'domcontentloaded'});
   await page.waitForSelector('#product-amazon a',{visible:true,timeout:30000});

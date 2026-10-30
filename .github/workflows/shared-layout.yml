@@ -4,6 +4,9 @@ on:
     paths:
       - 'automation/apply_navigation.py'
       - 'automation/clean_urls.py'
+      - 'automation/display_time.py'
+      - 'automation/apply_micro_fixes.py'
+      - 'tests/test_display_time.*'
       - 'automation/freshness.py'
       - 'automation/apply_freshness.py'
       - 'tests/test_freshness.*'
@@ -32,6 +35,7 @@ jobs:
       - run: python automation/apply_navigation.py
       - run: python automation/apply_freshness.py
       - run: python automation/clean_urls.py
+      - run: python automation/apply_micro_fixes.py
       - run: python -m unittest discover -s tests
       - run: node --test tests/test_*.mjs
       - run: python automation/audit_site.py
