@@ -166,3 +166,7 @@ header{z-index:200}
 .catalog-filter-body{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}
 @media(max-width:650px){body:has(#catalog-filters) .pagehero{padding:16px 0}body:has(#catalog-filters) .pagehero h1{font-size:28px;line-height:1.1;margin:6px 0}body:has(#catalog-filters) .pagehero .eyebrow{display:none}body:has(#catalog-filters) .pagehero p{font-size:15px;margin:8px 0}#catalog-filters{padding:12px;margin:0 0 8px}#catalog-load{font-size:13px;padding:10px}#catalog-extra-filters summary{font-size:14px}#catalog-preview>p{font-size:13px;line-height:1.4}#catalog-status{font-size:13px;margin:6px 0}.shipping-controls{padding:0 12px;margin:8px 0}}
 @media(max-width:650px){#catalog-preview>h2{font-size:22px;margin:8px 0}#catalog-preview>p{margin:6px 0}}
+
+/* Closed advanced filters must not reserve a grid row for their controls. */
+#catalog-extra-filters:not([open])>.catalog-filter-body{display:none}
+@media(max-width:650px){body:has(#catalog-filters) .pagehero{padding:12px 0}body:has(#catalog-filters) .pagehero h1{font-size:26px;margin:4px 0}body:has(#catalog-filters) .pagehero p{margin:4px 0;font-size:14px}#catalog-count:empty,#catalog-selection-status:empty,#catalog-identity-status:empty{display:none}body:has(#catalog-load:not([hidden])) #catalog-status{display:none}#catalog-preview>h2{font-size:20px;margin:6px 0}#catalog-preview>p{font-size:12px;margin:4px 0}}
