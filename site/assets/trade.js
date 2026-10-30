@@ -69,10 +69,12 @@ function groupOffers(rows,now=Date.now()){
 }
 // Preserve the feed URL byte-for-byte; never reconstruct affiliate parameters.
 function merchantUrl(o){const value=o.affiliate_url||o.url;try{const u=new URL(value);return u.protocol==='https:'&&!u.username&&!u.password&&!/[\u0000-\u0020\u007f]/.test(value)?value:''}catch{return ''}}
+function formatTimestamp(value){const d=new Date(value);if(value==null||!Number.isFinite(+d))return 'non disponibile';const options={timeZone:'Europe/Rome',day:'2-digit',month:'2-digit',year:'numeric'};if(!/^\d{4}-\d{2}-\d{2}$/.test(String(value))){options.hour='2-digit';options.minute='2-digit';}return new Intl.DateTimeFormat('it-IT',options).format(d)}
+function relativeTime(value,now=Date.now()){const delta=Date.parse(value)-now;if(!Number.isFinite(delta))return 'non disponibile';const size=Math.abs(delta),unit=size>=86400000?'day':size>=3600000?'hour':size>=60000?'minute':'second',divisor={day:86400000,hour:3600000,minute:60000,second:1000}[unit];return new Intl.RelativeTimeFormat('it',{numeric:'always'}).format(Math.trunc(delta/divisor),unit)}
 function freshnessLabel(value,now=Date.now()){const t=Date.parse(value),hours=(now-t)/3600000;return !Number.isFinite(t)||t>now+300000?'Data aggiornamento non disponibile':hours>12?'Dati non aggiornati da '+Math.floor(hours)+' ore':''}
 function productUrl(o){const slug=o?.product_slug;if(typeof slug==='string'&&/^[a-z0-9][a-z0-9-]{1,200}$/.test(slug))return '/prodotto/'+slug;const path=o?.product_url;return typeof path==='string'&&/^\/prodotto\/[a-z0-9][a-z0-9-]{1,200}$/.test(path)?path:'/confronta-cibo'}
 function goUrl(o,page='other'){return '/go/'+encodeURIComponent(o.id)+'?from='+(['home','catalog','product','basket','other'].includes(page)?page:'other')}
 function reportUrl(o){const p=new URLSearchParams();for(const [key,source,limit] of [['id','id',100],['title','title',240],['shop','merchant',100],['price','price',30],['checked','checked_at',60]])p.set(key,String(o[source]??'').slice(0,limit));return 'segnala-errore.html#'+p;}
-const api={freshnessLabel,productUrl,merchantUrl,goUrl,shippingRulesFromRows,shipping,discount,merchant,matchKey,groupOffers,reportUrl};if(typeof module!=='undefined')module.exports=api;else root.O4ZTrade=api;
+const api={formatTimestamp,relativeTime,freshnessLabel,productUrl,merchantUrl,goUrl,shippingRulesFromRows,shipping,discount,merchant,matchKey,groupOffers,reportUrl};if(typeof module!=='undefined')module.exports=api;else root.O4ZTrade=api;
 })(typeof window!=='undefined'?window:this);
 

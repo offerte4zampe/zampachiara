@@ -19,6 +19,8 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 
 def build(catalog, now=None):
     now = now or datetime.datetime.now(datetime.timezone.utc)
+    counts_by_store = collections.Counter(o.get('merchant_id') for o in catalog['offers'])
+    catalog = {**catalog, 'sources': [{**s, 'offers': counts_by_store[s['id']]} for s in catalog['sources']]}
     def recent(o):
         try:
             return 0 <= (now - datetime.datetime.fromisoformat(o['checked_at'].replace('Z', '+00:00'))).total_seconds() <= 12 * 3600
