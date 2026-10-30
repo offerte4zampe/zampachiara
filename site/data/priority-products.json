@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T13:38:18.481175+00:00",
+  "generated_at": "2026-10-30T13:50:11.661928+00:00",
   "selection_basis": "Operational opportunity and category/brand diversity; no search-demand data used.",
   "target": 300,
   "selected": 300,
@@ -8,9 +8,9 @@
   "with_third_store_lead": 28,
   "categories": {
     "umido": 130,
-    "crocchette": 108,
+    "crocchette": 107,
     "lettiere": 9,
-    "snack": 53
+    "snack": 54
   },
   "priority_offer_ids": [
     "animaliapet:46976533692759",
@@ -57,7 +57,6 @@
     "animaliapet:46976666009943",
     "animaliapet:46976667418967",
     "animaliapet:46976677806423",
-    "animaliapet:46976681836887",
     "animaliapet:46976682426711",
     "animaliapet:46976682754391",
     "animaliapet:46976682852695",
@@ -114,7 +113,6 @@
     "bauzaar:56811242783045",
     "bauzaar:56818660442437",
     "bauzaar:56818663555397",
-    "bauzaar:56818664046917",
     "bauzaar:56818788696389",
     "bauzaar:56819879543109",
     "bauzaar:56819879641413",
@@ -350,6 +348,7 @@
     "bauzaar:58411855348037",
     "bauzaar:58411855806789",
     "bauzaar:58411856265541",
+    "bauzaar:58411856298309",
     "bauzaar:58411857248581",
     "bauzaar:58411857281349",
     "bauzaar:58411857346885",
@@ -434,6 +433,7 @@
     "isola-dei-tesori:000503460",
     "isola-dei-tesori:000503476",
     "isola-dei-tesori:000503537",
+    "isola-dei-tesori:000582552",
     "isola-dei-tesori:000584438",
     "isola-dei-tesori:000584439",
     "isola-dei-tesori:000584440",
@@ -3260,25 +3260,6 @@
       "offer_ids": [
         "animaliapet:46976682426711",
         "bauzaar:58245822742853"
-      ],
-      "candidate_offer_ids": [],
-      "next_action": "find_additional_store",
-      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
-    },
-    {
-      "product_id": "p-b0ebe79a4c645381f118",
-      "name": "Nature's Protection White Dogs Salmone Adult Small&Mini 1.5kg Crocchette Cani",
-      "brand": "Nature's Protection",
-      "category": "crocchette",
-      "species": "cane",
-      "format": "1,5 kg",
-      "url": "https://offerte4zampe.it/prodotto/nature-s-protection-white-dogs-salmone-adult-small-mini-1-5kg-crocchette-cani-04771317458346-81f118",
-      "verified_shops": 2,
-      "target_shops": 3,
-      "missing_shops": 1,
-      "offer_ids": [
-        "animaliapet:46976681836887",
-        "bauzaar:56818664046917"
       ],
       "candidate_offer_ids": [],
       "next_action": "find_additional_store",
@@ -6439,6 +6420,26 @@
       ],
       "candidate_offer_ids": [
         "isola-dei-tesori:000138153"
+      ],
+      "next_action": "verify_feed_package",
+      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
+    },
+    {
+      "product_id": "p-a1ede35b91bd1b402ffe",
+      "name": "Joki Plus Gatto Sterilizzato 15 g.",
+      "brand": "Joki Plus",
+      "category": "snack",
+      "species": "gatto",
+      "format": "15 g",
+      "url": "https://offerte4zampe.it/prodotto/joki-plus-gatto-sterilizzato-15-g-08000560784510-402ffe",
+      "verified_shops": 1,
+      "target_shops": 3,
+      "missing_shops": 2,
+      "offer_ids": [
+        "isola-dei-tesori:000582552"
+      ],
+      "candidate_offer_ids": [
+        "bauzaar:58411856298309"
       ],
       "next_action": "verify_feed_package",
       "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
