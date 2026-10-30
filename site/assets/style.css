@@ -141,3 +141,8 @@ html.halloween{--green:#97401c;--soft:#f8e8d8;--cream:#fffaf2;--accent:#e9973f;-
 
 /* Stable product image box; intrinsic sources are 400 square. */
 .catalog-card img{width:100%;height:130px;object-fit:contain}
+
+/* Reserve result space while the deferred search index loads. */
+#catalog-grid,#catalog-preview{min-height:60vh}
+.catalog-card{min-height:24rem}
+#catalog-grid:empty{min-height:0}

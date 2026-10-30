@@ -41,7 +41,7 @@ class PreviewTests(unittest.TestCase):
         c=self.catalog();base=c['offers'][0]
         c['offers']=[dict(base,id=str(i),product_id='p'+str(i),product_slug='food-'+str(i)) for i in range(40)]
         out=render_preview('<div id="catalog-preview"></div>',c,NOW)
-        self.assertEqual(out.count('<article class="catalog-card">'),30)
+        self.assertEqual(out.count('<article class="catalog-card">'),24)
         self.assertIn('/prodotto/food-',out)
         self.assertNotIn('prodotto.html',out)
         c['offers']=[dict(base,id='a',product_id='p',product_slug='same'),dict(base,id='b',product_id='p',product_slug='same',merchant_id='other')]

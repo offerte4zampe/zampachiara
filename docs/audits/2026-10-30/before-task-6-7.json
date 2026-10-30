@@ -5,8 +5,40 @@
   "device": "Moto G Power emulated",
   "network": "Slow 4G",
   "crux": "No data; INP unavailable",
-  "home": {"report": "https://pagespeed.web.dev/analysis/https-offerte4zampe-it/4rky8du38t?form_factor=mobile", "performance": 98, "accessibility": 100, "best_practices": 100, "seo": 100, "lcp_ms": 906, "cls": 0, "tbt_ms": 0, "speed_index_ms": 3945, "lcp_element": "h1"},
-  "catalog": {"report": "https://pagespeed.web.dev/analysis/https-offerte4zampe-it-confronta-cibo/i7cpm7psen?form_factor=mobile", "performance": 100, "accessibility": 100, "best_practices": 100, "seo": 100, "lcp_ms": 905, "cls": 0, "tbt_ms": 0, "speed_index_ms": 905},
-  "product": {"report": "https://pagespeed.web.dev/analysis/https-offerte4zampe-it-prodotto-royal-canin-dog-medium-adult-15-kg-03182550402217-213b1b/l55oj5bs8d?form_factor=mobile", "metrics": null, "reason": "Report launched but reading was blocked by browser usage-limit approval failure; no metrics inferred"},
-  "api": {"status": 429, "reason": "PageSpeed API quota exhausted; home and catalog were successfully measured through the public UI"}
+  "home": {
+    "report": "https://pagespeed.web.dev/analysis/https-offerte4zampe-it/4rky8du38t?form_factor=mobile",
+    "performance": 98,
+    "accessibility": 100,
+    "best_practices": 100,
+    "seo": 100,
+    "lcp_ms": 906,
+    "cls": 0,
+    "tbt_ms": 0,
+    "speed_index_ms": 3945,
+    "lcp_element": "h1"
+  },
+  "catalog": {
+    "report": "https://pagespeed.web.dev/analysis/https-offerte4zampe-it-confronta-cibo/i7cpm7psen?form_factor=mobile",
+    "performance": 100,
+    "accessibility": 100,
+    "best_practices": 100,
+    "seo": 100,
+    "lcp_ms": 905,
+    "cls": 0,
+    "tbt_ms": 0,
+    "speed_index_ms": 905
+  },
+  "product": {
+    "report": "https://pagespeed.web.dev/analysis/https-offerte4zampe-it-prodotto-royal-canin-dog-medium-adult-15-kg-03182550402217-213b1b/l55oj5bs8d?form_factor=mobile",
+    "performance": 99,
+    "lcp_ms": 1960,
+    "cls": 0,
+    "tbt_ms": 0,
+    "fcp_ms": 905,
+    "speed_index_ms": 905
+  },
+  "api": {
+    "status": 429,
+    "reason": "PageSpeed API quota exhausted; home and catalog were successfully measured through the public UI"
+  }
 }

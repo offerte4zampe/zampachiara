@@ -17,15 +17,15 @@ export async function profileCatalog(page,origin,catalog){
  for(let i=0;i<3;i++){
   // Isolate each sample from prior product/search navigations and terminate its Worker on close.
   const samplePage=await page.browser().newPage();
-  let result,downloads=0;try{
+  let result,downloads=0,indexDownloads=0;const index=JSON.parse(await fs.readFile(new URL('../site/data/catalog-index.json',import.meta.url)));try{
    await samplePage.setViewport(page.viewport());
-   await samplePage.setRequestInterception(true);samplePage.on('request',r=>{if(r.url().includes('/data/catalog.json.gz'))downloads++;return r.url().startsWith(origin)?r.continue():r.abort()});
+   await samplePage.setRequestInterception(true);samplePage.on('request',r=>{if(r.url().includes('/data/catalog.json.gz'))downloads++;if(/\/data\/catalog-index\/[a-f0-9]+\.json\.gz$/.test(r.url()))indexDownloads++;return r.url().startsWith(origin)?r.continue():r.abort()});
    await samplePage.evaluateOnNewDocument(now=>{Date.now=()=>now},now);
    await samplePage.goto(origin+'/confronta-cibo.html?profile=1&sort=total',{waitUntil:'domcontentloaded'});
    await samplePage.waitForFunction(()=>Boolean(window.O4ZCatalogProfile),{timeout:60000});
    result=await samplePage.evaluate(()=>window.O4ZCatalogProfile);
   }finally{await samplePage.close()}
- assert.equal(result.loader_thread,'worker','Supported browser must parse in worker; fallback='+result.fallback_reason);assert.equal(downloads,1,'Exactly one catalog download per sample');assert(result.offers>0);assert(result.cards>0);
+ assert.equal(result.loader_thread,'worker','Supported browser must parse in worker; fallback='+result.fallback_reason);assert.equal(downloads,0,'Comparator must not download the full catalog');assert.equal(indexDownloads,index.shards.length,'Each search shard downloads once');assert(result.offers>0);assert(result.cards>0);
   for(const sample of result.samples)assert(Number.isFinite(sample.ms)&&sample.ms>=0);
   runs.push(result);
  }

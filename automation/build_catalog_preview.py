@@ -1,4 +1,4 @@
-"""Prerender the first 30 canonical product groups without browser catalog downloads."""
+"""Prerender the first 24 canonical product groups without browser catalog downloads."""
 import gzip
 import json
 from html import escape as h
@@ -27,7 +27,7 @@ def render_preview(html, catalog, now=None):
         except (KeyError,ValueError,TypeError):fresh=False
         if not fresh or not o.get('available') or not isinstance(o.get('price'),(int,float)) or o['price']<=0:continue
         groups.setdefault(o.get('product_id') or o['id'],[]).append(o)
-    ranked=sorted(groups.values(),key=lambda rows:(-len({o['merchant_id'] for o in rows}),str(rows[0].get('canonical_title') or rows[0]['title']).casefold(),rows[0]['id']))[:30]
+    ranked=sorted(groups.values(),key=lambda rows:(-len({o['merchant_id'] for o in rows}),str(rows[0].get('canonical_title') or rows[0]['title']).casefold(),rows[0]['id']))[:24]
     cards=[]
     for rows in ranked:
         o=min(rows,key=lambda r:(r['price'],r['id']));shops=len({r['merchant_id'] for r in rows})
