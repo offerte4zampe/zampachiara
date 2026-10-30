@@ -18,6 +18,7 @@ def apply(html):
             continue
         token = re.sub(ISO, lambda m: format_timestamp(m[0]), token)
         token = re.sub(UTC, lambda m: format_timestamp(m[1] + 'T' + m[2] + ':00Z'), token)
+        token = re.sub(r'\b\d{4}-\d{2}-\d{2}\b', lambda m: format_timestamp(m[0]), token)
         tokens[i] = token.replace('1 ore fa', '1 ora fa')
     html = ''.join(tokens).replace('* Totale stimato crescente', 'Totale stimato crescente')
     html = re.sub(r'<label>(<input\b[^>]*\bid="catalog-sale"[^>]*>.*?</label>)', r'<label hidden style="display:none">\1', html, flags=re.S)

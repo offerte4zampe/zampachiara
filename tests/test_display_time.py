@@ -20,6 +20,7 @@ class DisplayTimeTests(unittest.TestCase):
         self.assertIn('{"checked_at":"2026-07-01T12:00:00Z"}',out)
         self.assertIn('<label hidden style="display:none">',out)
         self.assertEqual(apply(out),out)
+        self.assertEqual(apply('<p>2026-10-30</p>'),'<p>30/10/2026</p>')
 
     def test_store_counts_and_home_total_use_same_snapshot(self):
         now=dt.datetime(2026,10,30,tzinfo=dt.timezone.utc)
