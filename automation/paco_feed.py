@@ -83,7 +83,7 @@ def stamp(value):
         return result if result.tzinfo else None
     except (AttributeError,TypeError,ValueError): return None
 
-def verification_plan(rows, previous, peers, now, limit=80):
+def verification_plan(rows, previous, peers, now, limit=80, priority_ids=frozenset()):
     """Reuse recent identical evidence and rotate a bounded verification budget."""
     old={r['id']:r for r in previous if r.get('merchant_id')=='paco'}
     candidates=[]
@@ -102,7 +102,7 @@ def verification_plan(rows, previous, peers, now, limit=80):
         if attempted and attempted<=now:
             row['quantity_verification_attempted_at']=attempted.isoformat()
         else: attempted=dt.datetime.min.replace(tzinfo=dt.timezone.utc)
-        candidates.append((row.get('available') is not True,row['feed_gtin'].lstrip('0') not in peers,attempted,row['id'],i))
+        candidates.append((row.get('available') is not True,row['id'] not in priority_ids,row['feed_gtin'].lstrip('0') not in peers,attempted,row['id'],i))
     return [entry[-1] for entry in sorted(candidates)[:limit]]
 
 def collect():
@@ -118,7 +118,9 @@ def collect():
     try: previous=json.loads(gzip.decompress(catalog.read_bytes()))['offers']
     except (OSError,ValueError,KeyError): previous=[]
     peers={str(o.get('gtin','')).lstrip('0') for o in previous if o.get('weight_kg') and o.get('merchant_id')!='paco'}
-    chosen=verification_plan(rows,previous,peers,now)
+    priority_path=catalog.parent/'priority-products.json'
+    priority_ids=set(json.loads(priority_path.read_text()).get('priority_offer_ids',[])) if priority_path.exists() else set()
+    chosen=verification_plan(rows,previous,peers,now,priority_ids=priority_ids)
     rp=urllib.robotparser.RobotFileParser()
     try:
         with urllib.request.urlopen(urllib.request.Request(ORIGIN+'/robots.txt',headers={'User-Agent':UA}),timeout=15) as response: rp.parse(response.read().decode().splitlines())
