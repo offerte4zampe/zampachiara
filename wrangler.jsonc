@@ -65,7 +65,7 @@
     ]
   },
   "build": {
-    "command": "python automation/check_d1_activation.py --prepare-build && python automation/apply_navigation.py && python automation/apply_freshness.py && python automation/clean_urls.py && python automation/apply_micro_fixes.py"
+    "command": "python automation/check_d1_activation.py --prepare-build && python automation/apply_navigation.py && python automation/apply_freshness.py && python automation/clean_urls.py && python automation/apply_micro_fixes.py && python automation/apply_images.py"
   },
   "analytics_engine_datasets": [
     {
