@@ -75,3 +75,10 @@ class PacoVerificationPlanTest(unittest.TestCase):
   a=normalize(fixture(),self.now)[0]
   b=dict(a,id='paco:9',available=True)
   self.assertEqual(verification_plan([a,b],[],{a['feed_gtin']},self.now,limit=1),[1])
+
+ def test_available_cohort_offer_precedes_other_peer_without_bypassing_stock(self):
+  a=normalize(fixture(),self.now)[0];a['available']=True
+  b=dict(a,id='paco:9')
+  self.assertEqual(verification_plan([a,b],[],{a['feed_gtin']},self.now,limit=1,priority_ids={'paco:9'}),[1])
+  b['available']=False
+  self.assertEqual(verification_plan([a,b],[],{a['feed_gtin']},self.now,limit=1,priority_ids={'paco:9'}),[0])
