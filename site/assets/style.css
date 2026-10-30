@@ -141,3 +141,11 @@ html.halloween{--green:#97401c;--soft:#f8e8d8;--cream:#fffaf2;--accent:#e9973f;-
 
 /* Stable product image box; intrinsic sources are 400 square. */
 .catalog-card img{width:100%;height:130px;object-fit:contain}
+
+/* Keep navigation above page heroes, filters and their nested suggestion lists. */
+header{z-index:200}
+@media(max-width:850px){
+ header .navlinks{top:100%;z-index:1;max-height:calc(100dvh - 76px);overflow-y:auto;overscroll-behavior:contain;box-shadow:0 12px 24px #102c2426}
+ header .navlinks a{display:flex;align-items:center;min-height:44px}
+ header .mobilemenu{min-width:44px;min-height:44px;flex-shrink:0;touch-action:manipulation}
+}
