@@ -38,7 +38,7 @@ function render(){
  $('product-status').textContent=availableShops+' negoz'+(availableShops===1?'io':'i')+' con offerte disponibili al rilevamento. '+(view.exact?(['name_characteristics','gtin_with_name'].includes(o.product_matching_method)?'Abbinamento per nome e caratteristiche: alcune offerte non hanno un GTIN condiviso. Verifica la variante nel negozio.':reviewed?'Confronto con abbinamento revisionato delle schede e del formato. Il codice non è dichiarato da tutti i negozi.':'Confronto dello stesso GTIN, marca e peso netto. Verifica comunque ricetta e confezione prima di acquistare.'):'Identità condivisa non verificabile: mostriamo la sola offerta selezionata, senza abbinare prodotti dai nomi simili.');
  comparisonTable(view);
  const grid=$('product-shops');grid.replaceChildren();const other=el('details','','panel'),summary=el('summary','Altri negozi: copertura e dati non disponibili');other.append(summary);for(const shop of view.shops){
- const card=el('article','','panel');card.dataset.productShop=shop.source.id;card.append(el('h2',shop.source.name));
+ const card=el('article','','panel');card.dataset.productShop=shop.source.id;card.append(el('h3',shop.source.name));
  if(shop.source.status==='pending-feed'){
  card.append(el('p','Prezzo: non disponibile · Disponibilità: non verificata','micro'),el('p','Catalogo '+shop.source.name+' non ancora collegato. Non possiamo confermare lo stesso prodotto e formato né indicarne il prezzo.','micro'));
  }

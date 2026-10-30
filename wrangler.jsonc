@@ -66,7 +66,7 @@
     ]
   },
   "build": {
-    "command": "python automation/check_d1_activation.py --prepare-build && python automation/build_brand_pages.py && python automation/apply_brand_links.py && python automation/build_sitemaps.py && python automation/apply_product_metadata.py && python automation/apply_navigation.py && python automation/apply_freshness.py && python automation/clean_urls.py && python automation/apply_micro_fixes.py && python automation/apply_images.py && python automation/build_catalog_index.py"
+    "command": "python automation/check_d1_activation.py --prepare-build && python automation/build_brand_pages.py && python automation/apply_brand_links.py && python automation/build_sitemaps.py && python automation/apply_product_metadata.py && python automation/apply_navigation.py && python automation/apply_freshness.py && python automation/clean_urls.py && python automation/apply_micro_fixes.py && python automation/apply_images.py && python automation/apply_semantics.py && python automation/build_catalog_index.py"
   },
   "analytics_engine_datasets": [
     {
