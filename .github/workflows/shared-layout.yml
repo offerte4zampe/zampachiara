@@ -39,6 +39,7 @@ jobs:
       - run: python automation/build_brand_pages.py
       - run: python automation/apply_brand_links.py
       - run: python automation/apply_product_metadata.py
+      - run: python automation/apply_compact_comparator.py
       - run: python automation/apply_navigation.py
       - run: python automation/apply_freshness.py
       - run: python automation/clean_urls.py

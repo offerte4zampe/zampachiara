@@ -25,7 +25,7 @@
  ids.forEach(id=>$(id).addEventListener('input',render));
  $('resetfood').addEventListener('click',()=>{ids.forEach(id=>$(id).value=defaults[id]);$('sharestatus').textContent='';render()});
  // Use hash, not query params: data in the fragment is not sent to the hosting server.
- function restore(){try{const h=new URLSearchParams(location.hash.replace(/^#/,''));if(h.get('v')!=='1')return;ids.forEach(id=>{const v=h.get(id);if(v!==null&&v.length<=15&&/^\d+(?:\.\d+)?$/.test(v))$(id).value=v})}catch{}}
+ function restore(){try{const h=new URLSearchParams(location.hash.replace(/^#/,''));if(h.get('v')!=='1')return;for(const side of ['a','b']){const label=h.get('label'+side);if(label&&label.length<=300)$('manual-product-'+side).textContent=label}ids.forEach(id=>{const v=h.get(id);if(v!==null&&v.length<=15&&/^\d+(?:\.\d+)?$/.test(v))$(id).value=v})}catch{}}
  $('sharefood').addEventListener('click',async()=>{
    if(!$('fooderror').hidden){$('sharestatus').textContent='Correggi prima i valori.';return;}
    const p=new URLSearchParams({v:'1'});ids.forEach(id=>p.set(id,$(id).value));
@@ -35,5 +35,5 @@
      else{$('sharestatus').textContent='Link da copiare: '+url}
    }catch(e){if(e.name!=='AbortError')$('sharestatus').textContent='Copia manualmente il link: '+url}
  });
- restore();render();
+ restore();render();if(new URLSearchParams(location.hash.slice(1)).get('v')==='1')$('manual-tool')?.scrollIntoView({block:'start'});
 })();

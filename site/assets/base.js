@@ -25,3 +25,6 @@
   }
  }
 })();
+
+// Preserve already shared manual calculator fragments after moving the tool.
+if(typeof location!=='undefined'&&location.pathname.replace(/\.html$/,'')==='/confronta-cibo'&&new URLSearchParams(location.hash.slice(1)).get('v')==='1')location.replace('/calcolatore'+location.hash);
