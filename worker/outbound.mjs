@@ -1,6 +1,6 @@
 import trade from '../site/assets/trade.js';
 import {slugForOffer} from './canonical-product.mjs';
-const HEADERS={'Cache-Control':'no-store','X-Robots-Tag':'noindex','Referrer-Policy':'no-referrer'};
+const HEADERS={'Cache-Control':'no-store','X-Robots-Tag':'noindex, nofollow','Referrer-Policy':'no-referrer'};
 const PAGES=new Set(['home','catalog','product','basket','other']);
 function redirect(location){return new Response(null,{status:302,headers:{...HEADERS,Location:location}})}
 async function json(env,origin,path){const r=await env.ASSETS.fetch(new Request(new URL(path,origin)));if(!r.ok)throw Error('snapshot unavailable');return r.json()}
