@@ -149,3 +149,8 @@ header{z-index:200}
  header .navlinks a{display:flex;align-items:center;min-height:44px}
  header .mobilemenu{min-width:44px;min-height:44px;flex-shrink:0;touch-action:manipulation}
 }
+
+/* Reserve result space while the deferred search index loads. */
+#catalog-grid,#catalog-preview{min-height:60vh}
+.catalog-card{min-height:24rem}
+#catalog-grid:empty{min-height:0}
