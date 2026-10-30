@@ -90,6 +90,9 @@ def enrich(html, pages, home=False):
             else:
                 html = re.sub(r'<section\b[^>]*><div class="wrap"><div class="section-heading"><div><span class="kicker">Acquisti più consapevoli</span>.*?</section>', lambda _: section, html, flags=re.S)
         brands = {name: '/marca-' + slug for slug, name in BRANDS if '/marca-' + slug in active}
+        try:
+            brands.update({name:url for name,url in json.loads((ROOT/'site/data/brand-pages.json').read_text()).items() if url in active})
+        except (OSError,ValueError):pass
         # Promote only precise brand destinations which exist and are indexable.
         def popular_region(m):
             value = m[0]
