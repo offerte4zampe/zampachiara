@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T18:18:46.478241+00:00",
+  "generated_at": "2026-10-30T18:23:22.285500+00:00",
   "selection_basis": "Operational opportunity and category/brand diversity; no search-demand data used.",
   "target": 300,
   "selected": 300,
@@ -1163,7 +1163,7 @@
     },
     {
       "product_id": "p-d7e97154742246438ed4",
-      "name": "Monge Gemon All Breeds Adult con Maiale e Riso 3 kg · 3kg",
+      "name": "Monge Gemon All Breeds Adult con Maiale e Riso 3 kg",
       "brand": "Gemon",
       "category": "crocchette",
       "species": "cane",
@@ -1303,7 +1303,7 @@
     },
     {
       "product_id": "p-628f01189e80be5b704e",
-      "name": "Prolife Kitten Salmone E Riso Per Gattini · Sacco da 1,5 kg",
+      "name": "Prolife Lifestyle Gatto Kitten Salmone e Riso 1,5 kg",
       "brand": "Prolife",
       "category": "crocchette",
       "species": "gatto",
@@ -1313,8 +1313,8 @@
       "target_shops": 3,
       "missing_shops": 0,
       "offer_ids": [
-        "paco:4517",
         "bauzaar:56962043838789",
+        "paco:4517",
         "webpet:52569137545556"
       ],
       "candidate_offer_ids": [],
@@ -1383,7 +1383,7 @@
     },
     {
       "product_id": "p-90afd374125eee3ec1e4",
-      "name": "Acana Ranchlands Grain Free 11,4 kg · 11,4kg",
+      "name": "Acana Ranchlands Grain Free 11,4 kg",
       "brand": "Acana",
       "category": "crocchette",
       "species": "cane",
@@ -1440,7 +1440,7 @@
     },
     {
       "product_id": "p-d3461577f8be51649659",
-      "name": "Advance Urinary 1,5Kg Crocchette Gatti Adulti",
+      "name": "Advance Veterinary Diets Urinary Cat 1,5 kg",
       "brand": "Advance",
       "category": "crocchette",
       "species": "gatto",
@@ -1450,8 +1450,8 @@
       "target_shops": 3,
       "missing_shops": 1,
       "offer_ids": [
-        "animaliapet:46976574882135",
-        "bauzaar:58411855806789"
+        "bauzaar:58411855806789",
+        "animaliapet:46976574882135"
       ],
       "candidate_offer_ids": [],
       "next_action": "find_additional_store",
@@ -1459,7 +1459,7 @@
     },
     {
       "product_id": "p-4b5e441781f98f856023",
-      "name": "AlDog Super premium Adult Medium/Large Nordic Sea 12 kg · 12kg",
+      "name": "AlDog Super premium Adult Medium/Large Nordic Sea 12 kg",
       "brand": "AlDog",
       "category": "crocchette",
       "species": "cane",
@@ -1877,7 +1877,7 @@
     },
     {
       "product_id": "p-75dae1b33e8176c90690",
-      "name": "Exclusion Diet Metabolic & Mobility Medium/Large Breed Maiale e Fibre 12 kg · 12kg",
+      "name": "Exclusion Diet Metabolic & Mobility Medium/Large Breed Maiale e Fibre 12 kg",
       "brand": "Exclusion Diet",
       "category": "crocchette",
       "species": "cane",
@@ -1915,7 +1915,7 @@
     },
     {
       "product_id": "p-76d2d3e57cbeb62bbdb7",
-      "name": "Exclusion Diet Renal Per Cani · Sacco da 12 kg · Taglia Media e Grande",
+      "name": "Exclusion Diet Renal Medium/Large Breed Maiale Sorgo e Riso 12 kg",
       "brand": "Exclusion Diet",
       "category": "crocchette",
       "species": "cane",
@@ -1925,8 +1925,8 @@
       "target_shops": 3,
       "missing_shops": 1,
       "offer_ids": [
-        "paco:5801",
-        "bauzaar:56820043874629"
+        "bauzaar:56820043874629",
+        "paco:5801"
       ],
       "candidate_offer_ids": [],
       "next_action": "find_additional_store",
@@ -1953,7 +1953,7 @@
     },
     {
       "product_id": "p-7d1fc1814ff89ffec93b",
-      "name": "Farmina Vet Life Feline Gastro Intestinal 2 kg · 2kg",
+      "name": "Farmina Vet Life Feline Gastro Intestinal 2 kg",
       "brand": "Farmina Vet Life",
       "category": "crocchette",
       "species": "gatto",
@@ -1972,7 +1972,7 @@
     },
     {
       "product_id": "p-870bda98f424e5399ec8",
-      "name": "Farmina Vet Life Feline Obesity 2 kg · 2kg",
+      "name": "Farmina Vet Life Feline Obesity 2 kg",
       "brand": "Farmina Vet Life",
       "category": "crocchette",
       "species": "gatto",
@@ -2010,7 +2010,7 @@
     },
     {
       "product_id": "p-d7a355c6fca32fa3bbb2",
-      "name": "Farmina Vet Life Canine Renal 12 kg · 12kg",
+      "name": "Farmina Vet Life Canine Renal 12 kg",
       "brand": "Farmina Vet Life",
       "category": "crocchette",
       "species": "cane",
@@ -2048,7 +2048,7 @@
     },
     {
       "product_id": "p-2bae708e1a6286dc46ac",
-      "name": "Monge Gemon Cat Sterilised con Tonno e Salmone 2 kg · 2kg",
+      "name": "Monge Gemon Cat Sterilised con Tonno e Salmone 2 kg",
       "brand": "Gemon",
       "category": "crocchette",
       "species": "gatto",
@@ -2067,7 +2067,7 @@
     },
     {
       "product_id": "p-31ab461008da28f5a57e",
-      "name": "Monge Gemon Adult Cat con Pollo e Tacchino 2 kg · 2kg",
+      "name": "Monge Gemon Adult Cat con Pollo e Tacchino 2 kg",
       "brand": "Gemon",
       "category": "crocchette",
       "species": "gatto",
@@ -2086,7 +2086,7 @@
     },
     {
       "product_id": "p-422c468b9407b013615a",
-      "name": "Monge Gemon Cat Sterilised con Tonno e Salmone 7 kg · 7kg",
+      "name": "Monge Gemon Cat Sterilised con Tonno e Salmone 7 kg",
       "brand": "Gemon",
       "category": "crocchette",
       "species": "gatto",
@@ -2105,7 +2105,7 @@
     },
     {
       "product_id": "p-4fa60f4ce2616c4ebb18",
-      "name": "Monge Gemon Puppy & Junior All Breeds con Pollo e Riso 3 kg · 3kg",
+      "name": "Monge Gemon Puppy & Junior All Breeds con Pollo e Riso 3 kg",
       "brand": "Gemon",
       "category": "crocchette",
       "species": "cane",
@@ -2124,7 +2124,7 @@
     },
     {
       "product_id": "p-508d69f01b27957c3326",
-      "name": "Monge Gemon All Breeds Adult con Agnello e Riso 15 kg · 15kg",
+      "name": "Monge Gemon All Breeds Adult con Agnello e Riso 15 kg",
       "brand": "Gemon",
       "category": "crocchette",
       "species": "cane",
@@ -2143,7 +2143,7 @@
     },
     {
       "product_id": "p-52e7b96002b72fa1d56b",
-      "name": "Monge Gemon All Breeds Adult con Agnello e Riso 3 kg · 3kg",
+      "name": "Monge Gemon All Breeds Adult con Agnello e Riso 3 kg",
       "brand": "Gemon",
       "category": "crocchette",
       "species": "cane",
@@ -2162,7 +2162,7 @@
     },
     {
       "product_id": "p-635b0aeae4aa0bb23c21",
-      "name": "Monge Gemon Maxi Adult con Pollo e Riso 15 kg · 15kg",
+      "name": "Monge Gemon Maxi Adult con Pollo e Riso 15 kg",
       "brand": "Gemon",
       "category": "crocchette",
       "species": "cane",
@@ -2181,7 +2181,7 @@
     },
     {
       "product_id": "p-73fde7c04a87c5293f4d",
-      "name": "Monge Gemon All Breeds Adult con Tonno e Riso 15 kg · 15kg",
+      "name": "Monge Gemon All Breeds Adult con Tonno e Riso 15 kg",
       "brand": "Gemon",
       "category": "crocchette",
       "species": "cane",
@@ -2200,7 +2200,7 @@
     },
     {
       "product_id": "p-75d9f70b516c2a554e21",
-      "name": "Monge Gemon Cat Urinary con Pollo e Riso 2 kg · 2kg",
+      "name": "Monge Gemon Cat Urinary con Pollo e Riso 2 kg",
       "brand": "Gemon",
       "category": "crocchette",
       "species": "gatto",
@@ -2219,7 +2219,7 @@
     },
     {
       "product_id": "p-857856c0e112f8f6016e",
-      "name": "Gemon All Breeds Adult con Manzo e Riso 15 kg · 15kg",
+      "name": "Gemon All Breeds Adult con Manzo e Riso 15 kg",
       "brand": "Gemon",
       "category": "crocchette",
       "species": "cane",
@@ -2238,7 +2238,7 @@
     },
     {
       "product_id": "p-9da6d790fa7652d27cc5",
-      "name": "Monge Gemon Cat Sterilised con Tacchino 2 kg · 2kg",
+      "name": "Monge Gemon Cat Sterilised con Tacchino 2 kg",
       "brand": "Gemon",
       "category": "crocchette",
       "species": "gatto",
@@ -2257,7 +2257,7 @@
     },
     {
       "product_id": "p-a45568381f9a1244c8dc",
-      "name": "Monge Gemon Mini Adult con Pollo e Riso 3 kg · 3kg",
+      "name": "Monge Gemon Mini Adult con Pollo e Riso 3 kg",
       "brand": "Gemon",
       "category": "crocchette",
       "species": "cane",
@@ -2276,7 +2276,7 @@
     },
     {
       "product_id": "p-ad79ec7a205c5eb4c25d",
-      "name": "Monge Gemon Mini Puppy Junior con Pollo e Riso 3 kg · 3kg",
+      "name": "Monge Gemon Mini Puppy Junior con Pollo e Riso 3 kg",
       "brand": "Gemon",
       "category": "crocchette",
       "species": "cane",
@@ -2428,7 +2428,7 @@
     },
     {
       "product_id": "p-ad8becf2e497498e22b6",
-      "name": "Hill's Prescription Diet Metabolic mini Canine 6 kg · 6kg",
+      "name": "Hill's Prescription Diet Metabolic mini Canine 6 kg",
       "brand": "Hill's Prescription Diet",
       "category": "crocchette",
       "species": "cane",
@@ -2523,7 +2523,7 @@
     },
     {
       "product_id": "p-a7ae7876081f2d196a01",
-      "name": "ItalianWay Adult Sterilized Exigent Salmone e Aringhe 8 kg · 8kg",
+      "name": "ItalianWay Adult Sterilized Exigent Salmone e Aringhe 8 kg",
       "brand": "Italian Way",
       "category": "crocchette",
       "species": "gatto",
@@ -2542,7 +2542,7 @@
     },
     {
       "product_id": "p-acd424a3220cc81e7cd1",
-      "name": "ItalianWay Medium/Maxi Adult Intestinal Maiale e piselli 12 kg · 12kg",
+      "name": "ItalianWay Medium/Maxi Adult Intestinal Maiale e piselli 12 kg",
       "brand": "Italian Way",
       "category": "crocchette",
       "species": "cane",
@@ -2561,7 +2561,7 @@
     },
     {
       "product_id": "p-e73d9c5874afb07bfa3d",
-      "name": "ItalianWay Cat Sterilized Maiale e piselli 8 kg · 8kg",
+      "name": "ItalianWay Cat Sterilized Maiale e piselli 8 kg",
       "brand": "Italian Way",
       "category": "crocchette",
       "species": "gatto",
@@ -2580,7 +2580,7 @@
     },
     {
       "product_id": "p-f993fc5b30f71402067b",
-      "name": "ItalianWay Cat Sterilized Trota e Mirtilli 8 kg · 8kg",
+      "name": "ItalianWay Cat Sterilized Trota e Mirtilli 8 kg",
       "brand": "Italian Way",
       "category": "crocchette",
       "species": "gatto",
@@ -2599,7 +2599,7 @@
     },
     {
       "product_id": "p-3d09f9a94bd1553aec4d",
-      "name": "Kudo Low Grain Adult Medium/Maxi Adriatic Fish 12 kg · 12kg",
+      "name": "Kudo Low Grain Adult Medium/Maxi Adriatic Fish 12 kg",
       "brand": "Kudo",
       "category": "crocchette",
       "species": "cane",
@@ -2732,7 +2732,7 @@
     },
     {
       "product_id": "p-7288faf6654aa33365e7",
-      "name": "Lily's Kitchen Adult Lamb Shepherd's Pie 7 kg · 7kg",
+      "name": "Lily's Kitchen Adult Lamb Shepherd's Pie 7 kg",
       "brand": "Lily's Kitchen",
       "category": "crocchette",
       "species": "cane",
@@ -2998,7 +2998,7 @@
     },
     {
       "product_id": "p-9c0cd67be848e3fd3166",
-      "name": "Natural Trainer Selected Quality Adult Cat Sterilised Pollo 1,25 kg · 1,25kg",
+      "name": "Natural Trainer Selected Quality Adult Cat Sterilised Pollo 1,25 kg",
       "brand": "Natural Trainer",
       "category": "crocchette",
       "species": "gatto",
@@ -3302,7 +3302,7 @@
     },
     {
       "product_id": "p-484b800fe461529002be",
-      "name": "Naxos Wellness Adult Medium Conca d'oro 12 kg · 12kg",
+      "name": "Naxos Wellness Adult Medium Conca d'oro 12 kg",
       "brand": "Naxos",
       "category": "crocchette",
       "species": "cane",
@@ -3587,7 +3587,7 @@
     },
     {
       "product_id": "p-13695ba433876000a7f8",
-      "name": "Prolife Sensitive Cane Adult Medium/Large Maiale e Riso 10 kg · 10kg",
+      "name": "Prolife Sensitive Cane Adult Medium/Large Maiale e Riso 10 kg",
       "brand": "Prolife",
       "category": "crocchette",
       "species": "cane",
@@ -3625,7 +3625,7 @@
     },
     {
       "product_id": "p-1e5e91ee582aa95a6b21",
-      "name": "Prolife Lifestyle Gatto Adult Salmone e Riso 7 kg · 7kg",
+      "name": "Prolife Lifestyle Gatto Adult Salmone e Riso 7 kg",
       "brand": "Prolife",
       "category": "crocchette",
       "species": "gatto",
@@ -3644,7 +3644,7 @@
     },
     {
       "product_id": "p-1fc86f73706780b33e46",
-      "name": "Prolife Sterilised Cane Sensitive Medium Large Maiale e Riso 12 kg · 12kg",
+      "name": "Prolife Sterilised Cane Sensitive Medium Large Maiale e Riso 12 kg",
       "brand": "Prolife",
       "category": "crocchette",
       "species": "cane",
@@ -3663,7 +3663,7 @@
     },
     {
       "product_id": "p-2440fb40d61ddc682996",
-      "name": "Prolife Lifestyle Gatto Kitten Pollo e Riso 1,5 kg · 1,5kg",
+      "name": "Prolife Lifestyle Gatto Kitten Pollo e Riso 1,5 kg",
       "brand": "Prolife",
       "category": "crocchette",
       "species": "gatto",
@@ -3720,7 +3720,7 @@
     },
     {
       "product_id": "p-699e8cf637c1029f55e3",
-      "name": "Prolife Lifestyle Cane Mature Mini Presce Bianco e Riso 2 kg · 2kg",
+      "name": "Prolife Lifestyle Cane Mature Mini Presce Bianco e Riso 2 kg",
       "brand": "Prolife",
       "category": "crocchette",
       "species": "cane",
@@ -3758,7 +3758,7 @@
     },
     {
       "product_id": "p-7ac60e41fb67b8c9a270",
-      "name": "Prolife Veterinary Formula Intestinal Sensitive Medium/Large 2 kg · 2kg",
+      "name": "Prolife Veterinary Formula Intestinal Sensitive Medium/Large 2 kg",
       "brand": "Prolife",
       "category": "crocchette",
       "species": "cane",
@@ -3796,7 +3796,7 @@
     },
     {
       "product_id": "p-23ab972b70726317cb2d",
-      "name": "Purina Pro Plan Veterinary Diets UR urinary 12 kg · 12kg",
+      "name": "Purina Pro Plan Veterinary Diets UR urinary 12 kg",
       "brand": "Purina Veterinary Diets",
       "category": "crocchette",
       "species": "cane",
@@ -3853,7 +3853,7 @@
     },
     {
       "product_id": "p-03b036923a6f5a4c6596",
-      "name": "Royal Canin Mini Adult 8+ 2 kg · 2kg",
+      "name": "Royal Canin Mini Adult 8+ 2 kg",
       "brand": "Royal Canin",
       "category": "crocchette",
       "species": "cane",
@@ -3891,7 +3891,7 @@
     },
     {
       "product_id": "p-0f47c305f625f953d506",
-      "name": "Royal Canin Veterinary Diet Urinary S/O Small Dog 1,5 kg · 1,5kg",
+      "name": "Royal Canin Veterinary Diet Urinary S/O Small Dog 1,5 kg",
       "brand": "Royal Canin",
       "category": "crocchette",
       "species": "cane",
@@ -3910,7 +3910,7 @@
     },
     {
       "product_id": "p-1012f2a3e5ec3d047c5a",
-      "name": "Royal Canin Mother & Babycat 2 kg · 2kg",
+      "name": "Royal Canin Mother & Babycat 2 kg",
       "brand": "Royal Canin",
       "category": "crocchette",
       "species": "gatto",
@@ -3929,7 +3929,7 @@
     },
     {
       "product_id": "p-3b6f206d393b247c2c09",
-      "name": "Terra Canis secco Canireo Grain Free Selvaggina 2,5 kg · 2,5kg",
+      "name": "Terra Canis secco Canireo Grain Free Selvaggina 2,5 kg",
       "brand": "Terra Canis",
       "category": "crocchette",
       "species": "cane",
@@ -3948,7 +3948,7 @@
     },
     {
       "product_id": "p-588d8ff98afbb2a01447",
-      "name": "Terra Canis Canireo Al Pollo Per Cani · Sacco da 2,5 Kg",
+      "name": "Terra Canis secco Canireo Grain Free al Manzo 2,5 kg",
       "brand": "Terra Canis",
       "category": "crocchette",
       "species": "cane",
@@ -3958,8 +3958,8 @@
       "target_shops": 3,
       "missing_shops": 1,
       "offer_ids": [
-        "paco:4821",
-        "bauzaar:56820052656453"
+        "bauzaar:56820052656453",
+        "paco:4821"
       ],
       "candidate_offer_ids": [],
       "next_action": "find_additional_store",
@@ -4478,7 +4478,7 @@
     },
     {
       "product_id": "p-f0cacd1601b49f287e68",
-      "name": "Marpet Aequilibria Vet Low Grain Dog Mini Maiale 1,5 kg · 1,5kg",
+      "name": "Marpet Aequilibria Vet Low Grain Dog Mini Maiale 1,5 kg",
       "brand": "Aequilibria Vet",
       "category": "crocchette",
       "species": "cane",
@@ -4498,7 +4498,7 @@
     },
     {
       "product_id": "p-748fad58475a4f92bdaa",
-      "name": "AlDog Super premium Adult Medium/Large monoproteico Artica con salmone 12 kg - Crocchette monoproteiche cane · 12kg",
+      "name": "AlDog Super premium Adult Medium/Large monoproteico Artica con salmone 12 kg - Crocchette monoproteiche cane",
       "brand": "AlDog",
       "category": "crocchette",
       "species": "cane",
@@ -4718,7 +4718,7 @@
     },
     {
       "product_id": "p-69ec1c8289b8744283fe",
-      "name": "Amì alimento vegetale Dog Medium/Large Breeds 3 kg (scadenza: 30/10/2026) · 3kg",
+      "name": "Amì alimento vegetale Dog Medium/Large Breeds 3 kg (scadenza: 30/10/2026)",
       "brand": "Amì",
       "category": "crocchette",
       "species": "cane",
@@ -5601,7 +5601,7 @@
     },
     {
       "product_id": "p-0d3c02ce52a8694d3caf",
-      "name": "Edgard & Cooper Adult Medium/Large Grain Free Cervo e Anatra 2,5 kg · 2,5kg",
+      "name": "Edgard & Cooper Adult Medium/Large Grain Free Cervo e Anatra 2,5 kg",
       "brand": "Edgard & Cooper",
       "category": "crocchette",
       "species": "cane",
@@ -5641,7 +5641,7 @@
     },
     {
       "product_id": "p-51785ebbba5d11318492",
-      "name": "Edgard & Cooper Adult Medium/Large Grain Free Agnello 2,5 kg · 2,5kg",
+      "name": "Edgard & Cooper Adult Medium/Large Grain Free Agnello 2,5 kg",
       "brand": "Edgard & Cooper",
       "category": "crocchette",
       "species": "cane",
@@ -5661,7 +5661,7 @@
     },
     {
       "product_id": "p-6acbf147f441266b280a",
-      "name": "Edgard & Cooper Adult Medium/Large Grain Free Pollo 2,5 kg · 2,5kg",
+      "name": "Edgard & Cooper Adult Medium/Large Grain Free Pollo 2,5 kg",
       "brand": "Edgard & Cooper",
       "category": "crocchette",
       "species": "cane",
@@ -5761,7 +5761,7 @@
     },
     {
       "product_id": "p-eddb80028a68f2b0f03c",
-      "name": "Edgard & Cooper Adult Medium/Large Grain Free Salmone 2,5 kg · 2,5kg",
+      "name": "Edgard & Cooper Adult Medium/Large Grain Free Salmone 2,5 kg",
       "brand": "Edgard & Cooper",
       "category": "crocchette",
       "species": "cane",
@@ -5942,7 +5942,7 @@
     },
     {
       "product_id": "p-2bc54726be7d573d0ce2",
-      "name": "Farmina N&D Pumpkin Grain Free Neutered Feline Quaglia Zucca e Melograno 5 kg · 5kg",
+      "name": "Farmina N&D Pumpkin Grain Free Neutered Feline Quaglia Zucca e Melograno 5 kg",
       "brand": "Farmina N&D Pumpkin Grain Free",
       "category": "crocchette",
       "species": "gatto",
@@ -5963,7 +5963,7 @@
     },
     {
       "product_id": "p-165849e47a9d205c4594",
-      "name": "Farmina N&D Grain Free Quinoa Gatto Digestion Agnello 1,5 kg · 1,5kg",
+      "name": "Farmina N&D Grain Free Quinoa Gatto Digestion Agnello 1,5 kg",
       "brand": "Farmina N&D Quinoa Grain Free",
       "category": "crocchette",
       "species": "gatto",
@@ -5983,7 +5983,7 @@
     },
     {
       "product_id": "p-996b74ed329d36c01919",
-      "name": "Farmina N&D Quinoa Feline Urinary Anatra e mirtilli rossi 1,5 kg · 1,5kg",
+      "name": "Farmina N&D Quinoa Feline Urinary Anatra e mirtilli rossi 1,5 kg",
       "brand": "Farmina N&D Quinoa Grain Free",
       "category": "crocchette",
       "species": "gatto",
@@ -6003,7 +6003,7 @@
     },
     {
       "product_id": "p-2a626af2e69f644548a4",
-      "name": "Farmina Vet Life Canine Gastro Intestinal 2 kg · 2kg",
+      "name": "Farmina Vet Life Canine Gastro Intestinal 2 kg",
       "brand": "Farmina Vet Life",
       "category": "crocchette",
       "species": "cane",
@@ -6063,7 +6063,7 @@
     },
     {
       "product_id": "p-ce18b2437ed9ade15317",
-      "name": "Farmina Vet Life Canine Hypoallergenic Pesce & Patate 2 kg · 2kg",
+      "name": "Farmina Vet Life Canine Hypoallergenic Pesce & Patate 2 kg",
       "brand": "Farmina Vet Life",
       "category": "crocchette",
       "species": "cane",
@@ -6124,7 +6124,7 @@
     },
     {
       "product_id": "p-c9d4a5ae5a209357d9a7",
-      "name": "Forza10 Active Cane Dermo 10 kg · 10kg",
+      "name": "Forza10 Active Cane Dermo 10 kg",
       "brand": "Forza10 Active",
       "category": "crocchette",
       "species": "cane",
@@ -6144,7 +6144,7 @@
     },
     {
       "product_id": "p-cfd68deb3568ae24cf58",
-      "name": "Forza10 Active Cane Intestinal Colon Fase 2 10 kg · 10kg",
+      "name": "Forza10 Active Cane Intestinal Colon Fase 2 10 kg",
       "brand": "Forza10 Active",
       "category": "crocchette",
       "species": "cane",
