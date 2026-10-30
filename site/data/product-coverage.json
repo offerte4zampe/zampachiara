@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-10-30T13:55:41.956466+00:00",
+  "generated_at": "2026-10-30T18:15:39.704526+00:00",
   "name_matching": {
-    "evaluated_offers": 16691,
-    "eligible_offers": 8529,
-    "insufficient_characteristics": 8162,
+    "evaluated_offers": 16694,
+    "eligible_offers": 8533,
+    "insufficient_characteristics": 8161,
     "attached_without_gtin": 11
   },
-  "gtin_multi_shop_products": 455,
+  "gtin_multi_shop_products": 456,
   "characteristic_multi_shop_products": 11,
   "store_coverage": {
     "animaliapet": {
-      "offers": 3891,
-      "active_offers": 3879,
+      "offers": 3894,
+      "active_offers": 3882,
       "missing_valid_gtin": 2471,
       "unverified_quantity": 0,
       "sales_unit_only": 1578,
@@ -31,32 +31,32 @@
       "missing_valid_gtin": 1601,
       "unverified_quantity": 0,
       "sales_unit_only": 1356,
-      "offers_in_multishop_products": 126
+      "offers_in_multishop_products": 127
     },
     "paco": {
       "offers": 1199,
       "active_offers": 799,
-      "missing_valid_gtin": 1046,
-      "unverified_quantity": 1046,
-      "sales_unit_only": 1046,
+      "missing_valid_gtin": 1045,
+      "unverified_quantity": 1045,
+      "sales_unit_only": 1045,
       "offers_in_multishop_products": 82
     },
     "webpet": {
       "offers": 1946,
       "active_offers": 1315,
-      "missing_valid_gtin": 1445,
+      "missing_valid_gtin": 1428,
       "unverified_quantity": 0,
       "sales_unit_only": 1666,
-      "offers_in_multishop_products": 42
+      "offers_in_multishop_products": 43
     }
   },
-  "products": 18895,
-  "active_products": 15163,
-  "offers": 16691,
-  "multi_shop_products": 466,
-  "multi_shop_percent": 3.07,
+  "products": 18915,
+  "active_products": 15165,
+  "offers": 16694,
+  "multi_shop_products": 467,
+  "multi_shop_percent": 3.08,
   "denominator": "active canonical products, distinct merchants with verified quantities; GTIN and characteristic matching reported separately; duplicate offers in one shop do not count",
-  "unattached_offers": 6651,
+  "unattached_offers": 6640,
   "candidate_pairs": 99,
   "automatic_match_rules": "GTIN and quantity, or exact normalized name plus brand and verified selling quantity; conflicting GTINs excluded"
 }
