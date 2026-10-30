@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-10-30T13:26:02.127304+00:00",
+  "generated_at": "2026-10-30T13:38:18.481175+00:00",
   "selection_basis": "Operational opportunity and category/brand diversity; no search-demand data used.",
   "target": 300,
   "selected": 300,
   "brand_cap": 15,
-  "at_target": 10,
-  "with_third_store_lead": 24,
+  "at_target": 12,
+  "with_third_store_lead": 28,
   "categories": {
-    "umido": 118,
-    "crocchette": 114,
+    "umido": 130,
+    "crocchette": 108,
     "lettiere": 9,
-    "snack": 59
+    "snack": 53
   },
   "priority_offer_ids": [
     "animaliapet:46976533692759",
@@ -23,26 +23,26 @@
     "animaliapet:46976545522007",
     "animaliapet:46976546013527",
     "animaliapet:46976563413335",
-    "animaliapet:46976566165847",
     "animaliapet:46976569213271",
     "animaliapet:46976572293463",
     "animaliapet:46976573374807",
     "animaliapet:46976574325079",
     "animaliapet:46976574882135",
-    "animaliapet:46976576454999",
-    "animaliapet:46976576815447",
+    "animaliapet:46976577077591",
     "animaliapet:46976577143127",
-    "animaliapet:46976580223319",
+    "animaliapet:46976578158935",
     "animaliapet:46976581173591",
     "animaliapet:46976582451543",
     "animaliapet:46976582713687",
-    "animaliapet:46976583958871",
     "animaliapet:46976584155479",
+    "animaliapet:46976587727191",
     "animaliapet:46976589136215",
     "animaliapet:46976591233367",
     "animaliapet:46976605323607",
+    "animaliapet:46976606044503",
     "animaliapet:46976606241111",
     "animaliapet:46976606372183",
+    "animaliapet:46976607355223",
     "animaliapet:46976607387991",
     "animaliapet:46976607682903",
     "animaliapet:46976615481687",
@@ -50,10 +50,7 @@
     "animaliapet:46976617316695",
     "animaliapet:46976631308631",
     "animaliapet:46976635208023",
-    "animaliapet:46976635306327",
     "animaliapet:46976637894999",
-    "animaliapet:46976639435095",
-    "animaliapet:46976645136727",
     "animaliapet:46976649724247",
     "animaliapet:46976656310615",
     "animaliapet:46976665092439",
@@ -162,7 +159,6 @@
     "bauzaar:56820207452485",
     "bauzaar:56820207911237",
     "bauzaar:56820208042309",
-    "bauzaar:56820208075077",
     "bauzaar:56820214694213",
     "bauzaar:56820215316805",
     "bauzaar:56820220920133",
@@ -173,21 +169,21 @@
     "bauzaar:56820247462213",
     "bauzaar:56820247527749",
     "bauzaar:56820255097157",
+    "bauzaar:56820266139973",
+    "bauzaar:56820266533189",
+    "bauzaar:56820266631493",
     "bauzaar:56820266664261",
+    "bauzaar:56820266697029",
     "bauzaar:56820277117253",
     "bauzaar:56820296057157",
     "bauzaar:56820296581445",
-    "bauzaar:56820299465029",
     "bauzaar:56820299530565",
-    "bauzaar:56820302152005",
+    "bauzaar:56820410843461",
     "bauzaar:56820410941765",
-    "bauzaar:56820411007301",
     "bauzaar:56820411040069",
     "bauzaar:56820411203909",
     "bauzaar:56820418150725",
-    "bauzaar:56820420149573",
     "bauzaar:56820423459141",
-    "bauzaar:56820425916741",
     "bauzaar:56820434469189",
     "bauzaar:56820436042053",
     "bauzaar:56820437320005",
@@ -220,11 +216,11 @@
     "bauzaar:56961120993605",
     "bauzaar:56961121091909",
     "bauzaar:56961143537989",
-    "bauzaar:56961151074629",
     "bauzaar:56961155760453",
     "bauzaar:56961169457477",
     "bauzaar:56961169621317",
     "bauzaar:56961218478405",
+    "bauzaar:56961242104133",
     "bauzaar:56961244922181",
     "bauzaar:56961244987717",
     "bauzaar:56961245217093",
@@ -249,7 +245,6 @@
     "bauzaar:56961730511173",
     "bauzaar:56961731658053",
     "bauzaar:56961733493061",
-    "bauzaar:56961759183173",
     "bauzaar:56961800503621",
     "bauzaar:56961821180229",
     "bauzaar:56961825374533",
@@ -278,9 +273,11 @@
     "bauzaar:56962044821829",
     "bauzaar:56962045804869",
     "bauzaar:56962049474885",
-    "bauzaar:56962086109509",
-    "bauzaar:56962086928709",
-    "bauzaar:56962089255237",
+    "bauzaar:56962081685829",
+    "bauzaar:56962082079045",
+    "bauzaar:56962082439493",
+    "bauzaar:56962082931013",
+    "bauzaar:56962088829253",
     "bauzaar:56962094203205",
     "bauzaar:56962130051397",
     "bauzaar:56962141454661",
@@ -288,8 +285,8 @@
     "bauzaar:56962141552965",
     "bauzaar:56962151481669",
     "bauzaar:57066997449029",
+    "bauzaar:57287394165061",
     "bauzaar:57291899437381",
-    "bauzaar:57291900322117",
     "bauzaar:57296530768197",
     "bauzaar:57296531980613",
     "bauzaar:57296532144453",
@@ -333,6 +330,7 @@
     "bauzaar:58411844305221",
     "bauzaar:58411844337989",
     "bauzaar:58411844370757",
+    "bauzaar:58411845747013",
     "bauzaar:58411845779781",
     "bauzaar:58411847319877",
     "bauzaar:58411847352645",
@@ -351,9 +349,7 @@
     "bauzaar:58411853939013",
     "bauzaar:58411855348037",
     "bauzaar:58411855806789",
-    "bauzaar:58411856232773",
     "bauzaar:58411856265541",
-    "bauzaar:58411856298309",
     "bauzaar:58411857248581",
     "bauzaar:58411857281349",
     "bauzaar:58411857346885",
@@ -361,20 +357,22 @@
     "bauzaar:59551988056389",
     "isola-dei-tesori:000124487",
     "isola-dei-tesori:000124812",
+    "isola-dei-tesori:000126095",
+    "isola-dei-tesori:000126099",
+    "isola-dei-tesori:000126112",
     "isola-dei-tesori:000126290",
     "isola-dei-tesori:000126291",
     "isola-dei-tesori:000126292",
     "isola-dei-tesori:000126343",
     "isola-dei-tesori:000126344",
-    "isola-dei-tesori:000132011",
-    "isola-dei-tesori:000134015",
-    "isola-dei-tesori:000134093",
+    "isola-dei-tesori:000128170",
+    "isola-dei-tesori:000128826",
+    "isola-dei-tesori:000128827",
     "isola-dei-tesori:000134144",
     "isola-dei-tesori:000134149",
     "isola-dei-tesori:000134150",
     "isola-dei-tesori:000136136",
     "isola-dei-tesori:000136205",
-    "isola-dei-tesori:000136206",
     "isola-dei-tesori:000136207",
     "isola-dei-tesori:000138020",
     "isola-dei-tesori:000138021",
@@ -383,6 +381,7 @@
     "isola-dei-tesori:000138213",
     "isola-dei-tesori:000138273",
     "isola-dei-tesori:000138274",
+    "isola-dei-tesori:000138288",
     "isola-dei-tesori:000138318",
     "isola-dei-tesori:000138458",
     "isola-dei-tesori:000138579",
@@ -394,30 +393,33 @@
     "isola-dei-tesori:000138591",
     "isola-dei-tesori:000138592",
     "isola-dei-tesori:000138943",
+    "isola-dei-tesori:000142012",
+    "isola-dei-tesori:000142013",
+    "isola-dei-tesori:000142014",
+    "isola-dei-tesori:000142020",
     "isola-dei-tesori:000142030",
     "isola-dei-tesori:000142031",
     "isola-dei-tesori:000142033",
+    "isola-dei-tesori:000142079",
     "isola-dei-tesori:000142291",
     "isola-dei-tesori:000142292",
     "isola-dei-tesori:000142293",
     "isola-dei-tesori:000142294",
     "isola-dei-tesori:000144181",
     "isola-dei-tesori:000144422",
-    "isola-dei-tesori:000146125",
     "isola-dei-tesori:000150008",
-    "isola-dei-tesori:000150011",
     "isola-dei-tesori:000150032",
     "isola-dei-tesori:000150078",
     "isola-dei-tesori:000150079",
     "isola-dei-tesori:000150080",
     "isola-dei-tesori:000150109",
     "isola-dei-tesori:000150111",
+    "isola-dei-tesori:000150132",
     "isola-dei-tesori:000150139",
     "isola-dei-tesori:000150282",
     "isola-dei-tesori:000150283",
     "isola-dei-tesori:000181083",
     "isola-dei-tesori:000181362",
-    "isola-dei-tesori:000464002",
     "isola-dei-tesori:000503046",
     "isola-dei-tesori:000503051",
     "isola-dei-tesori:000503053",
@@ -432,8 +434,6 @@
     "isola-dei-tesori:000503460",
     "isola-dei-tesori:000503476",
     "isola-dei-tesori:000503537",
-    "isola-dei-tesori:000503538",
-    "isola-dei-tesori:000582552",
     "isola-dei-tesori:000584438",
     "isola-dei-tesori:000584439",
     "isola-dei-tesori:000584440",
@@ -1018,22 +1018,106 @@
       "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
     },
     {
-      "product_id": "p-8556c7fe311de009b9ea",
-      "name": "Royal Canin Veterinary Diet Cat Diabetic 12x85 g",
+      "product_id": "p-45d5b35209504a28eac6",
+      "name": "Royal Canin Cat Kitten Jelly 85 g",
       "brand": "Royal Canin",
       "category": "umido",
       "species": "gatto",
-      "format": "1,02 kg",
-      "url": "https://offerte4zampe.it/prodotto/royal-canin-veterinary-diet-cat-diabetic-12x85-g-09003579011980-09b9ea",
+      "format": "85 g",
+      "url": "https://offerte4zampe.it/prodotto/royal-canin-kitten-in-jelly-85g-bustina-gattini-09003579311714-28eac6",
       "verified_shops": 2,
       "target_shops": 3,
       "missing_shops": 1,
       "offer_ids": [
-        "isola-dei-tesori:000146125",
-        "bauzaar:56962086109509"
+        "isola-dei-tesori:000142020",
+        "animaliapet:46976578158935"
       ],
       "candidate_offer_ids": [
-        "animaliapet:46976645136727"
+        "bauzaar:56962082439493"
+      ],
+      "next_action": "verify_feed_package",
+      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
+    },
+    {
+      "product_id": "p-59d9131ca1e07cc265ba",
+      "name": "Royal Canin Cat Adult Light Weight in Gelatina 85gr",
+      "brand": "Royal Canin",
+      "category": "umido",
+      "species": "gatto",
+      "format": "85 g",
+      "url": "https://offerte4zampe.it/prodotto/royal-canin-weight-light-care-in-salsa-85g-bustine-gatti-09003579308769-c265ba",
+      "verified_shops": 2,
+      "target_shops": 3,
+      "missing_shops": 1,
+      "offer_ids": [
+        "isola-dei-tesori:000142012",
+        "animaliapet:46976607355223"
+      ],
+      "candidate_offer_ids": [
+        "bauzaar:56962082931013"
+      ],
+      "next_action": "verify_feed_package",
+      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
+    },
+    {
+      "product_id": "p-79775abac8a7d73a8a45",
+      "name": "Royal Canin Cat Adult Hair&Skin in Salsa 85gr",
+      "brand": "Royal Canin",
+      "category": "umido",
+      "species": "gatto",
+      "format": "85 g",
+      "url": "https://offerte4zampe.it/prodotto/royal-canin-hair-e-skin-gravy-85g-bustine-gatti-09003579308929-3a8a45",
+      "verified_shops": 2,
+      "target_shops": 3,
+      "missing_shops": 1,
+      "offer_ids": [
+        "isola-dei-tesori:000142013",
+        "animaliapet:46976587727191"
+      ],
+      "candidate_offer_ids": [
+        "bauzaar:56962081685829"
+      ],
+      "next_action": "verify_feed_package",
+      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
+    },
+    {
+      "product_id": "p-89897f2269748ce0b920",
+      "name": "Royal Canin Cat Adult Instinctive Jelly 85 g",
+      "brand": "Royal Canin",
+      "category": "umido",
+      "species": "gatto",
+      "format": "85 g",
+      "url": "https://offerte4zampe.it/prodotto/royal-canin-instinctive-in-jelly-85g-bustine-gatti-09003579309513-e0b920",
+      "verified_shops": 2,
+      "target_shops": 3,
+      "missing_shops": 1,
+      "offer_ids": [
+        "isola-dei-tesori:000142014",
+        "animaliapet:46976606044503"
+      ],
+      "candidate_offer_ids": [
+        "bauzaar:56962082079045"
+      ],
+      "next_action": "verify_feed_package",
+      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
+    },
+    {
+      "product_id": "p-a221c80cc4bce4d10bb8",
+      "name": "Royal Canin Recovery 195g Lattina Cani e Gatti",
+      "brand": "Royal Canin",
+      "category": "umido",
+      "species": "cane e gatto",
+      "format": "195 g",
+      "url": "https://offerte4zampe.it/prodotto/royal-canin-recovery-195g-lattina-cani-e-gatti-09003579307717-d10bb8",
+      "verified_shops": 2,
+      "target_shops": 3,
+      "missing_shops": 1,
+      "offer_ids": [
+        "animaliapet:46976577077591",
+        "isola-dei-tesori:000128170"
+      ],
+      "candidate_offer_ids": [
+        "bauzaar:56962088829253"
       ],
       "next_action": "verify_feed_package",
       "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
@@ -1241,20 +1325,60 @@
       "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
     },
     {
-      "product_id": "p-8f9bf96e4fa221e117f0",
-      "name": "Royal Canin Instinctive in Salsa 85 g",
+      "product_id": "p-5687900b1db97c0d8832",
+      "name": "Royal Canin Veterinary Diet Urinary S/O 410 g",
       "brand": "Royal Canin",
       "category": "umido",
-      "species": "gatto",
-      "format": "85 g",
-      "url": "https://offerte4zampe.it/prodotto/royal-canin-instinctive-in-salsa-85-g-09003579308936-e117f0",
+      "species": "cane",
+      "format": "410 g",
+      "url": "https://offerte4zampe.it/prodotto/royal-canin-urinary-s-o-veterinary-scatoletta-pate-410g-cani-09003579310632-0d8832",
       "verified_shops": 3,
       "target_shops": 3,
       "missing_shops": 0,
       "offer_ids": [
-        "bauzaar:56962082144581",
-        "isola-dei-tesori:000142010",
-        "animaliapet:46976605061463"
+        "bauzaar:56962093252933",
+        "animaliapet:46976664273239",
+        "isola-dei-tesori:000128153"
+      ],
+      "candidate_offer_ids": [],
+      "next_action": "maintain_coverage",
+      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
+    },
+    {
+      "product_id": "p-7d6d19bd93c3f048a04c",
+      "name": "Royal Canin Hepatic 420g Lattina Cani",
+      "brand": "Royal Canin",
+      "category": "umido",
+      "species": "cane",
+      "format": "420 g",
+      "url": "https://offerte4zampe.it/prodotto/royal-canin-hepatic-420g-lattina-cani-09003579309469-48a04c",
+      "verified_shops": 3,
+      "target_shops": 3,
+      "missing_shops": 0,
+      "offer_ids": [
+        "animaliapet:46976578257239",
+        "isola-dei-tesori:000128162",
+        "bauzaar:56962088304965"
+      ],
+      "candidate_offer_ids": [],
+      "next_action": "maintain_coverage",
+      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
+    },
+    {
+      "product_id": "p-84376e7af77da1b7f5aa",
+      "name": "Royal Canin Renal 410g Lattina Cani",
+      "brand": "Royal Canin",
+      "category": "umido",
+      "species": "cane",
+      "format": "410 g",
+      "url": "https://offerte4zampe.it/prodotto/royal-canin-renal-410g-lattina-cani-09003579000748-b7f5aa",
+      "verified_shops": 3,
+      "target_shops": 3,
+      "missing_shops": 0,
+      "offer_ids": [
+        "animaliapet:46976582615383",
+        "bauzaar:56962089058629",
+        "isola-dei-tesori:000128166"
       ],
       "candidate_offer_ids": [],
       "next_action": "maintain_coverage",
@@ -1622,44 +1746,6 @@
       "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
     },
     {
-      "product_id": "p-56587ba5352153c976c3",
-      "name": "Camon Biscotti Animaletti 500 g",
-      "brand": "Camon",
-      "category": "snack",
-      "species": "cane",
-      "format": "500 g",
-      "url": "https://offerte4zampe.it/prodotto/camon-biscotti-animaletti-500-g-08019808044156-c976c3",
-      "verified_shops": 2,
-      "target_shops": 3,
-      "missing_shops": 1,
-      "offer_ids": [
-        "isola-dei-tesori:000134093",
-        "bauzaar:56961151074629"
-      ],
-      "candidate_offer_ids": [],
-      "next_action": "find_additional_store",
-      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
-    },
-    {
-      "product_id": "p-1cdea516bb8242a42529",
-      "name": "Catisfactions Snack per Gatto con Tacchino 60 g",
-      "brand": "Catisfactions",
-      "category": "snack",
-      "species": "gatto",
-      "format": "60 g",
-      "url": "https://offerte4zampe.it/prodotto/catisfactions-snack-per-gatto-bustina-60-g-tacchino-05998749133392-a42529",
-      "verified_shops": 2,
-      "target_shops": 3,
-      "missing_shops": 1,
-      "offer_ids": [
-        "isola-dei-tesori:000503538",
-        "bauzaar:56820411007301"
-      ],
-      "candidate_offer_ids": [],
-      "next_action": "find_additional_store",
-      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
-    },
-    {
       "product_id": "p-254ab8509fc139b9fd58",
       "name": "Catisfactions Snack per Gatto con Anatra 60 g",
       "brand": "Catisfactions",
@@ -1717,6 +1803,25 @@
       "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
     },
     {
+      "product_id": "p-a5512cc47570c8bf4b51",
+      "name": "Catisfactions Snack per Gatto con Erba Gatta 60 g",
+      "brand": "Catisfactions",
+      "category": "snack",
+      "species": "gatto",
+      "format": "60 g",
+      "url": "https://offerte4zampe.it/prodotto/catisfactions-snack-per-gatto-bustina-60-g-erba-gatta-05998749142417-bf4b51",
+      "verified_shops": 2,
+      "target_shops": 3,
+      "missing_shops": 1,
+      "offer_ids": [
+        "isola-dei-tesori:000150132",
+        "bauzaar:56820410843461"
+      ],
+      "candidate_offer_ids": [],
+      "next_action": "find_additional_store",
+      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
+    },
+    {
       "product_id": "p-e458d8495f72f40d4892",
       "name": "Dag Dog Adult Snack Mix Cuoricini 120gr",
       "brand": "Dag",
@@ -1730,6 +1835,25 @@
       "offer_ids": [
         "isola-dei-tesori:000138943",
         "bauzaar:56961218478405"
+      ],
+      "candidate_offer_ids": [],
+      "next_action": "find_additional_store",
+      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
+    },
+    {
+      "product_id": "p-618c784e1f24fc40fa0e",
+      "name": "DRN Cane Enterofilus WD 400 g",
+      "brand": "DRN",
+      "category": "umido",
+      "species": "cane",
+      "format": "400 g",
+      "url": "https://offerte4zampe.it/prodotto/drn-enterofilus-wet-diet-400-g-08032644300705-40fa0e",
+      "verified_shops": 2,
+      "target_shops": 3,
+      "missing_shops": 1,
+      "offer_ids": [
+        "isola-dei-tesori:000128826",
+        "bauzaar:56961242104133"
       ],
       "candidate_offer_ids": [],
       "next_action": "find_additional_store",
@@ -2401,25 +2525,6 @@
       "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
     },
     {
-      "product_id": "p-1f249367199c05c410ae",
-      "name": "Restomyl Dentalcroc Snack per l'alitosi Innovet 60 g Cane",
-      "brand": "Innovet",
-      "category": "snack",
-      "species": "cane",
-      "format": "60 g",
-      "url": "https://offerte4zampe.it/prodotto/restomyl-dentalcroc-snack-per-l-alitosi-innovet-60-g-cane-08021676020743-c410ae",
-      "verified_shops": 2,
-      "target_shops": 3,
-      "missing_shops": 1,
-      "offer_ids": [
-        "bauzaar:56820425916741",
-        "isola-dei-tesori:000132011"
-      ],
-      "candidate_offer_ids": [],
-      "next_action": "find_additional_store",
-      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
-    },
-    {
       "product_id": "p-a7ae7876081f2d196a01",
       "name": "ItalianWay Adult Sterilized Exigent Salmone e Aringhe 8 kg · 8kg",
       "brand": "Italian Way",
@@ -2623,25 +2728,6 @@
       "offer_ids": [
         "paco:6076",
         "bauzaar:56961733493061"
-      ],
-      "candidate_offer_ids": [],
-      "next_action": "find_additional_store",
-      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
-    },
-    {
-      "product_id": "p-09f4b49b30c54ad5e268",
-      "name": "Lily's Kitchen Breakfast Crunch 800 g",
-      "brand": "Lily's Kitchen",
-      "category": "snack",
-      "species": "cane",
-      "format": "800 g",
-      "url": "https://offerte4zampe.it/prodotto/lily-s-kitchen-breakfast-crunch-800-g-05060184240635-d5e268",
-      "verified_shops": 2,
-      "target_shops": 3,
-      "missing_shops": 1,
-      "offer_ids": [
-        "bauzaar:56961759183173",
-        "isola-dei-tesori:000134015"
       ],
       "candidate_offer_ids": [],
       "next_action": "find_additional_store",
@@ -3845,120 +3931,6 @@
       "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
     },
     {
-      "product_id": "p-1060728f934672e4fa56",
-      "name": "Royal Canin Feline Hairball Care 400 g · 0,4kg",
-      "brand": "Royal Canin",
-      "category": "crocchette",
-      "species": "gatto",
-      "format": "400 g",
-      "url": "https://offerte4zampe.it/prodotto/royal-canin-feline-hairball-care-400-g-0-4kg-03182550721394-e4fa56",
-      "verified_shops": 2,
-      "target_shops": 3,
-      "missing_shops": 1,
-      "offer_ids": [
-        "bauzaar:56820420149573",
-        "animaliapet:46976583958871"
-      ],
-      "candidate_offer_ids": [],
-      "next_action": "find_additional_store",
-      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
-    },
-    {
-      "product_id": "p-11088e1dc3dabc401f25",
-      "name": "Royal Canin Veterinary Diet Renal Canine 1,5 kg · 1,5kg",
-      "brand": "Royal Canin",
-      "category": "crocchette",
-      "species": "cane",
-      "format": "1,5 kg",
-      "url": "https://offerte4zampe.it/prodotto/royal-canin-renal-small-dog-1-5kg-crocchette-cani-mini-adult-03182550915359-401f25",
-      "verified_shops": 2,
-      "target_shops": 3,
-      "missing_shops": 1,
-      "offer_ids": [
-        "bauzaar:56962089255237",
-        "animaliapet:46976639435095"
-      ],
-      "candidate_offer_ids": [],
-      "next_action": "find_additional_store",
-      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
-    },
-    {
-      "product_id": "p-1644bfcc6ef9f617e78b",
-      "name": "Royal Canin Gastroinstestinal Fibre Response 2Kg Crocchette Gatti",
-      "brand": "Royal Canin",
-      "category": "crocchette",
-      "species": "gatto",
-      "format": "2 kg",
-      "url": "https://offerte4zampe.it/prodotto/royal-canin-gastroinstestinal-fibre-response-2kg-crocchette-gatti-03182550771337-17e78b",
-      "verified_shops": 2,
-      "target_shops": 3,
-      "missing_shops": 1,
-      "offer_ids": [
-        "animaliapet:46976576454999",
-        "bauzaar:56820299465029"
-      ],
-      "candidate_offer_ids": [],
-      "next_action": "find_additional_store",
-      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
-    },
-    {
-      "product_id": "p-20ea83315aef1c5750c3",
-      "name": "Royal Canin Urinary S/O 1,5Kg Crocchette Gatti Adulti",
-      "brand": "Royal Canin",
-      "category": "crocchette",
-      "species": "gatto",
-      "format": "1,5 kg",
-      "url": "https://offerte4zampe.it/prodotto/royal-canin-urinary-s-o-1-5kg-crocchette-gatti-adulti-03182550711159-5750c3",
-      "verified_shops": 2,
-      "target_shops": 3,
-      "missing_shops": 1,
-      "offer_ids": [
-        "animaliapet:46976576815447",
-        "bauzaar:57291900322117"
-      ],
-      "candidate_offer_ids": [],
-      "next_action": "find_additional_store",
-      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
-    },
-    {
-      "product_id": "p-2317a113a614bd4f1821",
-      "name": "Royal Canin Gastrointestinal High Fiber 2Kg Crocchette Cani",
-      "brand": "Royal Canin",
-      "category": "crocchette",
-      "species": "cane",
-      "format": "2 kg",
-      "url": "https://offerte4zampe.it/prodotto/royal-canin-gastrointestinal-high-fiber-2kg-crocchette-cani-03182550771207-4f1821",
-      "verified_shops": 2,
-      "target_shops": 3,
-      "missing_shops": 1,
-      "offer_ids": [
-        "animaliapet:46976635306327",
-        "bauzaar:56962086928709"
-      ],
-      "candidate_offer_ids": [],
-      "next_action": "find_additional_store",
-      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
-    },
-    {
-      "product_id": "p-295349362061be2ef801",
-      "name": "Royal Canin Diabetic 1,5Kg Crocchette Gatti",
-      "brand": "Royal Canin",
-      "category": "crocchette",
-      "species": "gatto",
-      "format": "1,5 kg",
-      "url": "https://offerte4zampe.it/prodotto/royal-canin-diabetic-1-5kg-crocchette-gatti-03182550711166-2ef801",
-      "verified_shops": 2,
-      "target_shops": 3,
-      "missing_shops": 1,
-      "offer_ids": [
-        "animaliapet:46976580223319",
-        "bauzaar:56820302152005"
-      ],
-      "candidate_offer_ids": [],
-      "next_action": "find_additional_store",
-      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
-    },
-    {
       "product_id": "p-3b6f206d393b247c2c09",
       "name": "Terra Canis secco Canireo Grain Free Selvaggina 2,5 kg · 2,5kg",
       "brand": "Terra Canis",
@@ -4029,25 +4001,6 @@
       "offer_ids": [
         "animaliapet:46976563413335",
         "bauzaar:56962141454661"
-      ],
-      "candidate_offer_ids": [],
-      "next_action": "find_additional_store",
-      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
-    },
-    {
-      "product_id": "p-dc5cece68a065f2a85e6",
-      "name": "Trixie Dog Soft Snack Dog'o'Rado 500 g",
-      "brand": "Trixie",
-      "category": "snack",
-      "species": "cane",
-      "format": "500 g",
-      "url": "https://offerte4zampe.it/prodotto/trixie-soft-snack-dog-o-rado-500g-snack-per-cani-04011905315225-2a85e6",
-      "verified_shops": 2,
-      "target_shops": 3,
-      "missing_shops": 1,
-      "offer_ids": [
-        "isola-dei-tesori:000464002",
-        "animaliapet:46976566165847"
       ],
       "candidate_offer_ids": [],
       "next_action": "find_additional_store",
@@ -4427,6 +4380,46 @@
       "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
     },
     {
+      "product_id": "p-204947660e3b4d3a5e56",
+      "name": "Marpet Aequilibria Vet dietetico umido cane 400 g Maiale - confezione da 6 pezzi",
+      "brand": "Aequilibria Vet",
+      "category": "umido",
+      "species": "cane",
+      "format": "2,4 kg",
+      "url": "https://offerte4zampe.it/prodotto/marpet-aequilibria-vet-dietetico-umido-cane-400-g-maiale-confezione-da-6-pezzi-08031701212722-3a5e56",
+      "verified_shops": 1,
+      "target_shops": 3,
+      "missing_shops": 2,
+      "offer_ids": [
+        "bauzaar:56820266533189"
+      ],
+      "candidate_offer_ids": [
+        "isola-dei-tesori:000126112"
+      ],
+      "next_action": "verify_feed_package",
+      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
+    },
+    {
+      "product_id": "p-46253037d4351aa9149b",
+      "name": "Marpet Aequilibria Vet dietetico umido cane 400 g Coniglio - confezione da 6 pezzi",
+      "brand": "Aequilibria Vet",
+      "category": "umido",
+      "species": "cane",
+      "format": "2,4 kg",
+      "url": "https://offerte4zampe.it/prodotto/marpet-aequilibria-vet-dietetico-umido-cane-400-g-coniglio-confezione-da-6-pezzi-08031701212524-a9149b",
+      "verified_shops": 1,
+      "target_shops": 3,
+      "missing_shops": 2,
+      "offer_ids": [
+        "bauzaar:56820266697029"
+      ],
+      "candidate_offer_ids": [
+        "isola-dei-tesori:000126099"
+      ],
+      "next_action": "verify_feed_package",
+      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
+    },
+    {
       "product_id": "p-71d432677e06ad67dd34",
       "name": "Marpet Aequilibria Vet dietetico umido cane 400 g Cavallo - confezione da 6 pezzi",
       "brand": "Aequilibria Vet",
@@ -4442,6 +4435,46 @@
       ],
       "candidate_offer_ids": [
         "paco:2119"
+      ],
+      "next_action": "verify_feed_package",
+      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
+    },
+    {
+      "product_id": "p-810ae28dfe87fe207887",
+      "name": "Marpet Aequilibria Vet dietetico umido gatto 85 g Anatra - confezione da 24 pezzi",
+      "brand": "Aequilibria Vet",
+      "category": "umido",
+      "species": "gatto",
+      "format": "2,04 kg",
+      "url": "https://offerte4zampe.it/prodotto/marpet-aequilibria-vet-dietetico-umido-gatto-85-g-anatra-confezione-da-24-pezzi-08031701202013-207887",
+      "verified_shops": 1,
+      "target_shops": 3,
+      "missing_shops": 2,
+      "offer_ids": [
+        "bauzaar:56820266139973"
+      ],
+      "candidate_offer_ids": [
+        "isola-dei-tesori:000142079"
+      ],
+      "next_action": "verify_feed_package",
+      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
+    },
+    {
+      "product_id": "p-c1bc251052b121a7b91e",
+      "name": "Marpet Aequilibria Vet dietetico umido cane 400 g Anatra - confezione da 6 pezzi",
+      "brand": "Aequilibria Vet",
+      "category": "umido",
+      "species": "cane",
+      "format": "2,4 kg",
+      "url": "https://offerte4zampe.it/prodotto/marpet-aequilibria-vet-dietetico-umido-cane-400-g-anatra-confezione-da-6-pezzi-08031701212029-a7b91e",
+      "verified_shops": 1,
+      "target_shops": 3,
+      "missing_shops": 2,
+      "offer_ids": [
+        "bauzaar:56820266631493"
+      ],
+      "candidate_offer_ids": [
+        "isola-dei-tesori:000126095"
       ],
       "next_action": "verify_feed_package",
       "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
@@ -5310,21 +5343,21 @@
       "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
     },
     {
-      "product_id": "p-d80cdb848bacde7d3c8a",
-      "name": "Dentalife Snack Dog Medium 15 pz 345 g",
+      "product_id": "p-8cfc23069c73d3035333",
+      "name": "Dentalife Snack Dog Large 4 pz 142 g",
       "brand": "Dentalife",
       "category": "snack",
       "species": "cane",
-      "format": "15 pezzi",
-      "url": "https://offerte4zampe.it/prodotto/dentalife-snack-dog-medium-15-pz-345-g-07613035379916-7d3c8a",
+      "format": "4 pezzi",
+      "url": "https://offerte4zampe.it/prodotto/dentalife-snack-dog-large-4-pz-142-g-07613035378636-035333",
       "verified_shops": 1,
       "target_shops": 3,
       "missing_shops": 2,
       "offer_ids": [
-        "isola-dei-tesori:000136206"
+        "isola-dei-tesori:000138288"
       ],
       "candidate_offer_ids": [
-        "bauzaar:56820208075077"
+        "bauzaar:58411845747013"
       ],
       "next_action": "verify_feed_package",
       "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
@@ -5445,6 +5478,26 @@
       ],
       "candidate_offer_ids": [
         "paco:5268"
+      ],
+      "next_action": "verify_feed_package",
+      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
+    },
+    {
+      "product_id": "p-66be2699d83509a75455",
+      "name": "DRN Cane Epato WD 400 g",
+      "brand": "DRN",
+      "category": "umido",
+      "species": "cane",
+      "format": "400 g",
+      "url": "https://offerte4zampe.it/prodotto/drn-cane-epato-wd-400-g-08032644300798-a75455",
+      "verified_shops": 1,
+      "target_shops": 3,
+      "missing_shops": 2,
+      "offer_ids": [
+        "isola-dei-tesori:000128827"
+      ],
+      "candidate_offer_ids": [
+        "bauzaar:57287394165061"
       ],
       "next_action": "verify_feed_package",
       "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
@@ -6386,46 +6439,6 @@
       ],
       "candidate_offer_ids": [
         "isola-dei-tesori:000138153"
-      ],
-      "next_action": "verify_feed_package",
-      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
-    },
-    {
-      "product_id": "p-a1ede35b91bd1b402ffe",
-      "name": "Joki Plus Gatto Sterilizzato 15 g.",
-      "brand": "Joki Plus",
-      "category": "snack",
-      "species": "gatto",
-      "format": "15 g",
-      "url": "https://offerte4zampe.it/prodotto/joki-plus-gatto-sterilizzato-15-g-08000560784510-402ffe",
-      "verified_shops": 1,
-      "target_shops": 3,
-      "missing_shops": 2,
-      "offer_ids": [
-        "isola-dei-tesori:000582552"
-      ],
-      "candidate_offer_ids": [
-        "bauzaar:58411856298309"
-      ],
-      "next_action": "verify_feed_package",
-      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
-    },
-    {
-      "product_id": "p-a7499a1cc3761472343a",
-      "name": "Joki Plus 15 g manzo",
-      "brand": "Joki Plus",
-      "category": "snack",
-      "species": "gatto",
-      "format": "15 g",
-      "url": "https://offerte4zampe.it/prodotto/joki-plus-15-g-manzo-08000560781397-72343a",
-      "verified_shops": 1,
-      "target_shops": 3,
-      "missing_shops": 2,
-      "offer_ids": [
-        "isola-dei-tesori:000150011"
-      ],
-      "candidate_offer_ids": [
-        "bauzaar:58411856232773"
       ],
       "next_action": "verify_feed_package",
       "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."

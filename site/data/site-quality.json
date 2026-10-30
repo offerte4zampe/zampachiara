@@ -1,7 +1,7 @@
 {
   "method_version": 2,
-  "observed_at": "2026-10-30T13:26:02.127304+00:00",
-  "pages_scanned": 489,
+  "observed_at": "2026-10-30T13:38:18.481175+00:00",
+  "pages_scanned": 499,
   "indexable_pages": 42,
   "unique_canonicals": 42,
   "issues": [],
@@ -226,37 +226,37 @@
     {
       "page": "prezzi-00744845401126-0a8eaaa492.html",
       "indexable": false,
-      "canonical": "https://offerte4zampe.it/prodotto/oxbow-mangime-essentials-chinchilla-1-36-kg-00744845401126-debb11",
+      "canonical": "https://offerte4zampe.it/prezzi-00744845401126-0a8eaaa492",
       "issues": []
     },
     {
       "page": "prezzi-00744845402291-e61d3960d1.html",
       "indexable": false,
-      "canonical": "https://offerte4zampe.it/prodotto/oxbow-western-timothy-2-25-kg-mangime-per-conigli-00744845402291-3e7141",
+      "canonical": "https://offerte4zampe.it/prezzi-00744845402291-e61d3960d1",
       "issues": []
     },
     {
       "page": "prezzi-00744845402758-d92434dbb5.html",
       "indexable": false,
-      "canonical": "https://offerte4zampe.it/prodotto/oxbow-fieno-western-timothy-1-130-kg-00744845402758-74662a",
+      "canonical": "https://offerte4zampe.it/prezzi-00744845402758-d92434dbb5",
       "issues": []
     },
     {
       "page": "prezzi-00744845402888-93cf77763c.html",
       "indexable": false,
-      "canonical": "https://offerte4zampe.it/prodotto/oxbow-mangime-essentials-adult-rabbit-2-27-kg-00744845402888-a8cdc4",
+      "canonical": "https://offerte4zampe.it/prezzi-00744845402888-93cf77763c",
       "issues": []
     },
     {
       "page": "prezzi-00744845402963-3681c2436d.html",
       "indexable": false,
-      "canonical": "https://offerte4zampe.it/prodotto/oxbow-fieno-orchard-grass-1-13-kg-00744845402963-5bfef3",
+      "canonical": "https://offerte4zampe.it/prezzi-00744845402963-3681c2436d",
       "issues": []
     },
     {
       "page": "prezzi-00744845931241-b2332b957b.html",
       "indexable": false,
-      "canonical": "https://offerte4zampe.it/prodotto/oxbow-critical-care-fine-grind-100-g-00744845931241-de97ac",
+      "canonical": "https://offerte4zampe.it/prezzi-00744845931241-b2332b957b",
       "issues": []
     },
     {
@@ -466,7 +466,7 @@
     {
       "page": "prezzi-04002064201863-73a3337ba0.html",
       "indexable": false,
-      "canonical": "https://offerte4zampe.it/prezzi-04002064201863-73a3337ba0",
+      "canonical": "https://offerte4zampe.it/prodotto/gimbi-drops-snack-per-roditori-grain-free-50-g-tarassaco-mangime-per-conigli-04002064201863-782907",
       "issues": []
     },
     {
@@ -580,7 +580,7 @@
     {
       "page": "prezzi-04018761250257-ee0378ce97.html",
       "indexable": false,
-      "canonical": "https://offerte4zampe.it/prezzi-04018761250257-ee0378ce97",
+      "canonical": "https://offerte4zampe.it/prodotto/bunny-sogno-per-conigli-basic-1-5-kg-mangime-per-conigli-1-5kg-04018761250257-c80c65",
       "issues": []
     },
     {
@@ -736,7 +736,7 @@
     {
       "page": "prezzi-05060184240635-795bc192b7.html",
       "indexable": false,
-      "canonical": "https://offerte4zampe.it/prodotto/lily-s-kitchen-breakfast-crunch-800-g-05060184240635-d5e268",
+      "canonical": "https://offerte4zampe.it/prezzi-05060184240635-795bc192b7",
       "issues": []
     },
     {
@@ -2380,7 +2380,7 @@
     {
       "page": "prezzi-08019808044156-ac25b43400.html",
       "indexable": false,
-      "canonical": "https://offerte4zampe.it/prodotto/camon-biscotti-animaletti-500-g-08019808044156-c976c3",
+      "canonical": "https://offerte4zampe.it/prezzi-08019808044156-ac25b43400",
       "issues": []
     },
     {
@@ -2428,7 +2428,7 @@
     {
       "page": "prezzi-08021676020743-687fea351e.html",
       "indexable": false,
-      "canonical": "https://offerte4zampe.it/prodotto/restomyl-dentalcroc-snack-per-l-alitosi-innovet-60-g-cane-08021676020743-c410ae",
+      "canonical": "https://offerte4zampe.it/prezzi-08021676020743-687fea351e",
       "issues": []
     },
     {
@@ -2440,7 +2440,7 @@
     {
       "page": "prezzi-08025767002014-3ee9a2274d.html",
       "indexable": false,
-      "canonical": "https://offerte4zampe.it/prodotto/candioli-forbid-50-g-08025767002014-80dd84",
+      "canonical": "https://offerte4zampe.it/prezzi-08025767002014-3ee9a2274d",
       "issues": []
     },
     {
@@ -2465,6 +2465,12 @@
       "page": "prezzi-08032611678004-5cf19c80ab.html",
       "indexable": false,
       "canonical": "https://offerte4zampe.it/prodotto/petup-lettiera-bentonite-8-kg-08032611678004-9cc208",
+      "issues": []
+    },
+    {
+      "page": "prezzi-08032644300705-3e604a51a2.html",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/drn-enterofilus-wet-diet-400-g-08032644300705-40fa0e",
       "issues": []
     },
     {
@@ -2770,7 +2776,7 @@
     {
       "page": "prezzi-08445290041074-dae8b10f3c.html",
       "indexable": false,
-      "canonical": "https://offerte4zampe.it/prodotto/purina-proplan-fortiflora-probiotic-per-cani-30-pz-x-1-g-08445290041074-0932c6",
+      "canonical": "https://offerte4zampe.it/prezzi-08445290041074-dae8b10f3c",
       "issues": []
     },
     {
@@ -2810,6 +2816,18 @@
       "issues": []
     },
     {
+      "page": "prezzi-09003579000748-515fc986a2.html",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/royal-canin-renal-410g-lattina-cani-09003579000748-b7f5aa",
+      "issues": []
+    },
+    {
+      "page": "prezzi-09003579008218-7ed548f7f3.html",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/royal-canin-mini-puppy-85g-bustina-cani-cuccioli-09003579008218-929b3b",
+      "issues": []
+    },
+    {
       "page": "prezzi-09003579008379-34fa74b593.html",
       "indexable": false,
       "canonical": "https://offerte4zampe.it/prodotto/royal-canin-dog-medium-adult-140-g-09003579008379-79e8ea",
@@ -2818,7 +2836,7 @@
     {
       "page": "prezzi-09003579011980-ca5a0794dd.html",
       "indexable": false,
-      "canonical": "https://offerte4zampe.it/prodotto/royal-canin-veterinary-diet-cat-diabetic-12x85-g-09003579011980-09b9ea",
+      "canonical": "https://offerte4zampe.it/prezzi-09003579011980-ca5a0794dd",
       "issues": []
     },
     {
@@ -2828,21 +2846,63 @@
       "issues": []
     },
     {
+      "page": "prezzi-09003579308769-a631564d5c.html",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/royal-canin-weight-light-care-in-salsa-85g-bustine-gatti-09003579308769-c265ba",
+      "issues": []
+    },
+    {
+      "page": "prezzi-09003579308929-7be7058d93.html",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/royal-canin-hair-e-skin-gravy-85g-bustine-gatti-09003579308929-3a8a45",
+      "issues": []
+    },
+    {
       "page": "prezzi-09003579308936-4c3e3bb31e.html",
       "indexable": false,
       "canonical": "https://offerte4zampe.it/prodotto/royal-canin-instinctive-in-salsa-85-g-09003579308936-e117f0",
       "issues": []
     },
     {
+      "page": "prezzi-09003579309469-8862d8d548.html",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/royal-canin-hepatic-420g-lattina-cani-09003579309469-48a04c",
+      "issues": []
+    },
+    {
       "page": "prezzi-09003579309513-25024223e6.html",
       "indexable": false,
-      "canonical": "https://offerte4zampe.it/prezzi-09003579309513-25024223e6",
+      "canonical": "https://offerte4zampe.it/prodotto/royal-canin-instinctive-in-jelly-85g-bustine-gatti-09003579309513-e0b920",
+      "issues": []
+    },
+    {
+      "page": "prezzi-09003579310632-40fabb66ed.html",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/royal-canin-urinary-s-o-veterinary-scatoletta-pate-410g-cani-09003579310632-0d8832",
       "issues": []
     },
     {
       "page": "prezzi-09003579311301-d2c44e3018.html",
       "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-09003579311301-d2c44e3018",
+      "issues": []
+    },
+    {
+      "page": "prezzi-09003579311615-2d40e07ae7.html",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/royal-canin-veterinary-diet-hypoallergenic-umido-cane-200-g-09003579311615-c9a118",
+      "issues": []
+    },
+    {
+      "page": "prezzi-09003579311714-a3a77c752c.html",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/royal-canin-kitten-in-jelly-85g-bustina-gattini-09003579311714-28eac6",
+      "issues": []
+    },
+    {
+      "page": "prezzi-09003579311721-5e8fe17543.html",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/royal-canin-hair-e-skin-jelly-85g-bustine-gatti-09003579311721-c4ebed",
       "issues": []
     },
     {
