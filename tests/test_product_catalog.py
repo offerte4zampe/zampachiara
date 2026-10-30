@@ -89,6 +89,21 @@ class CanonicalProductTests(unittest.TestCase):
         generic=dict(a,title='Acana Adult Pollo 2 kg')
         self.assertEqual(self.model([generic,dict(generic,id='b:1',merchant_id='b')])['metrics']['multi_shop_products'],0)
 
+    def test_translated_tokens_keep_recipe_and_life_stage_distinct(self):
+        a=dict(self.a,title='Acana Heritage Prairie Chicken Adult Dog 2 kg',variant='',gtin='')
+        b=dict(a,id='b:1',merchant_id='b',title='Acana Heritage Prairie Pollo Adulto Cane 2 kg')
+        self.assertEqual(self.model([a,b])['metrics']['multi_shop_products'],1)
+        for title in ['Acana Heritage Prairie Agnello Adulto Cane 2 kg',
+                      'Acana Heritage Prairie Pollo Puppy Cane 2 kg',
+                      'Acana Heritage Prairie Pollo Adulto Gatto 2 kg']:
+            self.assertEqual(self.model([a,dict(b,title=title)])['metrics']['multi_shop_products'],0)
+
+    def test_specific_short_line_matches_without_relaxing_generic_names(self):
+        a=dict(self.a,title='Vitakraft Strisce Prosciutto 80 g',brand='Vitakraft',variant='',gtin='',weight_kg=.08)
+        b=dict(a,id='b:1',merchant_id='b',title='Vitakraft Strisce 80 g Prosciutto')
+        self.assertEqual(self.model([a,b])['metrics']['multi_shop_products'],1)
+        self.assertEqual(self.model([a,dict(b,title='Vitakraft Strisce Coniglio 80 g')])['metrics']['multi_shop_products'],0)
+
     def test_missing_gtin_does_not_bridge_conflicting_valid_gtins(self):
         a=dict(self.a,title='Acana Heritage Prairie Poultry Adult 2 kg',variant='')
         b=dict(a,id='b:1',merchant_id='b',gtin='5901234123457')

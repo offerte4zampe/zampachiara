@@ -7,6 +7,16 @@ except ImportError:
  from package_integrity import pack_count
 
 
+# Only lexical equivalents: line names, recipes, ages and package markers remain.
+TOKEN_EQUIVALENTS = {
+    'dogs':'cane', 'dog':'cane', 'cani':'cane',
+    'cats':'gatto', 'cat':'gatto', 'gatti':'gatto',
+    'adulti':'adult', 'adulto':'adult', 'adulta':'adult',
+    'chicken':'pollo', 'salmon':'salmone', 'lamb':'agnello',
+    'beef':'manzo', 'tuna':'tonno', 'rabbit':'coniglio',
+    'duck':'anatra', 'turkey':'tacchino', 'rice':'riso',
+}
+
 def signature(o,q,normalize,brand):
     if not q['verified'] or q['kind']=='sales_unit':return None
     b=normalize(brand(o.get('brand','')))
@@ -19,10 +29,11 @@ def signature(o,q,normalize,brand):
     text=re.sub(r'(?<!\w)\d+(?:[.,]\d+)?\s*(?:kg|gr|g|ml|litri|litro|lt|l)\b',' ',text,flags=re.I)
     text=re.sub(r'\bconfezione\s+da\s+\d+\s*(?:pezzi|pz)\b',' ',text,flags=re.I)
     tokens=set(normalize(text).split())-set(b.split())
+    tokens={TOKEN_EQUIVALENTS.get(t,t) for t in tokens}
     tokens-={'per','con','di','da','e','il','la','le','in','al','alla','del','dei','the','for','with'}
     generic={'adult','adulto','adulti','cane','cani','dog','dogs','gatto','gatti','cat','cats','cibo','secco','umido','crocchette','croccantini','food','pollo','salmone','agnello','manzo','tonno','pesce','riso'}
     # Generic brand + adult + recipe is insufficient to identify a product line.
-    if len(tokens)<3 or len(tokens-generic)<2:return None
+    if len(tokens)<2 or len(tokens-generic)<2:return None
     return json.dumps([b,q['kind'],q['value'],q.get('pieces'),pack_count(o.get('title','')),sorted(tokens)],ensure_ascii=False,separators=(',',':'))
 
 
