@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Amazon",
+    "affiliate": true,
+    "network": "Amazon"
+  },
+  {
+    "name": "Bauzaar",
+    "affiliate": true,
+    "network": "TradeTracker"
+  },
+  {
+    "name": "Isola dei Tesori",
+    "affiliate": true,
+    "network": "TradeTracker"
+  },
+  {
+    "name": "Paco Pet Shop",
+    "affiliate": true,
+    "network": "TradeTracker"
+  },
+  {
+    "name": "WebPet",
+    "affiliate": false,
+    "network": null
+  },
+  {
+    "name": "Animaliapet",
+    "affiliate": false,
+    "network": null
+  }
+]
