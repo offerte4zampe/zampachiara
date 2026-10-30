@@ -69,8 +69,9 @@ function groupOffers(rows,now=Date.now()){
 }
 // Preserve the feed URL byte-for-byte; never reconstruct affiliate parameters.
 function merchantUrl(o){const value=o.affiliate_url||o.url;try{const u=new URL(value);return u.protocol==='https:'&&!u.username&&!u.password&&!/[\u0000-\u0020\u007f]/.test(value)?value:''}catch{return ''}}
+function productUrl(o){return /^[a-z0-9-]{1,200}$/.test(o.product_slug||'')?'/prodotto/'+o.product_slug:'/prodotto.html?'+new URLSearchParams({id:o.id})}
 function goUrl(o,page='other'){return '/go/'+encodeURIComponent(o.id)+'?from='+(['home','catalog','product','basket','other'].includes(page)?page:'other')}
 function reportUrl(o){const p=new URLSearchParams();for(const [key,source,limit] of [['id','id',100],['title','title',240],['shop','merchant',100],['price','price',30],['checked','checked_at',60]])p.set(key,String(o[source]??'').slice(0,limit));return 'segnala-errore.html#'+p;}
-const api={merchantUrl,goUrl,shippingRulesFromRows,shipping,discount,merchant,matchKey,groupOffers,reportUrl};if(typeof module!=='undefined')module.exports=api;else root.O4ZTrade=api;
+const api={productUrl,merchantUrl,goUrl,shippingRulesFromRows,shipping,discount,merchant,matchKey,groupOffers,reportUrl};if(typeof module!=='undefined')module.exports=api;else root.O4ZTrade=api;
 })(typeof window!=='undefined'?window:this);
 

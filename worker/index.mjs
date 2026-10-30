@@ -10,6 +10,7 @@ export default {
   scheduled(event,env,ctx){ctx.waitUntil(scheduledTelegram(env));},
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
+    if(['GET','HEAD'].includes(request.method)&&['/index.html','/confronta-cibo.html'].includes(url.pathname)){url.pathname=url.pathname==='/index.html'?'/':'/confronta-cibo';return Response.redirect(url.href,301)}
     if(url.pathname.startsWith('/go/'))return outbound(request,env,ctx);
     if(url.pathname==='/api/telegram/status'){
       if(request.method!=='GET')return new Response(null,{status:405});

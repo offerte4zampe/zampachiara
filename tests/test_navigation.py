@@ -18,3 +18,11 @@ class NavigationTests(unittest.TestCase):
     def test_other_navigation_unchanged(self):
         html = '<nav id="categories"><a href="confronta-cibo.html?sale=1">Offerte</a></nav>'
         self.assertEqual(apply(html), html)
+
+    def test_legacy_affiliate_disclosures_include_all_three_partners(self):
+        for text in ['I link Bauzaar sono affiliati tramite TradeTracker:',
+                     'I link Bauzaar e Isola dei Tesori sono affiliati tramite TradeTracker:',
+                     '<div class="notice">Trasparenza: solo Bauzaar.</div>']:
+            result=apply(text)
+            self.assertIn('Bauzaar, Isola dei Tesori e Paco Pet Shop',result)
+            self.assertEqual(apply(result),result)

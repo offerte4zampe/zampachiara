@@ -7,6 +7,11 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlencode, quote
 
+try:
+    from .product_link import product_url
+except ImportError:
+    from product_link import product_url
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -47,7 +52,7 @@ def apply(html, offers, merchant_choice=False):
         if len(rows) != 1:
             # Never select a different format when the catalog URL is ambiguous.
             return '<span>'+match[0].split('>', 1)[1].rsplit('</a', 1)[0]+'</span>'
-        attrs['href'] = ('/go/'+quote(rows[0]['id'],safe='')+'?from=product') if outbound else 'prodotto.html?'+urlencode({'id': rows[0]['id']})
+        attrs['href'] = ('/go/'+quote(rows[0]['id'],safe='')+'?from=product') if outbound else product_url(rows[0])
         for key in ('rel', 'target', 'data-metric', 'data-merchant'):
             attrs.pop(key, None)
         if outbound: attrs['rel'] = 'sponsored nofollow noopener noreferrer'
@@ -56,6 +61,16 @@ def apply(html, offers, merchant_choice=False):
         if not outbound and label in ('Vai al negozio ↗', 'Vedi nel negozio ↗'):
             inner = 'Vedi offerta →' if rows[0].get('canonical_shop_count', 2) < 2 else 'Confronta nei negozi →'
         return opening+inner+'</a>'
+    # Existing legacy links need normalization too, not just external merchant URLs.
+    byid={o['id']:o for o in offers}
+    from urllib.parse import parse_qs, urlsplit
+    def legacy(m):
+        u=urlsplit(unescape(m[1]))
+        if u.netloc or u.path not in ('prodotto.html','/prodotto.html','/prodotto'):return m[0]
+        ids=parse_qs(u.query).get('id',[])
+        if len(ids)!=1 or ids[0] not in byid:return m[0]
+        return 'href="'+escape(product_url(byid[ids[0]]),quote=True)+'"'
+    html=re.sub(r'href="([^"]+)"',legacy,html)
     return re.sub(r'<a\b[^>]*>.*?</a\s*>', route, html, flags=re.S | re.I)
 
 

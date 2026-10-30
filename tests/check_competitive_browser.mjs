@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 export async function checkCompetitive(page,origin,catalog){
  await page.goto(origin+'/confronta-cibo.html',{waitUntil:'domcontentloaded'});
+ await page.click('#catalog-load');
  await page.waitForSelector('#catalog-grid article',{timeout:30000});
  assert.equal(await page.$eval('#catalog-sort',e=>e.value),'matched');
  for(const key of ['animal','type','age','size','pack'])assert(await page.$eval('#catalog-'+key,e=>e.options.length>1));

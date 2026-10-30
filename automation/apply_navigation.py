@@ -15,7 +15,10 @@ def apply(html):
         if not re.search(r'href="(?:/)?codici-sconto(?:\.html)?"', nav):
             nav=nav.replace('</nav>', '<a href="/codici-sconto">Codici sconto</a></nav>')
         return nav
-    html = html.replace('I link Bauzaar e Isola dei Tesori sono affiliati tramite TradeTracker:', 'I link Bauzaar, Isola dei Tesori e Paco Pet Shop sono affiliati tramite TradeTracker:')
+    partners='Bauzaar, Isola dei Tesori e Paco Pet Shop'
+    html=re.sub(r'I link (?:verso )?Bauzaar(?: e Isola dei Tesori|, Isola dei Tesori e Paco Pet Shop)? sono affiliati tramite TradeTracker:', 'I link '+partners+' sono affiliati tramite TradeTracker:', html)
+    disclosure='Trasparenza: nel catalogo i link verso '+partners+' possono essere affiliati tramite TradeTracker. Possiamo ricevere una commissione, senza costi aggiuntivi per te. Le commissioni non determinano l’ordinamento dei risultati.'
+    html=re.sub(r'(<div class="notice">)Trasparenza:[^<]*(</div>)',lambda m:m[1]+disclosure+m[2],html)
     return re.sub(r'<nav\b(?=[^>]*\bid="navlinks")[^>]*>.*?</nav>', menu, html, flags=re.S)
 
 
