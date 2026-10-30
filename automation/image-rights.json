@@ -1,0 +1,10 @@
+{
+  "reviewed_at": "2026-10-30",
+  "stores": {
+    "bauzaar": {"allow_cache": false, "permission_status": "unverified", "evidence": "https://www.bauzaar.it/products", "hosts": ["cdn.shopify.com"]},
+    "webpet": {"allow_cache": false, "permission_status": "unverified", "evidence": "https://www.webpet.it/policies/terms-of-service", "hosts": ["cdn.shopify.com"]},
+    "animaliapet": {"allow_cache": false, "permission_status": "unverified", "evidence": "https://www.animaliapet.eu/pages/condizioni-di-vendita", "hosts": ["cdn.shopify.com"]},
+    "isola-dei-tesori": {"allow_cache": false, "permission_status": "unverified", "evidence": "https://www.isoladeitesori.it/condizioni-generali-di-vendita.html", "hosts": ["www.isoladeitesori.it"]},
+    "paco": {"allow_cache": false, "permission_status": "unverified", "evidence": "https://www.pacopetshop.it/en/", "hosts": ["www.pacopetshop.it"]}
+  }
+}

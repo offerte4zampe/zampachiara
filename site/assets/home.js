@@ -1,9 +1,9 @@
 (()=>{'use strict';const $=id=>document.getElementById(id),money=new Intl.NumberFormat('it-IT',{style:'currency',currency:'EUR'}),integer=new Intl.NumberFormat('it-IT');
 const el=(tag,value,cls)=>{const e=document.createElement(tag);e.textContent=value;if(cls)e.className=cls;return e};
-const url=s=>{try{const u=new URL(s);return u.protocol==='https:'?u.href:''}catch{return ''}};
+const url=(s,image=false)=>{if(image&&/^\/img\/p\/[a-f0-9]{24}-400\.webp$/.test(s))return s;try{const u=new URL(s);return u.protocol==='https:'?u.href:''}catch{return ''}};
 function link(label,params,cls){const a=el('a',label,cls);a.href='/confronta-cibo?'+new URLSearchParams(params);return a}
 function productTitle(o,tag){const h=el(tag,''),a=el('a',o.canonical_title||o.title,'product-title-link'),dest=O4ZTrade.productUrl(o);if(!dest)return el(tag,o.title);a.href=dest;h.append(a);return h}
-function card(o,spotlight=false){const a=document.createElement('article');a.className=spotlight?'spotlight-product':'home-deal';a.dataset.homeOffer=o.checked_at;const im=url(o.image);if(im){const img=document.createElement('img');img.src=im;img.alt='';img.loading=spotlight?'eager':'lazy';img.width=160;img.height=145;a.append(img)}
+function card(o,spotlight=false){const a=document.createElement('article');a.className=spotlight?'spotlight-product':'home-deal';a.dataset.homeOffer=o.checked_at;const im=url(o.image_local||o.image,true);if(im){const img=document.createElement('img');img.src=im;img.alt='';img.loading=spotlight?'eager':'lazy';img.width=160;img.height=145;a.append(img)}
 a.append(el('p',o.merchant+' · '+o.brand,'micro'),productTitle(o,spotlight?'h2':'h3'),el('p',o.variant,'micro'));const p=el('p','','catalog-price');p.append(el('strong',money.format(o.price)));if(O4ZTrade.discount(o)){p.append(el('del',money.format(o.previous_price)),el('span','−'+Math.round((1-o.price/o.previous_price)*100)+'%','catalog-sale'))}a.append(p);
 if(o.unit_price&&o.unit_price_unit)a.append(el('p',money.format(o.unit_price)+'/'+o.unit_price_unit,'micro'));else if(o.weight_kg)a.append(el('p',money.format(o.price/o.weight_kg)+'/kg','micro'));
 a.append(el('p','Rilevato: '+O4ZTrade.formatTimestamp(o.checked_at),'micro'));
