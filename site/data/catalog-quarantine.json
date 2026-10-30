@@ -1,7 +1,7 @@
 {
-  "checked_at": "2026-10-29T20:29:57.646261+00:00",
-  "input_offers": 18357,
-  "published_offers": 18356,
+  "checked_at": "2026-10-30T01:06:45.323262+00:00",
+  "input_offers": 18342,
+  "published_offers": 18341,
   "quarantined": [
     {
       "id": "animaliapet:46976592642391",
@@ -9,7 +9,7 @@
       "variant": "",
       "merchant": "Animaliapet",
       "merchant_id": "animaliapet",
-      "checked_at": "2026-10-29T20:28:43.379773+00:00",
+      "checked_at": "2026-10-30T01:04:24.693924+00:00",
       "reasons": [
         "exact_product_peer_outlier_pending_review"
       ]

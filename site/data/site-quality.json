@@ -1,7 +1,7 @@
 {
   "method_version": 2,
-  "observed_at": "2026-10-29T20:29:15.022037+00:00",
-  "pages_scanned": 488,
+  "observed_at": "2026-10-30T01:06:00.307880+00:00",
+  "pages_scanned": 489,
   "indexable_pages": 42,
   "unique_canonicals": 42,
   "issues": [],
@@ -401,6 +401,12 @@
       "page": "prezzi-03182551063714-0b00d3c949.html",
       "indexable": false,
       "canonical": "https://offerte4zampe.it/prodotto/royal-canin-training-treats-110g-snack-cani-03182551063714-ec6cde",
+      "issues": []
+    },
+    {
+      "page": "prezzi-03182551065091-1963c60553.html",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/royal-canin-medium-puppy-3kg-crocchette-cuccioli-03182551065091-416fc7",
       "issues": []
     },
     {
