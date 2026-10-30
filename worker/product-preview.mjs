@@ -1,6 +1,7 @@
+import metadata from '../site/assets/product-metadata.js';
 const escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function rewrite(html,title,id){
- const name=title+' | Offerte a 4 Zampe',description='Confronta '+title+'. Consulta formato e prezzi rilevati nei negozi; verifica disponibilità e totale prima di acquistare.';
+ const name=metadata.title(title),description='Confronta '+title+'. Consulta formato e prezzi rilevati nei negozi; verifica disponibilità e totale prima di acquistare.';
  const url=new URL('https://offerte4zampe.it/prodotto');url.searchParams.set('id',id);
  return html.replace(/<title>[^<]*<\/title>/,()=>'<title>'+escape(name)+'</title>').replace(/<meta\s+(name|property)="(description|og:title|og:description|og:url)"\s+content="[^"]*"\s*>/g,(_,attr,key)=>'<meta '+attr+'="'+key+'" content="'+escape(key==='og:title'?name:key==='og:url'?url.href:description)+'">');
 }

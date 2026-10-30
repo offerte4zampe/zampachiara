@@ -176,6 +176,7 @@ jobs:
           export PUPPETEER_ROOT="$RUNNER_TEMP/basket-browser"
           python automation/build_brand_pages.py
           python automation/apply_brand_links.py
+          python automation/apply_product_metadata.py
           python automation/apply_navigation.py
           python automation/apply_freshness.py
           python automation/clean_urls.py
