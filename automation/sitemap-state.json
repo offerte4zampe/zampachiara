@@ -1,7 +1,7 @@
 {
   "https://offerte4zampe.it/": {
-    "content_hash": "139459bac9f931f70e936d0514fe1698a13a169d4c6a098d8c13486d5d5694d7",
-    "lastmod": "2026-10-30T18:17:07+00:00"
+    "content_hash": "aa936e45e254498d216e257bc093b5b5a18d771dd02af69d977dd5697182cc32",
+    "lastmod": "2026-10-30T18:20:16+00:00"
   },
   "https://offerte4zampe.it/calcolatore": {
     "content_hash": "a04128fae867f6c4eaccf6d932795ff7ff8d8692c5a771dbb0b7a26939933316",
@@ -20,88 +20,1180 @@
     "lastmod": "2026-10-30T18:17:07+00:00"
   },
   "https://offerte4zampe.it/confrontare-prezzi-lettiere": {
-    "content_hash": "fd4bbdfb622dbf7bd203ee76f4feb077cff8161401c743a9ff6dfbfe39f0e05e",
-    "lastmod": "2026-10-30T18:17:07+00:00"
+    "content_hash": "d57780f0d2f47773c9a324bf686a8c4848314669508c3b5de236a94318785771",
+    "lastmod": "2026-10-30T18:20:16+00:00"
   },
   "https://offerte4zampe.it/confronti-prodotti": {
-    "content_hash": "77781660750bb501225009661d8c6872aaacc1987810db1ef48d37cdc4185ff6",
-    "lastmod": "2026-10-30T18:17:07+00:00"
+    "content_hash": "2ea156cadb5e002105a5cf3a479fa3e2ad459232b5fd362e0d1504e857c8aa03",
+    "lastmod": "2026-10-30T18:20:16+00:00"
   },
   "https://offerte4zampe.it/contatti": {
     "content_hash": "94805fe9d18cd40dbd2977d1435076c941d9b1a8a5d05e46b5e284329c143c88",
     "lastmod": "2026-10-26T13:57:15+00:00"
   },
   "https://offerte4zampe.it/correzioni": {
-    "content_hash": "9ebf47261694df00eb52e452de8afedec590c3125bd8c2aa84893e6dd9d724a7",
-    "lastmod": "2026-10-30T18:17:07+00:00"
+    "content_hash": "5cd453e754cf568cf6122be2d8713b3d39d55aa7d18623f2ce62cfe4eff5160e",
+    "lastmod": "2026-10-30T18:20:16+00:00"
   },
   "https://offerte4zampe.it/costo-crocchette-cane": {
-    "content_hash": "d41e514835d005059daf8206216a8ad898ff01f1b022c8e877758d7beb70da61",
-    "lastmod": "2026-10-30T18:17:07+00:00"
+    "content_hash": "e30a4c360c9587d1cbd2f5676b0485ea9b4026f928d9544d126534f918f64ecf",
+    "lastmod": "2026-10-30T18:20:16+00:00"
   },
   "https://offerte4zampe.it/crocchette-cani": {
-    "content_hash": "0e282788a1deb4d3d0f6f2ac4ddc666cc1fbe1918bb11fc69816a570f17daa97",
-    "lastmod": "2026-10-30T18:17:07+00:00"
+    "content_hash": "43265ee314841843d6fffc92bba943b767e6ff3a2d12667c8e17e1d4ba03b647",
+    "lastmod": "2026-10-30T18:20:16+00:00"
   },
   "https://offerte4zampe.it/crocchette-gatti": {
-    "content_hash": "f2e69d922b18c0d5e1bf8d799df17973b217b41b034b9d80db0a828e87730c6d",
-    "lastmod": "2026-10-30T18:17:07+00:00"
+    "content_hash": "44b1aca02e7886abca498f0b9bf21ecc506bb5832e32d9bc201a6236447641c5",
+    "lastmod": "2026-10-30T18:20:16+00:00"
   },
   "https://offerte4zampe.it/guide-risparmio": {
     "content_hash": "9e15a7c8c482e27f40ef1ef71dab3fe6d45358acf5109f7339f4e0f6d3bbb964",
     "lastmod": "2026-10-26T13:57:15+00:00"
   },
   "https://offerte4zampe.it/leggere-storico-prezzi": {
-    "content_hash": "bfc90a09126cd66804e903b19fc3b861deade8e312120688ee37f216add2387e",
-    "lastmod": "2026-10-30T18:17:07+00:00"
+    "content_hash": "276b417fd1109675cb930aea3e8d729401806ee731428483147a04aa012b5969",
+    "lastmod": "2026-10-30T18:20:16+00:00"
   },
   "https://offerte4zampe.it/lettiere-gatti": {
-    "content_hash": "900a6d602556cdcad59d2c2e16a5cd7aa8e0aed8e1024be5d5dd7db32220866f",
-    "lastmod": "2026-10-30T18:17:07+00:00"
+    "content_hash": "9df454ef5241f84b64ebd8680ab96bcb6c292c21878ca20e92c8566ac791dfdd",
+    "lastmod": "2026-10-30T18:20:16+00:00"
   },
   "https://offerte4zampe.it/linea-monge-bwild": {
     "content_hash": "b2593347f233049f162285d7b7a98ff56d9fd407773da1dde951735a4fb19ea1",
     "lastmod": "2026-10-30T13:18:11+00:00"
   },
+  "https://offerte4zampe.it/marca-8in1": {
+    "content_hash": "30b62c8ac01b1ab32063da629d601df485804886db553606b788eb78a46bd2ce",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-acana": {
+    "content_hash": "52ddd7217d4ce97792dc77779d93d2bd09a659138319729646e0cef4a32e43b8",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-adaptil": {
+    "content_hash": "d5619411af640b943e40c34acded7e747dc9577db3e103957020f0f57c977c52",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-advance": {
+    "content_hash": "62a441b32c615afa8d7c74488620d2a306831b20d5491c9f882089bcd85f3ab8",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-advance-veterinary-diets": {
+    "content_hash": "6b831944a98d50326ffceff0b1031dd0767848950fe9cb33f0d0036bb3e6f8f2",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-advantix": {
+    "content_hash": "7d7358e4e44011109beab4483dfaec9396b4283a1b9e281df6a5e890639ec72a",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-aequilibria-vet": {
+    "content_hash": "688834ac753395d49357cbcb91ee036537111f279500d435b6177caa23b8d500",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-airyvest": {
+    "content_hash": "fd92dffca29bfa8abb9a13262c530d7ad361d4d2cff0f62f9d89709b848ff5e1",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-aldog": {
+    "content_hash": "17882edf065f73032a00f54bc2da9818fc40254821d1b90dc885af6bd20aec98",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-aldog-d983b612": {
+    "content_hash": "18d17c8f1380da687eb90a50a970e0c888130db9a72860b2aa48ad53a2b9f214",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-almo-nature": {
+    "content_hash": "22aa376cc5a8ef926e7c519975beb1bdc83561891409d020b31fc69e30d6379b",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-alpha-spirit": {
+    "content_hash": "b1e94e80250e50e3f0e2c7de456bce16fb07e23cf34c1133b0f1caf1cb8ad587",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-althea": {
+    "content_hash": "276d2d7095014513e4b951dfc557b81acbaf4d9eff56d0811a5b2ec7a4ebb7e9",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-amanova": {
+    "content_hash": "04cc03748d4d097666df05158f743075e48507bb518a0f42720cbf45b9f4a45e",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-ami": {
+    "content_hash": "94797f53525ad2355ae8666713007cdd1540548f69d778eda6e23f0012a7abc3",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-ami-pet-food": {
+    "content_hash": "f736b6859883b762032abec96c6a45da379137efad874cb68f93bf67e0817e18",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-amico-veg": {
+    "content_hash": "9c13685d80f13c7bf4ee3e2f8b4225056b70aea6e48229b519f04069c4d09c78",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-amtra": {
+    "content_hash": "96a003c8189f0393762bbd360f482be9bea47fc74b3c4fa8c6e26144ddd597bc",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-animaliapet": {
+    "content_hash": "8c069b580d8ffb6cc8f6d6004198a6cca52682c1e00a611be5888b6fc94969ae",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-aqpet": {
+    "content_hash": "40ce7898fdd43fb537b748098377aec55631f6e1a52312f3989d82aa31dd8759",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-aqpetfriends": {
+    "content_hash": "2228b09a060fcb8194ebce721aa14dafde0e0db1ec7c27de74456614808d1a70",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-aqua-medic": {
+    "content_hash": "8b4b8bff37741b1f12ed4592c7a07621c288bca5d12ea507786007ef9d44212d",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-aquadeco": {
+    "content_hash": "e79e3ccaa8df62cf68f8ec4df36f58739c7ae3b9ad28c0b2f8151da2e2909751",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-aqualovers": {
+    "content_hash": "7941c1e8223cf554307448952ccc4f2780d06a9288b530a0fca4a284aee4f850",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-aquarium-munster": {
+    "content_hash": "e4a294a431bf24c6a320b6b0b22b8f6eb3e2deb2c81466eea5b7e9ed540b0193",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-arya": {
+    "content_hash": "8e449df875fdbae883efd120fd4556eff410f3d4e550c06e8b870663fd2d169c",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-askoll": {
+    "content_hash": "4427d5d332b0cf324342aee103f3dc2f76396f17fdf1239ed7c012a1adc6bf50",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-asso": {
+    "content_hash": "313047f321aa60f525ac48fd1fdc7788353c895ab5b0363831c8f4494e0d9044",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-aurora-biofarma": {
+    "content_hash": "d77b43151a59c7a325c84f4bc161f9a56de630435e1c31356954e63d3f4d2b53",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-bauzaar": {
+    "content_hash": "c44decebd0c358286f36f0b4d30ca78ce2c23112fe9f25adc75f862ed28e51e5",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-beaphar": {
+    "content_hash": "a9c43c6ed273dcecb348b6fe8a340f2bc2f85b5754fe352b5c85770b85f0df15",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-beaphar-protezione-naturale": {
+    "content_hash": "cd85fdea304e9eeb0b0abd0d917a4477652c3a506f9d0ca3877363856eab1f1a",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-belcando-dog-food": {
+    "content_hash": "f7aa1d63e09404f8402e91b709fb0852135e698b254bf437863f1589ed1113a0",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-bengy": {
+    "content_hash": "83b0ff9ac2b647b62954540a3f4d913b99a41e6e95908c4085d728d56205dd8c",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-biokat-s": {
+    "content_hash": "6f7188244a7840c4168ec4e4988c4485137e03ce67adb4779c89ecc64c3ed0b4",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-blu-bios": {
+    "content_hash": "341244f94a65176428152181ace74692dbefbd0323684dcc03d9b9a62afecda4",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-bravery": {
+    "content_hash": "16d277e28a2fed5e351009b2303371bdfb28bcbfb1034b863ac1336f7322745f",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-brit-care": {
+    "content_hash": "29ee5a0a66c79f24b982eb499fe6a9cd191290cf009a258ca11c3b29caa1fd22",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-brit-veterinary-diets": {
+    "content_hash": "30f2f44b48ec3cf78a281f106d0a7e4df198512f0b3828e7223d3d4e26fce495",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-bunny": {
+    "content_hash": "df0d88426f77408a9bf33c065766fabb8e91355fa246d9c5dc9cfd62202dce38",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-buona-pet": {
+    "content_hash": "75e6d5a23fcbde76d52354042acd46f9a3c80b8eeef62a10ab7cc6f7aa115be5",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-burgess": {
+    "content_hash": "28e6603377e5dee9d84584288135a09456ed63595633030fcffed6ba0a0ec0d8",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-calmisto": {
+    "content_hash": "3475e3a91081efa03cc38f06d5d30ae5e731c53088e2657aeddcc2b46aa0e8a1",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-camillo": {
+    "content_hash": "a98a0f4bed79b1debd1d5569701341699e22a2dddb4919bdb6cb49187dd9e1df",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-camon": {
+    "content_hash": "6e90a04eccbe46f11221a7d9ed4ba1cc0bd4770f2b9d6b3284b5b4e9c502f97e",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-canadiancat": {
+    "content_hash": "5ec3fb10805bc2005978ccad192f321543ee58446b90adb0a8da077cc129ecec",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-canagan": {
+    "content_hash": "f7461cbb50d45b5536b3003021c4ac64e216b82fe2464945b16a5d90cd88e9e9",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-candioli": {
+    "content_hash": "5008b4fa535cca9310b7ff1919b04b0e8244470e7097bdc2a6f4394aeb1a9ab7",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-candioli-farmaceutici": {
+    "content_hash": "d7b8a64a5715a738db225aed9b4ce76363e6b6ed97c3f1fa1bb642c457b0641f",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-cat-e-rina": {
+    "content_hash": "017cb82eec59b8f68f6ad39a34521e2d54871a6013d545ec49d134d81294ca4b",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-cat-s-best": {
+    "content_hash": "7f5adf910ee4c0bceca1498c8427fef1eac89e74c8873fb975b1ca83196bb325",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-catisfaction": {
+    "content_hash": "d33bf3d81bf40ecdac8c87b69be5355fd7121dde35a34af7f7a51916df70c5d1",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-catisfactions": {
+    "content_hash": "8c478b792422045eed1c563557426658a7c0d974d0558e07beb49ca1f1288167",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-cesar": {
+    "content_hash": "00adf977bd7b56e2eadc1f2d72c027ee450f4109189c08887b59a781ac7608e8",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-cesarano": {
+    "content_hash": "015e293fbf9d174a9a43ed98058f556fda67b60030f353a43d830feaacb36f59",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-cesarpet": {
+    "content_hash": "425d04a78305e8ebaa840fa4027daacf791dd0683bf5ec036a2a3818af745f8d",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-colley": {
+    "content_hash": "ac9511dad8c5068bd5a7380a4e779f9c08419972a522045722f02b5b580131f0",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-coralpina": {
+    "content_hash": "ece946569cad5d71e3b98a868631625d393a9c63f0414279b6ca36ddf1797bed",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-crancito-s": {
+    "content_hash": "62fa01e7e88a4982f3e9231f9bba5c2d9f4cf40e1067717e1871a9ad6304c8ac",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-croci": {
+    "content_hash": "ccda8c7deceda4db28431ec923ae2c1a99beda6ee13e8e2694db5c49b10144cd",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-croci-abbigliamento": {
+    "content_hash": "63c9297a883b6d9b899a48e773c71e302c4838ca37d7cd30de7a7f3207ccdff7",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-croci-hiking": {
+    "content_hash": "1296185d6c0c5c64699ee9e06954a32f25b6ee8253e630136c8e8cd8bc4173ea",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-dag": {
+    "content_hash": "c2ca10bdcf47cfff63393af3fd66ec28132fa1ad08e4b90cfbb615921dc72f18",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-dashi": {
+    "content_hash": "65ec0fd25178bf55f686a50570442db4f4e6112569b88fdd49e94dff7018debc",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-deli-pet": {
+    "content_hash": "4a028e84b6dceb500b7f35fdb5e2a50ac1fe11c60996f773bf03f27ad6cf0913",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-delipet": {
+    "content_hash": "112c50ad133643bb06500e978e87339c13f3bcdc6a2713d180e940259a07adba",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-dentalife": {
+    "content_hash": "741b8d3786146504a305692eaa65e5351b884f20d23144dfaa701ffe26a32dc2",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-dentaljoy": {
+    "content_hash": "2734beedebfd5a5a365c03209bcc411320cc8cd1f268d6237f42a668df5c844d",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-dieta-pars": {
+    "content_hash": "b4ec1dd8135b0d25aa3c38e05d48b6430fd00399374e60060acf583aeeddb142",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-disugual": {
+    "content_hash": "bd9106e2970d461862bc2eae4f63a53e26bbc35ffc2435d1c1794982e35ea78c",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-doggyebag": {
+    "content_hash": "a2ee9a0fd3a70100875572a07b47e18ac60ccc17961a205d8a630b5de915e89c",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-douxo": {
+    "content_hash": "e1486e319f30f6ee5975977b78a3c9d5876adb54995e917124404875683c5083",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-dr-clauder-s": {
+    "content_hash": "eea2a92870f3f956129b04f135f9ebceea750d4e533f779d63fc77123c12f1ae",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-dr-zoo": {
+    "content_hash": "949885e5b411129f5439d405d86642562fc337573c05550afbb3410a1797dbcf",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-drn": {
+    "content_hash": "505bba23ffaec6b4a135ccd2883e83f616be9a0d32a359ee3c1d18dfb716c5dc",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-edgard-cooper": {
+    "content_hash": "c940f327617643c4ab94682a34db6f93840b228afff17c0bed517bebf9c5ce3a",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-elanco": {
+    "content_hash": "97057845178362a139b0c716cd065bcdce6683e621bf23c700a11c344fa699a4",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-emozioni-a-4-zampe": {
+    "content_hash": "ff4fcce4fc8ba5f698fca4478def4b0c6361c5261b1b402df4ce72bb719c0c85",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-enova": {
+    "content_hash": "40c06a2865884aad94534c301b1116ec492c6ec974dde8c33ea156fcc5a1503d",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-exclusion-diet": {
+    "content_hash": "d68a4b57b54c1b898bf33e52bdb134a599b347a7acaf10393a0e0986a0fa7bfe",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-exclusion-mediterraneo": {
+    "content_hash": "b67a5d7fa56f20497ca4420438b786cb8a08f8e127687fc321a278aa8a0e329c",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-exo-terra": {
+    "content_hash": "0917948fb524d4b5f1ffa4a1c2e3604596e048ffeea9ad3764f864cbe5e9af08",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-fabotex": {
+    "content_hash": "faa01aa2175b4bc9bb8624d1fa690cd6260e1fd560f4e35f920450010615971a",
+    "lastmod": null
+  },
   "https://offerte4zampe.it/marca-farmina": {
-    "content_hash": "e1f43e1e375c9706a316e70ae129d458a6809031c86b3ef8bfdca1b594623112",
-    "lastmod": "2026-10-30T18:17:07+00:00"
+    "content_hash": "8ecbd779b3baf5ff676deb18ea264aa11171e8cb8439a0ec115a5c506d262c8a",
+    "lastmod": "2026-10-30T18:20:16+00:00"
+  },
+  "https://offerte4zampe.it/marca-farmina-n-d": {
+    "content_hash": "a28c7815a5dfdc53d6b24b7aebbab0d88dea3235badadc3258302196ecf0242d",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-farmina-n-d-ancestral-grain": {
+    "content_hash": "2dc3ee801729a199447d3f4605faf1c1786f907d6b41c9fe0871423888f73a96",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-farmina-n-d-ocean": {
+    "content_hash": "eb7a07639600bb0f69022d251b2e57836d7badec9b5f47a4f3decf13c1f08d55",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-farmina-n-d-prime": {
+    "content_hash": "e2fbfd573aa1e97f1f4fab9b2c7f5f5fc39c61e8b6af2b20fe58a4d1aba418d0",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-farmina-n-d-pumpkin-grain-free": {
+    "content_hash": "5691d0b9d8ce7fc3000c748c199568103f30017cf0fd360d7eabed62d992ce33",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-farmina-n-d-quinoa-grain-free": {
+    "content_hash": "39c3d281f6be44cfeb8b4769c4833be47a07bba360452d04ab27a175e156f870",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-farmina-n-d-spirulina": {
+    "content_hash": "f085a72263306d59a011c0c9305322454404ad3e024bc3254cb8ba04243290d8",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-farmina-n-d-tropical": {
+    "content_hash": "3f428d3d60d8f066da30cf7f9a36f7704bd23ffe6213a17343a8ccab9d2a3d53",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-farmina-vet-life": {
+    "content_hash": "606aec4e83130741f95be9b17fe80d7cd8557ce7aebde0667c23793d8c1e4857",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-felinea": {
+    "content_hash": "785391af181f8e36010fc32c5ed50b07152d37e652f081fd08fb1acd03a79037",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-feliway": {
+    "content_hash": "b72cf2e389dc123c761e6b34838b2dfe516d61e245475909f13de5dc7e0ecb9c",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-felix": {
+    "content_hash": "e62c71363f18983ab8e2d75dc09cacc0fd7950b93d79e774b129c180ce99a5ae",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-ferplast": {
+    "content_hash": "c823d3ca62448986574bd71b6d24bb5a2c9aa5c299b5849f0b15459eace6e46e",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-ferribiella": {
+    "content_hash": "f367e18383d9bb65a437c227de21caf7b7807e9ef99bbdfd0c0e34e51f0363e4",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-filpesca": {
+    "content_hash": "bccbd978d0e3865a9edd8abb6ddeab6b6c119da453c597e8d54d6241a2fe7a89",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-fish4dogs": {
+    "content_hash": "6cda84372ee5476a6d8f6380e10aff66b0befc6b72fcae16ec33a5b4a7b64075",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-flamingo": {
+    "content_hash": "8ca010a2f3b86c7380ebbdeb7fb0a845f8550ad0628eda35f808af23b2d72725",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-flexi": {
+    "content_hash": "f8f0b52c0e36d323ee87805aadf07471b269959bb13b343e746940324faca9fb",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-flur": {
+    "content_hash": "5272199aefe453c697c6fac4686dc271a28381c3832daf7a3262e0c0f51c8a78",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-fofos": {
+    "content_hash": "cbe4b391ce5608c0d34ccaa6d59b2fbd95227ce20cdedf4e2005a8d32ab2d050",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-forcepet": {
+    "content_hash": "4195a7ac3cdd61f4b672088e0dfcdc02310e53fe311fd29ba131640df93c1dba",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-forza10": {
+    "content_hash": "17de3a2033a67e3646fa6dc92f14afc08a891ce4956e97c22721b15829a15d4a",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-forza10-active": {
+    "content_hash": "3e45f28c163940f5c2c4f846c4f2b80720fe485d00d6074bfa3e9553a24130c5",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-forza10-diet": {
+    "content_hash": "017369325832e6c2ce513902360fe8a577280f70b92a6f5ab53c05a436e3a0d5",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-francodex": {
+    "content_hash": "422989e8b6d495bb7322a58a4440133fe393e6e0b7725dafe5f705f6eaf26a9a",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-frontline": {
+    "content_hash": "07f67ed6cc9d16f60ef739c28fa5b3f1f83522386dbad4fb9a4a21e8ba5fb3dc",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-furminator": {
+    "content_hash": "069eee939f0096c36d8032563107fe92c5a6578c03a99d6b86819716bc384016",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-fuzzyard": {
+    "content_hash": "b07ce53643fcc67a3b7ac42cacf8b1721385dc17909fc907fa303300c8603abd",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-gamakatsu": {
+    "content_hash": "e9dbd752a8eceb81524444c512777b26af3b36cd8f1d6a0690b2dc63bde4c7bd",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-gemon": {
+    "content_hash": "04b78aad26de44849c2273a32095f4bf9b16725f915b98c4cb1e8e7adbc24ac0",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-gimbi": {
+    "content_hash": "414a35c0d4bc0a92e184e1ed54c8523ab83817e6658c53557902bcecd96ed9e3",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-gimborn": {
+    "content_hash": "b44084290b6febc9b2b32ac185d0cab73f7976f19516e8a53a1cf7da641b6620",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-gimcat": {
+    "content_hash": "591e0b63519c065902f80ac7ae7404f8949e757341a34a39c46f81c1a0c74216",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-gimdog": {
+    "content_hash": "eca02287d26b12c8f1dc8acf9fe7b08dea8f698ce95d1adca1b4b3241cc8fa90",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-golden-eagle": {
+    "content_hash": "2bdd7620a34f96c300bcfd42a5b12c12e0b9428d81f55cdefeb4a3721e23c3f1",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-golosi": {
+    "content_hash": "5f5645089e25146231e94e42bd736ff56929ff516d9a744f3aac1d07f7f023d6",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-gourmet": {
+    "content_hash": "ff4d3f59492395f52f09434620856c7da85a2167e14d389fd8361c7685edbb83",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-grandorf": {
+    "content_hash": "9c4766cbee554f7252c296a9654f54cbbd1f7289343f788880f7c8806593cb31",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-happy-cat": {
+    "content_hash": "d4d47cc068bc1357ef489700465cc64bfb47d27bdd37741add618e550614ebc2",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-happy-dog": {
+    "content_hash": "cfe89d356a70079bda5be8e4b1e2c5abbb7eb10ccbcd6db27e4a9679e87a067f",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-hari": {
+    "content_hash": "9d7a550652d409959b1a430c35b819ec26364c7d9c5114612ccdf0f07d983868",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-harper-and-bone": {
+    "content_hash": "4cdcaeeba8865d106bdff312ddced795232687db2ef39412b846ddc493454462",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-hill-s-prescription-diet": {
+    "content_hash": "b40e687111e6df25e8061ac6e4cf4341d378de9c6407ef171fd406a0eaa6c5d3",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-hill-s-science-plan": {
+    "content_hash": "625782ea99c8e4b51b13e02aaa7d5a1d8cf92c04302b045f14192318e1cce4a9",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-hm-electronics": {
+    "content_hash": "2a064fd7b11241cbb380a721be0f70b7262c09c2f736bc2b9baa3eca30e60219",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-hunter": {
+    "content_hash": "e2ec59667641c68d49c469576d839ec836bdffc14c6c6b7392abd9bbe8238042",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-i-m-different": {
+    "content_hash": "acb16ed44d063a39139d7340b7cd4fea3f22b0c4db1bb622d8f7f94256c4d5f4",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-icf": {
+    "content_hash": "943ac8b04251c54328e639576593476c1e0797013facb423513829e499e69fd7",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-ignesti": {
+    "content_hash": "b9a6a07e68d1b03b9b9f5a8140211df9da53374c1cddb07808a3a788268eff5b",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-imac": {
+    "content_hash": "13e32d19a65ac4bcf1fdf9f2c5d26c7057751dbebb9b3abc270dd6ab87eca25f",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-innovet": {
+    "content_hash": "7b377d45e3f2c9788f3a401423cbd24f25db33b00079aaeae1216e6cf405c42f",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-inodorina": {
+    "content_hash": "cd0ea572ba2738304973e33f7dd8fc0e86c6841b6221141603765569711fe03d",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-italian-way": {
+    "content_hash": "d0bb94462d82ee08a3729311268b2a0e6ac173c0bdd752a772534fc95ba14460",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-italianway": {
+    "content_hash": "5c892b9c4dead89d4ef5be5c41ac132ead6c4b99a8cf98ece8fc342c05c55c6d",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-jbl": {
+    "content_hash": "1582de6388b82c6d7300e27c89b392498cdb552000eeb922bcde1bb23858a408",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-joki-plus": {
+    "content_hash": "482666130bf05259267589cac7c39433443de180d8a09421c890219f146d6842",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-julius-k9": {
+    "content_hash": "d3c8f1634e911658bedbf14a879de0df82f5adbad958495d10b0f203beeaadd3",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-juwel": {
+    "content_hash": "f37d52e632b4daef1f08cd99b3b3b77db7f33a78ece17d83a213f948f4abbbee",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-juwell": {
+    "content_hash": "26b9f9d00544ba03edad3466be79219bfe8cd068d855c27abb3b0a06fabdab62",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-kattovit": {
+    "content_hash": "48e1220475bf29ec331950d8a150f52f3ef13b418d62580e9ac82bc1cec9385d",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-ket": {
+    "content_hash": "262543c2050ed4fe2aefae018cfaba01daf71452b6250769e879f7624c9679bf",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-kong": {
+    "content_hash": "c0e1fd0e2f5125312bf50421651cf434e5a489c0ada1a56eacc625ae2482e04b",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-kudo": {
+    "content_hash": "026aae43b70748f35ebd77dcb118a0d5737969ffeccaf55ccd9790e1159414df",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-l-isola-dei-tesori": {
+    "content_hash": "f4b4d5c249f23e8e70fbe518a50faf143edccacd7be8d4c153c9ce255c023ee2",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-leonardo": {
+    "content_hash": "56808331237fa28fd10350f02b6b4c23444fb8dbfdb95ae4525325f18ee8acd8",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-leonardo-cat-food": {
+    "content_hash": "b9d1ddb704b216db140edf9251ca6a49f6d183d7382a5818454ccdac7212df1d",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-leopet": {
+    "content_hash": "11355faa77bfe0e2e9f9ffd6f9bbd6d60bd1981c09eede31c14864d5b3e7e16c",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-lev": {
+    "content_hash": "5407aacc7b4c8c02380bd73b2737292cbdfdb8a289bbca28a846b5da6c780991",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-libra": {
+    "content_hash": "14f59d3b332bbc1f56fb90ce6e7cab6eb5bca135647bf7353ebba5c336fa8407",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-life-cat": {
+    "content_hash": "1e0c43e39d81a292158c9ec14df9caa94fe482fde499e1554948a4264d4bd729",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-lifecat": {
+    "content_hash": "8b18e04242e3b9642d1cb5d3d645e97ba62fd7f0f9f351ece89fbe3ecbed4afb",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-lifedog": {
+    "content_hash": "e99a4e2de3b8699b8d909a3af207d8f3973415a52971b94cb41be37fc14a2718",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-lily-s-kitchen": {
+    "content_hash": "3991696b405605e839707faa1421ec204e95acdb467845f240612b25eb5616cd",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-lindocat": {
+    "content_hash": "ae28eabefbbc73fe035734f6877bc3369c2b54bacea5609bcf06b1c027958f9b",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-liu-jo": {
+    "content_hash": "366faa2ea51bb2a04acff277dae22cbe08bccffb1d99e9d5bea2f696f2e40ede",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-liu-jo-pets": {
+    "content_hash": "e9c0ca515b83600cfbc11d19858d46016e8d27b50a3eca4f05f15738d1baf0fc",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-m-pets": {
+    "content_hash": "aae14fb54a4b37ae10d68bf0e78356dd50cfea6f009d976d4fa6d7547fade377",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-mantovani": {
+    "content_hash": "83d89355ede341ec0629d040575c2cf35621a73fba5de9eb85bd6f16315f844f",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-marpet": {
+    "content_hash": "99bb2273d8ebb19f3d4ff9b54c7aecd76ae3ac5be90ccacb6040e7f6f9c220af",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-matisse": {
+    "content_hash": "a70203b874563d313301224d71c3bd0119ddeee89f66fe0deaa4aa898575a841",
+    "lastmod": null
   },
   "https://offerte4zampe.it/marca-monge": {
-    "content_hash": "0cbbc6d6c62837bbf07c622628f7d43d3b11030e0ea52174922af2f40ae6a892",
-    "lastmod": "2026-10-30T18:17:07+00:00"
+    "content_hash": "6f8b3c8cf20e288c7e823db56b924e31453cdffd6bbd1cd543e44d117a26c69f",
+    "lastmod": "2026-10-30T18:20:16+00:00"
+  },
+  "https://offerte4zampe.it/marca-monge-bwild": {
+    "content_hash": "334558a851b5c70fd2a90801713a16d20bb7335bfbde9d813f0bc3b9d484f66b",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-monge-gemon": {
+    "content_hash": "d18f7379f537eb96bbfe45ec481d81465ffa6b56548bc8ccc7f9e56f49a11749",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-monge-vetsolution": {
+    "content_hash": "9a669aa38ddf286560beb14bc4c1c30fec675ef3461332974c065974bc5a8521",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-monopro": {
+    "content_hash": "c3d7b7a141f35ea7ad920b4ea47d6b35661d973dfdda63d415b10a397f7a3fc1",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-monopro-lo-specialista": {
+    "content_hash": "77dd8c26d66ab5dde092f478178b9e5e1f745c3810ef1e58c547d9efd04e483b",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-morando": {
+    "content_hash": "c453d669b2ddcda04128ff7d8a469404fd6dc9ca4718fe0d80eb18ce543b1fab",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-mordo": {
+    "content_hash": "1515239388ae2fa207a530efd755be06ff3b869950adf10166ff98df18f2444c",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-morso": {
+    "content_hash": "afb3aecdc6a1b70fa3544493bee4b8832840c041faaa5966c255fb1ebb14ed34",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-msd-animal-health": {
+    "content_hash": "208dc4230a438038ffe0da896530ddd2c0e49fbd8dc668a1467194d6521384f5",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-mustad": {
+    "content_hash": "c0076faf51f1f8c46f2059766c46abe2ea0341c53b3eaf820fff1f99a10dd3d6",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-myfamily": {
+    "content_hash": "6a5919b06f97ac2b84ce4e1369d1d24cca8afd521ec5f7d0201af33e247fd4c2",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-nakazima": {
+    "content_hash": "79fb53e9af1b3253dc6d231605990c7f01386f9acf146123cd9a32bfbda9eec8",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-nasonero": {
+    "content_hash": "afc4d8c8aac0559666799edfc73f8fd781b872f9f392a708a71221cff720a4a9",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-natua": {
+    "content_hash": "702c55685bd724d23af3d476105c9cca31a4bdf26b39ca7363601212233e7181",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-natural-code": {
+    "content_hash": "862e11ffa35b24842ad534d1c72c6cd97c0e31fb7ac971ab827313465a22a93d",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-natural-code-for-dog": {
+    "content_hash": "dee1793652fd592afd16d10781059bb6439ef6ac931712e7ab3417536b05ff15",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-natural-derma-pet": {
+    "content_hash": "f269d259a35c6058c93e877db20ce0330e184e6acbf2d29fae83f488febe20fd",
+    "lastmod": null
   },
   "https://offerte4zampe.it/marca-natural-trainer": {
-    "content_hash": "25ad8db8cd1ef8f32934899cadca747f8009b2cd4108b0530b92537aea734a02",
-    "lastmod": "2026-10-30T18:17:07+00:00"
+    "content_hash": "50ffbdb04184df88bd57c141d3e21e572e21e8b35b2f0408f3352fcd19bde6da",
+    "lastmod": "2026-10-30T18:20:16+00:00"
+  },
+  "https://offerte4zampe.it/marca-naturalpet": {
+    "content_hash": "3b47d75110ead4afd9bf3f55868924ceb619b950f2173c97e599c20f902b91a4",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-nature-s-protection": {
+    "content_hash": "42a8012465f3076f95601758bc9c7eba3dba5385ebafe3c46c842d53eea4882e",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-naturina": {
+    "content_hash": "635e788e66d7176faccf95b45f58d9e2734b6afddcef7bdac3df23ea3323406f",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-naxos": {
+    "content_hash": "af94c202d6a4573d564b1bb45b41702a33e22043e372a1197bf7caf534c0dba2",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-naxos-pet-food": {
+    "content_hash": "074feaa898ee94bcd63110aa3c5f035deb60d0d2acc74f004b014577378a7f9d",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-nbf-lanes": {
+    "content_hash": "d1a7b0404ca9c903505f397b266fe751ceeca4ec96185d76bb5aeb47f5a31378",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-newa": {
+    "content_hash": "a7a26999ddce1472f91e7dda694b5fc5e26b9d9a702eb7e183cf1c8d60a33aed",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-nobleza": {
+    "content_hash": "c0f5dbebe6dda2785586cdb9318c71e998df543bde9e1ea5e600fc1194ceb7dd",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-o-life": {
+    "content_hash": "3794507380afe213e9fc8a30924d56d09cb21687f978c2554b13b7e34763642f",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-oase": {
+    "content_hash": "62bbfec5c061af872ee59c256f9667f3c837c32dc3c96c86ecdf1669f14b9204",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-oasy": {
+    "content_hash": "62f7c46ade3fd1408ea9efc879d289b91b0033bb56ede0ea67217df74fd98ab8",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-olympus": {
+    "content_hash": "235db7f9a8237dd0b7ba3f675ad073e8cf5dd7548e2e2418ce06de8f74a9dee1",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-orijen": {
+    "content_hash": "34faad32a8deab9fc6aca87ac57d20045e1720125e12e82cc26319c383b9c514",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-orme-naturali": {
+    "content_hash": "8045885a2a8dbe03609ddba73d56e9998786ed25553099e6dcca995986a40aeb",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-ownat": {
+    "content_hash": "7cbe005080b9ed4c8a493ff8f6df376ab4c16ad184da5f71f60c2b1bb3bbf3e0",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-oxbow": {
+    "content_hash": "2df282880187f4bf37d0d1142bfa0a49631873e3c5ee0ebded626a0cce0e6957",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-pedigree": {
+    "content_hash": "7fd11e214e335adc376fe0047ac1e6698e9f1a746bb7cc8651b65aa458544897",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-pet-lovers-collection": {
+    "content_hash": "975a4feb8405aa425c91ea8a6cb47c026fd131a6e856b5da7bbfad3c31cd74a6",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-petreet": {
+    "content_hash": "eb1edbd0d24bdebb60df5135d6eb9de61b4cba923d8414e2e1b230dd87fc9dfb",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-petshine": {
+    "content_hash": "96a536103122244ac19754ee7d23e408441c00dd82a97ed73565e33484f3980c",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-petup": {
+    "content_hash": "6c42b9d612f845ba45d5fa17e17058a5cea56d2c02e7bee3386f34b0a846d67e",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-piccoli-amici": {
+    "content_hash": "8fee0f56d9f27862e52156a489d61dd700600aa69387d4ff9e3d291bda2147be",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-primordial": {
+    "content_hash": "9005daa22816cf885bd01b18dcc1ec8d45ba016ea9b9750ade040411085119c0",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-proggy": {
+    "content_hash": "ea94f2048946f38516bc7501739ba56139943cedbe7068f95207164aec6b47a7",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-prolife": {
+    "content_hash": "944b7080b0de56b25bffc4dcef4edcaee4b870dbf1d5d0d093a8b67ac8aa2dad",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-prolife-diet": {
+    "content_hash": "08728f39ebca94a0c47390be99b232c5e1d022b92e4cb34292c8a19b7481f2a5",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-prolife-veterinary-formula": {
+    "content_hash": "1956700857f41b5972a84ea5faf3cd891bcc9fc5a386bc2f1e5e3e4bac3e2e47",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-protection-orme-naturali": {
+    "content_hash": "3a3e5afe37b47fc8a8d50284f65e0ce1fc2b5a381d86ca4ed36a0beae3ef0234",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-psitaccus": {
+    "content_hash": "39b5d382f08081647a2bd9159537dd0dd1007aa22f2e9f1fd1c7f18d680124bd",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-purina-cat-chow": {
+    "content_hash": "c86f7e8e059f0949f52cc2527adeb555bb4039750cd2b9cae2e4fd78065cbd67",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-purina-dentalife": {
+    "content_hash": "de873d92bd4952b2f9ea3356b1e46967c885755bf32c176cfca0bb3ea6d78cce",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-purina-felix": {
+    "content_hash": "45a1731f9f6d71ca1ad6ed464593d6b395b7c33a223f5feeb97d98e32d82936d",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-purina-one": {
+    "content_hash": "6da95f39943151eb43bf3478d2dcf44b69d39a4216cb8266f12027a3982ca3e6",
+    "lastmod": null
   },
   "https://offerte4zampe.it/marca-purina-pro-plan": {
-    "content_hash": "605a24e64a316f33d66fc355f73efa514bdc7f0c853cc2713fdb26c75f1886ed",
-    "lastmod": "2026-10-30T18:17:07+00:00"
+    "content_hash": "27bc95ff0bf79207a80c57364dcfa5dcd9d8858ae3744f2cc80003fe51329d95",
+    "lastmod": "2026-10-30T18:20:16+00:00"
+  },
+  "https://offerte4zampe.it/marca-purina-pro-plan-veterinary-diets": {
+    "content_hash": "11f82d401258ca6b34ecc007313312764bbf99381d39e48920da6895d5ea3f06",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-purina-veterinary-diets": {
+    "content_hash": "77c7a68a85d3179f13ee2ae68cb35dacd5d29b24dd28e445c450271fcad23c54",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-q-diet": {
+    "content_hash": "8077a68a6d5026fa25b805bb2c2538343fc2204a5feae965e06a4f2773935486",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-raff": {
+    "content_hash": "4d8b3a14fad544dd9d66d0de0b1d86c6b45b746e2c86b5e97a4fd0f27fd4604b",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-rapala": {
+    "content_hash": "507a5e3271af3a3890efe56dd270bbb054746c0c38e7ecc20f9ddbfab559eb6e",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-real-bowl": {
+    "content_hash": "f7183e8d2a19d06cec2411b6bcbb3306e8ca08fecab6a684c9d783c0df5044ce",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-record": {
+    "content_hash": "5f044cccd9e813e145700a9a0232bfdf16d4e7ea1b058c282f545fc30c678e34",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-regal": {
+    "content_hash": "5352b233a1d6279c9b1859c0b24b9dd80ef2ff79c20482461791516537816f2e",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-rinti": {
+    "content_hash": "4f61ee9753238b08cb64c4ba50823602530582b387048607059cc87fbf2a18b6",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-rollsrocky": {
+    "content_hash": "cb0d0a9e0dd6d89512d75487f0db6ed8ce1e2add4910a3520496359e4b546b80",
+    "lastmod": null
   },
   "https://offerte4zampe.it/marca-royal-canin": {
-    "content_hash": "1d855b41f3ada29034d3c33e4d612d119fc98482a335549135dae8d4e0cb316f",
-    "lastmod": "2026-10-30T18:17:07+00:00"
+    "content_hash": "27762e2ed463091adfb7ae25a195046ad5987f9be9b5ad320673ff65aa2abedc",
+    "lastmod": "2026-10-30T18:20:16+00:00"
+  },
+  "https://offerte4zampe.it/marca-royal-canin-breed-health": {
+    "content_hash": "43cb7e5bbb0d8df1342b8edd0d45a5b92037351c7fb993b0de3feeb4b18f393f",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-royal-canin-veterinary-diet": {
+    "content_hash": "ca2651cd40cbabc4d978bbc8b0e8582420bee527497cdde32a2de4ae422e43ef",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-salmoil": {
+    "content_hash": "4669566f1f6984f11a3691bea2233c06078a2c8b9bf8c555a22829efb1eb9083",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-sanibox": {
+    "content_hash": "e2f7a58704c48cc638b05c88d954033448467e6da75c4475a5cd25e05bc7da95",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-schesir": {
+    "content_hash": "01170aeaf35774bbd58e3e3ea79b050c69a6743bcac8defa29c8336ebf411cca",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-schesir-bio": {
+    "content_hash": "fc40eeeaf5c86fcec608db34bc6900b73d6fbc3aad08a6787306d6e03aeb127b",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-sera": {
+    "content_hash": "fac68fecc3fa87932cbf63c1a0d6abc61cca4f3616132fcbc2a7d91331bafa79",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-seresto": {
+    "content_hash": "95ad8c8be0ca6a64167b45cce9ab48c186b1afeb46f8ce61ad3ba478a9ae7723",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-sheba": {
+    "content_hash": "db9f072bc8f344f176b2ccb9972e3e7ccc5ff6c6a2a7582568e34055884417e0",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-shedir-pharma": {
+    "content_hash": "9487e5273770858ebf313fa6ca5b8313d4ed9077728d03ab5d60765169395bab",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-shimano": {
+    "content_hash": "5e78e17e4d6bf19f810d3b26f3455e8e25724c9e721b2a64418378339f0f448e",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-siland": {
+    "content_hash": "b5509e4f4697698767a9970af0cb51d246f336fd770676602f0a24be7236adf8",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-silpet": {
+    "content_hash": "9ccf96f795e29c23037bf67e979980e047f01b9342624078d6a01650b71ab2e7",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-stefanplast": {
+    "content_hash": "dc348f4ab20b02c3e8ca9ecb296734e73f17c4b5a2a7b4e9459216d888e73657",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-stonfo": {
+    "content_hash": "6fd7a1e8ce9c663fa4e0ecc22f8c4c979a6301f2b088840df386d56617ba7c30",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-stuzzy": {
+    "content_hash": "32ecb7d8762ae4368d8626235ed6738ba565975eb245ed5c6b33fabcdc316797",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-sydeco": {
+    "content_hash": "d653d52509eb63c0938cd0e644ff9fe401a69243446f2b57e559ba41f2c5b361",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-tavo": {
+    "content_hash": "1ede0d37857600f8d8057812dbe58533e628366a713a5838bccab9f4404ac07f",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-teknofarma": {
+    "content_hash": "e88556c0a174bed165f65a17fd2eb16c2d1b68ac044fb07e3eab5531232b4542",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-terra-canis": {
+    "content_hash": "33f2ee7bd4e7e879999fc17f566b8d275f3952d478ef72f5d98431ce2167e020",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-terra-felis": {
+    "content_hash": "1dd77e703da6ade4f0a031b7c5fc3e75faa860d12759e128e682623ee495572b",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-tetra": {
+    "content_hash": "2baa5ae65659babae8fb884b47e2ade71fd76b5d22440889607ad680de362339",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-the-choice": {
+    "content_hash": "38c315b92f96a955cc94b10a1bb131d4029ef15b36a297c7fd2525cf91cb1c10",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-the-red-oak": {
+    "content_hash": "ea18b4f26ebec7d5a61e08919e2bc2ab6c8a81bc4d1f6bb719babf0d081d5fe6",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-therapet-by-bioforlife": {
+    "content_hash": "e20642f31b25ab8c805da98bf42ebbb0753a4d82e86fa0e9324fc3dff86c1ff5",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-together": {
+    "content_hash": "98b119581360f3895de216822fc5498fc17b84a85dba4c4e1e9b787ac226cfa6",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-track-line": {
+    "content_hash": "f59041eda61624308bafd11d2097c705377399c26837e20b775d7dd7cca81b59",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-tre-ponti": {
+    "content_hash": "0ee0d129a193ee684355023c92dd8c0b90bb2de37273d8edfd434379f13ca464",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-trixie": {
+    "content_hash": "a8cc3294e4f4467ce2f671d665ad2dd02a5bf93e628bca5d35fbc0b7a7de6ccc",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-trovet": {
+    "content_hash": "e90afe3ae6b64bbdd3cdb85e32a6f809922a89c6bbeb610da156eeb2dffa47f8",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-ultima": {
+    "content_hash": "d767fa85d97e035d372d0a55b6c09c8c229a0b2eab38b481331c64d15411769b",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-unipro": {
+    "content_hash": "0e742d56f496ab935258ac8f0f28cc3b8f05939bcbddfba60a2bdd2a907d8701",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-vectra": {
+    "content_hash": "d12f820e3aac0b87d4749baf0e90ed4eb159b8e209fdf3d1cfa4f296d5fc7e26",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-versele-laga": {
+    "content_hash": "3343282ddda251d7c2306e1d42a2efc525fc3e039ae9bb1aa63ad27efa33c24f",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-vet-life-farmina": {
+    "content_hash": "3cb5a62aa36cab31d352ca470278a894c4309283de99a879a60edf0c7e83aca6",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-vet-line": {
+    "content_hash": "845a2312a025cbbc0d21c849bc67423f576327b0c29e7b8443378fdec51bc912",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-vetoquinol": {
+    "content_hash": "494adb59559189953e27bbf091f5be91740dfa6c24cec00200f084dbbc4a5891",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-viking": {
+    "content_hash": "39575ea5e19df4a801a4ff5f3959ffb0ece00e7887755f7ce2b9b95167cadf61",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-virbac": {
+    "content_hash": "ca9011293d2a5b3ff4d3613d4f182971ffb77b266b6e1fd9d4553e6589c04ee4",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-vitakraft": {
+    "content_hash": "cd7d7e719c4c29e10ae6352d2f13d8f3d4122d4c99a10b52688fff8765014db6",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-wellness-core": {
+    "content_hash": "2bd4a4e1ff1745df3462d2fa7543ed41ec2bbbbed63db40f9fcd217a1921c860",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-wenature": {
+    "content_hash": "0b6e59528e9d094457b4196ea5ab92b6b91134cf8303af206582d4edb2ad5f7f",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-whimzees": {
+    "content_hash": "71dc485866ee2b996f1c1fb3dc2eb36008e1c958650126099b538aeac77f6411",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-whiskas": {
+    "content_hash": "91358b531d3757eb48a4f39bf92489a454e08efa420201955ba269d6a823fabc",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-woolf": {
+    "content_hash": "5e0f15cb82f8654bc722f055f0ac111daa50524026cf0fa7280eb0ea28ab9c8e",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-yora": {
+    "content_hash": "121caa9b09c52350454e75a303ed566eb29dbcfd04dfcb392b6452ba8a4750cb",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-yowup": {
+    "content_hash": "e83cc5542ebb33d1bfbdcf5429e8729e66ef54c455c93d0f46296c6da39eaa01",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-yuup": {
+    "content_hash": "5a9ba9d17a9e3f2bd9eb3b50c63b02fcbcfbdd2a17f6eda329e52cb7eb83d3ee",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-zesty-paws": {
+    "content_hash": "c14327eadb6bc9097ae7e3fb0ee4ac0f42908d50e2d1464b1099a2be7b213eb7",
+    "lastmod": null
+  },
+  "https://offerte4zampe.it/marca-zolux": {
+    "content_hash": "c85c8a23570df14421074f21027e020d539d5c4afce7e7b8ea78637a5c4c9e1d",
+    "lastmod": null
   },
   "https://offerte4zampe.it/marche": {
-    "content_hash": "91e0be89c2f154f16e01e76f8b684466582a8d3106244cb04ecaf93f6f78c48f",
-    "lastmod": "2026-10-30T18:17:07+00:00"
+    "content_hash": "bbd4ee3eb3867a7f946f4f0e131f3616442458966a2d4a282e5cc39e3767cb97",
+    "lastmod": "2026-10-30T18:20:16+00:00"
   },
   "https://offerte4zampe.it/monge-adult-cat-pollo": {
-    "content_hash": "134f152012c5a47873af636b3b10416a6d202d5fcc11a74232b1b29a1e6e1b9b",
-    "lastmod": "2026-10-30T18:17:07+00:00"
+    "content_hash": "fdd2bc0d1d90e1f548773e4cbf7e25046ea1b74d100b9b5be8af9b3fce729906",
+    "lastmod": "2026-10-30T18:20:16+00:00"
   },
   "https://offerte4zampe.it/monge-adult-manzo-riso": {
-    "content_hash": "308f6cd224616a4f71588cef21e7a4232e18db29bafda41c181cfb82a0d621a5",
-    "lastmod": "2026-10-30T18:17:07+00:00"
+    "content_hash": "072db9e2038ea99134ab7addccb99da660a31ecd21c4bf50f62a6f274aed3eeb",
+    "lastmod": "2026-10-30T18:20:16+00:00"
   },
   "https://offerte4zampe.it/monge-maxi-adult-pollo": {
-    "content_hash": "0c15e18376466c41d301154f00bd3aa64c229e4006de0eb7531a1c2a92282095",
-    "lastmod": "2026-10-30T18:17:07+00:00"
+    "content_hash": "e82c9e9804d05f5ed61b745fa24f9d2bfc34a8e7897245e091745c9aabf023ad",
+    "lastmod": "2026-10-30T18:20:16+00:00"
   },
   "https://offerte4zampe.it/monge-medium-adult-pollo": {
-    "content_hash": "b5863e5a5a904795236e76de2668b1f19e0b59c69841b17f0c0d1d57d75891b8",
-    "lastmod": "2026-10-30T18:17:07+00:00"
+    "content_hash": "08fe9ebce2b0096249bd3db1f4acfc49c6f463b7a75ccb3ea295267e7646269f",
+    "lastmod": "2026-10-30T18:20:16+00:00"
   },
   "https://offerte4zampe.it/newsletter": {
     "content_hash": "2545c556cedf46ec205d0108fbff94444c5a2f248eb62f62baaf39148900b809",
@@ -120,20 +1212,20 @@
     "lastmod": "2026-10-26T13:57:15+00:00"
   },
   "https://offerte4zampe.it/prezzo-confezione-o-prezzo-kg": {
-    "content_hash": "d951865827ec9d71b69d4d586e142a93967411b17895e85a5a1e7d2e9e4a5ca9",
-    "lastmod": "2026-10-30T18:17:07+00:00"
+    "content_hash": "5175a7d8a8e001c1f7f5a8ad56f89396da145e09ec305e2680f71952c7dafef4",
+    "lastmod": "2026-10-30T18:20:16+00:00"
   },
   "https://offerte4zampe.it/privacy": {
     "content_hash": "a3d2fd2d7f8e95ffa73b73ad041a660ea7c160a6bcdce2bc4f9ed39bf8bca01b",
     "lastmod": "2026-10-30T13:08:05+00:00"
   },
   "https://offerte4zampe.it/pro-plan-large-athletic-agnello": {
-    "content_hash": "15a21bf22f914383385771601e3ba571e8dbd041bbc5b96cd1207f807e448042",
-    "lastmod": "2026-10-30T18:17:07+00:00"
+    "content_hash": "256c82f46676e5e36376aff5e9975b9240bd5da03366dc6fb00481804ddb7241",
+    "lastmod": "2026-10-30T18:20:16+00:00"
   },
   "https://offerte4zampe.it/pro-plan-medium-sensitive-skin-salmone": {
-    "content_hash": "1e5d60aba4601bf0d7b9ed364cb09b916414f44085cba505039ec1c6198c439f",
-    "lastmod": "2026-10-30T18:17:07+00:00"
+    "content_hash": "8cc1b1a1f082c27ae7f6cbfb03a7e715d7c61e75eeadf6c64691d43e4281c781",
+    "lastmod": "2026-10-30T18:20:16+00:00"
   },
   "https://offerte4zampe.it/prodotti": {
     "content_hash": "886a69c92c42551a7436814029e4dc02500d714a95cdaa64ad7714876a0ffedd",
@@ -1968,27 +3060,27 @@
     "lastmod": "2026-10-26T13:57:15+00:00"
   },
   "https://offerte4zampe.it/royal-canin-maxi-adult": {
-    "content_hash": "b3fcf5cd45574a7f598460b5595b48ea97d37470c0a930e90376274c99f16904",
-    "lastmod": "2026-10-30T18:17:07+00:00"
+    "content_hash": "14a2ba034ec51c9deb6d3d8cab35aa002cd9f1b58b9199603f659c2e80924062",
+    "lastmod": "2026-10-30T18:20:16+00:00"
   },
   "https://offerte4zampe.it/royal-canin-medium-adult": {
-    "content_hash": "7e3f5b3d7a6758ace1edb19dccf0a5c7fc24c8947d386380715a16af74ca2e6d",
-    "lastmod": "2026-10-30T18:17:07+00:00"
+    "content_hash": "c557f842483a08bba249eec54c220cfc02d69e551d46ed1c53f32fed81a4b37b",
+    "lastmod": "2026-10-30T18:20:16+00:00"
   },
   "https://offerte4zampe.it/scelte": {
     "content_hash": "988d1ec2820e94e81738e267b46f10ab3703a3309764740aa0a41c5371219934",
     "lastmod": "2026-10-26T13:57:15+00:00"
   },
   "https://offerte4zampe.it/spedizione-gratuita-conviene": {
-    "content_hash": "fe9e8f343eebc995436c9fcb698700a14b9eab7732781e38252ae1ede7b21e58",
-    "lastmod": "2026-10-30T18:17:07+00:00"
+    "content_hash": "61a6f1909d268f62ba53da5058e3f5fdad45acdd2790631f293607777da7dbc0",
+    "lastmod": "2026-10-30T18:20:16+00:00"
   },
   "https://offerte4zampe.it/spedizioni": {
     "content_hash": "e4947e177f03ed6b7066552cd37b9ff1a68397e059035c8f5fce6f1d96a73600",
     "lastmod": "2026-10-26T13:57:15+00:00"
   },
   "https://offerte4zampe.it/stesso-prodotto-formato-gtin": {
-    "content_hash": "c829fc3fc600c0acd1583105121ca4ce7345d90603dbad6846c6639c6dc713d7",
-    "lastmod": "2026-10-30T18:17:07+00:00"
+    "content_hash": "6db6ca27d6a6a07192a5363edb579bb884ca07f52f07a586dead1c52ac00edb4",
+    "lastmod": "2026-10-30T18:20:16+00:00"
   }
 }

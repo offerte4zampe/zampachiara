@@ -1,9 +1,9 @@
 {
   "method_version": 2,
-  "observed_at": "2026-10-30T18:15:39.704526+00:00",
-  "pages_scanned": 499,
-  "indexable_pages": 42,
-  "unique_canonicals": 42,
+  "observed_at": "2026-10-30T18:18:46.478241+00:00",
+  "pages_scanned": 772,
+  "indexable_pages": 315,
+  "unique_canonicals": 315,
   "issues": [],
   "rule_counts": {},
   "pages": [
@@ -116,9 +116,1005 @@
       "issues": []
     },
     {
+      "page": "marca-8in1.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-8in1",
+      "issues": []
+    },
+    {
+      "page": "marca-acana.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-acana",
+      "issues": []
+    },
+    {
+      "page": "marca-adaptil.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-adaptil",
+      "issues": []
+    },
+    {
+      "page": "marca-advance-veterinary-diets.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-advance-veterinary-diets",
+      "issues": []
+    },
+    {
+      "page": "marca-advance.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-advance",
+      "issues": []
+    },
+    {
+      "page": "marca-advantix.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-advantix",
+      "issues": []
+    },
+    {
+      "page": "marca-aequilibria-vet.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-aequilibria-vet",
+      "issues": []
+    },
+    {
+      "page": "marca-airyvest.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-airyvest",
+      "issues": []
+    },
+    {
+      "page": "marca-aldog-d983b612.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-aldog-d983b612",
+      "issues": []
+    },
+    {
+      "page": "marca-aldog.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-aldog",
+      "issues": []
+    },
+    {
+      "page": "marca-almo-nature.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-almo-nature",
+      "issues": []
+    },
+    {
+      "page": "marca-alpha-spirit.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-alpha-spirit",
+      "issues": []
+    },
+    {
+      "page": "marca-althea.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-althea",
+      "issues": []
+    },
+    {
+      "page": "marca-amanova.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-amanova",
+      "issues": []
+    },
+    {
+      "page": "marca-ami-pet-food.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-ami-pet-food",
+      "issues": []
+    },
+    {
+      "page": "marca-ami.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-ami",
+      "issues": []
+    },
+    {
+      "page": "marca-amico-veg.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-amico-veg",
+      "issues": []
+    },
+    {
+      "page": "marca-amtra.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-amtra",
+      "issues": []
+    },
+    {
+      "page": "marca-animaliapet.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-animaliapet",
+      "issues": []
+    },
+    {
+      "page": "marca-aqpet.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-aqpet",
+      "issues": []
+    },
+    {
+      "page": "marca-aqpetfriends.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-aqpetfriends",
+      "issues": []
+    },
+    {
+      "page": "marca-aqua-medic.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-aqua-medic",
+      "issues": []
+    },
+    {
+      "page": "marca-aquadeco.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-aquadeco",
+      "issues": []
+    },
+    {
+      "page": "marca-aqualovers.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-aqualovers",
+      "issues": []
+    },
+    {
+      "page": "marca-aquarium-munster.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-aquarium-munster",
+      "issues": []
+    },
+    {
+      "page": "marca-arya.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-arya",
+      "issues": []
+    },
+    {
+      "page": "marca-askoll.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-askoll",
+      "issues": []
+    },
+    {
+      "page": "marca-asso.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-asso",
+      "issues": []
+    },
+    {
+      "page": "marca-aurora-biofarma.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-aurora-biofarma",
+      "issues": []
+    },
+    {
+      "page": "marca-bauzaar.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-bauzaar",
+      "issues": []
+    },
+    {
+      "page": "marca-beaphar-protezione-naturale.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-beaphar-protezione-naturale",
+      "issues": []
+    },
+    {
+      "page": "marca-beaphar.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-beaphar",
+      "issues": []
+    },
+    {
+      "page": "marca-belcando-dog-food.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-belcando-dog-food",
+      "issues": []
+    },
+    {
+      "page": "marca-bengy.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-bengy",
+      "issues": []
+    },
+    {
+      "page": "marca-biokat-s.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-biokat-s",
+      "issues": []
+    },
+    {
+      "page": "marca-blu-bios.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-blu-bios",
+      "issues": []
+    },
+    {
+      "page": "marca-bravery.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-bravery",
+      "issues": []
+    },
+    {
+      "page": "marca-brit-care.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-brit-care",
+      "issues": []
+    },
+    {
+      "page": "marca-brit-veterinary-diets.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-brit-veterinary-diets",
+      "issues": []
+    },
+    {
+      "page": "marca-bunny.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-bunny",
+      "issues": []
+    },
+    {
+      "page": "marca-buona-pet.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-buona-pet",
+      "issues": []
+    },
+    {
+      "page": "marca-burgess.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-burgess",
+      "issues": []
+    },
+    {
+      "page": "marca-calmisto.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-calmisto",
+      "issues": []
+    },
+    {
+      "page": "marca-camillo.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-camillo",
+      "issues": []
+    },
+    {
+      "page": "marca-camon.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-camon",
+      "issues": []
+    },
+    {
+      "page": "marca-canadiancat.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-canadiancat",
+      "issues": []
+    },
+    {
+      "page": "marca-canagan.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-canagan",
+      "issues": []
+    },
+    {
+      "page": "marca-candioli-farmaceutici.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-candioli-farmaceutici",
+      "issues": []
+    },
+    {
+      "page": "marca-candioli.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-candioli",
+      "issues": []
+    },
+    {
+      "page": "marca-cat-e-rina.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-cat-e-rina",
+      "issues": []
+    },
+    {
+      "page": "marca-cat-s-best.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-cat-s-best",
+      "issues": []
+    },
+    {
+      "page": "marca-catisfaction.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-catisfaction",
+      "issues": []
+    },
+    {
+      "page": "marca-catisfactions.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-catisfactions",
+      "issues": []
+    },
+    {
+      "page": "marca-cesar.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-cesar",
+      "issues": []
+    },
+    {
+      "page": "marca-cesarano.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-cesarano",
+      "issues": []
+    },
+    {
+      "page": "marca-cesarpet.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-cesarpet",
+      "issues": []
+    },
+    {
+      "page": "marca-colley.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-colley",
+      "issues": []
+    },
+    {
+      "page": "marca-coralpina.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-coralpina",
+      "issues": []
+    },
+    {
+      "page": "marca-crancito-s.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-crancito-s",
+      "issues": []
+    },
+    {
+      "page": "marca-croci-abbigliamento.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-croci-abbigliamento",
+      "issues": []
+    },
+    {
+      "page": "marca-croci-hiking.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-croci-hiking",
+      "issues": []
+    },
+    {
+      "page": "marca-croci.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-croci",
+      "issues": []
+    },
+    {
+      "page": "marca-dag.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-dag",
+      "issues": []
+    },
+    {
+      "page": "marca-dashi.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-dashi",
+      "issues": []
+    },
+    {
+      "page": "marca-deli-pet.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-deli-pet",
+      "issues": []
+    },
+    {
+      "page": "marca-delipet.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-delipet",
+      "issues": []
+    },
+    {
+      "page": "marca-dentalife.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-dentalife",
+      "issues": []
+    },
+    {
+      "page": "marca-dentaljoy.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-dentaljoy",
+      "issues": []
+    },
+    {
+      "page": "marca-dieta-pars.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-dieta-pars",
+      "issues": []
+    },
+    {
+      "page": "marca-disugual.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-disugual",
+      "issues": []
+    },
+    {
+      "page": "marca-doggyebag.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-doggyebag",
+      "issues": []
+    },
+    {
+      "page": "marca-douxo.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-douxo",
+      "issues": []
+    },
+    {
+      "page": "marca-dr-clauder-s.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-dr-clauder-s",
+      "issues": []
+    },
+    {
+      "page": "marca-dr-zoo.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-dr-zoo",
+      "issues": []
+    },
+    {
+      "page": "marca-drn.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-drn",
+      "issues": []
+    },
+    {
+      "page": "marca-edgard-cooper.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-edgard-cooper",
+      "issues": []
+    },
+    {
+      "page": "marca-elanco.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-elanco",
+      "issues": []
+    },
+    {
+      "page": "marca-emozioni-a-4-zampe.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-emozioni-a-4-zampe",
+      "issues": []
+    },
+    {
+      "page": "marca-enova.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-enova",
+      "issues": []
+    },
+    {
+      "page": "marca-exclusion-diet.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-exclusion-diet",
+      "issues": []
+    },
+    {
+      "page": "marca-exclusion-mediterraneo.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-exclusion-mediterraneo",
+      "issues": []
+    },
+    {
+      "page": "marca-exo-terra.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-exo-terra",
+      "issues": []
+    },
+    {
+      "page": "marca-fabotex.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-fabotex",
+      "issues": []
+    },
+    {
+      "page": "marca-farmina-n-d-ancestral-grain.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-farmina-n-d-ancestral-grain",
+      "issues": []
+    },
+    {
+      "page": "marca-farmina-n-d-ocean.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-farmina-n-d-ocean",
+      "issues": []
+    },
+    {
+      "page": "marca-farmina-n-d-prime.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-farmina-n-d-prime",
+      "issues": []
+    },
+    {
+      "page": "marca-farmina-n-d-pumpkin-grain-free.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-farmina-n-d-pumpkin-grain-free",
+      "issues": []
+    },
+    {
+      "page": "marca-farmina-n-d-quinoa-grain-free.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-farmina-n-d-quinoa-grain-free",
+      "issues": []
+    },
+    {
+      "page": "marca-farmina-n-d-spirulina.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-farmina-n-d-spirulina",
+      "issues": []
+    },
+    {
+      "page": "marca-farmina-n-d-tropical.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-farmina-n-d-tropical",
+      "issues": []
+    },
+    {
+      "page": "marca-farmina-n-d.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-farmina-n-d",
+      "issues": []
+    },
+    {
+      "page": "marca-farmina-vet-life.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-farmina-vet-life",
+      "issues": []
+    },
+    {
       "page": "marca-farmina.html",
       "indexable": true,
       "canonical": "https://offerte4zampe.it/marca-farmina",
+      "issues": []
+    },
+    {
+      "page": "marca-felinea.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-felinea",
+      "issues": []
+    },
+    {
+      "page": "marca-feliway.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-feliway",
+      "issues": []
+    },
+    {
+      "page": "marca-felix.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-felix",
+      "issues": []
+    },
+    {
+      "page": "marca-ferplast.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-ferplast",
+      "issues": []
+    },
+    {
+      "page": "marca-ferribiella.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-ferribiella",
+      "issues": []
+    },
+    {
+      "page": "marca-filpesca.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-filpesca",
+      "issues": []
+    },
+    {
+      "page": "marca-fish4dogs.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-fish4dogs",
+      "issues": []
+    },
+    {
+      "page": "marca-flamingo.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-flamingo",
+      "issues": []
+    },
+    {
+      "page": "marca-flexi.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-flexi",
+      "issues": []
+    },
+    {
+      "page": "marca-flur.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-flur",
+      "issues": []
+    },
+    {
+      "page": "marca-fofos.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-fofos",
+      "issues": []
+    },
+    {
+      "page": "marca-forcepet.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-forcepet",
+      "issues": []
+    },
+    {
+      "page": "marca-forza10-active.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-forza10-active",
+      "issues": []
+    },
+    {
+      "page": "marca-forza10-diet.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-forza10-diet",
+      "issues": []
+    },
+    {
+      "page": "marca-forza10.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-forza10",
+      "issues": []
+    },
+    {
+      "page": "marca-francodex.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-francodex",
+      "issues": []
+    },
+    {
+      "page": "marca-frontline.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-frontline",
+      "issues": []
+    },
+    {
+      "page": "marca-furminator.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-furminator",
+      "issues": []
+    },
+    {
+      "page": "marca-fuzzyard.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-fuzzyard",
+      "issues": []
+    },
+    {
+      "page": "marca-gamakatsu.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-gamakatsu",
+      "issues": []
+    },
+    {
+      "page": "marca-gemon.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-gemon",
+      "issues": []
+    },
+    {
+      "page": "marca-gimbi.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-gimbi",
+      "issues": []
+    },
+    {
+      "page": "marca-gimborn.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-gimborn",
+      "issues": []
+    },
+    {
+      "page": "marca-gimcat.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-gimcat",
+      "issues": []
+    },
+    {
+      "page": "marca-gimdog.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-gimdog",
+      "issues": []
+    },
+    {
+      "page": "marca-golden-eagle.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-golden-eagle",
+      "issues": []
+    },
+    {
+      "page": "marca-golosi.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-golosi",
+      "issues": []
+    },
+    {
+      "page": "marca-gourmet.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-gourmet",
+      "issues": []
+    },
+    {
+      "page": "marca-grandorf.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-grandorf",
+      "issues": []
+    },
+    {
+      "page": "marca-happy-cat.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-happy-cat",
+      "issues": []
+    },
+    {
+      "page": "marca-happy-dog.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-happy-dog",
+      "issues": []
+    },
+    {
+      "page": "marca-hari.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-hari",
+      "issues": []
+    },
+    {
+      "page": "marca-harper-and-bone.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-harper-and-bone",
+      "issues": []
+    },
+    {
+      "page": "marca-hill-s-prescription-diet.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-hill-s-prescription-diet",
+      "issues": []
+    },
+    {
+      "page": "marca-hill-s-science-plan.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-hill-s-science-plan",
+      "issues": []
+    },
+    {
+      "page": "marca-hm-electronics.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-hm-electronics",
+      "issues": []
+    },
+    {
+      "page": "marca-hunter.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-hunter",
+      "issues": []
+    },
+    {
+      "page": "marca-i-m-different.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-i-m-different",
+      "issues": []
+    },
+    {
+      "page": "marca-icf.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-icf",
+      "issues": []
+    },
+    {
+      "page": "marca-ignesti.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-ignesti",
+      "issues": []
+    },
+    {
+      "page": "marca-imac.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-imac",
+      "issues": []
+    },
+    {
+      "page": "marca-innovet.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-innovet",
+      "issues": []
+    },
+    {
+      "page": "marca-inodorina.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-inodorina",
+      "issues": []
+    },
+    {
+      "page": "marca-italian-way.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-italian-way",
+      "issues": []
+    },
+    {
+      "page": "marca-italianway.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-italianway",
+      "issues": []
+    },
+    {
+      "page": "marca-jbl.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-jbl",
+      "issues": []
+    },
+    {
+      "page": "marca-joki-plus.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-joki-plus",
+      "issues": []
+    },
+    {
+      "page": "marca-julius-k9.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-julius-k9",
+      "issues": []
+    },
+    {
+      "page": "marca-juwel.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-juwel",
+      "issues": []
+    },
+    {
+      "page": "marca-juwell.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-juwell",
+      "issues": []
+    },
+    {
+      "page": "marca-kattovit.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-kattovit",
+      "issues": []
+    },
+    {
+      "page": "marca-ket.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-ket",
+      "issues": []
+    },
+    {
+      "page": "marca-kong.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-kong",
+      "issues": []
+    },
+    {
+      "page": "marca-kudo.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-kudo",
+      "issues": []
+    },
+    {
+      "page": "marca-l-isola-dei-tesori.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-l-isola-dei-tesori",
+      "issues": []
+    },
+    {
+      "page": "marca-leonardo-cat-food.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-leonardo-cat-food",
+      "issues": []
+    },
+    {
+      "page": "marca-leonardo.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-leonardo",
+      "issues": []
+    },
+    {
+      "page": "marca-leopet.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-leopet",
+      "issues": []
+    },
+    {
+      "page": "marca-lev.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-lev",
+      "issues": []
+    },
+    {
+      "page": "marca-libra.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-libra",
+      "issues": []
+    },
+    {
+      "page": "marca-life-cat.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-life-cat",
+      "issues": []
+    },
+    {
+      "page": "marca-lifecat.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-lifecat",
+      "issues": []
+    },
+    {
+      "page": "marca-lifedog.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-lifedog",
+      "issues": []
+    },
+    {
+      "page": "marca-lily-s-kitchen.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-lily-s-kitchen",
+      "issues": []
+    },
+    {
+      "page": "marca-lindocat.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-lindocat",
+      "issues": []
+    },
+    {
+      "page": "marca-liu-jo-pets.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-liu-jo-pets",
+      "issues": []
+    },
+    {
+      "page": "marca-liu-jo.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-liu-jo",
+      "issues": []
+    },
+    {
+      "page": "marca-m-pets.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-m-pets",
+      "issues": []
+    },
+    {
+      "page": "marca-mantovani.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-mantovani",
+      "issues": []
+    },
+    {
+      "page": "marca-marpet.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-marpet",
+      "issues": []
+    },
+    {
+      "page": "marca-matisse.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-matisse",
+      "issues": []
+    },
+    {
+      "page": "marca-monge-bwild.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-monge-bwild",
+      "issues": []
+    },
+    {
+      "page": "marca-monge-gemon.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-monge-gemon",
+      "issues": []
+    },
+    {
+      "page": "marca-monge-vetsolution.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-monge-vetsolution",
       "issues": []
     },
     {
@@ -128,9 +1124,297 @@
       "issues": []
     },
     {
+      "page": "marca-monopro-lo-specialista.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-monopro-lo-specialista",
+      "issues": []
+    },
+    {
+      "page": "marca-monopro.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-monopro",
+      "issues": []
+    },
+    {
+      "page": "marca-morando.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-morando",
+      "issues": []
+    },
+    {
+      "page": "marca-mordo.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-mordo",
+      "issues": []
+    },
+    {
+      "page": "marca-morso.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-morso",
+      "issues": []
+    },
+    {
+      "page": "marca-msd-animal-health.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-msd-animal-health",
+      "issues": []
+    },
+    {
+      "page": "marca-mustad.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-mustad",
+      "issues": []
+    },
+    {
+      "page": "marca-myfamily.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-myfamily",
+      "issues": []
+    },
+    {
+      "page": "marca-nakazima.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-nakazima",
+      "issues": []
+    },
+    {
+      "page": "marca-nasonero.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-nasonero",
+      "issues": []
+    },
+    {
+      "page": "marca-natua.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-natua",
+      "issues": []
+    },
+    {
+      "page": "marca-natural-code-for-dog.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-natural-code-for-dog",
+      "issues": []
+    },
+    {
+      "page": "marca-natural-code.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-natural-code",
+      "issues": []
+    },
+    {
+      "page": "marca-natural-derma-pet.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-natural-derma-pet",
+      "issues": []
+    },
+    {
       "page": "marca-natural-trainer.html",
       "indexable": true,
       "canonical": "https://offerte4zampe.it/marca-natural-trainer",
+      "issues": []
+    },
+    {
+      "page": "marca-naturalpet.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-naturalpet",
+      "issues": []
+    },
+    {
+      "page": "marca-nature-s-protection.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-nature-s-protection",
+      "issues": []
+    },
+    {
+      "page": "marca-naturina.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-naturina",
+      "issues": []
+    },
+    {
+      "page": "marca-naxos-pet-food.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-naxos-pet-food",
+      "issues": []
+    },
+    {
+      "page": "marca-naxos.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-naxos",
+      "issues": []
+    },
+    {
+      "page": "marca-nbf-lanes.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-nbf-lanes",
+      "issues": []
+    },
+    {
+      "page": "marca-newa.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-newa",
+      "issues": []
+    },
+    {
+      "page": "marca-nobleza.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-nobleza",
+      "issues": []
+    },
+    {
+      "page": "marca-o-life.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-o-life",
+      "issues": []
+    },
+    {
+      "page": "marca-oase.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-oase",
+      "issues": []
+    },
+    {
+      "page": "marca-oasy.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-oasy",
+      "issues": []
+    },
+    {
+      "page": "marca-olympus.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-olympus",
+      "issues": []
+    },
+    {
+      "page": "marca-orijen.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-orijen",
+      "issues": []
+    },
+    {
+      "page": "marca-orme-naturali.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-orme-naturali",
+      "issues": []
+    },
+    {
+      "page": "marca-ownat.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-ownat",
+      "issues": []
+    },
+    {
+      "page": "marca-oxbow.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-oxbow",
+      "issues": []
+    },
+    {
+      "page": "marca-pedigree.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-pedigree",
+      "issues": []
+    },
+    {
+      "page": "marca-pet-lovers-collection.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-pet-lovers-collection",
+      "issues": []
+    },
+    {
+      "page": "marca-petreet.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-petreet",
+      "issues": []
+    },
+    {
+      "page": "marca-petshine.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-petshine",
+      "issues": []
+    },
+    {
+      "page": "marca-petup.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-petup",
+      "issues": []
+    },
+    {
+      "page": "marca-piccoli-amici.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-piccoli-amici",
+      "issues": []
+    },
+    {
+      "page": "marca-primordial.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-primordial",
+      "issues": []
+    },
+    {
+      "page": "marca-proggy.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-proggy",
+      "issues": []
+    },
+    {
+      "page": "marca-prolife-diet.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-prolife-diet",
+      "issues": []
+    },
+    {
+      "page": "marca-prolife-veterinary-formula.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-prolife-veterinary-formula",
+      "issues": []
+    },
+    {
+      "page": "marca-prolife.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-prolife",
+      "issues": []
+    },
+    {
+      "page": "marca-protection-orme-naturali.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-protection-orme-naturali",
+      "issues": []
+    },
+    {
+      "page": "marca-psitaccus.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-psitaccus",
+      "issues": []
+    },
+    {
+      "page": "marca-purina-cat-chow.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-purina-cat-chow",
+      "issues": []
+    },
+    {
+      "page": "marca-purina-dentalife.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-purina-dentalife",
+      "issues": []
+    },
+    {
+      "page": "marca-purina-felix.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-purina-felix",
+      "issues": []
+    },
+    {
+      "page": "marca-purina-one.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-purina-one",
+      "issues": []
+    },
+    {
+      "page": "marca-purina-pro-plan-veterinary-diets.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-purina-pro-plan-veterinary-diets",
       "issues": []
     },
     {
@@ -140,9 +1424,363 @@
       "issues": []
     },
     {
+      "page": "marca-purina-veterinary-diets.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-purina-veterinary-diets",
+      "issues": []
+    },
+    {
+      "page": "marca-q-diet.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-q-diet",
+      "issues": []
+    },
+    {
+      "page": "marca-raff.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-raff",
+      "issues": []
+    },
+    {
+      "page": "marca-rapala.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-rapala",
+      "issues": []
+    },
+    {
+      "page": "marca-real-bowl.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-real-bowl",
+      "issues": []
+    },
+    {
+      "page": "marca-record.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-record",
+      "issues": []
+    },
+    {
+      "page": "marca-regal.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-regal",
+      "issues": []
+    },
+    {
+      "page": "marca-rinti.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-rinti",
+      "issues": []
+    },
+    {
+      "page": "marca-rollsrocky.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-rollsrocky",
+      "issues": []
+    },
+    {
+      "page": "marca-royal-canin-breed-health.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-royal-canin-breed-health",
+      "issues": []
+    },
+    {
+      "page": "marca-royal-canin-veterinary-diet.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-royal-canin-veterinary-diet",
+      "issues": []
+    },
+    {
       "page": "marca-royal-canin.html",
       "indexable": true,
       "canonical": "https://offerte4zampe.it/marca-royal-canin",
+      "issues": []
+    },
+    {
+      "page": "marca-salmoil.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-salmoil",
+      "issues": []
+    },
+    {
+      "page": "marca-sanibox.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-sanibox",
+      "issues": []
+    },
+    {
+      "page": "marca-schesir-bio.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-schesir-bio",
+      "issues": []
+    },
+    {
+      "page": "marca-schesir.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-schesir",
+      "issues": []
+    },
+    {
+      "page": "marca-sera.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-sera",
+      "issues": []
+    },
+    {
+      "page": "marca-seresto.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-seresto",
+      "issues": []
+    },
+    {
+      "page": "marca-sheba.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-sheba",
+      "issues": []
+    },
+    {
+      "page": "marca-shedir-pharma.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-shedir-pharma",
+      "issues": []
+    },
+    {
+      "page": "marca-shimano.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-shimano",
+      "issues": []
+    },
+    {
+      "page": "marca-siland.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-siland",
+      "issues": []
+    },
+    {
+      "page": "marca-silpet.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-silpet",
+      "issues": []
+    },
+    {
+      "page": "marca-stefanplast.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-stefanplast",
+      "issues": []
+    },
+    {
+      "page": "marca-stonfo.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-stonfo",
+      "issues": []
+    },
+    {
+      "page": "marca-stuzzy.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-stuzzy",
+      "issues": []
+    },
+    {
+      "page": "marca-sydeco.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-sydeco",
+      "issues": []
+    },
+    {
+      "page": "marca-tavo.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-tavo",
+      "issues": []
+    },
+    {
+      "page": "marca-teknofarma.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-teknofarma",
+      "issues": []
+    },
+    {
+      "page": "marca-terra-canis.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-terra-canis",
+      "issues": []
+    },
+    {
+      "page": "marca-terra-felis.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-terra-felis",
+      "issues": []
+    },
+    {
+      "page": "marca-tetra.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-tetra",
+      "issues": []
+    },
+    {
+      "page": "marca-the-choice.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-the-choice",
+      "issues": []
+    },
+    {
+      "page": "marca-the-red-oak.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-the-red-oak",
+      "issues": []
+    },
+    {
+      "page": "marca-therapet-by-bioforlife.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-therapet-by-bioforlife",
+      "issues": []
+    },
+    {
+      "page": "marca-together.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-together",
+      "issues": []
+    },
+    {
+      "page": "marca-track-line.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-track-line",
+      "issues": []
+    },
+    {
+      "page": "marca-tre-ponti.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-tre-ponti",
+      "issues": []
+    },
+    {
+      "page": "marca-trixie.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-trixie",
+      "issues": []
+    },
+    {
+      "page": "marca-trovet.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-trovet",
+      "issues": []
+    },
+    {
+      "page": "marca-ultima.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-ultima",
+      "issues": []
+    },
+    {
+      "page": "marca-unipro.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-unipro",
+      "issues": []
+    },
+    {
+      "page": "marca-vectra.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-vectra",
+      "issues": []
+    },
+    {
+      "page": "marca-versele-laga.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-versele-laga",
+      "issues": []
+    },
+    {
+      "page": "marca-vet-life-farmina.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-vet-life-farmina",
+      "issues": []
+    },
+    {
+      "page": "marca-vet-line.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-vet-line",
+      "issues": []
+    },
+    {
+      "page": "marca-vetoquinol.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-vetoquinol",
+      "issues": []
+    },
+    {
+      "page": "marca-viking.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-viking",
+      "issues": []
+    },
+    {
+      "page": "marca-virbac.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-virbac",
+      "issues": []
+    },
+    {
+      "page": "marca-vitakraft.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-vitakraft",
+      "issues": []
+    },
+    {
+      "page": "marca-wellness-core.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-wellness-core",
+      "issues": []
+    },
+    {
+      "page": "marca-wenature.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-wenature",
+      "issues": []
+    },
+    {
+      "page": "marca-whimzees.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-whimzees",
+      "issues": []
+    },
+    {
+      "page": "marca-whiskas.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-whiskas",
+      "issues": []
+    },
+    {
+      "page": "marca-woolf.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-woolf",
+      "issues": []
+    },
+    {
+      "page": "marca-yora.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-yora",
+      "issues": []
+    },
+    {
+      "page": "marca-yowup.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-yowup",
+      "issues": []
+    },
+    {
+      "page": "marca-yuup.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-yuup",
+      "issues": []
+    },
+    {
+      "page": "marca-zesty-paws.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-zesty-paws",
+      "issues": []
+    },
+    {
+      "page": "marca-zolux.html",
+      "indexable": true,
+      "canonical": "https://offerte4zampe.it/marca-zolux",
       "issues": []
     },
     {
@@ -766,7 +2404,7 @@
     {
       "page": "prezzi-07613033568619-0203da77a8.html",
       "indexable": false,
-      "canonical": "https://offerte4zampe.it/prezzi-07613033568619-0203da77a8",
+      "canonical": "https://offerte4zampe.it/prodotto/purina-pro-plan-kitten-healthy-start-umido-gatti-mousse-pollo-85-g-confezione-da-24-pezzi-07613033568619-221bd4",
       "issues": []
     },
     {

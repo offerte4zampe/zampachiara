@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T18:15:39.704526+00:00",
+  "generated_at": "2026-10-30T18:18:46.478241+00:00",
   "selection_basis": "Operational opportunity and category/brand diversity; no search-demand data used.",
   "target": 300,
   "selected": 300,
@@ -7,8 +7,8 @@
   "at_target": 12,
   "with_third_store_lead": 28,
   "categories": {
-    "umido": 132,
-    "crocchette": 108,
+    "umido": 131,
+    "crocchette": 109,
     "lettiere": 9,
     "snack": 51
   },
@@ -37,6 +37,7 @@
     "animaliapet:46976584155479",
     "animaliapet:46976587727191",
     "animaliapet:46976589136215",
+    "animaliapet:46976591200599",
     "animaliapet:46976591233367",
     "animaliapet:46976605323607",
     "animaliapet:46976606044503",
@@ -323,7 +324,6 @@
     "bauzaar:58411832246597",
     "bauzaar:58411832312133",
     "bauzaar:58411834179909",
-    "bauzaar:58411836670277",
     "bauzaar:58411838603589",
     "bauzaar:58411839914309",
     "bauzaar:58411840700741",
@@ -505,7 +505,6 @@
     "paco:5432",
     "paco:5567",
     "paco:5568",
-    "paco:5603",
     "paco:5621",
     "paco:5690",
     "paco:5693",
@@ -5841,6 +5840,27 @@
       "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
     },
     {
+      "product_id": "p-9ae54ff19d73e6a30eda",
+      "name": "Farmina N&D Pumpkin Neutered Quaglia e Melograno 5Kg Crocchette Gatti Adulti",
+      "brand": "Farmina",
+      "category": "crocchette",
+      "species": "gatto",
+      "format": "5 kg",
+      "url": "https://offerte4zampe.it/prodotto/farmina-n-d-pumpkin-neutered-quaglia-e-melograno-5kg-crocchette-gatti-adulti-08010276036803-a30eda",
+      "verified_shops": 1,
+      "target_shops": 3,
+      "missing_shops": 2,
+      "offer_ids": [
+        "animaliapet:46976591200599"
+      ],
+      "candidate_offer_ids": [
+        "bauzaar:56961288536389",
+        "paco:3847"
+      ],
+      "next_action": "verify_feed_package",
+      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
+    },
+    {
       "product_id": "p-a836c5069676bfc622de",
       "name": "Farmina N&D Pumpkin Pollo Zucca Melograno 140g Lattina Cani Mini Adult",
       "brand": "Farmina",
@@ -5935,6 +5955,7 @@
         "bauzaar:56961288536389"
       ],
       "candidate_offer_ids": [
+        "animaliapet:46976591200599",
         "paco:3847"
       ],
       "next_action": "verify_feed_package",
@@ -6417,26 +6438,6 @@
       ],
       "candidate_offer_ids": [
         "isola-dei-tesori:000142030"
-      ],
-      "next_action": "verify_feed_package",
-      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
-    },
-    {
-      "product_id": "p-c16badeee88d20ad107c",
-      "name": "ItalianWay Cat Sfilaccetti in salsa Weight Management Sterilized 85 g Maiale e mirtilli - confezione da 28 pezzi",
-      "brand": "Italian Way",
-      "category": "umido",
-      "species": "gatto",
-      "format": "2,38 kg",
-      "url": "https://offerte4zampe.it/prodotto/italianway-cat-sfilaccetti-in-salsa-weight-management-sterilized-85-g-maiale-e-mirtilli-confezione-da-28-pezzi-08011789610597-ad107c",
-      "verified_shops": 1,
-      "target_shops": 3,
-      "missing_shops": 2,
-      "offer_ids": [
-        "bauzaar:58411836670277"
-      ],
-      "candidate_offer_ids": [
-        "paco:5603"
       ],
       "next_action": "verify_feed_package",
       "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
