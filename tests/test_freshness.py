@@ -1,7 +1,7 @@
 import datetime as dt
 import unittest
 from automation.freshness import source_freshness, label, banner
-from automation.build_home_data import build
+from automation.build_home_data import build, render_home
 from automation.build_catalog_preview import render_preview
 
 NOW=dt.datetime(2026,10,30,12,tzinfo=dt.timezone.utc)
@@ -34,3 +34,11 @@ class FreshnessTests(unittest.TestCase):
         preview=render_preview('<div id="catalog-preview"></div>',catalog,NOW)
         self.assertIn('Dati non aggiornati da 13 ore',preview)
         self.assertIn('10,00',preview)
+
+    def test_freshness_home_rebuild_preserves_existing_brand_landings(self):
+        regions=['home-stats','home-spotlight','home-deals-status','home-deals','home-brands','home-shops']
+        html='<main>'+''.join('<div id="'+r+'"'+(' data-brand-pages="{&quot;Marca&quot;:&quot;/marca-esatta&quot;}"' if r=='home-brands' else '')+'></div>' for r in regions)+'</main>'
+        payload={'generated_at':NOW.isoformat(),'offers':[],'sources':[],'top_brands':['Marca'],'stats':{'offers':0,'brands':1},'refresh_hours':6}
+        out=render_home(html,payload)
+        self.assertIn('href="/marca-esatta">Marca</a>',out)
+        self.assertEqual(render_home(out,payload),out)

@@ -118,12 +118,21 @@ def replace_region(html, element_id, content):
 
 
 def render_home(html, payload):
-    from html import escape as h
+    from html import escape as h, unescape
     from urllib.parse import urlencode
     import re
     def money(value):
         return f'{value:,.2f}'.replace(',', '_').replace('.', ',').replace('_', '.')+' €'
+    region = re.search(r'<div\b[^>]*\bid="home-brands"[^>]*>', html)
+    mapping = re.search(r'data-brand-pages="([^"]*)"', region[0]) if region else None
+    try:
+        brand_pages = json.loads(unescape(mapping[1])) if mapping else {}
+    except (ValueError, TypeError):
+        brand_pages = {}
     def link(label, **params):
+        target = brand_pages.get(params.get('brand'))
+        if isinstance(target, str) and re.fullmatch(r'/marca-[a-z0-9-]+', target):
+            return f'<a href="{h(target, quote=True)}">{h(label)}</a>'
         return f'<a href="confronta-cibo.html?{h(urlencode(params), quote=True)}">{h(label)}</a>'
     def card(o, spotlight=False):
         tag = 'h2' if spotlight else 'h3'

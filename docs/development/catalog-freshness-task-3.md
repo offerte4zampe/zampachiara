@@ -19,9 +19,11 @@ The comparator includes a static per-source warning plus client-side age refresh
 and badges on individual cards and grouped store summaries. Static catalog cards
 also label observations beyond 12 hours. Missing/future dates are marked unknown.
 
-Validation: 184 Python tests and 133 Node tests pass. Tests reproduce an old
+Validation: 185 Python tests and 133 Node tests pass. Tests reproduce an old
 13-hour observation with a current failed-fetch timestamp, banner visibility,
 home exclusion, catalog badge and the one-product availability failure.
 Build audit: 489 pages, zero issues; no stale featured offer in generated home.
 The deploy build recalculates freshness without requesting external feeds.
 Affiliate URLs, D1/shadow, consent and shipping calculations are unchanged.
+
+Home rebuild also retains the existing brand landing map; a regression test covers it.
