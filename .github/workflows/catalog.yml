@@ -128,6 +128,7 @@ jobs:
       - run: python automation/remove_unverified_ads.py
       - run: python automation/improve_discovery.py
       - run: python automation/apply_canonical_products.py
+      - run: python automation/apply_semantics.py
       - run: python automation/build_sitemaps.py
       - run: python automation/audit_site.py
       - name: Publish refreshed catalog

@@ -23,9 +23,10 @@ export function historySummary(rows,days,now){
 }
 function historyHTML(product,state){
  return [30,90].map(days=>{const h=historySummary(product.history,days,state.now);if(!h.rows.length)return '<p>Nessuna rilevazione valida negli ultimi '+days+' giorni.</p>';
+ if(days===90&&new Set(h.rows.map(r=>r.day)).size<=30)return '<section class="panel"><h3>Storico disponibile</h3><p>Grafico a 90 giorni disponibile dopo più di 30 giorni con rilevazioni effettive.</p></section>';
  const low=h.low,range=h.high-low||1,end=Math.floor(state.now/86400000)*86400000,start=end-(days-1)*86400000;
  const dots=h.rows.map(r=>'<circle cx="'+(10+(Date.parse(r.day+'T00:00:00Z')-start)/(end-start)*280).toFixed(2)+'" cy="'+(85-(r.low-low)/range*70).toFixed(2)+'" r="3" fill="currentColor"/>').join('');
- return '<section class="panel"><h3>Ultimi '+days+' giorni</h3><p>Minimo '+money(h.low)+' · massimo '+money(h.high)+' · media '+money(h.mean)+'. '+h.rows.length+' giorni con rilevazioni.</p><svg viewBox="0 0 300 100" role="img" aria-label="Minimi giornalieri osservati: ogni punto è un giorno realmente rilevato" style="max-width:420px;width:100%">'+dots+'</svg><p class="micro">Media delle ultime osservazioni giornaliere disponibili, una per negozio; giorni mancanti non ricostruiti. Spedizione esclusa.</p></section>';
+ return '<section class="panel"><h3>Ultimi '+days+' giorni</h3><p>Minimo '+money(h.low)+' · massimo '+money(h.high)+' · media '+money(h.mean)+'. '+h.rows.length+' giorni con rilevazioni.</p><svg viewBox="0 0 300 100" role="img" aria-label="Prezzi osservati: minimo '+esc(money(h.low))+', massimo '+esc(money(h.high))+', media '+esc(money(h.mean))+'. Ogni punto è un giorno realmente rilevato" style="max-width:420px;width:100%">'+dots+'</svg><p class="micro">Media delle ultime osservazioni giornaliere disponibili, una per negozio; giorni mancanti non ricostruiti. Spedizione esclusa.</p></section>';
  }).join('');
 }
 export function content(product,state){

@@ -44,6 +44,7 @@ jobs:
       - run: python automation/clean_urls.py
       - run: python automation/apply_micro_fixes.py
       - run: python automation/apply_images.py
+      - run: python automation/apply_semantics.py
       - run: python -m unittest discover -s tests
       - run: node --test tests/test_*.mjs
       - run: python automation/audit_site.py

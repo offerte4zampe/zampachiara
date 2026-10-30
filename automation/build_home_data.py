@@ -137,7 +137,7 @@ def render_home(html, payload):
             return f'<a href="{h(target, quote=True)}">{h(label)}</a>'
         return f'<a href="confronta-cibo.html?{h(urlencode(params), quote=True)}">{h(label)}</a>'
     def card(o, spotlight=False):
-        tag = 'h2' if spotlight else 'h3'
+        tag = 'h3'
         image = o.get('image', '')
         img = f'<img src="{h(image,quote=True)}" alt="" width="160" height="145" loading="lazy">' if image.startswith('https://') else ''
         unit = f'<p class="micro">{money(o["price"]/o["weight_kg"])}/kg</p>' if o.get('weight_kg') else ''
@@ -149,7 +149,7 @@ def render_home(html, payload):
     deals, hero = pick(payload)
     parts = {
         'home-deals': ''.join(card(o) for o in deals),
-        'home-spotlight': card(hero, True) if hero else link('Esplora il catalogo →'),
+        'home-spotlight': '<h2 class="sr-only">Offerta in evidenza</h2>'+card(hero, True) if hero else link('Esplora il catalogo →'),
         'home-deals-status': 'Catalogo aggiornato il '+h(payload['generated_at'][:16].replace('T',' '))+' UTC. Prezzi rilevati, non in tempo reale. Selezione delle fonti disponibili, non una classifica dell’intero mercato.',
         'home-stats': ''.join('<span>'+h(s)+'</span>' for s in [f"{payload['stats']['offers']:,}".replace(',', '.')+' offerte importate', str(payload['stats']['brands'])+' marche', str(sum(s.get('offers',0)>0 for s in payload['sources']))+' negozi', 'Verifiche programmate ogni '+str(payload['refresh_hours'])+' ore']),
         'home-brands': ''.join(link(brand, brand=brand) for brand in payload['top_brands']),
