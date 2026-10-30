@@ -23,6 +23,26 @@ BASE='https://offerte4zampe.it'
 BRAND_ALIASES=json.loads((ROOT/'automation/brand_aliases.json').read_text())
 
 
+def observed_history(rows, history):
+    daily=defaultdict(dict)
+    for o in rows:
+        for item in history.get('offers',{}).get(o['id'],[]):
+            if not item.get('available') or not isinstance(item.get('last'),(int,float)):continue
+            prior=daily[item['day']].get(o['merchant_id'])
+            if prior is None or item['last']<prior['last']:daily[item['day']][o['merchant_id']]=item
+    return [{'day':day,'low':min(r['low'] for r in values.values()),'high':max(r['high'] for r in values.values()),'sum':sum(r['last'] for r in values.values()),'count':len(values)} for day,values in sorted(daily.items())]
+
+
+def history_count(rows, now):
+    dates=set()
+    for item in rows:
+        try:
+            day=dt.date.fromisoformat(item['day'])
+            if day<=now.date() and item['low']>0 and item['high']>=item['low'] and item['count']>0 and math.isfinite(item['sum']):dates.add(day)
+        except (ValueError,TypeError,KeyError):pass
+    return len(dates)
+
+
 def normalized(value):
     return re.sub(r'[^a-z0-9]+',' ',unicodedata.normalize('NFKD',str(value or '')).encode('ascii','ignore').decode().lower()).strip()
 
@@ -144,19 +164,14 @@ def build(catalog,old_registry=None,history=None,now=None):
         slug=previous.get('slug') or normalized(title).replace(' ','-')[:115].rstrip('-')+'-'+suffix+'-'+pid[-6:]
         active=[o for o in rows if fresh(o,now)];shops={o['merchant_id'] for o in active};verified_shops={o['merchant_id'] for o in active if q_by_id[o['id']]['verified']}
         p=dict(id=pid,slug=slug,gtin=product_gtin,brand=canonical_brand(seed.get('brand','')),name=title,**attrs,quantity=q,format=format_label(q),image=seed.get('image',''),offer_ids=[o['id'] for o in rows],active_shop_count=len(shops),verified_shop_count=len(verified_shops),active_offer_count=len(active),low_price=min((o['price'] for o in active),default=None),matching_method=method,matching_confidence=1.0 if method=='gtin_quantity' else None,reviewed=any(o.get('identity_review') for o in rows))
-        p['indexable']=len(verified_shops)>=2 and p['matching_method']=='gtin_quantity'
+        # Set after observed history is aggregated; duplicate shops never count twice.
         content=json.dumps([title,q,[(o['id'],o['price'],o['available']) for o in rows]],ensure_ascii=False,sort_keys=True)
         signature=hashlib.sha256(content.encode()).hexdigest();lastmod=previous.get('lastmod')
         if not previous or signature!=previous.get('content_hash'):lastmod=now.isoformat()
         p['lastmod']=lastmod
         # Preserve the real observed history relation by offer ID, never backfill.
-        daily=defaultdict(dict)
-        for o in rows:
-            for item in history.get('offers',{}).get(o['id'],[]):
-                if not item.get('available') or not isinstance(item.get('last'),(int,float)):continue
-                prior=daily[item['day']].get(o['merchant_id'])
-                if prior is None or item['last']<prior['last']:daily[item['day']][o['merchant_id']]=item
-        p['history']=[{'day':day,'low':min(r['low'] for r in values.values()),'high':max(r['high'] for r in values.values()),'sum':sum(r['last'] for r in values.values()),'count':len(values)} for day,values in sorted(daily.items())]
+        p['history']=observed_history(rows,history)
+        p['indexable']=len(verified_shops)>=2 or history_count(p['history'],now)>=30
         products.append(p);registry[pid]={'slug':slug,'content_hash':signature,'lastmod':lastmod,'product':{k:v for k,v in p.items() if k!='history'}}
         if q['kind']!='sales_unit':by_bucket[(normalized(p['brand']),attrs['species'],q['kind'],q['value'])].append(p)
         for o in rows:
@@ -187,6 +202,8 @@ def build(catalog,old_registry=None,history=None,now=None):
             targets={offer_targets[i] for i in old_ids if i in offer_targets}
             if old_ids and all(i in offer_targets for i in old_ids) and len(targets)==1:
                 archived['redirect_slug']=next(iter(targets))[1]
+            archived['history']=observed_history([{'id':oid,'merchant_id':oid.split(':',1)[0]} for oid in old_ids],history)
+            archived['indexable']='redirect_slug' not in archived and history_count(archived['history'],now)>=30
             products.append(archived);registry[pid]=entry
     families=defaultdict(list)
     for p in products:

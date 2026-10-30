@@ -8,12 +8,17 @@ async function prefix(value){const bytes=new Uint8Array(await crypto.subtle.dige
 async function jsonAsset(env,origin,path){const r=await env.ASSETS.fetch(new Request(new URL(path,origin)));if(!r.ok)return null;try{return await r.json()}catch{return null}}
 export async function slugForOffer(env,origin,id){const shard=await jsonAsset(env,origin,'/data/canonical-routes/'+await prefix(id)+'.json');return shard&&Object.hasOwn(shard,id)&&typeof shard[id]==='string'?shard[id]:null}
 function live(o,now){const stamp=Date.parse(o.checked_at);if(o.identity_review&&(!Number.isFinite(Date.parse(o.identity_expires_at))||Date.parse(o.identity_expires_at)<now))return false;return Number.isFinite(stamp)&&stamp<=now+300000&&now-stamp<=36*3600000}
+// Index only distinct comparable shops or at least thirty real observed dates.
+export function observedDays(rows,now=Date.now()){
+ const today=new Date(now).toISOString().slice(0,10);
+ return new Set((rows||[]).filter(r=>/^\d{4}-\d{2}-\d{2}$/.test(r.day)&&Number.isFinite(Date.parse(r.day+'T00:00:00Z'))&&new Date(r.day+'T00:00:00Z').toISOString().slice(0,10)===r.day&&r.day<=today&&r.low>0&&r.high>=r.low&&r.count>0&&Number.isFinite(r.sum)).map(r=>r.day)).size;
+}
 export function view(product,rules,now=Date.now(),quantity=1,territory='standard'){
  const rows=product.offers.filter(o=>live(o,now));const available=rows.filter(o=>o.available),shops=new Set(available.filter(o=>o.quantity?.verified!==false).map(o=>o.merchant_id));
  const quotes=new Map(rows.map(o=>[o.id,trade.shipping(o,rules,quantity,territory,now)]));
  rows.sort((a,b)=>Number(b.available)-Number(a.available)||(quotes.get(a.id).total??Infinity)-(quotes.get(b.id).total??Infinity)||a.price-b.price||a.merchant.localeCompare(b.merchant,'it'));
  const comparable=available.filter(o=>quotes.get(o.id).total!==undefined);const best=comparable.length?Math.min(...comparable.map(o=>quotes.get(o.id).total)):null;
- return {now,rows,quotes,shops:shops.size,visibleShops:new Set(available.map(o=>o.merchant_id)).size,available,best,indexable:product.indexable&&shops.size>=2,quantity,territory};
+ return {now,rows,quotes,shops:shops.size,visibleShops:new Set(available.map(o=>o.merchant_id)).size,available,best,indexable:shops.size>=2||observedDays(product.history,now)>=30,quantity,territory};
 }
 export function historySummary(rows,days,now){
  const today=Math.floor(now/86400000)*86400000,cutoff=today-(days-1)*86400000;
@@ -66,16 +71,20 @@ export async function canonicalProduct(request,env,now=Date.now()){
  const loaded=await shippingSource(env,p.offers,rules,{now,quantity,territory});
  const brands=await jsonAsset(env,url.origin,'/data/brand-pages.json');p.brand_url=brands?.[p.brand];
  const state=view(p,loaded.rules,now,quantity,territory),page=content(p,state);
+ const indexable=state.indexable&&quantity===1&&territory==='standard';
+ let localImage='';if(indexable&&/^\/img\/p\/[a-f0-9]{24}-400\.webp$/.test(p.image_local||'')){const asset=await env.ASSETS.fetch(new Request(new URL(p.image_local,url.origin),{method:'HEAD'}));if(asset.ok)localImage=new URL(p.image_local,url.origin).href;}
+ if(localImage)page.schema.image=localImage;
  const template=await env.ASSETS.fetch(new Request(new URL('/prodotto',url.origin)));if(!template.ok)return template;
  let html=await template.text();
  html=html.replace('<head>','<head><base href="/">').replace(/<main\b[\s\S]*?<\/main>/,()=>'<main id="main" data-canonical-product="'+esc(p.id)+'">'+page.body+'</main>')
  .replace(/<title>[^<]*<\/title>/,()=>'<title>'+esc(page.title)+'</title>')
  .replace(/<meta name="description" content="[^"]*">/,()=>'<meta name="description" content="'+esc(page.description)+'">')
- .replace(/<meta name="robots" content="[^"]*">/,()=>'<meta name="robots" content="'+(state.indexable&&quantity===1&&territory==='standard'?'index,follow':'noindex,follow')+'">')
+ .replace(/<meta name="robots" content="[^"]*">/,()=>'<meta name="robots" content="'+(indexable?'index,follow':'noindex,follow')+'">')
  .replace(/<link rel="canonical" href="[^"]*">/,()=>'<link rel="canonical" href="'+page.url+'">')
  .replace(/<meta property="og:(title|description|url)" content="[^"]*">/g,(_,key)=>'<meta property="og:'+key+'" content="'+esc(key==='title'?page.title:key==='url'?page.url:page.description)+'">')
  .replace(/<script src="assets\/product\.js[^\"]*" defer><\/script>/,'')
- .replace('</head>','<script type="application/ld+json">'+JSON.stringify(page.schema).replace(/</g,'\\u003c')+'</script></head>');
- const headers={'Content-Type':'text/html; charset=utf-8','Cache-Control':'public, max-age=300','X-Product-Model':'canonical-v1'};
+ .replace('</head>',(indexable?'<script type="application/ld+json">'+JSON.stringify(page.schema).replace(/</g,'\\u003c')+'</script>':'')+'</head>');
+ if(localImage)html=html.replace(/(<meta (?:property="og:image"|name="twitter:image") content=")[^"]*(">)/g,(_,a,b)=>a+esc(localImage)+b).replace(/(<meta property="og:image:(?:width|height)" content=")[^"]*(">)/g,(_,a,b)=>a+'400'+b).replace(/(<meta property="og:image:type" content=")[^"]*(">)/g,'$1image/webp$2');
+ const headers={'X-Robots-Tag':indexable?'index, follow':'noindex, follow','Content-Type':'text/html; charset=utf-8','Cache-Control':'public, max-age=300','X-Product-Model':'canonical-v1'};
  return new Response(request.method==='HEAD'?null:html,{status:200,headers});
 }
