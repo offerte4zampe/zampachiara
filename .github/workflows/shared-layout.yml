@@ -4,6 +4,9 @@ on:
     paths:
       - 'automation/apply_navigation.py'
       - 'automation/clean_urls.py'
+      - 'automation/freshness.py'
+      - 'automation/apply_freshness.py'
+      - 'tests/test_freshness.*'
       - 'site/assets/**'
       - 'tests/test_clean_urls.*'
       - 'automation/partials/**'
@@ -27,6 +30,7 @@ jobs:
           node-version: '22'
       - run: python automation/check_d1_activation.py --prepare-build
       - run: python automation/apply_navigation.py
+      - run: python automation/apply_freshness.py
       - run: python automation/clean_urls.py
       - run: python -m unittest discover -s tests
       - run: node --test tests/test_*.mjs

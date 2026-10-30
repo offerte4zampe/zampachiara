@@ -3,6 +3,10 @@ import gzip
 import concurrent.futures, datetime, json, os, re, time, urllib.request, urllib.robotparser
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
+try:
+    from .freshness import source_freshness
+except ImportError:
+    from freshness import source_freshness
 ROOT=Path(__file__).resolve().parents[1]
 SOURCES=[('bauzaar','Bauzaar','https://www.bauzaar.it'),('webpet','WebPet','https://www.webpet.it'),('animaliapet','Animaliapet','https://www.animaliapet.eu'),('isola-dei-tesori','Isola dei Tesori','https://www.isoladeitesori.it'),('paco','Paco Pet Shop','https://www.pacopetshop.it')]
 UA='Offerte a 4 ZampeCatalog/1.0 (+https://offerte4zampe.it/contatti.html)'
@@ -98,6 +102,7 @@ def main():
         for rows,status in pool.map(collect,SOURCES):
             if status['status']=='error':
                 rows=[r for r in old.get('offers',[]) if r['merchant_id']==status['id']];status['offers']=len(rows);status['status']='stale' if rows else 'error'
+            status = source_freshness(status, rows)
             offers.extend(rows);sources.append(status)
     # Preserve official partner snapshots; stale dates remain visible to the UI.
     public_ids={s[0] for s in SOURCES}

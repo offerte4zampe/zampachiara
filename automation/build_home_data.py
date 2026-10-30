@@ -21,7 +21,7 @@ def build(catalog, now=None):
     now = now or datetime.datetime.now(datetime.timezone.utc)
     def recent(o):
         try:
-            return 0 <= (now - datetime.datetime.fromisoformat(o['checked_at'].replace('Z', '+00:00'))).total_seconds() <= 36 * 3600
+            return 0 <= (now - datetime.datetime.fromisoformat(o['checked_at'].replace('Z', '+00:00'))).total_seconds() <= 12 * 3600
         except (ValueError, KeyError, TypeError):
             return False
     # Current prices, independent of unverified comparison prices or commissions.
@@ -118,12 +118,21 @@ def replace_region(html, element_id, content):
 
 
 def render_home(html, payload):
-    from html import escape as h
+    from html import escape as h, unescape
     from urllib.parse import urlencode
     import re
     def money(value):
         return f'{value:,.2f}'.replace(',', '_').replace('.', ',').replace('_', '.')+' €'
+    region = re.search(r'<div\b[^>]*\bid="home-brands"[^>]*>', html)
+    mapping = re.search(r'data-brand-pages="([^"]*)"', region[0]) if region else None
+    try:
+        brand_pages = json.loads(unescape(mapping[1])) if mapping else {}
+    except (ValueError, TypeError):
+        brand_pages = {}
     def link(label, **params):
+        target = brand_pages.get(params.get('brand'))
+        if isinstance(target, str) and re.fullmatch(r'/marca-[a-z0-9-]+', target):
+            return f'<a href="{h(target, quote=True)}">{h(label)}</a>'
         return f'<a href="confronta-cibo.html?{h(urlencode(params), quote=True)}">{h(label)}</a>'
     def card(o, spotlight=False):
         tag = 'h2' if spotlight else 'h3'
@@ -140,7 +149,7 @@ def render_home(html, payload):
         'home-deals': ''.join(card(o) for o in deals),
         'home-spotlight': card(hero, True) if hero else link('Esplora il catalogo →'),
         'home-deals-status': 'Catalogo aggiornato il '+h(payload['generated_at'][:16].replace('T',' '))+' UTC. Prezzi rilevati, non in tempo reale. Selezione delle fonti disponibili, non una classifica dell’intero mercato.',
-        'home-stats': ''.join('<span>'+h(s)+'</span>' for s in [f"{payload['stats']['offers']:,}".replace(',', '.')+' offerte importate', str(payload['stats']['brands'])+' marche', str(sum(s.get('offers',0)>0 for s in payload['sources']))+' negozi', 'Aggiornamenti ogni '+str(payload['refresh_hours'])+' ore']),
+        'home-stats': ''.join('<span>'+h(s)+'</span>' for s in [f"{payload['stats']['offers']:,}".replace(',', '.')+' offerte importate', str(payload['stats']['brands'])+' marche', str(sum(s.get('offers',0)>0 for s in payload['sources']))+' negozi', 'Verifiche programmate ogni '+str(payload['refresh_hours'])+' ore']),
         'home-brands': ''.join(link(brand, brand=brand) for brand in payload['top_brands']),
         'home-shops': ''.join(link(s['name']+' · '+str(s['offers'])+' offerte →', shop=s['name']) for s in payload['sources'] if s.get('offers',0)>0),
     }

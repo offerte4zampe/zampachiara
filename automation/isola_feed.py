@@ -12,7 +12,7 @@ except ImportError:
 
 FEED_URL = 'https://pf.tradetracker.net/?aid=518044&encoding=utf-8&type=json&fid=1618255&categoryType=2&additionalType=2'
 
-def normalize(payload, now=None):
+def normalize(payload, now=None, stats=None):
     try:
         from .update_catalog import weight
     except ImportError:
@@ -38,7 +38,9 @@ def normalize(payload, now=None):
         if p.get('variations'): raise ValueError('Unmapped variants')
         props = p.get('properties', {}); stock = value(props, 'availability')
         if stock not in ('in_stock', 'out_of_stock', 'preorder', 'backorder'):
-            raise ValueError('Unknown availability')
+            if stats is not None:
+                stats['excluded_unknown_availability'] = stats.get('excluded_unknown_availability', 0) + 1
+            continue
         price = p['price']; current = amount(price.get('amount'))
         if price.get('currency') != 'EUR' or current is None: raise ValueError('Invalid EUR price')
         title = html.unescape(p['name']).strip()
@@ -64,7 +66,10 @@ def collect():
         raw = response.read(40_000_001)
         if len(raw) > 40_000_000: raise ValueError('Feed too large')
         last_modified = response.headers.get('Last-Modified')
-    rows = normalize(json.loads(raw), now)
-    return rows, dict(id='isola-dei-tesori', name='Isola dei Tesori', status='ok', checked_at=now.isoformat(), offers=len(rows), excluded_unverified_quantity=len(json.loads(raw)['products'])-len(rows),
+    payload = json.loads(raw)
+    stats = {}
+    rows = normalize(payload, now, stats)
+    return rows, dict(id='isola-dei-tesori', name='Isola dei Tesori', status='ok', checked_at=now.isoformat(), offers=len(rows), excluded_unverified_quantity=len(payload['products'])-len(rows)-stats.get('excluded_unknown_availability', 0),
+        excluded_unknown_availability=stats.get('excluded_unknown_availability', 0),
         source='TradeTracker:1618255', method='Feed ufficiale TradeTracker · aggiornamento giornaliero',
         retrieved_at=now.isoformat(), upstream_last_modified=last_modified)
