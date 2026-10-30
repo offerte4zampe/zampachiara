@@ -1,8 +1,9 @@
 """Remove the automatic AdSense loader until account/CMP/consent are verified.
-Ownership meta tags and approved affiliate links are retained.
+Account discovery meta is removed until a certified CMP is active; affiliate destinations are retained.
 """
 from pathlib import Path
 from html.parser import HTMLParser
+from html import unescape
 from urllib.parse import urlsplit
 import re
 
@@ -29,12 +30,25 @@ def apply(html):
         except ValueError:
             blocked = False
         return '' if blocked else match[0]
-    return re.sub(r'<script\b[^>]*>.*?</script\s*>', clean, html, flags=re.S | re.I)
+    html=re.sub(r'<script\b[^>]*>.*?</script\s*>', clean, html, flags=re.S | re.I)
+    html=re.sub(r'<meta\b(?=[^>]*\bname=[\"\']google-adsense-account[\"\'])[^>]*>','',html,flags=re.I)
+    def anchor(m):
+        tag=m[0];href=re.search(r'\bhref=([\"\'])(.*?)\1',tag,re.S);rel=re.search(r'\brel=([\"\'])(.*?)\1',tag,re.S)
+        if not href:return tag
+        url=urlsplit(unescape(href[2]));tokens=rel[2].split() if rel else []
+        affiliate=url.path.startswith('/go/') and url.hostname in (None,'offerte4zampe.it') or 'sponsored' in tokens or url.hostname=='tc.tradetracker.net' or url.hostname in ('www.amazon.it','amazon.it') and 'tag=' in url.query
+        if not affiliate:return tag
+        tag=re.sub(r'\srel=([\"\'])(.*?)\1','',tag,flags=re.S)
+        tag=re.sub(r'\starget=([\"\'])(.*?)\1','',tag,flags=re.S)
+        values=['sponsored','nofollow','noopener','noreferrer']+[t for t in tokens if t not in ('sponsored','nofollow','noopener','noreferrer')]
+        return tag[:-1]+' rel="'+' '.join(values)+'" target="_blank">'
+    return re.sub(r'<a\b[^>]*>',anchor,html,flags=re.S)
+
 
 
 def build():
     changed = 0
-    for path in (ROOT / 'site').glob('*.html'):
+    for path in (ROOT / 'site').rglob('*.html'):
         before = path.read_text()
         after = apply(before)
         if after != before:
