@@ -123,6 +123,7 @@ jobs:
       - run: python automation/build_savings_guides.py
       - run: python automation/build_observatory.py
       - run: python automation/apply_social_metadata.py
+      - run: python automation/apply_compact_comparator.py
       - run: python automation/apply_navigation.py
       - run: python automation/route_product_links.py
       - run: python automation/remove_unverified_ads.py

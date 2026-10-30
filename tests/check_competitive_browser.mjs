@@ -14,7 +14,7 @@ export async function checkCompetitive(page,origin,catalog){
  const shared=await page.evaluate(()=>window.facetLink);assert.equal(new URL(shared).searchParams.get('animal'),'Cane');assert.equal(new URL(shared).searchParams.get('type'),'Cibo secco');
  await page.goto(shared,{waitUntil:'domcontentloaded'});await page.waitForSelector('#catalog-grid article',{timeout:30000});
  assert.equal(await page.$eval('#catalog-animal',e=>e.value),'Cane');assert.equal(await page.$eval('#catalog-type',e=>e.value),'Cibo secco');
- await page.click('#catalog-reset');for(const key of ['animal','type','age','size','pack'])assert.equal(await page.$eval('#catalog-'+key,e=>e.value),'');
+ await page.$eval('#catalog-extra-filters',e=>e.open=true);await page.click('#catalog-reset');for(const key of ['animal','type','age','size','pack'])assert.equal(await page.$eval('#catalog-'+key,e=>e.value),'');
  assert(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth<=1));
  // Regression: the exact reviewed 30 x 1 g offers must share one product view.
  const ids=['bauzaar:56820111606085','isola-dei-tesori:000132103'];
