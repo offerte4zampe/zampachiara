@@ -70,3 +70,8 @@ class PacoVerificationPlanTest(unittest.TestCase):
   self.assertEqual(verification_plan(rows,[prior],set(),self.now+dt.timedelta(hours=6)),[])
   self.assertTrue(rows[0]['quantity_verified']);self.assertEqual(rows[0]['weight_kg'],2.04)
   self.assertEqual(rows[0]['quantity_checked_at'],prior['quantity_checked_at'])
+
+ def test_available_candidates_precede_sold_out_peer_matches(self):
+  a=normalize(fixture(),self.now)[0]
+  b=dict(a,id='paco:9',available=True)
+  self.assertEqual(verification_plan([a,b],[],{a['feed_gtin']},self.now,limit=1),[1])

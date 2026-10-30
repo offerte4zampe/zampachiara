@@ -102,7 +102,7 @@ def verification_plan(rows, previous, peers, now, limit=80):
         if attempted and attempted<=now:
             row['quantity_verification_attempted_at']=attempted.isoformat()
         else: attempted=dt.datetime.min.replace(tzinfo=dt.timezone.utc)
-        candidates.append((row['feed_gtin'].lstrip('0') not in peers,attempted,row['id'],i))
+        candidates.append((row.get('available') is not True,row['feed_gtin'].lstrip('0') not in peers,attempted,row['id'],i))
     return [entry[-1] for entry in sorted(candidates)[:limit]]
 
 def collect():
