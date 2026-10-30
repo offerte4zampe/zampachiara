@@ -6,6 +6,8 @@ Offer destinations, tracking preferences and shipping data are left intact.
 from pathlib import Path
 import json
 import re
+from html import unescape
+from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 PARTIALS = ROOT / 'automation' / 'partials'
@@ -55,7 +57,14 @@ def apply(html):
     # Keep the historical date, but distinguish it from the current partners.
     html = html.replace('Dal 19 ottobre 2026 è attiva la collaborazione affiliata con Bauzaar tramite TradeTracker.',
                         'Dal 19 ottobre 2026 è attiva la prima collaborazione affiliata. ' + disclosure())
-    html = re.sub(r'(<a\b[^>]*href="(?!https?:|//|mailto:|tel:)[^"]*"[^>]*>[^<]*) ↗(</a>)', r'\1\2', html)
+    def internal_arrow(match):
+        try:
+            u = urlsplit(unescape(match[2]))
+        except ValueError:
+            return match[0]
+        internal = (not u.scheme and not u.netloc) or (u.scheme in ('http', 'https') and u.hostname == 'offerte4zampe.it')
+        return match[1] + (match[3].replace('<span class="sticker-arrow">↗</span>', '<span class="sticker-arrow">→</span>').replace('↗', '').rstrip() if internal else match[3]) + match[4]
+    html = re.sub(r'(<a\b[^>]*\bhref="([^"]*)"[^>]*>)(.*?)(</a>)', internal_arrow, html, flags=re.S)
     return html
 
 

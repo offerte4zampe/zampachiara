@@ -21,6 +21,7 @@ def apply(html):
         token = re.sub(r'\b\d{4}-\d{2}-\d{2}\b', lambda m: format_timestamp(m[0]), token)
         tokens[i] = token.replace('1 ore fa', '1 ora fa')
     html = ''.join(tokens).replace('* Totale stimato crescente', 'Totale stimato crescente')
+    html = html.replace('al prezzo da cercare.', 'al prezzo giusto.')
     html = re.sub(r'<label>(<input\b[^>]*\bid="catalog-sale"[^>]*>.*?</label>)', r'<label hidden style="display:none">\1', html, flags=re.S)
     return html
 
