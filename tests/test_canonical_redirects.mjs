@@ -12,7 +12,7 @@ test('legacy home and catalog routes redirect once, preserving search and fragme
   assert.equal(r.status,301);assert.equal(r.headers.get('Location'),'https://offerte4zampe.it'+target+'?q=cat&shop=WebPet');
  }
 });
-test('known product links bypass legacy redirects; unsafe slugs use encoded compatibility route',()=>{
+test('known product links bypass legacy redirects; unsafe slugs fall back to the comparator',()=>{
  assert.equal(productUrl({id:'a:1',product_slug:'food-2-kg'}),'/prodotto/food-2-kg');
- assert.equal(productUrl({id:'a:1',product_slug:'//evil.test'}),'/prodotto.html?id=a%3A1');
+ assert.equal(productUrl({id:'a:1',product_slug:'//evil.test'}),'/confronta-cibo');
 });
