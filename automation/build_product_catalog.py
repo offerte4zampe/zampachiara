@@ -36,7 +36,7 @@ def canonical_brand(value):
 def clean_title(title,brand='',variant=''):
     title=re.sub(r'\s+-\s+(?:1[°º]?\s*ordine\?|cibo umido|cibo secco|integratori per|croccantini per|dieta veterinaria per|lettiera agglomerante|lettiera vegetale).*$','',str(title),flags=re.I)
     title=re.sub(r'\bgr\b','g',title,flags=re.I)
-    title=re.sub(r'(\d+(?:[.,]\d+)?)\s*(g|kg)\b\s+\1\s*\2\b',r'\1 \2',title,flags=re.I)
+    title=re.sub(r'(\d+(?:[.,]\d+)?)\s*(g|kg|ml|l)\b(?:\s*[·|/]\s*|\s+)\1\s*\2\b',r'\1 \2',title,flags=re.I)
     if brand:
         pattern=r'^\s*'+re.escape(brand)+r'\s*[-–:|]?\s*'+re.escape(brand)+r'\b'
         title=re.sub(pattern,brand,title,flags=re.I)
@@ -48,7 +48,8 @@ def clean_title(title,brand='',variant=''):
         match=re.match(re.escape(brand),title,re.I)
         if match:title=brand+title[match.end():]
     if variant and variant.lower() not in ('default title','1ct') and not variant.startswith('Formato e ricetta'):
-        if normalized(variant) not in normalized(title):title+=' · '+variant
+        compact=lambda text: normalized(re.sub(r'(\d)\s+(kg|g|ml|l)\b',r'\1\2',text,flags=re.I))
+        if compact(variant) not in compact(title):title+=' · '+variant
     return title
 
 

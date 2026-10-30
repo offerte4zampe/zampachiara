@@ -117,6 +117,7 @@ jobs:
       - run: python automation/apply_brand_links.py
       - run: python automation/build_home_data.py
       - run: python automation/build_product_metadata.py
+      - run: python automation/apply_product_metadata.py
       - run: python automation/build_catalog_preview.py
       - run: python automation/build_corrections_page.py
       - run: python automation/build_savings_guides.py
