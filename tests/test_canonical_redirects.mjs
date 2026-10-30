@@ -1,9 +1,12 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import worker from '../worker/index.mjs';
+import fs from 'node:fs';
 import {createRequire} from 'node:module';
 const require=createRequire(import.meta.url),{productUrl}=require('../site/assets/trade.js');
 test('legacy home and catalog routes redirect once, preserving search and fragments',async()=>{
+ const config=JSON.parse(fs.readFileSync(new URL('../wrangler.jsonc',import.meta.url)));
+ for(const route of ['/index.html','/confronta-cibo.html'])assert(config.assets.run_worker_first.includes(route));
  for(const method of ['GET','HEAD'])for(const [old,target] of [['/index.html','/'],['/confronta-cibo.html','/confronta-cibo']]){
   const r=await worker.fetch(new Request('https://offerte4zampe.it'+old+'?q=cat&shop=WebPet',{method}),{ASSETS:{fetch(){throw Error('Must redirect before assets')}}},{});
   assert.equal(r.status,301);assert.equal(r.headers.get('Location'),'https://offerte4zampe.it'+target+'?q=cat&shop=WebPet');
