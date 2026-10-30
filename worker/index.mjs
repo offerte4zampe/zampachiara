@@ -30,6 +30,7 @@ export default {
       }
       return productPreview(request,env);
     }
+    if(url.pathname==='/confronta-cibo'&&url.searchParams.has('brand')){const result=await env.ASSETS.fetch(request);const headers=new Headers(result.headers);headers.set('X-Robots-Tag','noindex, follow');return new Response(result.body,{status:result.status,headers})}
     if (url.pathname !== '/api/metrics') return env.ASSETS.fetch(request);
     const headers = {'Cache-Control':'no-store'};
     if (request.method !== 'POST') return new Response(null,{status:405,headers});

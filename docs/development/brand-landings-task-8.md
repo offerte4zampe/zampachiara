@@ -1,0 +1,9 @@
+# Task 8 — landing delle marche
+
+La build genera una landing per ogni etichetta marca con almeno cinque offerte disponibili e recenti (soglia preesistente di 36 ore per le liste). Sono 278 nello snapshot verificato. Non vengono dedotte equivalenze tra marche o linee: si usa l'etichetta esatta del catalogo. Gli URL delle cinque landing originarie sono riservati e preservati; collisioni tra nuovi slug ricevono un suffisso deterministico.
+
+Ogni pagina contiene title e H1 distinti, conteggio offerte e negozi, esempi di formati e fino a 24 offerte alternate per negozio. Le pagine che perdono la soglia restano raggiungibili ma sono noindex. `/marche` elenca tutte le landing attive; la home le collega in un elemento details, oltre alle marche principali. La build riscrive i link interni con il solo parametro marca verso la landing verificata, o verso `/marche` se non esiste. I filtri più specifici restano ricerche. Le URL del comparatore con `brand` ricevono `X-Robots-Tag: noindex, follow` dal Worker e conservano i filtri. Le sitemap includono le nuove landing.
+
+Verifiche: 194 test Python e 142 test Node; audit 772 pagine senza errori; 278 title e H1 unici; zero link interni `confronta-cibo?brand=`; build Wrangler dry-run. I test coprono soglia, collisioni e URL storici, idempotenza della riscrittura, conservazione dei link esterni e noindex delle ricerche. Snapshot, destinazioni affiliate, preferenze di tracciamento, flag D1/shadow e condizioni di spedizione non cambiano.
+
+File: `automation/brand_landings.py`, `automation/build_brand_pages.py`, `automation/apply_brand_links.py`, `automation/improve_discovery.py`, `site/assets/home.js`, `worker/index.mjs`, `worker/canonical-product.mjs`, `wrangler.jsonc`, workflow catalog/layout/browser e test dedicati. HTML, manifest e sitemap sono generati durante la build.
