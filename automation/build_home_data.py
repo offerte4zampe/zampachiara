@@ -9,8 +9,10 @@ import re
 
 try:
     from automation.report_link import error_link
+    from automation.product_link import product_url
 except ImportError:
     from report_link import error_link
+    from product_link import product_url
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 
@@ -61,7 +63,7 @@ def build(catalog, now=None):
 
 def search_index(catalog):
     """Only names and provenance for suggestions: no prices, images or tracking URLs."""
-    fields = ('id', 'title', 'variant', 'brand', 'gtin', 'merchant', 'available', 'checked_at')
+    fields = ('id', 'title', 'variant', 'brand', 'gtin', 'merchant', 'available', 'checked_at', 'product_slug')
     return {'generated_at': catalog.get('generated_at'), 'offers': [
         {key: offer[key] for key in fields if key in offer}
         for offer in catalog.get('offers', []) if isinstance(offer.get('title'), str)
@@ -132,7 +134,7 @@ def render_home(html, payload):
         cta = 'Vedi offerta →' if o.get('canonical_shop_count', 2) < 2 else 'Confronta nei negozi →'
         if o.get('unit_price') and o.get('unit_price_unit'):
             unit = '<p class="micro">'+money(o['unit_price'])+'/'+h(o['unit_price_unit'])+' · spedizione esclusa</p>'
-        return f'''<article class="{'spotlight-product' if spotlight else 'home-deal'}" data-home-offer="{h(o['checked_at'],quote=True)}">{img}<p class="micro">{h(o['merchant'])} · {h(o['brand'])}</p><{tag}><a class="product-title-link" href="prodotto.html?{h(urlencode({'id':o['id']}),quote=True)}">{h(title)}</a></{tag}><p class="micro">{h(o.get('variant') or '')}</p><p class="catalog-price"><strong>{money(o['price'])}</strong></p>{unit}<p class="micro">Rilevato: <time datetime="{h(o['checked_at'],quote=True)}">{h(o['checked_at'][:16].replace('T',' '))} UTC</time></p><a class="btn secondary" href="prodotto.html?{h(urlencode({'id':o['id']}),quote=True)}">{cta}</a>{error_link(o)}</article>'''
+        return f'''<article class="{'spotlight-product' if spotlight else 'home-deal'}" data-home-offer="{h(o['checked_at'],quote=True)}">{img}<p class="micro">{h(o['merchant'])} · {h(o['brand'])}</p><{tag}><a class="product-title-link" href="{h(product_url(o),quote=True)}">{h(title)}</a></{tag}><p class="micro">{h(o.get('variant') or '')}</p><p class="catalog-price"><strong>{money(o['price'])}</strong></p>{unit}<p class="micro">Rilevato: <time datetime="{h(o['checked_at'],quote=True)}">{h(o['checked_at'][:16].replace('T',' '))} UTC</time></p><a class="btn secondary" href="{h(product_url(o),quote=True)}">{cta}</a>{error_link(o)}</article>'''
     deals, hero = pick(payload)
     parts = {
         'home-deals': ''.join(card(o) for o in deals),

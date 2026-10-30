@@ -20,7 +20,9 @@ export async function checkSuggestions(page,origin,catalog){
  const expected=await page.$eval('#home-query-suggestions [aria-selected=true]',e=>e.dataset.productId);
  assert(await page.$eval('#home-query',e=>Boolean(e.getAttribute('aria-activedescendant'))));
  await Promise.all([page.waitForNavigation({waitUntil:'domcontentloaded'}),page.keyboard.press('Enter')]);
- assert.equal(new URL(page.url()).pathname,'/prodotto.html');assert.equal(new URL(page.url()).searchParams.get('id'),expected);
+ assert.equal(new URL(page.url()).pathname,'/prodotto/'+catalog.offers.find(o=>o.id===expected).product_slug);
+ // Continue compatibility checks against the explicitly requested legacy endpoint.
+ await page.goto(origin+'/prodotto.html?id='+encodeURIComponent(expected),{waitUntil:'domcontentloaded'});
  await page.waitForSelector('#product-shops [data-product-shop]',{timeout:30000});
  assert.equal(await page.$$eval('#product-shops [data-product-shop]',rows=>rows.length),new Set([...catalog.sources.map(s=>s.id),'zooplus','bitiba']).size);
  const zooplus=await page.$eval('[data-product-shop="zooplus"]',e=>({text:e.textContent,links:e.querySelectorAll('a').length}));
@@ -44,8 +46,9 @@ export async function checkSuggestions(page,origin,catalog){
  await page.select('#product-territory','standard');
  assert.equal(await page.$eval('#product-quantity',e=>e.value),'2');
  await page.screenshot({path:'browser-reports/product-mobile.png',fullPage:true});
- await page.goto(origin+'/index.html',{waitUntil:'domcontentloaded'});await page.focus('#home-query');await page.type('#home-query',query);await page.waitForSelector('#home-query-suggestions [role=option]',{visible:true});const clickedId=await page.$eval('#home-query-suggestions [role=option]',e=>e.dataset.productId);await Promise.all([page.waitForNavigation({waitUntil:'domcontentloaded'}),page.tap('#home-query-suggestions [role=option]')]);assert.equal(new URL(page.url()).searchParams.get('id'),clickedId);assert(!navigations.some(url=>url.includes('confronta-cibo')),'Home suggestion must navigate directly without comparator intermediate');page.off('framenavigated',recordNavigation);
+ await page.goto(origin+'/index.html',{waitUntil:'domcontentloaded'});await page.focus('#home-query');await page.type('#home-query',query);await page.waitForSelector('#home-query-suggestions [role=option]',{visible:true});const clickedId=await page.$eval('#home-query-suggestions [role=option]',e=>e.dataset.productId);await Promise.all([page.waitForNavigation({waitUntil:'domcontentloaded'}),page.tap('#home-query-suggestions [role=option]')]);assert.equal(new URL(page.url()).pathname,'/prodotto/'+catalog.offers.find(o=>o.id===clickedId).product_slug);assert(!navigations.some(url=>url.includes('confronta-cibo')),'Home suggestion must navigate directly without comparator intermediate');page.off('framenavigated',recordNavigation);
  await page.goto(origin+'/confronta-cibo.html',{waitUntil:'domcontentloaded'});
+ await page.click('#catalog-load');
  await page.waitForSelector('#catalog-query[role=combobox]',{timeout:60000}).catch(async error=>{console.error('Catalog readiness failure',await page.$eval('#catalog-status',e=>e.textContent));throw error});
  await page.focus('#catalog-query');await page.$eval('#catalog-query',(e,q)=>{e.value=q;e.dispatchEvent(new Event('input',{bubbles:true}))},query);
  await page.waitForSelector('#catalog-query-suggestions [role=option]',{visible:true});
@@ -54,10 +57,9 @@ export async function checkSuggestions(page,origin,catalog){
  await page.waitForSelector('#catalog-query-suggestions [role=option]',{visible:true});
  const selected=await page.$eval('#catalog-query-suggestions [role=option]',e=>e.dataset.productId);
  await Promise.all([page.waitForNavigation({waitUntil:'domcontentloaded'}),page.tap('#catalog-query-suggestions [role=option]')]);
- assert.equal(new URL(page.url()).pathname,'/prodotto.html');
- assert.equal(new URL(page.url()).searchParams.get('id'),selected);
+ assert.equal(new URL(page.url()).pathname,'/prodotto/'+catalog.offers.find(o=>o.id===selected).product_slug);
 
- const links=await page.evaluate(async()=>{const r=await fetch('data/amazon-links.json');return r.json()});
+ const links=await page.evaluate(async()=>{const r=await fetch('/data/amazon-links.json');return r.json()});
  const mapping=links.links.find(row=>catalog.offers.some(o=>o.id===row.offer_id));assert(mapping,'At least one verified mapping must exist in catalog');
  await page.goto(origin+'/prodotto.html?id='+encodeURIComponent(mapping.offer_id),{waitUntil:'domcontentloaded'});
  await page.waitForSelector('#product-amazon a',{visible:true,timeout:30000});

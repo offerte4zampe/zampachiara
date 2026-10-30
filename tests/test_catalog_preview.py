@@ -22,8 +22,8 @@ class PreviewTests(unittest.TestCase):
         self.assertIn('12,50 €', out)
         self.assertIn('6,25 €/kg', out)
         self.assertIn('Cibo gatti &lt;test&gt;', out)
-        self.assertIn('c=1&amp;a=2', out)
-        self.assertIn('rel="sponsored noopener noreferrer"', out)
+        self.assertIn('href="/prodotto.html?id=one"', out)
+        self.assertNotIn('tc.tradetracker.net', out)
         self.assertIn('spedizione esclusa', out)
         self.assertEqual(render_preview(out, catalog, NOW), out)
 
@@ -36,3 +36,15 @@ class PreviewTests(unittest.TestCase):
         catalog['offers'][0]['checked_at'] = NOW.isoformat()
         catalog['offers'][0]['available'] = False
         self.assertNotIn('12,50', render_preview('<div id="catalog-preview"></div>', catalog, NOW))
+
+    def test_canonical_groups_are_bounded_and_available_without_javascript(self):
+        c=self.catalog();base=c['offers'][0]
+        c['offers']=[dict(base,id=str(i),product_id='p'+str(i),product_slug='food-'+str(i)) for i in range(40)]
+        out=render_preview('<div id="catalog-preview"></div>',c,NOW)
+        self.assertEqual(out.count('<article class="catalog-card">'),30)
+        self.assertIn('/prodotto/food-',out)
+        self.assertNotIn('prodotto.html',out)
+        c['offers']=[dict(base,id='a',product_id='p',product_slug='same'),dict(base,id='b',product_id='p',product_slug='same',merchant_id='other')]
+        out=render_preview('<div id="catalog-preview"></div>',c,NOW)
+        self.assertEqual(out.count('<article class="catalog-card">'),1)
+        self.assertIn('2 negozi',out)

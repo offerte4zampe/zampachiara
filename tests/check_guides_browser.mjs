@@ -38,7 +38,7 @@ export async function checkGuides(page, origin) {
   await page.goto(origin+'/linea-monge-bwild.html',{waitUntil:'domcontentloaded'});
   assert.equal(await page.$$eval('main h1',rows=>rows.length),1);
   const lineLinks=await page.$$eval('.catalog-card .product-title-link',rows=>rows.map(a=>a.href));assert(lineLinks.length>=12);
-  for(const href of lineLinks){const u=new URL(href);assert.equal(u.origin,origin);assert.equal(u.pathname,'/prodotto.html');assert(u.searchParams.get('id'));}
+  for(const href of lineLinks){const u=new URL(href);assert.equal(u.origin,origin);assert(u.pathname.startsWith('/prodotto/'));assert(/^[a-z0-9-]+$/.test(u.pathname.slice(10)));}
   assert(await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth<=1),'Line page overflow');
   const quality=await page.evaluate(async()=>fetch('/data/site-quality.json').then(r=>r.json()));
   assert.equal(quality.method_version,2);

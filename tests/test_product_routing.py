@@ -15,7 +15,7 @@ class ProductRoutingTests(unittest.TestCase):
         detail = apply(title+button,offers,merchant_choice=True)
         self.assertIn('/go/a%3A1?from=product',detail)
         self.assertIn('sponsored nofollow noopener noreferrer',detail)
-        self.assertIn('class="product-title-link" href="prodotto.html?',detail)
+        self.assertIn('class="product-title-link" href="/prodotto.html?',detail)
 
     def test_ambiguous_formats_not_guessed_and_unknown_urls_unchanged(self):
         offers = [{'id':'a','title':'A','url':'https://shop.test/same'}, {'id':'b','title':'B','url':'https://shop.test/same'}]
@@ -23,3 +23,10 @@ class ProductRoutingTests(unittest.TestCase):
         self.assertIn('id=b',apply('<a href="https://shop.test/same">B</a>',offers))
         unknown='<a href="https://shop.test/shipping">Spedizione</a>'
         self.assertEqual(apply(unknown,offers),unknown)
+
+    def test_existing_legacy_links_and_merchant_titles_go_directly_to_slug(self):
+        offers=[dict(id='a:1',product_slug='food-2-kg',url='https://shop.test/a',title='Food')]
+        html='<a href="prodotto.html?id=a%3A1">Food</a><a class="product-title-link" href="https://shop.test/a">Food</a>'
+        out=apply(html,offers)
+        self.assertEqual(out.count('href="/prodotto/food-2-kg"'),2)
+        self.assertEqual(apply(out,offers),out)
