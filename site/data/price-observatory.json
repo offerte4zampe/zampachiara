@@ -1067,7 +1067,7 @@
       "closed": false,
       "offers": 365,
       "merchants": 1,
-      "observed_days_min": 2,
+      "observed_days_min": 1,
       "observed_days_max": 12,
       "first": "2026-10-20",
       "last": "2026-10-31",
