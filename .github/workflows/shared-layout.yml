@@ -47,6 +47,7 @@ jobs:
       - run: python automation/apply_images.py
       - run: python automation/apply_semantics.py
       - run: python automation/remove_unverified_ads.py
+      - run: python automation/fingerprint_assets.py
       - run: python -m unittest discover -s tests
       - run: node --test tests/test_*.mjs
       - run: python automation/audit_site.py

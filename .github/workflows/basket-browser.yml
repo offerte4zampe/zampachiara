@@ -167,7 +167,9 @@ jobs:
       - name: Generate crawlable canonical discovery links
         run: python automation/improve_discovery.py
       - name: Audit generated static pages
-        run: python automation/audit_site.py
+        run: |
+          python automation/apply_compact_comparator.py
+          python automation/audit_site.py
       - name: Install pinned browser driver
         run: npm install --prefix "$RUNNER_TEMP/basket-browser" puppeteer-core@25.14.0
       - name: Test isolated mobile basket
@@ -186,6 +188,7 @@ jobs:
           python automation/apply_semantics.py
           python automation/remove_unverified_ads.py
           python automation/build_catalog_index.py
+          python automation/fingerprint_assets.py
           node tests/check_basket_browser.mjs
       - uses: actions/upload-artifact@v4
         if: always()
