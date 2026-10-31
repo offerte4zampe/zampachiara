@@ -10,6 +10,11 @@ try:
 except ImportError:
     from bauzaar_feed import amount, value
 
+try:
+    from automation.image_policy import feed_image
+except ImportError:
+    from image_policy import feed_image
+
 FEED_URL = 'https://pf.tradetracker.net/?aid=518044&encoding=utf-8&type=json&fid=1618255&categoryType=2&additionalType=2'
 
 def normalize(payload, now=None, stats=None):
@@ -55,7 +60,7 @@ def normalize(payload, now=None, stats=None):
             price=current, previous_price=None, available=stock=='in_stock', url=dest,
             affiliate_url=link, image=images[0] if images else '', sku='', gtin=value(props, 'GTIN'), feed_gtin=value(props, 'GTIN'),
             weight_kg=kg, weight_source='official_feed:title' if kg else '', shipping_weight_kg=None,
-            checked_at=now.isoformat(), source_type='official_feed'))
+            checked_at=now.isoformat(), source_type='official_feed', image_source=feed_image(images[0] if images else '',31221,1618255)))
     if not rows: raise ValueError('Empty feed')
     return rows
 

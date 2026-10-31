@@ -60,11 +60,11 @@ def main():
     path = site/'data/product-images.json'
     raw = json.loads(path.read_text()) if path.exists() else {'images': {}}
     try:
-        from .cache_product_images import permitted
+        from .cache_product_images import eligible
     except ImportError:
-        from cache_product_images import permitted
+        from cache_product_images import eligible
     rules = json.loads((ROOT/'automation/image-rights.json').read_text())['stores']
-    licensed = {o.get('image') for o in catalog['offers'] if permitted(rules.get(o.get('merchant_id'), {}))}
+    licensed = {o.get('image') for o in catalog['offers'] if eligible(o,rules.get(o.get('merchant_id'), {}))}
     manifest = {remote: local for remote, local in raw['images'].items() if remote in licensed and re.fullmatch(r'/img/p/[a-f0-9]{24}-400\.webp', local) and (site/local.lstrip('/')).is_file()}
     for p in site.rglob('*.html'):
         before = p.read_text()

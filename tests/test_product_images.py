@@ -39,3 +39,22 @@ class ProductImageTests(unittest.TestCase):
         self.assertIn('fetchpriority="high"',out)
         self.assertNotIn('loading="lazy"',out)
         self.assertEqual(out,apply(out,{'https://images.test/a':'Cibo'}, {}))
+
+    def test_shared_cdn_is_not_permission_and_feed_image_cannot_be_replaced(self):
+        from automation.image_policy import eligible,feed_image
+        rule={'allow_cache':True,'permission_status':'verified','evidence':'https://license.test','scope':'approved_feed_assets','campaign_id':16143,'feed_id':600171}
+        offer={'id':'bauzaar:1','image':'https://cdn.shopify.com/original.webp','source_type':'official_feed','affiliate_url':'https://tc.tradetracker.net/?c=16143&a=518044','image_source':feed_image('https://cdn.shopify.com/original.webp',16143,600171)}
+        self.assertTrue(eligible(offer,rule))
+        for change in [{'image':'https://cdn.shopify.com/other.webp'},{'source_type':'scraped'},{'affiliate_url':'https://tc.tradetracker.net/?c=31221&a=518044'},{'image_source':{}}]:self.assertFalse(eligible(offer|change,rule))
+
+    def test_repeated_source_is_stored_once_and_home_priority_survives_the_cap(self):
+        data=io.BytesIO();Image.new('RGBA',(10,10),'blue').save(data,'PNG')
+        rows=[{'id':str(i),'merchant_id':'a','image':'https://images.test/'+str(i)+'.png'} for i in range(3)]
+        rows.append(rows[2]|{'id':'duplicate'})
+        calls=[]
+        def fetch(url,hosts):calls.append(url);return data.getvalue()
+        rules={'a':{'allow_cache':True,'permission_status':'verified','evidence':'https://license.test/terms','hosts':['images.test']}}
+        with tempfile.TemporaryDirectory() as folder:
+            manifest,report=cache(rows,rules,Path(folder),fetch=fetch,limit=1,priority_ids=['2'])
+            self.assertEqual(list(manifest),['https://images.test/2.png'])
+            self.assertEqual(calls,['https://images.test/2.png'])

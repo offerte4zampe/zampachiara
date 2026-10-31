@@ -9,8 +9,11 @@ import urllib.request
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def permitted(rule):
-    return bool(rule.get('allow_cache') is True and rule.get('permission_status') == 'verified' and rule.get('evidence', '').startswith('https://'))
+try:
+    from .image_policy import permitted, eligible
+except ImportError:
+    from image_policy import permitted, eligible
+import concurrent.futures
 
 
 def allowed_url(url, hosts):
@@ -50,35 +53,43 @@ def convert(data, target):
         square.save(target, 'WEBP', quality=82, method=6)
 
 
-def cache(offers, rules, site, fetch=download, limit=500):
+def cache(offers, rules, site, fetch=download, limit=500, priority_ids=()):
     manifest, report = {}, {'cached': 0, 'unlicensed': 0, 'failed': 0, 'limited': 0}
-    for offer in offers:
-        rule = rules.get(offer.get('merchant_id'), {})
-        if not permitted(rule):
-            report['unlicensed'] += 1
+    priority=set(priority_ids)
+    rows=sorted(offers,key=lambda o:(o.get('id') not in priority,-int(o.get('canonical_shop_count') or 0),not o.get('available'),o['id']))
+    jobs={}
+    for offer in rows:
+        rule=rules.get(offer.get('merchant_id'),{})
+        if not eligible(offer,rule):
+            report['unlicensed']+=1
             continue
-        if not offer.get('image'):
-            continue
-        name = hashlib.sha256((offer['id']+'|'+offer['image']).encode()).hexdigest()[:24] + '-400.webp'
-        path = site / 'img/p' / name
-        if not path.exists():
-            if report['cached'] >= limit:
-                report['limited'] += 1
-                continue
-            try:
-                convert(fetch(offer['image'], rule.get('hosts', [])), path)
-                report['cached'] += 1
-            except Exception:
-                report['failed'] += 1
-                continue
-        manifest[offer['image']] = '/img/p/' + name
-    return manifest, report
+        remote=offer.get('image')
+        if not remote or not allowed_url(remote,rule.get('hosts',[])):continue
+        # Same upstream file is stored once, regardless of how many offers use it.
+        path=site/'img/p'/(hashlib.sha256(remote.encode()).hexdigest()[:24]+'-400.webp')
+        if path.is_file():manifest[remote]='/img/p/'+path.name
+        elif remote not in jobs:
+            if len(jobs)>=limit:report['limited']+=1
+            else:jobs[remote]=(path,rule.get('hosts',[]))
+    def save(item):
+        remote,(path,hosts)=item
+        try:
+            convert(fetch(remote,hosts),path)
+            return remote,'/img/p/'+path.name
+        except Exception:return remote,None
+    with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
+        for remote,local in pool.map(save,jobs.items()):
+            if local:manifest[remote]=local;report['cached']+=1
+            else:report['failed']+=1
+    return manifest,report
 
 
 def main():
     catalog = json.loads(gzip.decompress((ROOT/'site/data/catalog.json.gz').read_bytes()))
     rules = json.loads((ROOT/'automation/image-rights.json').read_text())['stores']
-    manifest, report = cache(catalog['offers'], rules, ROOT/'site')
+    home_path=ROOT/'site/data/home.json'
+    home=json.loads(home_path.read_text()) if home_path.exists() else {}
+    manifest, report = cache(catalog['offers'], rules, ROOT/'site', priority_ids=[o['id'] for o in home.get('offers',[])])
     for o in catalog['offers']:
         o.pop('image_local', None)
         if o.get('image') in manifest:
@@ -95,7 +106,8 @@ def main():
                 if offer.get('image') in manifest:
                     offer['image_local'] = manifest[offer['image']]
         path.write_text(json.dumps(products, ensure_ascii=False, separators=(',', ':'))+'\n')
-    (ROOT/'site/data/product-images.json').write_text(json.dumps({'images': manifest, 'report': report}, separators=(',', ':'))+'\n')
+    sources={o['image']:{'offer_id':o['id'],'merchant_id':o['merchant_id'],'source':o.get('image_source'),'evidence':rules[o['merchant_id']]['evidence']} for o in catalog['offers'] if o.get('image') in manifest and eligible(o,rules.get(o.get('merchant_id'),{}))}
+    (ROOT/'site/data/product-images.json').write_text(json.dumps({'images': manifest, 'sources':sources, 'report': report}, separators=(',', ':'))+'\n')
     print('Product image cache:', report)
 
 
