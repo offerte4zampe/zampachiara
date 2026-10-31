@@ -114,8 +114,8 @@ jobs:
       - run: python automation/build_matched_pages.py
       - run: python automation/build_line_pages.py
       - run: python automation/build_brand_pages.py
-      - run: python automation/apply_brand_links.py
       - run: python automation/build_home_data.py
+      - run: python automation/apply_brand_links.py
       - run: python automation/build_product_metadata.py
       - run: python automation/apply_product_metadata.py
       - run: python automation/build_catalog_preview.py
