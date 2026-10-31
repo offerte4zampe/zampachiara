@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-10-31T09:32:25.213617+00:00",
+  "generated_at": "2026-10-31T12:54:42.537987+00:00",
   "name_matching": {
     "evaluated_offers": 18345,
-    "eligible_offers": 8947,
-    "insufficient_characteristics": 9398,
+    "insufficient_characteristics": 9397,
+    "eligible_offers": 8948,
     "attached_without_gtin": 12
   },
-  "gtin_multi_shop_products": 542,
+  "gtin_multi_shop_products": 547,
   "characteristic_multi_shop_products": 12,
   "store_coverage": {
     "animaliapet": {
       "offers": 3894,
       "active_offers": 3882,
-      "missing_valid_gtin": 2349,
+      "missing_valid_gtin": 2331,
       "unverified_quantity": 0,
       "sales_unit_only": 1578,
-      "offers_in_multishop_products": 289
+      "offers_in_multishop_products": 294
     },
     "bauzaar": {
       "offers": 7146,
@@ -23,7 +23,7 @@
       "missing_valid_gtin": 445,
       "unverified_quantity": 0,
       "sales_unit_only": 2097,
-      "offers_in_multishop_products": 497
+      "offers_in_multishop_products": 502
     },
     "isola-dei-tesori": {
       "offers": 4156,
@@ -36,27 +36,27 @@
     "paco": {
       "offers": 1203,
       "active_offers": 802,
-      "missing_valid_gtin": 1038,
-      "unverified_quantity": 1038,
-      "sales_unit_only": 1038,
+      "missing_valid_gtin": 1037,
+      "unverified_quantity": 1037,
+      "sales_unit_only": 1037,
       "offers_in_multishop_products": 85
     },
     "webpet": {
       "offers": 1946,
       "active_offers": 1312,
-      "missing_valid_gtin": 1374,
+      "missing_valid_gtin": 1371,
       "unverified_quantity": 0,
       "sales_unit_only": 1666,
       "offers_in_multishop_products": 47
     }
   },
-  "products": 19191,
-  "active_products": 16717,
+  "products": 19207,
+  "active_products": 16712,
   "offers": 18345,
-  "multi_shop_products": 554,
-  "multi_shop_percent": 3.31,
+  "multi_shop_products": 559,
+  "multi_shop_percent": 3.34,
   "denominator": "active canonical products, distinct merchants with verified quantities; GTIN and characteristic matching reported separately; duplicate offers in one shop do not count",
-  "unattached_offers": 7673,
-  "candidate_pairs": 127,
+  "unattached_offers": 7653,
+  "candidate_pairs": 126,
   "automatic_match_rules": "GTIN and quantity, or exact normalized name plus brand and verified selling quantity; conflicting GTINs excluded"
 }
