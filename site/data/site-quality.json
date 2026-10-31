@@ -1,7 +1,7 @@
 {
   "method_version": 2,
-  "observed_at": "2026-10-30T18:54:46.032963+00:00",
-  "pages_scanned": 772,
+  "observed_at": "2026-10-31T01:03:41.923443+00:00",
+  "pages_scanned": 774,
   "indexable_pages": 315,
   "unique_canonicals": 315,
   "issues": [],
@@ -2044,7 +2044,7 @@
     {
       "page": "prezzi-03182551065091-1963c60553.html",
       "indexable": false,
-      "canonical": "https://offerte4zampe.it/prodotto/royal-canin-medium-puppy-3kg-crocchette-cuccioli-03182551065091-416fc7",
+      "canonical": "https://offerte4zampe.it/prezzi-03182551065091-1963c60553",
       "issues": []
     },
     {
@@ -2224,7 +2224,7 @@
     {
       "page": "prezzi-04260109622275-f480f2a3a6.html",
       "indexable": false,
-      "canonical": "https://offerte4zampe.it/prodotto/terra-canis-secco-canireo-grain-free-al-manzo-2-5-kg-2-5kg-04260109622275-a01447",
+      "canonical": "https://offerte4zampe.it/prezzi-04260109622275-f480f2a3a6",
       "issues": []
     },
     {
@@ -2471,6 +2471,12 @@
       "page": "prezzi-08001154000245-398fc6cfe2.html",
       "indexable": false,
       "canonical": "https://offerte4zampe.it/prodotto/almo-nature-daily-manzo-e-riso-12kg-crocchette-cani-all-breed-08001154000245-e2d416",
+      "issues": []
+    },
+    {
+      "page": "prezzi-08001154000344-02b1fc4cd1.html",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/almo-nature-hfc-our-best-sterilised-pollo-fresco-1-2kg-crocchette-gatti-adulti-08001154000344-af7f48",
       "issues": []
     },
     {
@@ -4052,6 +4058,12 @@
       "issues": []
     },
     {
+      "page": "prezzi-08019808199597-29c817a929.html",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/camon-vegtwist-snack-vegetali-per-cani-confezione-da-400-gr-08019808199597-5e69e3",
+      "issues": []
+    },
+    {
       "page": "prezzi-08019808214658-c65d951e6f.html",
       "indexable": false,
       "canonical": "https://offerte4zampe.it/prezzi-08019808214658-c65d951e6f",
@@ -4156,7 +4168,7 @@
     {
       "page": "prezzi-08052740004130-0fa2a02159.html",
       "indexable": false,
-      "canonical": "https://offerte4zampe.it/prodotto/aldog-super-premium-artica-mini-salmone-e-riso-per-cani-small-sacco-da-8-kg-08052740004130-56ca89",
+      "canonical": "https://offerte4zampe.it/prezzi-08052740004130-0fa2a02159",
       "issues": []
     },
     {
