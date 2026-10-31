@@ -10,3 +10,5 @@ test('description uses the lowest visible available offer and its unit price',()
  const rows=[{available:true,price:29.89,unit_price:1.99,unit_price_unit:'kg'},{available:true,price:35},{available:false,price:1}];
  assert.match(meta.description(rows,3),/^Confronta 3 negozi: da 29,89/);assert.match(meta.description(rows,1),/^Prezzo rilevato: 29,89/);assert(!meta.description(rows,1).includes('1 negozio'));assert(meta.description(rows,3).includes('/kg'));
 });
+
+test('decimal comma and point are the same format in title and adjacent name',()=>{assert.equal(meta.name('Cibo 1.5Kg 1,5 kg'),'Cibo 1,5 kg');assert.equal(meta.title('Monge Adult Pollo 1.5Kg','Monge','1,5 kg'),'Monge Adult Pollo 1,5 kg | Prezzo e storico');assert(meta.title('Cibo 2 kg / 4 kg','','4 kg').includes('2 kg / 4 kg'));});

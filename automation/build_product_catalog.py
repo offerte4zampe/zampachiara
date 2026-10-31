@@ -50,6 +50,7 @@ def normalized(value):
 def canonical_brand(value):
     text=str(value or '').strip()
     aliases={normalized(k):v for k,v in BRAND_ALIASES.items()}
+    aliases.update({normalized(v):v for v in BRAND_ALIASES.values()})
     return aliases.get(normalized(text),text)
 
 

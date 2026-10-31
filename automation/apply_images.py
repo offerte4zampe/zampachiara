@@ -32,18 +32,16 @@ def apply(html, titles, manifest):
         for key, value in [('width',400), ('height',400), ('loading','lazy'), ('decoding','async')]:
             tag = set_attr(tag, key, value)
         return re.sub(r'\sfetchpriority="[^"]*"', '', tag)
+    html = re.sub(r'<img\b[^>]*>', product_image, html)
     def article_label(match):
         article = match[0]
-        title = re.search(r'<h[23]\b[^>]*>(.*?)</h[23]>', article, re.S)
-        if not title:
-            return article
-        label = unescape(re.sub(r'<[^>]+>', '', title[1])).strip()
-        def fill(image):
-            tag = image[0]
-            return set_attr(tag, 'alt', label) if re.search(r'\balt="\s*"', tag) else tag
-        return re.sub(r'<img\b[^>]*>', fill, article)
+        if not re.search(r'<h[23]\b[^>]*>.*?<a\b[^>]*href=', article, re.S): return article
+        return re.sub(r'<img\b[^>]*>', lambda m:set_attr(m[0], 'alt', ''), article)
     html = re.sub(r'<article\b[^>]*>.*?</article>', article_label, html, flags=re.S)
-    html = re.sub(r'<img\b[^>]*>', product_image, html)
+    # The main home offer is above the fold; prioritize only its image.
+    def spotlight(match):
+        return re.sub(r'<img\b[^>]*>', lambda m:set_attr(re.sub(r'\sloading="[^"]*"', '', m[0]), 'fetchpriority', 'high'), match[0], count=1)
+    html = re.sub(r'<article\b[^>]*class="spotlight-product"[^>]*>.*?</article>', spotlight, html, flags=re.S)
     origins = sorted({urlsplit(unescape(src)).scheme+'://'+urlsplit(unescape(src)).netloc for src in re.findall(r'<img\b[^>]*src="([^"]+)"',html) if unescape(src) in titles and src.startswith('https://')})
     for origin in origins:
         link = '<link rel="preconnect" href="'+escape(origin,quote=True)+'">'

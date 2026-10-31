@@ -1,8 +1,25 @@
 (function(root){'use strict';
 const money=new Intl.NumberFormat('it-IT',{style:'currency',currency:'EUR'});
-function name(value){let text=String(value||'').replace(/\bgr\b/gi,'g').replace(/\s+/g,' ').trim();const repeated=/(\d+(?:[.,]\d+)?)\s*(kg|g|ml|l)\b(?:\s*[·|/]\s*|\s+)\1\s*\2\b/gi;for(let i=0;i<3;i++)text=text.replace(repeated,'$1 $2');return text}
+function name(value){
+ let text=String(value||'').replace(/\bgr\b/gi,'g').replace(/\s+/g,' ').trim();
+ const amount='\\d+(?:[.,]\\d+)?',unit='(?:kg|g|ml|l)';
+ const repeated=new RegExp('('+amount+')\\s*('+unit+')\\b(?:\\s*[·|/]\\s*|\\s+)('+amount+')\\s*('+unit+')\\b','gi');
+ for(let i=0;i<3;i++)text=text.replace(repeated,(all,a,u,b,v)=>Number(a.replace(',','.'))===Number(b.replace(',','.'))&&u.toLowerCase()===v.toLowerCase()?a+' '+u:all);
+ return text.replace(/(\d+(?:[.,]\d+)?)\s*(kg|g|ml|l)\b/gi,(_,amount,unit)=>amount.replace('.',',')+' '+unit.toLowerCase());
+}
+function withoutFormat(text,format){
+ const wanted=/^(\d+(?:[.,]\d+)?)\s*(kg|g|ml|l)$/i.exec(format);
+ if(!wanted)return text;
+ return text.replace(/(?<![\w.,])\d+(?:[.,]\d+)?\s*(?:kg|g|ml|l)\b/gi,(all,offset)=>{
+  const value=/^(\d+(?:[.,]\d+)?)\s*(kg|g|ml|l)$/i.exec(all);
+  // Preserve multipacks and alternative sizes rather than rewriting identity.
+  if(/[x×/]\s*$/.test(text.slice(0,offset))||/^\s*[x×/]/.test(text.slice(offset+all.length)))return all;
+  return Number(value[1].replace(',','.'))===Number(wanted[1].replace(',','.'))&&value[2].toLowerCase()===wanted[2].toLowerCase()?'':all;
+ }).replace(/\s+/g,' ').replace(/[\s·|,:;—-]+$/,'').trim();
+}
 function title(value,brand='',format=''){
  let text=name(value),unit=String(format||'').trim();if(unit.length>20)unit='';
+ text=withoutFormat(text,unit);
  if(unit){const escaped=unit.replace(/[.*+?^${}()|[\]\\]/g,'\\$&').replace(/\s+/g,'\\s*');text=text.replace(new RegExp('(?:\\s*[·|]\\s*|\\s+)'+escaped+'$','i'),'').trim();}
  if(brand&&!text.toLocaleLowerCase('it').includes(String(brand).toLocaleLowerCase('it')))text=brand+' '+text;
  const suffix=(unit?' '+unit:'')+' | Prezzo e storico',budget=Math.max(8,60-suffix.length);

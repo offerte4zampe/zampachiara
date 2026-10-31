@@ -25,5 +25,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Prepare denied-by-default build attestation
+        run: python automation/check_d1_activation.py --prepare-build
       - run: node --check worker/telegram.mjs
       - run: node --test tests/test_telegram.mjs

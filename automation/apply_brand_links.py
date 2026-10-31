@@ -19,8 +19,11 @@ def apply(html,pages):
     html=re.sub(r'href=([\"\'])(.*?)\1',link,html)
     if 'id="home-brands"' in html:
         html=re.sub(r' data-brand-pages="[^"]*"','',html)
-        html=html.replace('id="home-brands"','id="home-brands" data-brand-pages="'+escape(json.dumps(pages,ensure_ascii=False),quote=True)+'"')
-        content='<h2>Marche del catalogo</h2><details><summary>Tutte le marche con almeno cinque offerte recenti ('+str(len(pages))+')</summary><div class="brand-links">'+''.join('<a href="'+url+'">'+escape(name)+'</a>' for name,url in sorted(pages.items(),key=lambda x:x[0].casefold()))+'</div></details>'
+        # Keep only the visible shortcuts in the page, not the full brand inventory.
+        names = re.findall(r'<a\b[^>]*>([^<]+)</a>', html[html.index('id="home-brands"'):].split('</div>',1)[0])
+        shortcuts = {unescape(name):pages[unescape(name)] for name in names if unescape(name) in pages}
+        html=html.replace('id="home-brands"','id="home-brands" data-brand-pages="'+escape(json.dumps(shortcuts,ensure_ascii=False),quote=True)+'"')
+        content='<p><a href="/marche">Esplora tutte le marche del catalogo →</a></p>'
         if 'id="home-all-brands"' in html:html=replace_region(html,'home-all-brands',content)
         else:html=html.replace('</main>','<section class="section"><div class="wrap" id="home-all-brands">'+content+'</div></section></main>')
     return html

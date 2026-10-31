@@ -31,3 +31,11 @@ class ProductImageTests(unittest.TestCase):
         result=apply(html,{'https://images.test/a':'Cibo & cane'}, {})
         for text in ['width="400"','height="400"','alt="Cibo &amp; cane"','decoding="async"','loading="lazy"','image-fallback.js','rel="preconnect"']:self.assertIn(text,result)
         self.assertEqual(apply(result,{'https://images.test/a':'Cibo & cane'}, {}),result)
+
+    def test_linked_card_image_is_decorative_and_home_spotlight_has_priority(self):
+        html='<html><head></head><body><article class="spotlight-product"><img src="https://images.test/a" alt="Cibo"><h3><a href="/prodotto/cibo">Cibo</a></h3></article></body></html>'
+        out=apply(html,{'https://images.test/a':'Cibo'}, {})
+        self.assertIn('alt=""',out)
+        self.assertIn('fetchpriority="high"',out)
+        self.assertNotIn('loading="lazy"',out)
+        self.assertEqual(out,apply(out,{'https://images.test/a':'Cibo'}, {}))

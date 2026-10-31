@@ -3,6 +3,14 @@ import {scheduledTelegram} from './telegram.mjs';
 export {TelegramPublisher} from './telegram.mjs';
 import {canonicalProduct,slugForOffer} from './canonical-product.mjs';
 import {productPreview} from './product-preview.mjs';
+async function htmlAsset(request,env){
+ const result=await env.ASSETS.fetch(request);
+ if(!result.headers.get('Content-Type')?.includes('text/html'))return result;
+ const headers=new Headers(result.headers);
+ headers.set('Cache-Control','public, max-age=0, must-revalidate');
+ headers.set('Cloudflare-CDN-Cache-Control','no-store');
+ return new Response(result.body,{status:result.status,headers});
+}
 const EVENTS = new Set(['page_view','catalog_search','compare_add','merchant_click']);
 const PRODUCTS = new Set(['monge-maxi-adult-pollo','monge-medium-adult-pollo','monge-adult-manzo-riso','monge-adult-cat-pollo','royal-canin-medium-adult','royal-canin-maxi-adult','pro-plan-large-athletic-agnello','pro-plan-medium-sensitive-skin-salmone']);
 const SHOPS = new Set(['Bauzaar','WebPet','Animaliapet','Isola dei Tesori','Paco Pet Shop','Amazon']);
@@ -13,6 +21,11 @@ export default {
     if (['GET','HEAD'].includes(request.method) && url.pathname.endsWith('.html') && url.pathname !== '/prodotto.html' && !/^\/google[\w-]+\.html$/.test(url.pathname)) {
       url.pathname = url.pathname.endsWith('/index.html') ? url.pathname.slice(0, -10) || '/' : url.pathname.slice(0, -5);
       return Response.redirect(url.href, 301);
+    }
+    if(url.pathname.startsWith('/marca-')){
+      const asset=await env.ASSETS.fetch(new Request(new URL('/data/brand-redirects.json',url.origin)));
+      const redirects=asset.ok?await asset.json():{};const target=redirects[url.pathname];
+      if(typeof target==='string'&&/^\/marca-[a-z0-9-]+$/.test(target)&&target!==url.pathname)return Response.redirect(new URL(target,url.origin).href,301);
     }
     if(url.pathname.startsWith('/go/'))return outbound(request,env,ctx);
     if(url.pathname==='/api/telegram/status'){
@@ -30,8 +43,8 @@ export default {
       }
       return productPreview(request,env);
     }
-    if(url.pathname==='/confronta-cibo'&&url.searchParams.has('brand')){const result=await env.ASSETS.fetch(request);const headers=new Headers(result.headers);headers.set('X-Robots-Tag','noindex, follow');return new Response(result.body,{status:result.status,headers})}
-    if (url.pathname !== '/api/metrics') return env.ASSETS.fetch(request);
+    if(url.pathname==='/confronta-cibo'&&url.searchParams.has('brand')){const result=await htmlAsset(request,env);const headers=new Headers(result.headers);headers.set('X-Robots-Tag','noindex, follow');return new Response(result.body,{status:result.status,headers})}
+    if (url.pathname !== '/api/metrics') return htmlAsset(request,env);
     const headers = {'Cache-Control':'no-store'};
     if (request.method !== 'POST') return new Response(null,{status:405,headers});
     if (request.headers.get('Origin') !== url.origin) return new Response(null,{status:403,headers});
