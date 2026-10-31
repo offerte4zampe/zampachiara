@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-10-31T12:54:42.537987+00:00",
+  "generated_at": "2026-10-31T13:32:30.306181+00:00",
   "selection_basis": "Operational opportunity and category/brand diversity; no search-demand data used.",
   "target": 300,
   "selected": 300,
   "brand_cap": 15,
   "at_target": 14,
-  "with_third_store_lead": 30,
+  "with_third_store_lead": 31,
   "categories": {
-    "umido": 128,
+    "umido": 131,
     "snack": 57,
-    "crocchette": 106,
+    "crocchette": 103,
     "lettiere": 9
   },
   "priority_offer_ids": [
@@ -345,6 +345,7 @@
     "bauzaar:58411852202309",
     "bauzaar:58411852235077",
     "bauzaar:58411852333381",
+    "bauzaar:58411852464453",
     "bauzaar:58411852529989",
     "bauzaar:58411852595525",
     "bauzaar:58411853152581",
@@ -410,6 +411,7 @@
     "isola-dei-tesori:000142292",
     "isola-dei-tesori:000142293",
     "isola-dei-tesori:000142294",
+    "isola-dei-tesori:000144025",
     "isola-dei-tesori:000144181",
     "isola-dei-tesori:000144422",
     "isola-dei-tesori:000146125",
@@ -430,6 +432,7 @@
     "isola-dei-tesori:000503053",
     "isola-dei-tesori:000503057",
     "isola-dei-tesori:000503126",
+    "isola-dei-tesori:000503149",
     "isola-dei-tesori:000503152",
     "isola-dei-tesori:000503389",
     "isola-dei-tesori:000503400",
@@ -466,6 +469,7 @@
     "paco:3068",
     "paco:3070",
     "paco:3131",
+    "paco:3135",
     "paco:3136",
     "paco:3711",
     "paco:3770",
@@ -744,6 +748,27 @@
       ],
       "candidate_offer_ids": [
         "isola-dei-tesori:000138458"
+      ],
+      "next_action": "verify_feed_package",
+      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
+    },
+    {
+      "product_id": "p-9ae54ff19d73e6a30eda",
+      "name": "Farmina N&D Pumpkin Neutered Quaglia e Melograno 5Kg Crocchette Gatti Adulti",
+      "brand": "Farmina",
+      "category": "crocchette",
+      "species": "gatto",
+      "format": "5 kg",
+      "url": "https://offerte4zampe.it/prodotto/farmina-n-d-pumpkin-neutered-quaglia-e-melograno-5kg-crocchette-gatti-adulti-08010276036803-a30eda",
+      "verified_shops": 2,
+      "target_shops": 3,
+      "missing_shops": 1,
+      "offer_ids": [
+        "animaliapet:46976591200599",
+        "bauzaar:56961288536389"
+      ],
+      "candidate_offer_ids": [
+        "paco:3847"
       ],
       "next_action": "verify_feed_package",
       "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
@@ -2061,32 +2086,13 @@
       "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
     },
     {
-      "product_id": "p-7d1fc1814ff89ffec93b",
-      "name": "Farmina Vet Life Feline Gastro Intestinal 2 kg",
-      "brand": "Farmina Vet Life",
-      "category": "crocchette",
-      "species": "gatto",
-      "format": "2 kg",
-      "url": "https://offerte4zampe.it/prodotto/farmina-vet-life-feline-gastro-intestinal-2-kg-2kg-08010276025340-fec93b",
-      "verified_shops": 2,
-      "target_shops": 3,
-      "missing_shops": 1,
-      "offer_ids": [
-        "bauzaar:56820452131141",
-        "paco:1342"
-      ],
-      "candidate_offer_ids": [],
-      "next_action": "find_additional_store",
-      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
-    },
-    {
-      "product_id": "p-870bda98f424e5399ec8",
+      "product_id": "p-0d0144ad86cef595a35e",
       "name": "Farmina Vet Life Feline Obesity 2 kg",
-      "brand": "Farmina Vet Life",
+      "brand": "Farmina",
       "category": "crocchette",
       "species": "gatto",
       "format": "2 kg",
-      "url": "https://offerte4zampe.it/prodotto/farmina-vet-life-feline-obesity-2-kg-2kg-08010276025333-399ec8",
+      "url": "https://offerte4zampe.it/prodotto/farmina-vet-life-feline-obesity-2-kg-08010276025333-95a35e",
       "verified_shops": 2,
       "target_shops": 3,
       "missing_shops": 1,
@@ -2099,38 +2105,95 @@
       "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
     },
     {
-      "product_id": "p-9f1461861e63ded55a96",
-      "name": "Farmina Vet Life Renal Cibo Umido Per Cani · 6X300 gr",
-      "brand": "Farmina Vet Life",
-      "category": "umido",
-      "species": "cane",
-      "format": "1,8 kg",
-      "url": "https://offerte4zampe.it/prodotto/farmina-vet-life-renal-cibo-umido-per-cani-6x300-gr-08606014102826-d55a96",
-      "verified_shops": 2,
-      "target_shops": 3,
-      "missing_shops": 1,
-      "offer_ids": [
-        "paco:3131",
-        "bauzaar:56961313505605"
-      ],
-      "candidate_offer_ids": [],
-      "next_action": "find_additional_store",
-      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
-    },
-    {
-      "product_id": "p-d7a355c6fca32fa3bbb2",
+      "product_id": "p-288ed75c167219e2b32a",
       "name": "Farmina Vet Life Canine Renal 12 kg",
-      "brand": "Farmina Vet Life",
+      "brand": "Farmina",
       "category": "crocchette",
       "species": "cane",
       "format": "12 kg",
-      "url": "https://offerte4zampe.it/prodotto/farmina-vet-life-canine-renal-12-kg-12kg-08010276025395-a3bbb2",
+      "url": "https://offerte4zampe.it/prodotto/farmina-vet-life-canine-renal-12-kg-08010276025395-e2b32a",
       "verified_shops": 2,
       "target_shops": 3,
       "missing_shops": 1,
       "offer_ids": [
         "bauzaar:56820452819269",
         "paco:1353"
+      ],
+      "candidate_offer_ids": [],
+      "next_action": "find_additional_store",
+      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
+    },
+    {
+      "product_id": "p-50ba42788741a2b0401f",
+      "name": "Farmina N&D Quinoa Feline Urinary Anatra e mirtilli rossi 1,5 kg",
+      "brand": "Farmina",
+      "category": "crocchette",
+      "species": "gatto",
+      "format": "1,5 kg",
+      "url": "https://offerte4zampe.it/prodotto/farmina-n-d-quinoa-feline-urinary-anatra-e-mirtilli-rossi-1-5-kg-08010276035820-b0401f",
+      "verified_shops": 2,
+      "target_shops": 3,
+      "missing_shops": 1,
+      "offer_ids": [
+        "bauzaar:56820214694213",
+        "paco:3830"
+      ],
+      "candidate_offer_ids": [],
+      "next_action": "find_additional_store",
+      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
+    },
+    {
+      "product_id": "p-563fe8a54af96d4a1239",
+      "name": "Farmina Vet Life Feline Gastro Intestinal 2 kg",
+      "brand": "Farmina",
+      "category": "crocchette",
+      "species": "gatto",
+      "format": "2 kg",
+      "url": "https://offerte4zampe.it/prodotto/farmina-vet-life-feline-gastro-intestinal-2-kg-08010276025340-4a1239",
+      "verified_shops": 2,
+      "target_shops": 3,
+      "missing_shops": 1,
+      "offer_ids": [
+        "bauzaar:56820452131141",
+        "paco:1342"
+      ],
+      "candidate_offer_ids": [],
+      "next_action": "find_additional_store",
+      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
+    },
+    {
+      "product_id": "p-b2d8e2cc4b1296ca405d",
+      "name": "Farmina Vet Life Canine Renal 300 g Pollo - confezione da 6 pezzi",
+      "brand": "Farmina",
+      "category": "umido",
+      "species": "cane",
+      "format": "1,8 kg",
+      "url": "https://offerte4zampe.it/prodotto/farmina-vet-life-canine-renal-300-g-pollo-confezione-da-6-pezzi-08606014102826-ca405d",
+      "verified_shops": 2,
+      "target_shops": 3,
+      "missing_shops": 1,
+      "offer_ids": [
+        "bauzaar:56961313505605",
+        "paco:3131"
+      ],
+      "candidate_offer_ids": [],
+      "next_action": "find_additional_store",
+      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
+    },
+    {
+      "product_id": "p-db4330b3c14db3206e05",
+      "name": "Farmina N&D Grain Free Quinoa Gatto Digestion Agnello 1,5 kg",
+      "brand": "Farmina",
+      "category": "crocchette",
+      "species": "gatto",
+      "format": "1,5 kg",
+      "url": "https://offerte4zampe.it/prodotto/farmina-n-d-grain-free-quinoa-gatto-digestion-agnello-1-5-kg-08010276035790-206e05",
+      "verified_shops": 2,
+      "target_shops": 3,
+      "missing_shops": 1,
+      "offer_ids": [
+        "bauzaar:56820215316805",
+        "paco:3828"
       ],
       "candidate_offer_ids": [],
       "next_action": "find_additional_store",
@@ -5927,22 +5990,82 @@
       "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
     },
     {
-      "product_id": "p-9ae54ff19d73e6a30eda",
-      "name": "Farmina N&D Pumpkin Neutered Quaglia e Melograno 5Kg Crocchette Gatti Adulti",
+      "product_id": "p-1bbd013387b9694296fa",
+      "name": "Farmina Vet Life Cat Struvite 85 g",
       "brand": "Farmina",
-      "category": "crocchette",
+      "category": "umido",
       "species": "gatto",
-      "format": "5 kg",
-      "url": "https://offerte4zampe.it/prodotto/farmina-n-d-pumpkin-neutered-quaglia-e-melograno-5kg-crocchette-gatti-adulti-08010276036803-a30eda",
+      "format": "85 g",
+      "url": "https://offerte4zampe.it/prodotto/farmina-vet-life-cat-struvite-85-g-08010276033178-4296fa",
       "verified_shops": 1,
       "target_shops": 3,
       "missing_shops": 2,
       "offer_ids": [
-        "animaliapet:46976591200599"
+        "isola-dei-tesori:000144025"
       ],
       "candidate_offer_ids": [
-        "bauzaar:56961288536389",
-        "paco:3847"
+        "paco:3135"
+      ],
+      "next_action": "verify_feed_package",
+      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
+    },
+    {
+      "product_id": "p-41236f10a79a80e83be5",
+      "name": "Farmina Vet Life Feline Renal 85 g - confezione da 12 pezzi",
+      "brand": "Farmina",
+      "category": "umido",
+      "species": "gatto",
+      "format": "1,02 kg",
+      "url": "https://offerte4zampe.it/prodotto/farmina-vet-life-feline-renal-85-g-confezione-da-12-pezzi-08606014102864-e83be5",
+      "verified_shops": 1,
+      "target_shops": 3,
+      "missing_shops": 2,
+      "offer_ids": [
+        "bauzaar:56961324745029"
+      ],
+      "candidate_offer_ids": [
+        "paco:3136"
+      ],
+      "next_action": "verify_feed_package",
+      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
+    },
+    {
+      "product_id": "p-573d8f1687ac9951944a",
+      "name": "Farmina Vet Life Canine Hypoallergenic Pesce & Patate 2 kg",
+      "brand": "Farmina",
+      "category": "crocchette",
+      "species": "cane",
+      "format": "2 kg",
+      "url": "https://offerte4zampe.it/prodotto/farmina-vet-life-canine-hypoallergenic-pesce-patate-2-kg-08010276025265-51944a",
+      "verified_shops": 1,
+      "target_shops": 3,
+      "missing_shops": 2,
+      "offer_ids": [
+        "bauzaar:56820452196677"
+      ],
+      "candidate_offer_ids": [
+        "paco:1350",
+        "paco:5943"
+      ],
+      "next_action": "verify_feed_package",
+      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
+    },
+    {
+      "product_id": "p-985337e8ef641a625e36",
+      "name": "Farmina N&D Pumpkin Canine formula Mini 140 g Pollo e melograno - confezione da 6 pezzi",
+      "brand": "Farmina",
+      "category": "umido",
+      "species": "cane",
+      "format": "840 g",
+      "url": "https://offerte4zampe.it/prodotto/farmina-n-d-pumpkin-canine-formula-mini-140-g-pollo-e-melograno-confezione-da-6-pezzi-08606014102314-625e36",
+      "verified_shops": 1,
+      "target_shops": 3,
+      "missing_shops": 2,
+      "offer_ids": [
+        "bauzaar:56961280049477"
+      ],
+      "candidate_offer_ids": [
+        "animaliapet:46976644677975"
       ],
       "next_action": "verify_feed_package",
       "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
@@ -5968,134 +6091,13 @@
       "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
     },
     {
-      "product_id": "p-e959845cfb28698c50e9",
-      "name": "Farmina N&D Urinary Adult Con Anatra E Quinoa Per Gatti · Sacco da 1,5 kg",
-      "brand": "Farmina N&D",
-      "category": "crocchette",
-      "species": "gatto",
-      "format": "1,5 kg",
-      "url": "https://offerte4zampe.it/prodotto/farmina-n-d-urinary-adult-con-anatra-e-quinoa-per-gatti-sacco-da-1-5-kg-08010276035820-8c50e9",
-      "verified_shops": 1,
-      "target_shops": 3,
-      "missing_shops": 2,
-      "offer_ids": [
-        "paco:3830"
-      ],
-      "candidate_offer_ids": [
-        "bauzaar:56820214694213"
-      ],
-      "next_action": "verify_feed_package",
-      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
-    },
-    {
-      "product_id": "p-ecc6d38fa5ce29f6a9bf",
-      "name": "Farmina N&D Digestion Adult Agnello E Quinoa Per Gatti · Sacco da 1,5 kg",
-      "brand": "Farmina N&D",
-      "category": "crocchette",
-      "species": "gatto",
-      "format": "1,5 kg",
-      "url": "https://offerte4zampe.it/prodotto/farmina-n-d-digestion-adult-agnello-e-quinoa-per-gatti-sacco-da-1-5-kg-08010276035790-f6a9bf",
-      "verified_shops": 1,
-      "target_shops": 3,
-      "missing_shops": 2,
-      "offer_ids": [
-        "paco:3828"
-      ],
-      "candidate_offer_ids": [
-        "bauzaar:56820215316805"
-      ],
-      "next_action": "verify_feed_package",
-      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
-    },
-    {
-      "product_id": "p-205ab3204a92e61dc6a6",
-      "name": "Farmina N&D Pumpkin Canine formula Mini 140 g Pollo e melograno - confezione da 6 pezzi",
-      "brand": "Farmina N&D Pumpkin Grain Free",
-      "category": "umido",
-      "species": "cane",
-      "format": "840 g",
-      "url": "https://offerte4zampe.it/prodotto/farmina-n-d-pumpkin-canine-formula-mini-140-g-pollo-e-melograno-confezione-da-6-pezzi-08606014102314-1dc6a6",
-      "verified_shops": 1,
-      "target_shops": 3,
-      "missing_shops": 2,
-      "offer_ids": [
-        "bauzaar:56961280049477"
-      ],
-      "candidate_offer_ids": [
-        "animaliapet:46976644677975"
-      ],
-      "next_action": "verify_feed_package",
-      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
-    },
-    {
-      "product_id": "p-2bc54726be7d573d0ce2",
-      "name": "Farmina N&D Pumpkin Grain Free Neutered Feline Quaglia Zucca e Melograno 5 kg",
-      "brand": "Farmina N&D Pumpkin Grain Free",
-      "category": "crocchette",
-      "species": "gatto",
-      "format": "5 kg",
-      "url": "https://offerte4zampe.it/prodotto/farmina-n-d-pumpkin-grain-free-neutered-feline-quaglia-zucca-e-melograno-5-kg-5kg-08010276036803-3d0ce2",
-      "verified_shops": 1,
-      "target_shops": 3,
-      "missing_shops": 2,
-      "offer_ids": [
-        "bauzaar:56961288536389"
-      ],
-      "candidate_offer_ids": [
-        "animaliapet:46976591200599",
-        "paco:3847"
-      ],
-      "next_action": "verify_feed_package",
-      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
-    },
-    {
-      "product_id": "p-165849e47a9d205c4594",
-      "name": "Farmina N&D Grain Free Quinoa Gatto Digestion Agnello 1,5 kg",
-      "brand": "Farmina N&D Quinoa Grain Free",
-      "category": "crocchette",
-      "species": "gatto",
-      "format": "1,5 kg",
-      "url": "https://offerte4zampe.it/prodotto/farmina-n-d-grain-free-quinoa-gatto-digestion-agnello-1-5-kg-1-5kg-08010276035790-5c4594",
-      "verified_shops": 1,
-      "target_shops": 3,
-      "missing_shops": 2,
-      "offer_ids": [
-        "bauzaar:56820215316805"
-      ],
-      "candidate_offer_ids": [
-        "paco:3828"
-      ],
-      "next_action": "verify_feed_package",
-      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
-    },
-    {
-      "product_id": "p-996b74ed329d36c01919",
-      "name": "Farmina N&D Quinoa Feline Urinary Anatra e mirtilli rossi 1,5 kg",
-      "brand": "Farmina N&D Quinoa Grain Free",
-      "category": "crocchette",
-      "species": "gatto",
-      "format": "1,5 kg",
-      "url": "https://offerte4zampe.it/prodotto/farmina-n-d-quinoa-feline-urinary-anatra-e-mirtilli-rossi-1-5-kg-1-5kg-08010276035820-c01919",
-      "verified_shops": 1,
-      "target_shops": 3,
-      "missing_shops": 2,
-      "offer_ids": [
-        "bauzaar:56820214694213"
-      ],
-      "candidate_offer_ids": [
-        "paco:3830"
-      ],
-      "next_action": "verify_feed_package",
-      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
-    },
-    {
-      "product_id": "p-2a626af2e69f644548a4",
+      "product_id": "p-d1982b7f7b142c9ad9c9",
       "name": "Farmina Vet Life Canine Gastro Intestinal 2 kg",
-      "brand": "Farmina Vet Life",
+      "brand": "Farmina",
       "category": "crocchette",
       "species": "cane",
       "format": "2 kg",
-      "url": "https://offerte4zampe.it/prodotto/farmina-vet-life-canine-gastro-intestinal-2-kg-2kg-08010276025289-4548a4",
+      "url": "https://offerte4zampe.it/prodotto/farmina-vet-life-canine-gastro-intestinal-2-kg-08010276025289-9ad9c9",
       "verified_shops": 1,
       "target_shops": 3,
       "missing_shops": 2,
@@ -6109,33 +6111,13 @@
       "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
     },
     {
-      "product_id": "p-3b340d24f1842632edb5",
-      "name": "Farmina Vet Life Feline Renal 85 g - confezione da 12 pezzi",
-      "brand": "Farmina Vet Life",
-      "category": "umido",
-      "species": "gatto",
-      "format": "1,02 kg",
-      "url": "https://offerte4zampe.it/prodotto/farmina-vet-life-feline-renal-85-g-confezione-da-12-pezzi-08606014102864-32edb5",
-      "verified_shops": 1,
-      "target_shops": 3,
-      "missing_shops": 2,
-      "offer_ids": [
-        "bauzaar:56961324745029"
-      ],
-      "candidate_offer_ids": [
-        "paco:3136"
-      ],
-      "next_action": "verify_feed_package",
-      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
-    },
-    {
-      "product_id": "p-87dfd07e431fb766d9b8",
-      "name": "Farmina Vet Life Renal Cibo Umido Per Gatti · Pollo · 24x85 gr",
-      "brand": "Farmina Vet Life",
+      "product_id": "p-febfbe7d0d01132283f3",
+      "name": "Farmina Vet Life - Farmina Vet Life Renal Cibo Umido Per Gatti · Pollo · 24x85 gr",
+      "brand": "Farmina",
       "category": "umido",
       "species": "gatto",
       "format": "2,04 kg",
-      "url": "https://offerte4zampe.it/prodotto/farmina-vet-life-renal-cibo-umido-per-gatti-pollo-24x85-gr-08606014102864-66d9b8",
+      "url": "https://offerte4zampe.it/prodotto/farmina-vet-life-farmina-vet-life-renal-cibo-umido-per-gatti-pollo-24x85-gr-08606014102864-2283f3",
       "verified_shops": 1,
       "target_shops": 3,
       "missing_shops": 2,
@@ -6144,27 +6126,6 @@
       ],
       "candidate_offer_ids": [
         "bauzaar:56961324745029"
-      ],
-      "next_action": "verify_feed_package",
-      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
-    },
-    {
-      "product_id": "p-ce18b2437ed9ade15317",
-      "name": "Farmina Vet Life Canine Hypoallergenic Pesce & Patate 2 kg",
-      "brand": "Farmina Vet Life",
-      "category": "crocchette",
-      "species": "cane",
-      "format": "2 kg",
-      "url": "https://offerte4zampe.it/prodotto/farmina-vet-life-canine-hypoallergenic-pesce-patate-2-kg-2kg-08010276025265-e15317",
-      "verified_shops": 1,
-      "target_shops": 3,
-      "missing_shops": 2,
-      "offer_ids": [
-        "bauzaar:56820452196677"
-      ],
-      "candidate_offer_ids": [
-        "paco:1350",
-        "paco:5943"
       ],
       "next_action": "verify_feed_package",
       "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
@@ -6448,6 +6409,46 @@
       ],
       "candidate_offer_ids": [
         "bauzaar:56820220920133"
+      ],
+      "next_action": "verify_feed_package",
+      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
+    },
+    {
+      "product_id": "p-49077b81b90a080cd028",
+      "name": "Gourmet Gold Cat Adult Tortini con Pollo e Carote 85 g",
+      "brand": "Gourmet",
+      "category": "umido",
+      "species": "gatto",
+      "format": "85 g",
+      "url": "https://offerte4zampe.it/prodotto/gourmet-gold-cat-adult-tortini-con-pollo-e-carote-85-g-07613035948525-0cd028",
+      "verified_shops": 1,
+      "target_shops": 3,
+      "missing_shops": 2,
+      "offer_ids": [
+        "isola-dei-tesori:000503149"
+      ],
+      "candidate_offer_ids": [
+        "bauzaar:58411852464453"
+      ],
+      "next_action": "verify_feed_package",
+      "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
+    },
+    {
+      "product_id": "p-5aeab01efadbb952dcf5",
+      "name": "Gourmet Perle Cat Adult Filettini in Salsa con Pollo 85 g",
+      "brand": "Gourmet",
+      "category": "umido",
+      "species": "gatto",
+      "format": "85 g",
+      "url": "https://offerte4zampe.it/prodotto/gourmet-perle-cat-adult-filettini-in-salsa-con-pollo-85-g-08002205354973-52dcf5",
+      "verified_shops": 1,
+      "target_shops": 3,
+      "missing_shops": 2,
+      "offer_ids": [
+        "isola-dei-tesori:000142031"
+      ],
+      "candidate_offer_ids": [
+        "bauzaar:58411857346885"
       ],
       "next_action": "verify_feed_package",
       "candidate_warning": "Shared feed GTIN is a lead only; package, variant, price and freshness must be verified."
