@@ -5,7 +5,7 @@ import {TelegramPublisher,telegramCall,payload,trackedUrl,TEST_POST,POSTS,offerP
 function setup(){const map=new Map();const state={storage:{get:async k=>map.get(k),put:async(k,v)=>{map.set(k,structuredClone(v));},delete:async k=>map.delete(k)}};const env={TELEGRAM_BOT_TOKEN:'fake-test-value',TELEGRAM_CHANNEL_ID:'@sconti4zampe',ASSETS:{fetch:async()=>new Response('ok')}};return {map,state,env,object:new TelegramPublisher(state,env)};}
 const ok=()=>Response.json({ok:true,result:{message_id:42,chat:{username:'sconti4zampe'}}});
 test('site links are UTM tagged and foreign destinations rejected',()=>{const url=new URL(trackedUrl(TEST_POST));assert.equal(url.searchParams.get('utm_source'),'telegram');assert.equal(url.searchParams.get('utm_content'),TEST_POST.id);assert.throws(()=>trackedUrl({...TEST_POST,path:'https://evil.example'}));assert.throws(()=>payload(TEST_POST,'@other'));});
-test('plain text, photo captions, affiliation and limits',()=>{assert.equal(payload(TEST_POST,'@sconti4zampe').method,'sendMessage');const p=payload(POSTS[0],'@sconti4zampe');assert.equal(p.method,'sendPhoto');assert.match(p.body.caption,/link affiliati/);assert.throws(()=>payload({...TEST_POST,text:'a'.repeat(4096)},'@sconti4zampe'));assert.throws(()=>payload({...POSTS[0],image:'https://evil.example/a.png'},'@sconti4zampe'));});
+test('plain text, photo captions, affiliation and limits',()=>{assert.equal(payload(TEST_POST,'@sconti4zampe').method,'sendMessage');const p=payload(POSTS[0],'@sconti4zampe');assert.equal(p.method,'sendPhoto');assert.match(p.body.caption,/Link affiliati/);assert.equal(p.body.parse_mode,'HTML');assert.match(p.body.caption,/<a href=/);assert.doesNotMatch(p.body.caption,/\nhttps:\/\//);assert.throws(()=>payload({...TEST_POST,text:'a'.repeat(4096)},'@sconti4zampe'));assert.throws(()=>payload({...POSTS[0],image:'https://evil.example/a.png'},'@sconti4zampe'));});
 test('missing credentials cause zero requests',async()=>{const x=setup();delete x.env.TELEGRAM_BOT_TOKEN;assert.equal((await x.object.tick()).status,'not_configured');assert.equal(x.map.size,0);});
 test('persistent reservation survives restart and concurrent ticks send once',async()=>{const x=setup(),original=global.fetch;let calls=0;global.fetch=async()=>{calls++;return ok();};try{await Promise.all([x.object.fetch(new Request('https://internal',{method:'POST'})),x.object.fetch(new Request('https://internal',{method:'POST'}))]);const restarted=new TelegramPublisher(x.state,x.env);await restarted.tick();assert.equal(calls,1);assert.equal(x.map.get('post:'+TEST_POST.id).message_id,42);}finally{global.fetch=original;}});
 test('429 is deferred and bounded; only rejected request is retried',async()=>{const x=setup(),original=global.fetch;let calls=0;global.fetch=async()=>{calls++;return calls===1?Response.json({ok:false,error_code:429,parameters:{retry_after:120}},{status:429}):ok();};try{const now=Date.now();assert.equal((await x.object.tick(now)).status,'retry');assert.equal((await x.object.tick(now+1000)).status,'waiting');assert.equal(calls,1);assert.equal((await x.object.tick(now+121000)).status,'sent');assert.equal(calls,2);}finally{global.fetch=original;}});
@@ -20,7 +20,8 @@ test('price reports require fresh available exact-format records and a healthy s
  const now=Date.parse('2026-10-26T08:00:00Z'),source={id:'isola-dei-tesori',status:'ok',checked_at:'2026-10-26T07:00:00Z'};
  const offer={id:'isola-dei-tesori:1',merchant_id:'isola-dei-tesori',merchant:'Isola dei Tesori',title:'Crocchette 10 kg',variant:'10 kg',weight_kg:10,price:35,available:true,checked_at:source.checked_at,image:'https://www.isoladeitesori.it/on/demandware.static/-/Sites-it-master-catalog/default/product.jpg'};
  const post=offerPost(offer,[source],now);assert.match(post.text,/35,00/);assert.match(post.text,/Spedizione esclusa/);assert.equal(new URL(trackedUrl(post)).searchParams.get('id'),'isola-dei-tesori:1');
- for(const change of [{available:false},{price:0},{price:'35'},{variant:''},{weight_kg:null},{image:null},{image:'https://evil.example/other.jpg'},{image:'https://www.isoladeitesori.it/other.webp'},{checked_at:'2026-10-24T07:00:00Z'},{checked_at:'2026-10-27T07:00:00Z'}])assert.equal(offerPost({...offer,...change},[source],now),null);
+ for(const change of [{available:false},{price:0},{price:'35'},{weight_kg:null},{image:null},{image:'https://evil.example/other.jpg'},{image:'https://www.isoladeitesori.it/other.webp'},{checked_at:'2026-10-24T07:00:00Z'},{checked_at:'2026-10-27T07:00:00Z'}])assert.equal(offerPost({...offer,...change},[source],now),null);
+ assert.ok(offerPost({...offer,variant:''},[source],now),'pack size in title is sufficient when variant is blank');
  assert.equal(offerPost(offer,[{...source,status:'error'}],now),null);
 });
 test('verified product report sends authentic image without static probing of dynamic route',async()=>{
@@ -34,3 +35,30 @@ test('verified product report sends authentic image without static probing of dy
  try{assert.equal((await x.object.tick(now)).status,'sent');assert.deepEqual(requested,['/data/home.json']);assert.equal(photos,1);assert.equal(sends,1);}finally{global.fetch=original;}
 });
 test('status is read only and never exposes secret or private history',async()=>{const x=setup();const result=await x.object.fetch(new Request('https://internal/status'));const body=await result.json();assert.equal(body.configured,true);assert.doesNotMatch(JSON.stringify(body),/fake-test-value/);assert.equal(x.map.size,0);assert.equal((await worker.fetch(new Request('https://offerte4zampe.it/api/telegram/status',{method:'POST'}),{})).status,405);});
+
+test('Telegram product caption has concise HTML, safe escaping and hidden UTM URL',()=>{
+ const now=Date.parse('2026-10-31T08:30:00Z'),stamp='2026-10-31T06:57:07Z';
+ const source={id:'isola-dei-tesori',status:'ok',checked_at:stamp};
+ const offer={id:'isola-dei-tesori:000124327',merchant_id:'isola-dei-tesori',merchant:'Isola dei Tesori',title:'Royal Canin Dog Medium Adult 15 kg',variant:'',canonical_format:'15 kg',weight_kg:15,price:74.39,available:true,checked_at:stamp,image:'https://www.isoladeitesori.it/media/royal-canin-15kg.jpg',product_url:'/prodotto/royal-canin-dog-medium-adult-15-kg'};
+ const post=offerPost(offer,[source],now),p=payload(post,'@sconti4zampe');
+ assert.equal(p.method,'sendPhoto');assert.equal(p.body.parse_mode,'HTML');
+ assert.match(p.body.caption,/<b>74,39/);assert.match(p.body.caption,/<a href="https:\/\/offerte4zampe\.it\/prodotto\//);
+ assert.match(p.body.caption,/utm_source=telegram&amp;utm_medium=social/);
+ assert.doesNotMatch(p.body.caption,/Prezzo rilevato sul comparatore|\nhttps:\/\//);
+ assert.doesNotMatch(p.body.caption,/15 kg · 15 kg/);
+ const escaped=payload({...post,title:'Prodotto <test> & "prova"'},'@sconti4zampe');
+ assert.match(escaped.body.caption,/&lt;test&gt; &amp; &quot;prova&quot;/);
+ assert.equal(offerPost({...offer,image:'https://evil.example/false.jpg'},[source],now),null);
+});
+test('missed 09:15 cron can recover later the same morning without duplicates',async()=>{
+ const x=setup(),original=global.fetch,stamp='2026-10-31T06:57:07Z',now=Date.parse('2026-10-31T08:30:00Z');
+ x.map.set('post:'+TEST_POST.id,{status:'sent',message_id:1});
+ const offer={id:'isola-dei-tesori:000124327',merchant_id:'isola-dei-tesori',merchant:'Isola dei Tesori',title:'Royal Canin Dog Medium Adult 15 kg',variant:'',canonical_format:'15 kg',weight_kg:15,price:74.39,available:true,checked_at:stamp,image:'https://www.isoladeitesori.it/media/royal-canin-15kg.jpg'};
+ x.env.ASSETS.fetch=async()=>Response.json({sources:[{id:'isola-dei-tesori',status:'ok',checked_at:stamp}],offers:[offer]});
+ let sends=0;global.fetch=async(url)=>{if(String(url).includes('api.telegram.org')){sends++;return ok();}return new Response('photo',{headers:{'content-type':'image/jpeg'}});};
+ try{
+  assert.equal((await x.object.tick(now)).status,'sent');
+  assert.equal((await x.object.tick(now+15*60*1000)).status,'idle');
+  assert.equal(sends,1);
+ }finally{global.fetch=original;}
+});
