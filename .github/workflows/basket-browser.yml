@@ -151,7 +151,9 @@ jobs:
       - name: Generate local observed history shards
         run: python automation/update_history.py
       - name: Generate current catalog guides locally
-        run: python automation/build_savings_guides.py
+        run: |
+          python automation/build_matched_pages.py
+          python automation/build_savings_guides.py
       - name: Generate curated line page locally
         run: python automation/build_line_pages.py
       - name: Generate monthly observatory locally
