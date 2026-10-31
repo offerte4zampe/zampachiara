@@ -63,6 +63,179 @@ def build(catalog, now=None):
 
 
 
+
+def telegram_picks(catalog, now=None, limit=180):
+    """Separate, bounded feed of fresh product photos from approved partner catalogs."""
+    from urllib.parse import urlparse
+    now = now or datetime.datetime.now(datetime.timezone.utc)
+    hosts = {'isola-dei-tesori': 'www.isoladeitesori.it', 'paco': 'www.pacopetshop.it'}
+    sources = {s['id']: s for s in catalog.get('sources', []) if s.get('id') in hosts and s.get('status') == 'ok'}
+    def fresh(value):
+        try:
+            age = (now - datetime.datetime.fromisoformat(value.replace('Z', '+00:00'))).total_seconds()
+            return 0 <= age <= 12 * 3600
+        except (ValueError, KeyError, TypeError, AttributeError):
+            return False
+    groups = {merchant: [] for merchant in hosts}
+    for o in catalog.get('offers', []):
+        merchant = o.get('merchant_id')
+        source = sources.get(merchant)
+        if not source or not fresh(source.get('checked_at')) or not fresh(o.get('checked_at')):
+            continue
+        title = o.get('title')
+        if not isinstance(title, str) or not (5 <= len(title.strip()) <= 160):
+            continue
+        label = title + ' ' + str(o.get('category') or '')
+        if not re.search(r'\b(cane|cani|gatto|gatti|dog|cat|crocchette|umido|snack|lettiera)\b', label, re.I):
+            continue
+        if re.search(r'integrator|veterinar|diabet|renal|medicat|diete vet|calmant|antiansia|antiparassitar|feromon|farmac', label, re.I):
+            continue
+        price, weight = o.get('price'), o.get('weight_kg')
+        if o.get('available') is not True or type(price) not in (int, float) or not (0 < price < 10000) or type(weight) not in (int, float) or not (0 < weight < 1000):
+            continue
+        variant = o.get('variant') or o.get('canonical_format') or ''
+        if not variant and not re.search(r'\d+(?:[.,]\d+)?\s*(?:kg|g|gr|grammi|ml|l)\b', title, re.I):
+            continue
+        image = o.get('image')
+        if not isinstance(image, str):
+            continue
+        parsed = urlparse(image)
+        if parsed.scheme != 'https' or parsed.hostname != hosts[merchant] or parsed.username or parsed.password or not re.search(r'\.(?:jpe?g|png)
+    """Only names and provenance for suggestions: no prices, images or tracking URLs."""
+    fields = ('id', 'title', 'variant', 'brand', 'gtin', 'merchant', 'available', 'checked_at', 'product_slug', 'product_url')
+    return {'generated_at': catalog.get('generated_at'), 'offers': [
+        {key: offer[key] for key in fields if key in offer}
+        for offer in catalog.get('offers', []) if isinstance(offer.get('title'), str)
+    ]}
+
+
+def main():
+    data = json.loads(gzip.decompress((ROOT/'site/data/catalog.json.gz').read_bytes()))
+    path = ROOT/'site/data/home.json'
+    index = ROOT/'site/data/search-index.json'
+    index.write_text(json.dumps(search_index(data), ensure_ascii=False, separators=(',', ':'))+'\n')
+    print(f'Search index: {index.stat().st_size} bytes; gzip {len(gzip.compress(index.read_bytes()))} bytes')
+    picks_path = ROOT/'site/data/telegram-picks.json'
+    picks_path.write_text(json.dumps(telegram_picks(data), ensure_ascii=False, separators=(',', ':')) + '\n')
+    print(f'Telegram picks: {picks_path.stat().st_size} bytes')
+    payload = build(data)
+    path.write_text(json.dumps(payload, ensure_ascii=False, separators=(',', ':')) + '\n')
+    home = ROOT/'site/index.html'
+    home.write_text(render_home(home.read_text(), payload))
+    print(f'Home payload: {path.stat().st_size} bytes')
+
+
+
+def pick(payload):
+    """Same source diversity and distinct-brand order for HTML and hydration."""
+    sales = payload['offers']
+    picked, brands = [], set()
+    for source in payload['sources']:
+        found = next((o for o in sales if o['merchant_id'] == source['id'] and o['brand'] not in brands), None)
+        if found:
+            picked.append(found)
+            brands.add(found['brand'])
+    for o in sales:
+        if len(picked) >= 6:
+            break
+        if o['brand'] not in brands:
+            picked.append(o)
+            brands.add(o['brand'])
+    hero = next((o for o in payload['offers'] if o['price'] >= 15 and any(b in o['brand'].lower() for b in ['royal canin', 'purina', 'trainer'])), None)
+    return picked, hero or (picked[0] if picked else None)
+
+
+def replace_region(html, element_id, content):
+    import re
+    opening = re.search(r'<(div|p)\b[^>]*\bid="'+re.escape(element_id)+r'"[^>]*>', html)
+    if not opening:
+        raise ValueError('Missing home region: '+element_id)
+    depth = 1
+    for token in re.finditer(r'</?'+opening[1]+r'\b[^>]*>', html[opening.end():]):
+        depth += -1 if token[0].startswith('</') else 1
+        if not depth:
+            end = opening.end()+token.start()
+            return html[:opening.end()]+content+html[end:]
+    raise ValueError('Unclosed home region: '+element_id)
+
+
+def render_home(html, payload):
+    from html import escape as h, unescape
+    from urllib.parse import urlencode
+    import re
+    def money(value):
+        return f'{value:,.2f}'.replace(',', '_').replace('.', ',').replace('_', '.')+' €'
+    region = re.search(r'<div\b[^>]*\bid="home-brands"[^>]*>', html)
+    mapping = re.search(r'data-brand-pages="([^"]*)"', region[0]) if region else None
+    try:
+        brand_pages = json.loads(unescape(mapping[1])) if mapping else {}
+    except (ValueError, TypeError):
+        brand_pages = {}
+    def link(label, **params):
+        target = brand_pages.get(params.get('brand'))
+        if isinstance(target, str) and re.fullmatch(r'/marca-[a-z0-9-]+', target):
+            return f'<a href="{h(target, quote=True)}">{h(label)}</a>'
+        return f'<a href="confronta-cibo.html?{h(urlencode(params), quote=True)}">{h(label)}</a>'
+    def card(o, spotlight=False):
+        tag = 'h3'
+        image = o.get('image', '')
+        img = f'<img src="{h(image,quote=True)}" alt="" width="160" height="145" loading="lazy">' if image.startswith('https://') else ''
+        unit = f'<p class="micro">{money(o["price"]/o["weight_kg"])}/kg</p>' if o.get('weight_kg') else ''
+        title = o.get('canonical_title') or o['title']
+        cta = 'Vedi offerta →' if o.get('canonical_shop_count', 2) < 2 else 'Confronta nei negozi →'
+        if o.get('unit_price') and o.get('unit_price_unit'):
+            unit = '<p class="micro">'+money(o['unit_price'])+'/'+h(o['unit_price_unit'])+'</p>'
+        return f'''<article class="{'spotlight-product' if spotlight else 'home-deal'}" data-home-offer="{h(o['checked_at'],quote=True)}">{img}<p class="micro">{h(o['merchant'])} · {h(o['brand'])}</p><{tag}><a class="product-title-link" href="{h(product_url(o),quote=True)}">{h(title)}</a></{tag}><p class="micro">{h(o.get('variant') or '')}</p><p class="catalog-price"><strong>{money(o['price'])}</strong></p>{unit}<p class="micro">Rilevato: <time datetime="{h(o['checked_at'],quote=True)}">{h(o['checked_at'][:16].replace('T',' '))} UTC</time></p><a class="btn secondary" href="{h(product_url(o),quote=True)}">{cta}</a>{error_link(o)}</article>'''
+    deals, hero = pick(payload)
+    parts = {
+        'home-deals': ''.join(card(o) for o in deals),
+        'home-spotlight': '<h2 class="sr-only">Offerta in evidenza</h2>'+card(hero, True) if hero else link('Esplora il catalogo →'),
+        'home-deals-status': 'Catalogo aggiornato il '+h(payload['generated_at'][:16].replace('T',' '))+' UTC. Prezzi rilevati, non in tempo reale. Selezione delle fonti disponibili, non una classifica dell’intero mercato.',
+        'home-stats': ''.join('<span>'+h(s)+'</span>' for s in [f"{payload['stats']['offers']:,}".replace(',', '.')+' offerte importate', str(payload['stats']['brands'])+' marche', str(sum(s.get('offers',0)>0 for s in payload['sources']))+' negozi', 'Verifiche programmate ogni '+str(payload['refresh_hours'])+' ore']),
+        'home-brands': ''.join(link(brand, brand=brand) for brand in payload['top_brands']),
+        'home-shops': ''.join(link(s['name']+' · '+str(s['offers'])+' offerte →', shop=s['name']) for s in payload['sources'] if s.get('offers',0)>0),
+    }
+    for element_id, content in parts.items():
+        html = replace_region(html, element_id, content)
+    # Keep both SEO descriptions aligned with the actual imported shops, not a stale static list.
+    shops = [s['name'] for s in payload['sources'] if s.get('offers', 0) > 0 and s.get('name')]
+    if shops:
+        shop_names = ', '.join(shops[:-1]) + (' e ' if len(shops) > 1 else '') + shops[-1]
+        summary = f'Confronta offerte e prezzi per cani e gatti da {shop_names}. Prezzi rilevati, non in tempo reale.'
+        html = re.sub(r'(<meta\s+(?:name="description"|property="og:description")\s+content=")[^"]*(">)',
+                      lambda m: m[1] + h(summary, quote=True) + m[2], html)
+    html = re.sub(r'(<main\b[^>]*?)(?: data-home-generated="[^"]*")?(>)', lambda m: re.sub(r' data-home-generated="[^"]*"', '', m[1])+' data-home-generated="'+h(payload['generated_at'],quote=True)+'"'+m[2], html, count=1)
+    return html
+
+
+if __name__ == '__main__':
+    main()
+, parsed.path, re.I):
+            continue
+        groups[merchant].append(o)
+    fields = ('id', 'title', 'merchant', 'merchant_id', 'brand', 'variant', 'canonical_format', 'price', 'weight_kg', 'image', 'available', 'checked_at', 'product_url')
+    for merchant in groups:
+        groups[merchant].sort(key=lambda o: (str(o.get('brand') or '').casefold(), o['title'].casefold(), o['id']))
+    chosen, brands = [], collections.Counter()
+    while len(chosen) < limit and any(groups.values()):
+        progress = False
+        for merchant in groups:
+            for index, o in enumerate(groups[merchant]):
+                brand = str(o.get('brand') or '').casefold()
+                if brands[brand] < 5:
+                    chosen.append({k: o[k] for k in fields if k in o})
+                    brands[brand] += 1
+                    groups[merchant].pop(index)
+                    progress = True
+                    break
+            if len(chosen) >= limit:
+                break
+        if not progress:
+            break
+    return {'generated_at': catalog.get('generated_at'), 'sources': list(sources.values()), 'offers': chosen}
+
+
+
 def search_index(catalog):
     """Only names and provenance for suggestions: no prices, images or tracking URLs."""
     fields = ('id', 'title', 'variant', 'brand', 'gtin', 'merchant', 'available', 'checked_at', 'product_slug', 'product_url')
