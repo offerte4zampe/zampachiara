@@ -34,7 +34,7 @@ test('verified product report sends authentic image without static probing of dy
  global.fetch=async (url,init)=>{if(String(url).includes('api.telegram.org')){sends++;assert.equal(JSON.parse(init.body).photo,offer.image);return ok();}photos++;return new Response('photo',{headers:{'content-type':'image/jpeg'}});};
  try{assert.equal((await x.object.tick(now)).status,'sent');assert.deepEqual(requested,['/data/home.json']);assert.equal(photos,1);assert.equal(sends,1);}finally{global.fetch=original;}
 });
-test('status is read only and never exposes secret or private history',async()=>{const x=setup();const result=await x.object.fetch(new Request('https://internal/status'));const body=await result.json();assert.equal(body.configured,true);assert.doesNotMatch(JSON.stringify(body),/fake-test-value/);assert.equal(x.map.size,0);assert.equal((await worker.fetch(new Request('https://offerte4zampe.it/api/telegram/status',{method:'POST'}),{})).status,405);});
+test('status is read only and never exposes secret or private history',async()=>{const x=setup();const result=await x.object.fetch(new Request('https://internal/status'));const body=await result.json();assert.equal(body.configured,true);assert.equal(body.last_sent_day,null);assert.equal(body.halted,false);assert.doesNotMatch(JSON.stringify(body),/fake-test-value/);assert.equal(x.map.size,0);assert.equal((await worker.fetch(new Request('https://offerte4zampe.it/api/telegram/status',{method:'POST'}),{})).status,405);});
 
 test('Telegram product caption has concise HTML, safe escaping and hidden UTM URL',()=>{
  const now=Date.parse('2026-10-31T08:30:00Z'),stamp='2026-10-31T06:57:07Z';
