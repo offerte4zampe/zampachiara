@@ -107,6 +107,20 @@ export class TelegramPublisher {
     const data=await this.env.ASSETS.fetch(new Request('https://offerte4zampe.it/data/home.json'));
     if(data.ok){const home=await data.json();for(const offer of home.offers||[]){const candidate=offerPost(offer,home.sources,now);if(candidate&&!(await store.get('post:'+candidate.id))){post=candidate;break;}}}
    }catch{/* unavailable/invalid catalog: no fabricated prices */}
+   // After homepage highlights are exhausted, use a separate small curated
+   // feed from approved partner catalog photos; never scrape or invent prices.
+   if(!post){
+    try{
+     const response=await this.env.ASSETS.fetch(new Request('https://offerte4zampe.it/data/telegram-picks.json'));
+     if(response.ok){
+      const picks=await response.json();
+      for(const offer of picks.offers||[]){
+       const candidate=offerPost(offer,picks.sources,now);
+       if(candidate&&!(await store.get('post:'+candidate.id))){post=candidate;break;}
+      }
+     }
+    }catch{/* stale/missing picks must not produce an unverified post */}
+   }
    // No fallback to text-only or generic-image guides: editorial photo is mandatory.
    if(!post)return {status:'no_verified_photo_offer'};
   }
