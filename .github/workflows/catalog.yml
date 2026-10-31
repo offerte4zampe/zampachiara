@@ -5,6 +5,9 @@ on:
   push:
     branches: [main]
     paths:
+      - 'automation/image_policy.py'
+      - 'automation/image-rights.json'
+      - 'automation/cache_product_images.py'
       - 'automation/import_partner_feed.py'
       - 'automation/bauzaar_feed.py'
       - 'automation/isola_feed.py'
@@ -107,6 +110,7 @@ jobs:
       - run: python automation/update_history.py
       - run: python automation/build_product_catalog.py
       - run: python automation/cache_product_images.py
+      - run: python automation/build_product_catalog.py
       - run: python automation/build_catalog_index.py
       - run: python automation/build_priority_products.py
       - run: python automation/build_category_pages.py

@@ -20,6 +20,11 @@ except ImportError:
     from package_integrity import pack_count
 ROOT=Path(__file__).resolve().parents[1]
 BASE='https://offerte4zampe.it'
+IMAGE_RULES=json.loads((ROOT/'automation/image-rights.json').read_text())['stores']
+try:
+    from .image_policy import local_image
+except ImportError:
+    from image_policy import local_image
 BRAND_ALIASES=json.loads((ROOT/'automation/brand_aliases.json').read_text())
 
 
@@ -165,6 +170,10 @@ def build(catalog,old_registry=None,history=None,now=None):
         slug=previous.get('slug') or normalized(title).replace(' ','-')[:115].rstrip('-')+'-'+suffix+'-'+pid[-6:]
         active=[o for o in rows if fresh(o,now)];shops={o['merchant_id'] for o in active};verified_shops={o['merchant_id'] for o in active if q_by_id[o['id']]['verified']}
         p=dict(id=pid,slug=slug,gtin=product_gtin,brand=canonical_brand(seed.get('brand','')),name=title,**attrs,quantity=q,format=format_label(q),image=seed.get('image',''),offer_ids=[o['id'] for o in rows],active_shop_count=len(shops),verified_shop_count=len(verified_shops),active_offer_count=len(active),low_price=min((o['price'] for o in active),default=None),matching_method=method,matching_confidence=1.0 if method=='gtin_quantity' else None,reviewed=any(o.get('identity_review') for o in rows))
+        # Only a licensed image from this exact canonical identity can be shared.
+        image_offer=next((o for o in rows if fresh(o,now) and local_image(o,IMAGE_RULES.get(o.get('merchant_id'),{}))),None)
+        if image_offer:
+            p['image']=image_offer['image'];p['image_local']=image_offer['image_local'];p['image_source_offer']=image_offer['id']
         # Set after observed history is aggregated; duplicate shops never count twice.
         content=json.dumps([title,q,[(o['id'],o['price'],o['available']) for o in rows]],ensure_ascii=False,sort_keys=True)
         signature=hashlib.sha256(content.encode()).hexdigest();lastmod=previous.get('lastmod')
@@ -177,6 +186,10 @@ def build(catalog,old_registry=None,history=None,now=None):
         if q['kind']!='sales_unit':by_bucket[(normalized(p['brand']),attrs['species'],q['kind'],q['value'])].append(p)
         for o in rows:
             offer={**o,'product_id':pid,'product_slug':slug,'product_url':'/prodotto/'+slug,'canonical_title':title,'quantity':q_by_id[o['id']],'unit_price':round(o['price']/q_by_id[o['id']]['value'],6) if q_by_id[o['id']]['verified'] else None,'unit_price_unit':q_by_id[o['id']]['unit'] if q_by_id[o['id']]['verified'] else None,'canonical_shop_count':len(verified_shops)}
+            if image_offer:
+                offer['image_local']=p['image_local'];offer['image_source_offer']=p['image_source_offer']
+            else:
+                offer.pop('image_local',None);offer.pop('image_source_offer',None)
             offer['product_matching_method']=method
             offer['offer_matching_method']=name_methods.get(o['id'],'gtin' if canonical_gtin(o.get('gtin')) else 'unattached')
             offer['canonical_format']=p['format'];offer['product_identity_verified']=p['matching_method']=='gtin_quantity'
@@ -203,6 +216,7 @@ def build(catalog,old_registry=None,history=None,now=None):
             targets={offer_targets[i] for i in old_ids if i in offer_targets}
             if old_ids and all(i in offer_targets for i in old_ids) and len(targets)==1:
                 archived['redirect_slug']=next(iter(targets))[1]
+            archived.pop('image_local',None);archived.pop('image_source_offer',None)
             archived['history']=observed_history([{'id':oid,'merchant_id':oid.split(':',1)[0]} for oid in old_ids],history)
             archived['indexable']='redirect_slug' not in archived and history_count(archived['history'],now)>=30
             products.append(archived);registry[pid]=entry

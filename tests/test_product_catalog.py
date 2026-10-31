@@ -118,3 +118,17 @@ class CanonicalProductTests(unittest.TestCase):
         self.assertEqual(m['products'][0]['slug'],before['products'][0]['slug'])
         self.assertEqual(m['products'][0]['matching_method'],'gtin_with_name')
         self.assertEqual(next(o for o in m['offers'] if o['id']=='b:1')['gtin'],'')
+
+    def test_licensed_image_is_shared_only_inside_the_same_product_identity(self):
+        from unittest.mock import patch
+        from automation.image_policy import feed_image
+        image='https://images.test/exact-2kg.png';local='/img/p/'+'a'*24+'-400.webp'
+        a=self.a|dict(image=image,image_local=local,source_type='official_feed',affiliate_url='https://tc.tradetracker.net/?c=16143&a=518044',image_source=feed_image(image,16143,600171))
+        b=self.a|dict(id='b:1',merchant_id='b',image='https://other.test/food.png')
+        rule={'allow_cache':True,'permission_status':'verified','scope':'approved_feed_assets','campaign_id':16143,'feed_id':600171,'evidence':'https://license.test'}
+        with patch('automation.build_product_catalog.IMAGE_RULES',{'a':rule}):
+            model=self.model([a,b]);self.assertEqual(len(model['products']),1)
+            self.assertEqual(model['products'][0]['image_local'],local)
+            self.assertEqual({o['image_local'] for o in model['offers']},{local})
+            split=self.model([a,b|{'weight_kg':4}]);self.assertNotIn('image_local',next(o for o in split['offers'] if o['id']=='b:1'))
+            changed=self.model([a|{'image':'https://images.test/replaced.png'},b]);self.assertTrue(all('image_local' not in o for o in changed['offers']))

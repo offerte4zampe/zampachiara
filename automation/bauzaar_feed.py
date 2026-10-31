@@ -6,6 +6,11 @@ import urllib.request
 from urllib.parse import urlsplit, parse_qs
 from decimal import Decimal, InvalidOperation
 
+try:
+    from automation.image_policy import feed_image
+except ImportError:
+    from image_policy import feed_image
+
 FEED_URL = 'https://pf.tradetracker.net/?aid=518044&encoding=utf-8&type=json&fid=600171&categoryType=2&additionalType=2'
 
 def value(props, key):
@@ -62,7 +67,7 @@ def normalize(payload, now=None):
             price=current, previous_price=None, available=stock=='in stock', url=dest,
             affiliate_url=link, image=images[0] if images else '', sku='', gtin=value(props, 'GTIN'), feed_gtin=value(props, 'GTIN'),
             weight_kg=kg, weight_source='official_feed:unit_pricing_measure' if kg else '', shipping_weight_kg=None,
-            checked_at=now.isoformat(), source_type='official_feed'))
+            checked_at=now.isoformat(), source_type='official_feed', image_source=feed_image(images[0] if images else '',16143,600171)))
     if not rows: raise ValueError('Empty feed')
     return rows
 

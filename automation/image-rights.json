@@ -2,13 +2,23 @@
   "reviewed_at": "2026-10-31",
   "stores": {
     "bauzaar": {
-      "allow_cache": false,
-      "permission_status": "unverified",
-      "evidence": "https://www.bauzaar.it/pages/condizioni-generali-di-vendita",
+      "allow_cache": true,
+      "permission_status": "verified",
+      "evidence": "https://www.bauzaar.it/pages/affiliazioni",
       "hosts": [
         "cdn.shopify.com"
       ],
-      "note": "Art. 14 requires written permission. Affiliate page permits network promotional material; current images are not proven to be licensed network assets."
+      "scope": "approved_feed_assets",
+      "campaign_id": 16143,
+      "feed_id": 600171,
+      "approval_date": "2026-10-19",
+      "approval_verified_at": "2026-10-31",
+      "usage": "offerte4zampe.it product listings and comparisons, preserving advertiser tracked links",
+      "transform": "proportional resize and WebP encoding; no visual content edits",
+      "basis": [
+        "Campaign approval notification explicitly permits promotional material on Offerte a 4 zampe.",
+        "https://tradetracker.com/it/feed-prodotto-elemento-essenziale-per-la-tua-strategia/"
+      ]
     },
     "webpet": {
       "allow_cache": false,
@@ -27,11 +37,22 @@
       ]
     },
     "isola-dei-tesori": {
-      "allow_cache": false,
-      "permission_status": "unverified",
-      "evidence": "https://www.isoladeitesori.it/condizioni-generali-di-vendita.html",
+      "allow_cache": true,
+      "permission_status": "verified",
+      "evidence": "https://tradetracker.com/it/campaigns/animali-7/isola-dei-tesori-31221/",
       "hosts": [
         "www.isoladeitesori.it"
+      ],
+      "scope": "approved_feed_assets",
+      "campaign_id": 31221,
+      "feed_id": 1618255,
+      "approval_date": "2026-10-20",
+      "approval_verified_at": "2026-10-31",
+      "usage": "offerte4zampe.it product listings and comparisons, preserving advertiser tracked links",
+      "transform": "proportional resize and WebP encoding; no visual content edits",
+      "basis": [
+        "Campaign approval notification explicitly permits promotional material on Offerte a 4 zampe.",
+        "https://tradetracker.com/it/feed-prodotto-elemento-essenziale-per-la-tua-strategia/"
       ]
     },
     "paco": {
