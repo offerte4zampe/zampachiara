@@ -14,6 +14,20 @@
     "reason": "brand_quantity_species_and_title_similarity; missing shared GTIN"
   },
   {
+    "product_id": "p-4c9fc08613d9893bfbc7",
+    "candidate_product_id": "p-0d2416b1038a0dea65bd",
+    "confidence": 0.929,
+    "status": "needs_evidence",
+    "reason": "brand_quantity_species_and_title_similarity; missing shared GTIN"
+  },
+  {
+    "product_id": "p-55c1b0b2b38430f4f6cc",
+    "candidate_product_id": "p-e3d0f15b96362e0932c6",
+    "confidence": 0.917,
+    "status": "needs_evidence",
+    "reason": "brand_quantity_species_and_title_similarity; missing shared GTIN"
+  },
+  {
     "product_id": "p-a587703a0c08166b0223",
     "candidate_product_id": "p-c9f422af28b6a51bd811",
     "confidence": 0.9,
@@ -42,6 +56,13 @@
     "reason": "brand_quantity_species_and_title_similarity; missing shared GTIN"
   },
   {
+    "product_id": "p-dd973755d749206096b5",
+    "candidate_product_id": "p-9374a7553fb4e1f0baae",
+    "confidence": 0.875,
+    "status": "needs_evidence",
+    "reason": "brand_quantity_species_and_title_similarity; missing shared GTIN"
+  },
+  {
     "product_id": "p-e18131cab00886bd351e",
     "candidate_product_id": "p-c000e426a8ce5115df6b",
     "confidence": 0.875,
@@ -51,6 +72,13 @@
   {
     "product_id": "p-f450587bd54ff352c250",
     "candidate_product_id": "p-b4d4af6d67a062e3b8ae",
+    "confidence": 0.875,
+    "status": "needs_evidence",
+    "reason": "brand_quantity_species_and_title_similarity; missing shared GTIN"
+  },
+  {
+    "product_id": "p-f9be6c9757439952e928",
+    "candidate_product_id": "p-35edd538b19113e57994",
     "confidence": 0.875,
     "status": "needs_evidence",
     "reason": "brand_quantity_species_and_title_similarity; missing shared GTIN"
@@ -105,6 +133,20 @@
     "reason": "brand_quantity_species_and_title_similarity; missing shared GTIN"
   },
   {
+    "product_id": "p-d7c56624972f88e74225",
+    "candidate_product_id": "p-c71df00303b2e09d443c",
+    "confidence": 0.846,
+    "status": "needs_evidence",
+    "reason": "brand_quantity_species_and_title_similarity; missing shared GTIN"
+  },
+  {
+    "product_id": "p-0117b96d176c2bf99711",
+    "candidate_product_id": "p-342e2a1078be997bc4d9",
+    "confidence": 0.833,
+    "status": "needs_evidence",
+    "reason": "brand_quantity_species_and_title_similarity; missing shared GTIN"
+  },
+  {
     "product_id": "p-1e8800163934059e9c40",
     "candidate_product_id": "p-59a4a239c3933e4bc766",
     "confidence": 0.833,
@@ -121,6 +163,13 @@
   {
     "product_id": "p-6a055dd36af8e71d1a69",
     "candidate_product_id": "p-a18c7548f0851682ca0c",
+    "confidence": 0.833,
+    "status": "needs_evidence",
+    "reason": "brand_quantity_species_and_title_similarity; missing shared GTIN"
+  },
+  {
+    "product_id": "p-742e7c33d09cdaa01140",
+    "candidate_product_id": "p-d6d00b3952e8a7ce8d3c",
     "confidence": 0.833,
     "status": "needs_evidence",
     "reason": "brand_quantity_species_and_title_similarity; missing shared GTIN"
@@ -273,13 +322,6 @@
     "reason": "brand_quantity_species_and_title_similarity; missing shared GTIN"
   },
   {
-    "product_id": "p-ca62651f13850ed0f545",
-    "candidate_product_id": "p-04549f34ae4dd230f173",
-    "confidence": 0.8,
-    "status": "needs_evidence",
-    "reason": "brand_quantity_species_and_title_similarity; missing shared GTIN"
-  },
-  {
     "product_id": "p-cb1b57f84b1977dc62f9",
     "candidate_product_id": "p-7ecd1fd6fb984a7c361f",
     "confidence": 0.8,
@@ -303,6 +345,13 @@
   {
     "product_id": "p-e2f8a55567ca0a637850",
     "candidate_product_id": "p-dfdf81ba30be0e8d7fa2",
+    "confidence": 0.8,
+    "status": "needs_evidence",
+    "reason": "brand_quantity_species_and_title_similarity; missing shared GTIN"
+  },
+  {
+    "product_id": "p-f9be6c9757439952e928",
+    "candidate_product_id": "p-7424ae62e73a87246ee8",
     "confidence": 0.8,
     "status": "needs_evidence",
     "reason": "brand_quantity_species_and_title_similarity; missing shared GTIN"
@@ -336,6 +385,13 @@
     "reason": "brand_quantity_species_and_title_similarity; missing shared GTIN"
   },
   {
+    "product_id": "p-b98d9b59288349f271d5",
+    "candidate_product_id": "p-8cfc23069c73d3035333",
+    "confidence": 0.778,
+    "status": "needs_evidence",
+    "reason": "brand_quantity_species_and_title_similarity; missing shared GTIN"
+  },
+  {
     "product_id": "p-10f1dc77c9f743e517c6",
     "candidate_product_id": "p-b1a6daa2f3c98a9abd5a",
     "confidence": 0.769,
@@ -345,6 +401,13 @@
   {
     "product_id": "p-314ffc06330dc7e050b5",
     "candidate_product_id": "p-792d21fbb5355b702d24",
+    "confidence": 0.769,
+    "status": "needs_evidence",
+    "reason": "brand_quantity_species_and_title_similarity; missing shared GTIN"
+  },
+  {
+    "product_id": "p-ac4e665c7bfc8099b8a0",
+    "candidate_product_id": "p-b487fda5e8c3376b2cfa",
     "confidence": 0.769,
     "status": "needs_evidence",
     "reason": "brand_quantity_species_and_title_similarity; missing shared GTIN"
@@ -420,6 +483,13 @@
     "reason": "brand_quantity_species_and_title_similarity; missing shared GTIN"
   },
   {
+    "product_id": "p-af670bf99fd0fb4f948e",
+    "candidate_product_id": "p-264b4b175c9921dfc558",
+    "confidence": 0.75,
+    "status": "needs_evidence",
+    "reason": "brand_quantity_species_and_title_similarity; missing shared GTIN"
+  },
+  {
     "product_id": "p-af6c48ce2672e3574310",
     "candidate_product_id": "p-90afd374125eee3ec1e4",
     "confidence": 0.75,
@@ -444,6 +514,20 @@
     "product_id": "p-d696776b102be8509ece",
     "candidate_product_id": "p-7f581082a52ad07dbae7",
     "confidence": 0.733,
+    "status": "needs_evidence",
+    "reason": "brand_quantity_species_and_title_similarity; missing shared GTIN"
+  },
+  {
+    "product_id": "p-0e1c0dba2d2bf6ec18e7",
+    "candidate_product_id": "p-02bcd2d5cb2f61ad4a1e",
+    "confidence": 0.727,
+    "status": "needs_evidence",
+    "reason": "brand_quantity_species_and_title_similarity; missing shared GTIN"
+  },
+  {
+    "product_id": "p-0e1c0dba2d2bf6ec18e7",
+    "candidate_product_id": "p-03db368c0d19d6287b81",
+    "confidence": 0.727,
     "status": "needs_evidence",
     "reason": "brand_quantity_species_and_title_similarity; missing shared GTIN"
   },
@@ -520,6 +604,41 @@
   {
     "product_id": "p-a587703a0c08166b0223",
     "candidate_product_id": "p-7ecd1fd6fb984a7c361f",
+    "confidence": 0.727,
+    "status": "needs_evidence",
+    "reason": "brand_quantity_species_and_title_similarity; missing shared GTIN"
+  },
+  {
+    "product_id": "p-c49b69449c8032f67ae1",
+    "candidate_product_id": "p-b2efcbc9628085ffe966",
+    "confidence": 0.727,
+    "status": "needs_evidence",
+    "reason": "brand_quantity_species_and_title_similarity; missing shared GTIN"
+  },
+  {
+    "product_id": "p-c49b69449c8032f67ae1",
+    "candidate_product_id": "p-da8d0ce229b1cdb90d70",
+    "confidence": 0.727,
+    "status": "needs_evidence",
+    "reason": "brand_quantity_species_and_title_similarity; missing shared GTIN"
+  },
+  {
+    "product_id": "p-c49b69449c8032f67ae1",
+    "candidate_product_id": "p-e09414b5e2ae4882410a",
+    "confidence": 0.727,
+    "status": "needs_evidence",
+    "reason": "brand_quantity_species_and_title_similarity; missing shared GTIN"
+  },
+  {
+    "product_id": "p-cf8cc5ef907bfde12250",
+    "candidate_product_id": "p-669b86613a176831612f",
+    "confidence": 0.727,
+    "status": "needs_evidence",
+    "reason": "brand_quantity_species_and_title_similarity; missing shared GTIN"
+  },
+  {
+    "product_id": "p-cf8cc5ef907bfde12250",
+    "candidate_product_id": "p-ed978141463771f83403",
     "confidence": 0.727,
     "status": "needs_evidence",
     "reason": "brand_quantity_species_and_title_similarity; missing shared GTIN"
@@ -602,6 +721,13 @@
     "reason": "brand_quantity_species_and_title_similarity; missing shared GTIN"
   },
   {
+    "product_id": "p-3f06fab0d786e4b9e477",
+    "candidate_product_id": "p-531693ebe2d6b082c7a3",
+    "confidence": 0.714,
+    "status": "needs_evidence",
+    "reason": "brand_quantity_species_and_title_similarity; missing shared GTIN"
+  },
+  {
     "product_id": "p-4379ee7afed3e9e29f30",
     "candidate_product_id": "p-99d43d27d8aa1edd98d8",
     "confidence": 0.714,
@@ -625,6 +751,13 @@
   {
     "product_id": "p-751c03e052373d5da7ab",
     "candidate_product_id": "p-c15b3ca4848fd406dec2",
+    "confidence": 0.714,
+    "status": "needs_evidence",
+    "reason": "brand_quantity_species_and_title_similarity; missing shared GTIN"
+  },
+  {
+    "product_id": "p-a15fdc891f607c9a2687",
+    "candidate_product_id": "p-fdef80ada4d30aee7bf1",
     "confidence": 0.714,
     "status": "needs_evidence",
     "reason": "brand_quantity_species_and_title_similarity; missing shared GTIN"
@@ -693,8 +826,29 @@
     "reason": "brand_quantity_species_and_title_similarity; missing shared GTIN"
   },
   {
+    "product_id": "p-0a90b8ae8bd826dc1fdc",
+    "candidate_product_id": "p-4dad84802e5a41e274dd",
+    "confidence": 0.7,
+    "status": "needs_evidence",
+    "reason": "brand_quantity_species_and_title_similarity; missing shared GTIN"
+  },
+  {
+    "product_id": "p-163b5fbeeb4a84194bab",
+    "candidate_product_id": "p-4f9c209028e6b463f3bc",
+    "confidence": 0.7,
+    "status": "needs_evidence",
+    "reason": "brand_quantity_species_and_title_similarity; missing shared GTIN"
+  },
+  {
     "product_id": "p-578675f59f385adbc529",
     "candidate_product_id": "p-1e0c9b1e5ee504a765c1",
+    "confidence": 0.7,
+    "status": "needs_evidence",
+    "reason": "brand_quantity_species_and_title_similarity; missing shared GTIN"
+  },
+  {
+    "product_id": "p-65dbbb3c7bd322e319e0",
+    "candidate_product_id": "p-89897f2269748ce0b920",
     "confidence": 0.7,
     "status": "needs_evidence",
     "reason": "brand_quantity_species_and_title_similarity; missing shared GTIN"
@@ -721,15 +875,15 @@
     "reason": "brand_quantity_species_and_title_similarity; missing shared GTIN"
   },
   {
-    "product_id": "p-ca62651f13850ed0f545",
-    "candidate_product_id": "p-4f9c209028e6b463f3bc",
+    "product_id": "p-e2459b09e911be9ae9c4",
+    "candidate_product_id": "p-6db7b3c71fa9e23f4abf",
     "confidence": 0.7,
     "status": "needs_evidence",
     "reason": "brand_quantity_species_and_title_similarity; missing shared GTIN"
   },
   {
-    "product_id": "p-e2459b09e911be9ae9c4",
-    "candidate_product_id": "p-6db7b3c71fa9e23f4abf",
+    "product_id": "p-f4dde3ea77cdeb755d75",
+    "candidate_product_id": "p-dbc0cf4b7db1aa24d4fd",
     "confidence": 0.7,
     "status": "needs_evidence",
     "reason": "brand_quantity_species_and_title_similarity; missing shared GTIN"
