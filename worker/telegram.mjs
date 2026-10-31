@@ -22,10 +22,13 @@ export function offerPost(offer,sources,now){
  const stamp=Date.parse(offer?.checked_at),sourceStamp=Date.parse(source?.checked_at);
  if(!source||!Number.isFinite(stamp)||stamp>now||now-stamp>24*3600000||!Number.isFinite(sourceStamp)||sourceStamp>now||now-sourceStamp>24*3600000)return null;
  if(offer.available!==true||!Number.isFinite(offer.price)||offer.price<=0||!Number.isFinite(offer.weight_kg)||offer.weight_kg<=0||!productPhoto(offer))return null;
- if(typeof offer.id!=='string'||offer.id.length>200||typeof offer.title!=='string'||!offer.title.trim()||offer.title.length>240||typeof offer.variant!=='string'||!offer.variant.trim())return null;
+ if(typeof offer.id!=='string'||offer.id.length>200||typeof offer.title!=='string'||!offer.title.trim()||offer.title.length>240||typeof offer.merchant!=='string'||!offer.merchant.trim())return null;
+ const format=typeof offer.variant==='string'&&offer.variant.trim()?offer.variant.trim():typeof offer.canonical_format==='string'?offer.canonical_format.trim():'';
+ if(!format&&!/\d+(?:[.,]\d+)?\s*(?:kg|g|gr|grammi|ml|l)\b/i.test(offer.title))return null;
  const euro=new Intl.NumberFormat('it-IT',{style:'currency',currency:'EUR'});
  const time=new Intl.DateTimeFormat('it-IT',{timeZone:'Europe/Rome',dateStyle:'short',timeStyle:'short'}).format(stamp);
- return {id:'catalog:'+offer.id,kind:'price_report',image:productPhoto(offer),verified_at:stamp,path:'/prodotto?id='+encodeURIComponent(offer.id),text:'🐾 Prezzo rilevato sul comparatore\n'+offer.title+'\nFormato: '+offer.variant+'\n'+euro.format(offer.price)+' · '+euro.format(offer.price/offer.weight_kg)+'/kg\nNegozio: '+offer.merchant+'\nRilevazione catalogo: '+time+' (ora italiana). Spedizione esclusa. Prezzo e disponibilità da ricontrollare nel negozio prima dell’acquisto.'};
+ const path=typeof offer.product_url==='string'&&/^\/prodotto\/[a-z0-9-]{1,200}$/.test(offer.product_url)?offer.product_url:'/prodotto?id='+encodeURIComponent(offer.id);
+ return {id:'catalog:'+offer.id,kind:'price_report',image:productPhoto(offer),verified_at:stamp,path,title:offer.title.trim(),variant:format,price:offer.price,merchant:offer.merchant.trim(),text:'🐾 '+offer.title+'\n'+euro.format(offer.price)+' · '+offer.merchant+'\nSpedizione esclusa. Rilevazione: '+time+'.'};
 }
 export function trackedUrl(post){
  const url=new URL(post.path,'https://offerte4zampe.it');
@@ -34,12 +37,37 @@ export function trackedUrl(post){
  url.searchParams.set('utm_campaign',post.kind==='test'?'integration_test':'channel_editorial');url.searchParams.set('utm_content',post.id);
  return url.href;
 }
+export function escapeTelegramHtml(value){
+ return String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
 export function payload(post,channel){
  if(channel!=='@sconti4zampe')throw new Error('invalid_channel');
- const text=post.text+'\n\n'+trackedUrl(post)+'\n\nTrasparenza: il sito contiene link affiliati; gli acquisti idonei possono generare una commissione.';
- if(text.length>(post.image?1024:4096))throw new Error('message_too_long');
- if(post.image){const image=new URL(post.image,'https://offerte4zampe.it');if(image.username||image.password||image.protocol!=='https:'||!['https://offerte4zampe.it','https://cdn.shopify.com','https://www.isoladeitesori.it','https://www.pacopetshop.it'].includes(image.origin)||!(/\.(?:jpe?g|png)$/i.test(image.pathname)))throw new Error('invalid_image');return {method:'sendPhoto',body:{chat_id:channel,photo:image.href,caption:text,disable_notification:post.kind==='test'}};}
- return {method:'sendMessage',body:{chat_id:channel,text,disable_notification:post.kind==='test',link_preview_options:{is_disabled:true}}};
+ const target=escapeTelegramHtml(trackedUrl(post));
+ const disclosure='Link affiliati: potremmo ricevere una commissione senza costi aggiuntivi.';
+ let visible,text;
+ if(post.kind==='price_report'){
+  const title=String(post.title||'').trim();
+  const format=String(post.variant||'').trim();
+  const normalize=s=>s.toLocaleLowerCase('it').replace(/[\s.,]/g,'');
+  const label=title+(format&&!normalize(title).includes(normalize(format))?' · '+format:'');
+  const euro=new Intl.NumberFormat('it-IT',{style:'currency',currency:'EUR'}).format(post.price);
+  const stamp=new Intl.DateTimeFormat('it-IT',{timeZone:'Europe/Rome',dateStyle:'short',timeStyle:'short'}).format(post.verified_at);
+  const note='📦 Spedizione esclusa · rilevato '+stamp+'. Prezzo e disponibilità da verificare nel negozio.';
+  const action='🔎 Vedi prodotto e confronta i prezzi';
+  visible=['🐾 '+label,'💶 '+euro+' · '+post.merchant,note,action,disclosure].join('\n\n');
+  text='🐾 <b>'+escapeTelegramHtml(label)+'</b>\n\n💶 <b>'+escapeTelegramHtml(euro)+'</b> · '+escapeTelegramHtml(post.merchant)+'\n\n'+escapeTelegramHtml(note)+'\n\n<a href="'+target+'">'+action+'</a>\n\n'+escapeTelegramHtml(disclosure);
+ }else{
+  const action=post.kind==='test'?'🔎 Visita Offerte a 4 Zampe':'🔎 Leggi la guida';
+  visible=[post.text,action,disclosure].join('\n\n');
+  text=escapeTelegramHtml(post.text)+'\n\n<a href="'+target+'">'+action+'</a>\n\n'+escapeTelegramHtml(disclosure);
+ }
+ if(Array.from(visible).length>(post.image?1024:4096))throw new Error('message_too_long');
+ if(post.image){
+  const image=new URL(post.image,'https://offerte4zampe.it');
+  if(image.username||image.password||image.protocol!=='https:'||!['https://offerte4zampe.it','https://cdn.shopify.com','https://www.isoladeitesori.it','https://www.pacopetshop.it'].includes(image.origin)||!(/\.(?:jpe?g|png)$/i.test(image.pathname)))throw new Error('invalid_image');
+  return {method:'sendPhoto',body:{chat_id:channel,photo:image.href,caption:text,parse_mode:'HTML',disable_notification:post.kind==='test'}};
+ }
+ return {method:'sendMessage',body:{chat_id:channel,text,parse_mode:'HTML',disable_notification:post.kind==='test',link_preview_options:{is_disabled:true}}};
 }
 export async function telegramCall(token,method,body,transport=fetch){
  // Never return/log raw exceptions, response descriptions, request URLs or token.
@@ -73,7 +101,7 @@ export class TelegramPublisher {
    // At most one ordinary post daily, 09:15 Europe/Rome; first ordinary post next day.
    const day=new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Rome',year:'numeric',month:'2-digit',day:'2-digit'}).format(now);
    const time=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Rome',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).format(now);
-   if(time!=='09:15'||await store.get('last_day')===day)return {status:'idle'};
+   if(time<'09:15'||await store.get('last_day')===day)return {status:'idle'};
    // Daily verified photo offers; never fall back to text-only guides.
    try{
     const data=await this.env.ASSETS.fetch(new Request('https://offerte4zampe.it/data/home.json'));
