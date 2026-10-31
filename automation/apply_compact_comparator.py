@@ -46,6 +46,11 @@ def comparator(html):
         a,b=region(html,'catalog-shipping','details');shipping=html[a:b];html=html[:a]+html[b:]
         tools='<section class="section"><div class="wrap" id="catalog-bottom-tools"><h2>Affina e condividi il confronto</h2>'+shipping+share+'</div></section>'
         html=html.replace('</main>',tools+'</main>')
+    # Remove the duplicate saved-list summary in the collapsible method text.
+    html=re.sub(r'<p[^>]*>\s*(?:La tua lista risparmio|<a[^>]*>La tua lista risparmio).*?</p>', '', html, flags=re.S)
+    html=html.replace('Prezzi rilevati: verifica sempre il totale nel negozio.','Verifica il totale nel negozio prima di acquistare.')
+    html=html.replace('Primi 24 prodotti: precedenza ai confronti con più negozi, poi nome. Prezzi rilevati, spedizione esclusa.','Primi 24 prodotti: precedenza ai confronti con più negozi, poi nome.')
+    html=html.replace('Prezzi rilevati dai cataloghi dei negozi.','Dati dai cataloghi dei negozi.')
     return html
 
 def budget(html,manual):

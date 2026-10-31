@@ -42,10 +42,9 @@ export function content(product,state){
   const q=state.quotes.get(o.id),unknown=o.quantity?.verified===false;
   const target=trade.merchantUrl(o)?trade.goUrl(o,'product'):'',rel='sponsored nofollow noopener noreferrer';
   const badge=o.available&&state.best!==null&&q.total===state.best?'<span class="tag">Totale più basso verificabile</span>':'';
-  const age=Math.max(0,Math.floor((state.now-Date.parse(o.checked_at))/3600000));
   const status=unknown?'Formato non verificato':o.available?'Disponibile al rilevamento':'Esaurito al rilevamento';
   const report='/segnala-errore#'+new URLSearchParams({id:o.id,title:o.title,shop:o.merchant,price:o.price,checked:o.checked_at});
-  return '<tr><th scope="row">'+esc(o.merchant)+badge+(o.identity_review?'<small>Abbinamento revisionato</small>':'')+'</th><td data-label="Prezzo">'+money(o.price)+'</td><td data-label="Spedizione">'+(q.fee!==undefined?money(q.fee):'Da verificare')+'</td><td data-label="Totale"><strong>'+(q.total!==undefined?money(q.total):'Non calcolabile')+'</strong></td><td data-label="Prezzo unitario">'+(o.unit_price!==null&&o.unit_price!==undefined?money(o.unit_price)+'/'+esc(o.unit_price_unit):'Non verificato')+'</td><td data-label="Disponibilità">'+status+'<small><time datetime="'+esc(o.checked_at)+'">'+esc(trade.formatTimestamp(o.checked_at))+'</time> · '+age+' ore fa</small></td><td data-label="Negozio">'+(target&&o.available?'<a class="btn secondary" href="'+esc(target)+'" target="_blank" rel="'+rel+'">Vai al negozio ↗</a>':'')+'<a class="micro" href="'+esc(report)+'" rel="nofollow">Segnala errore</a></td></tr>';
+  return '<tr><th scope="row">'+esc(o.merchant)+badge+(o.identity_review?'<small>Abbinamento revisionato</small>':'')+'</th><td data-label="Prezzo">'+money(o.price)+'</td><td data-label="Spedizione">'+(q.fee!==undefined?money(q.fee):'Da verificare')+'</td><td data-label="Totale"><strong>'+(q.total!==undefined?money(q.total):'Non calcolabile')+'</strong></td><td data-label="Prezzo unitario">'+(o.unit_price!==null&&o.unit_price!==undefined?money(o.unit_price)+'/'+esc(o.unit_price_unit):'Non verificato')+'</td><td data-label="Disponibilità">'+status+'<small><time datetime="'+esc(o.checked_at)+'">'+esc(trade.formatTimestamp(o.checked_at))+'</time></small></td><td data-label="Negozio">'+(target&&o.available?'<a class="btn secondary" href="'+esc(target)+'" target="_blank" rel="'+rel+'">Vai al negozio ↗</a>':'')+'<a class="micro" href="'+esc(report)+'" rel="nofollow">Segnala errore</a></td></tr>';
  }).join('');
  const schema={'@context':'https://schema.org','@type':'Product',name:metadata.name(product.name),brand:{'@type':'Brand',name:product.brand},url};
  if(product.gtin)schema['gtin'+product.gtin.length]=product.gtin;
@@ -84,7 +83,8 @@ export async function canonicalProduct(request,env,now=Date.now()){
  .replace(/<meta property="og:(title|description|url)" content="[^"]*">/g,(_,key)=>'<meta property="og:'+key+'" content="'+esc(key==='title'?page.title:key==='url'?page.url:page.description)+'">')
  .replace(/<script src="assets\/product(?:\.[a-f0-9]{12})?\.js[^\"]*" defer><\/script>/,'')
  .replace('</head>',(indexable?'<script type="application/ld+json">'+JSON.stringify(page.schema).replace(/</g,'\\u003c')+'</script>':'')+'</head>');
+ if(indexable)html=html.replace(/(<meta property="og:type" content=")[^"]*(">)/,'$1product$2');
  if(localImage)html=html.replace(/(<meta (?:property="og:image"|name="twitter:image") content=")[^"]*(">)/g,(_,a,b)=>a+esc(localImage)+b).replace(/(<meta property="og:image:(?:width|height)" content=")[^"]*(">)/g,(_,a,b)=>a+'400'+b).replace(/(<meta property="og:image:type" content=")[^"]*(">)/g,'$1image/webp$2');
- const headers={'X-Robots-Tag':indexable?'index, follow':'noindex, follow','Content-Type':'text/html; charset=utf-8','Cache-Control':'public, max-age=300','X-Product-Model':'canonical-v1'};
+ const headers={'X-Robots-Tag':indexable?'index, follow':'noindex, follow','Content-Type':'text/html; charset=utf-8','Cache-Control':'public, max-age=0, must-revalidate','Cloudflare-CDN-Cache-Control':'no-store','X-Product-Model':'canonical-v1'};
  return new Response(request.method==='HEAD'?null:html,{status:200,headers});
 }

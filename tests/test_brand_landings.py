@@ -6,7 +6,7 @@ class BrandLandingTests(unittest.TestCase):
         offers=[{'brand':name} for name,count in [('Royal Canin',5),('royal-canin',5),('Élite & Cane',6),('Small',4)] for _ in range(count)]
         pages=dict((name,slug) for slug,name in brand_pages(offers))
         self.assertEqual(pages['Royal Canin'],'royal-canin')
-        self.assertNotEqual(pages['royal-canin'],'royal-canin')
+        self.assertNotIn('royal-canin',pages)
         self.assertEqual(pages['Élite & Cane'],'elite-cane')
         self.assertNotIn('Small',pages)
         self.assertEqual(len(set(pages.values())),len(pages))
@@ -17,4 +17,6 @@ class BrandLandingTests(unittest.TestCase):
         self.assertIn('href="/marca-marca"',out)
         self.assertIn('https://shop.test/?brand=Marca',out)
         self.assertIn('home-all-brands',out)
+        self.assertNotIn('<summary>Tutte le marche',out)
+        self.assertEqual(out.count('>Marca</a>'),1)
         self.assertEqual(out,apply(out,pages))
