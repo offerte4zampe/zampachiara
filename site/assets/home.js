@@ -24,3 +24,6 @@ const brandPages=JSON.parse($('home-brands').dataset.brandPages||'{}');
 $('home-brands').replaceChildren(...d.top_brands.map(brand=>{const a=link(brand,{brand}),path=brandPages[brand];a.href='/marche';if(typeof path==='string'&&/^\/marca-[a-z0-9-]+$/.test(path))a.href=path;return a}));
 $('home-shops').replaceChildren(...(d.sources||[]).filter(s=>s.offers>0).map(s=>link(s.name+' · '+integer.format(s.offers)+' offerte →',{shop:s.name})));
 }catch{$('home-deals-status').textContent+=' Aggiornamento online non disponibile: controlla la data delle offerte e verifica nel negozio.';}})();})();
+
+// First-party newsletter invitation, loaded only on the homepage.
+(()=>{const script=document.createElement('script');script.src='/assets/newsletter-popup.js';script.defer=true;document.body.append(script)})();

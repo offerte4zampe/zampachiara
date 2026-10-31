@@ -170,3 +170,19 @@ header{z-index:200}
 /* Closed advanced filters must not reserve a grid row for their controls. */
 #catalog-extra-filters:not([open])>.catalog-filter-body{display:none}
 @media(max-width:650px){body:has(#catalog-filters) .pagehero{padding:12px 0}body:has(#catalog-filters) .pagehero h1{font-size:26px;margin:4px 0}body:has(#catalog-filters) .pagehero p{margin:4px 0;font-size:14px}#catalog-count:empty,#catalog-selection-status:empty,#catalog-identity-status:empty{display:none}body:has(#catalog-load:not([hidden])) #catalog-status{display:none}#catalog-preview>h2{font-size:20px;margin:6px 0}#catalog-preview>p{font-size:12px;margin:4px 0}}
+
+/* Newsletter invitation: fixed overlay, no page layout shift. */
+.newsletter-popup{width:min(440px,calc(100vw - 28px));max-height:calc(100dvh - 32px);padding:0;border:1px solid #d7e3dc;border-radius:24px;color:#234d4b;background:#fffaf2;box-shadow:0 24px 90px #102c2459;overflow:auto}
+.newsletter-popup::backdrop{background:#102c2473;backdrop-filter:blur(3px)}
+.newsletter-popup-card{position:relative;padding:32px;text-align:center;background:radial-gradient(ellipse at 50% 0,#fce7d8,transparent 64%)}
+.newsletter-popup-close{position:absolute;right:10px;top:8px;min-width:44px;min-height:44px;border:0;border-radius:50%;background:transparent;color:#234d4b;font:30px/1 system-ui;cursor:pointer}
+.newsletter-popup-icon{display:grid;place-items:center;width:64px;height:64px;margin:0 auto 16px;background:#e3f0e9;border-radius:22px 22px 22px 6px;font-size:30px}
+.newsletter-popup-eyebrow{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#97502b;margin:0 0 12px}
+.newsletter-popup h2{font-size:30px;line-height:1.14;letter-spacing:-.04em;margin:0 0 16px}
+.newsletter-popup #newsletter-popup-description{font-size:16px;line-height:1.55;color:#4f6862;margin:0 0 24px}
+.newsletter-popup-signup{display:flex;width:100%;justify-content:center;min-height:48px;font-size:15px;text-decoration:none}
+.newsletter-popup-note{font-size:12px;line-height:1.5;color:#587068;margin:14px 0}
+.newsletter-popup-later{border:0;background:transparent;color:#365f57;font:inherit;font-size:14px;text-decoration:underline;min-height:44px;padding:8px 16px;cursor:pointer}
+.newsletter-popup-privacy{display:block;font-size:12px;margin-top:6px;color:#587068}
+.newsletter-popup :focus-visible{outline:3px solid #267c76;outline-offset:3px}
+@media(max-width:420px){.newsletter-popup-card{padding:28px 22px 22px}.newsletter-popup h2{font-size:27px}}
