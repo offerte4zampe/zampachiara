@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-31T13:32:30.306181+00:00",
+  "generated_at": "2026-10-31T15:20:45.314651+00:00",
   "selection_basis": "Operational opportunity and category/brand diversity; no search-demand data used.",
   "target": 300,
   "selected": 300,
@@ -458,7 +458,6 @@
     "paco:2028",
     "paco:2038",
     "paco:2119",
-    "paco:2247",
     "paco:2611",
     "paco:2612",
     "paco:2664",
@@ -1207,8 +1206,7 @@
       "missing_shops": 1,
       "offer_ids": [
         "isola-dei-tesori:000144181",
-        "bauzaar:56820296057157",
-        "paco:2247"
+        "bauzaar:56820296057157"
       ],
       "candidate_offer_ids": [
         "animaliapet:46976577143127"

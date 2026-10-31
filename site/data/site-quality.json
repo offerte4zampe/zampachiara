@@ -1,7 +1,7 @@
 {
   "method_version": 2,
-  "observed_at": "2026-10-31T13:32:30.306181+00:00",
-  "pages_scanned": 908,
+  "observed_at": "2026-10-31T15:20:45.314651+00:00",
+  "pages_scanned": 909,
   "indexable_pages": 300,
   "unique_canonicals": 300,
   "issues": [],
@@ -2264,9 +2264,15 @@
       "issues": []
     },
     {
+      "page": "prezzi-03182550842204-c6a360622b.html",
+      "indexable": false,
+      "canonical": "https://offerte4zampe.it/prodotto/royal-canin-renal-select-2kg-crocchette-gatti-adulti-03182550842204-07a6fe",
+      "issues": []
+    },
+    {
       "page": "prezzi-03182550842556-be4c879f7e.html",
       "indexable": false,
-      "canonical": "https://offerte4zampe.it/prodotto/royal-canin-veterinary-diet-renal-14-kg-14kg-03182550842556-7f529f",
+      "canonical": "https://offerte4zampe.it/prezzi-03182550842556-be4c879f7e",
       "issues": []
     },
     {
@@ -4048,7 +4054,7 @@
     {
       "page": "prezzi-08009470081016-a4faeba869.html",
       "indexable": false,
-      "canonical": "https://offerte4zampe.it/prodotto/monge-vetsolution-canine-dermatotis-grain-free-adult-salmone-12-kg-12kg-08009470081016-005327",
+      "canonical": "https://offerte4zampe.it/prezzi-08009470081016-a4faeba869",
       "issues": []
     },
     {
@@ -4282,7 +4288,7 @@
     {
       "page": "prezzi-08010276025449-8135337406.html",
       "indexable": false,
-      "canonical": "https://offerte4zampe.it/prodotto/farmina-vet-life-canine-ultrahypo-12-kg-crocchette-monoproteiche-cane-08010276025449-7743c2",
+      "canonical": "https://offerte4zampe.it/prezzi-08010276025449-8135337406",
       "issues": []
     },
     {
@@ -5236,7 +5242,7 @@
     {
       "page": "prezzi-09003579013557-e3c8cce1ba.html",
       "indexable": false,
-      "canonical": "https://offerte4zampe.it/prodotto/royal-canin-veterinary-diet-gastrointestinal-umido-feline-fettine-in-salsa-multipack-12x85-g-ricetta-in-salsa-12ct-09003579013557-dc8f9e",
+      "canonical": "https://offerte4zampe.it/prezzi-09003579013557-e3c8cce1ba",
       "issues": []
     },
     {
