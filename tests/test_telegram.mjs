@@ -62,3 +62,22 @@ test('missed 09:15 cron can recover later the same morning without duplicates',a
   assert.equal(sends,1);
  }finally{global.fetch=original;}
 });
+
+test('curated verified photo feed supplies a new product after home highlights are exhausted',async()=>{
+ const x=setup(),original=global.fetch,stamp='2026-10-31T07:00:00Z',now=Date.parse('2026-10-31T08:30:00Z');
+ x.map.set('post:'+TEST_POST.id,{status:'sent',message_id:1});
+ const offer={id:'paco:brand-new',merchant_id:'paco',merchant:'Paco Pet Shop',title:'Almo Nature umido gatti 55 g',variant:'55 g',weight_kg:.055,price:1.5,available:true,checked_at:stamp,image:'https://www.pacopetshop.it/123-food.jpg'};
+ const requested=[];x.env.ASSETS.fetch=async req=>{
+  const path=new URL(req.url).pathname;requested.push(path);
+  return Response.json(path==='/data/home.json'?{sources:[],offers:[]}:{sources:[{id:'paco',status:'ok',checked_at:stamp}],offers:[offer]});
+ };
+ let sends=0;global.fetch=async url=>{
+  if(String(url).includes('api.telegram.org')){sends++;return ok();}
+  return new Response('photo',{headers:{'content-type':'image/jpeg'}});
+ };
+ try{
+  assert.equal((await x.object.tick(now)).status,'sent');
+  assert.deepEqual(requested,['/data/home.json','/data/telegram-picks.json']);
+  assert.equal(sends,1);
+ }finally{global.fetch=original;}
+});
